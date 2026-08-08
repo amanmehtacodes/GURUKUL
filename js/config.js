@@ -15,19 +15,17 @@ const CONFIG = {
   //    Get this from Supabase Dashboard -> Connect -> API Keys -> "anon public".
   //    This key is safe to ship in frontend code — it has no power on its
   //    own beyond what your Row Level Security policies (schema.sql) allow.
-  SUPABASE_ANON_KEY: "YOUR_SUPABASE_ANON_KEY",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZpZ2V5aGlmYm95dXBnbndqbnNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYxODU1NDEsImV4cCI6MjEwMTc2MTU0MX0.CxmjJiAp5jphoQrAgw__omty0U5Q6D4VYjV8kWzJ91Q",
 
   // Optional: restrict logins to a specific email domain (e.g. a school
   // domain). Leave as null to allow any Google account.
   RESTRICT_DOMAIN: null, // e.g. "yourschool.edu"
 
-  // PROTOTYPE MODE — set to false once SUPABASE_ANON_KEY above is filled
-  // in and supabase/schema.sql has been run in the SQL Editor.
-  // While true, every test is unlocked without signing in, so you can
-  // build and click through content freely. Submissions in this mode are
-  // NOT tied to a real identity and are never sent to Supabase — a
-  // placeholder "Prototype Tester" account is used instead.
-  PROTOTYPE_MODE_SKIP_LOGIN: true,
+  // PROTOTYPE MODE — off now that Supabase is configured. While true,
+  // every test is unlocked without signing in and nothing is sent to
+  // Supabase — flip back to true only if you want to browse/build
+  // content without touching real login or data.
+  PROTOTYPE_MODE_SKIP_LOGIN: false,
 };
 
 window.CONFIG = CONFIG;
