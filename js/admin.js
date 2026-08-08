@@ -1,24 +1,23 @@
 /**
  * ADMIN DASHBOARD
  * -----------------
- * Password-gated page for managing student access and viewing
- * submissions. The "password" is a simple shared secret checked
- * server-side by apps-script.gs (see ADMIN_PASSWORD there) — this is
- * intentionally lightweight, matching the trust level of the rest of
- * this system (a Google Sheet as the database). It is not real
- * authentication.
- *
- * The entered password is kept only in memory for this tab (sessionStorage)
- * so the admin doesn't have to retype it while navigating between tabs.
+ * Gated by real Supabase Auth (Google sign-in) plus the admin_emails
+ * allowlist in supabase/schema.sql, checked via the is_admin() RPC —
+ * not a shared password like the old Apps Script version. Row Level
+ * Security enforces the same check server-side regardless of what this
+ * page renders, so this UI gating is a convenience, not the real
+ * security boundary.
  */
 
 (function () {
   const gateScreen = document.getElementById("gateScreen");
+  const notAuthorizedScreen = document.getElementById("notAuthorizedScreen");
+  const notAuthEmail = document.getElementById("notAuthEmail");
+  const notAuthSignOutBtn = document.getElementById("notAuthSignOut");
   const dashboard = document.getElementById("dashboard");
   const loadingState = document.getElementById("loadingState");
   const unavailableState = document.getElementById("unavailableState");
-  const gateForm = document.getElementById("gateForm");
-  const passwordInput = document.getElementById("passwordInput");
+  const adminSignInHost = document.getElementById("adminSignInHost");
   const gateError = document.getElementById("gateError");
 
   const grantForm = document.getElementById("grantForm");
@@ -30,63 +29,72 @@
   const rosterBody = document.getElementById("rosterBody");
   const submissionsBody = document.getElementById("submissionsBody");
 
-  let adminPassword = null;
   let latestData = { roster: [], access: [], submissions: [] };
 
   // ---------------------------------------------------------------------
-  // Password gate
+  // Boot + auth gate
   // ---------------------------------------------------------------------
 
-  function init() {
-    if (!Backend.isConfigured()) {
+  async function init() {
+    if (!CONFIG.SUPABASE_URL || CONFIG.SUPABASE_ANON_KEY.includes("YOUR_")) {
       gateScreen.classList.add("hidden");
       unavailableState.classList.remove("hidden");
       return;
     }
 
-    const saved = sessionStorage.getItem("gurukul_admin_pw");
-    if (saved) {
-      adminPassword = saved;
-      tryLoad();
-    }
-
-    gateForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const pw = passwordInput.value.trim();
-      if (!pw) return;
-      adminPassword = pw;
-      tryLoad();
-    });
+    await Auth.init();
+    Auth.renderButton(adminSignInHost);
+    Auth.onChange(handleAuthChange);
 
     populateGrantValueOptions();
     grantType.addEventListener("change", populateGrantValueOptions);
     grantForm.addEventListener("submit", handleGrantSubmit);
+    notAuthSignOutBtn.addEventListener("click", () => Auth.signOut());
 
     document.querySelectorAll(".admin-tab").forEach((tab) => {
       tab.addEventListener("click", () => switchTab(tab.dataset.tab));
     });
+
+    await handleAuthChange(Auth.getUser());
   }
 
-  async function tryLoad() {
-    gateError.textContent = "";
-    gateScreen.classList.add("hidden");
-    loadingState.classList.remove("hidden");
+  async function handleAuthChange(user) {
+    hideAllGates();
 
-    const result = await Backend.adminList(adminPassword);
-
-    loadingState.classList.add("hidden");
-
-    if (result.status !== "ok") {
+    if (!user) {
       gateScreen.classList.remove("hidden");
-      gateError.textContent = result.message || "Incorrect password or the backend is unreachable.";
-      adminPassword = null;
-      sessionStorage.removeItem("gurukul_admin_pw");
       return;
     }
 
-    sessionStorage.setItem("gurukul_admin_pw", adminPassword);
-    latestData = { roster: result.roster || [], access: result.access || [], submissions: result.submissions || [] };
+    loadingState.classList.remove("hidden");
+    const sb = Auth.getClient();
+    const { data: isAdmin, error } = await sb.rpc("is_admin");
+    loadingState.classList.add("hidden");
+
+    if (error || !isAdmin) {
+      notAuthEmail.textContent = user.email;
+      notAuthorizedScreen.classList.remove("hidden");
+      return;
+    }
+
     dashboard.classList.remove("hidden");
+    await tryLoad();
+  }
+
+  function hideAllGates() {
+    gateScreen.classList.add("hidden");
+    notAuthorizedScreen.classList.add("hidden");
+    dashboard.classList.add("hidden");
+    loadingState.classList.add("hidden");
+  }
+
+  async function tryLoad() {
+    const result = await Backend.adminList();
+    if (result.status !== "ok") {
+      gateError.textContent = result.message || "Failed to load admin data.";
+      return;
+    }
+    latestData = { roster: result.roster || [], access: result.access || [], submissions: result.submissions || [] };
     renderRoster();
     renderSubmissions();
   }
@@ -117,8 +125,9 @@
       });
     } else {
       CLASSES.forEach((entry) => {
-        const classLabel = entry.type === "exam" ? entry.label : entry.label;
-        const subjectSets = entry.type === "exam" ? entry.years.map((y) => ({ label: `${entry.label} ${y.label}`, subjects: y.subjects })) : [{ label: entry.label, subjects: entry.subjects }];
+        const subjectSets = entry.type === "exam"
+          ? entry.years.map((y) => ({ label: `${entry.label} ${y.label}`, subjects: y.subjects }))
+          : [{ label: entry.label, subjects: entry.subjects }];
 
         subjectSets.forEach(({ label, subjects }) => {
           (subjects || []).forEach((subject) => {
@@ -147,18 +156,13 @@
     grantStatus.textContent = "Granting…";
     grantStatus.className = "admin-grant-status";
 
-    const result = await Backend.adminGrant({
-      password: adminPassword,
-      email,
-      grantType: grantType.value,
-      grantValue: grantValue.value,
-    });
+    const result = await Backend.adminGrant({ email, grantType: grantType.value, grantValue: grantValue.value });
 
     if (result.status === "ok") {
       grantStatus.textContent = `Granted ${grantType.value} access to ${email}.`;
       grantStatus.className = "admin-grant-status success";
       grantEmail.value = "";
-      await tryLoad(); // refresh roster to show the new grant
+      await tryLoad();
     } else {
       grantStatus.textContent = result.message || "Failed to grant access.";
       grantStatus.className = "admin-grant-status error";
@@ -168,7 +172,7 @@
   async function handleRevoke(email, gType, gValue, btn) {
     btn.disabled = true;
     btn.textContent = "…";
-    const result = await Backend.adminRevoke({ password: adminPassword, email, grantType: gType, grantValue: gValue });
+    const result = await Backend.adminRevoke({ email, grantType: gType, grantValue: gValue });
     if (result.status === "ok") {
       await tryLoad();
     } else {
@@ -198,7 +202,7 @@
 
         const grantChips = grants
           .map(
-            (g) => `<span class="grant-chip">${escapeHtml(g.grantType)}: ${escapeHtml(g.grantValue)}
+            (g) => `<span class="grant-chip">${escapeHtml(g.grantType)}: ${escapeHtml(g.grantValue)}${g.grantedVia === "razorpay" ? " (auto)" : ""}
               <button type="button" class="grant-revoke" data-email="${escapeHtml(g.email)}" data-type="${escapeHtml(g.grantType)}" data-value="${escapeHtml(g.grantValue)}">Revoke</button>
             </span>`
           )
@@ -219,34 +223,159 @@
   }
 
   // ---------------------------------------------------------------------
-  // Submissions table
+  // Submissions table + manual grading panel
   // ---------------------------------------------------------------------
 
   function renderSubmissions() {
     submissionsBody.innerHTML = "";
     if (!latestData.submissions.length) {
-      submissionsBody.innerHTML = `<tr><td colspan="8" class="admin-empty-cell">No test submissions yet.</td></tr>`;
+      submissionsBody.innerHTML = `<tr><td colspan="9" class="admin-empty-cell">No test submissions yet.</td></tr>`;
       return;
     }
 
-    latestData.submissions
-      .slice()
-      .reverse()
-      .forEach((s) => {
-        const tr = document.createElement("tr");
-        const scoreText = s.totalMcq !== "" && s.totalMcq != null ? `${s.score}/${s.totalMcq}` : "—";
-        tr.innerHTML = `
-          <td>${escapeHtml(formatDate(s.submittedAt))}</td>
-          <td>${escapeHtml(String(s.rollNumber))}</td>
-          <td>${escapeHtml(s.email)}</td>
-          <td>${escapeHtml(s.className)}</td>
-          <td>${escapeHtml(s.subject)}</td>
-          <td>${escapeHtml(s.test)}</td>
-          <td>${escapeHtml(s.testKind)}</td>
-          <td>${escapeHtml(scoreText)}</td>
-        `;
-        submissionsBody.appendChild(tr);
+    latestData.submissions.forEach((s) => {
+      const tr = document.createElement("tr");
+      const scoreText = s.totalMcq != null ? `${s.score}/${s.totalMcq}` : "—";
+      const theoryText =
+        s.subjectiveStatus === "graded" ? "Graded" : s.subjectiveStatus === "pending" ? "Pending" : "—";
+
+      tr.innerHTML = `
+        <td>${escapeHtml(formatDate(s.submittedAt))}</td>
+        <td>${escapeHtml(s.email)}</td>
+        <td>${escapeHtml(s.className)}</td>
+        <td>${escapeHtml(s.subject)}</td>
+        <td>${escapeHtml(s.test)}</td>
+        <td>${escapeHtml(s.testKind)}</td>
+        <td>${escapeHtml(scoreText)}</td>
+        <td>${escapeHtml(theoryText)}</td>
+        <td>${s.subjectiveStatus === "pending" ? `<button type="button" class="btn btn-sm grade-btn" data-id="${s.id}">Grade</button>` : ""}</td>
+      `;
+      submissionsBody.appendChild(tr);
+
+      if (s.subjectiveStatus === "pending") {
+        const detailTr = document.createElement("tr");
+        detailTr.className = "grade-detail-row hidden";
+        detailTr.id = `grade-row-${s.id}`;
+        detailTr.innerHTML = `<td colspan="9"><div class="grade-panel" id="grade-panel-${s.id}"></div></td>`;
+        submissionsBody.appendChild(detailTr);
+      }
+    });
+
+    submissionsBody.querySelectorAll(".grade-btn").forEach((btn) => {
+      btn.addEventListener("click", () => toggleGradePanel(btn.dataset.id));
+    });
+  }
+
+  async function toggleGradePanel(submissionId) {
+    const row = document.getElementById(`grade-row-${submissionId}`);
+    const panel = document.getElementById(`grade-panel-${submissionId}`);
+    const nowHidden = row.classList.toggle("hidden");
+    if (nowHidden || panel.dataset.loaded) return;
+
+    panel.innerHTML = `<p class="grade-panel-loading">Loading answers…</p>`;
+    const result = await Backend.adminGetSubmissionAnswers(submissionId);
+
+    if (result.status !== "ok") {
+      panel.innerHTML = `<p style="color:var(--error);">Failed to load: ${escapeHtml(result.message || "")}</p>`;
+      return;
+    }
+
+    const theoryAnswers = result.answers.filter((a) => a.question_type === "short");
+    if (!theoryAnswers.length) {
+      panel.innerHTML = `<p class="admin-empty-cell">No theory answers on this submission.</p>`;
+      panel.dataset.loaded = "1";
+      return;
+    }
+
+    panel.innerHTML = `
+      <p class="grade-panel-intro">Run each answer through your local LLM (e.g. <code>ollama run qwen3:8b</code>) against your own answer key, then enter the result below.</p>
+      ${theoryAnswers
+        .map(
+          (a, i) => `
+        <div class="grade-question-block" data-answer-id="${a.id}">
+          <div class="grade-question-prompt"><strong>Q${i + 1}.</strong> ${escapeHtml(a.question_prompt || "")}</div>
+          <div class="grade-student-answer">${escapeHtml(a.student_answer || "(blank)")}</div>
+          <div class="grade-fields">
+            <input type="text" class="grade-topic" placeholder="Topic (e.g. Newton's Second Law)" value="${escapeHtml(a.topic_tag || "")}">
+            <input type="number" class="grade-score" placeholder="Score" value="${a.llm_score != null ? a.llm_score : ""}" step="0.5">
+            <span>/</span>
+            <input type="number" class="grade-max" placeholder="Max" value="${a.llm_max_score != null ? a.llm_max_score : ""}" step="0.5">
+          </div>
+          <textarea class="grade-feedback" placeholder="Feedback / what to revise…">${escapeHtml(a.feedback_text || "")}</textarea>
+        </div>
+      `
+        )
+        .join("")}
+      <div class="grade-panel-actions">
+        <button type="button" class="btn btn-sm save-grades-btn" data-submission-id="${submissionId}">Save & mark graded</button>
+        <span class="grade-save-status"></span>
+      </div>
+    `;
+    panel.dataset.loaded = "1";
+    panel.querySelector(".save-grades-btn").addEventListener("click", () => saveGrades(submissionId, panel));
+  }
+
+  async function saveGrades(submissionId, panel) {
+    const statusEl = panel.querySelector(".grade-save-status");
+    const saveBtn = panel.querySelector(".save-grades-btn");
+    statusEl.textContent = "Saving…";
+    saveBtn.disabled = true;
+
+    const blocks = panel.querySelectorAll(".grade-question-block");
+    const topicTotals = new Map();
+    let overallScore = 0;
+    let overallMax = 0;
+
+    for (const block of blocks) {
+      const answerId = block.dataset.answerId;
+      const topic = block.querySelector(".grade-topic").value.trim();
+      const score = parseFloat(block.querySelector(".grade-score").value) || 0;
+      const max = parseFloat(block.querySelector(".grade-max").value) || 0;
+      const feedback = block.querySelector(".grade-feedback").value.trim();
+
+      const saveResult = await Backend.adminSaveGrade({
+        answerId,
+        llmScore: score,
+        llmMaxScore: max,
+        topicTag: topic,
+        feedbackText: feedback,
       });
+      if (saveResult.status !== "ok") {
+        statusEl.textContent = saveResult.message || "Failed to save one of the answers.";
+        saveBtn.disabled = false;
+        return;
+      }
+
+      overallScore += score;
+      overallMax += max;
+      if (topic) {
+        const cur = topicTotals.get(topic) || { score: 0, max: 0 };
+        cur.score += score;
+        cur.max += max;
+        topicTotals.set(topic, cur);
+      }
+    }
+
+    const topics = Array.from(topicTotals.entries()).map(([topic, t]) => ({
+      topic,
+      scored: `${t.score}/${t.max}`,
+      revise: t.max > 0 && t.score / t.max < 0.6,
+    }));
+
+    const overallReport = {
+      overall: `${overallScore}/${overallMax}`,
+      topics,
+      revisionFocus: topics.filter((t) => t.revise).map((t) => t.topic),
+    };
+
+    const finalizeResult = await Backend.adminFinalizeGrading({ submissionId, overallReport });
+    if (finalizeResult.status === "ok") {
+      statusEl.textContent = "Saved.";
+      await tryLoad();
+    } else {
+      statusEl.textContent = finalizeResult.message || "Failed to finalize.";
+      saveBtn.disabled = false;
+    }
   }
 
   // ---------------------------------------------------------------------

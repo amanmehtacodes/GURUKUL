@@ -2,34 +2,31 @@
  * ============================================================
  * SITE CONFIGURATION — EDIT THIS FILE
  * ============================================================
- * You must fill in the two values below before login and
- * test-submission will work. See SETUP.md for full instructions.
+ * Two values below must be filled in before login, database reads/
+ * writes, and the admin console will work. See SETUP_CHECKLIST.md for
+ * full step-by-step instructions.
  */
 
 const CONFIG = {
-  // 1. Google OAuth Client ID
-  //    Get this from https://console.cloud.google.com/apis/credentials
-  //    Create an "OAuth client ID" of type "Web application" and add
-  //    your site's URL (e.g. https://yoursite.netlify.app) under
-  //    "Authorized JavaScript origins".
-  GOOGLE_CLIENT_ID: "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
+  // 1. Supabase project URL — already set to your project.
+  SUPABASE_URL: "https://figeyhifboyupgnwjnsp.supabase.co",
 
-  // 2. Google Apps Script Web App URL
-  //    This receives test answers and writes them into your Google Sheet.
-  //    Follow SETUP.md to deploy the included Apps Script and paste the
-  //    resulting /exec URL here.
-  APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwTk9_oA7gseG0xc--sLLeaEiqWxSFCvalvYNNDjh7bMo-FHjVvvUsRDmY6V3r5MCw/exec",
+  // 2. Supabase anon (public) key.
+  //    Get this from Supabase Dashboard -> Connect -> API Keys -> "anon public".
+  //    This key is safe to ship in frontend code — it has no power on its
+  //    own beyond what your Row Level Security policies (schema.sql) allow.
+  SUPABASE_ANON_KEY: "YOUR_SUPABASE_ANON_KEY",
 
   // Optional: restrict logins to a specific email domain (e.g. a school
   // domain). Leave as null to allow any Google account.
   RESTRICT_DOMAIN: null, // e.g. "yourschool.edu"
 
-  // PROTOTYPE MODE — set to false before any real deployment.
+  // PROTOTYPE MODE — set to false once SUPABASE_ANON_KEY above is filled
+  // in and supabase/schema.sql has been run in the SQL Editor.
   // While true, every test is unlocked without signing in, so you can
   // build and click through content freely. Submissions in this mode are
-  // NOT tied to a real identity — a placeholder "Prototype Tester"
-  // account is used. Set to false to restore the normal Google Sign-In
-  // gate on tests.
+  // NOT tied to a real identity and are never sent to Supabase — a
+  // placeholder "Prototype Tester" account is used instead.
   PROTOTYPE_MODE_SKIP_LOGIN: true,
 };
 

@@ -201,6 +201,15 @@ a { color: inherit; }
 
 .btn-sm { padding: 5px 10px; font-size: 11px; }
 
+.google-signin-btn {
+  background: var(--paper-raised);
+  color: var(--ink);
+  border-color: var(--line-strong);
+  gap: 8px;
+  font-weight: 500;
+}
+.google-signin-btn:hover { background: var(--accent-soft); }
+
 .btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -1214,6 +1223,37 @@ a { color: inherit; }
 .progress-test-score.success { color: var(--accent); background: var(--accent-soft); }
 .progress-test-score.warn { color: var(--amber); background: var(--amber-soft); }
 .progress-test-score.error { color: var(--error); background: var(--error-soft); }
+
+.progress-subjective {
+  margin: -2px 0 8px;
+  padding: 10px 16px;
+  border: 1px dashed var(--line-strong);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  font-size: 13px;
+}
+.progress-subjective.pending { color: var(--ink-faint); font-family: var(--font-mono); font-size: 12px; }
+.progress-subjective-head {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.progress-topic-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+}
+.progress-topic-row.revise { color: var(--error); }
+.progress-revision-focus {
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--error);
+}
 
 /* ==========================================================================
    RESPONSIVE

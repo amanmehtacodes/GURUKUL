@@ -261,11 +261,27 @@ const Tests = (() => {
   }
 
   /**
+   * Collects free-text answers for every "short" (theory) question in
+   * the DOM, in question order. Used only by submitMixedTest below.
+   */
+  function collectTheoryAnswers(container, test) {
+    const theoryAnswers = [];
+    test.questions.forEach((q) => {
+      if (q.type === "mcq") return;
+      const card = container.querySelector(`.question-card[data-qid="${q.id}"]`);
+      const textarea = card ? card.querySelector(".short-answer") : null;
+      theoryAnswers.push({ prompt: q.prompt, answer: textarea ? textarea.value.trim() : "" });
+    });
+    return theoryAnswers;
+  }
+
+  /**
    * Mixed MCQ + theory test: MCQ portion is graded and revealed exactly
-   * like the pure-MCQ path, and logged the same way. Theory answers are
-   * currently NOT sent anywhere — Google Sheets submission for theory
-   * content is disabled for now and will be reconnected later, so we say
-   * so plainly instead of pretending to send data.
+   * like the pure-MCQ path. Theory answers are collected and sent to the
+   * backend as "pending" — you grade them yourself with a local LLM via
+   * the admin console (see SETUP_CHECKLIST.md Phase 7), and the
+   * resulting topic-by-topic report shows up on the student's progress
+   * page once you've saved it.
    */
   function submitMixedTest(container, { section, sub, test }) {
     const submitBtn = container.querySelector("#submitBtn");
@@ -274,7 +290,8 @@ const Tests = (() => {
     const answerKeyHost = container.querySelector("#answerKeyBlock");
 
     const { correctCount, totalMcq, mcqAnswers } = gradeMcqInPlace(container, test);
-    const hasTheory = test.questions.some((q) => q.type !== "mcq");
+    const theoryAnswers = collectTheoryAnswers(container, test);
+    const hasTheory = theoryAnswers.length > 0;
 
     // Lock theory textareas too, so the "submitted" state is visually final.
     container.querySelectorAll(".short-answer").forEach((ta) => (ta.disabled = true));
@@ -288,15 +305,13 @@ const Tests = (() => {
     if (hasTheory) {
       const notice = document.createElement("div");
       notice.className = "result-banner notice";
-      notice.innerHTML = `${dashIcon()} Theory answers aren't being collected yet — this will be connected soon. Only the MCQ portion above was scored.`;
+      notice.innerHTML = `${dashIcon()} Your theory answers were submitted for review. Check your progress page once they've been graded for topic-by-topic feedback.`;
       bannerEl.appendChild(notice);
     }
 
     renderAnswerKeyBlock(answerKeyHost, test);
 
-    // Only the MCQ portion + score is logged — theory text is
-    // intentionally left out of the payload while that pipeline is off.
-    logSubmission({ section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers: [] });
+    logSubmission({ section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers, hasTheory });
     if (window.Progress) { Progress.markTestDoneLocally(test.id); document.dispatchEvent(new CustomEvent("gurukul:progress-changed")); }
   }
 
@@ -306,10 +321,25 @@ const Tests = (() => {
    * user is in prototype mode — this never blocks or delays the UI,
    * since grading already happened synchronously above.
    */
-  function logSubmission({ section, sub, test, correctCount, totalMcq, mcqAnswers }) {
+  function logSubmission({ section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers = [], hasTheory = false }) {
     if (CONFIG.PROTOTYPE_MODE_SKIP_LOGIN) return;
     const user = Auth.getUser();
     if (!user) return;
+
+    const combinedAnswers = [
+      ...mcqAnswers.map((a) => ({
+        type: "mcq",
+        prompt: a.prompt,
+        answer: a.chosenIdx !== null ? String(a.chosenIdx) : "",
+        correct: a.correct,
+      })),
+      ...theoryAnswers.map((a) => ({
+        type: "short",
+        prompt: a.prompt,
+        answer: a.answer,
+        correct: null,
+      })),
+    ];
 
     Backend.submitTest({
       email: user.email,
@@ -323,12 +353,9 @@ const Tests = (() => {
       testKind: test.kind,
       correctCount,
       totalMcq,
+      hasTheory,
       submittedAt: new Date().toISOString(),
-      answers: mcqAnswers.map((a) => ({
-        prompt: a.prompt,
-        answer: a.chosenIdx !== null ? String(a.chosenIdx) : "",
-        correct: a.correct,
-      })),
+      answers: combinedAnswers,
     });
   }
 

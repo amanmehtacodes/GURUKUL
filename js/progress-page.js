@@ -61,7 +61,7 @@ const ProgressPage = (() => {
     if (!Backend.isConfigured()) {
       bodyEl.innerHTML = `
         <div class="progress-empty">
-          <p>Progress tracking isn't connected yet — once the Apps Script backend is configured (see SETUP.md), your scores and progress will show up here.</p>
+          <p>Progress tracking isn't connected yet — once Supabase is configured (see SETUP_CHECKLIST.md), your scores and progress will show up here.</p>
         </div>`;
       return;
     }
@@ -102,11 +102,50 @@ const ProgressPage = (() => {
             </div>
             <div class="progress-test-score ${tier}">${hasScore ? `${s.score}/${s.totalMcq}` : "—"}</div>
           </div>`;
+        html += renderSubjectiveReport(s);
       });
       html += `</div></div>`;
     });
 
     bodyEl.innerHTML = html;
+  }
+
+  /**
+   * Shows the theory/subjective grading state for one submission:
+   * "pending review" if you haven't graded it yet in the admin console,
+   * or the full per-topic breakdown once you have (see
+   * Backend.adminFinalizeGrading / SETUP_CHECKLIST.md Phase 7).
+   */
+  function renderSubjectiveReport(s) {
+    if (!s.subjectiveStatus || s.subjectiveStatus === "n/a") return "";
+
+    if (s.subjectiveStatus === "pending") {
+      return `<div class="progress-subjective pending">Theory answers submitted — awaiting review.</div>`;
+    }
+
+    const report = s.overallReport;
+    if (!report) return "";
+
+    const topicsHtml = (report.topics || [])
+      .map(
+        (t) => `
+        <div class="progress-topic-row ${t.revise ? "revise" : ""}">
+          <span class="progress-topic-name">${escapeHtml(t.topic)}</span>
+          <span class="progress-topic-score">${escapeHtml(t.scored)}</span>
+        </div>`
+      )
+      .join("");
+
+    const revisionHtml = report.revisionFocus && report.revisionFocus.length
+      ? `<div class="progress-revision-focus">Revise: ${escapeHtml(report.revisionFocus.join(", "))}</div>`
+      : "";
+
+    return `
+      <div class="progress-subjective graded">
+        <div class="progress-subjective-head">Theory portion — ${escapeHtml(report.overall || "")}</div>
+        ${topicsHtml}
+        ${revisionHtml}
+      </div>`;
   }
 
   function formatDate(iso) {

@@ -302,7 +302,7 @@
   }
 
   async function boot() {
-    Auth.init(); // synchronous — restores any saved session before first render
+    await Auth.init(); // Supabase session restore is async (reads localStorage + may verify with the server)
 
     ClassPicker.setOnPick(handleClassPick);
     YearPicker.setOnPick(showSubjects);
@@ -361,23 +361,7 @@
     return div.innerHTML;
   }
 
-  // Google Identity Services loads async and may be slow or blocked on some
-  // networks. The UI (class picker, sidebar, notes) must never wait on it —
-  // only the Sign-In button itself depends on Google's script. Session
-  // restoration already happened synchronously in Auth.init() during boot(),
-  // so this loop only attaches the Google SDK for rendering the button.
-  function waitForGoogleThenAttach(retries = 20) {
-    if (Auth.attachGoogle()) {
-      renderAuthArea();
-    } else if (retries > 0) {
-      setTimeout(() => waitForGoogleThenAttach(retries - 1), 150);
-    } else {
-      console.warn("Google Identity Services failed to load — check network/config.");
-    }
-  }
-
   document.addEventListener("DOMContentLoaded", () => {
     boot();
-    waitForGoogleThenAttach();
   });
 })();
