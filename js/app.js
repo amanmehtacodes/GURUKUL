@@ -1,0 +1,383 @@
+/**
+ * APP MODULE
+ * ----------
+ * Boots the site and handles routing between:
+ *   1. Class picker (landing view — VIII through XII, plus JEE/NEET tracks)
+ *   2. Year picker (JEE/NEET only — choose XI or XII)
+ *   3. Subject picker (icon cards — Maths, Physics, Chemistry, ...)
+ *   4. Subject + curriculum tree (sidebar) for the chosen subject
+ *   5. Note view / Test view / Coming Soon, in the main pane
+ */
+
+(function () {
+  const sidebarEl = document.getElementById("sidebar");
+  const mainEl = document.getElementById("mainContent");
+  const authAreaEl = document.getElementById("authArea");
+  const progressLinkEl = document.getElementById("progressLink");
+  const sidebarToggleBtn = document.getElementById("sidebarToggle");
+  const appShellEl = document.querySelector(".app-shell");
+  const pickerRootEl = document.getElementById("pickerRoot");
+  const yearRootEl = document.getElementById("yearRoot");
+  const subjectRootEl = document.getElementById("subjectRoot");
+  const trackRootEl = document.getElementById("trackRoot");
+  const progressRootEl = document.getElementById("progressRoot");
+
+  let view = "picker"; // "picker" | "years" | "subjects" | "tracks" | "class" | "progress"
+  let previousView = null; // where to return to when leaving the progress page
+  let activeTrack = null; // the JEE/NEET entry, if on that path
+  let activeClass = null; // the class/year object (has .subjects)
+  let activeSubject = null;
+  let activeSubjectTrack = null; // the Language/Literature track within a subject, if any
+  let current = null; // { type, section, sub, item } within a subject
+
+  function renderAuthArea() {
+    const user = Auth.getUser();
+    authAreaEl.innerHTML = "";
+    progressLinkEl.innerHTML = "";
+
+    if (user) {
+      const link = document.createElement("button");
+      link.className = "btn btn-ghost btn-sm progress-link-btn";
+      link.innerHTML = `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 13.5V9M6 13.5V5M10 13.5V7.5M14 13.5V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> My progress`;
+      link.addEventListener("click", () => showProgress());
+      progressLinkEl.appendChild(link);
+    }
+
+    if (user && CONFIG.PROTOTYPE_MODE_SKIP_LOGIN) {
+      const chip = document.createElement("div");
+      chip.className = "user-chip prototype-chip";
+      chip.innerHTML = `
+        <span class="prototype-dot"></span>
+        <span class="name">Prototype mode — login skipped</span>
+      `;
+      authAreaEl.appendChild(chip);
+    } else if (user) {
+      const chip = document.createElement("div");
+      chip.className = "user-chip";
+      chip.innerHTML = `
+        <img src="${user.picture}" alt="${escapeHtml(user.name)}" referrerpolicy="no-referrer">
+        <span class="name">${escapeHtml(user.name)}</span>
+      `;
+      const signOutBtn = document.createElement("button");
+      signOutBtn.className = "btn btn-ghost btn-sm";
+      signOutBtn.textContent = "Sign out";
+      signOutBtn.addEventListener("click", () => Auth.signOut());
+
+      authAreaEl.appendChild(chip);
+      authAreaEl.appendChild(signOutBtn);
+    } else {
+      const host = document.createElement("div");
+      authAreaEl.appendChild(host);
+      Auth.renderButton(host);
+    }
+  }
+
+  function renderEmptyState() {
+    mainEl.innerHTML = `
+      <div class="empty-state">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.2"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <h2>Select a topic to begin</h2>
+        <p>Choose a section from the left to open its notes, or start a test once you're signed in.</p>
+      </div>
+    `;
+  }
+
+  function hideAllViews() {
+    pickerRootEl.classList.add("hidden");
+    yearRootEl.classList.add("hidden");
+    subjectRootEl.classList.add("hidden");
+    trackRootEl.classList.add("hidden");
+    progressRootEl.classList.add("hidden");
+    appShellEl.classList.add("hidden");
+  }
+
+  function showProgress() {
+    previousView = view;
+    view = "progress";
+    hideAllViews();
+    progressRootEl.classList.remove("hidden");
+    document.querySelector(".site-header").classList.add("header-picker");
+    ProgressPage.render(progressRootEl, { onBack: backFromProgress });
+    window.scrollTo(0, 0);
+  }
+
+  function backFromProgress() {
+    if (previousView === "class" && activeSubject) {
+      enterSidebar(activeSubjectTrack);
+    } else if (previousView === "tracks" && activeSubject) {
+      showTracks(activeSubject);
+    } else if (previousView === "subjects" && activeClass) {
+      showSubjects(activeClass);
+    } else if (previousView === "years" && activeTrack) {
+      showYears(activeTrack);
+    } else {
+      showPicker();
+    }
+  }
+
+  function showPicker() {
+    view = "picker";
+    activeTrack = null;
+    activeClass = null;
+    activeSubject = null;
+    activeSubjectTrack = null;
+    current = null;
+    hideAllViews();
+    pickerRootEl.classList.remove("hidden");
+    document.querySelector(".site-header").classList.add("header-picker");
+    ClassPicker.render(pickerRootEl);
+    window.scrollTo(0, 0);
+  }
+
+  function handleClassPick(entry) {
+    if (entry.type === "exam") {
+      showYears(entry);
+    } else {
+      showSubjects(entry);
+    }
+  }
+
+  function showYears(track) {
+    view = "years";
+    activeTrack = track;
+    activeClass = null;
+    activeSubject = null;
+    activeSubjectTrack = null;
+    current = null;
+    hideAllViews();
+    yearRootEl.classList.remove("hidden");
+    document.querySelector(".site-header").classList.add("header-picker");
+    YearPicker.render(yearRootEl, { track });
+    window.scrollTo(0, 0);
+  }
+
+  function showSubjects(cls) {
+    view = "subjects";
+    activeClass = cls;
+    activeSubject = null;
+    activeSubjectTrack = null;
+    current = null;
+    hideAllViews();
+    subjectRootEl.classList.remove("hidden");
+    document.querySelector(".site-header").classList.add("header-picker");
+    SubjectPicker.render(subjectRootEl, { cls, track: activeTrack });
+    window.scrollTo(0, 0);
+  }
+
+  function handleSubjectPick(subject) {
+    activeSubject = subject;
+    if (subject.tracks && subject.tracks.length) {
+      showTracks(subject);
+    } else {
+      enterSidebar(null);
+    }
+  }
+
+  function showTracks(subject) {
+    view = "tracks";
+    activeSubjectTrack = null;
+    current = null;
+    hideAllViews();
+    trackRootEl.classList.remove("hidden");
+    document.querySelector(".site-header").classList.add("header-picker");
+    TrackPicker.render(trackRootEl, { cls: activeClass, subject });
+    window.scrollTo(0, 0);
+  }
+
+  function enterSidebar(subjectTrack) {
+    view = "class";
+    activeSubjectTrack = subjectTrack;
+    current = null;
+    hideAllViews();
+    appShellEl.classList.remove("hidden");
+    document.querySelector(".site-header").classList.remove("header-picker");
+    // Small bridge so Tests.js can attach class/subject names to a
+    // submission payload without threading them through every call.
+    window.__gurukulActiveClassName = activeClass ? activeClass.name : "";
+    window.__gurukulActiveSubjectName = activeSubject ? activeSubject.title : "";
+    renderSidebar();
+    renderMain();
+    window.scrollTo(0, 0);
+  }
+
+  function backToSubjects() {
+    if (activeClass) showSubjects(activeClass);
+    else showPicker();
+  }
+
+  function backToTracksOrSubjects() {
+    if (activeSubject && activeSubject.tracks && activeSubject.tracks.length) {
+      showTracks(activeSubject);
+    } else {
+      backToSubjects();
+    }
+  }
+
+  function backFromSubjects() {
+    if (activeTrack) showYears(activeTrack);
+    else showPicker();
+  }
+
+  function renderSidebar() {
+    const sectionsSource = activeSubjectTrack || activeSubject;
+    Sidebar.render(sidebarEl, {
+      loggedIn: Auth.isLoggedIn(),
+      cls: activeClass,
+      subject: activeSubject,
+      subjectTrack: activeSubjectTrack,
+      sectionsSource,
+    });
+    if (window.Progress) Sidebar.refreshProgressMarks(Progress.doneItemIds());
+  }
+
+  function renderMain() {
+    const sectionsSource = activeSubjectTrack || activeSubject;
+
+    if (!sectionsSource || !sectionsSource.ready || !sectionsSource.sections) {
+      mainEl.style.removeProperty("--section-accent");
+      mainEl.style.removeProperty("--section-accent-soft");
+      ComingSoon.render(mainEl, {
+        className: activeClass.name,
+        subjectTitle: sectionsSource ? sectionsSource.title : "This subject",
+      });
+      return;
+    }
+
+    if (!current) {
+      mainEl.style.removeProperty("--section-accent");
+      mainEl.style.removeProperty("--section-accent-soft");
+      renderEmptyState();
+      return;
+    }
+
+    const colors = Sidebar.colorVarsFor(current.section.id);
+    mainEl.style.setProperty("--section-accent", colors.accent);
+    mainEl.style.setProperty("--section-accent-soft", colors.soft);
+
+    if (current.type === "note") {
+      Notes.renderNote(mainEl, current);
+    } else if (current.type === "test") {
+      if (!Auth.isLoggedIn()) {
+        Tests.renderLocked(mainEl, current);
+      } else if (!AccessControl.hasChapterAccess(activeClass.id, current.section.id)) {
+        Tests.renderNeedsAccess(mainEl, current);
+      } else {
+        Tests.renderTest(mainEl, current);
+      }
+    }
+  }
+
+  function handleSelect(type, section, sub, item) {
+    current = { type, section, sub, item, [type === "note" ? "note" : "test"]: item };
+    renderMain();
+    if (window.innerWidth <= 860) sidebarEl.classList.remove("open");
+  }
+
+  /**
+   * Copy protection: prevents right-click, copy/cut, and text selection
+   * via keyboard shortcuts on note/test content. PDF export still works
+   * because it renders the DOM directly (html2pdf) rather than relying
+   * on the clipboard.
+   */
+  function initCopyProtection() {
+    mainEl.classList.add("no-copy");
+
+    mainEl.addEventListener("contextmenu", (e) => e.preventDefault());
+    mainEl.addEventListener("copy", (e) => e.preventDefault());
+    mainEl.addEventListener("cut", (e) => e.preventDefault());
+    mainEl.addEventListener("dragstart", (e) => e.preventDefault());
+
+    mainEl.addEventListener("keydown", (e) => {
+      const key = e.key.toLowerCase();
+      const isModifier = e.ctrlKey || e.metaKey;
+      const isFormField = e.target.tagName === "TEXTAREA" || e.target.tagName === "INPUT";
+
+      // Always block copy/cut/select-all, even in form fields, to prevent
+      // lifting question text out via a focused input.
+      if (isModifier && (key === "c" || key === "x" || key === "a" || key === "s")) {
+        if (key === "a" && isFormField) return; // allow select-all within an answer box itself
+        e.preventDefault();
+      }
+    });
+  }
+
+  async function boot() {
+    Auth.init(); // synchronous — restores any saved session before first render
+
+    ClassPicker.setOnPick(handleClassPick);
+    YearPicker.setOnPick(showSubjects);
+    YearPicker.setOnChangeTrack(showPicker);
+    SubjectPicker.setOnPick(handleSubjectPick);
+    SubjectPicker.setOnChangeClass(backFromSubjects);
+    TrackPicker.setOnPick(enterSidebar);
+    TrackPicker.setOnChangeSubject(backToSubjects);
+    Sidebar.setOnSelect(handleSelect);
+    Sidebar.setOnChangeSubject(backToTracksOrSubjects);
+
+    renderAuthArea();
+    initCopyProtection();
+    showPicker();
+
+    // If a session was already restored synchronously above (prototype
+    // mode, or a saved Google session), load access data now — Auth's
+    // onChange event only fires on actual sign-in/sign-out transitions,
+    // not for this initial already-logged-in state.
+    if (Auth.isLoggedIn()) {
+      await AccessControl.ensureLoaded();
+      await Progress.ensureLoaded();
+    }
+
+    Auth.onChange(async () => {
+      renderAuthArea();
+      if (Auth.isLoggedIn()) {
+        await AccessControl.ensureLoaded();
+        await Progress.ensureLoaded();
+      } else {
+        AccessControl.reset();
+        Progress.reset();
+      }
+      if (view === "class") {
+        renderSidebar();
+        renderMain();
+      }
+    });
+
+    sidebarToggleBtn.addEventListener("click", () => {
+      sidebarEl.classList.toggle("open");
+    });
+
+    document.addEventListener("gurukul:home", () => showPicker());
+    document.addEventListener("gurukul:progress-changed", () => {
+      // Refresh just the sidebar (progress bars + checkmarks) — never
+      // touch mainEl here, or a just-submitted test's results would be
+      // wiped out from under the student.
+      if (view === "class") renderSidebar();
+    });
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // Google Identity Services loads async and may be slow or blocked on some
+  // networks. The UI (class picker, sidebar, notes) must never wait on it —
+  // only the Sign-In button itself depends on Google's script. Session
+  // restoration already happened synchronously in Auth.init() during boot(),
+  // so this loop only attaches the Google SDK for rendering the button.
+  function waitForGoogleThenAttach(retries = 20) {
+    if (Auth.attachGoogle()) {
+      renderAuthArea();
+    } else if (retries > 0) {
+      setTimeout(() => waitForGoogleThenAttach(retries - 1), 150);
+    } else {
+      console.warn("Google Identity Services failed to load — check network/config.");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    boot();
+    waitForGoogleThenAttach();
+  });
+})();

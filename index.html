@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gurukul — STEM Study Notes</title>
+<meta name="description" content="Minimal study site with unlocked notes and locked tests.">
+
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Markdown parser (bundled locally — no CDN dependency) -->
+<script src="js/vendor/marked.min.js"></script>
+<!-- PDF export (bundled locally — no CDN dependency) -->
+<script src="js/vendor/html2pdf.bundle.min.js"></script>
+<!-- Google Identity Services -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div style="display:flex; align-items:center; gap:14px;">
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle menu">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <a href="#" class="brand" id="brandLink">
+      <img src="assets/logo.svg" alt="nav gurukul" class="brand-mark">
+    </a>
+  </div>
+  <div class="header-right">
+    <div class="header-progress-link" id="progressLink"></div>
+    <div class="auth-area" id="authArea"></div>
+  </div>
+</header>
+
+<div id="pickerRoot"></div>
+<div id="yearRoot" class="hidden"></div>
+<div id="subjectRoot" class="hidden"></div>
+<div id="trackRoot" class="hidden"></div>
+<div id="progressRoot" class="hidden"></div>
+
+<div class="app-shell hidden">
+  <nav class="sidebar" id="sidebar"></nav>
+  <main class="main">
+    <div class="content-wrap" id="mainContent"></div>
+  </main>
+</div>
+
+<script src="data/curriculum.js"></script>
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/backend.js"></script>
+<script src="js/access-control.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/progress-page.js"></script>
+<script src="js/class-picker.js"></script>
+<script src="js/year-picker.js"></script>
+<script src="js/subject-picker.js"></script>
+<script src="js/track-picker.js"></script>
+<script src="js/coming-soon.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/notes.js"></script>
+<script src="js/tests.js"></script>
+<script src="js/app.js"></script>
+<script>
+  document.getElementById("brandLink").addEventListener("click", function (e) {
+    e.preventDefault();
+    document.dispatchEvent(new CustomEvent("gurukul:home"));
+  });
+</script>
+</body>
+</html>

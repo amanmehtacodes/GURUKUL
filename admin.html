@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>admin — gurukul</title>
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <img src="assets/logo.svg" alt="nav gurukul" class="brand-mark">
+  </a>
+  <div class="header-right">
+    <span class="admin-badge">Admin</span>
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <!-- Password gate -->
+  <div id="gateScreen" class="admin-gate">
+    <div class="admin-gate-card">
+      <h1>Admin access</h1>
+      <p>Enter the admin password to manage student access and view submissions.</p>
+      <form id="gateForm">
+        <input type="password" id="passwordInput" placeholder="Admin password" autocomplete="current-password">
+        <button type="submit" class="btn">Enter</button>
+      </form>
+      <p class="admin-gate-error" id="gateError"></p>
+    </div>
+  </div>
+
+  <!-- Dashboard (shown after password check) -->
+  <div id="dashboard" class="admin-dashboard hidden">
+
+    <div class="admin-tabs">
+      <button class="admin-tab active" data-tab="access">Access & Roster</button>
+      <button class="admin-tab" data-tab="submissions">Submissions</button>
+    </div>
+
+    <section id="tabAccess" class="admin-tab-panel">
+      <div class="admin-panel-head">
+        <h2>Grant access</h2>
+        <p>Add a student's Gmail and grant them a class or a specific chapter. A class grant unlocks every chapter across every subject in that class/year.</p>
+      </div>
+      <form id="grantForm" class="admin-grant-form">
+        <input type="email" id="grantEmail" placeholder="student@gmail.com" required>
+        <select id="grantType">
+          <option value="class">Whole class</option>
+          <option value="chapter">Single chapter</option>
+        </select>
+        <select id="grantValue"></select>
+        <button type="submit" class="btn btn-sm">Grant access</button>
+      </form>
+      <div class="admin-grant-status" id="grantStatus"></div>
+
+      <div class="admin-panel-head" style="margin-top:36px;">
+        <h2>Roster</h2>
+        <p>Every student who has signed in, their roll number, and current access grants.</p>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table" id="rosterTable">
+          <thead>
+            <tr><th>Roll #</th><th>Email</th><th>First seen</th><th>Access grants</th></tr>
+          </thead>
+          <tbody id="rosterBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="tabSubmissions" class="admin-tab-panel hidden">
+      <div class="admin-panel-head">
+        <h2>Test submissions</h2>
+        <p>Every test attempt, most recent first.</p>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table" id="submissionsTable">
+          <thead>
+            <tr><th>When</th><th>Roll #</th><th>Email</th><th>Class</th><th>Subject</th><th>Test</th><th>Kind</th><th>Score</th></tr>
+          </thead>
+          <tbody id="submissionsBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="loadingState" class="admin-loading hidden">Loading…</div>
+  <div id="unavailableState" class="admin-unavailable hidden">
+    <p>The Apps Script backend isn't configured yet. Set <code>APPS_SCRIPT_URL</code> in <code>js/config.js</code> and deploy the script (see SETUP.md) before using this page.</p>
+  </div>
+
+</main>
+
+<script src="data/curriculum.js"></script>
+<script src="js/config.js"></script>
+<script src="js/backend.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
