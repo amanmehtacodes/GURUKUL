@@ -74,6 +74,7 @@ const Tests = (() => {
         </div>
       </form>
       <div id="answerKeyBlock"></div>
+      <div id="inlineReport"></div>
     `;
 
     // MCQ option click highlighting (only while the test is still open —
@@ -89,6 +90,19 @@ const Tests = (() => {
         group.querySelectorAll(".mcq-option").forEach((o) => o.classList.remove("selected"));
         opt.classList.add("selected");
       });
+    });
+
+    // Notebook-style math in question prompts (e.g. "$x^2 + 3x = 0$")
+    // renders after the DOM is built, same as notes.
+    if (window.MathTools) MathTools.renderMathIn(container);
+
+    // Live math preview under each theory textarea, so a student typing
+    // "$\frac{1}{2}$" sees it rendered as they go, the same way it'll
+    // look when you review it later.
+    container.querySelectorAll(".question-card[data-qtype='short']").forEach((card) => {
+      const textarea = card.querySelector(".short-answer");
+      const preview = card.querySelector(".math-preview");
+      if (window.MathTools) MathTools.attachLivePreview(textarea, preview);
     });
 
     const form = container.querySelector("#testForm");
@@ -118,18 +132,21 @@ const Tests = (() => {
         .join("");
       return `
         <div class="question-card" data-qid="${q.id}" data-qtype="mcq">
-          <div class="question-num">Question ${i + 1}</div>
+          <div class="question-num">Question ${i + 1}${q.topic ? ` · <span class="question-topic">${escapeHtml(q.topic)}</span>` : ""}</div>
           <p class="question-prompt">${escapeHtml(q.prompt)}</p>
           <div class="mcq-options">${options}</div>
           <div class="mcq-feedback" style="display:none;"></div>
+          <div class="mcq-correct-line" style="display:none;"></div>
         </div>`;
     }
     // theory / short answer
     return `
       <div class="question-card" data-qid="${q.id}" data-qtype="short">
-        <div class="question-num">Question ${i + 1} · Theory</div>
+        <div class="question-num">Question ${i + 1} · Theory${q.topic ? ` · <span class="question-topic">${escapeHtml(q.topic)}</span>` : ""}</div>
         <p class="question-prompt">${escapeHtml(q.prompt)}</p>
-        <textarea class="short-answer" name="${q.id}" placeholder="Type your answer…"></textarea>
+        <textarea class="short-answer" name="${q.id}" placeholder="Type your answer… (use $...$ for inline math, e.g. $x^2+1$)"></textarea>
+        <div class="math-preview" aria-label="Math preview"></div>
+        <div class="reference-answer-block" style="display:none;"></div>
       </div>`;
   }
 
@@ -156,8 +173,11 @@ const Tests = (() => {
       mcqAnswers.push({
         questionId: q.id,
         prompt: q.prompt,
+        topic: q.topic || null,
         chosenIdx,
         answerIndex: q.answerIndex,
+        chosenText: chosenIdx !== null ? q.options[chosenIdx] : "",
+        correctText: q.options[q.answerIndex],
         correct: chosenIdx !== null ? isCorrect : null,
       });
 
@@ -189,9 +209,38 @@ const Tests = (() => {
         feedback.className = "mcq-feedback incorrect";
         feedback.innerHTML = `${crossIcon()} Incorrect — correct answer highlighted above.`;
       }
+
+      // Explicit "Correct answer: ..." line under every question, in
+      // addition to the green highlight, so it's unambiguous even
+      // without color (and easy to scan when reviewing later).
+      const correctLine = card.querySelector(".mcq-correct-line");
+      if (correctLine) {
+        correctLine.style.display = "block";
+        correctLine.innerHTML = `<strong>Correct answer:</strong> ${escapeHtml(q.options[q.answerIndex])}`;
+      }
     });
 
+    if (window.MathTools) MathTools.renderMathIn(container);
+
     return { correctCount, totalMcq, mcqAnswers };
+  }
+
+  /**
+   * After a mixed test is submitted, reveals each theory question's
+   * referenceAnswer (if the curriculum data has one set) directly under
+   * that question — separate from the whole-test answerKeyFile toggle,
+   * which stays available too.
+   */
+  function revealReferenceAnswers(container, test) {
+    test.questions.forEach((q) => {
+      if (q.type !== "short" || !q.referenceAnswer) return;
+      const card = container.querySelector(`.question-card[data-qid="${q.id}"]`);
+      const block = card ? card.querySelector(".reference-answer-block") : null;
+      if (!block) return;
+      block.style.display = "block";
+      block.innerHTML = `<div class="reference-answer-label">Reference answer</div><div class="reference-answer-text">${escapeHtml(q.referenceAnswer)}</div>`;
+      if (window.MathTools) MathTools.renderMathIn(block);
+    });
   }
 
   function renderScoreBanner(bannerEl, correctCount, totalMcq) {
@@ -228,11 +277,72 @@ const Tests = (() => {
           if (!res.ok) throw new Error(`Could not load answer key (${res.status})`);
           const md = await res.text();
           pane.innerHTML = `<div class="note-body">${marked.parse(md)}</div>`;
+          if (window.MathTools) MathTools.renderMathIn(pane);
         } catch (err) {
           pane.innerHTML = `<p style="color: var(--error);">Failed to load answer key: ${escapeHtml(err.message)}</p>`;
         }
       }
     });
+  }
+
+  /**
+   * Builds the report right under the test from data already on hand —
+   * no need to wait on the database round trip for the MCQ portion,
+   * since it's already graded client-side. Only the class-average
+   * number needs a network call, and that's best-effort (skipped
+   * silently in prototype mode or if it fails). Skips the
+   * question-by-question list since those questions are already
+   * visible in the form right above this.
+   */
+  async function showInlineReport(container, { section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers, hasTheory }) {
+    const host = container.querySelector("#inlineReport");
+    if (!host || !window.ReportView) return;
+
+    const user = Auth.getUser();
+    const submission = {
+      name: user ? user.name : "",
+      email: user ? user.email : "",
+      class_name: window.__gurukulActiveClassName || "",
+      subject: window.__gurukulActiveSubjectName || "",
+      section: section.title,
+      subsection: sub.title,
+      test: test.title,
+      test_kind: test.kind,
+      score: correctCount,
+      total_mcq: totalMcq,
+      subjective_status: hasTheory ? "pending" : "n/a",
+      overall_report: null,
+      submitted_at: new Date().toISOString(),
+    };
+
+    const answers = [
+      ...mcqAnswers.map((a) => ({
+        question_type: "mcq",
+        question_prompt: a.prompt,
+        student_answer: a.chosenText,
+        correct: a.correct,
+        reference_answer: a.correctText,
+        topic_tag: a.topic,
+      })),
+      ...(theoryAnswers || []).map((a) => ({
+        question_type: "short",
+        question_prompt: a.prompt,
+        student_answer: a.answer,
+        correct: null,
+        reference_answer: a.referenceAnswer,
+        topic_tag: a.topic,
+        llm_score: null,
+        llm_max_score: null,
+      })),
+    ];
+
+    let stats = null;
+    if (!CONFIG.PROTOTYPE_MODE_SKIP_LOGIN && window.Backend && Backend.isConfigured()) {
+      const statsResult = await Backend.getTestStats(test.id);
+      if (statsResult.status === "ok") stats = statsResult.stats;
+    }
+
+    ReportView.render(host, { submission, answers, stats, showQuestions: false, inline: true });
   }
 
   /**
@@ -255,6 +365,7 @@ const Tests = (() => {
 
     renderScoreBanner(bannerEl, correctCount, totalMcq);
     renderAnswerKeyBlock(answerKeyHost, test);
+    showInlineReport(container, { section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers: [], hasTheory: false });
 
     logSubmission({ section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers: [] });
     if (window.Progress) { Progress.markTestDoneLocally(test.id); document.dispatchEvent(new CustomEvent("gurukul:progress-changed")); }
@@ -270,7 +381,12 @@ const Tests = (() => {
       if (q.type === "mcq") return;
       const card = container.querySelector(`.question-card[data-qid="${q.id}"]`);
       const textarea = card ? card.querySelector(".short-answer") : null;
-      theoryAnswers.push({ prompt: q.prompt, answer: textarea ? textarea.value.trim() : "" });
+      theoryAnswers.push({
+        prompt: q.prompt,
+        topic: q.topic || null,
+        referenceAnswer: q.referenceAnswer || null,
+        answer: textarea ? textarea.value.trim() : "",
+      });
     });
     return theoryAnswers;
   }
@@ -310,6 +426,8 @@ const Tests = (() => {
     }
 
     renderAnswerKeyBlock(answerKeyHost, test);
+    revealReferenceAnswers(container, test);
+    showInlineReport(container, { section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers, hasTheory });
 
     logSubmission({ section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers, hasTheory });
     if (window.Progress) { Progress.markTestDoneLocally(test.id); document.dispatchEvent(new CustomEvent("gurukul:progress-changed")); }
@@ -330,12 +448,16 @@ const Tests = (() => {
       ...mcqAnswers.map((a) => ({
         type: "mcq",
         prompt: a.prompt,
-        answer: a.chosenIdx !== null ? String(a.chosenIdx) : "",
+        topic: a.topic,
+        answer: a.chosenText,
+        referenceAnswer: a.correctText,
         correct: a.correct,
       })),
       ...theoryAnswers.map((a) => ({
         type: "short",
         prompt: a.prompt,
+        topic: a.topic,
+        referenceAnswer: a.referenceAnswer,
         answer: a.answer,
         correct: null,
       })),

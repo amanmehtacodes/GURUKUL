@@ -94,58 +94,68 @@ const ProgressPage = (() => {
         const hasScore = s.totalMcq !== "" && s.totalMcq != null && s.totalMcq !== 0;
         const pct = hasScore ? Math.round((Number(s.score) / Number(s.totalMcq)) * 100) : null;
         const tier = pct === null ? "" : pct >= 80 ? "success" : pct >= 50 ? "warn" : "error";
+        const theoryBadge =
+          s.subjectiveStatus === "graded" ? `<span class="progress-theory-badge graded">Theory graded</span>` :
+          s.subjectiveStatus === "pending" ? `<span class="progress-theory-badge pending">Theory pending</span>` : "";
         html += `
-          <div class="progress-test-row">
+          <button type="button" class="progress-test-row" data-id="${escapeHtml(s.id)}" data-test-id="${escapeHtml(s.testId || "")}">
             <div class="progress-test-info">
-              <div class="progress-test-name">${escapeHtml(s.test)}</div>
+              <div class="progress-test-name">${escapeHtml(s.test)} ${theoryBadge}</div>
               <div class="progress-test-meta">${escapeHtml(s.section)} / ${escapeHtml(s.subsection)} · ${escapeHtml(formatDate(s.submittedAt))}</div>
             </div>
             <div class="progress-test-score ${tier}">${hasScore ? `${s.score}/${s.totalMcq}` : "—"}</div>
-          </div>`;
-        html += renderSubjectiveReport(s);
+          </button>
+          <div class="progress-report-panel hidden" id="progress-report-${escapeHtml(s.id)}"></div>`;
       });
       html += `</div></div>`;
     });
 
     bodyEl.innerHTML = html;
+
+    bodyEl.querySelectorAll(".progress-test-row").forEach((row) => {
+      row.addEventListener("click", () => toggleInlineReport(row));
+    });
   }
 
   /**
-   * Shows the theory/subjective grading state for one submission:
-   * "pending review" if you haven't graded it yet in the admin console,
-   * or the full per-topic breakdown once you have (see
-   * Backend.adminFinalizeGrading / SETUP_CHECKLIST.md Phase 7).
+   * Expands the full report (topic breakdown, class average, every
+   * question) directly under the clicked row — no separate page.
+   * Lazy-loaded on first click, cached after that.
    */
-  function renderSubjectiveReport(s) {
-    if (!s.subjectiveStatus || s.subjectiveStatus === "n/a") return "";
+  async function toggleInlineReport(row) {
+    const id = row.dataset.id;
+    const testId = row.dataset.testId;
+    const panel = document.getElementById(`progress-report-${id}`);
+    if (!panel) return;
 
-    if (s.subjectiveStatus === "pending") {
-      return `<div class="progress-subjective pending">Theory answers submitted — awaiting review.</div>`;
+    const nowHidden = panel.classList.toggle("hidden");
+    row.classList.toggle("expanded", !nowHidden);
+    if (nowHidden || panel.dataset.loaded) return;
+
+    panel.innerHTML = `<div class="progress-loading">Loading report…</div>`;
+
+    const result = await Backend.getSubmissionDetail(id);
+    if (result.status !== "ok") {
+      panel.innerHTML = `<p style="color:var(--error);">Couldn't load this report: ${escapeHtml(result.message || "")}</p>`;
+      return;
     }
 
-    const report = s.overallReport;
-    if (!report) return "";
+    let stats = null;
+    if (testId) {
+      const statsResult = await Backend.getTestStats(testId);
+      if (statsResult.status === "ok") stats = statsResult.stats;
+    }
 
-    const topicsHtml = (report.topics || [])
-      .map(
-        (t) => `
-        <div class="progress-topic-row ${t.revise ? "revise" : ""}">
-          <span class="progress-topic-name">${escapeHtml(t.topic)}</span>
-          <span class="progress-topic-score">${escapeHtml(t.scored)}</span>
-        </div>`
-      )
-      .join("");
-
-    const revisionHtml = report.revisionFocus && report.revisionFocus.length
-      ? `<div class="progress-revision-focus">Revise: ${escapeHtml(report.revisionFocus.join(", "))}</div>`
-      : "";
-
-    return `
-      <div class="progress-subjective graded">
-        <div class="progress-subjective-head">Theory portion — ${escapeHtml(report.overall || "")}</div>
-        ${topicsHtml}
-        ${revisionHtml}
-      </div>`;
+    panel.dataset.loaded = "1";
+    if (window.ReportView) {
+      ReportView.render(panel, {
+        submission: result.submission,
+        answers: result.answers,
+        stats,
+        showQuestions: true,
+        inline: true,
+      });
+    }
   }
 
   function formatDate(iso) {

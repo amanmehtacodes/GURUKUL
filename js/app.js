@@ -346,6 +346,8 @@
       sidebarEl.classList.toggle("open");
     });
 
+    if (window.Theme) Theme.attachToggleButton(document.getElementById("themeToggle"));
+
     document.addEventListener("gurukul:home", () => showPicker());
     document.addEventListener("gurukul:progress-changed", () => {
       // Refresh just the sidebar (progress bars + checkmarks) — never

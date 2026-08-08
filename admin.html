@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>admin — gurukul</title>
 <meta name="robots" content="noindex, nofollow">
+<script>
+  (function () {
+    var saved = localStorage.getItem("gurukul_theme");
+    var theme = saved || ((window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
 
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 
@@ -17,6 +24,12 @@
 
 <!-- Supabase client (auth + database) -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<!-- Chart.js (student progress pie/doughnut charts) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<!-- KaTeX (rendering math in question prompts / student answers) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 </head>
 <body>
 
@@ -25,6 +38,10 @@
     <img src="assets/logo.svg" alt="nav gurukul" class="brand-mark">
   </a>
   <div class="header-right">
+    <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode" type="button">
+      <svg class="icon-moon" viewBox="0 0 16 16" fill="none"><path d="M13.5 9.9A5.8 5.8 0 116.1 2.5a4.6 4.6 0 007.4 7.4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+      <svg class="icon-sun" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.5 3.5l1.4 1.4M11.1 11.1l1.4 1.4M3.5 12.5l1.4-1.4M11.1 4.9l1.4-1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+    </button>
     <span class="admin-badge">Admin</span>
   </div>
 </header>
@@ -56,6 +73,7 @@
     <div class="admin-tabs">
       <button class="admin-tab active" data-tab="access">Access & Roster</button>
       <button class="admin-tab" data-tab="submissions">Submissions</button>
+      <button class="admin-tab" data-tab="students">Students</button>
     </div>
 
     <section id="tabAccess" class="admin-tab-panel">
@@ -96,11 +114,28 @@
       <div class="admin-table-wrap">
         <table class="admin-table" id="submissionsTable">
           <thead>
-            <tr><th>When</th><th>Email</th><th>Class</th><th>Subject</th><th>Test</th><th>Kind</th><th>MCQ Score</th><th>Theory</th><th></th></tr>
+            <tr><th>When</th><th>Email</th><th>Class</th><th>Subject</th><th>Test</th><th>Kind</th><th>MCQ Score</th><th>Theory</th><th></th><th></th></tr>
           </thead>
           <tbody id="submissionsBody"></tbody>
         </table>
       </div>
+    </section>
+
+    <section id="tabStudents" class="admin-tab-panel hidden">
+      <div class="admin-panel-head">
+        <h2>Student lookup</h2>
+        <p>Pick a class and subject, then search by roll number or email to see everything that student has done in that subject — every submission, topic-by-topic performance, and a link to the full report for each attempt.</p>
+      </div>
+
+      <div class="student-lookup-controls">
+        <select id="studentClassSelect"><option value="">Choose a class…</option></select>
+        <select id="studentSubjectSelect" disabled><option value="">Choose a subject…</option></select>
+        <input type="text" id="studentSearchInput" placeholder="Roll number or email" disabled>
+        <button type="button" class="btn btn-sm" id="studentSearchBtn" disabled>Search</button>
+      </div>
+      <div class="admin-grant-status" id="studentSearchStatus"></div>
+
+      <div id="studentDetail" class="student-detail hidden"></div>
     </section>
 
   </div>
@@ -114,6 +149,8 @@
 
 <script src="data/curriculum.js"></script>
 <script src="js/config.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/math.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/backend.js"></script>
 <script src="js/admin.js"></script>

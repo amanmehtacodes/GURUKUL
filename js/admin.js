@@ -29,13 +29,23 @@
   const rosterBody = document.getElementById("rosterBody");
   const submissionsBody = document.getElementById("submissionsBody");
 
+  const studentClassSelect = document.getElementById("studentClassSelect");
+  const studentSubjectSelect = document.getElementById("studentSubjectSelect");
+  const studentSearchInput = document.getElementById("studentSearchInput");
+  const studentSearchBtn = document.getElementById("studentSearchBtn");
+  const studentSearchStatus = document.getElementById("studentSearchStatus");
+  const studentDetail = document.getElementById("studentDetail");
+
   let latestData = { roster: [], access: [], submissions: [] };
+  let studentCharts = []; // Chart.js instances, destroyed before each re-render
 
   // ---------------------------------------------------------------------
   // Boot + auth gate
   // ---------------------------------------------------------------------
 
   async function init() {
+    if (window.Theme) Theme.attachToggleButton(document.getElementById("themeToggle"));
+
     if (!CONFIG.SUPABASE_URL || CONFIG.SUPABASE_ANON_KEY.includes("YOUR_")) {
       gateScreen.classList.add("hidden");
       unavailableState.classList.remove("hidden");
@@ -54,6 +64,8 @@
     document.querySelectorAll(".admin-tab").forEach((tab) => {
       tab.addEventListener("click", () => switchTab(tab.dataset.tab));
     });
+
+    initStudentLookup();
 
     await handleAuthChange(Auth.getUser());
   }
@@ -107,6 +119,7 @@
     document.querySelectorAll(".admin-tab").forEach((t) => t.classList.toggle("active", t.dataset.tab === name));
     document.getElementById("tabAccess").classList.toggle("hidden", name !== "access");
     document.getElementById("tabSubmissions").classList.toggle("hidden", name !== "submissions");
+    document.getElementById("tabStudents").classList.toggle("hidden", name !== "students");
   }
 
   // ---------------------------------------------------------------------
@@ -229,7 +242,7 @@
   function renderSubmissions() {
     submissionsBody.innerHTML = "";
     if (!latestData.submissions.length) {
-      submissionsBody.innerHTML = `<tr><td colspan="9" class="admin-empty-cell">No test submissions yet.</td></tr>`;
+      submissionsBody.innerHTML = `<tr><td colspan="10" class="admin-empty-cell">No test submissions yet.</td></tr>`;
       return;
     }
 
@@ -249,6 +262,7 @@
         <td>${escapeHtml(scoreText)}</td>
         <td>${escapeHtml(theoryText)}</td>
         <td>${s.subjectiveStatus === "pending" ? `<button type="button" class="btn btn-sm grade-btn" data-id="${s.id}">Grade</button>` : ""}</td>
+        <td><a href="report.html?id=${encodeURIComponent(s.id)}" target="_blank" class="btn btn-ghost btn-sm">Report</a></td>
       `;
       submissionsBody.appendChild(tr);
 
@@ -256,7 +270,7 @@
         const detailTr = document.createElement("tr");
         detailTr.className = "grade-detail-row hidden";
         detailTr.id = `grade-row-${s.id}`;
-        detailTr.innerHTML = `<td colspan="9"><div class="grade-panel" id="grade-panel-${s.id}"></div></td>`;
+        detailTr.innerHTML = `<td colspan="10"><div class="grade-panel" id="grade-panel-${s.id}"></div></td>`;
         submissionsBody.appendChild(detailTr);
       }
     });
@@ -376,6 +390,194 @@
       statusEl.textContent = finalizeResult.message || "Failed to finalize.";
       saveBtn.disabled = false;
     }
+  }
+
+  // ---------------------------------------------------------------------
+  // Students tab — class -> subject -> roll number/email search, with
+  // Chart.js pie/doughnut charts summarizing that student's performance
+  // in the chosen subject, and a list of every submission linking to
+  // the full report page.
+  // ---------------------------------------------------------------------
+
+  function initStudentLookup() {
+    getClassOptions().forEach((c) => addOption(studentClassSelect, c.id, c.label));
+
+    studentClassSelect.addEventListener("change", () => {
+      const cls = getClassOptions().find((c) => c.id === studentClassSelect.value);
+      studentSubjectSelect.innerHTML = `<option value="">Choose a subject…</option>`;
+      studentSearchInput.disabled = true;
+      studentSearchBtn.disabled = true;
+      studentDetail.classList.add("hidden");
+      if (!cls) {
+        studentSubjectSelect.disabled = true;
+        return;
+      }
+      (cls.subjects || []).forEach((subj) => addOption(studentSubjectSelect, subj.title, subj.title));
+      studentSubjectSelect.disabled = false;
+    });
+
+    studentSubjectSelect.addEventListener("change", () => {
+      const has = !!studentSubjectSelect.value;
+      studentSearchInput.disabled = !has;
+      studentSearchBtn.disabled = !has;
+    });
+
+    studentSearchBtn.addEventListener("click", runStudentSearch);
+    studentSearchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") { e.preventDefault(); runStudentSearch(); }
+    });
+  }
+
+  /** Flattens CLASSES (including JEE/NEET year tracks) into { id, label, name, subjects }. */
+  function getClassOptions() {
+    const opts = [];
+    CLASSES.forEach((entry) => {
+      if (entry.type === "exam") {
+        entry.years.forEach((y) => opts.push({ id: y.id, label: `${entry.label} — ${y.label} (${y.name})`, name: y.name, subjects: y.subjects }));
+      } else {
+        opts.push({ id: entry.id, label: `${entry.label} — ${entry.name}`, name: entry.name, subjects: entry.subjects });
+      }
+    });
+    return opts;
+  }
+
+  async function runStudentSearch() {
+    const query = studentSearchInput.value.trim().toLowerCase();
+    studentSearchStatus.textContent = "";
+    studentDetail.classList.add("hidden");
+    if (!query) return;
+
+    const student = latestData.roster.find(
+      (r) => r.email.toLowerCase() === query || String(r.rollNumber) === query
+    );
+    if (!student) {
+      studentSearchStatus.textContent = "No student found with that roll number or email.";
+      studentSearchStatus.className = "admin-grant-status error";
+      return;
+    }
+    studentSearchStatus.textContent = "";
+
+    const cls = getClassOptions().find((c) => c.id === studentClassSelect.value);
+    const subjectTitle = studentSubjectSelect.value;
+
+    const submissions = latestData.submissions.filter(
+      (s) => s.email === student.email && s.className === cls.name && s.subject === subjectTitle
+    );
+
+    await renderStudentDetail(student, cls, subjectTitle, submissions);
+  }
+
+  async function renderStudentDetail(student, cls, subjectTitle, submissions) {
+    studentDetail.classList.remove("hidden");
+
+    if (!submissions.length) {
+      studentDetail.innerHTML = `
+        <div class="student-detail-head">
+          <h3>${escapeHtml(student.email)} — Roll #${escapeHtml(String(student.rollNumber))}</h3>
+          <p>${escapeHtml(cls.label)} · ${escapeHtml(subjectTitle)}</p>
+        </div>
+        <p class="admin-empty-cell">No submissions yet for this subject.</p>`;
+      return;
+    }
+
+    studentDetail.innerHTML = `
+      <div class="student-detail-head">
+        <h3>${escapeHtml(student.email)} — Roll #${escapeHtml(String(student.rollNumber))}</h3>
+        <p>${escapeHtml(cls.label)} · ${escapeHtml(subjectTitle)} · ${submissions.length} submission${submissions.length === 1 ? "" : "s"}</p>
+      </div>
+      <div class="student-charts">
+        <div class="student-chart-card">
+          <div class="student-chart-label">MCQ accuracy</div>
+          <canvas id="chartAccuracy"></canvas>
+        </div>
+        <div class="student-chart-card">
+          <div class="student-chart-label">Score by topic</div>
+          <canvas id="chartTopics"></canvas>
+        </div>
+      </div>
+      <div class="student-submission-list" id="studentSubmissionList"></div>
+    `;
+
+    const answersResult = await Backend.adminGetAnswersForSubmissions(submissions.map((s) => s.id));
+    const answers = answersResult.status === "ok" ? answersResult.answers : [];
+
+    renderCharts(answers);
+    renderStudentSubmissionList(submissions);
+  }
+
+  function renderCharts(answers) {
+    studentCharts.forEach((c) => c.destroy());
+    studentCharts = [];
+    if (!window.Chart) return;
+
+    // Chart 1 — overall MCQ correct / incorrect / unanswered
+    const mcq = answers.filter((a) => a.question_type === "mcq");
+    const correct = mcq.filter((a) => a.correct === true).length;
+    const incorrect = mcq.filter((a) => a.correct === false).length;
+    const unanswered = mcq.filter((a) => a.correct === null).length;
+
+    const accCanvas = document.getElementById("chartAccuracy");
+    if (accCanvas && mcq.length) {
+      studentCharts.push(new Chart(accCanvas, {
+        type: "doughnut",
+        data: {
+          labels: [`Correct (${correct})`, `Incorrect (${incorrect})`, `Unanswered (${unanswered})`],
+          datasets: [{ data: [correct, incorrect, unanswered], backgroundColor: ["#2F5233", "#A6402F", "#C9CBC2"], borderWidth: 0 }],
+        },
+        options: { plugins: { legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 11 } } } } },
+      }));
+    } else if (accCanvas) {
+      accCanvas.replaceWith(document.createTextNode("No MCQ data yet."));
+    }
+
+    // Chart 2 — combined (MCQ + graded theory) score per topic
+    const topicMap = new Map();
+    answers.forEach((a) => {
+      const topic = a.topic_tag || "Untagged";
+      if (!topicMap.has(topic)) topicMap.set(topic, { score: 0, max: 0 });
+      const t = topicMap.get(topic);
+      if (a.question_type === "mcq") {
+        t.max += 1;
+        if (a.correct) t.score += 1;
+      } else if (a.llm_score != null && a.llm_max_score != null) {
+        t.score += Number(a.llm_score);
+        t.max += Number(a.llm_max_score);
+      }
+    });
+
+    const topicCanvas = document.getElementById("chartTopics");
+    const topicEntries = Array.from(topicMap.entries()).filter(([, t]) => t.max > 0);
+    if (topicCanvas && topicEntries.length) {
+      const palette = ["#2F5233", "#29577D", "#A6472F", "#7A5C9E", "#B8863B", "#3F7A6B", "#A6402F", "#565C57"];
+      studentCharts.push(new Chart(topicCanvas, {
+        type: "pie",
+        data: {
+          labels: topicEntries.map(([topic, t]) => `${topic} (${Math.round((t.score / t.max) * 100)}%)`),
+          datasets: [{ data: topicEntries.map(([, t]) => t.max), backgroundColor: topicEntries.map((_, i) => palette[i % palette.length]), borderWidth: 0 }],
+        },
+        options: { plugins: { legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 11 } } } } },
+      }));
+    } else if (topicCanvas) {
+      topicCanvas.replaceWith(document.createTextNode("No topic-tagged questions yet."));
+    }
+  }
+
+  function renderStudentSubmissionList(submissions) {
+    const host = document.getElementById("studentSubmissionList");
+    if (!host) return;
+    host.innerHTML = submissions
+      .slice()
+      .sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt))
+      .map((s) => {
+        const scoreText = s.totalMcq != null ? `${s.score}/${s.totalMcq}` : "—";
+        const theoryText = s.subjectiveStatus === "graded" ? "Theory graded" : s.subjectiveStatus === "pending" ? "Theory pending" : "";
+        return `
+          <a href="report.html?id=${encodeURIComponent(s.id)}" target="_blank" class="student-submission-row">
+            <span class="student-submission-test">${escapeHtml(s.test)}</span>
+            <span class="student-submission-meta">${escapeHtml(formatDate(s.submittedAt))} · MCQ ${escapeHtml(scoreText)}${theoryText ? " · " + escapeHtml(theoryText) : ""}</span>
+          </a>`;
+      })
+      .join("");
   }
 
   // ---------------------------------------------------------------------

@@ -160,6 +160,27 @@ create table public.payments (
 );
 
 -- =============================================================
+-- Grants — RLS policies (below) only ever *restrict* rows a role can
+-- see; the role first needs baseline table privileges to attempt the
+-- query at all. Supabase's Table Editor sets these automatically when
+-- you create a table there, but tables created via raw SQL (like this
+-- file) don't get them for free, so they're granted explicitly here.
+-- admin_emails is deliberately left out — see the RLS section below.
+-- =============================================================
+
+grant usage on schema public to anon, authenticated;
+
+grant select, insert, update, delete on
+  public.profiles,
+  public.access_grants,
+  public.submissions,
+  public.submission_answers,
+  public.progress
+to authenticated;
+
+grant select on public.payments to authenticated;
+
+-- =============================================================
 -- Row Level Security — lock every table down by default, then open
 -- specific holes: a student can read/write their own rows (matched by
 -- email in their JWT), an admin can read/write everything.
@@ -230,6 +251,32 @@ create policy "update own or admin" on public.progress
 -- service-role Edge Function, which bypasses RLS entirely)
 create policy "admin read" on public.payments
   for select using (public.is_admin());
+
+-- =============================================================
+-- Class-mean aggregate — used on the detailed report page (report.html)
+-- so a student can see "you scored X, class average is Y" without
+-- being able to read any other student's individual submission. This
+-- is safe to expose to any authenticated user because it only ever
+-- returns an aggregate (avg/count), never raw rows — SECURITY DEFINER
+-- lets it read across all submissions internally while RLS still
+-- blocks direct table access to other students' rows.
+-- =============================================================
+create function public.get_test_stats(p_test_id text)
+returns jsonb
+language sql
+security definer
+set search_path = public
+as $$
+  select jsonb_build_object(
+    'avgScore', avg(score),
+    'avgTotalMcq', avg(total_mcq),
+    'count', count(*)
+  )
+  from public.submissions
+  where test_id = p_test_id;
+$$;
+
+grant execute on function public.get_test_stats(text) to authenticated;
 
 -- =============================================================
 -- Done. Check: Table Editor should now show 7 tables, each with a

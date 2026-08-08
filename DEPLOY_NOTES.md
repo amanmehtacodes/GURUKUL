@@ -72,3 +72,63 @@ is now already done in code — only the manual dashboard steps remain.
 5. Submit a mixed test with a theory question, confirm it shows up
    pending in the admin Submissions tab, grade it, confirm the report
    shows on your progress page.
+
+---
+
+## Round 2 additions — admin overhaul, math, detailed reports
+
+New files: `report.html`, `js/report.js`, `css/report.css`, `js/math.js`.
+Changed: `js/tests.js` (correct-answer lines, reference answers, live
+math preview, topic tagging), `js/backend.js` (class-mean stats,
+submission detail, multi-submission answer fetch), `js/admin.js` /
+`admin.html` (new **Students** tab), `js/progress-page.js` (submissions
+now link to the full report), `supabase/schema.sql` (new
+`get_test_stats` aggregate function), `data/curriculum.js` (added
+`topic` and `referenceAnswer` fields, demoed on the Squares & Cubes
+mixed test as a working example).
+
+**One more SQL statement to run** — your schema.sql already ran once,
+so just add this new piece in the SQL Editor (safe to run standalone):
+
+```sql
+create function public.get_test_stats(p_test_id text)
+returns jsonb
+language sql
+security definer
+set search_path = public
+as $$
+  select jsonb_build_object(
+    'avgScore', avg(score),
+    'avgTotalMcq', avg(total_mcq),
+    'count', count(*)
+  )
+  from public.submissions
+  where test_id = p_test_id;
+$$;
+
+grant execute on function public.get_test_stats(text) to authenticated;
+```
+
+**What's new to try:**
+- **Math**: write `$x^2+1$` (inline) or `$$\frac{a}{b}$$` (block) in any
+  note, question prompt, or theory answer — renders live via KaTeX. Two
+  demo questions in the Squares & Cubes mixed test already use it.
+- **Topic tags**: add `topic: "Some Topic"` to any question in
+  `curriculum.js` (optional, backward compatible) — powers the topic
+  breakdowns everywhere below. Untagged questions show up as "Untagged."
+- **Reference answers**: add `referenceAnswer: "..."` to a `short`
+  question — shown to the student right under their answer once they
+  submit, separate from the whole-test answer key file.
+- **Correct-answer line**: every MCQ now shows an explicit "Correct
+  answer: …" line after submission, not just the color highlight.
+- **Report page**: every submission (student's own progress page, or
+  any submission row / student lookup in the admin console) now links
+  to `report.html?id=...` — a dark, topic-by-topic breakdown with class
+  average, question-by-question review, and correct answers, shared
+  between student and admin views (RLS decides what each can see).
+- **Admin → Students tab**: pick a class, then a subject, then search a
+  student by roll number or email — see two Chart.js charts (MCQ
+  accuracy, score-by-topic) and a list of every submission in that
+  subject, each linking to its full report.
+
+Commit and push as usual — GitHub Pages picks it up automatically.

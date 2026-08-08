@@ -42,6 +42,47 @@
   --radius: 3px;
 }
 
+/* Dark mode — approximates the Claude.ai web app's dark theme: warm
+   charcoal background, cream text, coral/orange accent. Toggled by
+   setting data-theme="dark" on <html> (see js/theme.js). Every other
+   rule in this file, admin.css, and report.css reads these same
+   variable names, so the whole site (including the report page) picks
+   this up automatically with no per-component dark-mode rules needed. */
+:root[data-theme="dark"] {
+  --paper: #262624;
+  --paper-raised: #30302e;
+  --ink: #F5F4EE;
+  --ink-soft: #B8B5A8;
+  --ink-faint: #7C7A6E;
+  --line: #3D3D3A;
+  --line-strong: #4E4E49;
+  --accent: #D97757;
+  --accent-soft: rgba(217, 119, 87, 0.16);
+  --amber: #E8A33D;
+  --amber-soft: rgba(232, 163, 61, 0.16);
+  --error: #E5484D;
+  --error-soft: rgba(229, 72, 77, 0.16);
+
+  --c1: #7FA88A;   --c1-soft: rgba(127, 168, 138, 0.16);
+  --c2: #7CA8CC;   --c2-soft: rgba(124, 168, 204, 0.16);
+  --c3: #D97757;   --c3-soft: rgba(217, 119, 87, 0.16);
+  --c4: #B49BDB;   --c4-soft: rgba(180, 155, 219, 0.16);
+  --c5: #E8A33D;   --c5-soft: rgba(232, 163, 61, 0.16);
+  --c6: #6FC2AD;   --c6-soft: rgba(111, 194, 173, 0.16);
+}
+
+/* The logo SVG is solid black paths — invert it to read against a dark
+   background instead of shipping a second asset. Same treatment for
+   the JEE/NEET track icons on the class picker, which are also plain
+   black artwork (the subject-specific JEE/NEET icons are multi-tone
+   illustrations, so they're left alone — inverting those would break
+   their shading). */
+:root[data-theme="dark"] .brand-mark,
+:root[data-theme="dark"] .exam-card-icon img,
+:root[data-theme="dark"] .subject-card-icon img {
+  filter: brightness(0) invert(1);
+}
+
 * { box-sizing: border-box; }
 
 html, body {
@@ -92,10 +133,29 @@ a { color: inherit; }
 }
 
 .brand-mark {
-  height: 34px;
+  height: 46px;
   width: auto;
   display: block;
 }
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--paper-raised);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+.theme-toggle-btn:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle-btn svg { width: 15px; height: 15px; }
+.theme-toggle-btn .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle-btn .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; }
 
 .header-right {
   display: flex;
@@ -707,6 +767,55 @@ a { color: inherit; }
 
 .mcq-option:has(input:disabled) { cursor: default; }
 
+.question-topic {
+  color: var(--accent);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.mcq-correct-line {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.mcq-correct-line strong { color: var(--ink); }
+
+.math-preview {
+  margin-top: 8px;
+  padding: 10px 14px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: var(--ink-soft);
+  min-height: 20px;
+  background: var(--paper);
+}
+.math-preview-empty {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-faint);
+}
+
+.reference-answer-block {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+}
+.reference-answer-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.reference-answer-text {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
 .test-footer {
   display: flex;
   align-items: center;
@@ -826,9 +935,14 @@ a { color: inherit; }
   margin: 0;
 }
 
+/* Flexbox rather than CSS Grid on purpose: with flex-wrap, each wrapped
+   row is centered independently, so 7 cards read as "4 centered, then
+   3 centered" rather than the last row being pinned to the left — grid
+   can't do that for a partially-filled final row. */
 .class-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 18px;
 }
 
@@ -836,6 +950,9 @@ a { color: inherit; }
   --card-accent: var(--c1);
   --card-accent-soft: var(--c1-soft);
   position: relative;
+  flex: 0 1 170px;
+  max-width: 190px;
+  min-width: 150px;
   aspect-ratio: 3 / 4;
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -948,7 +1065,6 @@ a { color: inherit; }
 .subject-picker .class-picker-intro { margin-bottom: 48px; }
 
 .subject-grid {
-  grid-template-columns: repeat(4, 1fr);
   max-width: 900px;
   margin: 0 auto;
 }
@@ -956,6 +1072,9 @@ a { color: inherit; }
 .subject-card {
   --card-accent: var(--ink);
   --card-accent-soft: var(--accent-soft);
+  flex: 0 1 190px;
+  max-width: 210px;
+  min-width: 180px;
   aspect-ratio: 4 / 4.4;
   gap: 16px;
 }
@@ -965,8 +1084,8 @@ a { color: inherit; }
 .subject-card.unready { opacity: 0.72; }
 
 .subject-card-icon {
-  width: 52px;
-  height: 52px;
+  width: 74px;
+  height: 74px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1195,15 +1314,24 @@ a { color: inherit; }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  width: 100%;
   padding: 12px 16px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--paper-raised);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.12s ease;
 }
+.progress-test-row:hover, .progress-test-row.expanded { border-color: var(--accent); }
 .progress-test-name {
   font-size: 14.5px;
   color: var(--ink);
   margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .progress-test-meta {
   font-family: var(--font-mono);
@@ -1224,44 +1352,33 @@ a { color: inherit; }
 .progress-test-score.warn { color: var(--amber); background: var(--amber-soft); }
 .progress-test-score.error { color: var(--error); background: var(--error-soft); }
 
-.progress-subjective {
-  margin: -2px 0 8px;
-  padding: 10px 16px;
-  border: 1px dashed var(--line-strong);
+.progress-theory-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.progress-theory-badge.pending { background: var(--amber-soft); color: var(--amber); }
+.progress-theory-badge.graded { background: var(--accent-soft); color: var(--accent); }
+
+.progress-report-panel {
+  margin: -2px 0 4px;
+  padding: 18px 16px;
+  border: 1px solid var(--line);
   border-top: none;
   border-radius: 0 0 var(--radius) var(--radius);
-  font-size: 13px;
+  background: var(--paper);
 }
-.progress-subjective.pending { color: var(--ink-faint); font-family: var(--font-mono); font-size: 12px; }
-.progress-subjective-head {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 6px;
-}
-.progress-topic-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 3px 0;
-  color: var(--ink-soft);
-  font-size: 12.5px;
-}
-.progress-topic-row.revise { color: var(--error); }
-.progress-revision-focus {
-  margin-top: 6px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--error);
-}
+.progress-report-panel.hidden { display: none; }
 
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 860px) {
   .sidebar-toggle { display: flex; }
-  .class-grid { grid-template-columns: repeat(3, 1fr); }
-  .subject-grid { grid-template-columns: repeat(2, 1fr); }
+  .class-card { flex-basis: 140px; max-width: 160px; }
+  .subject-card { flex-basis: 160px; max-width: 180px; }
   .class-picker { padding: 40px 20px 70px; }
   .class-picker-intro { margin-bottom: 40px; }
   .class-picker-intro h1 { font-size: 26px; }
@@ -1327,7 +1444,7 @@ a { color: inherit; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 @media (max-width: 480px) {
-  .class-grid { grid-template-columns: repeat(2, 1fr); }
-  .class-card { aspect-ratio: auto; padding: 22px 14px; }
+  .class-card { flex-basis: 42%; max-width: none; aspect-ratio: auto; padding: 22px 14px; }
+  .subject-card { flex-basis: 42%; max-width: none; }
   .class-card-numeral { font-size: 36px; }
 }

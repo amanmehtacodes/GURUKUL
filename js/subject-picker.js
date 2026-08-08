@@ -22,6 +22,7 @@ const SubjectPicker = (() => {
     physics: "assets/icons/subject-physics.svg",
     chemistry: "assets/icons/subject-chemistry.svg",
     biology: "assets/icons/subject-biology.svg",
+    science: "assets/icons/subject-science.svg",
     english: "assets/icons/subject-english.svg",
   };
 
@@ -84,7 +85,7 @@ const SubjectPicker = (() => {
       card.className = "class-card subject-card" + (!subject.ready ? " unready" : "");
       card.style.setProperty("--card-index", i);
       card.innerHTML = `
-        <span class="subject-card-icon${isSparse ? " icon-sparse" : ""}">${iconSrc ? `<img src="${iconSrc}" alt="" width="52" height="52">` : ""}</span>
+        <span class="subject-card-icon${isSparse ? " icon-sparse" : ""}">${iconSrc ? `<img src="${iconSrc}" alt="" width="74" height="74">` : ""}</span>
         <span class="class-card-name">${escapeHtml(subject.title)}</span>
         <span class="class-card-meta">${metaTextFor(subject)}</span>
       `;

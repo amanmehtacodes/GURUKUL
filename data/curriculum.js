@@ -64,14 +64,14 @@ const CLASSES = [
                     kind: "mcq",
                     answerKeyFile: "notes/class-8-maths/squares-and-cubes/answer-keys/mcq-answer-key.md",
                     questions: [
-                      { id: "q1", type: "mcq", prompt: "What is 12²?", options: ["124", "144", "142", "164"], answerIndex: 1 },
-                      { id: "q2", type: "mcq", prompt: "Which of these is a perfect cube?", options: ["128", "216", "150", "200"], answerIndex: 1 },
-                      { id: "q3", type: "mcq", prompt: "The square root of 289 is:", options: ["15", "16", "17", "18"], answerIndex: 2 },
-                      { id: "q4", type: "mcq", prompt: "A number ending in 2 can never be a perfect:", options: ["Cube", "Square", "Even number", "Multiple of 2"], answerIndex: 1 },
-                      { id: "q5", type: "mcq", prompt: "6³ equals:", options: ["36", "108", "216", "196"], answerIndex: 2 },
-                      { id: "q6", type: "mcq", prompt: "How many zeros does the square of 400 end with?", options: ["1", "2", "3", "4"], answerIndex: 3 },
-                      { id: "q7", type: "mcq", prompt: "Which method finds a square root by pairing prime factors?", options: ["Long division", "Prime factorisation", "Repeated subtraction", "Estimation"], answerIndex: 1 },
-                      { id: "q8", type: "mcq", prompt: "512 is a perfect cube because 512 =", options: ["7³", "8³", "9³", "6³"], answerIndex: 1 }
+                      { id: "q1", type: "mcq", topic: "Perfect Squares", prompt: "What is 12²?", options: ["124", "144", "142", "164"], answerIndex: 1 },
+                      { id: "q2", type: "mcq", topic: "Perfect Cubes", prompt: "Which of these is a perfect cube?", options: ["128", "216", "150", "200"], answerIndex: 1 },
+                      { id: "q3", type: "mcq", topic: "Square Roots", prompt: "The square root of 289 is:", options: ["15", "16", "17", "18"], answerIndex: 2 },
+                      { id: "q4", type: "mcq", topic: "Perfect Squares", prompt: "A number ending in 2 can never be a perfect:", options: ["Cube", "Square", "Even number", "Multiple of 2"], answerIndex: 1 },
+                      { id: "q5", type: "mcq", topic: "Perfect Cubes", prompt: "6³ equals:", options: ["36", "108", "216", "196"], answerIndex: 2 },
+                      { id: "q6", type: "mcq", topic: "Perfect Squares", prompt: "How many zeros does the square of 400 end with?", options: ["1", "2", "3", "4"], answerIndex: 3 },
+                      { id: "q7", type: "mcq", topic: "Square Roots", prompt: "Which method finds a square root by pairing prime factors?", options: ["Long division", "Prime factorisation", "Repeated subtraction", "Estimation"], answerIndex: 1 },
+                      { id: "q8", type: "mcq", topic: "Perfect Cubes", prompt: "512 is a perfect cube because 512 =", options: ["7³", "8³", "9³", "6³"], answerIndex: 1 }
                     ]
                   },
                   {
@@ -80,12 +80,24 @@ const CLASSES = [
                     kind: "mixed",
                     answerKeyFile: "notes/class-8-maths/squares-and-cubes/answer-keys/mixed-answer-key.md",
                     questions: [
-                      { id: "q1", type: "mcq", prompt: "The number of digits in the square of a 3-digit number is always:", options: ["Exactly 6", "5 or 6", "Exactly 5", "4 or 5"], answerIndex: 1 },
-                      { id: "q2", type: "mcq", prompt: "Which of these numbers is both a perfect square and a perfect cube?", options: ["36", "64", "100", "125"], answerIndex: 1 },
-                      { id: "q3", type: "mcq", prompt: "The cube root of a negative number is:", options: ["Always positive", "Always negative", "Undefined", "Zero"], answerIndex: 1 },
-                      { id: "t1", type: "short", prompt: "Explain, using prime factorisation, why 180 is not a perfect square. What is the smallest number you'd need to multiply it by to make it one?" },
-                      { id: "t2", type: "short", prompt: "Describe the pattern in the units digits of square numbers (1², 2², 3², ... 10²). Which digits never appear as the units digit of a perfect square?" },
-                      { id: "t3", type: "short", prompt: "1729 is called the Hardy-Ramanujan number. Explain what makes it mathematically special, using the two sums of cubes that define it." }
+                      { id: "q1", type: "mcq", topic: "Perfect Squares", prompt: "The number of digits in the square of a 3-digit number is always:", options: ["Exactly 6", "5 or 6", "Exactly 5", "4 or 5"], answerIndex: 1 },
+                      { id: "q2", type: "mcq", topic: "Perfect Squares & Cubes", prompt: "Which of these numbers is both a perfect square and a perfect cube?", options: ["36", "64", "100", "125"], answerIndex: 1 },
+                      { id: "q3", type: "mcq", topic: "Cube Roots", prompt: "The cube root of a negative number is:", options: ["Always positive", "Always negative", "Undefined", "Zero"], answerIndex: 1 },
+                      {
+                        id: "t1", type: "short", topic: "Prime Factorisation",
+                        prompt: "Explain, using prime factorisation, why 180 is not a perfect square. What is the smallest number you'd need to multiply it by to make it one?",
+                        referenceAnswer: "$180 = 2^2 \\times 3^2 \\times 5$. Every prime factor of a perfect square must appear an even number of times — here $5$ appears only once (an odd power), so $180$ is not a perfect square. Multiplying by $5$ gives $2^2 \\times 3^2 \\times 5^2 = 900 = 30^2$, which is a perfect square."
+                      },
+                      {
+                        id: "t2", type: "short", topic: "Perfect Squares",
+                        prompt: "Describe the pattern in the units digits of square numbers (1², 2², 3², ... 10²). Which digits never appear as the units digit of a perfect square?",
+                        referenceAnswer: "The units digits of $1^2$ through $10^2$ are $1, 4, 9, 6, 5, 6, 9, 4, 1, 0$ — they only ever land on $\\{0, 1, 4, 5, 6, 9\\}$. The digits $2, 3, 7, 8$ never appear as the units digit of a perfect square."
+                      },
+                      {
+                        id: "t3", type: "short", topic: "Perfect Cubes",
+                        prompt: "1729 is called the Hardy-Ramanujan number. Explain what makes it mathematically special, using the two sums of cubes that define it.",
+                        referenceAnswer: "$1729 = 1^3 + 12^3 = 9^3 + 10^3$ — it's the smallest number expressible as the sum of two positive cubes in two different ways, which is what makes it mathematically special."
+                      }
                     ]
                   }
                 ]
@@ -618,24 +630,6 @@ const CLASSES = [
               ]
             },
             {
-              id: "physics",
-              title: "Physics",
-              icon: "physics",
-              ready: false
-            },
-            {
-              id: "chemistry",
-              title: "Chemistry",
-              icon: "chemistry",
-              ready: false
-            },
-            {
-              id: "biology",
-              title: "Biology",
-              icon: "biology",
-              ready: false
-            },
-            {
               id: "english",
               title: "English",
               icon: "english",
@@ -1146,24 +1140,6 @@ const CLASSES = [
             ]
           }
               ]
-            },
-            {
-              id: "physics",
-              title: "Physics",
-              icon: "physics",
-              ready: false
-            },
-            {
-              id: "chemistry",
-              title: "Chemistry",
-              icon: "chemistry",
-              ready: false
-            },
-            {
-              id: "biology",
-              title: "Biology",
-              icon: "biology",
-              ready: false
             },
             {
               id: "english",
@@ -1693,24 +1669,6 @@ const CLASSES = [
             ]
           }
               ]
-            },
-            {
-              id: "physics",
-              title: "Physics",
-              icon: "physics",
-              ready: false
-            },
-            {
-              id: "chemistry",
-              title: "Chemistry",
-              icon: "chemistry",
-              ready: false
-            },
-            {
-              id: "biology",
-              title: "Biology",
-              icon: "biology",
-              ready: false
             },
             {
               id: "english",

@@ -57,7 +57,7 @@ const Backend = (() => {
       sb.from("progress").select("item_id, item_type, status").eq("email", email),
       sb
         .from("submissions")
-        .select("id, submitted_at, class_name, subject, section, subsection, test, test_kind, score, total_mcq, subjective_status, overall_report")
+        .select("id, test_id, submitted_at, class_name, subject, section, subsection, test, test_kind, score, total_mcq, subjective_status, overall_report")
         .eq("email", email)
         .order("submitted_at", { ascending: true }),
     ]);
@@ -69,6 +69,7 @@ const Backend = (() => {
       progress: (progress || []).map((p) => ({ itemId: p.item_id, itemType: p.item_type, status: p.status })),
       submissions: (submissions || []).map((s) => ({
         id: s.id,
+        testId: s.test_id,
         submittedAt: s.submitted_at,
         className: s.class_name,
         subject: s.subject,
@@ -127,12 +128,48 @@ const Backend = (() => {
         question_prompt: a.prompt,
         student_answer: a.answer,
         correct: a.correct,
+        topic_tag: a.topic || null,
+        reference_answer: a.referenceAnswer || null,
       }));
       const { error: aErr } = await sb.from("submission_answers").insert(rows);
       if (aErr) console.warn("Failed to save answer detail:", aErr.message);
     }
 
     return { status: "ok", submissionId: sub.id };
+  }
+
+  /**
+   * Full detail for one submission — the submission row plus every
+   * answer, used by the shared report page (report.html). Works for
+   * both a student viewing their own submission and an admin viewing
+   * any student's, since RLS decides which rows come back.
+   */
+  async function getSubmissionDetail(submissionId) {
+    if (!isConfigured()) return { status: "unavailable" };
+    const sb = client();
+
+    const [{ data: submission, error: sErr }, { data: answers, error: aErr }] = await Promise.all([
+      sb.from("submissions").select("*").eq("id", submissionId).maybeSingle(),
+      sb.from("submission_answers").select("*").eq("submission_id", submissionId).order("created_at"),
+    ]);
+
+    if (sErr || !submission) return { status: "error", message: (sErr && sErr.message) || "Submission not found." };
+    if (aErr) return { status: "error", message: aErr.message };
+
+    return { status: "ok", submission, answers: answers || [] };
+  }
+
+  /**
+   * Class-wide average score for a test (aggregate only — see
+   * get_test_stats in supabase/schema.sql). Safe to call for any
+   * logged-in user, student or admin.
+   */
+  async function getTestStats(testId) {
+    if (!isConfigured()) return { status: "unavailable" };
+    const sb = client();
+    const { data, error } = await sb.rpc("get_test_stats", { p_test_id: testId });
+    if (error) return { status: "error", message: error.message };
+    return { status: "ok", stats: data || {} };
   }
 
   async function markProgress(payload) {
@@ -242,6 +279,18 @@ const Backend = (() => {
     return { status: "ok", answers: data || [] };
   }
 
+  /** All answers across several submissions in one query — used by the admin Students tab to build topic charts for one student's whole subject history. */
+  async function adminGetAnswersForSubmissions(submissionIds) {
+    if (!submissionIds || !submissionIds.length) return { status: "ok", answers: [] };
+    const sb = client();
+    const { data, error } = await sb
+      .from("submission_answers")
+      .select("*")
+      .in("submission_id", submissionIds);
+    if (error) return { status: "error", message: error.message };
+    return { status: "ok", answers: data || [] };
+  }
+
   /** Saves the score/topic/feedback you entered after grading one answer with your own local LLM. */
   async function adminSaveGrade({ answerId, llmScore, llmMaxScore, topicTag, feedbackText }) {
     const sb = client();
@@ -275,10 +324,13 @@ const Backend = (() => {
     getProgress,
     submitTest,
     markProgress,
+    getSubmissionDetail,
+    getTestStats,
     adminList,
     adminGrant,
     adminRevoke,
     adminGetSubmissionAnswers,
+    adminGetAnswersForSubmissions,
     adminSaveGrade,
     adminFinalizeGrading,
   };

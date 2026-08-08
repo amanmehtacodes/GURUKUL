@@ -292,8 +292,75 @@
   color: var(--ink-soft);
 }
 
+/* Students tab */
+.student-lookup-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.student-lookup-controls select,
+.student-lookup-controls input {
+  padding: 8px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+.student-lookup-controls select:disabled,
+.student-lookup-controls input:disabled { opacity: 0.5; }
+.student-lookup-controls select#studentClassSelect,
+.student-lookup-controls select#studentSubjectSelect { min-width: 200px; }
+.student-lookup-controls input#studentSearchInput { flex: 1; min-width: 180px; }
+
+.student-detail { margin-top: 28px; }
+.student-detail-head h3 { font-family: var(--font-mono); font-size: 15px; margin: 0 0 4px; }
+.student-detail-head p { color: var(--ink-soft); font-size: 13px; margin: 0 0 20px; }
+
+.student-charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.student-chart-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: var(--paper-raised);
+}
+.student-chart-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+}
+.student-chart-card canvas { max-height: 240px; }
+
+.student-submission-list { display: flex; flex-direction: column; gap: 8px; }
+.student-submission-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  background: var(--paper-raised);
+}
+.student-submission-row:hover { border-color: var(--accent); background: var(--accent-soft); }
+.student-submission-test { font-size: 14px; color: var(--ink); }
+.student-submission-meta { font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); }
+
 @media (max-width: 700px) {
   .admin-main { padding: 32px 16px 60px; }
   .admin-grant-form { flex-direction: column; align-items: stretch; }
   .admin-grant-form select#grantValue { min-width: 0; }
+  .student-lookup-controls { flex-direction: column; align-items: stretch; }
+  .student-lookup-controls select,
+  .student-lookup-controls input { min-width: 0; }
 }

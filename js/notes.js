@@ -40,6 +40,7 @@ const Notes = (() => {
       if (!res.ok) throw new Error(`Could not load ${note.file} (${res.status})`);
       const md = await res.text();
       bodyEl.innerHTML = marked.parse(md);
+      if (window.MathTools) MathTools.renderMathIn(bodyEl);
     } catch (err) {
       bodyEl.innerHTML = `<p style="color: var(--error);">Failed to load note: ${escapeHtml(err.message)}</p>`;
     }
