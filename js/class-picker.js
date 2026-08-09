@@ -56,17 +56,22 @@ const ClassPicker = (() => {
     const grid = wrap.querySelector("#classGrid");
     CLASSES.forEach((entry, i) => {
       const isExam = entry.type === "exam";
+      // JEE/NEET tracks are disabled for now regardless of what content
+      // happens to be marked ready underneath — Physics/Chemistry/Biology
+      // aren't built yet, so the tracks aren't usable end to end.
+      const isDisabled = isExam;
       const readyCount = readyCountFor(entry);
       const card = document.createElement("button");
-      card.className = "class-card" + (isExam ? " exam-card" : "");
+      card.className = "class-card" + (isExam ? " exam-card" : "") + (isDisabled ? " disabled" : "");
       card.style.setProperty("--card-index", i);
+      if (isDisabled) card.disabled = true;
       card.innerHTML = `
         ${isExam ? `<span class="exam-card-icon"><img src="${examIconSrcFor(entry)}" alt="" width="26" height="26"></span>` : ""}
         <span class="class-card-numeral${isExam ? " exam-numeral" : ""}">${escapeHtml(entry.label)}</span>
         <span class="class-card-name">${escapeHtml(entry.name)}</span>
-        <span class="class-card-meta">${metaTextFor(readyCount, isExam)}</span>
+        <span class="class-card-meta">${isDisabled ? "Coming soon" : metaTextFor(readyCount, isExam)}</span>
       `;
-      card.addEventListener("click", () => onPick && onPick(entry));
+      if (!isDisabled) card.addEventListener("click", () => onPick && onPick(entry));
       grid.appendChild(card);
     });
   }

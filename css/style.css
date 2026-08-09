@@ -991,6 +991,24 @@ a { color: inherit; }
   box-shadow: 0 10px 24px -12px rgba(26, 29, 27, 0.18);
 }
 
+.class-card.disabled,
+.class-card:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  filter: grayscale(0.4);
+}
+.class-card.disabled:hover,
+.class-card:disabled:hover {
+  transform: none;
+  border-color: var(--line);
+  box-shadow: none;
+}
+.class-card.disabled .class-card-meta,
+.class-card:disabled .class-card-meta {
+  color: var(--ink-faint);
+  background: var(--paper-raised);
+}
+
 .class-card-numeral {
   font-family: var(--font-mono);
   font-size: 44px;
