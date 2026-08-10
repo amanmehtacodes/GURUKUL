@@ -22,12 +22,13 @@
   const trackRootEl = document.getElementById("trackRoot");
   const progressRootEl = document.getElementById("progressRoot");
 
-  let view = "picker"; // "picker" | "years" | "subjects" | "tracks" | "class" | "progress"
+  let view = "picker"; // "picker" | "years" | "subjects" | "tracks" | "books" | "class" | "progress"
   let previousView = null; // where to return to when leaving the progress page
   let activeTrack = null; // the JEE/NEET entry, if on that path
   let activeClass = null; // the class/year object (has .subjects)
   let activeSubject = null;
   let activeSubjectTrack = null; // the Language/Literature track within a subject, if any
+  let activeBook = null; // a book track nested inside activeSubjectTrack (e.g. Hornbill inside Literature), if any
   let current = null; // { type, section, sub, item } within a subject
 
   function renderAuthArea() {
@@ -72,6 +73,25 @@
     }
   }
 
+  // Tints the fixed site header with the active subject's color — same
+  // vars Sidebar uses for its own panel, applied directly to .site-header
+  // since it's a sibling of the sidebar, not an ancestor (so CSS
+  // inheritance alone can't carry the color across). Cleared (null) on
+  // every picker/back screen where no single subject is "open".
+  function setHeaderAccent(subjectKey) {
+    const headerEl = document.querySelector(".site-header");
+    if (!headerEl) return;
+    headerEl.classList.remove("subject-tinted");
+    headerEl.style.removeProperty("--header-accent");
+    headerEl.style.removeProperty("--header-accent-panel");
+    if (subjectKey && window.SubjectColors) {
+      const vars = SubjectColors.varsFor(subjectKey);
+      headerEl.style.setProperty("--header-accent", vars.bold);
+      headerEl.style.setProperty("--header-accent-panel", vars.panel);
+      headerEl.classList.add("subject-tinted");
+    }
+  }
+
   function renderEmptyState() {
     mainEl.innerHTML = `
       <div class="empty-state">
@@ -97,13 +117,16 @@
     hideAllViews();
     progressRootEl.classList.remove("hidden");
     document.querySelector(".site-header").classList.add("header-picker");
+    setHeaderAccent(null);
     ProgressPage.render(progressRootEl, { onBack: backFromProgress });
     window.scrollTo(0, 0);
   }
 
   function backFromProgress() {
     if (previousView === "class" && activeSubject) {
-      enterSidebar(activeSubjectTrack);
+      enterSidebar();
+    } else if (previousView === "books" && activeSubjectTrack) {
+      showBooks(activeSubjectTrack);
     } else if (previousView === "tracks" && activeSubject) {
       showTracks(activeSubject);
     } else if (previousView === "subjects" && activeClass) {
@@ -121,10 +144,12 @@
     activeClass = null;
     activeSubject = null;
     activeSubjectTrack = null;
+    activeBook = null;
     current = null;
     hideAllViews();
     pickerRootEl.classList.remove("hidden");
     document.querySelector(".site-header").classList.add("header-picker");
+    setHeaderAccent(null);
     ClassPicker.render(pickerRootEl);
     window.scrollTo(0, 0);
   }
@@ -143,10 +168,12 @@
     activeClass = null;
     activeSubject = null;
     activeSubjectTrack = null;
+    activeBook = null;
     current = null;
     hideAllViews();
     yearRootEl.classList.remove("hidden");
     document.querySelector(".site-header").classList.add("header-picker");
+    setHeaderAccent(null);
     YearPicker.render(yearRootEl, { track });
     window.scrollTo(0, 0);
   }
@@ -156,41 +183,89 @@
     activeClass = cls;
     activeSubject = null;
     activeSubjectTrack = null;
+    activeBook = null;
     current = null;
     hideAllViews();
     subjectRootEl.classList.remove("hidden");
     document.querySelector(".site-header").classList.add("header-picker");
+    setHeaderAccent(null);
     SubjectPicker.render(subjectRootEl, { cls, track: activeTrack });
     window.scrollTo(0, 0);
   }
 
   function handleSubjectPick(subject) {
     activeSubject = subject;
+    activeSubjectTrack = null;
+    activeBook = null;
     if (subject.tracks && subject.tracks.length) {
       showTracks(subject);
     } else {
-      enterSidebar(null);
+      enterSidebar();
     }
   }
 
   function showTracks(subject) {
     view = "tracks";
     activeSubjectTrack = null;
+    activeBook = null;
     current = null;
     hideAllViews();
     trackRootEl.classList.remove("hidden");
     document.querySelector(".site-header").classList.add("header-picker");
+    setHeaderAccent(null);
+    TrackPicker.setOnPick(handleTopTrackPick);
+    TrackPicker.setOnChangeSubject(backToSubjects);
     TrackPicker.render(trackRootEl, { cls: activeClass, subject });
     window.scrollTo(0, 0);
   }
 
-  function enterSidebar(subjectTrack) {
+  // A picked track can itself split further into books (e.g. Literature ->
+  // Hornbill / Snapshots / Woven Words) — in that case, show a second
+  // icon-card picker scoped to those books instead of entering the sidebar.
+  function handleTopTrackPick(track) {
+    activeSubjectTrack = track;
+    activeBook = null;
+    if (track.tracks && track.tracks.length) {
+      showBooks(track);
+    } else {
+      enterSidebar();
+    }
+  }
+
+  function showBooks(track) {
+    view = "books";
+    activeBook = null;
+    current = null;
+    hideAllViews();
+    trackRootEl.classList.remove("hidden");
+    document.querySelector(".site-header").classList.add("header-picker");
+    setHeaderAccent(null);
+    TrackPicker.setOnPick(handleBookPick);
+    TrackPicker.setOnChangeSubject(() => showTracks(activeSubject));
+    // TrackPicker just needs something shaped like { title, tracks }, so
+    // the parent track (Literature) doubles as the "subject" here.
+    TrackPicker.render(trackRootEl, {
+      cls: activeClass,
+      subject: track,
+      backLabel: `${activeSubject.title} tracks`,
+      heading: "Choose a book",
+      subheading: "Pick a book to see its chapters.",
+    });
+    window.scrollTo(0, 0);
+  }
+
+  function handleBookPick(book) {
+    activeBook = book;
+    enterSidebar();
+  }
+
+  function enterSidebar() {
     view = "class";
-    activeSubjectTrack = subjectTrack;
     current = null;
     hideAllViews();
     appShellEl.classList.remove("hidden");
     document.querySelector(".site-header").classList.remove("header-picker");
+    setHeaderAccent(activeSubject && (activeSubject.icon || activeSubject.id));
     // Small bridge so Tests.js can attach class/subject names to a
     // submission payload without threading them through every call.
     window.__gurukulActiveClassName = activeClass ? activeClass.name : "";
@@ -206,7 +281,9 @@
   }
 
   function backToTracksOrSubjects() {
-    if (activeSubject && activeSubject.tracks && activeSubject.tracks.length) {
+    if (activeBook && activeSubjectTrack) {
+      showBooks(activeSubjectTrack);
+    } else if (activeSubject && activeSubject.tracks && activeSubject.tracks.length) {
       showTracks(activeSubject);
     } else {
       backToSubjects();
@@ -219,19 +296,19 @@
   }
 
   function renderSidebar() {
-    const sectionsSource = activeSubjectTrack || activeSubject;
+    const sectionsSource = activeBook || activeSubjectTrack || activeSubject;
     Sidebar.render(sidebarEl, {
       loggedIn: Auth.isLoggedIn(),
       cls: activeClass,
       subject: activeSubject,
-      subjectTrack: activeSubjectTrack,
+      subjectTrack: activeBook || activeSubjectTrack,
       sectionsSource,
     });
     if (window.Progress) Sidebar.refreshProgressMarks(Progress.doneItemIds());
   }
 
   function renderMain() {
-    const sectionsSource = activeSubjectTrack || activeSubject;
+    const sectionsSource = activeBook || activeSubjectTrack || activeSubject;
 
     if (!sectionsSource || !sectionsSource.ready || !sectionsSource.sections) {
       mainEl.style.removeProperty("--section-accent");
@@ -310,8 +387,10 @@
     YearPicker.setOnChangeTrack(showPicker);
     SubjectPicker.setOnPick(handleSubjectPick);
     SubjectPicker.setOnChangeClass(backFromSubjects);
-    TrackPicker.setOnPick(enterSidebar);
-    TrackPicker.setOnChangeSubject(backToSubjects);
+    // TrackPicker's onPick/onChangeSubject are reassigned dynamically in
+    // showTracks()/showBooks() since the same picker component is reused
+    // for both the top-level (Language/Literature) and nested (books)
+    // screens, each needing different handlers.
     Sidebar.setOnSelect(handleSelect);
     Sidebar.setOnChangeSubject(backToTracksOrSubjects);
 

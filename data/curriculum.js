@@ -15,8 +15,17 @@
  *                      Sheets integration is disabled for now).
  *
  * SUBJECT TRACKS: a subject can have `sections` directly (most subjects)
- * OR `tracks` (currently just English: Language vs Literature). A subject
- * with `tracks` shows a track-picker screen before the sidebar tree.
+ * OR `tracks` (currently just English). A subject with `tracks` shows a
+ * track-picker screen before the sidebar tree. The shape of English's
+ * tracks differs by class: classes 8-10 split into Language vs Literature
+ * (each itself book-based); classes 11-12 skip that split and go straight
+ * to one track per book (e.g. Hornbill / Snapshots / Woven Words for XI),
+ * since those grades don't have a separate language/grammar textbook.
+ *
+ * Physics, Chemistry, and Biology for a given class are populated from
+ * that subject's NCERT textbook(s) — where a subject ships as two parts
+ * (e.g. Chemistry Part I/II), both parts' chapters are merged into one
+ * flat, continuously-numbered `sections` list rather than split further.
  *
  * Two kinds of top-level entries in CLASSES: regular classes (VIII-XII)
  * with `subjects` directly, and exam tracks (JEE/NEET) with `type: "exam"`
@@ -634,43 +643,20 @@ const CLASSES = [
               title: "English",
               icon: "english",
               ready: true,
-              tracks: [
+tracks: [
           {
             id: "language",
             title: "Language",
-            icon: "language",
-            ready: true,
-            sections: [
-              {
-                id: "class-8-lang-grammar-usage",
-                title: "01 \u00b7 Grammar & Usage",
-                subsections: [
-                  {
-                    id: "class-8-lang-grammar-usage-core",
-                    title: "Grammar & Usage",
-                    notes: [ { id: "class-8-lang-grammar-usage-notes", title: "Grammar & Usage", file: "notes/class-8/language/grammar-usage/notes.md" } ],
-                    tests: []
-                  }
-                ]
-              },
-              {
-                id: "class-8-lang-writing-skills",
-                title: "02 \u00b7 Writing Skills",
-                subsections: [
-                  {
-                    id: "class-8-lang-writing-skills-core",
-                    title: "Writing Skills",
-                    notes: [ { id: "class-8-lang-writing-skills-notes", title: "Writing Skills", file: "notes/class-8/language/writing-skills/notes.md" } ],
-                    tests: []
-                  }
-                ]
-              }
-            ]
+            ready: false
           },
           {
             id: "literature",
             title: "Literature",
-            icon: "literature",
+            ready: true,
+            tracks: [
+          {
+            id: "honeydew",
+            title: "Honeydew",
             ready: true,
             sections: [
               {
@@ -696,10 +682,17 @@ const CLASSES = [
                     tests: []
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            id: "it-so-happened",
+            title: "It So Happened (Supplementary Reader)",
+            ready: true,
+            sections: [
               {
                 id: "class-8-lit-it-so-happened-supplementary-reader",
-                title: "03 \u00b7 It So Happened (Supplementary Reader)",
+                title: "01 \u00b7 It So Happened (Supplementary Reader)",
                 subsections: [
                   {
                     id: "class-8-lit-it-so-happened-supplementary-reader-core",
@@ -709,6 +702,8 @@ const CLASSES = [
                   }
                 ]
               }
+            ]
+          }
             ]
           }
               ]
@@ -1146,43 +1141,20 @@ const CLASSES = [
               title: "English",
               icon: "english",
               ready: true,
-              tracks: [
+tracks: [
           {
             id: "language",
             title: "Language",
-            icon: "language",
-            ready: true,
-            sections: [
-              {
-                id: "class-9-lang-grammar-usage",
-                title: "01 \u00b7 Grammar & Usage",
-                subsections: [
-                  {
-                    id: "class-9-lang-grammar-usage-core",
-                    title: "Grammar & Usage",
-                    notes: [ { id: "class-9-lang-grammar-usage-notes", title: "Grammar & Usage", file: "notes/class-9/language/grammar-usage/notes.md" } ],
-                    tests: []
-                  }
-                ]
-              },
-              {
-                id: "class-9-lang-writing-skills",
-                title: "02 \u00b7 Writing Skills",
-                subsections: [
-                  {
-                    id: "class-9-lang-writing-skills-core",
-                    title: "Writing Skills",
-                    notes: [ { id: "class-9-lang-writing-skills-notes", title: "Writing Skills", file: "notes/class-9/language/writing-skills/notes.md" } ],
-                    tests: []
-                  }
-                ]
-              }
-            ]
+            ready: false
           },
           {
             id: "literature",
             title: "Literature",
-            icon: "literature",
+            ready: true,
+            tracks: [
+          {
+            id: "beehive",
+            title: "Beehive",
             ready: true,
             sections: [
               {
@@ -1208,10 +1180,17 @@ const CLASSES = [
                     tests: []
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            id: "moments",
+            title: "Moments (Supplementary Reader)",
+            ready: true,
+            sections: [
               {
                 id: "class-9-lit-moments-supplementary-reader",
-                title: "03 \u00b7 Moments (Supplementary Reader)",
+                title: "01 \u00b7 Moments (Supplementary Reader)",
                 subsections: [
                   {
                     id: "class-9-lit-moments-supplementary-reader-core",
@@ -1221,6 +1200,8 @@ const CLASSES = [
                   }
                 ]
               }
+            ]
+          }
             ]
           }
               ]
@@ -1675,43 +1656,20 @@ const CLASSES = [
               title: "English",
               icon: "english",
               ready: true,
-              tracks: [
+tracks: [
           {
             id: "language",
             title: "Language",
-            icon: "language",
-            ready: true,
-            sections: [
-              {
-                id: "class-10-lang-grammar-usage",
-                title: "01 \u00b7 Grammar & Usage",
-                subsections: [
-                  {
-                    id: "class-10-lang-grammar-usage-core",
-                    title: "Grammar & Usage",
-                    notes: [ { id: "class-10-lang-grammar-usage-notes", title: "Grammar & Usage", file: "notes/class-10/language/grammar-usage/notes.md" } ],
-                    tests: []
-                  }
-                ]
-              },
-              {
-                id: "class-10-lang-writing-skills",
-                title: "02 \u00b7 Writing Skills",
-                subsections: [
-                  {
-                    id: "class-10-lang-writing-skills-core",
-                    title: "Writing Skills",
-                    notes: [ { id: "class-10-lang-writing-skills-notes", title: "Writing Skills", file: "notes/class-10/language/writing-skills/notes.md" } ],
-                    tests: []
-                  }
-                ]
-              }
-            ]
+            ready: false
           },
           {
             id: "literature",
             title: "Literature",
-            icon: "literature",
+            ready: true,
+            tracks: [
+          {
+            id: "first-flight",
+            title: "First Flight",
             ready: true,
             sections: [
               {
@@ -1737,10 +1695,17 @@ const CLASSES = [
                     tests: []
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            id: "footprints-without-feet",
+            title: "Footprints Without Feet (Supplementary Reader)",
+            ready: true,
+            sections: [
               {
                 id: "class-10-lit-footprints-without-feet-supplementary-reader",
-                title: "03 \u00b7 Footprints Without Feet (Supplementary Reader)",
+                title: "01 \u00b7 Footprints Without Feet (Supplementary Reader)",
                 subsections: [
                   {
                     id: "class-10-lit-footprints-without-feet-supplementary-reader-core",
@@ -1750,6 +1715,8 @@ const CLASSES = [
                   }
                 ]
               }
+            ]
+          }
             ]
           }
               ]
@@ -2033,23 +2000,779 @@ const CLASSES = [
           }
               ]
             },
-            {
+                        {
               id: "physics",
               title: "Physics",
               icon: "physics",
-              ready: false
+              ready: true,
+              sections: [
+                {
+                  id: "c11phy-ch1-units-and-measurements",
+                  title: "01 · Units and Measurements",
+                  subsections: [
+                    {
+                      id: "c11phy-ch1-units-and-measurements-s1",
+                      title: "Units and Measurements",
+                      notes: [
+                        { id: "c11phy-ch1-units-and-measurements-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/units-and-measurements/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch2-motion-in-a-straight-line",
+                  title: "02 · Motion in a Straight Line",
+                  subsections: [
+                    {
+                      id: "c11phy-ch2-motion-in-a-straight-line-s1",
+                      title: "Motion in a Straight Line",
+                      notes: [
+                        { id: "c11phy-ch2-motion-in-a-straight-line-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/motion-in-a-straight-line/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch3-motion-in-a-plane",
+                  title: "03 · Motion in a Plane",
+                  subsections: [
+                    {
+                      id: "c11phy-ch3-motion-in-a-plane-s1",
+                      title: "Motion in a Plane",
+                      notes: [
+                        { id: "c11phy-ch3-motion-in-a-plane-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/motion-in-a-plane/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch4-laws-of-motion",
+                  title: "04 · Laws of Motion",
+                  subsections: [
+                    {
+                      id: "c11phy-ch4-laws-of-motion-s1",
+                      title: "Laws of Motion",
+                      notes: [
+                        { id: "c11phy-ch4-laws-of-motion-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/laws-of-motion/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch5-work-energy-and-power",
+                  title: "05 · Work, Energy and Power",
+                  subsections: [
+                    {
+                      id: "c11phy-ch5-work-energy-and-power-s1",
+                      title: "Work, Energy and Power",
+                      notes: [
+                        { id: "c11phy-ch5-work-energy-and-power-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/work-energy-and-power/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch6-system-of-particles-and-rotational-motion",
+                  title: "06 · System of Particles and Rotational Motion",
+                  subsections: [
+                    {
+                      id: "c11phy-ch6-system-of-particles-and-rotational-motion-s1",
+                      title: "System of Particles and Rotational Motion",
+                      notes: [
+                        { id: "c11phy-ch6-system-of-particles-and-rotational-motion-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/system-of-particles-and-rotational-motion/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch7-gravitation",
+                  title: "07 · Gravitation",
+                  subsections: [
+                    {
+                      id: "c11phy-ch7-gravitation-s1",
+                      title: "Gravitation",
+                      notes: [
+                        { id: "c11phy-ch7-gravitation-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/gravitation/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch8-mechanical-properties-of-solids",
+                  title: "08 · Mechanical Properties of Solids",
+                  subsections: [
+                    {
+                      id: "c11phy-ch8-mechanical-properties-of-solids-s1",
+                      title: "Mechanical Properties of Solids",
+                      notes: [
+                        { id: "c11phy-ch8-mechanical-properties-of-solids-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/mechanical-properties-of-solids/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch9-mechanical-properties-of-fluids",
+                  title: "09 · Mechanical Properties of Fluids",
+                  subsections: [
+                    {
+                      id: "c11phy-ch9-mechanical-properties-of-fluids-s1",
+                      title: "Mechanical Properties of Fluids",
+                      notes: [
+                        { id: "c11phy-ch9-mechanical-properties-of-fluids-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/mechanical-properties-of-fluids/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch10-thermal-properties-of-matter",
+                  title: "10 · Thermal Properties of Matter",
+                  subsections: [
+                    {
+                      id: "c11phy-ch10-thermal-properties-of-matter-s1",
+                      title: "Thermal Properties of Matter",
+                      notes: [
+                        { id: "c11phy-ch10-thermal-properties-of-matter-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/thermal-properties-of-matter/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch11-thermodynamics",
+                  title: "11 · Thermodynamics",
+                  subsections: [
+                    {
+                      id: "c11phy-ch11-thermodynamics-s1",
+                      title: "Thermodynamics",
+                      notes: [
+                        { id: "c11phy-ch11-thermodynamics-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/thermodynamics/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch12-kinetic-theory",
+                  title: "12 · Kinetic Theory",
+                  subsections: [
+                    {
+                      id: "c11phy-ch12-kinetic-theory-s1",
+                      title: "Kinetic Theory",
+                      notes: [
+                        { id: "c11phy-ch12-kinetic-theory-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/kinetic-theory/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch13-oscillations",
+                  title: "13 · Oscillations",
+                  subsections: [
+                    {
+                      id: "c11phy-ch13-oscillations-s1",
+                      title: "Oscillations",
+                      notes: [
+                        { id: "c11phy-ch13-oscillations-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/oscillations/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11phy-ch14-waves",
+                  title: "14 · Waves",
+                  subsections: [
+                    {
+                      id: "c11phy-ch14-waves-s1",
+                      title: "Waves",
+                      notes: [
+                        { id: "c11phy-ch14-waves-s1-notes", title: "Chapter Notes", file: "notes/class-11-physics-placeholders/waves/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                }
+              ]
             },
-            {
+                        {
               id: "chemistry",
               title: "Chemistry",
               icon: "chemistry",
-              ready: false
+              ready: true,
+              sections: [
+                {
+                  id: "c11chem-ch1-some-basic-concepts-of-chemistry",
+                  title: "01 · Some Basic Concepts of Chemistry",
+                  subsections: [
+                    {
+                      id: "c11chem-ch1-some-basic-concepts-of-chemistry-s1",
+                      title: "Some Basic Concepts of Chemistry",
+                      notes: [
+                        { id: "c11chem-ch1-some-basic-concepts-of-chemistry-s1-notes", title: "Chapter Notes", file: "notes/class-11-chemistry-placeholders/some-basic-concepts-of-chemistry/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11chem-ch2-structure-of-atom",
+                  title: "02 · Structure of Atom",
+                  subsections: [
+                    {
+                      id: "c11chem-ch2-structure-of-atom-s1",
+                      title: "Structure of Atom",
+                      notes: [
+                        { id: "c11chem-ch2-structure-of-atom-s1-notes", title: "Chapter Notes", file: "notes/class-11-chemistry-placeholders/structure-of-atom/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11chem-ch3-classification-of-elements-and-periodicity-in-properties",
+                  title: "03 · Classification of Elements and Periodicity in Properties",
+                  subsections: [
+                    {
+                      id: "c11chem-ch3-classification-of-elements-and-periodicity-in-properties-s1",
+                      title: "Classification of Elements and Periodicity in Properties",
+                      notes: [
+                        { id: "c11chem-ch3-classification-of-elements-and-periodicity-in-properties-s1-notes", title: "Chapter Notes", file: "notes/class-11-chemistry-placeholders/classification-of-elements-and-periodicity-in-properties/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11chem-ch4-chemical-bonding-and-molecular-structure",
+                  title: "04 · Chemical Bonding and Molecular Structure",
+                  subsections: [
+                    {
+                      id: "c11chem-ch4-chemical-bonding-and-molecular-structure-s1",
+                      title: "Chemical Bonding and Molecular Structure",
+                      notes: [
+                        { id: "c11chem-ch4-chemical-bonding-and-molecular-structure-s1-notes", title: "Chapter Notes", file: "notes/class-11-chemistry-placeholders/chemical-bonding-and-molecular-structure/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11chem-ch5-thermodynamics",
+                  title: "05 · Thermodynamics",
+                  subsections: [
+                    {
+                      id: "c11chem-ch5-thermodynamics-s1",
+                      title: "Thermodynamics",
+                      notes: [
+                        { id: "c11chem-ch5-thermodynamics-s1-notes", title: "Chapter Notes", file: "notes/class-11-chemistry-placeholders/thermodynamics/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11chem-ch6-equilibrium",
+                  title: "06 · Equilibrium",
+                  subsections: [
+                    {
+                      id: "c11chem-ch6-equilibrium-s1",
+                      title: "Equilibrium",
+                      notes: [
+                        { id: "c11chem-ch6-equilibrium-s1-notes", title: "Chapter Notes", file: "notes/class-11-chemistry-placeholders/equilibrium/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11chem-ch7-redox-reactions",
+                  title: "07 · Redox Reactions",
+                  subsections: [
+                    {
+                      id: "c11chem-ch7-redox-reactions-s1",
+                      title: "Redox Reactions",
+                      notes: [
+                        { id: "c11chem-ch7-redox-reactions-s1-notes", title: "Chapter Notes", file: "notes/class-11-chemistry-placeholders/redox-reactions/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11chem-ch8-organic-chemistry-some-basic-principles-and-techniques",
+                  title: "08 · Organic Chemistry — Some Basic Principles and Techniques",
+                  subsections: [
+                    {
+                      id: "c11chem-ch8-organic-chemistry-some-basic-principles-and-techniques-s1",
+                      title: "Organic Chemistry — Some Basic Principles and Techniques",
+                      notes: [
+                        { id: "c11chem-ch8-organic-chemistry-some-basic-principles-and-techniques-s1-notes", title: "Chapter Notes", file: "notes/class-11-chemistry-placeholders/organic-chemistry-some-basic-principles-and-techniques/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11chem-ch9-hydrocarbons",
+                  title: "09 · Hydrocarbons",
+                  subsections: [
+                    {
+                      id: "c11chem-ch9-hydrocarbons-s1",
+                      title: "Hydrocarbons",
+                      notes: [
+                        { id: "c11chem-ch9-hydrocarbons-s1-notes", title: "Chapter Notes", file: "notes/class-11-chemistry-placeholders/hydrocarbons/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                }
+              ]
             },
-            {
+                        {
               id: "biology",
               title: "Biology",
               icon: "biology",
-              ready: false
+              ready: true,
+              sections: [
+                {
+                  id: "c11bio-ch1-the-living-world",
+                  title: "01 · The Living World",
+                  subsections: [
+                    {
+                      id: "c11bio-ch1-the-living-world-s1",
+                      title: "The Living World",
+                      notes: [
+                        { id: "c11bio-ch1-the-living-world-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/the-living-world/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch2-biological-classification",
+                  title: "02 · Biological Classification",
+                  subsections: [
+                    {
+                      id: "c11bio-ch2-biological-classification-s1",
+                      title: "Biological Classification",
+                      notes: [
+                        { id: "c11bio-ch2-biological-classification-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/biological-classification/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch3-plant-kingdom",
+                  title: "03 · Plant Kingdom",
+                  subsections: [
+                    {
+                      id: "c11bio-ch3-plant-kingdom-s1",
+                      title: "Plant Kingdom",
+                      notes: [
+                        { id: "c11bio-ch3-plant-kingdom-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/plant-kingdom/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch4-animal-kingdom",
+                  title: "04 · Animal Kingdom",
+                  subsections: [
+                    {
+                      id: "c11bio-ch4-animal-kingdom-s1",
+                      title: "Animal Kingdom",
+                      notes: [
+                        { id: "c11bio-ch4-animal-kingdom-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/animal-kingdom/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch5-morphology-of-flowering-plants",
+                  title: "05 · Morphology of Flowering Plants",
+                  subsections: [
+                    {
+                      id: "c11bio-ch5-morphology-of-flowering-plants-s1",
+                      title: "Morphology of Flowering Plants",
+                      notes: [
+                        { id: "c11bio-ch5-morphology-of-flowering-plants-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/morphology-of-flowering-plants/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch6-anatomy-of-flowering-plants",
+                  title: "06 · Anatomy of Flowering Plants",
+                  subsections: [
+                    {
+                      id: "c11bio-ch6-anatomy-of-flowering-plants-s1",
+                      title: "Anatomy of Flowering Plants",
+                      notes: [
+                        { id: "c11bio-ch6-anatomy-of-flowering-plants-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/anatomy-of-flowering-plants/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch7-structural-organisation-in-animals",
+                  title: "07 · Structural Organisation in Animals",
+                  subsections: [
+                    {
+                      id: "c11bio-ch7-structural-organisation-in-animals-s1",
+                      title: "Structural Organisation in Animals",
+                      notes: [
+                        { id: "c11bio-ch7-structural-organisation-in-animals-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/structural-organisation-in-animals/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch8-cell-the-unit-of-life",
+                  title: "08 · Cell: The Unit of Life",
+                  subsections: [
+                    {
+                      id: "c11bio-ch8-cell-the-unit-of-life-s1",
+                      title: "Cell: The Unit of Life",
+                      notes: [
+                        { id: "c11bio-ch8-cell-the-unit-of-life-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/cell-the-unit-of-life/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch9-biomolecules",
+                  title: "09 · Biomolecules",
+                  subsections: [
+                    {
+                      id: "c11bio-ch9-biomolecules-s1",
+                      title: "Biomolecules",
+                      notes: [
+                        { id: "c11bio-ch9-biomolecules-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/biomolecules/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch10-cell-cycle-and-cell-division",
+                  title: "10 · Cell Cycle and Cell Division",
+                  subsections: [
+                    {
+                      id: "c11bio-ch10-cell-cycle-and-cell-division-s1",
+                      title: "Cell Cycle and Cell Division",
+                      notes: [
+                        { id: "c11bio-ch10-cell-cycle-and-cell-division-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/cell-cycle-and-cell-division/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch11-photosynthesis-in-higher-plants",
+                  title: "11 · Photosynthesis in Higher Plants",
+                  subsections: [
+                    {
+                      id: "c11bio-ch11-photosynthesis-in-higher-plants-s1",
+                      title: "Photosynthesis in Higher Plants",
+                      notes: [
+                        { id: "c11bio-ch11-photosynthesis-in-higher-plants-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/photosynthesis-in-higher-plants/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch12-respiration-in-plants",
+                  title: "12 · Respiration in Plants",
+                  subsections: [
+                    {
+                      id: "c11bio-ch12-respiration-in-plants-s1",
+                      title: "Respiration in Plants",
+                      notes: [
+                        { id: "c11bio-ch12-respiration-in-plants-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/respiration-in-plants/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch13-plant-growth-and-development",
+                  title: "13 · Plant Growth and Development",
+                  subsections: [
+                    {
+                      id: "c11bio-ch13-plant-growth-and-development-s1",
+                      title: "Plant Growth and Development",
+                      notes: [
+                        { id: "c11bio-ch13-plant-growth-and-development-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/plant-growth-and-development/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch14-breathing-and-exchange-of-gases",
+                  title: "14 · Breathing and Exchange of Gases",
+                  subsections: [
+                    {
+                      id: "c11bio-ch14-breathing-and-exchange-of-gases-s1",
+                      title: "Breathing and Exchange of Gases",
+                      notes: [
+                        { id: "c11bio-ch14-breathing-and-exchange-of-gases-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/breathing-and-exchange-of-gases/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch15-body-fluids-and-circulation",
+                  title: "15 · Body Fluids and Circulation",
+                  subsections: [
+                    {
+                      id: "c11bio-ch15-body-fluids-and-circulation-s1",
+                      title: "Body Fluids and Circulation",
+                      notes: [
+                        { id: "c11bio-ch15-body-fluids-and-circulation-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/body-fluids-and-circulation/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch16-excretory-products-and-their-elimination",
+                  title: "16 · Excretory Products and their Elimination",
+                  subsections: [
+                    {
+                      id: "c11bio-ch16-excretory-products-and-their-elimination-s1",
+                      title: "Excretory Products and their Elimination",
+                      notes: [
+                        { id: "c11bio-ch16-excretory-products-and-their-elimination-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/excretory-products-and-their-elimination/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch17-locomotion-and-movement",
+                  title: "17 · Locomotion and Movement",
+                  subsections: [
+                    {
+                      id: "c11bio-ch17-locomotion-and-movement-s1",
+                      title: "Locomotion and Movement",
+                      notes: [
+                        { id: "c11bio-ch17-locomotion-and-movement-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/locomotion-and-movement/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch18-neural-control-and-coordination",
+                  title: "18 · Neural Control and Coordination",
+                  subsections: [
+                    {
+                      id: "c11bio-ch18-neural-control-and-coordination-s1",
+                      title: "Neural Control and Coordination",
+                      notes: [
+                        { id: "c11bio-ch18-neural-control-and-coordination-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/neural-control-and-coordination/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11bio-ch19-chemical-coordination-and-integration",
+                  title: "19 · Chemical Coordination and Integration",
+                  subsections: [
+                    {
+                      id: "c11bio-ch19-chemical-coordination-and-integration-s1",
+                      title: "Chemical Coordination and Integration",
+                      notes: [
+                        { id: "c11bio-ch19-chemical-coordination-and-integration-s1-notes", title: "Chapter Notes", file: "notes/class-11-biology-placeholders/chemical-coordination-and-integration/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "computer",
+              title: "Computer Science",
+              icon: "computer",
+              ready: true,
+              sections: [
+                {
+                  id: "c11cs-ch1-computer-system",
+                  title: "01 · Computer System",
+                  subsections: [
+                    {
+                      id: "c11cs-ch1-computer-system-s1",
+                      title: "Computer System",
+                      notes: [
+                        { id: "c11cs-ch1-computer-system-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/computer-system/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11cs-ch2-encoding-schemes-and-number-system",
+                  title: "02 · Encoding Schemes and Number System",
+                  subsections: [
+                    {
+                      id: "c11cs-ch2-encoding-schemes-and-number-system-s1",
+                      title: "Encoding Schemes and Number System",
+                      notes: [
+                        { id: "c11cs-ch2-encoding-schemes-and-number-system-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/encoding-schemes-and-number-system/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11cs-ch3-emerging-trends",
+                  title: "03 · Emerging Trends",
+                  subsections: [
+                    {
+                      id: "c11cs-ch3-emerging-trends-s1",
+                      title: "Emerging Trends",
+                      notes: [
+                        { id: "c11cs-ch3-emerging-trends-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/emerging-trends/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11cs-ch4-introduction-to-problem-solving",
+                  title: "04 · Introduction to Problem Solving",
+                  subsections: [
+                    {
+                      id: "c11cs-ch4-introduction-to-problem-solving-s1",
+                      title: "Introduction to Problem Solving",
+                      notes: [
+                        { id: "c11cs-ch4-introduction-to-problem-solving-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/introduction-to-problem-solving/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11cs-ch5-getting-started-with-python",
+                  title: "05 · Getting Started with Python",
+                  subsections: [
+                    {
+                      id: "c11cs-ch5-getting-started-with-python-s1",
+                      title: "Getting Started with Python",
+                      notes: [
+                        { id: "c11cs-ch5-getting-started-with-python-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/getting-started-with-python/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11cs-ch6-flow-of-control",
+                  title: "06 · Flow of Control",
+                  subsections: [
+                    {
+                      id: "c11cs-ch6-flow-of-control-s1",
+                      title: "Flow of Control",
+                      notes: [
+                        { id: "c11cs-ch6-flow-of-control-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/flow-of-control/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11cs-ch7-functions",
+                  title: "07 · Functions",
+                  subsections: [
+                    {
+                      id: "c11cs-ch7-functions-s1",
+                      title: "Functions",
+                      notes: [
+                        { id: "c11cs-ch7-functions-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/functions/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11cs-ch8-strings",
+                  title: "08 · Strings",
+                  subsections: [
+                    {
+                      id: "c11cs-ch8-strings-s1",
+                      title: "Strings",
+                      notes: [
+                        { id: "c11cs-ch8-strings-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/strings/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11cs-ch9-lists",
+                  title: "09 · Lists",
+                  subsections: [
+                    {
+                      id: "c11cs-ch9-lists-s1",
+                      title: "Lists",
+                      notes: [
+                        { id: "c11cs-ch9-lists-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/lists/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11cs-ch10-tuples-and-dictionaries",
+                  title: "10 · Tuples and Dictionaries",
+                  subsections: [
+                    {
+                      id: "c11cs-ch10-tuples-and-dictionaries-s1",
+                      title: "Tuples and Dictionaries",
+                      notes: [
+                        { id: "c11cs-ch10-tuples-and-dictionaries-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/tuples-and-dictionaries/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c11cs-ch11-societal-impact",
+                  title: "11 · Societal Impact",
+                  subsections: [
+                    {
+                      id: "c11cs-ch11-societal-impact-s1",
+                      title: "Societal Impact",
+                      notes: [
+                        { id: "c11cs-ch11-societal-impact-s1-notes", title: "Chapter Notes", file: "notes/class-11-computer-placeholders/societal-impact/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                }
+              ]
             },
             {
               id: "english",
@@ -2060,29 +2783,38 @@ const CLASSES = [
           {
             id: "language",
             title: "Language",
-            icon: "language",
+            ready: false
+          },
+          {
+            id: "literature",
+            title: "Literature",
+            ready: true,
+            tracks: [
+          {
+            id: "hornbill",
+            title: "Hornbill",
             ready: true,
             sections: [
               {
-                id: "class-11-lang-grammar-usage",
-                title: "01 \u00b7 Grammar & Usage",
+                id: "class-11-lit-hornbill-prose",
+                title: "01 \u00b7 Hornbill \u2014 Prose",
                 subsections: [
                   {
-                    id: "class-11-lang-grammar-usage-core",
-                    title: "Grammar & Usage",
-                    notes: [ { id: "class-11-lang-grammar-usage-notes", title: "Grammar & Usage", file: "notes/class-11/language/grammar-usage/notes.md" } ],
+                    id: "class-11-lit-hornbill-prose-core",
+                    title: "Hornbill \u2014 Prose",
+                    notes: [ { id: "class-11-lit-hornbill-prose-notes", title: "Hornbill \u2014 Prose", file: "notes/class-11/literature/hornbill-prose/notes.md" } ],
                     tests: []
                   }
                 ]
               },
               {
-                id: "class-11-lang-writing-skills",
-                title: "02 \u00b7 Writing Skills",
+                id: "class-11-lit-hornbill-poetry",
+                title: "02 \u00b7 Hornbill \u2014 Poetry",
                 subsections: [
                   {
-                    id: "class-11-lang-writing-skills-core",
-                    title: "Writing Skills",
-                    notes: [ { id: "class-11-lang-writing-skills-notes", title: "Writing Skills", file: "notes/class-11/language/writing-skills/notes.md" } ],
+                    id: "class-11-lit-hornbill-poetry-core",
+                    title: "Hornbill \u2014 Poetry",
+                    notes: [ { id: "class-11-lit-hornbill-poetry-notes", title: "Hornbill \u2014 Poetry", file: "notes/class-11/literature/hornbill-poetry/notes.md" } ],
                     tests: []
                   }
                 ]
@@ -2090,38 +2822,13 @@ const CLASSES = [
             ]
           },
           {
-            id: "literature",
-            title: "Literature",
-            icon: "literature",
+            id: "snapshots",
+            title: "Snapshots (Supplementary Reader)",
             ready: true,
             sections: [
               {
-                id: "class-11-lit-hornbill-prose",
-                title: "01 \u00b7 Hornbill — Prose",
-                subsections: [
-                  {
-                    id: "class-11-lit-hornbill-prose-core",
-                    title: "Hornbill — Prose",
-                    notes: [ { id: "class-11-lit-hornbill-prose-notes", title: "Hornbill — Prose", file: "notes/class-11/literature/hornbill-prose/notes.md" } ],
-                    tests: []
-                  }
-                ]
-              },
-              {
-                id: "class-11-lit-hornbill-poetry",
-                title: "02 \u00b7 Hornbill — Poetry",
-                subsections: [
-                  {
-                    id: "class-11-lit-hornbill-poetry-core",
-                    title: "Hornbill — Poetry",
-                    notes: [ { id: "class-11-lit-hornbill-poetry-notes", title: "Hornbill — Poetry", file: "notes/class-11/literature/hornbill-poetry/notes.md" } ],
-                    tests: []
-                  }
-                ]
-              },
-              {
                 id: "class-11-lit-snapshots-supplementary-reader",
-                title: "03 \u00b7 Snapshots (Supplementary Reader)",
+                title: "01 \u00b7 Snapshots (Supplementary Reader)",
                 subsections: [
                   {
                     id: "class-11-lit-snapshots-supplementary-reader-core",
@@ -2132,6 +2839,51 @@ const CLASSES = [
                 ]
               }
             ]
+          },
+          {
+            id: "elective",
+            title: "Woven Words (Elective)",
+            ready: true,
+            sections: [
+              {
+                id: "class-11-elective-short-stories",
+                title: "01 \u00b7 Woven Words \u2014 Short Stories",
+                subsections: [
+                  {
+                    id: "class-11-elective-short-stories-core",
+                    title: "Woven Words \u2014 Short Stories",
+                    notes: [ { id: "class-11-elective-short-stories-notes", title: "Woven Words \u2014 Short Stories", file: "notes/class-11/elective/short-stories/notes.md" } ],
+                    tests: []
+                  }
+                ]
+              },
+              {
+                id: "class-11-elective-poetry",
+                title: "02 \u00b7 Woven Words \u2014 Poetry",
+                subsections: [
+                  {
+                    id: "class-11-elective-poetry-core",
+                    title: "Woven Words \u2014 Poetry",
+                    notes: [ { id: "class-11-elective-poetry-notes", title: "Woven Words \u2014 Poetry", file: "notes/class-11/elective/poetry/notes.md" } ],
+                    tests: []
+                  }
+                ]
+              },
+              {
+                id: "class-11-elective-essays",
+                title: "03 \u00b7 Woven Words \u2014 Essays",
+                subsections: [
+                  {
+                    id: "class-11-elective-essays-core",
+                    title: "Woven Words \u2014 Essays",
+                    notes: [ { id: "class-11-elective-essays-notes", title: "Woven Words \u2014 Essays", file: "notes/class-11/elective/essays/notes.md" } ],
+                    tests: []
+                  }
+                ]
+              }
+            ]
+          }
+              ]
           }
               ]
             }
@@ -2408,23 +3160,723 @@ const CLASSES = [
           }
               ]
             },
-            {
+                        {
               id: "physics",
               title: "Physics",
               icon: "physics",
-              ready: false
+              ready: true,
+              sections: [
+                {
+                  id: "c12phy-ch1-electric-charges-and-fields",
+                  title: "01 · Electric Charges and Fields",
+                  subsections: [
+                    {
+                      id: "c12phy-ch1-electric-charges-and-fields-s1",
+                      title: "Electric Charges and Fields",
+                      notes: [
+                        { id: "c12phy-ch1-electric-charges-and-fields-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/electric-charges-and-fields/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch2-electrostatic-potential-and-capacitance",
+                  title: "02 · Electrostatic Potential and Capacitance",
+                  subsections: [
+                    {
+                      id: "c12phy-ch2-electrostatic-potential-and-capacitance-s1",
+                      title: "Electrostatic Potential and Capacitance",
+                      notes: [
+                        { id: "c12phy-ch2-electrostatic-potential-and-capacitance-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/electrostatic-potential-and-capacitance/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch3-current-electricity",
+                  title: "03 · Current Electricity",
+                  subsections: [
+                    {
+                      id: "c12phy-ch3-current-electricity-s1",
+                      title: "Current Electricity",
+                      notes: [
+                        { id: "c12phy-ch3-current-electricity-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/current-electricity/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch4-moving-charges-and-magnetism",
+                  title: "04 · Moving Charges and Magnetism",
+                  subsections: [
+                    {
+                      id: "c12phy-ch4-moving-charges-and-magnetism-s1",
+                      title: "Moving Charges and Magnetism",
+                      notes: [
+                        { id: "c12phy-ch4-moving-charges-and-magnetism-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/moving-charges-and-magnetism/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch5-magnetism-and-matter",
+                  title: "05 · Magnetism and Matter",
+                  subsections: [
+                    {
+                      id: "c12phy-ch5-magnetism-and-matter-s1",
+                      title: "Magnetism and Matter",
+                      notes: [
+                        { id: "c12phy-ch5-magnetism-and-matter-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/magnetism-and-matter/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch6-electromagnetic-induction",
+                  title: "06 · Electromagnetic Induction",
+                  subsections: [
+                    {
+                      id: "c12phy-ch6-electromagnetic-induction-s1",
+                      title: "Electromagnetic Induction",
+                      notes: [
+                        { id: "c12phy-ch6-electromagnetic-induction-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/electromagnetic-induction/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch7-alternating-current",
+                  title: "07 · Alternating Current",
+                  subsections: [
+                    {
+                      id: "c12phy-ch7-alternating-current-s1",
+                      title: "Alternating Current",
+                      notes: [
+                        { id: "c12phy-ch7-alternating-current-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/alternating-current/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch8-electromagnetic-waves",
+                  title: "08 · Electromagnetic Waves",
+                  subsections: [
+                    {
+                      id: "c12phy-ch8-electromagnetic-waves-s1",
+                      title: "Electromagnetic Waves",
+                      notes: [
+                        { id: "c12phy-ch8-electromagnetic-waves-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/electromagnetic-waves/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch9-ray-optics-and-optical-instruments",
+                  title: "09 · Ray Optics and Optical Instruments",
+                  subsections: [
+                    {
+                      id: "c12phy-ch9-ray-optics-and-optical-instruments-s1",
+                      title: "Ray Optics and Optical Instruments",
+                      notes: [
+                        { id: "c12phy-ch9-ray-optics-and-optical-instruments-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/ray-optics-and-optical-instruments/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch10-wave-optics",
+                  title: "10 · Wave Optics",
+                  subsections: [
+                    {
+                      id: "c12phy-ch10-wave-optics-s1",
+                      title: "Wave Optics",
+                      notes: [
+                        { id: "c12phy-ch10-wave-optics-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/wave-optics/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch11-dual-nature-of-radiation-and-matter",
+                  title: "11 · Dual Nature of Radiation and Matter",
+                  subsections: [
+                    {
+                      id: "c12phy-ch11-dual-nature-of-radiation-and-matter-s1",
+                      title: "Dual Nature of Radiation and Matter",
+                      notes: [
+                        { id: "c12phy-ch11-dual-nature-of-radiation-and-matter-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/dual-nature-of-radiation-and-matter/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch12-atoms",
+                  title: "12 · Atoms",
+                  subsections: [
+                    {
+                      id: "c12phy-ch12-atoms-s1",
+                      title: "Atoms",
+                      notes: [
+                        { id: "c12phy-ch12-atoms-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/atoms/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch13-nuclei",
+                  title: "13 · Nuclei",
+                  subsections: [
+                    {
+                      id: "c12phy-ch13-nuclei-s1",
+                      title: "Nuclei",
+                      notes: [
+                        { id: "c12phy-ch13-nuclei-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/nuclei/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12phy-ch14-semiconductor-electronics-materials-devices-and-simple-circuits",
+                  title: "14 · Semiconductor Electronics: Materials, Devices and Simple Circuits",
+                  subsections: [
+                    {
+                      id: "c12phy-ch14-semiconductor-electronics-materials-devices-and-simple-circuits-s1",
+                      title: "Semiconductor Electronics: Materials, Devices and Simple Circuits",
+                      notes: [
+                        { id: "c12phy-ch14-semiconductor-electronics-materials-devices-and-simple-circuits-s1-notes", title: "Chapter Notes", file: "notes/class-12-physics-placeholders/semiconductor-electronics-materials-devices-and-simple-circuits/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                }
+              ]
             },
-            {
+                        {
               id: "chemistry",
               title: "Chemistry",
               icon: "chemistry",
-              ready: false
+              ready: true,
+              sections: [
+                {
+                  id: "c12chem-ch1-solutions",
+                  title: "01 · Solutions",
+                  subsections: [
+                    {
+                      id: "c12chem-ch1-solutions-s1",
+                      title: "Solutions",
+                      notes: [
+                        { id: "c12chem-ch1-solutions-s1-notes", title: "Chapter Notes", file: "notes/class-12-chemistry-placeholders/solutions/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12chem-ch2-electrochemistry",
+                  title: "02 · Electrochemistry",
+                  subsections: [
+                    {
+                      id: "c12chem-ch2-electrochemistry-s1",
+                      title: "Electrochemistry",
+                      notes: [
+                        { id: "c12chem-ch2-electrochemistry-s1-notes", title: "Chapter Notes", file: "notes/class-12-chemistry-placeholders/electrochemistry/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12chem-ch3-chemical-kinetics",
+                  title: "03 · Chemical Kinetics",
+                  subsections: [
+                    {
+                      id: "c12chem-ch3-chemical-kinetics-s1",
+                      title: "Chemical Kinetics",
+                      notes: [
+                        { id: "c12chem-ch3-chemical-kinetics-s1-notes", title: "Chapter Notes", file: "notes/class-12-chemistry-placeholders/chemical-kinetics/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12chem-ch4-the-d-and-f-block-elements",
+                  title: "04 · The d- and f-Block Elements",
+                  subsections: [
+                    {
+                      id: "c12chem-ch4-the-d-and-f-block-elements-s1",
+                      title: "The d- and f-Block Elements",
+                      notes: [
+                        { id: "c12chem-ch4-the-d-and-f-block-elements-s1-notes", title: "Chapter Notes", file: "notes/class-12-chemistry-placeholders/the-d-and-f-block-elements/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12chem-ch5-coordination-compounds",
+                  title: "05 · Coordination Compounds",
+                  subsections: [
+                    {
+                      id: "c12chem-ch5-coordination-compounds-s1",
+                      title: "Coordination Compounds",
+                      notes: [
+                        { id: "c12chem-ch5-coordination-compounds-s1-notes", title: "Chapter Notes", file: "notes/class-12-chemistry-placeholders/coordination-compounds/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12chem-ch6-haloalkanes-and-haloarenes",
+                  title: "06 · Haloalkanes and Haloarenes",
+                  subsections: [
+                    {
+                      id: "c12chem-ch6-haloalkanes-and-haloarenes-s1",
+                      title: "Haloalkanes and Haloarenes",
+                      notes: [
+                        { id: "c12chem-ch6-haloalkanes-and-haloarenes-s1-notes", title: "Chapter Notes", file: "notes/class-12-chemistry-placeholders/haloalkanes-and-haloarenes/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12chem-ch7-alcohols-phenols-and-ethers",
+                  title: "07 · Alcohols, Phenols and Ethers",
+                  subsections: [
+                    {
+                      id: "c12chem-ch7-alcohols-phenols-and-ethers-s1",
+                      title: "Alcohols, Phenols and Ethers",
+                      notes: [
+                        { id: "c12chem-ch7-alcohols-phenols-and-ethers-s1-notes", title: "Chapter Notes", file: "notes/class-12-chemistry-placeholders/alcohols-phenols-and-ethers/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12chem-ch8-aldehydes-ketones-and-carboxylic-acids",
+                  title: "08 · Aldehydes, Ketones and Carboxylic Acids",
+                  subsections: [
+                    {
+                      id: "c12chem-ch8-aldehydes-ketones-and-carboxylic-acids-s1",
+                      title: "Aldehydes, Ketones and Carboxylic Acids",
+                      notes: [
+                        { id: "c12chem-ch8-aldehydes-ketones-and-carboxylic-acids-s1-notes", title: "Chapter Notes", file: "notes/class-12-chemistry-placeholders/aldehydes-ketones-and-carboxylic-acids/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12chem-ch9-amines",
+                  title: "09 · Amines",
+                  subsections: [
+                    {
+                      id: "c12chem-ch9-amines-s1",
+                      title: "Amines",
+                      notes: [
+                        { id: "c12chem-ch9-amines-s1-notes", title: "Chapter Notes", file: "notes/class-12-chemistry-placeholders/amines/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12chem-ch10-biomolecules",
+                  title: "10 · Biomolecules",
+                  subsections: [
+                    {
+                      id: "c12chem-ch10-biomolecules-s1",
+                      title: "Biomolecules",
+                      notes: [
+                        { id: "c12chem-ch10-biomolecules-s1-notes", title: "Chapter Notes", file: "notes/class-12-chemistry-placeholders/biomolecules/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                }
+              ]
             },
-            {
+                        {
               id: "biology",
               title: "Biology",
               icon: "biology",
-              ready: false
+              ready: true,
+              sections: [
+                {
+                  id: "c12bio-ch1-sexual-reproduction-in-flowering-plants",
+                  title: "01 · Sexual Reproduction in Flowering Plants",
+                  subsections: [
+                    {
+                      id: "c12bio-ch1-sexual-reproduction-in-flowering-plants-s1",
+                      title: "Sexual Reproduction in Flowering Plants",
+                      notes: [
+                        { id: "c12bio-ch1-sexual-reproduction-in-flowering-plants-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/sexual-reproduction-in-flowering-plants/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch2-human-reproduction",
+                  title: "02 · Human Reproduction",
+                  subsections: [
+                    {
+                      id: "c12bio-ch2-human-reproduction-s1",
+                      title: "Human Reproduction",
+                      notes: [
+                        { id: "c12bio-ch2-human-reproduction-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/human-reproduction/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch3-reproductive-health",
+                  title: "03 · Reproductive Health",
+                  subsections: [
+                    {
+                      id: "c12bio-ch3-reproductive-health-s1",
+                      title: "Reproductive Health",
+                      notes: [
+                        { id: "c12bio-ch3-reproductive-health-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/reproductive-health/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch4-principles-of-inheritance-and-variation",
+                  title: "04 · Principles of Inheritance and Variation",
+                  subsections: [
+                    {
+                      id: "c12bio-ch4-principles-of-inheritance-and-variation-s1",
+                      title: "Principles of Inheritance and Variation",
+                      notes: [
+                        { id: "c12bio-ch4-principles-of-inheritance-and-variation-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/principles-of-inheritance-and-variation/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch5-molecular-basis-of-inheritance",
+                  title: "05 · Molecular Basis of Inheritance",
+                  subsections: [
+                    {
+                      id: "c12bio-ch5-molecular-basis-of-inheritance-s1",
+                      title: "Molecular Basis of Inheritance",
+                      notes: [
+                        { id: "c12bio-ch5-molecular-basis-of-inheritance-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/molecular-basis-of-inheritance/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch6-evolution",
+                  title: "06 · Evolution",
+                  subsections: [
+                    {
+                      id: "c12bio-ch6-evolution-s1",
+                      title: "Evolution",
+                      notes: [
+                        { id: "c12bio-ch6-evolution-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/evolution/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch7-human-health-and-disease",
+                  title: "07 · Human Health and Disease",
+                  subsections: [
+                    {
+                      id: "c12bio-ch7-human-health-and-disease-s1",
+                      title: "Human Health and Disease",
+                      notes: [
+                        { id: "c12bio-ch7-human-health-and-disease-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/human-health-and-disease/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch8-microbes-in-human-welfare",
+                  title: "08 · Microbes in Human Welfare",
+                  subsections: [
+                    {
+                      id: "c12bio-ch8-microbes-in-human-welfare-s1",
+                      title: "Microbes in Human Welfare",
+                      notes: [
+                        { id: "c12bio-ch8-microbes-in-human-welfare-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/microbes-in-human-welfare/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch9-biotechnology-principles-and-processes",
+                  title: "09 · Biotechnology: Principles and Processes",
+                  subsections: [
+                    {
+                      id: "c12bio-ch9-biotechnology-principles-and-processes-s1",
+                      title: "Biotechnology: Principles and Processes",
+                      notes: [
+                        { id: "c12bio-ch9-biotechnology-principles-and-processes-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/biotechnology-principles-and-processes/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch10-biotechnology-and-its-applications",
+                  title: "10 · Biotechnology and its Applications",
+                  subsections: [
+                    {
+                      id: "c12bio-ch10-biotechnology-and-its-applications-s1",
+                      title: "Biotechnology and its Applications",
+                      notes: [
+                        { id: "c12bio-ch10-biotechnology-and-its-applications-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/biotechnology-and-its-applications/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch11-organisms-and-populations",
+                  title: "11 · Organisms and Populations",
+                  subsections: [
+                    {
+                      id: "c12bio-ch11-organisms-and-populations-s1",
+                      title: "Organisms and Populations",
+                      notes: [
+                        { id: "c12bio-ch11-organisms-and-populations-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/organisms-and-populations/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch12-ecosystem",
+                  title: "12 · Ecosystem",
+                  subsections: [
+                    {
+                      id: "c12bio-ch12-ecosystem-s1",
+                      title: "Ecosystem",
+                      notes: [
+                        { id: "c12bio-ch12-ecosystem-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/ecosystem/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12bio-ch13-biodiversity-and-conservation",
+                  title: "13 · Biodiversity and Conservation",
+                  subsections: [
+                    {
+                      id: "c12bio-ch13-biodiversity-and-conservation-s1",
+                      title: "Biodiversity and Conservation",
+                      notes: [
+                        { id: "c12bio-ch13-biodiversity-and-conservation-s1-notes", title: "Chapter Notes", file: "notes/class-12-biology-placeholders/biodiversity-and-conservation/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "computer",
+              title: "Computer Science",
+              icon: "computer",
+              ready: true,
+              sections: [
+                {
+                  id: "c12cs-ch1-exception-handling-in-python",
+                  title: "01 · Exception Handling in Python",
+                  subsections: [
+                    {
+                      id: "c12cs-ch1-exception-handling-in-python-s1",
+                      title: "Exception Handling in Python",
+                      notes: [
+                        { id: "c12cs-ch1-exception-handling-in-python-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/exception-handling-in-python/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch2-file-handling-in-python",
+                  title: "02 · File Handling in Python",
+                  subsections: [
+                    {
+                      id: "c12cs-ch2-file-handling-in-python-s1",
+                      title: "File Handling in Python",
+                      notes: [
+                        { id: "c12cs-ch2-file-handling-in-python-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/file-handling-in-python/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch3-stack",
+                  title: "03 · Stack",
+                  subsections: [
+                    {
+                      id: "c12cs-ch3-stack-s1",
+                      title: "Stack",
+                      notes: [
+                        { id: "c12cs-ch3-stack-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/stack/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch4-queue",
+                  title: "04 · Queue",
+                  subsections: [
+                    {
+                      id: "c12cs-ch4-queue-s1",
+                      title: "Queue",
+                      notes: [
+                        { id: "c12cs-ch4-queue-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/queue/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch5-sorting",
+                  title: "05 · Sorting",
+                  subsections: [
+                    {
+                      id: "c12cs-ch5-sorting-s1",
+                      title: "Sorting",
+                      notes: [
+                        { id: "c12cs-ch5-sorting-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/sorting/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch6-searching",
+                  title: "06 · Searching",
+                  subsections: [
+                    {
+                      id: "c12cs-ch6-searching-s1",
+                      title: "Searching",
+                      notes: [
+                        { id: "c12cs-ch6-searching-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/searching/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch7-understanding-data",
+                  title: "07 · Understanding Data",
+                  subsections: [
+                    {
+                      id: "c12cs-ch7-understanding-data-s1",
+                      title: "Understanding Data",
+                      notes: [
+                        { id: "c12cs-ch7-understanding-data-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/understanding-data/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch8-database-concepts",
+                  title: "08 · Database Concepts",
+                  subsections: [
+                    {
+                      id: "c12cs-ch8-database-concepts-s1",
+                      title: "Database Concepts",
+                      notes: [
+                        { id: "c12cs-ch8-database-concepts-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/database-concepts/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch9-structured-query-language-sql",
+                  title: "09 · Structured Query Language (SQL)",
+                  subsections: [
+                    {
+                      id: "c12cs-ch9-structured-query-language-sql-s1",
+                      title: "Structured Query Language (SQL)",
+                      notes: [
+                        { id: "c12cs-ch9-structured-query-language-sql-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/structured-query-language-sql/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch10-computer-networks",
+                  title: "10 · Computer Networks",
+                  subsections: [
+                    {
+                      id: "c12cs-ch10-computer-networks-s1",
+                      title: "Computer Networks",
+                      notes: [
+                        { id: "c12cs-ch10-computer-networks-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/computer-networks/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch11-data-communication",
+                  title: "11 · Data Communication",
+                  subsections: [
+                    {
+                      id: "c12cs-ch11-data-communication-s1",
+                      title: "Data Communication",
+                      notes: [
+                        { id: "c12cs-ch11-data-communication-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/data-communication/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                },
+                {
+                  id: "c12cs-ch12-security-aspects",
+                  title: "12 · Security Aspects",
+                  subsections: [
+                    {
+                      id: "c12cs-ch12-security-aspects-s1",
+                      title: "Security Aspects",
+                      notes: [
+                        { id: "c12cs-ch12-security-aspects-s1-notes", title: "Chapter Notes", file: "notes/class-12-computer-placeholders/security-aspects/overview/notes.md" }
+                      ],
+                      tests: []
+                    }
+                  ]
+                }
+              ]
             },
             {
               id: "english",
@@ -2435,29 +3887,38 @@ const CLASSES = [
           {
             id: "language",
             title: "Language",
-            icon: "language",
+            ready: false
+          },
+          {
+            id: "literature",
+            title: "Literature",
+            ready: true,
+            tracks: [
+          {
+            id: "flamingo",
+            title: "Flamingo",
             ready: true,
             sections: [
               {
-                id: "class-12-lang-grammar-usage",
-                title: "01 \u00b7 Grammar & Usage",
+                id: "class-12-lit-flamingo-prose",
+                title: "01 \u00b7 Flamingo \u2014 Prose",
                 subsections: [
                   {
-                    id: "class-12-lang-grammar-usage-core",
-                    title: "Grammar & Usage",
-                    notes: [ { id: "class-12-lang-grammar-usage-notes", title: "Grammar & Usage", file: "notes/class-12/language/grammar-usage/notes.md" } ],
+                    id: "class-12-lit-flamingo-prose-core",
+                    title: "Flamingo \u2014 Prose",
+                    notes: [ { id: "class-12-lit-flamingo-prose-notes", title: "Flamingo \u2014 Prose", file: "notes/class-12/literature/flamingo-prose/notes.md" } ],
                     tests: []
                   }
                 ]
               },
               {
-                id: "class-12-lang-writing-skills",
-                title: "02 \u00b7 Writing Skills",
+                id: "class-12-lit-flamingo-poetry",
+                title: "02 \u00b7 Flamingo \u2014 Poetry",
                 subsections: [
                   {
-                    id: "class-12-lang-writing-skills-core",
-                    title: "Writing Skills",
-                    notes: [ { id: "class-12-lang-writing-skills-notes", title: "Writing Skills", file: "notes/class-12/language/writing-skills/notes.md" } ],
+                    id: "class-12-lit-flamingo-poetry-core",
+                    title: "Flamingo \u2014 Poetry",
+                    notes: [ { id: "class-12-lit-flamingo-poetry-notes", title: "Flamingo \u2014 Poetry", file: "notes/class-12/literature/flamingo-poetry/notes.md" } ],
                     tests: []
                   }
                 ]
@@ -2465,38 +3926,13 @@ const CLASSES = [
             ]
           },
           {
-            id: "literature",
-            title: "Literature",
-            icon: "literature",
+            id: "vistas",
+            title: "Vistas (Supplementary Reader)",
             ready: true,
             sections: [
               {
-                id: "class-12-lit-flamingo-prose",
-                title: "01 \u00b7 Flamingo — Prose",
-                subsections: [
-                  {
-                    id: "class-12-lit-flamingo-prose-core",
-                    title: "Flamingo — Prose",
-                    notes: [ { id: "class-12-lit-flamingo-prose-notes", title: "Flamingo — Prose", file: "notes/class-12/literature/flamingo-prose/notes.md" } ],
-                    tests: []
-                  }
-                ]
-              },
-              {
-                id: "class-12-lit-flamingo-poetry",
-                title: "02 \u00b7 Flamingo — Poetry",
-                subsections: [
-                  {
-                    id: "class-12-lit-flamingo-poetry-core",
-                    title: "Flamingo — Poetry",
-                    notes: [ { id: "class-12-lit-flamingo-poetry-notes", title: "Flamingo — Poetry", file: "notes/class-12/literature/flamingo-poetry/notes.md" } ],
-                    tests: []
-                  }
-                ]
-              },
-              {
                 id: "class-12-lit-vistas-supplementary-reader",
-                title: "03 \u00b7 Vistas (Supplementary Reader)",
+                title: "01 \u00b7 Vistas (Supplementary Reader)",
                 subsections: [
                   {
                     id: "class-12-lit-vistas-supplementary-reader-core",
@@ -2507,6 +3943,51 @@ const CLASSES = [
                 ]
               }
             ]
+          },
+          {
+            id: "elective",
+            title: "Kaleidoscope (Elective)",
+            ready: true,
+            sections: [
+              {
+                id: "class-12-elective-short-stories",
+                title: "01 \u00b7 Kaleidoscope \u2014 Short Stories",
+                subsections: [
+                  {
+                    id: "class-12-elective-short-stories-core",
+                    title: "Kaleidoscope \u2014 Short Stories",
+                    notes: [ { id: "class-12-elective-short-stories-notes", title: "Kaleidoscope \u2014 Short Stories", file: "notes/class-12/elective/short-stories/notes.md" } ],
+                    tests: []
+                  }
+                ]
+              },
+              {
+                id: "class-12-elective-poetry",
+                title: "02 \u00b7 Kaleidoscope \u2014 Poetry",
+                subsections: [
+                  {
+                    id: "class-12-elective-poetry-core",
+                    title: "Kaleidoscope \u2014 Poetry",
+                    notes: [ { id: "class-12-elective-poetry-notes", title: "Kaleidoscope \u2014 Poetry", file: "notes/class-12/elective/poetry/notes.md" } ],
+                    tests: []
+                  }
+                ]
+              },
+              {
+                id: "class-12-elective-drama",
+                title: "03 \u00b7 Kaleidoscope \u2014 Drama",
+                subsections: [
+                  {
+                    id: "class-12-elective-drama-core",
+                    title: "Kaleidoscope \u2014 Drama",
+                    notes: [ { id: "class-12-elective-drama-notes", title: "Kaleidoscope \u2014 Drama", file: "notes/class-12/elective/drama/notes.md" } ],
+                    tests: []
+                  }
+                ]
+              }
+            ]
+          }
+              ]
           }
               ]
             }

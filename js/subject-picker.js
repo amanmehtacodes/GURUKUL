@@ -26,6 +26,7 @@ const SubjectPicker = (() => {
     biology: "assets/icons/subject-biology.svg",
     science: "assets/icons/subject-science.svg",
     english: "assets/icons/subject-english.svg",
+    computer: "assets/icons/subject-computer.svg",
   };
 
   // Track-specific icon overrides for JEE/NEET subject cards, where a
@@ -102,9 +103,12 @@ const SubjectPicker = (() => {
     });
   }
 
+  // A track can itself split further into books (Literature -> Hornbill /
+  // Snapshots / ...) instead of having `sections` directly, so this counts
+  // recursively rather than assuming tracks are always one level deep.
   function chapterCountFor(subject) {
     if (subject.tracks && subject.tracks.length) {
-      return subject.tracks.reduce((sum, t) => sum + (t.sections || []).length, 0);
+      return subject.tracks.reduce((sum, t) => sum + chapterCountFor(t), 0);
     }
     return (subject.sections || []).length;
   }

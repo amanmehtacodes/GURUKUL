@@ -5,6 +5,11 @@
  * Language vs Literature), renders an icon-card picker — visually
  * identical to the class/subject pickers. Selecting a track hands off to
  * the sidebar/curriculum view scoped to that track's sections.
+ *
+ * Reused for a second, nested level too: a track can itself have `tracks`
+ * instead of `sections` (Literature -> Hornbill / Snapshots / Woven Words),
+ * in which case app.js calls render() again with that track standing in
+ * for "subject" — same component, one level deeper.
  */
 
 const TrackPicker = (() => {
@@ -15,36 +20,47 @@ const TrackPicker = (() => {
     return (window.Icons && Icons.get("back")) || "";
   }
 
-  const ICONS = {
-    language: `<svg viewBox="0 0 48 48" fill="none">
-      <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M6 24h36M24 6c4.5 4.8 6.8 11.2 6.8 18S28.5 37.2 24 42c-4.5-4.8-6.8-11.2-6.8-18S19.5 10.8 24 6z" stroke="currentColor" stroke-width="1.4"/>
-    </svg>`,
-    literature: `<svg viewBox="0 0 48 48" fill="none">
-      <path d="M8 12.5A2.5 2.5 0 0110.5 10H23v28H10.5A2.5 2.5 0 018 35.5v-23z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M40 12.5A2.5 2.5 0 0037.5 10H25v28h12.5a2.5 2.5 0 002.5-2.5v-23z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M13 17h6M13 22h6M13 27h6M29 17h6M29 22h6M29 27h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-    </svg>`,
-    default: `<svg viewBox="0 0 48 48" fill="none">
-      <path d="M8 9.5A2.5 2.5 0 0110.5 7H22v34H10.5A2.5 2.5 0 018 38.5v-29z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-      <path d="M40 9.5A2.5 2.5 0 0037.5 7H26v34h11.5a2.5 2.5 0 002.5-2.5v-29z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-    </svg>`,
-  };
+  // Literature (and every book nested inside it — Hornbill, Snapshots,
+  // ...) all share one illustrated "book" icon, tinted jet-black in light
+  // mode / bright white in dark mode via the same filter every other
+  // subject icon uses (see .subject-card-icon img in style.css).
+  const BOOK_ICON_SRC = "assets/icons/subject-literaturebooks.svg";
+
+  // Language gets its own dedicated artwork instead of a filter-based
+  // tint — two ready-made variants, swapped purely with CSS based on
+  // data-theme (same show/hide pattern as the header's sun/moon toggle),
+  // so no re-render is needed when the theme flips.
+  const LANGUAGE_ICON_LIGHT = "assets/icons/subject-englishlanguagelight.svg";
+  const LANGUAGE_ICON_DARK = "assets/icons/subject-englishlanguagedark.svg";
 
   function iconFor(track) {
-    const key = (track.icon || track.id || track.title || "").toLowerCase();
-    if (ICONS[key]) return ICONS[key];
-    for (const name of Object.keys(ICONS)) {
-      if (key.includes(name)) return ICONS[name];
+    const key = (track && (track.icon || track.id || track.title) || "").toLowerCase();
+    if (key.includes("language")) {
+      return (
+        `<img class="icon-theme-light" src="${LANGUAGE_ICON_LIGHT}" alt="" width="74" height="74">` +
+        `<img class="icon-theme-dark" src="${LANGUAGE_ICON_DARK}" alt="" width="74" height="74">`
+      );
     }
-    return ICONS.default;
+    return `<img src="${BOOK_ICON_SRC}" alt="" width="74" height="74">`;
   }
 
+  // A track's own chapter count either comes straight from `.sections`, or
+  // — for a track that splits further into books — from summing each
+  // book's sections, same as SubjectPicker does for a tracked subject.
   function chapterCountFor(track) {
+    if (track.tracks && track.tracks.length) {
+      return track.tracks.reduce((sum, book) => sum + (book.sections || []).length, 0);
+    }
     return (track.sections || []).length;
   }
 
-  function render(container, { cls, subject }) {
+  function metaTextFor(track) {
+    if (!track.ready) return "Coming soon";
+    const count = chapterCountFor(track);
+    return `${count} chapter${count === 1 ? "" : "s"} available`;
+  }
+
+  function render(container, { cls, subject, backLabel, heading, subheading }) {
     container.innerHTML = "";
     container.classList.add("picker-mode");
 
@@ -52,11 +68,11 @@ const TrackPicker = (() => {
     wrap.className = "class-picker subject-picker";
 
     wrap.innerHTML = `
-      <button class="picker-back" id="trackPickerBack">${backIconSvg()}<span>${escapeHtml(cls.label)} subjects</span></button>
+      <button class="picker-back" id="trackPickerBack">${backIconSvg()}<span>${escapeHtml(backLabel || `${cls.label} subjects`)}</span></button>
       <div class="class-picker-intro">
         <div class="class-picker-eyebrow"><span>${escapeHtml(cls.label)} · ${escapeHtml(subject.title)}</span></div>
-        <h1>Choose a track</h1>
-        <p>Pick a track to see its chapters.</p>
+        <h1>${escapeHtml(heading || "Choose a track")}</h1>
+        <p>${escapeHtml(subheading || "Pick a track to see its chapters.")}</p>
       </div>
       <div class="class-grid subject-grid" id="trackGrid"></div>
     `;
@@ -66,14 +82,13 @@ const TrackPicker = (() => {
 
     const grid = wrap.querySelector("#trackGrid");
     (subject.tracks || []).forEach((track, i) => {
-      const count = chapterCountFor(track);
       const card = document.createElement("button");
-      card.className = "class-card subject-card";
+      card.className = "class-card subject-card" + (!track.ready ? " unready" : "");
       card.style.setProperty("--card-index", i);
       card.innerHTML = `
         <span class="subject-card-icon">${iconFor(track)}</span>
         <span class="class-card-name">${escapeHtml(track.title)}</span>
-        <span class="class-card-meta">${count} chapter${count === 1 ? "" : "s"} available</span>
+        <span class="class-card-meta">${metaTextFor(track)}</span>
       `;
       card.addEventListener("click", () => onPick && onPick(track));
       grid.appendChild(card);

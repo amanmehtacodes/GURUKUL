@@ -17,40 +17,53 @@
   --error: #A6402F;
   --error-soft: #F6E7E3;
 
-  /* Section color-coding palette — cycled per top-level section so each
-     subject reads as visually distinct across the sidebar and notes. */
-  --c1: #2F5233;   /* forest green   */
-  --c1-soft: #E8EEE8;
-  --c2: #29577D;   /* slate blue     */
-  --c2-soft: #E4EDF3;
-  --c3: #A6472F;   /* rust           */
-  --c3-soft: #F5E7E1;
-  --c4: #7A5C9E;   /* muted violet   */
-  --c4-soft: #EEE7F5;
-  --c5: #B8863B;   /* amber          */
-  --c5-soft: #F5EBDA;
-  --c6: #3F7A6B;   /* teal           */
-  --c6-soft: #E4F0EC;
+  /* Dedicated gold scale for the JEE/NEET "premium — coming soon" cards.
+     Kept separate from --amber (used elsewhere for locked/warning states)
+     so it can be a true, unmistakable gold rather than the brownish/
+     orange tone --amber reads as at small sizes. */
+  --gold: #C9971C;
+  --gold-bright: #F0B90B;
+  --gold-soft: #FDF1CB;
+  --gold-panel: #F6E29B;
+  --gold-ink: #7A5C0A;
 
-  /* Sidebar panel fill per subject color slot — light mode reuses the
-     existing soft tints; dark mode gets its own hand-picked deep shade
-     since the soft tints are low-opacity overlays, not solid fills. */
-  --c1-panel: var(--c1-soft);
-  --c2-panel: var(--c2-soft);
-  --c3-panel: var(--c3-soft);
-  --c4-panel: var(--c4-soft);
-  --c5-panel: var(--c5-soft);
-  --c6-panel: var(--c6-soft);
+  /* Section color-coding palette — one fixed, identity-based color per
+     subject (not a rotating cycle): 1 maths=blue, 2 science=green,
+     3 english=yellow, 4 physics=purple, 5 chemistry=red, 6 biology=green
+     (same green as science — same subject family). Same hue in light and
+     dark mode throughout, only lightness/saturation shifts per theme. */
+  --c1: #1D4ED8;   /* maths — blue    */
+  --c1-soft: #E1EAFC;
+  --c2: #15803D;   /* science — green */
+  --c2-soft: #E1F5E7;
+  --c3: #A16207;   /* english — yellow/gold */
+  --c3-soft: #FBF0D6;
+  --c4: #6D28D9;   /* physics — purple */
+  --c4-soft: #EFE6FB;
+  --c5: #B91C1C;   /* chemistry — red */
+  --c5-soft: #FBE3E1;
+  --c6: #15803D;   /* biology — green (same as science) */
+  --c6-soft: #E1F5E7;
 
-  /* Bold, higher-saturation variants used for chapter/topic accents and
-     done-state marks in the sidebar tree — punchier than the base --cN
-     tones, which stay muted for card top-bars and badges. */
-  --c1-bold: #2E8B45;
-  --c2-bold: #1E88C7;
-  --c3-bold: #D8552E;
-  --c4-bold: #8B5FD1;
-  --c5-bold: #C98A1E;
-  --c6-bold: #1FA98A;
+  /* Sidebar / header panel fill per subject — a clearly-tinted, bold
+     wash (not the near-invisible pale --cN-soft) so the active subject's
+     color actually reads against the paper background in light mode. */
+  --c1-panel: #CFE0FF;
+  --c2-panel: #C6EDD2;
+  --c3-panel: #F6DFA0;
+  --c4-panel: #DCC7F7;
+  --c5-panel: #F6C2BE;
+  --c6-panel: #C6EDD2;
+
+  /* Bold, higher-saturation variants used for chapter/topic accents,
+     done-state marks, and the header/sidebar identity accent — punchier
+     than the base --cN tones, which stay muted for card top-bars. */
+  --c1-bold: #1656D6;
+  --c2-bold: #0F9D4E;
+  --c3-bold: #C4890A;
+  --c4-bold: #7C3AED;
+  --c5-bold: #DC2626;
+  --c6-bold: #0F9D4E;
 
   /* Type */
   --font-mono: 'Space Grotesk', 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
@@ -83,26 +96,37 @@
   --error: #E5484D;
   --error-soft: rgba(229, 72, 77, 0.16);
 
-  --c1: #7FA88A;   --c1-soft: rgba(127, 168, 138, 0.16);
-  --c2: #7CA8CC;   --c2-soft: rgba(124, 168, 204, 0.16);
-  --c3: #D97757;   --c3-soft: rgba(217, 119, 87, 0.16);
-  --c4: #B49BDB;   --c4-soft: rgba(180, 155, 219, 0.16);
-  --c5: #E8A33D;   --c5-soft: rgba(232, 163, 61, 0.16);
-  --c6: #6FC2AD;   --c6-soft: rgba(111, 194, 173, 0.16);
+  /* Bright, unambiguously yellow-gold — not the orange --amber reads as
+     against a dark background. Same gold hue as light mode, just lifted
+     in lightness so it pops on dark paper instead of reading orange. */
+  --gold: #FFD666;
+  --gold-bright: #FFE066;
+  --gold-soft: rgba(255, 214, 102, 0.18);
+  --gold-panel: #4A3A0A;
+  --gold-ink: #FFD666;
 
-  --c1-panel: #1E3A22;
-  --c2-panel: #17334A;
-  --c3-panel: #5C2A1B;
-  --c4-panel: #3D2E52;
-  --c5-panel: #5C4118;
-  --c6-panel: #1F4239;
+  /* Same hue per subject as light mode (blue/green/yellow/purple/red),
+     just lifted in lightness/saturation to pop against the dark paper. */
+  --c1: #6FA8FF;   --c1-soft: rgba(111, 168, 255, 0.18);   /* maths — blue */
+  --c2: #4ADE80;   --c2-soft: rgba(74, 222, 128, 0.18);    /* science — green */
+  --c3: #FACC15;   --c3-soft: rgba(250, 204, 21, 0.18);    /* english — yellow */
+  --c4: #B794F6;   --c4-soft: rgba(183, 148, 246, 0.18);   /* physics — purple */
+  --c5: #F87171;   --c5-soft: rgba(248, 113, 113, 0.18);   /* chemistry — red */
+  --c6: #4ADE80;   --c6-soft: rgba(74, 222, 128, 0.18);    /* biology — green */
 
-  --c1-bold: #5FE28A;
-  --c2-bold: #4FC3FF;
-  --c3-bold: #FF8A5B;
-  --c4-bold: #C99BFF;
-  --c5-bold: #FFC24D;
-  --c6-bold: #3FE0C0;
+  --c1-panel: #15294D;
+  --c2-panel: #123321;
+  --c3-panel: #3A2E0A;
+  --c4-panel: #2C1F49;
+  --c5-panel: #3D1712;
+  --c6-panel: #123321;
+
+  --c1-bold: #4F8CFF;
+  --c2-bold: #34D07E;
+  --c3-bold: #FFD940;
+  --c4-bold: #A879F5;
+  --c5-bold: #FF6B5C;
+  --c6-bold: #34D07E;
 }
 
 /* The logo SVG is solid black paths — invert it to read against a dark
@@ -128,6 +152,20 @@
 :root[data-theme="dark"] .subject-card-icon img {
   filter: brightness(0) invert(1);
 }
+
+/* Language track icon: two dedicated, already-colored assets — shown
+   exactly as provided, no brightness/invert tint (unlike every other
+   subject-card-icon img above). Only the one matching the active theme
+   is shown, same show/hide pattern as the header's sun/moon toggle. */
+.subject-card-icon .icon-theme-light,
+.subject-card-icon .icon-theme-dark,
+:root[data-theme="dark"] .subject-card-icon .icon-theme-light,
+:root[data-theme="dark"] .subject-card-icon .icon-theme-dark {
+  filter: none;
+}
+.subject-card-icon .icon-theme-dark { display: none; }
+:root[data-theme="dark"] .subject-card-icon .icon-theme-light { display: none; }
+:root[data-theme="dark"] .subject-card-icon .icon-theme-dark { display: block; }
 
 * { box-sizing: border-box; }
 
@@ -173,6 +211,16 @@ a { color: inherit; }
   background: var(--paper);
   border-bottom: 1px solid var(--line);
   z-index: 100;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Tinted by app.js (setHeaderAccent) with the same per-subject colors the
+   sidebar uses, whenever a subject's curriculum tree is open — so the
+   header itself signals "you're in Maths / Physics / ..." at a glance. */
+.site-header.subject-tinted {
+  background: var(--header-accent-panel);
+  border-bottom-color: var(--header-accent);
+  border-bottom-width: 2px;
 }
 
 .brand {
@@ -1083,21 +1131,22 @@ a { color: inherit; }
   cursor: not-allowed;
   position: relative;
   overflow: hidden;
-  border-color: var(--amber);
-  background: linear-gradient(155deg, var(--paper-raised) 0%, var(--amber-soft) 130%);
-  box-shadow: 0 0 0 1px var(--amber-soft), 0 14px 30px -16px rgba(184, 134, 59, 0.5);
+  border-width: 2px;
+  border-color: var(--gold-bright);
+  background: linear-gradient(155deg, var(--gold-soft) 0%, var(--gold-panel) 130%);
+  box-shadow: 0 0 0 1px var(--gold-bright), 0 14px 30px -16px rgba(240, 185, 11, 0.55);
   animation: premiumGlow 3.6s ease-in-out infinite;
 }
 .class-card.disabled::before,
 .class-card:disabled::before {
-  background: linear-gradient(90deg, var(--amber), var(--accent), var(--amber));
+  background: linear-gradient(90deg, var(--gold), var(--gold-bright), var(--gold));
   background-size: 200% 100%;
   animation: premiumBar 3.6s linear infinite;
 }
 .class-card.disabled:hover,
 .class-card:disabled:hover {
   transform: none;
-  border-color: var(--amber);
+  border-color: var(--gold-bright);
 }
 .class-card.disabled .class-card-numeral,
 .class-card.disabled .class-card-name,
@@ -1109,11 +1158,10 @@ a { color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  color: #6E4E1E;
-  background: linear-gradient(90deg, var(--amber-soft), rgba(184, 134, 59, 0.28));
-  border: 1px solid var(--amber);
+  color: var(--gold-ink);
+  background: linear-gradient(90deg, var(--gold-soft), var(--gold-panel));
+  border: 1px solid var(--gold);
 }
-:root[data-theme="dark"] .premium-meta { color: var(--amber); }
 .premium-meta svg {
   width: 11px;
   height: 11px;
@@ -1126,8 +1174,8 @@ a { color: inherit; }
   100% { background-position: 200% 0; }
 }
 @keyframes premiumGlow {
-  0%, 100% { box-shadow: 0 0 0 1px var(--amber-soft), 0 14px 30px -16px rgba(184, 134, 59, 0.5); }
-  50% { box-shadow: 0 0 0 1px var(--amber), 0 16px 34px -14px rgba(184, 134, 59, 0.7); }
+  0%, 100% { box-shadow: 0 0 0 1px var(--gold-bright), 0 14px 30px -16px rgba(240, 185, 11, 0.55); }
+  50% { box-shadow: 0 0 0 2px var(--gold-bright), 0 16px 34px -14px rgba(240, 185, 11, 0.8); }
 }
 @keyframes premiumSparkle {
   0%, 100% { opacity: 0.7; transform: scale(0.9) rotate(0deg); }
@@ -1164,11 +1212,11 @@ a { color: inherit; }
 /* Exam-track cards (JEE / NEET) — visually distinguished from grade cards
    with a target icon and a slightly bolder ink-colored top bar. */
 .exam-card {
-  --card-accent: var(--ink);
-  --card-accent-soft: var(--amber-soft);
+  --card-accent: var(--gold-ink);
+  --card-accent-soft: var(--gold-soft);
 }
 .exam-card::before {
-  background: linear-gradient(90deg, var(--ink), var(--amber));
+  background: linear-gradient(90deg, var(--gold), var(--gold-bright));
 }
 .exam-card-icon {
   width: 26px;
