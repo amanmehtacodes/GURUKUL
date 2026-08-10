@@ -10,7 +10,9 @@ const YearPicker = (() => {
   let onPick = null; // (yearObj) => void
   let onChangeTrack = null; // () => void
 
-  const backIconSvg = `<svg viewBox="0 0 16 16" fill="none"><path d="M10 3.5L5.5 8l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  function backIconSvg() {
+    return (window.Icons && Icons.get("back")) || "";
+  }
 
   function render(container, { track }) {
     container.innerHTML = "";
@@ -20,7 +22,7 @@ const YearPicker = (() => {
     wrap.className = "class-picker year-picker";
 
     wrap.innerHTML = `
-      <button class="picker-back" id="yearPickerBack">${backIconSvg}<span>All classes</span></button>
+      <button class="picker-back" id="yearPickerBack">${backIconSvg()}<span>All classes</span></button>
       <div class="class-picker-intro">
         <div class="class-picker-eyebrow"><span>${escapeHtml(track.name)}</span></div>
         <h1>Select your year</h1>

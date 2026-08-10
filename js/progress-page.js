@@ -14,7 +14,7 @@ const ProgressPage = (() => {
     container.innerHTML = "";
     container.classList.add("picker-mode");
 
-    const backIconSvg = `<svg viewBox="0 0 16 16" fill="none"><path d="M10 3.5L5.5 8l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    const backIconSvg = (window.Icons && Icons.get("back")) || "";
     const backBtnHtml = onBack
       ? `<button class="picker-back" id="progressBack">${backIconSvg}<span>Back</span></button>`
       : "";
@@ -56,6 +56,9 @@ const ProgressPage = (() => {
     if (!Progress.isLoaded()) {
       await Progress.ensureLoaded();
     }
+    if (!AccessControl.isLoaded()) {
+      await AccessControl.ensureLoaded();
+    }
     const submissions = Progress.getSubmissions();
 
     if (!Backend.isConfigured()) {
@@ -66,11 +69,19 @@ const ProgressPage = (() => {
       return;
     }
 
-    if (!submissions.length) {
+    const chapterProgressHtml = buildChapterProgressHtml();
+
+    if (!submissions.length && !chapterProgressHtml) {
       bodyEl.innerHTML = `
         <div class="progress-empty">
           <p>No test attempts yet. Once you submit a test, your score will show up here.</p>
         </div>`;
+      return;
+    }
+
+    if (!submissions.length) {
+      bodyEl.innerHTML = chapterProgressHtml;
+      wireChapterProgress(bodyEl);
       return;
     }
 
@@ -110,11 +121,86 @@ const ProgressPage = (() => {
       html += `</div></div>`;
     });
 
-    bodyEl.innerHTML = html;
+    bodyEl.innerHTML = chapterProgressHtml + html;
 
+    wireChapterProgress(bodyEl);
     bodyEl.querySelectorAll(".progress-test-row").forEach((row) => {
       row.addEventListener("click", () => toggleInlineReport(row));
     });
+  }
+
+  /**
+   * Chapter-level progress bars for every class the student currently
+   * has access to (whole-class grants or individual chapter grants),
+   * not just whatever subject they happen to have open right now.
+   */
+  function buildChapterProgressHtml() {
+    if (!window.CLASSES || !window.AccessControl || !window.Progress) return "";
+    const grants = AccessControl.getGrants();
+    if (!grants.length) return "";
+
+    const classGrantIds = new Set(grants.filter((g) => g.type === "class").map((g) => g.value));
+    const chapterGrantIds = new Set(grants.filter((g) => g.type === "chapter").map((g) => g.value));
+    if (!classGrantIds.size && !chapterGrantIds.size) return "";
+
+    let html = "";
+    CLASSES.forEach((cls) => {
+      if (cls.type === "exam" || !cls.subjects) return; // exam tracks aren't live yet
+
+      const hasClassGrant = classGrantIds.has(cls.id);
+      const subjectBlocks = [];
+
+      cls.subjects.forEach((subject) => {
+        if (!subject.ready || !subject.sections) return;
+        const chapterRows = [];
+
+        subject.sections.forEach((section) => {
+          const hasAccess = hasClassGrant || chapterGrantIds.has(section.id);
+          if (!hasAccess) return;
+          const stats = Progress.statsForSection(section);
+          const pct = stats.total > 0 ? Math.round((stats.done / stats.total) * 100) : 0;
+          chapterRows.push(`
+            <div class="chapter-progress-row">
+              <div class="chapter-progress-label">
+                <span>${escapeHtml(section.title)}</span>
+                <span class="chapter-progress-count">${stats.done}/${stats.total}</span>
+              </div>
+              <div class="progress-bar-track">
+                <div class="progress-bar-fill" style="width:${pct}%"></div>
+              </div>
+            </div>`);
+        });
+
+        if (chapterRows.length) {
+          subjectBlocks.push(`
+            <div class="chapter-progress-subject">
+              <div class="chapter-progress-subject-title">${escapeHtml(subject.title)}</div>
+              ${chapterRows.join("")}
+            </div>`);
+        }
+      });
+
+      if (subjectBlocks.length) {
+        html += `
+          <div class="chapter-progress-class">
+            <div class="chapter-progress-class-title">${escapeHtml(cls.name)}</div>
+            ${subjectBlocks.join("")}
+          </div>`;
+      }
+    });
+
+    if (!html) return "";
+    return `
+      <div class="progress-subject-group chapter-progress-group">
+        <div class="progress-subject-title">Chapter progress</div>
+        <div class="chapter-progress-body">${html}</div>
+      </div>`;
+  }
+
+  function wireChapterProgress() {
+    // Placeholder hook — chapter rows are static bars for now (no
+    // click interaction yet), kept as a function so behavior can be
+    // added later without touching the render call sites.
   }
 
   /**

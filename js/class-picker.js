@@ -10,11 +10,13 @@
 const ClassPicker = (() => {
   let onPick = null; // (entry) => void
 
-  const bookIconSvg = `<svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5C4 4.67 4.67 4 5.5 4H11v16H5.5A1.5 1.5 0 014 18.5v-13z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M20 5.5c0-.83-.67-1.5-1.5-1.5H13v16h5.5a1.5 1.5 0 001.5-1.5v-13z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>`;
-
   // Small sparkle glyph used on the premium "Coming soon" badge for the
   // locked JEE/NEET tracks.
   const sparkleIconSvg = `<svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5l1.35 3.9L13.25 6.8l-3.9 1.35L8 12.1l-1.35-3.95L2.75 6.8l3.9-1.4L8 1.5z" fill="currentColor"/></svg>`;
+
+  function bookIconSvg() {
+    return (window.Icons && Icons.get("book")) || "";
+  }
 
   const TRACK_ICON_SRC = {
     jee: "assets/icons/track-jee.svg",
@@ -49,7 +51,7 @@ const ClassPicker = (() => {
 
     wrap.innerHTML = `
       <div class="class-picker-intro">
-        <div class="class-picker-eyebrow">${bookIconSvg}<span>Choose your class</span></div>
+        <div class="class-picker-eyebrow">${bookIconSvg()}<span>Choose your class</span></div>
         <h1>Select a class to begin</h1>
         <p>Notes, practice, and tests are organized by class. Pick yours to see what's available.</p>
       </div>

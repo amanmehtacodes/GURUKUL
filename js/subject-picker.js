@@ -14,7 +14,9 @@ const SubjectPicker = (() => {
   let onPick = null; // (subject) => void
   let onChangeClass = null; // () => void
 
-  const backIconSvg = `<svg viewBox="0 0 16 16" fill="none"><path d="M10 3.5L5.5 8l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  function backIconSvg() {
+    return (window.Icons && Icons.get("back")) || "";
+  }
 
   // General subject icon set (used for regular classes VIII-XII).
   const GENERAL_ICONS = {
@@ -65,7 +67,7 @@ const SubjectPicker = (() => {
     wrap.className = "class-picker subject-picker";
 
     wrap.innerHTML = `
-      <button class="picker-back" id="subjectPickerBack">${backIconSvg}<span>All classes</span></button>
+      <button class="picker-back" id="subjectPickerBack">${backIconSvg()}<span>All classes</span></button>
       <div class="class-picker-intro">
         <div class="class-picker-eyebrow"><span>${escapeHtml(cls.label)} · ${escapeHtml(cls.name)}</span></div>
         <h1>Choose a subject</h1>
@@ -84,6 +86,12 @@ const SubjectPicker = (() => {
       const card = document.createElement("button");
       card.className = "class-card subject-card" + (!subject.ready ? " unready" : "");
       card.style.setProperty("--card-index", i);
+      if (window.SubjectColors) {
+        const key = subject.icon || subject.id || subject.title;
+        const vars = SubjectColors.varsFor(key);
+        card.style.setProperty("--card-accent", vars.accent);
+        card.style.setProperty("--card-accent-soft", vars.soft);
+      }
       card.innerHTML = `
         <span class="subject-card-icon${isSparse ? " icon-sparse" : ""}">${iconSrc ? `<img src="${iconSrc}" alt="" width="74" height="74">` : ""}</span>
         <span class="class-card-name">${escapeHtml(subject.title)}</span>
@@ -117,6 +125,9 @@ const SubjectPicker = (() => {
     render,
     setOnPick: (fn) => (onPick = fn),
     setOnChangeClass: (fn) => (onChangeClass = fn),
+    // Exposed so other modules (the course sidebar) can show the same
+    // subject icon without duplicating this lookup table.
+    iconFor: (key) => GENERAL_ICONS[(key || "").toLowerCase()] || null,
   };
 })();
 

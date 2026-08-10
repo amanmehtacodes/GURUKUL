@@ -86,7 +86,14 @@ const AccessControl = (() => {
     return loaded;
   }
 
-  return { ensureLoaded, reset, hasChapterAccess, getRollNumber, isLoaded };
+  // Raw grant list, for views (like the progress page) that need to
+  // enumerate every class/chapter the student is subscribed to, not just
+  // answer yes/no for one chapter at a time.
+  function getGrants() {
+    return grants.slice();
+  }
+
+  return { ensureLoaded, reset, hasChapterAccess, getRollNumber, isLoaded, getGrants };
 })();
 
 window.AccessControl = AccessControl;

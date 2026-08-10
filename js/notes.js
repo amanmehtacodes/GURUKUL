@@ -6,6 +6,41 @@
  */
 
 const Notes = (() => {
+  /**
+   * Slugify a raw heading string the same way the Table of Contents links
+   * inside each notes.md file were authored (GitHub-style slugs): lowercase,
+   * strip punctuation/symbols (keep letters, numbers, marks, hyphens, spaces),
+   * then turn every individual space into a hyphen (without collapsing runs,
+   * so removed punctuation between words still yields the expected "--").
+   */
+  function slugify(raw) {
+    return String(raw || "")
+      .toLowerCase()
+      .replace(/<[^>]*>/g, "")
+      .replace(/[^\p{L}\p{N}\p{M}\- ]+/gu, "")
+      .trim()
+      .split(" ")
+      .join("-");
+  }
+
+  // marked strips heading ids by default ("ignore IDs"), which breaks every
+  // in-note Table of Contents / cross-heading link. This renderer restores
+  // matching ids, with GitHub-style de-duplication (repeat slug -> -1, -2...)
+  // scoped per note render so counts don't leak between notes.
+  function makeSlugRenderer() {
+    const renderer = new marked.Renderer();
+    const seen = new Map();
+    renderer.heading = (text, level, raw) => {
+      let slug = slugify(raw);
+      if (!slug) slug = "section";
+      const count = seen.get(slug) || 0;
+      seen.set(slug, count + 1);
+      const id = count === 0 ? slug : `${slug}-${count}`;
+      return `<h${level} id="${id}">${text}</h${level}>\n`;
+    };
+    return renderer;
+  }
+
   async function renderNote(container, { section, sub, note }) {
     const isRead = window.Progress && Progress.isNoteRead(note.id);
 
@@ -39,7 +74,7 @@ const Notes = (() => {
       const res = await fetch(note.file);
       if (!res.ok) throw new Error(`Could not load ${note.file} (${res.status})`);
       const md = await res.text();
-      bodyEl.innerHTML = marked.parse(md);
+      bodyEl.innerHTML = marked.parse(md, { renderer: makeSlugRenderer() });
       if (window.MathTools) MathTools.renderMathIn(bodyEl);
     } catch (err) {
       bodyEl.innerHTML = `<p style="color: var(--error);">Failed to load note: ${escapeHtml(err.message)}</p>`;

@@ -32,9 +32,29 @@
   --c6: #3F7A6B;   /* teal           */
   --c6-soft: #E4F0EC;
 
+  /* Sidebar panel fill per subject color slot — light mode reuses the
+     existing soft tints; dark mode gets its own hand-picked deep shade
+     since the soft tints are low-opacity overlays, not solid fills. */
+  --c1-panel: var(--c1-soft);
+  --c2-panel: var(--c2-soft);
+  --c3-panel: var(--c3-soft);
+  --c4-panel: var(--c4-soft);
+  --c5-panel: var(--c5-soft);
+  --c6-panel: var(--c6-soft);
+
+  /* Bold, higher-saturation variants used for chapter/topic accents and
+     done-state marks in the sidebar tree — punchier than the base --cN
+     tones, which stay muted for card top-bars and badges. */
+  --c1-bold: #2E8B45;
+  --c2-bold: #1E88C7;
+  --c3-bold: #D8552E;
+  --c4-bold: #8B5FD1;
+  --c5-bold: #C98A1E;
+  --c6-bold: #1FA98A;
+
   /* Type */
   --font-mono: 'Space Grotesk', 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
-  --font-serif: 'Lora', 'Source Serif 4', 'Georgia', serif;
+  --font-serif: 'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif;
 
   /* Layout */
   --sidebar-w: 300px;
@@ -69,6 +89,20 @@
   --c4: #B49BDB;   --c4-soft: rgba(180, 155, 219, 0.16);
   --c5: #E8A33D;   --c5-soft: rgba(232, 163, 61, 0.16);
   --c6: #6FC2AD;   --c6-soft: rgba(111, 194, 173, 0.16);
+
+  --c1-panel: #1E3A22;
+  --c2-panel: #17334A;
+  --c3-panel: #5C2A1B;
+  --c4-panel: #3D2E52;
+  --c5-panel: #5C4118;
+  --c6-panel: #1F4239;
+
+  --c1-bold: #5FE28A;
+  --c2-bold: #4FC3FF;
+  --c3-bold: #FF8A5B;
+  --c4-bold: #C99BFF;
+  --c5-bold: #FFC24D;
+  --c6-bold: #3FE0C0;
 }
 
 /* The logo SVG is solid black paths — invert it to read against a dark
@@ -79,6 +113,18 @@
    their shading). */
 :root[data-theme="dark"] .brand-mark,
 :root[data-theme="dark"] .exam-card-icon img,
+:root[data-theme="dark"] .sidebar.subject-tinted .sidebar-subject-icon img {
+  filter: brightness(0) invert(1);
+}
+
+/* Force subject icons to pure jet black in light mode and pure bright
+   white in dark mode, regardless of the source artwork's own fill
+   color (some assets use #000, others #090909, etc.) — brightness(0)
+   flattens any solid-tone SVG to true black first, then dark mode
+   inverts that to true white. */
+.subject-card-icon img {
+  filter: brightness(0);
+}
 :root[data-theme="dark"] .subject-card-icon img {
   filter: brightness(0) invert(1);
 }
@@ -92,6 +138,10 @@ html, body {
   color: var(--ink);
   font-family: var(--font-serif);
   -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -133,7 +183,7 @@ a { color: inherit; }
 }
 
 .brand-mark {
-  height: 46px;
+  height: 50px;
   width: auto;
   display: block;
 }
@@ -182,7 +232,7 @@ a { color: inherit; }
   align-items: center;
   gap: 10px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13.5px;
 }
 
 .user-chip {
@@ -218,7 +268,7 @@ a { color: inherit; }
 .prototype-chip .name {
   color: var(--amber);
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 13px;
   font-weight: 600;
   max-width: none;
 }
@@ -237,7 +287,7 @@ a { color: inherit; }
 
 .btn {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13.5px;
   letter-spacing: 0.03em;
   padding: 7px 14px;
   border-radius: var(--radius);
@@ -259,7 +309,7 @@ a { color: inherit; }
   border-color: var(--line-strong);
 }
 
-.btn-sm { padding: 5px 10px; font-size: 11px; }
+.btn-sm { padding: 5px 10px; font-size: 12.5px; }
 
 .google-signin-btn {
   background: var(--paper-raised);
@@ -297,11 +347,19 @@ a { color: inherit; }
   top: var(--header-h);
   overflow-y: auto;
   padding: 18px 0 40px;
+  transition: background 0.2s ease;
+}
+
+.sidebar.subject-tinted {
+  background: var(--sidebar-panel);
+}
+.sidebar.subject-tinted .sidebar-class-header {
+  border-bottom-color: var(--line-strong);
 }
 
 .sidebar-label {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -317,7 +375,7 @@ a { color: inherit; }
   padding: 10px 20px;
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 13.5px;
+  font-size: 15.5px;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--ink);
@@ -329,20 +387,17 @@ a { color: inherit; }
   background: var(--section-accent-soft, transparent);
 }
 
-.section-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
 .chevron {
   width: 12px;
   height: 12px;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.16s ease;
   color: var(--ink-soft);
 }
+.chevron svg { width: 100%; height: 100%; display: block; }
 .tree-section.open > .tree-section-head .chevron { transform: rotate(90deg); }
 
 .tree-subsections {
@@ -357,8 +412,9 @@ a { color: inherit; }
   gap: 7px;
   padding: 8px 20px 8px 30px;
   cursor: pointer;
-  font-size: 14px;
-  color: var(--ink-soft);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
   user-select: none;
 }
 .tree-subsection-head:hover { background: var(--section-accent-soft, var(--accent-soft)); color: var(--ink); }
@@ -377,8 +433,9 @@ a { color: inherit; }
   align-items: center;
   gap: 7px;
   padding: 7px 20px 7px 46px;
-  font-size: 13.5px;
-  color: var(--ink-soft);
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--ink);
   cursor: pointer;
   border-left: 2px solid transparent;
 }
@@ -387,31 +444,46 @@ a { color: inherit; }
   color: var(--section-accent, var(--accent));
   border-left-color: var(--section-accent, var(--accent));
   background: var(--section-accent-soft, var(--accent-soft));
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .tree-item .icon {
   width: 13px; height: 13px; flex-shrink: 0;
-  opacity: 0.7;
+  opacity: 0.8;
 }
-.tree-item.locked { color: var(--ink-faint); }
+.tree-item .icon svg { width: 100%; height: 100%; display: block; }
+.tree-item.locked { color: var(--ink-faint); font-weight: 500; }
 .tree-item.locked .icon { color: var(--amber); opacity: 1; }
 
-.progress-check {
+/* Done vs pending status mark — used on chapter heads, topic heads, and
+   individual notes/tests alike, so progress reads the same way at every
+   level of the tree. */
+.status-check {
   margin-left: auto;
   flex-shrink: 0;
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
-.progress-check.done {
-  background: var(--accent);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8.5l3 3 7-7' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8.5l3 3 7-7' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+.status-check svg { width: 100%; height: 100%; display: block; }
+.status-check .sc-done { display: none; color: var(--section-accent, var(--accent)); }
+.status-check .sc-pending { display: flex; color: var(--ink-faint); opacity: 0.6; }
+.status-check.done .sc-done { display: flex; }
+.status-check.done .sc-pending { display: none; }
+
+.tree-title.done {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--section-accent, var(--accent));
 }
 
 .item-group-label {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -445,14 +517,14 @@ a { color: inherit; }
 }
 .empty-state h2 {
   font-family: var(--font-mono);
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: 0.02em;
   color: var(--ink);
   margin: 0 0 8px;
 }
 .empty-state p {
   color: var(--ink-soft);
-  font-size: 14.5px;
+  font-size: 16.5px;
   line-height: 1.6;
 }
 
@@ -468,7 +540,7 @@ a { color: inherit; }
 
 .breadcrumb {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12.5px;
   color: var(--ink-faint);
   letter-spacing: 0.03em;
 }
@@ -499,13 +571,21 @@ a { color: inherit; }
 
 .note-body {
   font-family: var(--font-serif);
-  font-size: 18.5px;
+  font-size: 21px;
   line-height: 1.78;
   color: var(--ink);
 }
+.note-body h1,
+.note-body h2,
+.note-body h3,
+.note-body h4 {
+  /* Keeps anchor-linked headings (Table of Contents, cross-references)
+     from landing underneath the fixed site header when jumped to. */
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
 .note-body h1 {
   font-family: var(--font-mono);
-  font-size: 27px;
+  font-size: 30.5px;
   font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0 0 26px;
@@ -514,7 +594,7 @@ a { color: inherit; }
 }
 .note-body h2 {
   font-family: var(--font-mono);
-  font-size: 16.5px;
+  font-size: 18.5px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -522,7 +602,7 @@ a { color: inherit; }
   margin: 38px 0 14px;
 }
 .note-body h3 {
-  font-size: 19px;
+  font-size: 21.5px;
   font-weight: 700;
   margin: 26px 0 10px;
 }
@@ -549,7 +629,7 @@ a { color: inherit; }
   background: none;
   padding: 0;
   color: inherit;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.6;
 }
 .note-body blockquote {
@@ -558,14 +638,14 @@ a { color: inherit; }
   border-left: 3px solid var(--amber);
   background: var(--amber-soft);
   color: var(--ink-soft);
-  font-size: 15px;
+  font-size: 17px;
 }
 .note-body blockquote p:last-child { margin-bottom: 0; }
 .note-body table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 20px;
-  font-size: 14.5px;
+  font-size: 16.5px;
 }
 .note-body th, .note-body td {
   border: 1px solid var(--line-strong);
@@ -574,7 +654,7 @@ a { color: inherit; }
 }
 .note-body th {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12.5px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   background: var(--accent-soft);
@@ -604,19 +684,19 @@ a { color: inherit; }
 }
 .lock-card h2 {
   font-family: var(--font-mono);
-  font-size: 15px;
+  font-size: 17px;
   margin: 0 0 10px;
 }
 .lock-card p {
   color: var(--ink-soft);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   margin: 0 0 22px;
 }
 .needs-access-card p:last-child { margin-bottom: 0; }
 .needs-access-note {
   font-family: var(--font-mono);
-  font-size: 12px !important;
+  font-size: 13.5px !important;
   color: var(--ink-faint) !important;
 }
 
@@ -631,7 +711,7 @@ a { color: inherit; }
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--amber);
@@ -647,12 +727,12 @@ a { color: inherit; }
 }
 .test-title {
   font-family: var(--font-mono);
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 700;
   margin: 0 0 8px;
 }
 .test-meta {
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: var(--ink-soft);
 }
 
@@ -665,13 +745,13 @@ a { color: inherit; }
 }
 .question-num {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12.5px;
   color: var(--ink-faint);
   letter-spacing: 0.05em;
   margin-bottom: 8px;
 }
 .question-prompt {
-  font-size: 17.5px;
+  font-size: 20px;
   line-height: 1.6;
   margin: 0 0 16px;
   color: var(--ink);
@@ -686,7 +766,7 @@ a { color: inherit; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   cursor: pointer;
-  font-size: 15.5px;
+  font-size: 17.5px;
   transition: border-color 0.12s ease, background 0.12s ease;
 }
 .mcq-option:hover { border-color: var(--line-strong); }
@@ -739,7 +819,7 @@ a { color: inherit; }
   padding-top: 12px;
   border-top: 1px solid var(--line);
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 14px;
 }
 .mcq-feedback.correct { color: var(--accent); }
 .mcq-feedback.incorrect { color: var(--error); }
@@ -749,7 +829,7 @@ a { color: inherit; }
   width: 100%;
   min-height: 90px;
   font-family: var(--font-serif);
-  font-size: 15.5px;
+  font-size: 17.5px;
   line-height: 1.6;
   padding: 12px 14px;
   border: 1px solid var(--line-strong);
@@ -775,7 +855,7 @@ a { color: inherit; }
 
 .mcq-correct-line {
   margin-top: 8px;
-  font-size: 13px;
+  font-size: 14.5px;
   color: var(--ink-soft);
 }
 .mcq-correct-line strong { color: var(--ink); }
@@ -785,14 +865,14 @@ a { color: inherit; }
   padding: 10px 14px;
   border: 1px dashed var(--line-strong);
   border-radius: var(--radius);
-  font-size: 14px;
+  font-size: 16px;
   color: var(--ink-soft);
   min-height: 20px;
   background: var(--paper);
 }
 .math-preview-empty {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 13px;
   color: var(--ink-faint);
 }
 
@@ -804,14 +884,14 @@ a { color: inherit; }
 }
 .reference-answer-label {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 6px;
 }
 .reference-answer-text {
-  font-size: 14.5px;
+  font-size: 16.5px;
   line-height: 1.6;
   color: var(--ink);
 }
@@ -826,7 +906,7 @@ a { color: inherit; }
 }
 .submit-status {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--ink-soft);
 }
 .submit-status.success { color: var(--accent); }
@@ -837,7 +917,7 @@ a { color: inherit; }
   border-radius: var(--radius);
   margin-bottom: 20px;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14.5px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -865,10 +945,10 @@ a { color: inherit; }
   padding: 32px 36px;
   background: var(--paper-raised);
 }
-.answer-key-pane .note-body { font-size: 16px; }
+.answer-key-pane .note-body { font-size: 18px; }
 .answer-key-loading {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--ink-faint);
 }
 
@@ -907,7 +987,7 @@ a { color: inherit; }
   align-items: center;
   gap: 7px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13.5px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -921,7 +1001,7 @@ a { color: inherit; }
 
 .class-picker-intro h1 {
   font-family: var(--font-mono);
-  font-size: 34px;
+  font-size: 38.5px;
   font-weight: 700;
   letter-spacing: -0.015em;
   margin: 0 0 14px;
@@ -929,7 +1009,7 @@ a { color: inherit; }
 }
 
 .class-picker-intro p {
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.6;
   color: var(--ink-soft);
   margin: 0;
@@ -1056,7 +1136,7 @@ a { color: inherit; }
 
 .class-card-numeral {
   font-family: var(--font-mono);
-  font-size: 44px;
+  font-size: 49.5px;
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--ink);
@@ -1064,14 +1144,14 @@ a { color: inherit; }
 }
 
 .class-card-name {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   color: var(--ink-soft);
 }
 
 .class-card-meta {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--card-accent);
@@ -1100,7 +1180,7 @@ a { color: inherit; }
 .exam-card-icon svg,
 .exam-card-icon img { width: 100%; height: 100%; display: block; transition: transform 0.2s ease; }
 .exam-numeral {
-  font-size: 26px !important;
+  font-size: 29.5px !important;
   letter-spacing: 0.04em;
 }
 
@@ -1118,7 +1198,7 @@ a { color: inherit; }
   border: none;
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 14px;
   letter-spacing: 0.03em;
   color: var(--ink-faint);
 }
@@ -1144,7 +1224,11 @@ a { color: inherit; }
 .subject-card::before { display: none; }
 .subject-card:hover { border-color: var(--ink); }
 .subject-card.unready:hover { border-color: var(--line); transform: none; box-shadow: none; cursor: default; }
-.subject-card.unready { opacity: 0.72; }
+/* Dim only the label, not the whole card — a parent's opacity would
+   also wash out the icon (an opaque child can't opt back out of an
+   ancestor's opacity), and subject icons should stay jet black in
+   light mode / bright white in dark mode even while "coming soon". */
+.subject-card.unready .class-card-name { opacity: 0.72; }
 
 .subject-card-icon {
   width: 74px;
@@ -1167,7 +1251,7 @@ a { color: inherit; }
 .subject-card .class-card-name {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--ink);
 }
 
@@ -1193,7 +1277,7 @@ a { color: inherit; }
   border: none;
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 13px;
   letter-spacing: 0.03em;
   color: var(--ink-faint);
   text-align: left;
@@ -1203,20 +1287,47 @@ a { color: inherit; }
 
 .sidebar-class-header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 9px;
   padding: 2px 20px 16px;
   margin-bottom: 6px;
   border-bottom: 1px solid var(--line);
 }
+.sidebar-subject-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper-raised);
+  flex-shrink: 0;
+}
+.sidebar-subject-icon img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.sidebar.subject-tinted .sidebar-subject-icon {
+  background: rgba(255, 255, 255, 0.14);
+}
+:root[data-theme="dark"] .sidebar.subject-tinted .sidebar-subject-icon {
+  background: rgba(0, 0, 0, 0.18);
+}
+.sidebar-class-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
 .sidebar-class-numeral {
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 22.5px;
   font-weight: 700;
   color: var(--ink);
 }
 .sidebar-class-name {
-  font-size: 13px;
+  font-size: 14.5px;
   color: var(--ink-soft);
 }
 
@@ -1233,7 +1344,7 @@ a { color: inherit; }
   justify-content: space-between;
   align-items: baseline;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.02em;
   color: var(--ink-soft);
   margin-bottom: 4px;
@@ -1271,7 +1382,7 @@ a { color: inherit; }
   background: none;
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--ink-soft);
   text-align: left;
@@ -1287,7 +1398,7 @@ a { color: inherit; }
 .subject-pill.unready { color: var(--ink-faint); }
 .subject-pill .soon-tag {
   margin-left: auto;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--amber);
@@ -1317,13 +1428,13 @@ a { color: inherit; }
 .coming-soon-icon svg { width: 100%; height: 100%; }
 .coming-soon h2 {
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 22.5px;
   margin: 0 0 12px;
   color: var(--ink);
 }
 .coming-soon p {
   color: var(--ink-soft);
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.65;
   margin: 0;
 }
@@ -1340,7 +1451,7 @@ a { color: inherit; }
 }
 .progress-loading {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--ink-faint);
   text-align: center;
   padding: 40px 0;
@@ -1352,14 +1463,14 @@ a { color: inherit; }
 }
 .progress-empty p {
   color: var(--ink-soft);
-  font-size: 14.5px;
+  font-size: 16.5px;
   line-height: 1.6;
 }
 
 .progress-subject-group { margin-bottom: 32px; }
 .progress-subject-title {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14.5px;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--ink);
@@ -1371,6 +1482,42 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.chapter-progress-group { margin-bottom: 40px; }
+.chapter-progress-body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.chapter-progress-class-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--section-accent, var(--accent));
+  margin-bottom: 10px;
+}
+.chapter-progress-subject { margin-bottom: 14px; }
+.chapter-progress-subject-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.chapter-progress-row { margin-bottom: 10px; }
+.chapter-progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+.chapter-progress-count {
+  font-family: var(--font-mono);
+  color: var(--ink-faint);
 }
 .progress-test-row {
   display: flex;
@@ -1389,7 +1536,7 @@ a { color: inherit; }
 }
 .progress-test-row:hover, .progress-test-row.expanded { border-color: var(--accent); }
 .progress-test-name {
-  font-size: 14.5px;
+  font-size: 16.5px;
   color: var(--ink);
   margin-bottom: 3px;
   display: flex;
@@ -1398,12 +1545,12 @@ a { color: inherit; }
 }
 .progress-test-meta {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12.5px;
   color: var(--ink-faint);
 }
 .progress-test-score {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   padding: 4px 12px;
   border-radius: 20px;
@@ -1417,7 +1564,7 @@ a { color: inherit; }
 
 .progress-theory-badge {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.03em;
   padding: 2px 8px;
   border-radius: 20px;
@@ -1444,7 +1591,7 @@ a { color: inherit; }
   .subject-card { flex-basis: 160px; max-width: 180px; }
   .class-picker { padding: 40px 20px 70px; }
   .class-picker-intro { margin-bottom: 40px; }
-  .class-picker-intro h1 { font-size: 26px; }
+  .class-picker-intro h1 { font-size: 29.5px; }
   .sidebar {
     position: fixed;
     left: 0;
@@ -1509,5 +1656,5 @@ a { color: inherit; }
 @media (max-width: 480px) {
   .class-card { flex-basis: 42%; max-width: none; aspect-ratio: auto; padding: 22px 14px; }
   .subject-card { flex-basis: 42%; max-width: none; }
-  .class-card-numeral { font-size: 36px; }
+  .class-card-numeral { font-size: 40.5px; }
 }

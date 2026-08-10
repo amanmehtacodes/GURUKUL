@@ -302,6 +302,7 @@
   }
 
   async function boot() {
+    if (window.Icons) await Icons.ensureLoaded(); // fetch the shared icon set before anything renders
     await Auth.init(); // Supabase session restore is async (reads localStorage + may verify with the server)
 
     ClassPicker.setOnPick(handleClassPick);
@@ -350,10 +351,12 @@
 
     document.addEventListener("gurukul:home", () => showPicker());
     document.addEventListener("gurukul:progress-changed", () => {
-      // Refresh just the sidebar (progress bars + checkmarks) — never
-      // touch mainEl here, or a just-submitted test's results would be
-      // wiped out from under the student.
-      if (view === "class") renderSidebar();
+      // Update progress bars/checkmarks in place — never call
+      // renderSidebar() here, since that rebuilds the whole tree and
+      // would collapse any chapter/topic the student currently has
+      // open. Also never touch mainEl, or a just-submitted test's
+      // results would be wiped out from under the student.
+      if (view === "class" && window.Sidebar) Sidebar.refreshProgressMarks(Progress.doneItemIds());
     });
   }
 

@@ -105,6 +105,26 @@ const Progress = (() => {
     return { notesTotal, notesRead, testsTotal, testsDone };
   }
 
+  /**
+   * Same idea as statsFor, but scoped to a single chapter (section)
+   * rather than a whole subject — used to show one progress bar per
+   * chapter on the progress page.
+   */
+  function statsForSection(section) {
+    let total = 0, done = 0;
+    (section.subsections || []).forEach((sub) => {
+      (sub.notes || []).forEach((note) => {
+        total++;
+        if (isNoteRead(note.id)) done++;
+      });
+      (sub.tests || []).forEach((test) => {
+        total++;
+        if (items.has(test.id)) done++;
+      });
+    });
+    return { total, done };
+  }
+
   return {
     ensureLoaded,
     reset,
@@ -114,6 +134,7 @@ const Progress = (() => {
     doneItemIds,
     getSubmissions,
     statsFor,
+    statsForSection,
     isLoaded: () => loaded,
   };
 })();

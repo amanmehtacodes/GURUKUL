@@ -11,7 +11,9 @@ const TrackPicker = (() => {
   let onPick = null; // (track) => void
   let onChangeSubject = null; // () => void
 
-  const backIconSvg = `<svg viewBox="0 0 16 16" fill="none"><path d="M10 3.5L5.5 8l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  function backIconSvg() {
+    return (window.Icons && Icons.get("back")) || "";
+  }
 
   const ICONS = {
     language: `<svg viewBox="0 0 48 48" fill="none">
@@ -50,7 +52,7 @@ const TrackPicker = (() => {
     wrap.className = "class-picker subject-picker";
 
     wrap.innerHTML = `
-      <button class="picker-back" id="trackPickerBack">${backIconSvg}<span>${escapeHtml(cls.label)} subjects</span></button>
+      <button class="picker-back" id="trackPickerBack">${backIconSvg()}<span>${escapeHtml(cls.label)} subjects</span></button>
       <div class="class-picker-intro">
         <div class="class-picker-eyebrow"><span>${escapeHtml(cls.label)} · ${escapeHtml(subject.title)}</span></div>
         <h1>Choose a track</h1>
