@@ -85,14 +85,20 @@ const Auth = (() => {
     }
   }
 
-  function signInWithGoogle() {
+  // redirectPath: optional relative page to land on after OAuth completes
+  // (e.g. "classes.html" from the marketing landing page). Defaults to
+  // the current page, same as before.
+  function signInWithGoogle(redirectPath) {
     if (!supabase) {
       alert("Supabase isn't configured yet — add SUPABASE_ANON_KEY in js/config.js. See SETUP_CHECKLIST.md.");
       return;
     }
+    const redirectTo = redirectPath
+      ? new URL(redirectPath, window.location.href).href
+      : window.location.href.split("#")[0];
     supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: window.location.href.split("#")[0] },
+      options: { redirectTo },
     });
   }
 
@@ -121,8 +127,8 @@ const Auth = (() => {
     container.appendChild(btn);
   }
 
-  function promptSignIn() {
-    signInWithGoogle();
+  function promptSignIn(redirectPath) {
+    signInWithGoogle(redirectPath);
   }
 
   async function signOut() {

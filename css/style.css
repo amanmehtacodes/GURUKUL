@@ -1004,6 +1004,108 @@ a { color: inherit; }
 .note-toolbar .actions { display: flex; gap: 8px; }
 
 /* ==========================================================================
+   HERO LANDING
+   ========================================================================== */
+/* Standalone marketing splash at index.html — the site's actual front
+   door, separate from the class-picker app (classes.html). Full-page
+   user-supplied photo bg, big white wordmark, short pitch, and two CTAs
+   (browse free / sign in). No site-header sits above this page, so no
+   header offset is needed here. */
+.hero-landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+  background: url("../assets/landingbg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 214, 102, 0.35);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFE066;
+  background: rgba(255, 214, 102, 0.08);
+  margin-bottom: 30px;
+}
+
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFE066;
+  box-shadow: 0 0 8px #FFE066;
+}
+
+.hero-logo {
+  width: min(460px, 62vw);
+  height: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: 30px;
+}
+
+.hero-desc {
+  max-width: 560px;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(245, 244, 238, 0.78);
+  margin: 0 0 38px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-btn {
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 14.5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.hero-btn-primary {
+  background: linear-gradient(135deg, #FFE066, #D97757);
+  color: #1A1206;
+  box-shadow: 0 10px 26px rgba(232, 163, 61, 0.35);
+}
+.hero-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(232, 163, 61, 0.45); }
+
+.hero-btn-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: #F5F4EE;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.hero-btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
+
+@media (max-width: 640px) {
+  .hero-logo { width: min(320px, 70vw); }
+  .hero-desc { font-size: 15.5px; }
+}
+
+/* ==========================================================================
    CLASS PICKER (landing view)
    ========================================================================== */
 /* Logo/brand is always clickable as a "go home" shortcut, regardless of view */

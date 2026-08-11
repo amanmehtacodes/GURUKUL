@@ -1,352 +1,228 @@
 # A Square and a Cube — Cubes & Cube Roots
-### (Continued — Grade content, Part 2)
+### (Class 8 · Chapter 1, NCERT Ganita Prakash)
 
 ---
 
-## 13. CUBIC NUMBERS — DEFINITION & NOTATION
+### 1.2 Cubic Numbers
 
-### 🔑 Definition
-A **cube** (or **perfect cube**) is obtained by multiplying a number by itself **three times**: **n × n × n = n³**, read as "n cubed."
-- 1 = 1×1×1, 8 = 2×2×2, 27 = 3×3×3, ...
-- Geometrically, n³ = the number of unit cubes needed to build a cube of side n.
+<div style="border-left:4px solid #2563eb;padding:8px 14px;background:#eff6ff;margin:12px 0;">
+<b>Key Concept — What is a cube number?</b><br>
+A cube is a solid figure where all sides meet at right angles and are equal. A cube of side 2 cm is made of $2\times2\times2=8$ unit cubes; a cube of side 3 cm needs $3\times3\times3=27$ unit cubes; a cube of side 4 units needs $4\times4\times4=64$ unit cubes (4 layers, each layer $4\times4=16$ unit cubes).
+</div>
 
-### 📖 Explanation
-- A cube of side 2 cm is made of **2×2×2 = 8** unit cubes.
-- A cube of side 3 cm is made of **3×3×3 = 27** unit cubes.
-- A cube of side 4 units = 4 layers of (4×4=16) unit cubes = **4×4×4 = 64** unit cubes.
+<svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="100,10 170,50 100,90 30,50" fill="#93c5fd" stroke="#1e293b" stroke-width="1.5"/>
+  <polygon points="30,50 100,90 100,170 30,130" fill="#1e40af" stroke="#1e293b" stroke-width="1.5"/>
+  <polygon points="100,90 170,50 170,130 100,170" fill="#2563eb" stroke="#1e293b" stroke-width="1.5"/>
+  <!-- top face grid -->
+  <line x1="65" y1="30" x2="135" y2="70" stroke="#ffffff" stroke-width="1.2"/>
+  <line x1="135" y1="30" x2="65" y2="70" stroke="#ffffff" stroke-width="1.2"/>
+  <!-- left face grid -->
+  <line x1="30" y1="90" x2="100" y2="130" stroke="#ffffff" stroke-width="1.2"/>
+  <line x1="65" y1="70" x2="65" y2="150" stroke="#ffffff" stroke-width="1.2"/>
+  <!-- right face grid -->
+  <line x1="170" y1="90" x2="100" y2="130" stroke="#ffffff" stroke-width="1.2"/>
+  <line x1="135" y1="70" x2="135" y2="150" stroke="#ffffff" stroke-width="1.2"/>
+  <text x="100" y="185" font-size="11" text-anchor="middle" fill="#1e293b">2 × 2 × 2 = 8 unit cubes</text>
+</svg>
 
-### 🔑 Cube Roots Notation
-If y = x³, then **x = ∛y** (cube root of y). Since cubing preserves sign, every real number has **exactly one** real cube root (unlike squares).
-- ∛27 = 3, ∛1000 = 10
+<div style="border-left:4px solid #16a34a;padding:8px 14px;background:#f0fdf4;margin:12px 0;">
+<b>Formula — Cube notation</b>
+$$n \times n \times n = n^3 \quad (\text{read as "}n\text{ cubed"})$$
+$1, 8, 27, 125, \ldots$ are <b>perfect cubes</b>. Note: $9$ is not a cube ($2^3=8$, $3^3=27$), nor is any number from $10$ to $26$.
+</div>
 
-### ❓ Q&A
-**Q1. Is 9 a perfect cube?**
-A. No — 2³=8 and 3³=27; 9 falls between them, so it's not a cube. (In fact no number from 10 to 26 is a cube either.)
+#### Table of Cubes (1–20)
 
-**Q2. How many unit cubes make a cube of side 5?**
-A. 5³ = **125**.
+| $n$ | $n^3$ | $n$ | $n^3$ |
+|---|---|---|---|
+| 1 | 1 | 11 | 1331 |
+| 2 | 8 | 12 | 1728 |
+| 3 | 27 | 13 | 2197 |
+| 4 | 64 | 14 | 2744 |
+| 5 | 125 | 15 | 3375 |
+| 6 | 216 | 16 | 4096 |
+| 7 | 343 | 17 | 4913 |
+| 8 | 512 | 18 | 5832 |
+| 9 | 729 | 19 | 6859 |
+| 10 | 1000 | 20 | 8000 |
 
-**Q3. What is ∛64?**
-A. Since 4³ = 64, ∛64 = **4**.
+<div style="border-left:4px solid #2563eb;padding:8px 14px;background:#eff6ff;margin:12px 0;">
+<b>Key Concept — Units digit of cubes</b><br>
+Unlike squares (which only end in $0,1,4,5,6,9$), <b>cubes can end in any digit $0$–$9$</b>. A cube can never end in exactly two zeroes — like squares, trailing zeros come in a fixed multiple (a number with $k$ trailing zeros gives a cube with $3k$ trailing zeros), so two zeros is impossible.
+</div>
 
-**Q4. Can (−6)³ be computed? What is it?**
-A. Yes: (−6)³ = −6 × −6 × −6 = **−216**. (Unlike squares, a cube can be negative.)
+Cubes can also be taken of fractions, decimals, and negative numbers:
+$$\left(\tfrac{4}{6}\right)^3 = \tfrac{4}{6}\times\tfrac{4}{6}\times\tfrac{4}{6} = \tfrac{64}{216}, \qquad (13.08)^3 = 2237.810112, \qquad (-6)^3 = -216$$
 
----
+#### Taxicab Numbers
 
-## 14. PATTERNS IN CUBES (DIGITS, ZEROS)
+<div style="border-left:4px solid #0d9488;padding:8px 14px;background:#f0fdfa;margin:12px 0;">
+<b>Worked Example — The Hardy–Ramanujan Number</b><br>
+When Hardy remarked that taxicab number $1729$ seemed "dull," Ramanujan replied it was the smallest number expressible as the sum of two cubes in two different ways:
+$$1729 = 1^3+12^3 = 9^3+10^3$$
+Numbers with this property are called <b>taxicab numbers</b>. The next two taxicab numbers are $4104 = 2^3+16^3 = 9^3+15^3$ and $13832 = 2^3+24^3=18^3+20^3$.
+</div>
 
-### 🔑 Rule — Units Digits of Cubes
-Unlike squares, **cubes can end in any digit 0–9**. Each digit maps uniquely:
-| Last digit of n | Last digit of n³ |
-|---|---|
-| 0 | 0 |
-| 1 | 1 |
-| 2 | 8 |
-| 3 | 7 |
-| 4 | 4 |
-| 5 | 5 |
-| 6 | 6 |
-| 7 | 3 |
-| 8 | 2 |
-| 9 | 9 |
+#### Perfect Cubes and Consecutive Odd Numbers
 
-### 🔑 Rule — Zeros at the End of Cubes
-> If a number has *k* trailing zeros, its cube has **3k** trailing zeros (a multiple of 3).
+$$1=1^3,\quad 3+5=2^3,\quad 7+9+11=3^3,\quad 13+15+17+19=4^3,\quad 21+23+25+27+29=5^3,\quad 31+33+35+37+39+41=6^3$$
 
-This means a cube can **never** end in exactly two zeros (00), since 2 is not a multiple of 3.
+<div style="border-left:4px solid #16a34a;padding:8px 14px;background:#f0fdf4;margin:12px 0;">
+<b>Formula — Sum of consecutive odd numbers as a cube</b><br>
+The $n$-th group of consecutive odd numbers (with $n$ terms in that group) sums to $n^3$.
+</div>
 
-### ❓ Q&A
-**Q1. Can a cube end with exactly two zeros? Explain.**
-A. **No.** The number of trailing zeros in a cube must always be a multiple of 3 (0, 3, 6, 9...). Two zeros isn't a multiple of 3, so it's impossible.
+<div style="border-left:4px solid #0d9488;padding:8px 14px;background:#f0fdfa;margin:12px 0;">
+<b>Worked Example</b><br>
+Find $91+93+95+97+99+101+103+105+107+109$ without adding term by term. This is a block of <b>10</b> consecutive odd numbers, so by the pattern above it equals $10^3 = 1000$.
+</div>
 
-**Q2. If a number ends in 3 zeros, how many zeros will its cube have?**
-A. 3 × 3 = **9 zeros**.
+#### Cube Roots
 
-**Q3. True or False: There is no perfect cube that ends with 8.**
-A. **False.** Numbers ending in 2 give cubes ending in 8 (e.g., 2³=8, 12³=1728).
+<div style="border-left:4px solid #2563eb;padding:8px 14px;background:#eff6ff;margin:12px 0;">
+<b>Key Concept — Definition</b><br>
+If $y=x^3$, then $x$ is the <b>cube root</b> of $y$, written $x=\sqrt[3]{y}$.
+$$\sqrt[3]{8}=\sqrt[3]{2^3}=2,\qquad \sqrt[3]{27}=\sqrt[3]{3^3}=3,\qquad \sqrt[3]{1000}=\sqrt[3]{10^3}=10,\qquad \sqrt[3]{n^3}=n$$
+</div>
 
-**Q4. What is the units digit of 23³?**
-A. 23 ends in 3 → cube ends in **7** (23³ = 12167 ✓).
+<div style="border-left:4px solid #0d9488;padding:8px 14px;background:#f0fdfa;margin:12px 0;">
+<b>Worked Example — Prime factorisation method for cube roots</b><br>
+<u>Is 3375 a perfect cube?</u>
+$$3375 = 3\times3\times3\times5\times5\times5 = (3\times3\times3)\times(5\times5\times5) = 3^3\times5^3 = (3\times5)^3 = 15^3$$
+So $3375$ is a perfect cube and $\sqrt[3]{3375}=15$.<br><br>
+<u>Is 500 a perfect cube?</u>
+$$500 = 2\times2\times5\times5\times5$$
+The factors cannot be split into three identical groups (only two 2's, no third), so $500$ is <b>not</b> a perfect cube.
+</div>
 
-**Q5. What is the units digit of 47³?**
-A. 47 ends in 7 → cube ends in **3**.
+<div style="border-left:4px solid #2563eb;padding:8px 14px;background:#eff6ff;margin:12px 0;">
+<b>Key Concept — Perfect cube test</b><br>
+A number is a perfect cube if and only if its prime factors can be split into three identical groups (every prime occurs a multiple-of-3 number of times).
+</div>
 
----
-
-## 15. TAXICAB NUMBERS (RAMANUJAN & 1729)
-
-### 🔑 Definition
-A **taxicab number** is a number that can be expressed as the **sum of two positive cubes in two different ways**.
-
-### 📖 The Famous Story
-G.H. Hardy visited a hospitalised Ramanujan and mentioned his taxicab number was "1729 — a rather dull number." Ramanujan immediately replied that it was actually **fascinating**:
-> 1729 = 1³ + 12³ = 9³ + 10³
-
-This is called the **Hardy–Ramanujan Number**.
-
-### 🔑 Next Taxicab Numbers
-**4104** and **13832**.
-
-### ❓ Q&A
-**Q1. Express 4104 as a sum of two cubes in two different ways.**
-A. 4104 = 2³ + 16³ = 9³ + 15³
-(Check: 8 + 4096 = 4104 ✓; 729 + 3375 = 4104 ✓)
-
-**Q2. Express 13832 as a sum of two cubes in two different ways.**
-A. 13832 = 2³ + 24³ = 18³ + 20³
-(Check: 8 + 13824 = 13832 ✓; 5832 + 8000 = 13832 ✓)
-
-**Q3. Why is 1729 called the Hardy-Ramanujan number?**
-A. Because of the famous hospital-room exchange between Hardy and Ramanujan where Ramanujan instantly recognized it as the smallest taxicab number.
-
-**Q4. What made Ramanujan able to spot such patterns so quickly?**
-A. He had spent a lifetime deeply familiar with number properties — his colleague John Littlewood remarked that every positive integer was like a personal friend to him.
-
----
-
-## 16. PERFECT CUBES AND CONSECUTIVE ODD NUMBERS
-
-### 🔑 Rule
-> Just as squares are sums of consecutive odd numbers starting from 1, **cubes are sums of consecutive odd numbers**, but each cube uses a specific consecutive **block** (not always starting from 1):
-
-```
-1                          = 1  = 1³
-3 + 5                      = 8  = 2³
-7 + 9 + 11                 = 27 = 3³
-13 + 15 + 17 + 19          = 64 = 4³
-21 + 23 + 25 + 27 + 29     = 125 = 5³
-31+33+35+37+39+41          = 216 = 6³
-```
-Each cube n³ uses **n consecutive odd numbers**, and the starting odd number for n³ is: n² − n + 1.
-
-### ❓ Q&A
-**Q1. Find the sum: 91+93+95+97+99+101+103+105+107+109 without calculating directly.**
-A. This is a block of **10 consecutive odd numbers** → this must be **10³ = 1000** (matching the pattern, since 10³ needs 10 terms starting at 10²−10+1 = 91). ✓
-
-**Q2. What is the starting odd number for the block representing 7³?**
-A. n² − n + 1 = 49 − 7 + 1 = **43**. (Sum: 43+45+47+49+51+53+55 = 343 = 7³ ✓)
-
-**Q3. How many odd numbers are summed to get 8³?**
-A. **8 numbers** (n = 8, block size = n).
-
----
-
-## 17. CUBE ROOTS
-
-### 🔑 Definition
-If **y = x³**, then x is the **cube root of y**, denoted **x = ∛y**.
-- ∛8 = 2, ∛27 = 3, ∛1000 = 10, ∛n³ = n
-
-### 📖 Difference from Square Roots
-- A perfect square has **two** square roots (positive and negative).
-- A perfect cube has **only one real cube root** (sign is preserved: cube of a negative is negative).
-
-### ❓ Q&A
-**Q1. Find ∛512.**
-A. 8³ = 512 → **∛512 = 8**.
-
-**Q2. Find ∛729.**
-A. 9³ = 729 → **∛729 = 9**.
-
-**Q3. Find ∛64.**
-A. 4³ = 64 → **∛64 = 4**.
-
-**Q4. Why does a cube have only one real cube root while a square has two square roots?**
-A. Because squaring a negative number gives a positive result (losing the sign), while cubing preserves the sign — so only one number (matching the sign of y) can cube to give y.
-
----
-
-## 18. CHECKING PERFECT CUBES VIA PRIME FACTORISATION
-
-### 🔑 Rule
-> A number is a **perfect cube** if and only if its prime factors can be grouped into **exactly three identical groups** (i.e., every prime factor's exponent is a multiple of 3).
-
-### 📖 Worked Examples
-
-**Is 3375 a perfect cube?**
-3375 = 3×3×3×5×5×5 = 3³ × 5³ = (3×5)³ = 15³ → **Yes**, ∛3375 = 15.
-
-**Is 500 a perfect cube?**
-500 = 2×2×5×5×5 = 2² × 5³. The 2's aren't in a group of 3 → **Not a perfect cube**.
-
-**Reference Table:**
-| Number | Prime Factorisation | Cube's Factorisation |
+| Number | Prime factorisation | Cube's prime factorisation |
 |---|---|---|
-| 4 = 2×2 | 2² | 4³ = 2⁶ |
-| 6 = 2×3 | 2¹×3¹ | 6³ = 2³×3³ |
-| 15 = 3×5 | 3¹×5¹ | 15³ = 3³×5³ |
-| 12 = 2²×3 | 2²×3¹ | 12³ = 2⁶×3³ |
+| 4 | $2\times2$ | $4^3 = 2^3\times2^3 = 64$ |
+| 6 | $2\times3$ | $6^3 = 2^3\times3^3 = 216$ |
+| 15 | $3\times5$ | $15^3 = 3^3\times5^3 = 3375$ |
+| 12 | $2\times2\times3$ | $12^3 = 2^3\times2^3\times3^3 = 1728$ |
 
-**Key Insight:** Each prime factor of a number appears **exactly three times** in the prime factorisation of its cube.
+<div style="border-left:4px solid #d97706;padding:8px 14px;background:#fffbeb;margin:12px 0;">
+<b>Common Mistake</b><br>
+Don't confuse the square test (pairs of prime factors) with the cube test (triples of prime factors). $324=2^2\times3^4$ is a perfect square but not a cube; $3375=3^3\times5^3$ is a perfect cube but not a square.
+</div>
 
-### ❓ Q&A
-**Q1. Find ∛27000.**
-A. 27000 = 27 × 1000 = 3³ × 10³ = (3×10)³ = 30³ → **∛27000 = 30**.
+#### Successive Differences
 
-**Q2. Find ∛10648.**
-A. 10648 = 2³ × 11³ = 22³ → **∛10648 = 22**.
+For perfect squares, taking differences of consecutive terms once gives odd numbers (Level 1), and differencing again gives a constant (Level 2):
 
-**Q3. What number should 1323 be multiplied by to make it a perfect cube?**
-A. 1323 = 3³ × 7² (since 1323 = 3×3×3×7×7). The 7's need one more to make a group of 3.
-**Multiply by 7** → 1323 × 7 = 9261 = 3³ × 7³ = 21³.
+<svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg">
+  <text x="8" y="24" font-size="10" fill="#64748b">Squares</text>
+  <text x="20" y="24" font-size="12" fill="#1e293b">1</text>
+  <text x="70" y="24" font-size="12" fill="#1e293b">4</text>
+  <text x="120" y="24" font-size="12" fill="#1e293b">9</text>
+  <text x="170" y="24" font-size="12" fill="#1e293b">16</text>
+  <text x="220" y="24" font-size="12" fill="#1e293b">25</text>
+  <text x="270" y="24" font-size="12" fill="#1e293b">36</text>
+  <text x="8" y="64" font-size="10" fill="#64748b">Level 1</text>
+  <text x="45" y="64" font-size="12" fill="#dc2626">3</text>
+  <text x="95" y="64" font-size="12" fill="#dc2626">5</text>
+  <text x="145" y="64" font-size="12" fill="#dc2626">7</text>
+  <text x="195" y="64" font-size="12" fill="#dc2626">9</text>
+  <text x="245" y="64" font-size="12" fill="#dc2626">11</text>
+  <text x="8" y="104" font-size="10" fill="#64748b">Level 2</text>
+  <text x="70" y="104" font-size="12" fill="#16a34a">2</text>
+  <text x="120" y="104" font-size="12" fill="#16a34a">2</text>
+  <text x="170" y="104" font-size="12" fill="#16a34a">2</text>
+  <text x="220" y="104" font-size="12" fill="#16a34a">2</text>
+</svg>
 
-**Q4. Is 1728 a perfect cube? Find its cube root.**
-A. 1728 = 2⁶ × 3³ = (2²)³ × 3³ = (4×3)³ = 12³ → **Yes**, ∛1728 = 12.
+For perfect cubes, it takes differencing **three times** to reach a constant:
 
-**Q5. Is 200 a perfect cube?**
-A. 200 = 2³ × 5² — the 5's exponent (2) isn't a multiple of 3 → **Not a perfect cube**.
+<svg viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg">
+  <text x="8" y="24" font-size="10" fill="#64748b">Cubes</text>
+  <text x="30" y="24" font-size="12" fill="#1e293b">1</text>
+  <text x="80" y="24" font-size="12" fill="#1e293b">8</text>
+  <text x="128" y="24" font-size="12" fill="#1e293b">27</text>
+  <text x="176" y="24" font-size="12" fill="#1e293b">64</text>
+  <text x="222" y="24" font-size="12" fill="#1e293b">125</text>
+  <text x="272" y="24" font-size="12" fill="#1e293b">216</text>
+  <text x="8" y="64" font-size="10" fill="#64748b">Level 1</text>
+  <text x="55" y="64" font-size="12" fill="#dc2626">7</text>
+  <text x="100" y="64" font-size="12" fill="#dc2626">19</text>
+  <text x="150" y="64" font-size="12" fill="#dc2626">37</text>
+  <text x="200" y="64" font-size="12" fill="#dc2626">61</text>
+  <text x="248" y="64" font-size="12" fill="#dc2626">91</text>
+  <text x="8" y="104" font-size="10" fill="#64748b">Level 2</text>
+  <text x="80" y="104" font-size="12" fill="#ea580c">12</text>
+  <text x="128" y="104" font-size="12" fill="#ea580c">18</text>
+  <text x="176" y="104" font-size="12" fill="#ea580c">24</text>
+  <text x="224" y="104" font-size="12" fill="#ea580c">30</text>
+  <text x="8" y="144" font-size="10" fill="#64748b">Level 3</text>
+  <text x="105" y="144" font-size="12" fill="#16a34a">6</text>
+  <text x="153" y="144" font-size="12" fill="#16a34a">6</text>
+  <text x="201" y="144" font-size="12" fill="#16a34a">6</text>
+</svg>
 
----
-
-## 19. SUCCESSIVE DIFFERENCES (SQUARES VS CUBES)
-
-### 🔑 Rule for Squares
-Taking differences of consecutive squares repeatedly:
-```
-Squares:   1   4   9   16   25   36
-Level 1:     3   5    7    9   11
-Level 2:       2    2    2    2
-```
-→ Constant difference reached at **Level 2** (2nd differences constant).
-
-### 🔑 Rule for Cubes
-```
-Cubes:    1    8    27   64   125   216
-Level 1:    7   19   37   61    91
-Level 2:     12   18   24    30
-Level 3:        6    6     6
-```
-→ Constant difference reached at **Level 3** (3rd differences constant = 6).
-
-### ✅ General Pattern
-> For nᵏ (kth powers), the differences become constant at the **kth level**.
-
-### ❓ Q&A
-**Q1. At what level do the successive differences of perfect cubes become constant?**
-A. **Level 3** (third differences), with constant value **6**.
-
-**Q2. What is the constant value at Level 2 for squares?**
-A. **2**.
-
-**Q3. Predict: at what level would 4th powers (n⁴) show constant differences?**
-A. **Level 4**.
-
----
-
-## 20. HISTORY — BABYLONIANS, ARYABHATA, BRAHMAGUPTA, SANSKRIT TERMS
-
-### 🔑 Key Facts
-- **Babylonians (c. 1700 BCE)** compiled the first known lists of perfect squares and cubes on clay tablets, used for land measurement and architecture.
-- In **ancient Sanskrit** (from at least the 3rd century BCE):
-  - **varga** = square (both the figure/area and the "square power")
-  - **ghana** = cube (both the solid and "cube power")
-  - **varga-varga** = fourth power
-- **Aryabhata (499 CE):** described varga as both the square figure and the product of two equal quantities.
-- **mula** = "root" (of a plant), used for the mathematical root operation:
-  - **varga-mula** = square root
-  - **ghana-mula** = cube root
-  - This word was borrowed into Arabic as **jidhr** and Latin as **radix** (both mean "root").
-- **pada** (foot/basis/origin) was another term used for "root."
-- **Brahmagupta (628 CE):** defined the *pada* (root) of a *krti* (square) as "that of which it is a square."
-
-### ❓ Q&A
-**Q1. Who compiled the first known lists of squares and cubes?**
-A. The **Babylonians**, around **1700 BCE**.
-
-**Q2. What Sanskrit term means "square" and what does it literally also refer to?**
-A. **Varga** — refers to both the square figure/area and the square power.
-
-**Q3. What is the origin of the word "root" in "square root"?**
-A. From Sanskrit **mula** (root of a plant), which passed into Arabic (*jidhr*) and Latin (*radix*), eventually giving us the English word "root."
-
-**Q4. What did Brahmagupta say about square roots?**
-A. That the *pada* (root) of a *krti* (square) is "that of which it is a square" — i.e., the number that produces the square.
-
-**Q5. What is "ghana-mula"?**
-A. The Sanskrit term for **cube root**.
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;background:#f5f3ff;margin:12px 0;">
+<b>Try It Yourself</b> (from the textbook's "Figure it Out")<br>
+1. Cube roots of $27000$ and $10648$. <i>(Answer: $30$ and $22$.)</i><br>
+2. Multiply $1323$ by what to get a perfect cube? <i>(Answer: $7$, since $1323=3^3\times7^2$.)</i><br>
+3. True/False: (i) cube of any odd number is even — <i>False</i>; (ii) no perfect cube ends in 8 — <i>False</i> (e.g. $12^3=1728$); (iii) cube of a 2-digit number may be a 3-digit number — <i>False</i> (smallest is $10^3=1000$, 4 digits); (iv) cube of a 2-digit number may have 7+ digits — <i>False</i> (largest is $99^3=970299$, 6 digits); (v) cube numbers have an odd number of factors — <i>False</i> in general.<br>
+4. Cube roots of $1331, 4913, 12167, 32768$ (units-digit trick). <i>(Answer: $11, 17, 23, 32$.)</i><br>
+5. Greatest among $67^3{-}66^3$, $43^3{-}42^3$, $67^2{-}66^2$, $43^2{-}42^2$? <i>(Answer: $67^3-66^3 = 13267$ is greatest.)</i>
+</div>
 
 ---
 
-## 21. FIGURE IT OUT — CUBES (SOLVED)
+### 1.3 A Pinch of History
 
-**Q1. Find the cube roots of 27000 and 10648.**
-A. ∛27000 = **30**; ∛10648 = **22**
-
-**Q2. What number will you multiply by 1323 to make it a cube number?**
-A. **7** (1323 = 3³×7² → ×7 gives 3³×7³ = 9261 = 21³)
-
-**Q3. State True or False, with reasoning:**
-(i) The cube of any odd number is even.
-A. **False** — odd × odd × odd = odd (e.g., 3³ = 27, odd).
-
-(ii) There is no perfect cube that ends with 8.
-A. **False** — numbers ending in 2 give cubes ending in 8 (2³=8, 12³=1728).
-
-(iii) The cube of a 2-digit number may be a 3-digit number.
-A. **False** — smallest 2-digit number is 10, and 10³ = 1000 (4 digits); even 4³=64 is 2-digit but 4 is 1-digit. The smallest 2-digit cube, e.g. 5³=125 no wait 5 is 1 digit — checking 2-digit numbers: 10³=1000 (4 digits) is the minimum, so a 2-digit number's cube is always at least 4 digits. **False.**
-
-(iv) The cube of a 2-digit number may have seven or more digits.
-A. **False** — largest 2-digit number is 99; 99³ = 970299, which has only 6 digits. So it never reaches 7 digits.
-
-(v) Cube numbers have an odd number of factors.
-A. **False** — this rule (odd number of factors) applies to **squares**, not cubes. Cubes don't have a fixed parity of factor-count in general.
-
-**Q4. Guess cube roots without factorisation: 1331, 4913, 12167, 32768.**
-A. ∛1331 = **11**, ∛4913 = **17**, ∛12167 = **23**, ∛32768 = **32**
-*(Trick: use units digit to guess the last digit of the root, and the number's magnitude to guess the tens digit — e.g., 1331 is between 1000=10³ and 8000=20³, and ends in 1, so root ends in 1 → 11.)*
-
-**Q5. Which is greatest: (i) 67³−66³ (ii) 43³−42³ (iii) 67²−66² (iv) 43²−42²?**
-A. Using the successive-difference concept: differences of cubes grow much faster than differences of squares, and larger base numbers give larger gaps.
-67³−66³ = 300,763 − 287,496 = 13,267 (large due to n³ growth and larger base)
-**Answer: (i) 67³ − 66³ is the greatest.**
+<div style="border-left:4px solid #2563eb;padding:8px 14px;background:#eff6ff;margin:12px 0;">
+<b>Key Concept — History of squares and cubes</b><br>
+The Babylonians compiled the first known lists of perfect squares and cubes around <b>1700 BCE</b> on clay tablets, used for land measurement and architecture.<br><br>
+In ancient Sanskrit mathematics (from at least the 3rd century BCE), <b>varga</b> meant both the square figure/area and the square power; <b>ghana</b> meant both the solid cube and the cube power; the fourth power was called <b>varga-varga</b>.<br><br>
+Aryabhata (499 CE): "A square figure of four equal sides and the number representing its area are called varga. The product of two equal quantities is also called varga."<br><br>
+The word "root" (as in square root) comes from the Sanskrit <b>mula</b> (root of a plant, origin) — used for roots since at least the 1st century BCE, and later echoed in Arabic (<i>jidhr</i>) and Latin (<i>radix</i>). <b>Varga-mula</b> = square root, <b>ghana-mula</b> = cube root. Another term was <b>pada</b> (foot/basis). Brahmagupta (628 CE): "The pada (root) of a krti (square) is that of which it is a square."
+</div>
 
 ---
 
-## 22. CHAPTER SUMMARY
+### Chapter Summary (as stated in the textbook)
 
-| Concept | Key Fact |
-|---|---|
-| Square number | n × n = n² |
-| Perfect square | Square of a natural number |
-| Units digits of squares | Only 0, 1, 4, 5, 6, 9 possible |
-| Zeros in squares | Always an even count |
-| Square root | Inverse of squaring; denoted √; two roots (±) for perfect squares |
-| Cube number | n × n × n = n³ |
-| Perfect square test | Prime factors split into 2 identical groups |
-| Perfect cube test | Prime factors split into 3 identical groups |
-| Cube root | Denoted ∛; only one real root, sign-preserving |
+- A number obtained by multiplying a number by itself is a **square number**; squares of natural numbers are **perfect squares**.
+- All perfect squares end with $0, 1, 4, 5, 6,$ or $9$, and can only have an **even** number of zeros at the end.
+- **Square root** is the inverse of squaring. Every perfect square has two integral square roots; the positive square root is denoted $\sqrt{\ }$, e.g. $\sqrt{9}=3$.
+- A number obtained by multiplying a number by itself three times is a **cube**, e.g. $1, 8, 27,\ldots$
+- A number is a perfect square if its prime factors split into **two** identical groups.
+- A number is a perfect cube if its prime factors split into **three** identical groups.
+- The symbol $\sqrt[3]{\ }$ denotes **cube root**, e.g. $\sqrt[3]{27}=3$.
 
----
-
-## 23. EXTRA PRACTICE QUESTIONS (SELF-MADE)
-
-### Squares
-1. Without full calculation, state whether 8123 can be a perfect square. Justify using the units digit rule.
-2. Find the smallest number that must be subtracted from 500 to make it a perfect square.
-3. Using prime factorisation, determine whether 784 is a perfect square. If so, find its square root.
-4. If n² has 8 trailing zeros, how many trailing zeros does n have?
-5. Estimate √550 between two consecutive integers.
-6. Find the number of integers lying between 40² and 41².
-7. If 48² = 2304, find 49² using the odd-number addition method.
-
-### Cubes
-8. Is 4096 a perfect cube? Use prime factorisation to justify.
-9. Find the smallest number by which 250 must be multiplied to become a perfect cube.
-10. What is the units digit of 89³?
-11. Find ∛9261 using prime factorisation.
-12. Verify that 4104 truly equals both 2³+16³ and 9³+15³.
-13. Can a perfect cube end in exactly 5 zeros? Explain why or why not.
-14. Find the block of consecutive odd numbers that sum to 9³.
-
-### Mixed / Applied
-15. A cube-shaped storage box is built using 512 unit cubes. What is the length of each side?
-16. A square field has an area of 2025 m². Find its perimeter.
-17. Explain, using factor pairs, why 100 has an odd number of factors while 99 has an even number of factors.
-18. In the locker puzzle, if there were 150 lockers instead of 100, how many would remain open? List them.
-19. True or False: Every perfect cube's prime factorisation has each prime's exponent divisible by 3. Justify with an example.
-20. Compare: which grows faster as n increases — n² or n³? Support your answer using the successive differences method (Section 19).
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;background:#f5f3ff;margin:12px 0;">
+<b>Try It Yourself — Square Pairs Puzzle</b><br>
+The numbers $3, 6, 10, 15, 1$ are arranged so each adjacent pair sums to a perfect square: $3+6=9$, $6+10=16$, $10+15=25$, $15+1=16$. Try arranging the numbers $1$ to $17$ (no repeats) in a row so every adjacent pair sums to a square. Can it be done in more than one way? Can you do the same for $1$ to $32$ arranged in a <i>circle</i>?
+</div>
 
 ---
 
-*End of Notes — Ready for question-paper preparation, topic-wise.*
+### Quick Formula Sheet
+
+| # | Rule | Formula (LaTeX) |
+|---|---|---|
+| 1 | Area of a square, side $s$ | $A = s\times s = s^2$ |
+| 2 | Square notation | $n\times n = n^2$ |
+| 3 | Sum of first $n$ odd numbers | $1+3+5+\cdots+(2n-1) = n^2$ |
+| 4 | The $n$-th odd number | $2n-1$ |
+| 5 | Square root definition | $y=x^2 \implies x=\sqrt{y}$ |
+| 6 | Both square roots of $n^2$ | $\sqrt{n^2} = \pm n$ |
+| 7 | Numbers strictly between $n^2$ and $(n+1)^2$ | $2n$ |
+| 8 | Triangular numbers → square | $T_{n-1}+T_n = n^2$ |
+| 9 | Trailing zeros rule | $k$ zeros in $n$ $\Rightarrow$ $2k$ zeros in $n^2$ |
+| 10 | Perfect square test (prime factorisation) | prime factors split into **2** identical groups |
+| 11 | Volume of a cube, edge $s$ | $V = s\times s\times s = s^3$ |
+| 12 | Cube notation | $n\times n\times n = n^3$ |
+| 13 | Cube root definition | $y=x^3 \implies x=\sqrt[3]{y}$ |
+| 14 | Perfect cube test (prime factorisation) | prime factors split into **3** identical groups |
+| 15 | Trailing zeros in cubes | $k$ zeros in $n$ $\Rightarrow$ $3k$ zeros in $n^3$ |
+| 16 | $n$-term block of consecutive odd numbers | sums to $n^3$ |
+| 17 | Taxicab number (Hardy–Ramanujan) | $1729 = 1^3+12^3 = 9^3+10^3$ |
