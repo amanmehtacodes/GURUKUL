@@ -1032,15 +1032,16 @@ a { color: inherit; }
   align-items: center;
   gap: 8px;
   padding: 8px 18px;
-  border: 1px solid rgba(255, 214, 102, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 999px;
   font-family: var(--font-mono);
   font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #FFE066;
-  background: rgba(255, 214, 102, 0.08);
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
   margin-bottom: 30px;
 }
 
@@ -1048,8 +1049,8 @@ a { color: inherit; }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #FFE066;
-  box-shadow: 0 0 8px #FFE066;
+  background: #FFFFFF;
+  box-shadow: 0 0 8px #FFFFFF;
 }
 
 .hero-logo {
@@ -1087,11 +1088,11 @@ a { color: inherit; }
 }
 
 .hero-btn-primary {
-  background: linear-gradient(135deg, #FFE066, #D97757);
-  color: #1A1206;
-  box-shadow: 0 10px 26px rgba(232, 163, 61, 0.35);
+  background: #FFFFFF;
+  color: #14110D;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.55), 0 10px 26px rgba(0, 0, 0, 0.35);
 }
-.hero-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(232, 163, 61, 0.45); }
+.hero-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 0 32px rgba(255, 255, 255, 0.75), 0 12px 30px rgba(0, 0, 0, 0.4); }
 
 .hero-btn-ghost {
   background: rgba(255, 255, 255, 0.06);
