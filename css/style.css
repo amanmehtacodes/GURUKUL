@@ -1016,7 +1016,9 @@ a { color: inherit; }
    flow into each other like a wave rather than reading as separate
    blobs — plus a faint grain layer for texture. No animation. */
 .hero-landing {
-  min-height: 100vh;
+  min-height: 100vh; /* fallback for older browsers */
+  min-height: 100svh; /* smallest stable viewport — never leaves a gap below the fold on iOS/Android when the browser chrome shows */
+  min-height: 100dvh; /* tracks the live viewport once chrome settles */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1028,12 +1030,16 @@ a { color: inherit; }
   background-color: #0b0710;
   background-repeat: no-repeat;
   background-image:
-    radial-gradient(ellipse 80% 55% at 8% 12%, rgba(236, 72, 153, 0.5), transparent 62%),
-    radial-gradient(ellipse 75% 55% at 92% 8%, rgba(168, 85, 247, 0.45), transparent 62%),
-    radial-gradient(ellipse 90% 60% at 50% 48%, rgba(219, 39, 119, 0.4), transparent 65%),
-    radial-gradient(ellipse 80% 55% at 12% 92%, rgba(244, 63, 94, 0.38), transparent 62%),
-    radial-gradient(ellipse 80% 55% at 88% 96%, rgba(124, 58, 237, 0.45), transparent 62%),
+    radial-gradient(ellipse 80% 55% at 8% 12%, rgba(236, 72, 153, 0.5) 0%, rgba(236, 72, 153, 0.22) 35%, transparent 68%),
+    radial-gradient(ellipse 75% 55% at 92% 8%, rgba(168, 85, 247, 0.45) 0%, rgba(168, 85, 247, 0.2) 35%, transparent 68%),
+    radial-gradient(ellipse 90% 60% at 50% 48%, rgba(219, 39, 119, 0.4) 0%, rgba(219, 39, 119, 0.18) 35%, transparent 70%),
+    radial-gradient(ellipse 80% 55% at 12% 92%, rgba(244, 63, 94, 0.38) 0%, rgba(244, 63, 94, 0.17) 35%, transparent 68%),
+    radial-gradient(ellipse 80% 55% at 88% 96%, rgba(124, 58, 237, 0.45) 0%, rgba(124, 58, 237, 0.2) 35%, transparent 68%),
     linear-gradient(180deg, #0b0710 0%, #150a1a 50%, #1a0b16 100%);
+}
+
+body.landing-page {
+  background: #0b0710;
 }
 
 .hero-landing::before {
@@ -1041,7 +1047,7 @@ a { color: inherit; }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.07;
   mix-blend-mode: overlay;
   z-index: 1;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
