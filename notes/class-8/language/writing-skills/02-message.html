@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 2 — Message | Class 8 English</title>
+<style>
+  /* Palette pulled straight from the site's own look: the molten-metal
+     hero shader (magenta #ff27df / pink #FF9FFC / white) that runs behind
+     every page via js/molten-metal.js, plus the violet/pink/cyan mesh
+     gradient js/border-glow.js uses on card hover — same family of hues,
+     read here as accents on a near-black reading surface (matching the
+     site's own solid-black .note-pane) rather than as a literal moving
+     background. */
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 32px;}
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 22px; margin-bottom:36px;
+  }
+  nav.toc div.toc-h{font-family:var(--font-mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px;}
+  nav.toc li{margin-bottom:5px;}
+  nav.toc ol ol{margin:6px 0 10px; padding-left:22px;}
+  nav.toc ol ol li{margin-bottom:4px; font-size:14.5px;}
+  nav.toc a{color:var(--accent); text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline; color:var(--violet);}
+  nav.toc ol ol a{color:var(--ink-soft);}
+  nav.toc ol ol a:hover{color:var(--cyan);}
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.03em; color:var(--c3);
+    margin:44px 0 16px; scroll-margin-top:20px;
+  }
+  h3{font-size:20px; font-weight:700; margin:26px 0 10px; scroll-margin-top:20px;}
+  p{margin:0 0 14px;}
+  ul,ol{margin:0 0 16px; padding-left:24px;}
+  li{margin-bottom:7px;}
+  li ul, li ol{margin-top:8px;}
+  strong{font-weight:700;}
+  hr{border:none; border-top:1px solid var(--line); margin:36px 0;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:12px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 16px;
+  }
+  .format-box{
+    font-family:var(--font-mono); font-size:14px; line-height:1.9;
+    background:var(--paper-raised); border:2px solid var(--ink); border-radius:6px;
+    padding:24px 20px; margin:0 0 20px; white-space:pre-wrap;
+  }
+  .format-box .right{text-align:right; font-weight:700;}
+  .phrase-box{
+    font-family:var(--font-mono); font-size:14px; line-height:2.1;
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:6px;
+    padding:20px 24px; margin:0 0 20px;
+  }
+  .sample{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:20px 24px; margin:0 0 24px;
+  }
+  .sample .sh{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;}
+  .convo{
+    font-size:15.5px; background:var(--paper); border:1px solid var(--line);
+    border-radius:8px; padding:16px 20px; margin:0 0 16px;
+  }
+  .convo p{margin:0 0 8px;}
+  .convo p:last-child{margin-bottom:0;}
+  /* Boxed-message format — right-aligned "MESSAGE" label (matching the
+     source book's layout, distinct from Notice's centered header), then
+     left-aligned Date / Time / Salutation, the body, and the writer's
+     name. Unscoped so it's reusable both for the worked example and for
+     every practice-question model answer below. */
+  .message-box{
+    border:1.5px solid var(--ink); border-radius:4px; padding:18px 20px;
+    font-family:var(--font-mono); font-size:14.5px; line-height:1.75;
+    background:var(--paper);
+  }
+  .message-box .word{text-align:right; font-weight:700; text-decoration:underline; margin:0 0 10px;}
+  .message-box .meta{margin:2px 0;}
+  .message-box .sig{margin-top:14px;}
+  .sample .hint{margin-top:12px; font-size:14px; color:var(--ink-soft); font-style:italic;}
+  table{width:100%; border-collapse:collapse; margin:0 0 20px; font-size:15.5px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left;}
+  th{background:var(--accent-soft); font-family:var(--font-mono); font-size:12.5px; text-transform:uppercase;}
+  .checklist{list-style:none; padding-left:0;}
+  .checklist li{padding-left:26px; position:relative;}
+  .checklist li:before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+  /* Interactive question blocks */
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:18px 20px; margin:18px 0; background:var(--paper-raised);
+  }
+  .q .qn{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); margin-bottom:8px; letter-spacing:.03em; text-transform:uppercase;}
+  .q p.prompt{margin:0 0 12px; font-size:16px;}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q button{
+    margin-top:12px; font-family:var(--font-mono); font-size:12.5px; font-weight:700;
+    letter-spacing:.03em; text-transform:uppercase; padding:9px 18px; border:1px solid var(--c3);
+    border-radius:7px; background:var(--c3-soft); color:var(--c3); cursor:pointer;
+  }
+  .q button:hover{background:var(--c3-panel);}
+  .qa{
+    display:none; margin-top:14px; padding:14px 16px; border-radius:8px;
+    background:var(--accent2-soft); border:1px solid var(--accent2);
+  }
+  .qa .qa-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--accent2); font-weight:700; margin-bottom:8px;}
+  .qa .message-box{border-color:var(--accent2);}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills</div>
+  <h1 class="title">Lesson 2 — Message</h1>
+  <p class="subtitle">Semester 2</p>
+
+  <nav class="toc">
+    <div class="toc-h">Contents</div>
+    <ol>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#constituents">Constituents of a Message</a></li>
+      <li><a href="#format">Format of a Message</a></li>
+      <li><a href="#steps">Steps for Writing a Message</a></li>
+      <li><a href="#marking">Marking Scheme</a></li>
+      <li><a href="#sample">Sample Message (Worked Example)</a></li>
+      <li><a href="#phrases">Most Often Used Phrases / Sentence Structures</a></li>
+      <li><a href="#practice">Practice Questions</a>
+        <ol type="1">
+          <li><a href="#q1">Q1 · Vibhuti's message for mom</a></li>
+          <li><a href="#q2">Q2 · Rehearsal for 'Confluence'</a></li>
+          <li><a href="#q3">Q3 · Mrs. Bhandari's flight</a></li>
+          <li><a href="#q4">Q4 · Chemistry class cancelled</a></li>
+          <li><a href="#q5">Q5 · Passport renewal</a></li>
+          <li><a href="#q6">Q6 · Miss Preeti's message</a></li>
+          <li><a href="#q7">Q7 · Kitty party rescheduled</a></li>
+          <li><a href="#q8">Q8 · Notebooks for Raghav</a></li>
+        </ol>
+      </li>
+      <li><a href="#revision">Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition">1. Definition</h2>
+  <p>A message is an informal but important short piece of writing used to convey some information or give instructions to a particular person who is not available at the moment. Usually a message is based on a telephonic conversation between the caller and the receiver. The content of the message is meant for the person for whom the call was made. In certain cases, the message writing can be based on certain hints provided in the question.</p>
+
+  <h2 id="constituents">2. Constituents of a Message</h2>
+  <ul>
+    <li>The word 'Message'</li>
+    <li>Date</li>
+    <li>Time</li>
+    <li>The name of the person to whom the message is directed</li>
+    <li>Message including the name of the person who called</li>
+    <li>Writer's name</li>
+  </ul>
+
+  <h2 id="format">3. Format of a Message</h2>
+  <div class="format-box"><span class="right">MESSAGE</span>
+Date
+Time
+Salutation
+
+..........................................................................
+...............................Message to be conveyed....................
+..........................................................................
+
+
+Writer's Name
+  </div>
+
+  <h2 id="steps">4. Steps for Writing a Message</h2>
+  <ol>
+    <li><strong>Rough Draft:</strong> Enlist the important things to be included in the message by keeping the following questions in mind according to the message.
+      <ul>
+        <li>Who called?</li>
+        <li>Who is the message for?</li>
+        <li>What is the message?</li>
+        <li>When and what is the reader supposed to do?</li>
+        <li>What is the reader supposed to send/bring?</li>
+      </ul>
+    </li>
+    <li><strong>Final Draft:</strong> Write the word 'Message'.</li>
+    <li>Write the date and time.</li>
+    <li>Write a brief salutation. (Dear papa/mom, or just Papa/Mom or some other name)</li>
+    <li>Write the body of the message.
+      <ul>
+        <li>Include the name of the person who called.</li>
+        <li>Write the message.</li>
+        <li>Don't forget to mention date, time, venue, things (if any) as a part of the message.</li>
+        <li>Write the name of the person who writes the message.</li>
+      </ul>
+    </li>
+    <li>Put the message in a box.</li>
+  </ol>
+
+  <h2 id="marking">5. Marking Scheme</h2>
+  <table>
+    <tr><th>Component</th><th>Marks</th></tr>
+    <tr><td>Date and Time</td><td>1 Mark</td></tr>
+    <tr><td>Name of the person to whom the message is directed/addressed</td><td>½ Mark</td></tr>
+    <tr><td>Content (message, spellings, grammar)</td><td>3 Marks</td></tr>
+    <tr><td>Writer's name</td><td>½ Mark</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>5 Marks</strong></td></tr>
+  </table>
+
+  <h2 id="sample">6. Sample Message (Worked Example)</h2>
+  <p>Read the following conversation between Mr. Ajeet Sood and Abhimanyu, Mr. Gupta's son.</p>
+  <div class="convo">
+    <p><strong>Mr. Sood:</strong> Hello, is it 296432758?</p>
+    <p><strong>Abhimanyu:</strong> Yes, may I know who is talking?</p>
+    <p><strong>Mr Sood:</strong> This is Ajeet Sood, your father's colleague, here. Could I speak to Mr. Gupta?</p>
+    <p><strong>Abhimanyu:</strong> I am sorry. Papa is not at home. If you have any message, please leave it with me.</p>
+    <p><strong>Mr. Sood:</strong> Tell your father that his meeting with the Japanese delegate scheduled at 9:30 at Kings Hotel has been postponed by two hours. Now the meeting is at 11:30 am. Tell your father to reach the office at 9:30 instead of going to Kings Hotel directly.</p>
+    <p><strong>Abhimanyu:</strong> Ok sir, I will convey the message to my father.</p>
+    <p><strong>Mr. Sood:</strong> Thank you.</p>
+  </div>
+  <p>As Abhimanyu has to leave for his school, he leaves a message on a message slip. Draft a message in not more than 50 words on behalf of Abhimanyu. Put the message in a box.</p>
+  <div class="sample">
+    <div class="message-box">
+      <div class="word">MESSAGE</div>
+      <div class="meta">April 24, 20XX</div>
+      <div class="meta">7:00 a.m.</div>
+      <div class="meta">Papa</div>
+      <br>
+      Your colleague, Mr. Ajeet Sood called up to inform you that your meeting with the Japanese delegate scheduled at 9:30 at Kings Hotel has been postponed by two hours. Now the meeting is at 11:30 am. You must reach the office at 9:30 instead of going to Kings Hotel directly.
+      <div class="sig">Abhimanyu</div>
+    </div>
+  </div>
+
+  <h2 id="phrases">7. Most Often Used Phrases / Sentence Structures</h2>
+  <div class="phrase-box">
+1. .........................rang up/called up to inform you that..................................
+2. You should/You are supposed to reach/call/bring/take/pick up.............................
+3. He/she will.........................................................................
+4. Also call him/her.
+5. Take his/ her.......................................................... with you.
+6. The next ......................will be ........................... at .................on ........................
+  </div>
+
+  <h2 id="practice">8. Practice Questions</h2>
+  <p class="callout">Read each telephonic conversation or note, draft your message in the box below, then press <strong>Check my message</strong> to reveal a model answer written in the same style. Compare — don't just copy — and check your own message against the format, word limit and the phrases above.</p>
+
+  <div class="q" id="q1">
+    <div class="qn">Question 1</div>
+    <p class="prompt">Read the telephonic conversation between Vishal and his sister, Vibhuti. As Vibhuti has to leave for her guitar classes, she leaves a message for her mother. Write the message in a box in not more than 50 words.</p>
+    <div class="convo">
+      <p><strong>Vishal:</strong> Can I speak to mom?</p>
+      <p><strong>Vibhuti:</strong> Mom has gone to market. Do you have any message for her?</p>
+      <p><strong>Vishal:</strong> Yes. My friend, Aakash's mother is admitted to City Hospital as she has met with an accident. I am going to City Hospital with a few friends. I will come home by 7:00 pm.</p>
+      <p><strong>Vibhuti:</strong> Ok. I will inform her.</p>
+    </div>
+    <textarea rows="7" placeholder="Draft your message here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my message';">Check my message</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="message-box">
+        <div class="word">MESSAGE</div>
+        <div class="meta">[Date]</div>
+        <div class="meta">[Time]</div>
+        <div class="meta">Mom</div>
+        <br>
+        Vishal called up to inform you that his friend Aakash's mother has met with an accident and has been admitted to City Hospital. He has gone to City Hospital with a few friends and will come home by 7:00 pm.
+        <div class="sig">Vibhuti</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q2">
+    <div class="qn">Question 2</div>
+    <p class="prompt">Read the notes given below to draft a message in not more than 50 words.</p>
+    <div class="convo">
+      <p>Mrs. Sandhya Banarjee, music teacher called up — Seema received the call — message for Seema's sister, Sukanya — final rehearsal for 'Confluence' on Sunday — school campus — from 10:00 am to 4:00 pm — don't bring lunch, school will provide lunch</p>
+    </div>
+    <textarea rows="7" placeholder="Draft your message here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my message';">Check my message</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="message-box">
+        <div class="word">MESSAGE</div>
+        <div class="meta">[Date]</div>
+        <div class="meta">[Time]</div>
+        <div class="meta">Sukanya</div>
+        <br>
+        Mrs. Sandhya Banarjee, your music teacher, called up to inform you that the final rehearsal for 'Confluence' will be held on Sunday on the school campus from 10:00 am to 4:00 pm. You need not bring your lunch as the school will provide it.
+        <div class="sig">Seema</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q3">
+    <div class="qn">Question 3</div>
+    <p class="prompt">Read the conversation between Mrs. Bhandari and her son Arjun's Secretary, Anamika. As Anamika has to leave for lunch break, she leaves a message for her boss. Draft this message in not more than 50 words. Put the message in a box.</p>
+    <div class="convo">
+      <p><strong>Mrs. Bhandari:</strong> Could I speak to Arjun?</p>
+      <p><strong>Anamika:</strong> Sir is holding an urgent meeting with the staff. May I know who is calling?</p>
+      <p><strong>Mrs. Bhandari:</strong> I am Arjun's mother here.</p>
+      <p><strong>Anamika:</strong> Hello ma'am. Is there any message for sir?</p>
+      <p><strong>Mrs. Bhandari:</strong> Inform him that I will come to Bombay tomorrow evening by Indigo flight no. MDN65. He should pick me up from the airport.</p>
+    </div>
+    <textarea rows="7" placeholder="Draft your message here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my message';">Check my message</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="message-box">
+        <div class="word">MESSAGE</div>
+        <div class="meta">[Date]</div>
+        <div class="meta">[Time]</div>
+        <div class="meta">Sir</div>
+        <br>
+        Your mother, Mrs. Bhandari, called up to inform you that she will arrive in Bombay tomorrow evening by Indigo flight no. MDN65. She has asked you to pick her up from the airport.
+        <div class="sig">Anamika</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q4">
+    <div class="qn">Question 4</div>
+    <p class="prompt">Read the notes given below to draft a message in not more than 50 words.</p>
+    <div class="convo">
+      <p>Kanishka called up — Surbhi's mother received the call — message for Surbhi — the next day's extra class of Chemistry at 7:00 am cancelled — Chemistry teacher on leave — next class on Saturday, same time</p>
+    </div>
+    <textarea rows="7" placeholder="Draft your message here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my message';">Check my message</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="message-box">
+        <div class="word">MESSAGE</div>
+        <div class="meta">[Date]</div>
+        <div class="meta">[Time]</div>
+        <div class="meta">Surbhi</div>
+        <br>
+        Your classmate, Kanishka, called up to inform you that tomorrow's extra Chemistry class at 7:00 am has been cancelled as the Chemistry teacher is on leave. The next class will now be held on Saturday at the same time.
+        <div class="sig">Mother</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q5">
+    <div class="qn">Question 5</div>
+    <p class="prompt">Read the following conversation between Mr. Mehta and Meghna, and draft a message in not more than 50 words.</p>
+    <div class="convo">
+      <p><strong>Mr. Mehta:</strong> Hello! Is it 2837467?</p>
+      <p><strong>Meghna:</strong> Yes, may I know who is speaking?</p>
+      <p><strong>Mr. Mehta:</strong> I am Rajeev Mehta from Passport Office, Amritsar. Could I speak to Mr. Somesh Gupta? I am sorry, papa is not at home. Is there any message for him?</p>
+      <p><strong>Mr. Mehta:</strong> Yes. Please inform him that his application for the renewal of his passport has been accepted and the process initiated. He has to report at 10:30 am at Passport Office, Amritsar on November 15, 20XX for the verification of his documents. Ask him to bring his old passport, his Unique Identification card, his birth certificate and two latest photographs with him. Tell him to be on time otherwise he will have to wait for the next date.</p>
+    </div>
+    <textarea rows="8" placeholder="Draft your message here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my message';">Check my message</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="message-box">
+        <div class="word">MESSAGE</div>
+        <div class="meta">[Date]</div>
+        <div class="meta">[Time]</div>
+        <div class="meta">Papa</div>
+        <br>
+        Mr. Rajeev Mehta from the Passport Office, Amritsar, called up to inform you that your application for the renewal of your passport has been accepted and the process has been initiated. You have to report at 10:30 am at the Passport Office, Amritsar, on November 15, 20XX for verification of your documents. Please bring your old passport, Unique Identification card, birth certificate and two latest photographs, and be on time, otherwise you will have to wait for the next date.
+        <div class="sig">Meghna</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q6">
+    <div class="qn">Question 6</div>
+    <p class="prompt">Read the notes given below to draft a message in not more than 50 words.</p>
+    <div class="convo">
+      <p>Mr. Verma's PA, Miss Preeti called up — Suneel received — message for his father — Preeti to take her mother to hospital, coming late by two hours — presentation on the new project has been sent by e-mail</p>
+    </div>
+    <textarea rows="7" placeholder="Draft your message here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my message';">Check my message</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="message-box">
+        <div class="word">MESSAGE</div>
+        <div class="meta">[Date]</div>
+        <div class="meta">[Time]</div>
+        <div class="meta">Papa</div>
+        <br>
+        Miss Preeti, Mr. Verma's PA, called up to inform you that she has to take her mother to the hospital and will be coming late by two hours. She has also sent the presentation on the new project to you by e-mail.
+        <div class="sig">Suneel</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q7">
+    <div class="qn">Question 7</div>
+    <p class="prompt">Read the telephonic conversation between Aakriti and her mother's friend, Mrs. Sanjana Pathak. Write the message in a box in not more than 50 words.</p>
+    <div class="convo">
+      <p><strong>Mrs. Sanjana Pathak:</strong> Could I speak to Mrs. Kapoor?</p>
+      <p><strong>Aakriti:</strong> Mom is not at home. May I know who is on the line?</p>
+      <p><strong>Mrs. Sanjana Pathak:</strong> This is Sanjana Pathak, your mother's friend.</p>
+      <p><strong>Aakriti:</strong> Hello auntie. You may leave your message with me.</p>
+      <p><strong>Mrs. Sanjana Pathak:</strong> Alright. Please inform her that the kitty party scheduled for coming Tuesday at Dawat Hotel at 5:00 pm has been rescheduled. Now it is on December 20, 20XX i.e Thursday at Mehmaan Restaurant at 3:00 pm.</p>
+      <p><strong>Aakriti:</strong> Ok. I will inform mom.</p>
+      <p><strong>Mrs. Sanjana Pathak:</strong> Thank you, dear.</p>
+    </div>
+    <textarea rows="7" placeholder="Draft your message here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my message';">Check my message</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="message-box">
+        <div class="word">MESSAGE</div>
+        <div class="meta">[Date]</div>
+        <div class="meta">[Time]</div>
+        <div class="meta">Mom</div>
+        <br>
+        Your friend, Mrs. Sanjana Pathak, called up to inform you that the kitty party scheduled for this Tuesday at Dawat Hotel at 5:00 pm has been rescheduled. It will now be held on December 20, 20XX i.e. Thursday, at Mehmaan Restaurant at 3:00 pm.
+        <div class="sig">Aakriti</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q8">
+    <div class="qn">Question 8</div>
+    <p class="prompt">Read the notes given below to draft a message in not more than 50 words.</p>
+    <div class="convo">
+      <p>Raghav's classmate, Purnima called up — Mr. Talwar received message for his son. Raghav is to bring his Chemistry notebook to school today for Purnima to copy notes, he also has to bring Purnima's History notebook</p>
+    </div>
+    <textarea rows="7" placeholder="Draft your message here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my message';">Check my message</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="message-box">
+        <div class="word">MESSAGE</div>
+        <div class="meta">[Date]</div>
+        <div class="meta">[Time]</div>
+        <div class="meta">Raghav</div>
+        <br>
+        Your classmate, Purnima, called up to inform you that she needs to copy notes from your Chemistry notebook, so please bring it to school today. She has also asked you to bring her History notebook along with you.
+        <div class="sig">Papa</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="revision">9. Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>The word "MESSAGE" written clearly (right-aligned, as in the format above)</li>
+    <li>Date and Time both included</li>
+    <li>A brief salutation naming who the message is for</li>
+    <li>Name of the person who called, included in the body</li>
+    <li>All key facts covered — what, when, where, and what the reader should do</li>
+    <li>Writer's name at the end</li>
+    <li>Entire message enclosed in a box</li>
+    <li>Word limit respected (typically 50 words)</li>
+  </ul>
+
+  <footer>Class 8 · English · Writing Skills · Lesson 2 of 30</footer>
+</div>
+</body>
+</html>

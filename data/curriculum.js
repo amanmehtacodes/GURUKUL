@@ -73,6 +73,23 @@ const CLASSES = [
                     ],
                     tests: [],
                   },
+                  {
+                    id: "class-8-lang-writing-skills-message",
+                    title: "Lesson 2 — Message",
+                    notes: [
+                      {
+                        id: "class-8-lang-writing-skills-message-notes",
+                        title: "Lesson 2 — Message",
+                        file: "notes/class-8/language/writing-skills/02-message.html",
+                      },
+                      {
+                        id: "class-8-lang-writing-skills-message-quiz",
+                        title: "Quiz 2 — Message",
+                        file: "notes/class-8/language/writing-skills/02-message-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
                 ],
               },
             ],
