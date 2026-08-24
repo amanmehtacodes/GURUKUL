@@ -5,16 +5,14 @@
  * are, then the collapsible section > subsection > (notes / questions)
  * tree for that subject. Fires a callback for leaf-item selection.
  *
- * Every chapter and topic within a subject now shares ONE bold accent
- * color tied to the subject itself (via SubjectColors), instead of each
- * chapter cycling through a different color — that made the tree feel
- * noisy rather than showing "what subject am I in". Chapters, topics,
- * and tests each show an explicit done/pending status icon so progress
- * is scannable at every level, not just on individual notes/tests.
+ * Every chapter and topic shares the site's one neutral accent color
+ * (no more per-subject/per-class tinting). Chapters, topics, and tests
+ * each show an explicit done/pending status icon so progress is
+ * scannable at every level, not just on individual notes/tests.
  */
 
 const Sidebar = (() => {
-  let onSelect = null;        // (type, section, subsection, item) => void
+  let onSelect = null; // (type, section, subsection, item) => void
   let onChangeSubject = null; // () => void  (back to subject picker)
   let activeKey = null;
   let currentSubjectKey = null; // drives colorVarsFor for the main-content accent too
@@ -25,54 +23,59 @@ const Sidebar = (() => {
   }
 
   // Kept for app.js, which asks "what color is the current chapter" to
-  // tint the note/test content view — now just the subject's one bold
-  // accent rather than a per-chapter rotation.
+  // tint the note/test content view — per-subject coloring has been
+  // removed, so this is now always just the site's one accent color.
   function colorVarsFor() {
-    if (currentSubjectKey && window.SubjectColors) {
-      const vars = SubjectColors.varsFor(currentSubjectKey);
-      return { accent: vars.bold, soft: vars.soft };
-    }
     return { accent: "var(--accent)", soft: "var(--accent-soft)" };
   }
 
-  function render(container, { loggedIn, cls, subject, subjectTrack, sectionsSource }) {
+  function render(
+    container,
+    { loggedIn, cls, subject, subjectTrack, sectionsSource }
+  ) {
     container.innerHTML = "";
     const displaySource = sectionsSource || subjectTrack || subject;
-    const headerTitle = subjectTrack ? `${subject.title} · ${subjectTrack.title}` : subject.title;
-    const backLabel = subjectTrack ? `${subject.title} tracks` : `${cls.name} subjects`;
+    const headerTitle = subjectTrack
+      ? `${subject.title} · ${subjectTrack.title}`
+      : subject.title;
+    const backLabel = subjectTrack
+      ? `${subject.title} tracks`
+      : `${cls.name} subjects`;
 
-    // Tint the whole panel with the active subject's color so it's obvious
-    // at a glance which subject (and, via the numeral, which class) is
-    // currently open — a stable identity-based color, not a rotating one.
+    // Per-subject panel tinting has been removed — the sidebar now always
+    // stays the one neutral glass look, with the tree/status icons falling
+    // back to the site's single --accent color (see the var(--accent, ...)
+    // fallbacks in style.css). This just clears any tint left over from an
+    // older session.
     container.classList.remove("subject-tinted");
     container.style.removeProperty("--sidebar-panel");
     container.style.removeProperty("--section-accent");
     container.style.removeProperty("--section-accent-soft");
     currentSubjectKey = subject && (subject.icon || subject.id);
-    if (currentSubjectKey && window.SubjectColors) {
-      const vars = SubjectColors.varsFor(currentSubjectKey);
-      container.style.setProperty("--sidebar-panel", vars.panel);
-      // Same variable names the tree/status-icon CSS already reads —
-      // setting them once here means every chapter and topic inherits
-      // the SAME bold accent instead of each one picking its own color.
-      container.style.setProperty("--section-accent", vars.bold);
-      container.style.setProperty("--section-accent-soft", vars.soft);
-      container.classList.add("subject-tinted");
-    }
 
     // Back to track picker (if a track is active) or subject picker
     const backBtn = document.createElement("button");
     backBtn.className = "sidebar-back";
     backBtn.innerHTML = `${icon("back")}<span>${escapeHtml(backLabel)}</span>`;
-    backBtn.addEventListener("click", () => onChangeSubject && onChangeSubject());
+    backBtn.addEventListener(
+      "click",
+      () => onChangeSubject && onChangeSubject()
+    );
     container.appendChild(backBtn);
 
-    const iconSrc = currentSubjectKey && window.SubjectPicker ? SubjectPicker.iconFor(currentSubjectKey) : null;
+    const iconSrc =
+      currentSubjectKey && window.SubjectPicker
+        ? SubjectPicker.iconFor(currentSubjectKey)
+        : null;
 
     const classHeader = document.createElement("div");
     classHeader.className = "sidebar-class-header";
     classHeader.innerHTML = `
-      ${iconSrc ? `<span class="sidebar-subject-icon"><img src="${iconSrc}" alt="" width="22" height="22"></span>` : ""}
+      ${
+        iconSrc
+          ? `<span class="sidebar-subject-icon"><img src="${iconSrc}" alt="" width="22" height="22"></span>`
+          : ""
+      }
       <span class="sidebar-class-heading">
         <span class="sidebar-class-numeral">${escapeHtml(cls.label)}</span>
         <span class="sidebar-class-name">${escapeHtml(headerTitle)}</span>
@@ -80,7 +83,10 @@ const Sidebar = (() => {
     `;
     container.appendChild(classHeader);
 
-    currentSectionsSource = displaySource && displaySource.ready && displaySource.sections ? displaySource : null;
+    currentSectionsSource =
+      displaySource && displaySource.ready && displaySource.sections
+        ? displaySource
+        : null;
 
     if (!displaySource || !displaySource.ready || !displaySource.sections) {
       return; // Coming Soon state — no tree to render
@@ -107,8 +113,12 @@ const Sidebar = (() => {
     const wrap = document.createElement("div");
     wrap.className = "sidebar-progress";
 
-    wrap.appendChild(progressBarRow("Notes read", stats.notesRead, stats.notesTotal, "notes"));
-    wrap.appendChild(progressBarRow("Tests done", stats.testsDone, stats.testsTotal, "tests"));
+    wrap.appendChild(
+      progressBarRow("Notes read", stats.notesRead, stats.notesTotal, "notes")
+    );
+    wrap.appendChild(
+      progressBarRow("Tests done", stats.testsDone, stats.testsTotal, "tests")
+    );
     return wrap;
   }
 
@@ -149,7 +159,9 @@ const Sidebar = (() => {
 
   function statusIconHtml(ids, doneIds) {
     const allDone = ids.length > 0 && ids.every((id) => doneIds.has(id));
-    return `<span class="status-check${allDone ? " done" : ""}" data-ids="${ids.join(",")}">
+    return `<span class="status-check${
+      allDone ? " done" : ""
+    }" data-ids="${ids.join(",")}">
       <span class="sc-done">${icon("check")}</span>
       <span class="sc-pending">${icon("pending")}</span>
     </span>`;
@@ -167,7 +179,9 @@ const Sidebar = (() => {
     head.className = "tree-section-head";
     head.innerHTML = `
       <span class="chevron">${icon("chevron")}</span>
-      <span class="tree-title${allDone ? " done" : ""}">${escapeHtml(section.title)}</span>
+      <span class="tree-title${allDone ? " done" : ""}">${escapeHtml(
+      section.title
+    )}</span>
       ${statusIconHtml(ids, doneIds)}
     `;
     head.addEventListener("click", () => wrap.classList.toggle("open"));
@@ -177,7 +191,9 @@ const Sidebar = (() => {
     subWrap.className = "tree-subsections";
 
     section.subsections.forEach((sub) => {
-      subWrap.appendChild(renderSubsection(section, sub, loggedIn, classId, doneIds));
+      subWrap.appendChild(
+        renderSubsection(section, sub, loggedIn, classId, doneIds)
+      );
     });
 
     wrap.appendChild(subWrap);
@@ -196,7 +212,9 @@ const Sidebar = (() => {
     head.className = "tree-subsection-head";
     head.innerHTML = `
       <span class="chevron">${icon("chevron")}</span>
-      <span class="tree-title${allDone ? " done" : ""}">${escapeHtml(sub.title)}</span>
+      <span class="tree-title${allDone ? " done" : ""}">${escapeHtml(
+      sub.title
+    )}</span>
       ${statusIconHtml(ids, doneIds)}
     `;
     head.addEventListener("click", () => wrap.classList.toggle("open"));
@@ -217,7 +235,11 @@ const Sidebar = (() => {
         const done = doneIds.has(note.id);
         el.className = "tree-item" + (done ? " done" : "");
         el.dataset.key = key;
-        el.innerHTML = `<span class="icon">${icon("note")}</span><span class="tree-title${done ? " done" : ""}">${escapeHtml(note.title)}</span>${statusIconHtml([note.id], doneIds)}`;
+        el.innerHTML = `<span class="icon">${icon(
+          "note"
+        )}</span><span class="tree-title${done ? " done" : ""}">${escapeHtml(
+          note.title
+        )}</span>${statusIconHtml([note.id], doneIds)}`;
         el.addEventListener("click", () => {
           setActive(key);
           onSelect && onSelect("note", section, sub, note);
@@ -235,11 +257,19 @@ const Sidebar = (() => {
       sub.tests.forEach((test) => {
         const el = document.createElement("div");
         const key = `test:${test.id}`;
-        const hasAccess = loggedIn && (typeof AccessControl === "undefined" || AccessControl.hasChapterAccess(classId, section.id));
+        const hasAccess =
+          loggedIn &&
+          (typeof AccessControl === "undefined" ||
+            AccessControl.hasChapterAccess(classId, section.id));
         const done = doneIds.has(test.id);
-        el.className = "tree-item" + (hasAccess ? "" : " locked") + (done ? " done" : "");
+        el.className =
+          "tree-item" + (hasAccess ? "" : " locked") + (done ? " done" : "");
         el.dataset.key = key;
-        el.innerHTML = `<span class="icon">${hasAccess ? icon("unlock") : icon("lock")}</span><span class="tree-title${done ? " done" : ""}">${escapeHtml(test.title)}</span>${statusIconHtml([test.id], doneIds)}`;
+        el.innerHTML = `<span class="icon">${
+          hasAccess ? icon("unlock") : icon("lock")
+        }</span><span class="tree-title${done ? " done" : ""}">${escapeHtml(
+          test.title
+        )}</span>${statusIconHtml([test.id], doneIds)}`;
         el.addEventListener("click", () => {
           setActive(key);
           onSelect && onSelect("test", section, sub, test);
@@ -260,9 +290,13 @@ const Sidebar = (() => {
   }
 
   function expandTo(sectionId, subId) {
-    const sectionEl = document.querySelector(`.tree-section[data-id="${sectionId}"]`);
+    const sectionEl = document.querySelector(
+      `.tree-section[data-id="${sectionId}"]`
+    );
     if (sectionEl) sectionEl.classList.add("open");
-    const subEl = document.querySelector(`.tree-subsection[data-id="${subId}"]`);
+    const subEl = document.querySelector(
+      `.tree-subsection[data-id="${subId}"]`
+    );
     if (subEl) subEl.classList.add("open");
   }
 
@@ -292,7 +326,8 @@ const Sidebar = (() => {
       const ids = el.dataset.ids ? el.dataset.ids.split(",") : [];
       const allDone = ids.length > 0 && ids.every((id) => doneItemIds.has(id));
       el.classList.toggle("done", allDone);
-      const title = el.parentElement && el.parentElement.querySelector(".tree-title");
+      const title =
+        el.parentElement && el.parentElement.querySelector(".tree-title");
       if (title) title.classList.toggle("done", allDone);
     });
 

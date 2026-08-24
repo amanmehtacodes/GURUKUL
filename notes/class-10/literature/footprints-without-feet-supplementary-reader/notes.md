@@ -1,6 +1,6 @@
 # Footprints Without Feet (Supplementary Reader)
 
-*Footprints Without Feet (Supplementary Reader) — reader index, ready to be filled in.*
+_Footprints Without Feet (Supplementary Reader) — reader index, ready to be filled in._
 
 ---
 
@@ -18,4 +18,4 @@
 
 ---
 
-*Full notes, summaries, and question practice for this section are coming soon.*
+_Full notes, summaries, and question practice for this section are coming soon._

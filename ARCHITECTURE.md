@@ -69,6 +69,7 @@ be a separate small React app if/when you want it, without touching the
 student-facing site.
 
 Changes needed:
+
 - `js/backend.js` — replace Apps Script `fetch()` calls with calls to
   the new FastAPI endpoints.
 - `js/auth.js` — keep Google Identity Services for login; the ID token
@@ -101,18 +102,18 @@ parts, otherwise equivalent.
 
 **Core endpoints:**
 
-| Endpoint | Purpose |
-|---|---|
-| `POST /auth/verify` | Verify Google ID token, create/fetch user record, return session token |
-| `GET /access/me` | Return the logged-in student's granted classes/chapters |
-| `POST /submissions` | Submit a completed test (MCQ auto-graded here; subjective answers queued for LLM grading) |
-| `GET /submissions/{id}` | Fetch a submission's status/result, including LLM report once ready |
-| `GET /progress/me` | Notes read + tests completed, for the student's own progress page |
-| `POST /webhooks/razorpay` | Signed webhook receiver — verifies payment, grants access automatically |
-| `POST /admin/access` | Admin: grant/revoke access for a student (class-level or chapter-level) |
-| `GET /admin/students` | Admin: list all students, their grants, and submission history |
-| `GET /admin/submissions` | Admin: all test attempts, scores, and LLM reports across all students |
-| `POST /admin/regrade/{id}` | Admin: re-run LLM grading against an updated answer key |
+| Endpoint                   | Purpose                                                                                   |
+| -------------------------- | ----------------------------------------------------------------------------------------- |
+| `POST /auth/verify`        | Verify Google ID token, create/fetch user record, return session token                    |
+| `GET /access/me`           | Return the logged-in student's granted classes/chapters                                   |
+| `POST /submissions`        | Submit a completed test (MCQ auto-graded here; subjective answers queued for LLM grading) |
+| `GET /submissions/{id}`    | Fetch a submission's status/result, including LLM report once ready                       |
+| `GET /progress/me`         | Notes read + tests completed, for the student's own progress page                         |
+| `POST /webhooks/razorpay`  | Signed webhook receiver — verifies payment, grants access automatically                   |
+| `POST /admin/access`       | Admin: grant/revoke access for a student (class-level or chapter-level)                   |
+| `GET /admin/students`      | Admin: list all students, their grants, and submission history                            |
+| `GET /admin/submissions`   | Admin: all test attempts, scores, and LLM reports across all students                     |
+| `POST /admin/regrade/{id}` | Admin: re-run LLM grading against an updated answer key                                   |
 
 All `/admin/*` routes sit behind a proper admin auth check (a role flag
 on your own user record, not a shared password like the current
@@ -193,6 +194,7 @@ domain via the `RESTRICT_DOMAIN` config you already have.
 flow.
 
 Flow:
+
 1. Student clicks "Buy" on a locked chapter/class → frontend calls
    `POST /payments/create-order` on your backend.
 2. Backend calls Razorpay's Orders API to create an order, returns the
@@ -305,13 +307,13 @@ worth the extra cost.
 
 ## 10. Hosting & cost
 
-| Component | Where | Cost to start |
-|---|---|---|
-| Frontend | Netlify | Free |
-| Database | Supabase | Free tier (pauses after 7 days idle — fine pre-launch) |
-| Backend API | Railway or Render | Free/hobby tier |
+| Component    | Where                            | Cost to start                                             |
+| ------------ | -------------------------------- | --------------------------------------------------------- |
+| Frontend     | Netlify                          | Free                                                      |
+| Database     | Supabase                         | Free tier (pauses after 7 days idle — fine pre-launch)    |
+| Backend API  | Railway or Render                | Free/hobby tier                                           |
 | LLM (Ollama) | Your own machine, or a small VPS | $0 (own machine) or ~$20–24/mo (Hetzner CPX31, 4vCPU/8GB) |
-| Payments | Razorpay | No fixed cost — per-transaction fee only |
+| Payments     | Razorpay                         | No fixed cost — per-transaction fee only                  |
 
 **Cheapest possible start ($0 beyond what you already pay):** run Ollama
 on your own laptop, treat grading as a manual "process now" batch you

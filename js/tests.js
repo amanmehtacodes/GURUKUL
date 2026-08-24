@@ -23,7 +23,9 @@ const Tests = (() => {
       <div class="lock-card">
         <svg class="lock-icon" viewBox="0 0 24 24" fill="none"><rect x="5" y="10.5" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V7a4 4 0 018 0v3.5" stroke="currentColor" stroke-width="1.6"/></svg>
         <h2>${escapeHtml(test.title)}</h2>
-        <p>This test is part of <strong>${escapeHtml(section.title)} → ${escapeHtml(sub.title)}</strong>.
+        <p>This test is part of <strong>${escapeHtml(
+          section.title
+        )} → ${escapeHtml(sub.title)}</strong>.
         Sign in with your Google account to unlock it. Your answers will be recorded against your account.</p>
         <div id="lockedSignIn" style="display:flex; justify-content:center;"></div>
       </div>
@@ -38,8 +40,12 @@ const Tests = (() => {
       <div class="lock-card needs-access-card">
         <svg class="lock-icon" viewBox="0 0 24 24" fill="none"><rect x="5" y="10.5" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V7a4 4 0 018 0v3.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 14.5v2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         <h2>${escapeHtml(test.title)}</h2>
-        <p>You're signed in as <strong>${escapeHtml(user.email)}</strong>, but this test isn't unlocked
-        for your account yet. It's part of <strong>${escapeHtml(section.title)} → ${escapeHtml(sub.title)}</strong>.</p>
+        <p>You're signed in as <strong>${escapeHtml(
+          user.email
+        )}</strong>, but this test isn't unlocked
+        for your account yet. It's part of <strong>${escapeHtml(
+          section.title
+        )} → ${escapeHtml(sub.title)}</strong>.</p>
         <p class="needs-access-note">Access is granted per class or per chapter after payment — reach out if you believe this should already be unlocked.</p>
       </div>
     `;
@@ -63,7 +69,9 @@ const Tests = (() => {
         </div>
         <div class="test-badge test-badge-kind">${kindBadgeText}</div>
         <div class="test-title">${escapeHtml(test.title)}</div>
-        <div class="test-meta">${escapeHtml(section.title)} / ${escapeHtml(sub.title)} · Signed in as ${escapeHtml(user.email)}</div>
+        <div class="test-meta">${escapeHtml(section.title)} / ${escapeHtml(
+      sub.title
+    )} · Signed in as ${escapeHtml(user.email)}</div>
       </div>
       <div id="resultBanner"></div>
       <form id="testForm">
@@ -87,7 +95,9 @@ const Tests = (() => {
         const radio = opt.querySelector("input[type=radio]");
         radio.checked = true;
         const group = opt.closest(".mcq-options");
-        group.querySelectorAll(".mcq-option").forEach((o) => o.classList.remove("selected"));
+        group
+          .querySelectorAll(".mcq-option")
+          .forEach((o) => o.classList.remove("selected"));
         opt.classList.add("selected");
       });
     });
@@ -99,11 +109,13 @@ const Tests = (() => {
     // Live math preview under each theory textarea, so a student typing
     // "$\frac{1}{2}$" sees it rendered as they go, the same way it'll
     // look when you review it later.
-    container.querySelectorAll(".question-card[data-qtype='short']").forEach((card) => {
-      const textarea = card.querySelector(".short-answer");
-      const preview = card.querySelector(".math-preview");
-      if (window.MathTools) MathTools.attachLivePreview(textarea, preview);
-    });
+    container
+      .querySelectorAll(".question-card[data-qtype='short']")
+      .forEach((card) => {
+        const textarea = card.querySelector(".short-answer");
+        const preview = card.querySelector(".math-preview");
+        if (window.MathTools) MathTools.attachLivePreview(textarea, preview);
+      });
 
     const form = container.querySelector("#testForm");
     form.addEventListener("submit", (e) => {
@@ -124,7 +136,9 @@ const Tests = (() => {
         .map(
           (opt, idx) => `
           <label class="mcq-option" data-idx="${idx}">
-            <input type="radio" name="${q.id}" value="${idx}" style="display:none;">
+            <input type="radio" name="${
+              q.id
+            }" value="${idx}" style="display:none;">
             <span class="mcq-option-text">${escapeHtml(opt)}</span>
             <span class="mcq-option-mark"></span>
           </label>`
@@ -132,7 +146,11 @@ const Tests = (() => {
         .join("");
       return `
         <div class="question-card" data-qid="${q.id}" data-qtype="mcq">
-          <div class="question-num">Question ${i + 1}${q.topic ? ` · <span class="question-topic">${escapeHtml(q.topic)}</span>` : ""}</div>
+          <div class="question-num">Question ${i + 1}${
+        q.topic
+          ? ` · <span class="question-topic">${escapeHtml(q.topic)}</span>`
+          : ""
+      }</div>
           <p class="question-prompt">${escapeHtml(q.prompt)}</p>
           <div class="mcq-options">${options}</div>
           <div class="mcq-feedback" style="display:none;"></div>
@@ -142,9 +160,15 @@ const Tests = (() => {
     // theory / short answer
     return `
       <div class="question-card" data-qid="${q.id}" data-qtype="short">
-        <div class="question-num">Question ${i + 1} · Theory${q.topic ? ` · <span class="question-topic">${escapeHtml(q.topic)}</span>` : ""}</div>
+        <div class="question-num">Question ${i + 1} · Theory${
+      q.topic
+        ? ` · <span class="question-topic">${escapeHtml(q.topic)}</span>`
+        : ""
+    }</div>
         <p class="question-prompt">${escapeHtml(q.prompt)}</p>
-        <textarea class="short-answer" name="${q.id}" placeholder="Type your answer… (use $...$ for inline math, e.g. $x^2+1$)"></textarea>
+        <textarea class="short-answer" name="${
+          q.id
+        }" placeholder="Type your answer… (use $...$ for inline math, e.g. $x^2+1$)"></textarea>
         <div class="math-preview" aria-label="Math preview"></div>
         <div class="reference-answer-block" style="display:none;"></div>
       </div>`;
@@ -164,7 +188,9 @@ const Tests = (() => {
     test.questions.forEach((q) => {
       if (q.type !== "mcq") return;
       totalMcq++;
-      const card = container.querySelector(`.question-card[data-qid="${q.id}"]`);
+      const card = container.querySelector(
+        `.question-card[data-qid="${q.id}"]`
+      );
       const checked = card.querySelector("input[type=radio]:checked");
       const chosenIdx = checked ? parseInt(checked.value, 10) : null;
       const isCorrect = chosenIdx === q.answerIndex;
@@ -182,7 +208,9 @@ const Tests = (() => {
       });
 
       // Lock the radios so answers can't change post-submit.
-      card.querySelectorAll("input[type=radio]").forEach((r) => (r.disabled = true));
+      card
+        .querySelectorAll("input[type=radio]")
+        .forEach((r) => (r.disabled = true));
 
       // Mark each option: the correct one always highlighted green; the
       // student's wrong pick (if any) highlighted red.
@@ -216,7 +244,9 @@ const Tests = (() => {
       const correctLine = card.querySelector(".mcq-correct-line");
       if (correctLine) {
         correctLine.style.display = "block";
-        correctLine.innerHTML = `<strong>Correct answer:</strong> ${escapeHtml(q.options[q.answerIndex])}`;
+        correctLine.innerHTML = `<strong>Correct answer:</strong> ${escapeHtml(
+          q.options[q.answerIndex]
+        )}`;
       }
     });
 
@@ -234,11 +264,15 @@ const Tests = (() => {
   function revealReferenceAnswers(container, test) {
     test.questions.forEach((q) => {
       if (q.type !== "short" || !q.referenceAnswer) return;
-      const card = container.querySelector(`.question-card[data-qid="${q.id}"]`);
+      const card = container.querySelector(
+        `.question-card[data-qid="${q.id}"]`
+      );
       const block = card ? card.querySelector(".reference-answer-block") : null;
       if (!block) return;
       block.style.display = "block";
-      block.innerHTML = `<div class="reference-answer-label">Reference answer</div><div class="reference-answer-text">${escapeHtml(q.referenceAnswer)}</div>`;
+      block.innerHTML = `<div class="reference-answer-label">Reference answer</div><div class="reference-answer-text">${escapeHtml(
+        q.referenceAnswer
+      )}</div>`;
       if (window.MathTools) MathTools.renderMathIn(block);
     });
   }
@@ -274,12 +308,15 @@ const Tests = (() => {
         loaded = true;
         try {
           const res = await fetch(test.answerKeyFile);
-          if (!res.ok) throw new Error(`Could not load answer key (${res.status})`);
+          if (!res.ok)
+            throw new Error(`Could not load answer key (${res.status})`);
           const md = await res.text();
           pane.innerHTML = `<div class="note-body">${marked.parse(md)}</div>`;
           if (window.MathTools) MathTools.renderMathIn(pane);
         } catch (err) {
-          pane.innerHTML = `<p style="color: var(--error);">Failed to load answer key: ${escapeHtml(err.message)}</p>`;
+          pane.innerHTML = `<p style="color: var(--error);">Failed to load answer key: ${escapeHtml(
+            err.message
+          )}</p>`;
         }
       }
     });
@@ -294,7 +331,19 @@ const Tests = (() => {
    * question-by-question list since those questions are already
    * visible in the form right above this.
    */
-  async function showInlineReport(container, { section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers, hasTheory }) {
+  async function showInlineReport(
+    container,
+    {
+      section,
+      sub,
+      test,
+      correctCount,
+      totalMcq,
+      mcqAnswers,
+      theoryAnswers,
+      hasTheory,
+    }
+  ) {
     const host = container.querySelector("#inlineReport");
     if (!host || !window.ReportView) return;
 
@@ -337,12 +386,22 @@ const Tests = (() => {
     ];
 
     let stats = null;
-    if (!CONFIG.PROTOTYPE_MODE_SKIP_LOGIN && window.Backend && Backend.isConfigured()) {
+    if (
+      !CONFIG.PROTOTYPE_MODE_SKIP_LOGIN &&
+      window.Backend &&
+      Backend.isConfigured()
+    ) {
       const statsResult = await Backend.getTestStats(test.id);
       if (statsResult.status === "ok") stats = statsResult.stats;
     }
 
-    ReportView.render(host, { submission, answers, stats, showQuestions: false, inline: true });
+    ReportView.render(host, {
+      submission,
+      answers,
+      stats,
+      showQuestions: false,
+      inline: true,
+    });
   }
 
   /**
@@ -357,7 +416,10 @@ const Tests = (() => {
     const bannerEl = container.querySelector("#resultBanner");
     const answerKeyHost = container.querySelector("#answerKeyBlock");
 
-    const { correctCount, totalMcq, mcqAnswers } = gradeMcqInPlace(container, test);
+    const { correctCount, totalMcq, mcqAnswers } = gradeMcqInPlace(
+      container,
+      test
+    );
 
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitted";
@@ -365,10 +427,30 @@ const Tests = (() => {
 
     renderScoreBanner(bannerEl, correctCount, totalMcq);
     renderAnswerKeyBlock(answerKeyHost, test);
-    showInlineReport(container, { section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers: [], hasTheory: false });
+    showInlineReport(container, {
+      section,
+      sub,
+      test,
+      correctCount,
+      totalMcq,
+      mcqAnswers,
+      theoryAnswers: [],
+      hasTheory: false,
+    });
 
-    logSubmission({ section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers: [] });
-    if (window.Progress) { Progress.markTestDoneLocally(test.id); document.dispatchEvent(new CustomEvent("gurukul:progress-changed")); }
+    logSubmission({
+      section,
+      sub,
+      test,
+      correctCount,
+      totalMcq,
+      mcqAnswers,
+      theoryAnswers: [],
+    });
+    if (window.Progress) {
+      Progress.markTestDoneLocally(test.id);
+      document.dispatchEvent(new CustomEvent("gurukul:progress-changed"));
+    }
   }
 
   /**
@@ -379,7 +461,9 @@ const Tests = (() => {
     const theoryAnswers = [];
     test.questions.forEach((q) => {
       if (q.type === "mcq") return;
-      const card = container.querySelector(`.question-card[data-qid="${q.id}"]`);
+      const card = container.querySelector(
+        `.question-card[data-qid="${q.id}"]`
+      );
       const textarea = card ? card.querySelector(".short-answer") : null;
       theoryAnswers.push({
         prompt: q.prompt,
@@ -405,12 +489,17 @@ const Tests = (() => {
     const bannerEl = container.querySelector("#resultBanner");
     const answerKeyHost = container.querySelector("#answerKeyBlock");
 
-    const { correctCount, totalMcq, mcqAnswers } = gradeMcqInPlace(container, test);
+    const { correctCount, totalMcq, mcqAnswers } = gradeMcqInPlace(
+      container,
+      test
+    );
     const theoryAnswers = collectTheoryAnswers(container, test);
     const hasTheory = theoryAnswers.length > 0;
 
     // Lock theory textareas too, so the "submitted" state is visually final.
-    container.querySelectorAll(".short-answer").forEach((ta) => (ta.disabled = true));
+    container
+      .querySelectorAll(".short-answer")
+      .forEach((ta) => (ta.disabled = true));
 
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitted";
@@ -427,10 +516,31 @@ const Tests = (() => {
 
     renderAnswerKeyBlock(answerKeyHost, test);
     revealReferenceAnswers(container, test);
-    showInlineReport(container, { section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers, hasTheory });
+    showInlineReport(container, {
+      section,
+      sub,
+      test,
+      correctCount,
+      totalMcq,
+      mcqAnswers,
+      theoryAnswers,
+      hasTheory,
+    });
 
-    logSubmission({ section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers, hasTheory });
-    if (window.Progress) { Progress.markTestDoneLocally(test.id); document.dispatchEvent(new CustomEvent("gurukul:progress-changed")); }
+    logSubmission({
+      section,
+      sub,
+      test,
+      correctCount,
+      totalMcq,
+      mcqAnswers,
+      theoryAnswers,
+      hasTheory,
+    });
+    if (window.Progress) {
+      Progress.markTestDoneLocally(test.id);
+      document.dispatchEvent(new CustomEvent("gurukul:progress-changed"));
+    }
   }
 
   /**
@@ -439,7 +549,16 @@ const Tests = (() => {
    * user is in prototype mode — this never blocks or delays the UI,
    * since grading already happened synchronously above.
    */
-  function logSubmission({ section, sub, test, correctCount, totalMcq, mcqAnswers, theoryAnswers = [], hasTheory = false }) {
+  function logSubmission({
+    section,
+    sub,
+    test,
+    correctCount,
+    totalMcq,
+    mcqAnswers,
+    theoryAnswers = [],
+    hasTheory = false,
+  }) {
     if (CONFIG.PROTOTYPE_MODE_SKIP_LOGIN) return;
     const user = Auth.getUser();
     if (!user) return;

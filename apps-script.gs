@@ -81,9 +81,9 @@ function doGet(e) {
 
 function respond(obj, isError) {
   const body = isError ? obj : Object.assign({ status: "ok" }, obj);
-  return ContentService
-    .createTextOutput(JSON.stringify(body))
-    .setMimeType(ContentService.MimeType.JSON);
+  return ContentService.createTextOutput(JSON.stringify(body)).setMimeType(
+    ContentService.MimeType.JSON
+  );
 }
 
 function requireAdmin(password) {
@@ -97,7 +97,12 @@ function requireAdmin(password) {
 // ---------------------------------------------------------------------------
 
 function getOrCreateRollNumber(ss, email, name) {
-  const sheet = getOrCreateSheet(ss, "Roster", ["Email", "Roll Number", "Name", "First Seen"]);
+  const sheet = getOrCreateSheet(ss, "Roster", [
+    "Email",
+    "Roll Number",
+    "Name",
+    "First Seen",
+  ]);
   const data = sheet.getDataRange().getValues();
 
   for (let i = 1; i < data.length; i++) {
@@ -128,7 +133,13 @@ function handleCheckAccess(email) {
 }
 
 function getGrantsForEmail(ss, email) {
-  const sheet = getOrCreateSheet(ss, "Access", ["Email", "Grant Type", "Grant Value", "Granted At", "Granted By"]);
+  const sheet = getOrCreateSheet(ss, "Access", [
+    "Email",
+    "Grant Type",
+    "Grant Value",
+    "Granted At",
+    "Granted By",
+  ]);
   const data = sheet.getDataRange().getValues();
   const grants = [];
   for (let i = 1; i < data.length; i++) {
@@ -141,18 +152,40 @@ function getGrantsForEmail(ss, email) {
 
 function handleAdminGrant(data) {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = getOrCreateSheet(ss, "Access", ["Email", "Grant Type", "Grant Value", "Granted At", "Granted By"]);
-  sheet.appendRow([data.email, data.grantType, data.grantValue, new Date().toISOString(), data.grantedBy || "admin"]);
+  const sheet = getOrCreateSheet(ss, "Access", [
+    "Email",
+    "Grant Type",
+    "Grant Value",
+    "Granted At",
+    "Granted By",
+  ]);
+  sheet.appendRow([
+    data.email,
+    data.grantType,
+    data.grantValue,
+    new Date().toISOString(),
+    data.grantedBy || "admin",
+  ]);
   return { grants: getGrantsForEmail(ss, data.email) };
 }
 
 function handleAdminRevoke(data) {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = getOrCreateSheet(ss, "Access", ["Email", "Grant Type", "Grant Value", "Granted At", "Granted By"]);
+  const sheet = getOrCreateSheet(ss, "Access", [
+    "Email",
+    "Grant Type",
+    "Grant Value",
+    "Granted At",
+    "Granted By",
+  ]);
   const values = sheet.getDataRange().getValues();
   // Walk bottom-up so row deletion doesn't shift indices we haven't visited yet.
   for (let i = values.length - 1; i >= 1; i--) {
-    if (values[i][0] === data.email && values[i][1] === data.grantType && values[i][2] === data.grantValue) {
+    if (
+      values[i][0] === data.email &&
+      values[i][1] === data.grantType &&
+      values[i][2] === data.grantValue
+    ) {
       sheet.deleteRow(i + 1);
     }
   }
@@ -175,32 +208,65 @@ function handleSubmitTest(data) {
 
 function writeSubmissionRow(ss, data, rollNumber) {
   const sheet = getOrCreateSheet(ss, "Submissions", [
-    "Submitted At", "Roll Number", "Email", "Name",
-    "Class", "Subject", "Section", "Subsection", "Test", "Test Kind",
-    "Score", "Total MCQ"
+    "Submitted At",
+    "Roll Number",
+    "Email",
+    "Name",
+    "Class",
+    "Subject",
+    "Section",
+    "Subsection",
+    "Test",
+    "Test Kind",
+    "Score",
+    "Total MCQ",
   ]);
   sheet.appendRow([
-    data.submittedAt, rollNumber, data.email, data.name,
-    data.className || "", data.subjectTitle || "",
-    data.sectionTitle, data.subsectionTitle, data.testTitle, data.testKind || "",
+    data.submittedAt,
+    rollNumber,
+    data.email,
+    data.name,
+    data.className || "",
+    data.subjectTitle || "",
+    data.sectionTitle,
+    data.subsectionTitle,
+    data.testTitle,
+    data.testKind || "",
     data.correctCount != null ? data.correctCount : "",
-    data.totalMcq != null ? data.totalMcq : ""
+    data.totalMcq != null ? data.totalMcq : "",
   ]);
 }
 
 function writeDetailRows(ss, data, rollNumber) {
   const sheetName = sanitizeSheetName(data.testId || "Test");
   const sheet = getOrCreateSheet(ss, sheetName, [
-    "Submitted At", "Roll Number", "Email", "Name",
-    "Section", "Subsection", "Test",
-    "Question", "Answer", "Correct?"
+    "Submitted At",
+    "Roll Number",
+    "Email",
+    "Name",
+    "Section",
+    "Subsection",
+    "Test",
+    "Question",
+    "Answer",
+    "Correct?",
   ]);
   (data.answers || []).forEach((a) => {
     sheet.appendRow([
-      data.submittedAt, rollNumber, data.email, data.name,
-      data.sectionTitle, data.subsectionTitle, data.testTitle,
-      a.prompt, a.answer,
-      a.correct === null || a.correct === undefined ? "" : (a.correct ? "Yes" : "No")
+      data.submittedAt,
+      rollNumber,
+      data.email,
+      data.name,
+      data.sectionTitle,
+      data.subsectionTitle,
+      data.testTitle,
+      a.prompt,
+      a.answer,
+      a.correct === null || a.correct === undefined
+        ? ""
+        : a.correct
+        ? "Yes"
+        : "No",
     ]);
   });
 }
@@ -211,7 +277,13 @@ function writeDetailRows(ss, data, rollNumber) {
 
 function handleMarkProgress(data) {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = getOrCreateSheet(ss, "Progress", ["Email", "Item Id", "Item Type", "Status", "Updated At"]);
+  const sheet = getOrCreateSheet(ss, "Progress", [
+    "Email",
+    "Item Id",
+    "Item Type",
+    "Status",
+    "Updated At",
+  ]);
   const values = sheet.getDataRange().getValues();
 
   for (let i = 1; i < values.length; i++) {
@@ -221,7 +293,13 @@ function handleMarkProgress(data) {
       return { updated: true };
     }
   }
-  sheet.appendRow([data.email, data.itemId, data.itemType, data.status, new Date().toISOString()]);
+  sheet.appendRow([
+    data.email,
+    data.itemId,
+    data.itemType,
+    data.status,
+    new Date().toISOString(),
+  ]);
   return { updated: true };
 }
 
@@ -229,28 +307,53 @@ function handleGetProgress(email) {
   if (!email) throw new Error("Missing email.");
   const ss = SpreadsheetApp.getActiveSpreadsheet();
 
-  const progressSheet = getOrCreateSheet(ss, "Progress", ["Email", "Item Id", "Item Type", "Status", "Updated At"]);
+  const progressSheet = getOrCreateSheet(ss, "Progress", [
+    "Email",
+    "Item Id",
+    "Item Type",
+    "Status",
+    "Updated At",
+  ]);
   const progressValues = progressSheet.getDataRange().getValues();
   const progress = [];
   for (let i = 1; i < progressValues.length; i++) {
     if (progressValues[i][0] === email) {
-      progress.push({ itemId: progressValues[i][1], itemType: progressValues[i][2], status: progressValues[i][3] });
+      progress.push({
+        itemId: progressValues[i][1],
+        itemType: progressValues[i][2],
+        status: progressValues[i][3],
+      });
     }
   }
 
   const subsSheet = getOrCreateSheet(ss, "Submissions", [
-    "Submitted At", "Roll Number", "Email", "Name",
-    "Class", "Subject", "Section", "Subsection", "Test", "Test Kind",
-    "Score", "Total MCQ"
+    "Submitted At",
+    "Roll Number",
+    "Email",
+    "Name",
+    "Class",
+    "Subject",
+    "Section",
+    "Subsection",
+    "Test",
+    "Test Kind",
+    "Score",
+    "Total MCQ",
   ]);
   const subsValues = subsSheet.getDataRange().getValues();
   const submissions = [];
   for (let i = 1; i < subsValues.length; i++) {
     if (subsValues[i][2] === email) {
       submissions.push({
-        submittedAt: subsValues[i][0], className: subsValues[i][4], subject: subsValues[i][5],
-        section: subsValues[i][6], subsection: subsValues[i][7], test: subsValues[i][8],
-        testKind: subsValues[i][9], score: subsValues[i][10], totalMcq: subsValues[i][11]
+        submittedAt: subsValues[i][0],
+        className: subsValues[i][4],
+        subject: subsValues[i][5],
+        section: subsValues[i][6],
+        subsection: subsValues[i][7],
+        test: subsValues[i][8],
+        testKind: subsValues[i][9],
+        score: subsValues[i][10],
+        totalMcq: subsValues[i][11],
       });
     }
   }
@@ -265,32 +368,71 @@ function handleGetProgress(email) {
 function handleAdminList() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
 
-  const rosterSheet = getOrCreateSheet(ss, "Roster", ["Email", "Roll Number", "Name", "First Seen"]);
+  const rosterSheet = getOrCreateSheet(ss, "Roster", [
+    "Email",
+    "Roll Number",
+    "Name",
+    "First Seen",
+  ]);
   const rosterValues = rosterSheet.getDataRange().getValues();
   const roster = [];
   for (let i = 1; i < rosterValues.length; i++) {
-    roster.push({ email: rosterValues[i][0], rollNumber: rosterValues[i][1], name: rosterValues[i][2], firstSeen: rosterValues[i][3] });
+    roster.push({
+      email: rosterValues[i][0],
+      rollNumber: rosterValues[i][1],
+      name: rosterValues[i][2],
+      firstSeen: rosterValues[i][3],
+    });
   }
 
-  const accessSheet = getOrCreateSheet(ss, "Access", ["Email", "Grant Type", "Grant Value", "Granted At", "Granted By"]);
+  const accessSheet = getOrCreateSheet(ss, "Access", [
+    "Email",
+    "Grant Type",
+    "Grant Value",
+    "Granted At",
+    "Granted By",
+  ]);
   const accessValues = accessSheet.getDataRange().getValues();
   const access = [];
   for (let i = 1; i < accessValues.length; i++) {
-    access.push({ email: accessValues[i][0], grantType: accessValues[i][1], grantValue: accessValues[i][2], grantedAt: accessValues[i][3] });
+    access.push({
+      email: accessValues[i][0],
+      grantType: accessValues[i][1],
+      grantValue: accessValues[i][2],
+      grantedAt: accessValues[i][3],
+    });
   }
 
   const subsSheet = getOrCreateSheet(ss, "Submissions", [
-    "Submitted At", "Roll Number", "Email", "Name",
-    "Class", "Subject", "Section", "Subsection", "Test", "Test Kind",
-    "Score", "Total MCQ"
+    "Submitted At",
+    "Roll Number",
+    "Email",
+    "Name",
+    "Class",
+    "Subject",
+    "Section",
+    "Subsection",
+    "Test",
+    "Test Kind",
+    "Score",
+    "Total MCQ",
   ]);
   const subsValues = subsSheet.getDataRange().getValues();
   const submissions = [];
   for (let i = 1; i < subsValues.length; i++) {
     submissions.push({
-      submittedAt: subsValues[i][0], rollNumber: subsValues[i][1], email: subsValues[i][2], name: subsValues[i][3],
-      className: subsValues[i][4], subject: subsValues[i][5], section: subsValues[i][6], subsection: subsValues[i][7],
-      test: subsValues[i][8], testKind: subsValues[i][9], score: subsValues[i][10], totalMcq: subsValues[i][11]
+      submittedAt: subsValues[i][0],
+      rollNumber: subsValues[i][1],
+      email: subsValues[i][2],
+      name: subsValues[i][3],
+      className: subsValues[i][4],
+      subject: subsValues[i][5],
+      section: subsValues[i][6],
+      subsection: subsValues[i][7],
+      test: subsValues[i][8],
+      testKind: subsValues[i][9],
+      score: subsValues[i][10],
+      totalMcq: subsValues[i][11],
     });
   }
 
@@ -321,13 +463,39 @@ function sanitizeSheetName(name) {
  */
 function testSetup() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  getOrCreateSheet(ss, "Roster", ["Email", "Roll Number", "Name", "First Seen"]);
-  getOrCreateSheet(ss, "Access", ["Email", "Grant Type", "Grant Value", "Granted At", "Granted By"]);
-  getOrCreateSheet(ss, "Submissions", [
-    "Submitted At", "Roll Number", "Email", "Name",
-    "Class", "Subject", "Section", "Subsection", "Test", "Test Kind",
-    "Score", "Total MCQ"
+  getOrCreateSheet(ss, "Roster", [
+    "Email",
+    "Roll Number",
+    "Name",
+    "First Seen",
   ]);
-  getOrCreateSheet(ss, "Progress", ["Email", "Item Id", "Item Type", "Status", "Updated At"]);
+  getOrCreateSheet(ss, "Access", [
+    "Email",
+    "Grant Type",
+    "Grant Value",
+    "Granted At",
+    "Granted By",
+  ]);
+  getOrCreateSheet(ss, "Submissions", [
+    "Submitted At",
+    "Roll Number",
+    "Email",
+    "Name",
+    "Class",
+    "Subject",
+    "Section",
+    "Subsection",
+    "Test",
+    "Test Kind",
+    "Score",
+    "Total MCQ",
+  ]);
+  getOrCreateSheet(ss, "Progress", [
+    "Email",
+    "Item Id",
+    "Item Type",
+    "Status",
+    "Updated At",
+  ]);
   Logger.log("All tabs ready on: " + ss.getName());
 }

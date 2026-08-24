@@ -52,8 +52,7 @@ is now already done in code — only the manual dashboard steps remain.
    `subjective_status = 'pending'`.
 2. On `admin.html` → Submissions tab, that row gets a **Grade** button.
 3. Clicking it shows every theory answer. Copy each question + student
-   answer + your own answer key into your local LLM (`ollama run
-   qwen3:8b` or similar), ask it to score against your rubric and name
+   answer + your own answer key into your local LLM (`ollama run qwen3:8b` or similar), ask it to score against your rubric and name
    the topic.
 4. Type the score, topic, and feedback into the form for each question,
    click **Save & mark graded**.
@@ -110,6 +109,7 @@ grant execute on function public.get_test_stats(text) to authenticated;
 ```
 
 **What's new to try:**
+
 - **Math**: write `$x^2+1$` (inline) or `$$\frac{a}{b}$$` (block) in any
   note, question prompt, or theory answer — renders live via KaTeX. Two
   demo questions in the Squares & Cubes mixed test already use it.

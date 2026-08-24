@@ -1,0 +1,631 @@
+Chapter-12                                    Narration
+Read the sentences given below.
+My father said to me, “I have to attend a meeting tomorrow.”
+My father told me that he had to attend a meeting the next day.
+The act of reporting a person’s speech is called Narration. There are two ways of narrating a person’s speech.
+
+Direct Speech: In Direct Speech, the actual words spoken by a person are quoted within inverted commas
+(“...........”). In example 1, the actual words spoken by ‘my father’ are quoted without any change.
+Indirect Speech: In Indirect Speech, the gist/meaning/matter of the speaker’s words is conveyed without
+quoting the actual words. In example 2, the meaning of “my father’s” words is conveyed without quoting his
+actual words.
+                                  Two parts of a Direct Speech
+(i)  Reporting Speech: The part of the sentence outside the inverted commas is called Reporting Speech. It is
+     generally termed as Reporting Verb. It has three parts: Subject, Reporting Verb and Objects. In certain cases
+     the object may be missing.
+(ii) Reported Speech: The part of the sentence enclosed within the inverted commas is called the Reported
+     Speech. A Reported Speech also has a Subject and a Verb with other extensions (other parts of speech).
+Read the sentences given below carefully and study the structures of a Direct Sentence.
+Direct: My friend said to me, “I will give you my book.”
+Direct: (Reporting Speech), “Reported Speech.”
+Direct: (My friend) (said) (to me), “I will give you my book.”
+Direct: (Subject) (Reporting Verb) (Object), “Subject and Verb of Reported Speech (with other extensions).”
+
+                        Sentence Structure of an Indirect Speech:
+An Indirect Speech is a Complex Sentence made of a Principal Clause (Reporting Speech) and a Subordinate
+Clause (Reported Speech), generally joined by a conjunction. Look at the following example:
+Direct: My friend said to me, “I will give you my book.”
+Indirect: My friend told me that he would give me his book. (Indirect Speech)
+         (Principal Clause) Conjunction (Subordinate Clause)
+                        Sentence Structure of an Indirect Speech:
+                   Direct Speech                                         Indirect Speech
+      Actual words of the speaker are quoted in           Actual words of the speaker are not quoted.
+      inverted commas.                                    The meaning or matter of the reported speech
+                                                          is conveyed indirectly.
+      It has two parts: Reporting Verb and                It is one complex sentence with a Principal
+      Reported Speech                                     Clause and a Subordinate Clause.
+      Reporting Verb and Reported Speech are              There is no use of comma to separate
+      separated by comma. Reported Speech is              Reporting Verb and Reported Speech.
+      enclosed within inverted commas.                    Inverted commas are removed.
+      Reported Speech in inverted commas starts           Reported speech becomes the subordinate
+      with a capital letter.                              clause of a Complex Sentence. Hence, it
+                                                          starts with a small letter.
+      There is no use of Conjunction as Reporting         In most of the cases, Reported speech is
+      Verb and Reported Speech are separated by a         introduced by a conjunction.
+      comma and inverted commas.
+                                                      123
+           General Rules for Changing Direct Speech into Indirect Speech
+Important Note: General rules are those rules which are always followed while changing a Direct Speech into an
+Indirect Speech. Both general and speciﬁc Rules must be followed while changing a Direct Speech into an Indirect
+Speech. The speciﬁc rules are related to types of sentences. These rules are discussed further in this chapter.
+
+Rule-I Inverted commas are removed.
+Rule-II Look at the tense of the reporting verb.
+   (a) If the tense of Reporting Verb in Direct Speech is Present or Future Tense, there will be no change in
+       the tense of the Reported Speech while changing the Direct Speech into Indirect Speech.
+       Direct: The teacher says to the students, “I have corrected your notebooks.” (Present Perfect Tense)
+       Indirect: The teacher tells the students that she has corrected their notebooks. (Present Perfect Tense)
+   (b) If the tense of Reporting Verb in Direct Speech is Past Tense, follow the rules regarding the change of
+       tense discussed later in this chapter.
+
+Rule-III Rules regarding the change in Personal Pronouns:
+Important Note: While changing the Personal Pronouns, the Gender and Case of the Personal Pronouns should be
+kept the same. Study the table given below.
+
+ Personal Pronouns           Nominative Case             Accusative Case             Possessive Case
+ First Person                I, we                       me, us                      my, mine, our, ours
+ Second Person               you, thou                   you, thee                   your, yours, thine
+ Third Person                he, she, it, they           him, her, it, them          his, her, hers, its,
+                                                                                     their, theirs
+(i)   Pronouns of the First Person in the Reported Speech change according to the Subject of the Reporting
+      Verb. The case will remain the same.
+      Direct: My sister said to me, “I don't want to waste my time”.
+              My sister (Subject, Third Person) said to me, “I (First person, Nominative Case) don't want to
+              waste my (First Person, Possessive Case) time.”
+      Indirect:
+              My sister told me that she (Third person, Nominative Case) did not want to waste her (Third
+              Person, Possessive Case) time.
+(ii) Pronouns of the Second Person in the Reported Speech change according to the Object of the
+      Reporting Verb. The case will remain the same.
+      Direct: I said to her, “You should do your work.”
+              I said to her (Object, Third Person), “You (Second person, Nominative Case) should do your
+              (Second Person, Possessive Case) work.”
+      Indirect:
+              I advised her that she (Third Person, Nominative Case) should do her (Third Person, Possessive
+              Case) work.
+(iii) Pronouns of the Third Person in the Reported Speech remain unchanged.
+      Direct: Asha said to me, “He (Third Person) is wasting his (Third Person) time.”
+      Indirect: Asha told me that he (Third Person) was wasting his (Third Person) time.
+
+
+                                                     124
+The following table will help the learners learn the rules of Pronouns:
+                                       Reporting Verb         S      O  N
+                                      Reported Speech         I      II III
+Here:             S = Subject                      I= First Person
+                  O= Object                        II= Second Person
+                  N= No Change                     III= Third Person
+Rule- IV Subject-verb agreement must be followed when Pronouns or Tense in the Reported Speech is changed.
+Direct: I say to my friend, “You are very intelligent.”
+Indirect: I tell my friend that he is very intelligent.
+Direct: I said to my friend, “You are very intelligent.”
+Indirect: I told my friend that he was very intelligent.
+Rule-V A conjunction is used to introduce the Reported Speech. The use of conjunction depends on the
+type of sentence of the Reported Speech. Read the table given below carefully.
+        Type of Sentence in Reported Speech                  Conjunction Used to join Reporting
+                                                                 Verb and Reported Speech
+   Assertive Sentences (Afﬁrmative & Negative)           that
+   Interrogative Sentences (Single)                      if/whether
+   Interrogative Sentences ( Double: with                Wh-word used in the Reported Speech
+   Wh-words)
+   Imperative Senten ces                                 Inﬁnitive with to/that
+   Exclamatory Sentences                                 that
+   Optative Sentences                                    that
+Rule- VI The tense of Reporting Verb remains the same. If the Reporting Verb is ‘say’, ‘says’, ‘will say’, or
+‘said’ it remains the same. If Reporting Verb is followed by ‘to’ and an object, there will be the following
+changes in the Reporting Verbs if the Reported Speech is an Assertive Sentence. Examples:
+                                       say to him        tell him
+                                       says to me        tells me
+                                       will say to her   will tell her
+                                       said to you       told you
+Rule- VII Vocatives and Nominative of Address are omitted altogether and their sense expressed in the
+sentence.
+Direct: He said to his boss, “Sir, the report is ready.”
+Indirect: He told his boss respectfully that the report was ready.
+                    Rules Regarding the Change in Tense
+Rule-I If the Reporting Verb is in Present Tense or Future Tense, there will be no change in the tense of
+the Reported Speech.
+Direct: My mother says, “The cake is delicious.”
+Indirect: My mother says that the cake is delicious.
+Direct: He says to me, “I am playing here.”
+Indirect: He tells me that he is playing here.
+Direct: Tarun will say, “I was reading a book.”
+Indirect: Tarun will say that he was reading a book.
+Rule-II If the Reporting Verb is in Past Tense the tense of the Reported Speech will change in its
+corresponding tense in the Past Tense. The following table explains the change in tense.
+                                                     125
+                     Direct Speech                                   Indirect Speech
+      Simple Present (V1)                               Simple Past (V2)
+      Present Continuous (is/am/are+ V1+ ing)           Past Continuous (was/were+ V1+ ing)
+      Present Perfect (has/have+V3)                     Past Perfect (had+V3)
+      Preset Perfect Continuous                         Past Perfect Continuous
+      (has/have +been+ V1+ing)                          (had+ been+ V1+ing)
+      Simple Past (V2)                                  Past Perfect (had+V3)
+      Past Continuous                                   Past Perfect Continuous
+      (was/were+ V1+ ing)                               (had +been+ V1+ing)
+      Past Perfect (had+V3)                             Past Perfect (had+V3)
+      Past Perfect Continuous                           Past Perfect Continuous
+      (had +been+ V1+ing)                               (had +been+ V1+ing)
+      Simple Future (will/shalll+V1)                    Past form of Simple Future (would+ V1)
+      Future Continuous                                 Past form of Future Continuous
+      (will/shalll+be+V1+ing)                            ( would+be+V1+ing)
+      Future Perfect                                    Past form of Future Perfect
+       (will/shall+ have+ V3)                            (would+have+V3)
+      Future Perfect Continuous                         Past form of Future Perfect Continuous
+      (will/shall+ have+ been+ V1+ing)                  (would+ have+ been+ V1+ing)
+Direct: My mother said, “The food is tasty.”
+Indirect: My mother said that the food was tasty.
+Direct: He said to me, “I am playing here.”
+Indirect: He told me that he was playing there.
+Direct: John said, “The baby was sleeping.”
+Indirect: John said that the baby had been sleeping.
+Direct: My sister said to me, “I don't like apples.”
+Indirect: My sister told me that she did not like apples.
+Rule-III Modal Auxiliaries are changed according to the table given below.
+                            Direct Speech                         Indirect Speech
+                                  can                                     could
+                                 shall                              should/would
+                                  will                                   would
+                                 may                                     might
+                      could/should/would/might                         no change
+Rule-IV Change of ‘Must’:
+(i) If must indicates future necessity or compulsion, it changes into would+have+to+V1 (Conditional)
+Direct: He said, “I must ﬁnish this work by tomorrow.”
+Indirect: He said that he would have to ﬁnish that work by the next day.
+(ii) For immediate necessity, 'must' is changed into 'had to'.
+Direct: He said, “I must go home now.”
+Indirect: He said that he had to go home then.
+(iii) When 'must' indicates permanent rule, advice, prohibition etc, it does not change.
+Direct: The teacher said, “The students must not miss my class.”
+Indirect: The teacher said that the students must not miss her class.
+
+                                                      126
+Rule-V Change of Modal Auxiliaries ‘Need’ and ‘Dare’:
+Direct: He said to me, “You need not wait for me.”
+Indirect: He told me that I need not wait for him.
+                                                      Or,
+Indirect: He told me that I did not need to wait for him.
+
+Direct: He said to me, “I dare not talk to the boss.”
+Indirect: He told me that he dare not talk to the boss.
+                                                       Or,
+Indirect: He told me that he did not dare to talk to the boss.
+Rule-VI Adverbs of Time and Place and some other words are changed according to the table given
+below. If the tense of the Reported Speech is not changed, the adverbials of time and place are also not
+changed.
+                         Direct Speech                                  Indirect Speech
+        this                                             that
+        these                                            those
+        here, hither                                     there, thither
+        hence, hereby                                    thence, thereby
+        come                                             go
+        now                                              then
+        today                                            that day
+        tonight                                          that night
+        yesterday                                        the previous day
+        last week/month/year                             the previous week/month/year
+        last night                                       the night before
+        tomorrow                                         the next day/the following year
+        ago                                              before
+        thus                                             so
+        the last fortnight                               the previous fortnight
+        the day before yesterday                         the day before the previous day
+        the next week/month/year                         the following week/month/year
+     Situations When the Tense of Reported Speech Remains the Same
+There are a few exceptional situations when the tense of the Reported Speech is not changed even if the
+Reporting Verb is in the Past Tense.
+    (a) If the Reported Speech is a Universal Truth, a Mathematical fact, Geographical fact, Historical fact,
+        Chemical fact or some other fact, the tense is not changed.
+Examples:
+Direct: The teacher said, “The sun rises in the east.”
+Indirect: The teacher said that the sun rises in the east.
+Direct: He said to me, “Two and two make four.”
+Indirect: He told me that two and two make four.
+Direct: He said to me, “Water freezes at 0˚ Celsius.”
+Indirect: He told me that water freezes at 0˚ Celsius.
+Direct: He said to me, “The Red Fort is in Delhi.”
+Indirect: He told me that the Red Fort is in Delhi.
+                                                     127
+   (b) If the Reported Speech is a Proverb or an act of morality, the tense is not changed.
+Example:
+Direct: Riya said to her brother, “A burnt child dreads the ﬁre.”
+Indirect: Riya told her brother that a burnt child dreads the ﬁre.
+    (c) If the Reported Speech explains some Habitual Act of Present, the tense is not changed.
+Examples:
+Direct: The teacher said, “Mohan always comes late.”
+Indirect: The teacher said the Mohan always comes late. (He still comes late.)
+Direct: He said to me, “My mother goes to temple every day.”
+Indirect: He told me that his mother goes to temple every day.( Present habit)
+    (d) If the Reported Speech refers to past time/date/year, the tense is not changed.
+Example:
+Direct: My mother said to me, “India got freedom on 15th August 1947.”
+                                                            th
+Indirect: My mother told me that India got freedom on 15 August 1947.
+    (e) If the Reported Speech expresses two simultaneous actions, the tense remains the same.
+Examples:
+Direct: He said to me, I studied when my brother played.”
+Indirect: He told me that he studied when his brother played.
+Direct: He said to me, I was completing my homework when my father was watching TV.”
+Indirect: He told me that he was completing his homework when his father was watching TV.
+    (f) If the action expressed in the Reported Speech continues at the time of Reporting, the tense is not
+        changed.
+Examples:
+Direct: He said to me, “Prices are going up.”
+Indirect: He told me that prices are going up.
+Direct: He said to me, “India is progressing by leaps and bounds.”
+Indirect: He told me that India is progressing by leaps and bounds.
+    (g) If the Reported Speech expresses an imaginary condition or an unreal condition, the tense is not
+        changed.
+Examples:
+Direct: He said, “If my son were here, I would be very happy.”
+Indirect: He said that if his son were there, he would be very happy.
+Direct: He said to me, “If you had invited me, I would have attended the party.”
+Indirect: He told me that if I had invited me, he would have attended the party.
+Direct: He said, “It is high time we started our journey.”
+Indirect: He said that it was high time they started their journey.
+                    Specific Rules According to Types of Sentences
+There are different rules for different types of sentences for changing a Direct Speech into an Indirect Speech.
+Therefore, it is very important to ﬁnd out what type of sentence a Reported Speech is. A Reported Speech in a
+Direct Speech may be-
+ 1. Assertive Sentence
+ 2. Interrogative Sentence
+ 3. Imperative Sentence
+ 4. Exclamatory Sentence
+ 5. Optative Sentence
+
+                                                     128
+                       Rules/Instructions for Changing Assertive Sentences
+Assertive Sentences are simple statements. There are two types: Afﬁrmative Sentences and Negative Sentences.
+   1. Remove inverted commas and use the conjunction 'that' to join the Reporting Speech and the Reported
+       Speech. Change Reporting Verb as explained under Rule-VI of general rules.
+   2. Change Personal Pronouns according to General rules.
+   3. Follow Tense related rules to change or not to change the Tense.
+   4. Adverbs of time and place and other words are changed as explained under Rule-VI of changing tense.
+Direct: He said, “I am reading a book.”
+Indirect: He said that he was reading a book.
+Direct: My friend said to me, “I have solved the sum.”
+Indirect: My friend told me that he had solved the sum.
+Direct: He said to me, “I cannot explain the situation now.”
+Indirect: He told me that he could not explain the situation then.
+Direct: She said to me, “I was waiting for you.”
+Indirect: She told me that she had been waiting for me.
+Direct: My brother said to me, “I will work hard to win the gold medal in the race.”
+Indirect: My brother told me that he would work hard to win the gold medal in the race.
+                                                                Practice Exercise-I
+1. The captain said to players, “In case of rain we will cancel the match.”
+...............................................................................................................................................................................
+2. My friend said to me, “You can take my book if you want to study.”
+...............................................................................................................................................................................
+3. My neighbour said to me, “Someone has stolen my camera.”
+...............................................................................................................................................................................
+4. His brother said to him, “I am going to watch a movie now.”
+...............................................................................................................................................................................
+5. Riya said to me, “I shall go to Mumbai the next week.”
+...............................................................................................................................................................................
+6. She said to me, “I will be playing cricket in the evening.”
+...............................................................................................................................................................................
+7. The teacher said, “The earth revolves around the sun.”
+...............................................................................................................................................................................
+8. Rajat said to her, “I returned your book last week.”
+...............................................................................................................................................................................
+9. My sister said to me, “The police will have caught the thief.”
+...............................................................................................................................................................................
+10.The teacher said to the students, “You must attend your classes regularly.”
+...............................................................................................................................................................................
+11. The professor said, “Pollution is increasing day by day.”
+...............................................................................................................................................................................
+12. My father said to me, “If you had worked hard, you would have succeeded.”
+...............................................................................................................................................................................
+                                                                                    129
+13. My friend said to me, “We ﬁnish our work soon.”
+...............................................................................................................................................................................
+14. My brother said to me, “The weather is pleasant today.”
+...............................................................................................................................................................................
+15. The stranger said to me, “I have lived in Tamil Nadu for ten years.”
+...............................................................................................................................................................................
+                                                               Practice Exercise-II
+1. My father said, “A little knowledge is a dangerous thing.”
+...............................................................................................................................................................................
+2. My friend said to me, “You always keep your things scattered here and there.”
+...............................................................................................................................................................................
+3. My friend said to me, “Mahatma Gandhi was born on 2nd October 1869.”
+...............................................................................................................................................................................
+4. The teacher said to the students, “You need not bring your books tomorrow.”
+...............................................................................................................................................................................
+5. His brother said to him, “I watered the plants when you studied.”
+...............................................................................................................................................................................
+6. Riya said to me, “All is well that ends well.”
+...............................................................................................................................................................................
+7. The soldier said, “We ought to serve our country.”
+...............................................................................................................................................................................
+8. She says to me, “I will be playing football in the evening.”
+...............................................................................................................................................................................
+9. He said to his mother, “You do not need to worry about me.”
+...............................................................................................................................................................................
+10.Rohan will say to him, “I returned your book last week.”
+...............................................................................................................................................................................
+11. My sister has said to me, “I have to clean the house by evening.”
+...............................................................................................................................................................................
+12.I said to my classmate, “I have never told a lie.”
+...............................................................................................................................................................................
+13.The teacher said to the students, “The First battle of Panipat was fought in 1526.”
+...............................................................................................................................................................................
+14.The inspector said to me, “You must wear a helmet while riding a motorcycle.”
+...............................................................................................................................................................................
+15.My friend said to me, “If I were you, I would buy this car.”
+...............................................................................................................................................................................
+                                                                                    130
+           Rules/Instructions for Changing Interrogative Sentences
+Interrogative Sentences are questions. There are two types of Interrogative Sentences.
+(a) Single Interrogative Sentence: It starts with a Primary Auxiliary or a Modal Auxiliary. Such sentences are
+answered in 'Yes' or 'No'.
+Examples: (i) Are you a teacher? Yes/No                     (ii) Will you marry me? Yes/No
+(b) Double Interrogative Sentence: It starts with a 'Wh-word' (Interrogative Pronoun or Interrogative Adverb).
+Examples: (i) What is your name?          (ii) Who are you?               (iii) Where are you going?
+1. Change the reporting verb into ask/asked, enquire/enquired, or wonder/wondered etc.
+2. Remove inverted commas. If the Reported Speech is a Single Interrogative Sentence, use the conjunction 'if'
+or 'whether' to join the Reporting Speech and the Reported Speech.
+3. If the Reported Speech is a Double Interrogative Sentence, use the Wh-word given in the Reported Speech as
+a conjunction.
+4. Follow the rules of Pronouns and Tenses.
+5. In Indirect Speech, Interrogative Sentence, given in the Reported Speech, changes into an Assertive
+Sentence. Therefore, the places of Subject and Verb are exchanged. This is known as Inversion. Sign of
+Interrogation (?) is removed.
+Example: Is he your friend? (Interrogative Sentence)
+           He is your friend. (Assertive Sentence)
+6. Helping verbs: 'do', 'does', or 'did' are removed.
+Direct: He said to me, “Do you live in Chandigarh?”
+Indirect: He asked me if I lived in Chandigarh.
+Direct: He said to me, “When are you going to Delhi?”
+Indirect: He asked me when I was going to Delhi.
+Direct: The teacher said to the students, “Who has broken the window?”
+Indirect: The teacher asked the students who had broken the windows.
+Direct: She said to me, “Shall I open the door?”
+Indirect: She asked me if she should open the door.
+Direct: My father said to me, “Have you taken my pen?”
+Indirect: My father asked me if I had taken his pen.
+Direct: My sister said to me, “Why are you troubling me?”
+Indirect: My sister asked me why I was troubling her.
+                              Questions Starting with Shall I/We
+1. If 'shall' indicates Future Tense or some information/speculation, it changes into 'would'.
+   Direct: He said to me, “Shall we ever meet again?”
+    Indirect: He wondered if we would ever meet again.
+2. If 'shall' indicates seeking advice or a request, it changes into 'should'
+    Direct: Ritu said, “Shall I open the door?”
+    Indirect: Ritu asked if she should open the door.
+3. If 'shall' indicates an offer, it is replaced with the verb 'offer'.
+    Direct: She said to me, “Shall I bring you something to eat?”
+    Indirect: She offered to bring me something to eat.
+4. If 'shall' indicates a suggestion, it is replaced with the verb 'suggest'.
+   Direct: He said, “Shall we meet again tomorrow?”
+   Indirect: He suggested meeting again the next day.
+
+
+                                                          131
+                  Questions Starting with Will you/ would you/ could you
+1. If the questions starting with ‘will you’, ‘would you’ or ‘could you’ are ordinary questions, the rules of single
+   interrogative sentences will be applied.
+2. If the questions starting with ‘will you’, ‘would you’ or ‘could you’ indicate an order, request or offer, the
+   changes will be made accordingly as explained in the following examples.
+Direct: He shouted, “Will you keep silence?” (order)
+Indirect: He ordered me to keep silence.
+Direct: She said to me, “Could you give me some sugar?” (request)
+Indirect: She requested me to give her some sugar.
+Direct: She said to me, “Would you like to have a drink?” (offer)
+Indirect: She invited me for a drink. Or, She offered me a drink.
+                                                              Practice Exercise-III
+1. My mother said to my sister, “Why have you not completed your homework.”
+...............................................................................................................................................................................
+2. He said to his guests, “Shall I make you a cup of tea?”
+...............................................................................................................................................................................
+3. The secretary said to the visitor, “Whom do you want to see?”
+...............................................................................................................................................................................
+4. He said to me, “Are you watering the plants?”
+...............................................................................................................................................................................
+5. The student said to the teacher, “May I come in?”
+...............................................................................................................................................................................
+6. My uncle said to me, “When does the postman come every day?”
+...............................................................................................................................................................................
+7. The shopkeeper said to the boy, “What do you want to buy?”
+...............................................................................................................................................................................
+8. The student said to the teacher, “Can you explain the sum again?”
+...............................................................................................................................................................................
+9. The father said to his son, “Where have you kept my spectacles?”
+...............................................................................................................................................................................
+10. The teacher said to the student, “Why have you come late today?”
+...............................................................................................................................................................................
+11. I said to him, “When are you going to your ofﬁce?”
+...............................................................................................................................................................................
+12.         She said to him, “Do you know who I am?”
+...............................................................................................................................................................................
+
+                                                                                    132
+13. The stranger said to me, “Could you tell me the way to railway station?
+...............................................................................................................................................................................
+14. Rajat said to his brother, “Why don’ you listen to me?”
+...............................................................................................................................................................................
+15. She said to her, “Did he not care for you?”
+...............................................................................................................................................................................
+                    Rules/Instructions for Changing Imperative Sentences
+Imperative Sentences express an order, command, request, prohibition or advice. These sentences start
+directly with the ﬁrst form of Verb or ‘Don’t’, followed by the ﬁrst form of Verb.
+ 1.Change the Reporting Verb in order/ordered, request/requested, command/commanded, forbid/forbade,
+    advise/advised, or beg/begged according to the meaning implied in the Reported Speech.
+ 2. The Imperative Mood is changed into Inﬁnitive Mood.
+ 3. Change the ﬁrst form of verb into Positive Inﬁnitive (to+V1) and ‘Don’t+ V1’ into Negative Inﬁnitive
+    (not+to+V1). For Negative Inﬁnitive, the verb ‘Forbid’ can also be used.
+Direct: The boss said to his employee, “Show me the report.”
+Indirect: The boss ordered his employee to show him the report.
+Direct: My father said to me, “Take care of your health.”
+Indirect: My father advised me to take care of my health.
+Direct: My sisters said to me, “Please, don't disturb me.
+Indirect: My sister requested me not to disturb her.
+Direct: The Commander said to the soldiers, “Don't be afraid of the enemy. Move forward.”
+Indirect: The Commander commanded the soldiers not to be afraid of the enemy and to move forward.
+Direct: The gardener said to the boys, “Don't pluck the ﬂowers.”
+Indirect: The gardener forbade the boys to pluck the ﬂowers.
+Direct: He said to me, "Beware of false friends."
+Indirect: He warned me against false friends.
+                                                              Practice Exercise- IV
+1. He said to his son, “Never tell a lie.”
+...............................................................................................................................................................................
+2. The Principal said to the peon, “Bring that parcel to me.”
+...............................................................................................................................................................................
+3. The captain said to the soldiers, “Fire at the enemy.”
+...............................................................................................................................................................................
+4. The teacher said to the students, “Don’t make a noise.”
+...............................................................................................................................................................................
+5. The Principal said to the boys, “Work hard if you want to succeed.”
+...............................................................................................................................................................................
+                                                                                     133
+6. My mother said to me, “Clean your room and arrange your books.”
+...............................................................................................................................................................................
+7. The beggar said to the shopkeeper, “Please give me a rupee.”
+...............................................................................................................................................................................
+8. My brother said to me, “Don’t touch my things.”
+...............................................................................................................................................................................
+9. He said to me, “Wait here till I come back.”
+...............................................................................................................................................................................
+10. The student said to the teacher, “Please correct my notebook.”
+...............................................................................................................................................................................
+                    Rules/Instructions for Changing Exclamatory Sentences
+Exclamatory Sentences express a sudden or a strong feeling. These sentences start with an Interjection such
+as 'Hurrah', 'Alas', 'Oh' etc or 'What'/ 'How'.
+    1. The Exclamatory Sentence is changed into Assertive Sentence.
+    2. The Reporting Verb is changed into exclaimed or exclaimed with (Joy, sorrow, wonder etc according
+        to the Interjection given in the Direct Speech).
+    3. Conjunction 'that' is used to join the Reporting Verb and the Reported Speech.
+    4. Interjection' or any other exclamatory word is removed.
+    5. All the rules of Pronouns and Tenses are followed.
+    6. Mark of exclamation is removed.
+                                                               Points to remember
+                         Ho! Hurrah! Hoo!                                    express                         joy or delight
+                         What! Oh! Good Heavens                              express                         wonder/surprise
+                         Alas! Ah! Oh! Sorry!                                express                         grief, pain or regret
+                         Hark! Hush! Lo! Behold!                             express                         attention
+                         Pooh! Pshaw!                                        express                         contempt
+                         Damn!                                               expresses                       swear
+                         Bravo!                                              expresses                       applause/encouragement
+                         Nonsense!                                           expresses                       anger/disappointment
+                         Fie! Shame!                                         express                         shame or reproof
+ Direct: She said, “Alas! I have injured my hand.”
+ Indirect: She exclaimed with sorrow that she had injured her hand.
+ Direct: The players said, “Hurrah! We have won the match.”
+ Indirect: The players exclaimed with joy that they had won the match.
+ Direct: The captain said to the players, “Bravo! You played very well today.”
+ Indirect: The captain applauded the players saying that they had played very well that day.
+ Direct: She said, “How beautiful the scenery is!”
+ Indirect: She exclaimed that the scenery was very beautiful.
+ Direct: She said, “How foolish I have been!”
+ Indirect: She confessed that she had been very foolish.
+                                                                                    134
+                                                                Practice Exercise - V
+1. The students said, “How difﬁcult the question paper is!”
+...............................................................................................................................................................................
+2. She said to her son, “Hush! The baby is sleeping.”
+...............................................................................................................................................................................
+3. He said, “What beautiful scenery!”
+...............................................................................................................................................................................
+4. My friend said to me, “How nice of you to have come!”
+...............................................................................................................................................................................
+5. She said, “Hurrah! My brother has won a lottery prize.”
+...............................................................................................................................................................................
+6. The boy said, “Oh! I have forgotten my book at home.”
+...............................................................................................................................................................................
+7. I said, “What a difﬁcult tongue twister!
+...............................................................................................................................................................................
+8. My brother said, “Hurrah! I have got the ﬁrst rank in my class.”
+...............................................................................................................................................................................
+9. He said, “Alas! I have lost my son.”
+...............................................................................................................................................................................
+10. He said to the boy, “Pooh! Pooh! What a dirty fellow you are!”
+...............................................................................................................................................................................
+11. She said to the beggar, “How shabbily dressed up you are!”
+...............................................................................................................................................................................
+12. The child said to the old man, “How old you are!”
+...............................................................................................................................................................................
+13. The commander said to the soldier, “Bravo! Good shot.”
+...............................................................................................................................................................................
+14. He said, “What a terrible storm!”
+...............................................................................................................................................................................
+15. We said, “What a nice place this is!”
+...............................................................................................................................................................................
+
+
+                                                                                    135
+                         Rules/Instructions for Changing Optative Sentences
+Optative Sentences express a wish, desire, blessing, prayer or curse. The use of Modal Auxiliaries 'May' and
+'Would' is common in these sentences. Conditional sentences using 'were' are also used to express a wish.
+1. Reporting verb is changed into wished/prayed/ desired/cursed etc.
+2. The word 'wish' used in the Direct Speech is removed.
+3. If the Reporting Verb is in Past Tense, 'May' is used into 'Might'.
+4. Were' used in Conditional Sentences is changed into 'had been' if the Reporting Verb is in Past Tense.
+5. We wish good morning, good afternoon, good evening or good night.
+6. We bid welcome, farewell or good-bye.
+Direct: He said to me, “May you get success in life.”
+Indirect: He wished that I might get success in life.
+Direct: He said, “Good morning, teacher.”
+Indirect: He wished good morning to his teacher.
+Direct: She said, “Good bye, friends.”
+Indirect: She bade farewell to her friends.
+Direct: He said, “O for a glass of water!”
+Indirect: He desired strongly for a glass of water.
+Direct: He said, “May God save the king.”
+Indirect: He prayed that God might save the king.
+                                                               Practice Exercise - VI
+1. He said to the patient, “May you recover soon!”
+...............................................................................................................................................................................
+2. He said, “O for a cup of tea!”
+...............................................................................................................................................................................
+3. I said to her, “Happy Christmas!”
+...............................................................................................................................................................................
+4. They said to the chief guest, “Welcome!”
+...............................................................................................................................................................................
+5. He said, “May God grant peace to the departed soul.”
+...............................................................................................................................................................................
+6. I said to my parents, “Good Morning!”
+...............................................................................................................................................................................
+7. The teacher said to the students, “May you all fare well in your examination.”
+...............................................................................................................................................................................
+8. I said to my friend, “May you get success in life.”
+...............................................................................................................................................................................
+9. My friend said to me, “Good luck to you!”
+...............................................................................................................................................................................
+10. John said, “O for a house to live in.”
+...............................................................................................................................................................................
+                                                                                    136
+                                                             Practice Exercise - VII
+1. My mother said to me, “Might is right.”
+...............................................................................................................................................................................
+2. He said to me, “Have you received the parcel?”
+...............................................................................................................................................................................
+3. The young man said, “I have purchased a new house.”
+...............................................................................................................................................................................
+4. The teacher said, “The British ruled over India for two hundred years.”
+...............................................................................................................................................................................
+5. My friend said to me, “I read an interesting novel last week.”
+...............................................................................................................................................................................
+6. My teacher said, “Corruption is in the air these days.”
+...............................................................................................................................................................................
+7. The Principal said to the teacher, “Were you present at the meeting?”
+...............................................................................................................................................................................
+8. I said to him, “Where will you park my car?”
+...............................................................................................................................................................................
+9. The teacher said to the students, “Why are you making a noise?”
+...............................................................................................................................................................................
+10. My father said to me, “Clean your room right now.”
+...............................................................................................................................................................................
+11. His brother said to him, “Don't waste your time.”
+...............................................................................................................................................................................
+12. My sister said, “What a beautiful dress!”
+...............................................................................................................................................................................
+13. The daughter said to her mother, “What have you prepared in lunch.”
+...............................................................................................................................................................................
+14. The boy said to the old man, “How old you are!”
+...............................................................................................................................................................................
+15. The old man said to the boy, “How old are you?”
+...............................................................................................................................................................................
+
+
+                                                                                    137
+

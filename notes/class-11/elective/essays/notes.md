@@ -1,6 +1,6 @@
 # Woven Words — Essays
 
-*Section 3 — placeholder notes, ready to be filled in.*
+_Section 3 — placeholder notes, ready to be filled in._
 
 ---
 
@@ -10,4 +10,4 @@ This section covers the Essays portion of Woven Words (English Elective), part o
 
 ---
 
-*Full notes and question practice for this section are coming soon.*
+_Full notes and question practice for this section are coming soon._

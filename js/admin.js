@@ -44,8 +44,6 @@
   // ---------------------------------------------------------------------
 
   async function init() {
-    if (window.Theme) Theme.attachToggleButton(document.getElementById("themeToggle"));
-
     if (!CONFIG.SUPABASE_URL || CONFIG.SUPABASE_ANON_KEY.includes("YOUR_")) {
       gateScreen.classList.add("hidden");
       unavailableState.classList.remove("hidden");
@@ -106,7 +104,11 @@
       gateError.textContent = result.message || "Failed to load admin data.";
       return;
     }
-    latestData = { roster: result.roster || [], access: result.access || [], submissions: result.submissions || [] };
+    latestData = {
+      roster: result.roster || [],
+      access: result.access || [],
+      submissions: result.submissions || [],
+    };
     renderRoster();
     renderSubmissions();
   }
@@ -116,10 +118,18 @@
   // ---------------------------------------------------------------------
 
   function switchTab(name) {
-    document.querySelectorAll(".admin-tab").forEach((t) => t.classList.toggle("active", t.dataset.tab === name));
-    document.getElementById("tabAccess").classList.toggle("hidden", name !== "access");
-    document.getElementById("tabSubmissions").classList.toggle("hidden", name !== "submissions");
-    document.getElementById("tabStudents").classList.toggle("hidden", name !== "students");
+    document
+      .querySelectorAll(".admin-tab")
+      .forEach((t) => t.classList.toggle("active", t.dataset.tab === name));
+    document
+      .getElementById("tabAccess")
+      .classList.toggle("hidden", name !== "access");
+    document
+      .getElementById("tabSubmissions")
+      .classList.toggle("hidden", name !== "submissions");
+    document
+      .getElementById("tabStudents")
+      .classList.toggle("hidden", name !== "students");
   }
 
   // ---------------------------------------------------------------------
@@ -131,22 +141,38 @@
     if (grantType.value === "class") {
       CLASSES.forEach((entry) => {
         if (entry.type === "exam") {
-          entry.years.forEach((y) => addOption(grantValue, y.id, `${entry.label} — ${y.label} (${y.name})`));
+          entry.years.forEach((y) =>
+            addOption(
+              grantValue,
+              y.id,
+              `${entry.label} — ${y.label} (${y.name})`
+            )
+          );
         } else {
           addOption(grantValue, entry.id, `${entry.label} — ${entry.name}`);
         }
       });
     } else {
       CLASSES.forEach((entry) => {
-        const subjectSets = entry.type === "exam"
-          ? entry.years.map((y) => ({ label: `${entry.label} ${y.label}`, subjects: y.subjects }))
-          : [{ label: entry.label, subjects: entry.subjects }];
+        const subjectSets =
+          entry.type === "exam"
+            ? entry.years.map((y) => ({
+                label: `${entry.label} ${y.label}`,
+                subjects: y.subjects,
+              }))
+            : [{ label: entry.label, subjects: entry.subjects }];
 
         subjectSets.forEach(({ label, subjects }) => {
           (subjects || []).forEach((subject) => {
-            const sectionLists = subject.tracks ? subject.tracks.flatMap((t) => t.sections || []) : subject.sections || [];
+            const sectionLists = subject.tracks
+              ? subject.tracks.flatMap((t) => t.sections || [])
+              : subject.sections || [];
             sectionLists.forEach((section) => {
-              addOption(grantValue, section.id, `${label} — ${subject.title} — ${section.title}`);
+              addOption(
+                grantValue,
+                section.id,
+                `${label} — ${subject.title} — ${section.title}`
+              );
             });
           });
         });
@@ -169,7 +195,11 @@
     grantStatus.textContent = "Granting…";
     grantStatus.className = "admin-grant-status";
 
-    const result = await Backend.adminGrant({ email, grantType: grantType.value, grantValue: grantValue.value });
+    const result = await Backend.adminGrant({
+      email,
+      grantType: grantType.value,
+      grantValue: grantValue.value,
+    });
 
     if (result.status === "ok") {
       grantStatus.textContent = `Granted ${grantType.value} access to ${email}.`;
@@ -185,7 +215,11 @@
   async function handleRevoke(email, gType, gValue, btn) {
     btn.disabled = true;
     btn.textContent = "…";
-    const result = await Backend.adminRevoke({ email, grantType: gType, grantValue: gValue });
+    const result = await Backend.adminRevoke({
+      email,
+      grantType: gType,
+      grantValue: gValue,
+    });
     if (result.status === "ok") {
       await tryLoad();
     } else {
@@ -210,16 +244,28 @@
       .slice()
       .sort((a, b) => Number(a.rollNumber) - Number(b.rollNumber))
       .forEach((student) => {
-        const grants = latestData.access.filter((g) => g.email === student.email);
+        const grants = latestData.access.filter(
+          (g) => g.email === student.email
+        );
         const tr = document.createElement("tr");
 
-        const grantChips = grants
-          .map(
-            (g) => `<span class="grant-chip">${escapeHtml(g.grantType)}: ${escapeHtml(g.grantValue)}${g.grantedVia === "razorpay" ? " (auto)" : ""}
-              <button type="button" class="grant-revoke" data-email="${escapeHtml(g.email)}" data-type="${escapeHtml(g.grantType)}" data-value="${escapeHtml(g.grantValue)}">Revoke</button>
+        const grantChips =
+          grants
+            .map(
+              (g) => `<span class="grant-chip">${escapeHtml(
+                g.grantType
+              )}: ${escapeHtml(g.grantValue)}${
+                g.grantedVia === "razorpay" ? " (auto)" : ""
+              }
+              <button type="button" class="grant-revoke" data-email="${escapeHtml(
+                g.email
+              )}" data-type="${escapeHtml(
+                g.grantType
+              )}" data-value="${escapeHtml(g.grantValue)}">Revoke</button>
             </span>`
-          )
-          .join("") || `<span class="admin-empty-cell">No access granted</span>`;
+            )
+            .join("") ||
+          `<span class="admin-empty-cell">No access granted</span>`;
 
         tr.innerHTML = `
           <td>${escapeHtml(String(student.rollNumber))}</td>
@@ -231,7 +277,14 @@
       });
 
     rosterBody.querySelectorAll(".grant-revoke").forEach((btn) => {
-      btn.addEventListener("click", () => handleRevoke(btn.dataset.email, btn.dataset.type, btn.dataset.value, btn));
+      btn.addEventListener("click", () =>
+        handleRevoke(
+          btn.dataset.email,
+          btn.dataset.type,
+          btn.dataset.value,
+          btn
+        )
+      );
     });
   }
 
@@ -250,7 +303,11 @@
       const tr = document.createElement("tr");
       const scoreText = s.totalMcq != null ? `${s.score}/${s.totalMcq}` : "—";
       const theoryText =
-        s.subjectiveStatus === "graded" ? "Graded" : s.subjectiveStatus === "pending" ? "Pending" : "—";
+        s.subjectiveStatus === "graded"
+          ? "Graded"
+          : s.subjectiveStatus === "pending"
+          ? "Pending"
+          : "—";
 
       tr.innerHTML = `
         <td>${escapeHtml(formatDate(s.submittedAt))}</td>
@@ -261,8 +318,14 @@
         <td>${escapeHtml(s.testKind)}</td>
         <td>${escapeHtml(scoreText)}</td>
         <td>${escapeHtml(theoryText)}</td>
-        <td>${s.subjectiveStatus === "pending" ? `<button type="button" class="btn btn-sm grade-btn" data-id="${s.id}">Grade</button>` : ""}</td>
-        <td><a href="report.html?id=${encodeURIComponent(s.id)}" target="_blank" class="btn btn-ghost btn-sm">Report</a></td>
+        <td>${
+          s.subjectiveStatus === "pending"
+            ? `<button type="button" class="btn btn-sm grade-btn" data-id="${s.id}">Grade</button>`
+            : ""
+        }</td>
+        <td><a href="report.html?id=${encodeURIComponent(
+          s.id
+        )}" target="_blank" class="btn btn-ghost btn-sm">Report</a></td>
       `;
       submissionsBody.appendChild(tr);
 
@@ -290,11 +353,15 @@
     const result = await Backend.adminGetSubmissionAnswers(submissionId);
 
     if (result.status !== "ok") {
-      panel.innerHTML = `<p style="color:var(--error);">Failed to load: ${escapeHtml(result.message || "")}</p>`;
+      panel.innerHTML = `<p style="color:var(--error);">Failed to load: ${escapeHtml(
+        result.message || ""
+      )}</p>`;
       return;
     }
 
-    const theoryAnswers = result.answers.filter((a) => a.question_type === "short");
+    const theoryAnswers = result.answers.filter(
+      (a) => a.question_type === "short"
+    );
     if (!theoryAnswers.length) {
       panel.innerHTML = `<p class="admin-empty-cell">No theory answers on this submission.</p>`;
       panel.dataset.loaded = "1";
@@ -307,15 +374,27 @@
         .map(
           (a, i) => `
         <div class="grade-question-block" data-answer-id="${a.id}">
-          <div class="grade-question-prompt"><strong>Q${i + 1}.</strong> ${escapeHtml(a.question_prompt || "")}</div>
-          <div class="grade-student-answer">${escapeHtml(a.student_answer || "(blank)")}</div>
+          <div class="grade-question-prompt"><strong>Q${
+            i + 1
+          }.</strong> ${escapeHtml(a.question_prompt || "")}</div>
+          <div class="grade-student-answer">${escapeHtml(
+            a.student_answer || "(blank)"
+          )}</div>
           <div class="grade-fields">
-            <input type="text" class="grade-topic" placeholder="Topic (e.g. Newton's Second Law)" value="${escapeHtml(a.topic_tag || "")}">
-            <input type="number" class="grade-score" placeholder="Score" value="${a.llm_score != null ? a.llm_score : ""}" step="0.5">
+            <input type="text" class="grade-topic" placeholder="Topic (e.g. Newton's Second Law)" value="${escapeHtml(
+              a.topic_tag || ""
+            )}">
+            <input type="number" class="grade-score" placeholder="Score" value="${
+              a.llm_score != null ? a.llm_score : ""
+            }" step="0.5">
             <span>/</span>
-            <input type="number" class="grade-max" placeholder="Max" value="${a.llm_max_score != null ? a.llm_max_score : ""}" step="0.5">
+            <input type="number" class="grade-max" placeholder="Max" value="${
+              a.llm_max_score != null ? a.llm_max_score : ""
+            }" step="0.5">
           </div>
-          <textarea class="grade-feedback" placeholder="Feedback / what to revise…">${escapeHtml(a.feedback_text || "")}</textarea>
+          <textarea class="grade-feedback" placeholder="Feedback / what to revise…">${escapeHtml(
+            a.feedback_text || ""
+          )}</textarea>
         </div>
       `
         )
@@ -326,7 +405,9 @@
       </div>
     `;
     panel.dataset.loaded = "1";
-    panel.querySelector(".save-grades-btn").addEventListener("click", () => saveGrades(submissionId, panel));
+    panel
+      .querySelector(".save-grades-btn")
+      .addEventListener("click", () => saveGrades(submissionId, panel));
   }
 
   async function saveGrades(submissionId, panel) {
@@ -355,7 +436,8 @@
         feedbackText: feedback,
       });
       if (saveResult.status !== "ok") {
-        statusEl.textContent = saveResult.message || "Failed to save one of the answers.";
+        statusEl.textContent =
+          saveResult.message || "Failed to save one of the answers.";
         saveBtn.disabled = false;
         return;
       }
@@ -382,7 +464,10 @@
       revisionFocus: topics.filter((t) => t.revise).map((t) => t.topic),
     };
 
-    const finalizeResult = await Backend.adminFinalizeGrading({ submissionId, overallReport });
+    const finalizeResult = await Backend.adminFinalizeGrading({
+      submissionId,
+      overallReport,
+    });
     if (finalizeResult.status === "ok") {
       statusEl.textContent = "Saved.";
       await tryLoad();
@@ -400,10 +485,14 @@
   // ---------------------------------------------------------------------
 
   function initStudentLookup() {
-    getClassOptions().forEach((c) => addOption(studentClassSelect, c.id, c.label));
+    getClassOptions().forEach((c) =>
+      addOption(studentClassSelect, c.id, c.label)
+    );
 
     studentClassSelect.addEventListener("change", () => {
-      const cls = getClassOptions().find((c) => c.id === studentClassSelect.value);
+      const cls = getClassOptions().find(
+        (c) => c.id === studentClassSelect.value
+      );
       studentSubjectSelect.innerHTML = `<option value="">Choose a subject…</option>`;
       studentSearchInput.disabled = true;
       studentSearchBtn.disabled = true;
@@ -412,7 +501,9 @@
         studentSubjectSelect.disabled = true;
         return;
       }
-      (cls.subjects || []).forEach((subj) => addOption(studentSubjectSelect, subj.title, subj.title));
+      (cls.subjects || []).forEach((subj) =>
+        addOption(studentSubjectSelect, subj.title, subj.title)
+      );
       studentSubjectSelect.disabled = false;
     });
 
@@ -424,7 +515,10 @@
 
     studentSearchBtn.addEventListener("click", runStudentSearch);
     studentSearchInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") { e.preventDefault(); runStudentSearch(); }
+      if (e.key === "Enter") {
+        e.preventDefault();
+        runStudentSearch();
+      }
     });
   }
 
@@ -433,9 +527,21 @@
     const opts = [];
     CLASSES.forEach((entry) => {
       if (entry.type === "exam") {
-        entry.years.forEach((y) => opts.push({ id: y.id, label: `${entry.label} — ${y.label} (${y.name})`, name: y.name, subjects: y.subjects }));
+        entry.years.forEach((y) =>
+          opts.push({
+            id: y.id,
+            label: `${entry.label} — ${y.label} (${y.name})`,
+            name: y.name,
+            subjects: y.subjects,
+          })
+        );
       } else {
-        opts.push({ id: entry.id, label: `${entry.label} — ${entry.name}`, name: entry.name, subjects: entry.subjects });
+        opts.push({
+          id: entry.id,
+          label: `${entry.label} — ${entry.name}`,
+          name: entry.name,
+          subjects: entry.subjects,
+        });
       }
     });
     return opts;
@@ -451,17 +557,23 @@
       (r) => r.email.toLowerCase() === query || String(r.rollNumber) === query
     );
     if (!student) {
-      studentSearchStatus.textContent = "No student found with that roll number or email.";
+      studentSearchStatus.textContent =
+        "No student found with that roll number or email.";
       studentSearchStatus.className = "admin-grant-status error";
       return;
     }
     studentSearchStatus.textContent = "";
 
-    const cls = getClassOptions().find((c) => c.id === studentClassSelect.value);
+    const cls = getClassOptions().find(
+      (c) => c.id === studentClassSelect.value
+    );
     const subjectTitle = studentSubjectSelect.value;
 
     const submissions = latestData.submissions.filter(
-      (s) => s.email === student.email && s.className === cls.name && s.subject === subjectTitle
+      (s) =>
+        s.email === student.email &&
+        s.className === cls.name &&
+        s.subject === subjectTitle
     );
 
     await renderStudentDetail(student, cls, subjectTitle, submissions);
@@ -473,7 +585,9 @@
     if (!submissions.length) {
       studentDetail.innerHTML = `
         <div class="student-detail-head">
-          <h3>${escapeHtml(student.email)} — Roll #${escapeHtml(String(student.rollNumber))}</h3>
+          <h3>${escapeHtml(student.email)} — Roll #${escapeHtml(
+        String(student.rollNumber)
+      )}</h3>
           <p>${escapeHtml(cls.label)} · ${escapeHtml(subjectTitle)}</p>
         </div>
         <p class="admin-empty-cell">No submissions yet for this subject.</p>`;
@@ -482,8 +596,12 @@
 
     studentDetail.innerHTML = `
       <div class="student-detail-head">
-        <h3>${escapeHtml(student.email)} — Roll #${escapeHtml(String(student.rollNumber))}</h3>
-        <p>${escapeHtml(cls.label)} · ${escapeHtml(subjectTitle)} · ${submissions.length} submission${submissions.length === 1 ? "" : "s"}</p>
+        <h3>${escapeHtml(student.email)} — Roll #${escapeHtml(
+      String(student.rollNumber)
+    )}</h3>
+        <p>${escapeHtml(cls.label)} · ${escapeHtml(subjectTitle)} · ${
+      submissions.length
+    } submission${submissions.length === 1 ? "" : "s"}</p>
       </div>
       <div class="student-charts">
         <div class="student-chart-card">
@@ -498,7 +616,9 @@
       <div class="student-submission-list" id="studentSubmissionList"></div>
     `;
 
-    const answersResult = await Backend.adminGetAnswersForSubmissions(submissions.map((s) => s.id));
+    const answersResult = await Backend.adminGetAnswersForSubmissions(
+      submissions.map((s) => s.id)
+    );
     const answers = answersResult.status === "ok" ? answersResult.answers : [];
 
     renderCharts(answers);
@@ -518,14 +638,33 @@
 
     const accCanvas = document.getElementById("chartAccuracy");
     if (accCanvas && mcq.length) {
-      studentCharts.push(new Chart(accCanvas, {
-        type: "doughnut",
-        data: {
-          labels: [`Correct (${correct})`, `Incorrect (${incorrect})`, `Unanswered (${unanswered})`],
-          datasets: [{ data: [correct, incorrect, unanswered], backgroundColor: ["#2F5233", "#A6402F", "#C9CBC2"], borderWidth: 0 }],
-        },
-        options: { plugins: { legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 11 } } } } },
-      }));
+      studentCharts.push(
+        new Chart(accCanvas, {
+          type: "doughnut",
+          data: {
+            labels: [
+              `Correct (${correct})`,
+              `Incorrect (${incorrect})`,
+              `Unanswered (${unanswered})`,
+            ],
+            datasets: [
+              {
+                data: [correct, incorrect, unanswered],
+                backgroundColor: ["#2F5233", "#A6402F", "#C9CBC2"],
+                borderWidth: 0,
+              },
+            ],
+          },
+          options: {
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: { boxWidth: 12, font: { size: 11 } },
+              },
+            },
+          },
+        })
+      );
     } else if (accCanvas) {
       accCanvas.replaceWith(document.createTextNode("No MCQ data yet."));
     }
@@ -546,19 +685,52 @@
     });
 
     const topicCanvas = document.getElementById("chartTopics");
-    const topicEntries = Array.from(topicMap.entries()).filter(([, t]) => t.max > 0);
+    const topicEntries = Array.from(topicMap.entries()).filter(
+      ([, t]) => t.max > 0
+    );
     if (topicCanvas && topicEntries.length) {
-      const palette = ["#2F5233", "#29577D", "#A6472F", "#7A5C9E", "#B8863B", "#3F7A6B", "#A6402F", "#565C57"];
-      studentCharts.push(new Chart(topicCanvas, {
-        type: "pie",
-        data: {
-          labels: topicEntries.map(([topic, t]) => `${topic} (${Math.round((t.score / t.max) * 100)}%)`),
-          datasets: [{ data: topicEntries.map(([, t]) => t.max), backgroundColor: topicEntries.map((_, i) => palette[i % palette.length]), borderWidth: 0 }],
-        },
-        options: { plugins: { legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 11 } } } } },
-      }));
+      const palette = [
+        "#2F5233",
+        "#29577D",
+        "#A6472F",
+        "#7A5C9E",
+        "#B8863B",
+        "#3F7A6B",
+        "#A6402F",
+        "#565C57",
+      ];
+      studentCharts.push(
+        new Chart(topicCanvas, {
+          type: "pie",
+          data: {
+            labels: topicEntries.map(
+              ([topic, t]) =>
+                `${topic} (${Math.round((t.score / t.max) * 100)}%)`
+            ),
+            datasets: [
+              {
+                data: topicEntries.map(([, t]) => t.max),
+                backgroundColor: topicEntries.map(
+                  (_, i) => palette[i % palette.length]
+                ),
+                borderWidth: 0,
+              },
+            ],
+          },
+          options: {
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: { boxWidth: 12, font: { size: 11 } },
+              },
+            },
+          },
+        })
+      );
     } else if (topicCanvas) {
-      topicCanvas.replaceWith(document.createTextNode("No topic-tagged questions yet."));
+      topicCanvas.replaceWith(
+        document.createTextNode("No topic-tagged questions yet.")
+      );
     }
   }
 
@@ -570,11 +742,22 @@
       .sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt))
       .map((s) => {
         const scoreText = s.totalMcq != null ? `${s.score}/${s.totalMcq}` : "—";
-        const theoryText = s.subjectiveStatus === "graded" ? "Theory graded" : s.subjectiveStatus === "pending" ? "Theory pending" : "";
+        const theoryText =
+          s.subjectiveStatus === "graded"
+            ? "Theory graded"
+            : s.subjectiveStatus === "pending"
+            ? "Theory pending"
+            : "";
         return `
-          <a href="report.html?id=${encodeURIComponent(s.id)}" target="_blank" class="student-submission-row">
+          <a href="report.html?id=${encodeURIComponent(
+            s.id
+          )}" target="_blank" class="student-submission-row">
             <span class="student-submission-test">${escapeHtml(s.test)}</span>
-            <span class="student-submission-meta">${escapeHtml(formatDate(s.submittedAt))} · MCQ ${escapeHtml(scoreText)}${theoryText ? " · " + escapeHtml(theoryText) : ""}</span>
+            <span class="student-submission-meta">${escapeHtml(
+              formatDate(s.submittedAt)
+            )} · MCQ ${escapeHtml(scoreText)}${
+          theoryText ? " · " + escapeHtml(theoryText) : ""
+        }</span>
           </a>`;
       })
       .join("");
@@ -588,7 +771,13 @@
     try {
       const d = new Date(iso);
       if (isNaN(d.getTime())) return iso || "";
-      return d.toLocaleString(undefined, { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+      return d.toLocaleString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
     } catch (e) {
       return iso || "";
     }

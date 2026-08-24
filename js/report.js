@@ -19,12 +19,14 @@
   async function init() {
     const id = getSubmissionId();
     if (!id) {
-      root.innerHTML = errorBlock("No submission specified.", "Open this page via a link from your progress page or the admin console.");
+      root.innerHTML = errorBlock(
+        "No submission specified.",
+        "Open this page via a link from your progress page or the admin console."
+      );
       return;
     }
 
     await Auth.init();
-    if (window.Theme) Theme.attachToggleButton(document.getElementById("themeToggle"));
 
     if (!Auth.isLoggedIn()) {
       root.innerHTML = `
@@ -33,7 +35,9 @@
           <div id="reportSignIn" style="display:flex; justify-content:center; margin-top:10px;"></div>
         </div>`;
       Auth.renderButton(document.getElementById("reportSignIn"));
-      Auth.onChange((user) => { if (user) init(); });
+      Auth.onChange((user) => {
+        if (user) init();
+      });
       return;
     }
 
@@ -61,7 +65,9 @@
   }
 
   function errorBlock(title, detail) {
-    return `<div class="report-gate"><h1>${escapeHtml(title)}</h1><p class="report-gate-detail">${escapeHtml(detail)}</p></div>`;
+    return `<div class="report-gate"><h1>${escapeHtml(
+      title
+    )}</h1><p class="report-gate-detail">${escapeHtml(detail)}</p></div>`;
   }
 
   function escapeHtml(str) {

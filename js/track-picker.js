@@ -27,19 +27,19 @@ const TrackPicker = (() => {
   const BOOK_ICON_SRC = "assets/icons/subject-literaturebooks.svg";
 
   // Language gets its own dedicated artwork instead of a filter-based
-  // tint — two ready-made variants, swapped purely with CSS based on
-  // data-theme (same show/hide pattern as the header's sun/moon toggle),
-  // so no re-render is needed when the theme flips.
-  const LANGUAGE_ICON_LIGHT = "assets/icons/subject-englishlanguagelight.svg";
-  const LANGUAGE_ICON_DARK = "assets/icons/subject-englishlanguagedark.svg";
+  // tint. There used to be two ready-made variants (light/dark) swapped
+  // with CSS based on data-theme — now that the site is permanently dark
+  // theme (no toggle), the light variant would never render, so it's
+  // dropped entirely rather than still fetching a 44KB SVG nobody sees.
+  const LANGUAGE_ICON_SRC = "assets/icons/subject-englishlanguagedark.svg";
 
   function iconFor(track) {
-    const key = (track && (track.icon || track.id || track.title) || "").toLowerCase();
+    const key = (
+      (track && (track.icon || track.id || track.title)) ||
+      ""
+    ).toLowerCase();
     if (key.includes("language")) {
-      return (
-        `<img class="icon-theme-light" src="${LANGUAGE_ICON_LIGHT}" alt="" width="74" height="74">` +
-        `<img class="icon-theme-dark" src="${LANGUAGE_ICON_DARK}" alt="" width="74" height="74">`
-      );
+      return `<img class="icon-precolored" src="${LANGUAGE_ICON_SRC}" alt="" width="74" height="74">`;
     }
     return `<img src="${BOOK_ICON_SRC}" alt="" width="74" height="74">`;
   }
@@ -49,7 +49,10 @@ const TrackPicker = (() => {
   // book's sections, same as SubjectPicker does for a tracked subject.
   function chapterCountFor(track) {
     if (track.tracks && track.tracks.length) {
-      return track.tracks.reduce((sum, book) => sum + (book.sections || []).length, 0);
+      return track.tracks.reduce(
+        (sum, book) => sum + (book.sections || []).length,
+        0
+      );
     }
     return (track.sections || []).length;
   }
@@ -68,9 +71,13 @@ const TrackPicker = (() => {
     wrap.className = "class-picker subject-picker";
 
     wrap.innerHTML = `
-      <button class="picker-back" id="trackPickerBack">${backIconSvg()}<span>${escapeHtml(backLabel || `${cls.label} subjects`)}</span></button>
+      <button class="picker-back" id="trackPickerBack">${backIconSvg()}<span>${escapeHtml(
+      backLabel || `${cls.label} subjects`
+    )}</span></button>
       <div class="class-picker-intro">
-        <div class="class-picker-eyebrow"><span>${escapeHtml(cls.label)} · ${escapeHtml(subject.title)}</span></div>
+        <div class="class-picker-eyebrow"><span>${escapeHtml(
+          cls.label
+        )} · ${escapeHtml(subject.title)}</span></div>
         <h1>${escapeHtml(heading || "Choose a track")}</h1>
         <p>${escapeHtml(subheading || "Pick a track to see its chapters.")}</p>
       </div>
@@ -78,12 +85,15 @@ const TrackPicker = (() => {
     `;
     container.appendChild(wrap);
 
-    wrap.querySelector("#trackPickerBack").addEventListener("click", () => onChangeSubject && onChangeSubject());
+    wrap
+      .querySelector("#trackPickerBack")
+      .addEventListener("click", () => onChangeSubject && onChangeSubject());
 
     const grid = wrap.querySelector("#trackGrid");
     (subject.tracks || []).forEach((track, i) => {
       const card = document.createElement("button");
-      card.className = "class-card subject-card" + (!track.ready ? " unready" : "");
+      card.className =
+        "class-card subject-card" + (!track.ready ? " unready" : "");
       card.style.setProperty("--card-index", i);
       card.innerHTML = `
         <span class="subject-card-icon">${iconFor(track)}</span>
@@ -91,6 +101,7 @@ const TrackPicker = (() => {
         <span class="class-card-meta">${metaTextFor(track)}</span>
       `;
       card.addEventListener("click", () => onPick && onPick(track));
+      if (window.BorderGlow) BorderGlow.enhance(card);
       grid.appendChild(card);
     });
   }

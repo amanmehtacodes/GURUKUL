@@ -28,7 +28,10 @@ const ProgressPage = (() => {
             <p>Your scores and progress are tied to your Google account.</p>
           </div>
         </div>`;
-      if (onBack) container.querySelector("#progressBack").addEventListener("click", onBack);
+      if (onBack)
+        container
+          .querySelector("#progressBack")
+          .addEventListener("click", onBack);
       return;
     }
 
@@ -37,9 +40,15 @@ const ProgressPage = (() => {
     wrap.innerHTML = `
       ${backBtnHtml}
       <div class="class-picker-intro">
-        <div class="class-picker-eyebrow"><span>${escapeHtml(user.email)}</span></div>
+        <div class="class-picker-eyebrow"><span>${escapeHtml(
+          user.email
+        )}</span></div>
         <h1>My progress</h1>
-        <p>${AccessControl.getRollNumber() ? `Roll number ${AccessControl.getRollNumber()} · ` : ""}Every test you've submitted and what's left to do.</p>
+        <p>${
+          AccessControl.getRollNumber()
+            ? `Roll number ${AccessControl.getRollNumber()} · `
+            : ""
+        }Every test you've submitted and what's left to do.</p>
       </div>
       <div class="progress-page-body" id="progressPageBody">
         <div class="progress-loading">Loading your progress…</div>
@@ -47,7 +56,8 @@ const ProgressPage = (() => {
     `;
     container.appendChild(wrap);
 
-    if (onBack) wrap.querySelector("#progressBack").addEventListener("click", onBack);
+    if (onBack)
+      wrap.querySelector("#progressBack").addEventListener("click", onBack);
 
     renderBody(wrap.querySelector("#progressPageBody"));
   }
@@ -102,21 +112,46 @@ const ProgressPage = (() => {
         <div class="progress-subject-title">${escapeHtml(subjectKey)}</div>
         <div class="progress-rows">`;
       rows.forEach((s) => {
-        const hasScore = s.totalMcq !== "" && s.totalMcq != null && s.totalMcq !== 0;
-        const pct = hasScore ? Math.round((Number(s.score) / Number(s.totalMcq)) * 100) : null;
-        const tier = pct === null ? "" : pct >= 80 ? "success" : pct >= 50 ? "warn" : "error";
+        const hasScore =
+          s.totalMcq !== "" && s.totalMcq != null && s.totalMcq !== 0;
+        const pct = hasScore
+          ? Math.round((Number(s.score) / Number(s.totalMcq)) * 100)
+          : null;
+        const tier =
+          pct === null
+            ? ""
+            : pct >= 80
+            ? "success"
+            : pct >= 50
+            ? "warn"
+            : "error";
         const theoryBadge =
-          s.subjectiveStatus === "graded" ? `<span class="progress-theory-badge graded">Theory graded</span>` :
-          s.subjectiveStatus === "pending" ? `<span class="progress-theory-badge pending">Theory pending</span>` : "";
+          s.subjectiveStatus === "graded"
+            ? `<span class="progress-theory-badge graded">Theory graded</span>`
+            : s.subjectiveStatus === "pending"
+            ? `<span class="progress-theory-badge pending">Theory pending</span>`
+            : "";
         html += `
-          <button type="button" class="progress-test-row" data-id="${escapeHtml(s.id)}" data-test-id="${escapeHtml(s.testId || "")}">
+          <button type="button" class="progress-test-row" data-id="${escapeHtml(
+            s.id
+          )}" data-test-id="${escapeHtml(s.testId || "")}">
             <div class="progress-test-info">
-              <div class="progress-test-name">${escapeHtml(s.test)} ${theoryBadge}</div>
-              <div class="progress-test-meta">${escapeHtml(s.section)} / ${escapeHtml(s.subsection)} · ${escapeHtml(formatDate(s.submittedAt))}</div>
+              <div class="progress-test-name">${escapeHtml(
+                s.test
+              )} ${theoryBadge}</div>
+              <div class="progress-test-meta">${escapeHtml(
+                s.section
+              )} / ${escapeHtml(s.subsection)} · ${escapeHtml(
+          formatDate(s.submittedAt)
+        )}</div>
             </div>
-            <div class="progress-test-score ${tier}">${hasScore ? `${s.score}/${s.totalMcq}` : "—"}</div>
+            <div class="progress-test-score ${tier}">${
+          hasScore ? `${s.score}/${s.totalMcq}` : "—"
+        }</div>
           </button>
-          <div class="progress-report-panel hidden" id="progress-report-${escapeHtml(s.id)}"></div>`;
+          <div class="progress-report-panel hidden" id="progress-report-${escapeHtml(
+            s.id
+          )}"></div>`;
       });
       html += `</div></div>`;
     });
@@ -139,8 +174,12 @@ const ProgressPage = (() => {
     const grants = AccessControl.getGrants();
     if (!grants.length) return "";
 
-    const classGrantIds = new Set(grants.filter((g) => g.type === "class").map((g) => g.value));
-    const chapterGrantIds = new Set(grants.filter((g) => g.type === "chapter").map((g) => g.value));
+    const classGrantIds = new Set(
+      grants.filter((g) => g.type === "class").map((g) => g.value)
+    );
+    const chapterGrantIds = new Set(
+      grants.filter((g) => g.type === "chapter").map((g) => g.value)
+    );
     if (!classGrantIds.size && !chapterGrantIds.size) return "";
 
     let html = "";
@@ -158,12 +197,15 @@ const ProgressPage = (() => {
           const hasAccess = hasClassGrant || chapterGrantIds.has(section.id);
           if (!hasAccess) return;
           const stats = Progress.statsForSection(section);
-          const pct = stats.total > 0 ? Math.round((stats.done / stats.total) * 100) : 0;
+          const pct =
+            stats.total > 0 ? Math.round((stats.done / stats.total) * 100) : 0;
           chapterRows.push(`
             <div class="chapter-progress-row">
               <div class="chapter-progress-label">
                 <span>${escapeHtml(section.title)}</span>
-                <span class="chapter-progress-count">${stats.done}/${stats.total}</span>
+                <span class="chapter-progress-count">${stats.done}/${
+            stats.total
+          }</span>
               </div>
               <div class="progress-bar-track">
                 <div class="progress-bar-fill" style="width:${pct}%"></div>
@@ -174,7 +216,9 @@ const ProgressPage = (() => {
         if (chapterRows.length) {
           subjectBlocks.push(`
             <div class="chapter-progress-subject">
-              <div class="chapter-progress-subject-title">${escapeHtml(subject.title)}</div>
+              <div class="chapter-progress-subject-title">${escapeHtml(
+                subject.title
+              )}</div>
               ${chapterRows.join("")}
             </div>`);
         }
@@ -183,7 +227,9 @@ const ProgressPage = (() => {
       if (subjectBlocks.length) {
         html += `
           <div class="chapter-progress-class">
-            <div class="chapter-progress-class-title">${escapeHtml(cls.name)}</div>
+            <div class="chapter-progress-class-title">${escapeHtml(
+              cls.name
+            )}</div>
             ${subjectBlocks.join("")}
           </div>`;
       }
@@ -222,7 +268,9 @@ const ProgressPage = (() => {
 
     const result = await Backend.getSubmissionDetail(id);
     if (result.status !== "ok") {
-      panel.innerHTML = `<p style="color:var(--error);">Couldn't load this report: ${escapeHtml(result.message || "")}</p>`;
+      panel.innerHTML = `<p style="color:var(--error);">Couldn't load this report: ${escapeHtml(
+        result.message || ""
+      )}</p>`;
       return;
     }
 
@@ -248,7 +296,11 @@ const ProgressPage = (() => {
     try {
       const d = new Date(iso);
       if (isNaN(d.getTime())) return iso;
-      return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+      return d.toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
     } catch (e) {
       return iso;
     }

@@ -15,7 +15,8 @@ const CONFIG = {
   //    Get this from Supabase Dashboard -> Connect -> API Keys -> "anon public".
   //    This key is safe to ship in frontend code — it has no power on its
   //    own beyond what your Row Level Security policies (schema.sql) allow.
-  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZpZ2V5aGlmYm95dXBnbndqbnNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYxODU1NDEsImV4cCI6MjEwMTc2MTU0MX0.CxmjJiAp5jphoQrAgw__omty0U5Q6D4VYjV8kWzJ91Q",
+  SUPABASE_ANON_KEY:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZpZ2V5aGlmYm95dXBnbndqbnNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYxODU1NDEsImV4cCI6MjEwMTc2MTU0MX0.CxmjJiAp5jphoQrAgw__omty0U5Q6D4VYjV8kWzJ91Q",
 
   // Optional: restrict logins to a specific email domain (e.g. a school
   // domain). Leave as null to allow any Google account.

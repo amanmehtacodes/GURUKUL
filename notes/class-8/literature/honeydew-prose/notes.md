@@ -1,6 +1,6 @@
 # Honeydew — Prose
 
-*Honeydew — Prose — reader index, ready to be filled in.*
+_Honeydew — Prose — reader index, ready to be filled in._
 
 ---
 
@@ -17,4 +17,4 @@
 
 ---
 
-*Full notes, summaries, and question practice for this section are coming soon.*
+_Full notes, summaries, and question practice for this section are coming soon._

@@ -13,7 +13,11 @@ const ComingSoon = (() => {
       <div class="coming-soon">
         <div class="coming-soon-icon">${clockIconSvg}</div>
         <h2>Coming soon</h2>
-        <p><strong>${escapeHtml(subjectTitle)}</strong> for <strong>${escapeHtml(className)}</strong> hasn't been added yet.
+        <p><strong>${escapeHtml(
+          subjectTitle
+        )}</strong> for <strong>${escapeHtml(
+      className
+    )}</strong> hasn't been added yet.
         Notes and tests for this subject are on the way — check back soon.</p>
       </div>
     `;

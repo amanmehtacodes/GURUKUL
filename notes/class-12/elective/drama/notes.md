@@ -1,6 +1,6 @@
 # Kaleidoscope — Drama
 
-*Section 3 — placeholder notes, ready to be filled in.*
+_Section 3 — placeholder notes, ready to be filled in._
 
 ---
 
@@ -10,4 +10,4 @@ This section covers the Drama portion of Kaleidoscope (English Elective), part o
 
 ---
 
-*Full notes and question practice for this section are coming soon.*
+_Full notes and question practice for this section are coming soon._

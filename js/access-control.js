@@ -93,7 +93,14 @@ const AccessControl = (() => {
     return grants.slice();
   }
 
-  return { ensureLoaded, reset, hasChapterAccess, getRollNumber, isLoaded, getGrants };
+  return {
+    ensureLoaded,
+    reset,
+    hasChapterAccess,
+    getRollNumber,
+    isLoaded,
+    getGrants,
+  };
 })();
 
 window.AccessControl = AccessControl;

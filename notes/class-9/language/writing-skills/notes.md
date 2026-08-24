@@ -1,6 +1,6 @@
 # Writing Skills
 
-*Section 2 — placeholder notes, ready to be filled in.*
+_Section 2 — placeholder notes, ready to be filled in._
 
 ---
 
@@ -18,4 +18,4 @@ This section covers writing skills. Each topic below is a natural unit for a les
 
 ---
 
-*Full notes, summaries, and question practice for this section are coming soon.*
+_Full notes, summaries, and question practice for this section are coming soon._

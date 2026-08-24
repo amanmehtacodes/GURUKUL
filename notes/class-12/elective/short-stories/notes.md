@@ -1,6 +1,6 @@
 # Kaleidoscope — Short Stories
 
-*Section 1 — placeholder notes, ready to be filled in.*
+_Section 1 — placeholder notes, ready to be filled in._
 
 ---
 
@@ -10,4 +10,4 @@ This section covers the Short Stories portion of Kaleidoscope (English Elective)
 
 ---
 
-*Full notes and question practice for this section are coming soon.*
+_Full notes and question practice for this section are coming soon._

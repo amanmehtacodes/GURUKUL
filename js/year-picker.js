@@ -24,7 +24,9 @@ const YearPicker = (() => {
     wrap.innerHTML = `
       <button class="picker-back" id="yearPickerBack">${backIconSvg()}<span>All classes</span></button>
       <div class="class-picker-intro">
-        <div class="class-picker-eyebrow"><span>${escapeHtml(track.name)}</span></div>
+        <div class="class-picker-eyebrow"><span>${escapeHtml(
+          track.name
+        )}</span></div>
         <h1>Select your year</h1>
         <p>Choose your year to see available subjects.</p>
       </div>
@@ -32,7 +34,9 @@ const YearPicker = (() => {
     `;
     container.appendChild(wrap);
 
-    wrap.querySelector("#yearPickerBack").addEventListener("click", () => onChangeTrack && onChangeTrack());
+    wrap
+      .querySelector("#yearPickerBack")
+      .addEventListener("click", () => onChangeTrack && onChangeTrack());
 
     const grid = wrap.querySelector("#yearGrid");
     (track.years || []).forEach((year, i) => {
@@ -43,9 +47,14 @@ const YearPicker = (() => {
       card.innerHTML = `
         <span class="class-card-numeral">${escapeHtml(year.label)}</span>
         <span class="class-card-name">${escapeHtml(year.name)}</span>
-        <span class="class-card-meta">${readyCount > 0 ? `${readyCount} subject${readyCount > 1 ? "s" : ""} available` : "Coming soon"}</span>
+        <span class="class-card-meta">${
+          readyCount > 0
+            ? `${readyCount} subject${readyCount > 1 ? "s" : ""} available`
+            : "Coming soon"
+        }</span>
       `;
       card.addEventListener("click", () => onPick && onPick(year));
+      if (window.BorderGlow) BorderGlow.enhance(card);
       grid.appendChild(card);
     });
   }

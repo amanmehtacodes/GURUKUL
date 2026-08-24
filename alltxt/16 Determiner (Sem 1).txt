@@ -1,0 +1,611 @@
+Chapter-10                                        Determiners
+Deﬁnition: A determiner is a word which announces the coming of a noun in a sentence. It is used before a
+noun to qualify or modify it. Most of adjectives function as determiners because they are used before nouns to
+describe them. An adjective used after a noun is not considered to be a determiner.
+                                            Kinds of Determiners
+      Kinds of Determiners                       Examples
+       1. Articles                               a, an, the
+       2. Adjectives of Number                   one, two, tenth, some, many, more, most few, a few, the
+       (Indeﬁnite, Cardinals, Ordinals)          few, fewer, several, all, both, any etc.
+       3. Adjectives of Quantity                 some, much, more, most, little, a little, the little, less,
+                                                 whole, half, no, any etc.
+       4. Possessive Adjectives                  my, our, his, her, your, their, its
+       5. Demonstrative Adjectives               this, that, these, those, such
+       6. Interrogative Adjectives               what, which, whose
+       7. Distributive Adj ectives               each, every, either, neither
+                                                         Articles
+Read the following sentences carefully.
+    1. I have an imported pen.          2.      The pen has a golden cap.
+    3. The cap has a pin.               4.      The pin has an automatic button.
+In the above sentences, the words 'a', 'an' and 'the' are called articles.
+There are two types of articles:
+    1. Indeﬁnite Articles: 'A' and 'an' are called indeﬁnite articles.
+    2. Deﬁnite Article: 'The' is called deﬁnite article.
+                                               Use of ‘A’ and ‘An’
+Both 'a' and 'an' are used to denote a countable singular noun. 'A' is used before a noun which starts with a
+consonant sound whereas 'an' is used before a noun which starts with a vowel sound.
+                                    Vowel and Consonant Sounds
+There are 26 letters in English alphabet. Generally, out of 26 letters 'a', 'e', 'i', 'o' and 'u' are considered to be vowels
+and the remaining 21 letters are considered to be consonants. In fact, these 26 letters used individually or in
+combinations, produce 44 sounds. Thus, there are 44 sounds in English language. Out of these 44 sounds, there
+are 20 vowel sounds and 24 consonant sounds. 'A', 'e', 'i', 'o' and 'u' are letters frequently used to start a word with a
+vowel sound, hence, often labelled as vowels. While selecting the article 'a' or 'an' for a singular noun, it is
+important to note whether the noun starts with a vowel sound or a consonant sound. It is not the ﬁrst letter which
+decides the sound; it is the pronunciation of the word that decides the sound.
+Read the table given below to understand the concept of vowel and consonant sounds.
+    The nouns that start with             The nouns that start with              The nouns that don ’t start
+    letters ‘a’, ‘e’, ‘i’, ‘o’, ‘u’ and   letters ‘a’, ‘e’, ‘i’, ‘o’, ‘u’, but   with letters ‘a’, ‘e’, ‘i’, ‘o’, ‘u’
+    start with a vowel sound              start with a consonant sound           but start with a vowel sound
+    apple, axe, ant, aunt                 union                                  SDO, SSP, SLA
+    egg, elephant, engine                 European, ewe                          MLA, MP, MA
+    inkpot, igloo, ice                    useful thing                           FO, NGO
+    ox, orange, onion                     university                             honest, hour, heir
+    umbrella, uncle                       utopia, one -eyed man
+
+                                                              112
+Important Note: Sometimes a noun is preceded by an adjective or an adverb and an adjective. In such a case the
+article 'a' or 'an' will be selected according to the ﬁrst sound of the word that follows the article.
+Examples: an egg, a boiled egg, a well boiled egg, a boy, an intelligent boy etc.
+                                             Use of ‘A/an’
+  ³ To suggest numerical one : Examples: 1. Give me a mango.                 2. He wants an apple.
+  ³ Before a singular countable noun when it is mentioned for the ﬁrst time and represents no particular
+    person or thing:
+    Examples: 1. I met a man on the way.             2. He has an umbrella.
+  ³ In sense of every: Example: 1. An apple a day keeps the doctor away.
+  ³ To represent a class: Examples: 1. A dog is a useful animal. A pronoun replaces a noun.
+  ³ Before the names of professions and noun complements:
+    Examples: 1. My father is a teacher. 2. He wants to be a successful person.
+  ³ Before a proper noun used in the sense of a common noun:
+    Examples: 1. A Daniel (a very wise judge) comes to judgement. 2. He is a Milton. (an inspired poet)
+  ³ Before certain numerical expressions:
+    Examples: a couple, a dozen, a score, a cross, a million, a hundred, a lot of, a great many, a great deal of
+  ³ In expression of frequency: Examples: once a week, thrice a day
+  ³ In expressions of price, speed, ratio, weight etc.
+    Examples: ﬁve rupees a kilogram, seventy miles an hour, hundred rupees a metre.
+  ³ Before few and little: ‘A few’ means a small number and ‘a little’ means a small amount.
+    Examples: 1. A little knowledge is a dangerous thing. 2. There were only a few students in the class.
+  ³ Before 'half': Examples: One and a half kilos, or a kilo and a half, a half holiday, a half-share
+  ³ In exclamations, before singular countable nouns:
+    Examples:1. What an unfortunate thing! 2. What a charming sight!
+  ³ Before the word 'lie' as a singular noun:
+    Example: He is telling a lie.
+  ³ To denote certain meanings:
+    Examples: 1. He has a chance of winning the match. (some)
+                    2. Birds of a feather ﬂock together. (the same)
+                    3. Only a Newton can answer this question. (one like)
+  ³ ‘A’ can be used before Mr./Mrs./Ms. to refer to an indeﬁnite person, not known personally.
+    Examples: 1. A Mr. Khosala was in the chair.             2. A Mrs. Jain gave away the prices.
+
+                                       Omission of ‘A’/ ‘an’
+  ³ Before plural nouns: Examples: boys, apples, children etc.
+  ³ Before uncountable nouns: Examples: information, luggage, scenery, furniture etc.
+  ³ Before material nouns such as iron, gold, silver, glass, cloth, wood etc.
+    However, if any of these nouns refer to a particular thing, it takes an article.
+    Examples: a gold (incorrect), a bangle of gold (correct) a news (incorrect), a piece of news (incorrect)
+    Examples:1. These chairs are made of wood.
+                2.The wood used in making these chairs is of good quality.
+  ³ Before abstract nouns such as joy, fear, honesty, happiness, grief, sorrow, hope, death etc. However, when
+    used in a particular sense, it may take an article.
+    Examples:1. Fear is the greatest enemy of man. 2. Beauty needs no ornaments
+                3. A fear of snakes overpowered him. 4. Isn't she a beauty?
+  ³ Before a noun used as a complement after the verbs like nominated, appointed, elected, made, declared etc.
+    Examples: 1. He was elected MLA. (not an MLA) 2. The teacher made him monitor. (not a/the monitor)
+  ³ Before names of meal, except when following an adjective:
+    Examples: 1. I will meet you after lunch. 2. It was a memorable lunch.
+    However, the indeﬁnite article is used when a meal is for a special person:
+    Example: I hosted a dinner in the Director's honour.
+                                                     113
+Exercise: Fill in the blanks with the article ‘a’ or ‘an’.
+   1. ..............apple.................day keeps the doctor away.
+   2. I take................boiled egg every morning.
+   3. He put..................ice cube in the glass.
+   4. The king saw................ant trying to climb up the wall.
+   5. We saw ................elephant in the forest.
+   6. Some workers of the factory have formed.............union.
+   7. Take ........................ umbrella with you; it may rain today.
+   8. Somesh is.....................intelligent boy.
+   9. This is....................useful book.
+   10. My sister is ................MA, B.Ed.
+   11. I will return from the market in...................hour.
+   12. The woodcutter had ................iron axe.
+   13. My father is ...................MLA.
+   14. Mahatma Gandhi wanted to create..............utopia in India.
+   15. Joseph is .................European.
+   16. My sister is .................university student.
+   17. He is...................one-eyed man.
+   18. My mother runs ....................NGO.
+   19. I bought ..................new inkpot from the market.
+   20. I have..................ram and.................ewe.
+   21. My ambition in life is to become..................doctor.
+   22. There is ..................empty bottle on the table.
+   23. Sixty minutes make..............hour.
+   24. ..................orange is...................citric fruit.
+   25. ..................Eskimo lives in...................igloo.
+                                          Use of Definite Article : ‘The’
+Article 'the' is called deﬁnite article because it denotes a particular person, place or thing.
+Examples: 1. I met a boy. (any boy/ not a particular boy)
+               2. The boy was wearing a blue shirt. (the boy here means a particular boy referred to in the ﬁrst
+                   sentence.)
+               3. The shirt was very beautiful. (a particular shirt which is referred to in the second sentence)
+               4. The girls of this class are more intelligent than the boys. (particular girls and boys)
+
+                                                                     114
+³ To denote the whole class:
+  Examples: 1. The dog is a faithful animal. 2. The cow is a useful animal.
+³ Before a noun which by reason of locality can represent only one particular thing:
+  Examples: 1. Mother is in the kitchen. (the kitchen of this house)
+              2. Has the postman come? (the postman of our area)
+³ Before adjectives in the superlative degree:
+  Example: He is the tallest boy in the class.
+³ Before comparatives:
+  Examples: 1. The higher you go, the cooler it is.
+              2. He is the taller of the two brothers.
+³ Before words indicating number, weight, measure etc.:
+  Examples: 1.Cloth is sold by the metre. 2. Oranges are sold by the dozen.
+³ Before words denoting well-known historical events:
+  Examples: The French Revolution, the partition of India, the Quit India Movement
+³ Before the names of rivers, canals and seas, oceans, group of islands, gulfs, bays, winds, seasons, deserts,
+  plains:
+  Examples: The Ganges, The Yamuna, the Satluj, the Godavari, the Dead sea, the Paciﬁc Ocean, the
+  Indira Gandhi Canal, the Andaman and Nikobar Islands, the Bay of Bengal, the Persian Gulf, the West
+  Wind, the summer, the Sahara, the Northern Plains etc.
+³ Before mountain ranges:
+  Examples: The Himalayas, the Aravalies, the Shivalik etc.
+³ Before certain geographical names:
+  Examples: the Deccan, the highland, the plains etc.
+³ Before the names of certain books and scriptures:
+  Examples: the Geeta, the Mahabharata, the Vedas, the Koran (Quran), the Bible etc.
+³ Before a proper noun used as a common noun:
+  Examples: 1. Kalidas is called the Shakespeare of India.
+              2. Priya is the Lata Mangeshkar of our class.
+³ Before a common noun to convey the meaning of an abstract noun:
+  Examples: 1. The pen is mightier than the sword.
+              2. The hands that rock the cradle rule the world.
+³ To use an adjective as a noun:
+  Examples: 1. The rich should help the poor.
+              2. The injured were taken to the hospital.
+³ To give superlative force to noun:
+  Examples: 1. He is the professor. (the best)
+              2. It was the event of the year. (the most exciting event)
+³ Before high titles of honour and rank:
+  Examples: The great Caesar, Akbar the great, the honourable Minister, the immortal Shakespeare,
+³ Before the names of communities and commissions:
+  Examples: The Sikhs, the English, the Hindus the Jews,
+³ Before the names of the states, nations or organisations which consist of a group:
+  Examples: the UK, the USA, the UAE, the Punjab, the United Nations Organisation
+³ Before ordinals:
+  Examples: The ﬁrst prize, the second son, the third girl, the tenth of June, the last of us etc.
+³ Before unique objects:
+  Examples: The moon, the sky, the earth, the storm, the tempest
+
+
+                                                   115
+³ Before designations/titles:
+  Examples: the Principal, the Prime Minister, the Governor etc.
+³ Before famous buildings or monuments:
+  Examples: The Taj Mahal, the Jama Masjid, the Statue of Liberty, the Leaning Tower of Pisa etc.
+³ Before directions:
+  Examples: The east, the west, the north, the south, the left, the right
+³ In place of possessive adjectives before the names of parts of the body
+  Example: He struck the boy on the head. (not his head)
+³ Before names of musical instruments:
+  Examples: the ﬂute, the piano,
+³ Before the names of ships:
+  Examples: the Vikrant, the Titanic
+³ Before the names of families:
+  Examples: the Sharmas, the Tomars, the Guptas
+³ Before the names of newspapers, magazines and trains:
+  Examples: The Tribune, the Punjab Kesari, the Times of India,The Eve's Weekly, The India Today, the
+  Shatabdi Express, the Rajdhani Express etc.
+³ Before awards and prizes:
+  Examples: 1. Tagore won the Nobel Prize for his contribution to literature.
+               2. Abdul Hamid was awarded with the Param Veer Chakra.
+³ Before the names of inventions:
+  Examples: 1. Do you know who invented the wheel? 2. The telephone is a very useful invention.
+³ Used before a proper noun to mention who expired recently or who has lately left the ofﬁce (post) etc:
+  Examples: 1. The late Mr. Khanna was a great man.         2. Mr. Sharma, the late Chairman, made a speech.
+³ Before the words 'same' and 'whole’:
+  Examples: 1. This is the same book I was looking for.           2. The whole class is making a noise.
+³ After the word ‘all', 'both' and 'half':
+  Examples: 1. All the students have completed their work.         2. Half the apples are rotten
+               3. Both the girls are from Patna.
+³ Before a noun when special emphasis is required:
+  Example: Now is the time to decide.
+³ Before the word 'truth’:
+  Example: He always speaks the truth.
+³ In certain phrases:
+  Examples: in the long run, on the other hand, on the way, in the way, all the same, on the contrary, all the
+  more, to the utmost, on the march, in the morning, in the afternoon, in the evening etc.
+                        Omission of Definite Article : ‘The’
+³ Before a singular noun used in its widest sense:
+  Examples: 1. Man is mortal. 2. Science tries to discover the laws of nature.
+³ Before plural common nouns used in a general sense (not speciﬁed or particular):
+  Examples: 1. Children are fond of sweets.      2. Boys are taller than girls.
+³ Before proper nouns:
+  Example: Delhi is the capital of India.
+³ Before abstract nouns:
+  Examples: 1. Honesty is the best policy.       2. Love is God.
+
+
+
+                                                   116
+     However, if the abstract noun used in a sentence refers to a particular thing, article 'the' is used.
+     Examples: 1. The love of riches corrupted him.
+                 2. The death of his only son maddened him
+   ³ Before material nouns:
+     Examples: 1. Gold is a precious metal.
+                  2. This table is made of iron.
+     However, if the material noun used in a sentence refers to a particular material, article 'the' is used.
+     Examples: 1. The gold used in this bangle is pure.
+                 2. The wood used in making this chair is of superior quality.
+   ³ Before the names of languages:
+     Examples: 1. Sankrit is an ancient language.
+                 2. We are learning English.
+
+Important Note: English means English language whereas the English means the people of England.
+   ³ Before places of assembly such as school, hospital, court etc when visited for their primary purpose:
+     Examples: 1. People go to court to seek justice.
+                  2. We go to hospital to get treatment.
+     However, if the same places are visited for any other purpose, 'the' is used.
+     Examples: 1. I visited the court to meet my lawyer.
+                  2. He went to the college to meet his cousin.
+   ³ In certain phrases consisting of a preposition and its object:
+     Examples: on foot, to school, at home, in hand, at best, from top to bottom, by train, at noon, at night, at
+     daybreak, at worst, in jail, at sight,
+   ³ In certain phrases consisting of a transitive verb followed by its object :
+     Examples: give ears, catch ﬁre, send word, leave school, lose heart, take offence, set sail etc.
+   ³ Before names of single mountains or single islands :
+     Examples: Everest, Srilanka, Australia,
+   ³ Before the names of countries, continents, capes, cities, towns, days, month, arts, languages, sciences,
+     diseases etc:
+     Examples: India, Asia, Mumbai, Ferozepur, Sunday, February, Chinese, Malaria etc.
+   ³ After the phrases, 'kind of', 'sort of', 'type of':
+     Examples: 1. What kind of man is he?                   2. What sort of books do you want?
+   ³ Before common nouns used in pairs:
+     Examples: 1. Husband and wife lived happily.          2. Girl after girl left the class.
+   ³ Before the names of festivals:
+     Examples: Deepawali, Christmas, Easter etc.
+   ³ Before the word home:
+     Examples: 1. My father is at home.                    2. He came back home in the evening.
+   ³ Before meal-time, unless it is speciﬁed:
+     Examples: 1. I met her at dinner.                     2. The dinner that Mrs. Verma hosted was amazing.
+                                     Repetition of the Article
+Read the following sentences carefully.
+  1. I have a black and white cow. (one cow)
+  2. I have a black and a white cow. (two cows)
+  3. The poet and novelist is no more. (one person)
+  4. The poet and the novelist are no more. (two persons)
+  5. He is a better human being than businessman. (incorrect)
+  6. He is a better human being than a businessman. (correct)
+                                                    117
+Exercise: Fill in the blanks with the article ‘a’, ‘an’ or ‘the’. Put a (X) where the article is not required.
+   1.    ................. cow is.....................useful animal.
+   2.    ...................loyalty is ..................rare virtue these days.
+   3.    I met ..................old man on the road. .................man had................dog with him.
+   4.    .....................cricket is.....................most popular game.
+   5.    ...................bananas are sold by.....................dozen.
+   6.    All...................were amazed to see..................bravery ...............boy exhibited.
+   7.    .......................Ganga is ...................holy river.
+   8.    .......................Chandigarh is .................beautiful city situated at the foot of..................Shivalik Hills.
+   9.    ....................Mahabharata is .................great epic.
+   10. ..................iron is.....................useful metal.
+   11. Sneha is called......................Aishwarya Roy of our class.
+   12. .....................humble always get respect.
+   13. Dhoni was declared..................man of.....................match.
+   14. ....................iron used in this gate is rusted.
+   15. ................Hindi is our national language.
+   16. .....................Geeta is.................holy book of...................Hindus.
+   17. I am going to.......................school.
+   18. ..................Punjab is ..................state known for its saints and gurus.
+   19. My brother has got........................second prize in....................painting competition.
+   20. .....................world has turned into ................global village.
+   21. ....................temple is ..................place where people worship God.
+   22. We visited........................Red Fort last year.
+   23. ....................sun rises in.....................east.
+   24. He caught me by......................arm.
+   25. My brother is playing on.....................harmonium.
+   26. I went to .......................library to return ..................books.
+   27. This is...................same watch my uncle gifted me.
+   28. All.....................boys are playing in....................playground.
+   29. We should always speak......................truth.
+   30. ........................women are fond of shopping.
+   31. My father came home at.......................night.
+                                                                       118
+   32. I have .................headache.
+   33. ..................late Mrs. Verma was a religious lady.
+   34. ......................politics is..........................dirty game.
+   35. Once......................liar, always.....................liar.
+   36. .......................more we get....................greedier we become.
+   37. He is ......................Sachin Tendulkar.
+   38. ......................teacher and.......................co-ordinator is on leave today.
+   39. ...........................French Revolution started...................new era.
+   40. ....................postman goes from.........................door to........................door to deliver letters.
+   41. I bought........................blue and...........................red shirt. (one shirt)
+   42. I bought .........................blue and .........................red shirt. (two shirts)
+   43. I am in.........................hurry.
+   44. This is.........................news to me.
+   45. My mother is not at...........................home.
+   46. .............................whole country mourned over Kalam’s death.
+   47. Keep to...................................left.
+   48. I take.................................breakfast early.
+   49. The teacher made him............................monitor.
+  50. .....................................Principal declared a holiday on...........................Monday.
+Exercise: Correct the following sentences:
+   1.     An European dish is very famous. ..............................................................................................................
+   2.     We saw a elephant in the zoo. .....................................................................................................................
+   3.     The capital of UK is London. .....................................................................................................................
+   4.     Shreya gifted me the watch. .......................................................................................................................
+   5.     He went back a hour ago. ...........................................................................................................................
+   6.     Riya went back the home early today. ........................................................................................................
+   7.     Of the two solutions, the second was better. ...............................................................................................
+   8.     Camel is called ship of desert. ....................................................................................................................
+   9.     He returned home after the sunset. .............................................................................................................
+   10. Shatabdi express runs very fast. .................................................................................................................
+   11. Mohan is a NDA ofﬁcer. ............................................................................................................................
+   12. I go to ofﬁce by a car. ..................................................................................................................................
+                                                                      119
+                             Adjectives of Number as Determiners
+
+An adjective of number, when used as a determiner, describes the number of a noun. It answers the question, 'how
+many'. It is used for countable nouns.
+There are two types of adjectives of number.
+(i) Deﬁnite Numeral Adjectives: Deﬁnite numeral adjectives indicate the exact number of a noun.
+Example: Five girls are playing in the park.
+There are two types of deﬁnite numeral adjectives.
+(a) Cardinals: Cardinals denote the exact number of a noun.
+Example: There are ten students in this row.
+(b) Ordinals: Ordinals denote the order or rank of a noun. Examples: ﬁrst, second, third, tenth, last, next etc.
+Article 'the' or a possessive determiner is used before an ordinal.
+Examples: The third boy in this row is my friend. 2. Pt. J.L. Nehru was the ﬁrst Prime Minister of India.
+(ii) Indeﬁnite Numeral Adjectives: An indeﬁnite numeral adjectives does't indicate the exact number of the
+noun it refers to.
+Examples: 1. Several pages of this book are torn.                   2. There are many monkeys on this tree.
+                            Adjectives of Quantity as Determiners
+An adjective of quantity indicates the quantity of a noun. It answers the question, 'how much'. It is used before
+uncountable nouns.
+Examples: some, any, no, much, little, half, all, whole, sufﬁcient, enough, great, etc.
+   1. I ate some rice.
+   2. There is not much oil in the bottle.
+   3. I don't have any money.
+   4. This statement makes no sense.
+   5. They have sufﬁcient money to buy a house.
+   6. I don't have enough time to waste on these matters.
+   7. There was little water in the jug.
+   8. The crow drank the little water which was in the jug.
+                      Possessive Adjectives as Possessive Determiners
+The words 'my', 'our', 'your', 'his', 'her', 'its' and 'their' are used as possessive adjectives or possessive determiners.
+They show belonging or possession.
+Examples:
+   1. This is our house.                    2. They must complete their work.
+   3. It is his book.                       4. The lion licked its paw.
+
+             Demonstrative Adjectives as Demonstrative Determiners
+The words 'this', 'that', 'these', 'those' and 'such' are called demonstratives as they are used to point out to persons
+or things they refer to. When these words are used before nouns, they are called demonstrative adjectives or
+demonstrative determiners.
+Look at the use of demonstrative determiners in the following sentences.
+1. This book is mine. (used for singular thing which is near the speaker)
+2. That dress is beautiful. (used for singular thing which is at a distance from the speaker)
+3. These shoes are yours. (used for plural things which are near the speaker)
+4. Those apples are fresh . (used for plural things which are at a distance from the speaker)
+5. I don't appreciate such attitude.
+                                                             120
+              Interrogative Adjectives as Interrogative Determiners
+The words 'what', 'which' and 'whose', when used before a noun, are called interrogative adjectives or
+interrogative determiners.
+    1. Which pen is yours?
+    2. What message did he convey to you?
+    3. Whose car is this?
+
+                      Distributive Adjectives as Determiners
+The adjectives that refer to a single person or thing in a group, one at a time, are called distributive adjectives.
+‘each’, ‘every’, ‘either’, ‘neither’ are called distributive adjectives. Distributive adjectives are used as
+determiners before nouns.
+                                            Each and Every
+‘Each’ and ‘every’ are similar in meaning, but there is a difference between the two. Each is used when speaking
+of two or more persons or things. 'Every' is used when speaking of more than two persons or things. Each directs
+attention to every person or thing of a group individually and separately. 'Every' is comprehensive, considering
+all; it directs attention to the whole group without any exception. ‘Each’ is used to denote a person or thing out of a
+known or limited group. 'Every' is used in a wide sense to denote persons or things when the number is unlimited.
+Examples:
+     1. Each participant was given a certiﬁcate. (considering each individual out of a limited group)
+     2. Every man wants to be rich. (considering all in an unlimited group)
+
+                                           Either and Neither
+Either' has two meanings: (i) One out of two (ii) Each of two
+'Neither' means none out of two.
+Examples:
+    1. There are trees on either side of the road. (each out of two)
+    2. Neither side of the road has trees. (None out of two)
+
+                                Correct Use of Some Determiners
+                                         Some and Any
+‘Some’ and ‘any’ are determiners which can be used for both countable and uncountable nouns.
+‘Some’ is used-
+   Æ In afﬁrmative sentences:
+   Examples: He bought some honey. I need some pens.
+   Æ In questions where 'yes' is the expected answer:
+   Example: Will you give me some money?
+   Æ In offers and requests:
+   Example: Would you like some rice?
+‘Any’ is used-
+   Æ In negative and interrogative sentences:
+   Examples: I don't need any help. Do you need any help?
+   Æ Any also means 'practically everyone' or 'no particular one'.
+   Examples: Any one can do this.
+               Give me a pen, any pen will do.
+
+
+
+                                                         121
+Exercise: Fill in the blanks with ‘some’ or ‘any’.
+   1. Is there ……………………letter for me?
+   2. Yes, there are……………………letters for you.
+   3. There is not…………………milk in the bottle.
+   4. Don’t worry I will give you......……….........milk.
+   5. I went to market to buy …………………….honey.
+   6. Would you lend me ...........……….......... money?
+   7. Give me a pen. .........………..... pen will do.
+                                            Use of Much and Many
+Both ‘much’ and ‘many’ mean ‘a lot of’. Whereas ‘much’ is used with uncountable nouns, ‘many’ is used with
+countable plural nouns and takes a plural verb. The phrase, ‘many a’ takes a singular noun and a singular verb.
+Usually, ‘much’ is used in negative and interrogative sentences. ‘many’ is used in all types of sentences.
+
+Examples:
+    1. I have not taken much water today, so I am dehydrated.
+    2. He was not hungry, so he did not eat much rice.
+In afﬁrmative clauses we sometimes use ‘much’ in more formal styles:
+Example: There is much concern about drug addiction in the US.
+
+Exercise: Fill in the blanks with ‘much’ or ‘many’ :
+   1. Is there……………. unemployment in that area?
+   2. It was pouring with rain but there wasn’t ............ wind.
+   3. There are......................children in the playground.
+   4. ............... a boy is reading his lessons.
+
+                                                      Each and Every
+Each: Each is used to denote everyone out of a known/ small/ limited group. Each is used when the focus is on
+each unit or individual in a group separately.
+Example: Each participant was given a prize.
+Every: 'Every' is used to denote one out of a large or indeﬁnite group. It conveys a wide or general sense. 'Every'
+is used when the focus is not on each unit or individual in the group, but the group as a whole.
+Example: Every child likes sweet.
+
+Exercise: Fill in the blanks with ‘each’ or ‘every’.
+   1. ………….……….seat in the hall was booked.
+   2. . ……………………man wants to be rich.
+   3. ……………………..speaker will be given ﬁve minutes.
+   4. ………………………citizen should pay the taxes.
+
+
+                                                             122
+                                             Little, a little, the little
+Little, a little, the little are used for uncountable nouns as they are quantitative determiners. There is a difference
+in the use of these three.
+Little: ‘Little’ is used to express a quantity which is very small, or almost negligible. ‘Little’ means almost
+nothing or hardly any. It is used to convey a negative sense.
+A little: ‘A little’ means small in quantity but at least some. It conveys a positive sense.
+The little: ‘The little’ means small in quantity, but the whole of it. It is used to consider the whole however little
+may be the quantity.
+                                                  Few, a few, the few
+Few, a few, the few are used for countable nouns as they are numeral determiners, but there is a difference in the
+use of these three.
+Few: 'Few' is used to express a number which is very small, or almost negligible. 'Few' means almost none or
+hardly any. It is used to convey a negative sense.
+A few: ‘A few’ means small in number but at least some. It conveys a positive sense.
+The few: ‘The few’ means small in number, but all of them. It is used to consider all however few may be the
+number.
+Exercise: Fill in the blank with ‘little’, ‘a little’, ‘the little’, ‘few’, ‘a few’ or ‘the few’.
+   1. I am a complete stranger in this city. I have…………………..friends.
+   2. I am new in this city, but I have……………………………..friends.
+   3. I don’t have many friends, but ……………………………….friends I have are very loyal.
+   4. I am sorry, I have ……………………………money to help you.
+   5. I have ……………………………..money, but I have to keep it safe for my son’s school fee.
+   6. I will give you……………………………..money I have.
+   7. There were …………………………….students in the class, so the teacher did not take the class.
+   8. There were only……………………………..students in the class today.
+   9. ………………………………….students who were present in the class were not in a mood to study.
+   10. He is a man of …………………………..words. (hardly speaks)
+   11. ...............……………….......days’ rest will help you.
+   12. He gave the beggar ………………………………….coins he had.
+
+                                                        Use of More
+‘More’ is used with both countable and uncountable nouns. It is the comparative degree of both much and many.
+It is used with singular uncountable nouns and plural countable nouns.
+Exercise: Fill in the blanks:
+   1. I want some …………………………rice.
+   2. I want …………………………bananas.
+   3. The child is still hungry. It wants ........................... milk.
+   4. We have some guests at home, so we need ............…………............apples.
+                                                        123
+                                                   Use of Fewer/ Less
+‘Fewer’ is the comparative degree of few. It is used to compare the number of two countable nouns. ‘Less’ is the
+comparative degree of little. It is used to compare the quantity of two uncountable nouns.
+Exercise: Fill in the blanks with ‘fewer’ or ‘less’:
+1. We spent ……………………time in Shimla than Kufri.
+2. If you are careful, you will have……………………trouble.
+3. Some students have left the hostel, so today we need ………………….........................…..loaves of bread and
+   …………………….butter.
+
+                                     Use of Elder, older, eldest, oldest
+‘Elder’ and ‘eldest’ are used only for persons. Elder is never followed by ‘than’. It is followed by ‘to’.
+Example: She is elder to me.
+‘Elder’ and ‘eldest’ are used only while comparing members of the same family. ‘Older’ and ‘oldest’ are used for
+both living beings and things.
+
+Exercise: Fill in the blanks with ‘elder’, ‘eldest’, ‘older’ or ‘oldest’
+   1. My ...................................brother is a doctor.
+   2. My friend Seema is................................than I am.
+   3. The museum is the....................................building in the city.
+   4. My grandfather is the........................................member of the family.
+
+                                       Use of Later, latter, latest, last
+‘Later’ and ‘latest’ refer to time; ‘latter’ and ‘last’ refer to position.
+   1. A later enquiry into the matter revealed that the owner was murdered.
+   2. What is the latest news?
+   3. The latter chapters are a little boring.
+   4. The last chapter is very interesting.
+
+
+                                          Use of Farther and Further
+‘Farther’ means more distant or advanced; ‘further’ means additional.
+Examples:
+    1. Shimla is farther from equator than Rajasthan.
+    2. After this, he made no further remarks.
+    3. You must present the report without further delay.
+
+
+                                             Use of Nearest and Next
+‘Nearest’ denotes distance; ‘next’ denotes position
+   1. Kasauli is the nearest hill station to Chandigarh.
+   2. My friend's house is next to the SBI bank.
+   3. My aunt lives in the next house.
+
+                                                                   124
+Exercise: Correct the following sentences.
+
+1. He ate few oranges he had. ................................................................................................................................
+
+2. Please give me any honey. ................................................................................................................................
+
+3. He made no farther statement. ...........................................................................................................................
+
+4. There is not many water in the bottle. ................................................................................................................
+
+5. Each man wants to be famous. ...........................................................................................................................
+
+6. My wound is healing. It doesn’t hurt much more. ..............................................................................................
+
+7. There is hardly some girl in the ground. ............................................................................................................
+
+8. I want to have the little milk...............................................................................................................................
+
+9. By these time, she had ﬁnished her work. ..........................................................................................................
+
+10. I have many problem. .......................................................................................................................................
+
+11. We saw a old lady. ...........................................................................................................................................
+
+12. He is at home in each part of India. ...................................................................................................................
+
+13. The nature is benevolent. .................................................................................................................................
+
+14. Trust the God and you will not fail. .................................................................................................................
+
+15. We are on wrong track. ...................................................................................................................................
+
+16. My uncle lives in the nearest house. ................................................................................................................
+
+17. Tamilnadu is further from the equator than Madhya Pradesh. ..........................................................................
+
+..............................................................................................................................................................................
+
+18. Meet my older brother. ...................................................................................................................................
+
+19. What is the last information? ..........................................................................................................................
+
+20. There are little coins in his pocket. ..................................................................................................................
+
+
+                                                                                    125
+

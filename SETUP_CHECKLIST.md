@@ -8,6 +8,7 @@ grading service for now), Razorpay automation added at the end as an
 optional final phase.
 
 Your Supabase project is already created:
+
 - Project URL: `https://figeyhifboyupgnwjnsp.supabase.co`
 - Google OAuth callback you'll need later: `https://figeyhifboyupgnwjnsp.supabase.co/auth/v1/callback`
 
@@ -18,13 +19,13 @@ don't move to the next phase until the check passes.
 
 ## Phase 0 — Accounts needed
 
-| Account | For | Status |
-|---|---|---|
-| GitHub | Hosting the frontend | Set up in Phase 1 |
-| Google Cloud Console | OAuth login | Set up in Phase 2 |
-| Supabase | Database + auth | Already done |
-| Ollama (local install, not an account) | Manual grading | Set up in Phase 7 |
-| Razorpay | Payments | Optional, Phase 8 |
+| Account                                | For                  | Status            |
+| -------------------------------------- | -------------------- | ----------------- |
+| GitHub                                 | Hosting the frontend | Set up in Phase 1 |
+| Google Cloud Console                   | OAuth login          | Set up in Phase 2 |
+| Supabase                               | Database + auth      | Already done      |
+| Ollama (local install, not an account) | Manual grading       | Set up in Phase 7 |
+| Razorpay                               | Payments             | Optional, Phase 8 |
 
 ---
 
@@ -99,6 +100,7 @@ Open Supabase dashboard → **SQL Editor → New query**, paste and run each
 block below in order.
 
 **3a. Profiles table (extends Supabase's built-in `auth.users`)**
+
 ```sql
 create table public.profiles (
   id uuid references auth.users(id) primary key,
@@ -122,10 +124,12 @@ create trigger on_auth_user_created
   after insert on auth.users
   for each row execute procedure public.handle_new_user();
 ```
+
 This makes a `profiles` row automatically every time someone signs in
 for the first time.
 
 **3b. The rest of the schema**
+
 ```sql
 create table public.access_grants (
   id uuid default gen_random_uuid() primary key,
@@ -181,6 +185,7 @@ create table public.payments (
 
 **3c. Row Level Security — lock every table down, then open specific
 holes**
+
 ```sql
 alter table public.profiles enable row level security;
 alter table public.access_grants enable row level security;
@@ -247,6 +252,7 @@ create policy "admin read payments" on public.payments
 **3d. Make yourself admin**
 You need at least one admin. Sign in once via the site first (after
 Phase 4) so your `profiles` row exists, then in SQL Editor:
+
 ```sql
 update public.profiles set role = 'admin' where email = 'your-email@gmail.com';
 ```
@@ -279,8 +285,12 @@ indicating RLS is on.
    ```
 4. Rewrite `js/auth.js` to use Supabase Auth instead of raw Google
    Identity Services:
+
    ```js
-   const supabase = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
+   const supabase = window.supabase.createClient(
+     CONFIG.SUPABASE_URL,
+     CONFIG.SUPABASE_ANON_KEY
+   );
 
    function signInWithGoogle() {
      supabase.auth.signInWithOAuth({ provider: "google" });
@@ -294,7 +304,9 @@ indicating RLS is on.
      // update your header's auth area, store session.user for later use
    });
    ```
+
 5. Rewrite `js/backend.js` to read/write Supabase tables directly, e.g.:
+
    ```js
    async function getMyAccess() {
      const { data } = await supabase
@@ -305,14 +317,19 @@ indicating RLS is on.
    }
 
    async function submitTest(testId, mcqScore, mcqTotal) {
-     const { data } = await supabase.from("submissions").insert({
-       test_id: testId,
-       mcq_score: mcqScore,
-       mcq_total: mcqTotal,
-     }).select().single();
+     const { data } = await supabase
+       .from("submissions")
+       .insert({
+         test_id: testId,
+         mcq_score: mcqScore,
+         mcq_total: mcqTotal,
+       })
+       .select()
+       .single();
      return data;
    }
    ```
+
 6. Commit and push — GitHub Pages redeploys automatically on push to
    `main`.
 
@@ -370,11 +387,9 @@ student) access to a chapter, confirm the grant appears in the
 
 No automated pipeline yet — this is the process you run yourself:
 
-1. In the admin console, open a submission with `subjective_status =
-   'pending'`.
+1. In the admin console, open a submission with `subjective_status = 'pending'`.
 2. For each subjective answer, copy the question, the student's answer,
-   and your reference answer key into your local Ollama chat (`ollama
-   run qwen3:8b` in a terminal, or any chat UI in front of it).
+   and your reference answer key into your local Ollama chat (`ollama run qwen3:8b` in a terminal, or any chat UI in front of it).
 3. Ask it to score against your rubric and name which topic the
    question covers.
 4. Type the resulting score, max score, topic tag, and feedback into

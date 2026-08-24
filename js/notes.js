@@ -41,27 +41,53 @@ const Notes = (() => {
     return renderer;
   }
 
+  // A note whose file is a standalone .html/.htm document (a fully
+  // self-contained lesson page — its own <style>/<script>, not a markdown
+  // fragment) renders differently from the .md pipeline below: it's loaded
+  // into a sandboxed iframe instead of being parsed by marked and injected
+  // into the page, so its own CSS/JS never collides with the site's.
+  function isHtmlNote(note) {
+    return /\.html?(\?|#|$)/i.test(note.file);
+  }
+
   async function renderNote(container, { section, sub, note }) {
     const isRead = window.Progress && Progress.isNoteRead(note.id);
+    const isHtml = isHtmlNote(note);
+
+    // A standalone-HTML lesson is a full page, not prose — the usual
+    // 760px reading column just wastes the room next to the sidebar, so
+    // it gets a wide variant of the shared content wrapper instead (reset
+    // back to normal by app.js's renderMain() on every other navigation).
+    container.classList.toggle("content-wrap-wide", isHtml);
 
     container.innerHTML = `
       <div class="note-toolbar">
         <div class="breadcrumb">
-          ${escapeHtml(section.title)} <span class="sep">/</span> ${escapeHtml(sub.title)} <span class="sep">/</span> ${escapeHtml(note.title)}
+          ${escapeHtml(section.title)} <span class="sep">/</span> ${escapeHtml(
+      sub.title
+    )} <span class="sep">/</span> ${escapeHtml(note.title)}
         </div>
         <div class="actions">
-          <button class="btn btn-ghost btn-sm" id="markReadBtn" ${isRead ? "disabled" : ""}>
-            ${isRead
-              ? `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Read`
-              : `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.4"/></svg> Mark as read`}
+          <button class="btn btn-ghost btn-sm" id="markReadBtn" ${
+            isRead ? "disabled" : ""
+          }>
+            ${
+              isRead
+                ? `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Read`
+                : `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.4"/></svg> Mark as read`
+            }
           </button>
-          <button class="btn btn-ghost btn-sm" id="pdfBtn">
+          ${
+            isHtml
+              ? ""
+              : `<button class="btn btn-ghost btn-sm" id="pdfBtn">
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0l-3-3m3 3l3-3M3 12v1.5A1.5 1.5 0 004.5 15h7a1.5 1.5 0 001.5-1.5V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Save as PDF
-          </button>
+          </button>`
+          }
         </div>
       </div>
-      <div class="note-pane">
+      <div class="note-pane${isHtml ? " note-pane-html" : ""}">
         <div class="note-body" id="noteBody">
           <div style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-faint);">Loading…</div>
         </div>
@@ -72,17 +98,52 @@ const Notes = (() => {
 
     try {
       const res = await fetch(note.file);
-      if (!res.ok) throw new Error(`Could not load ${note.file} (${res.status})`);
-      const md = await res.text();
-      bodyEl.innerHTML = marked.parse(md, { renderer: makeSlugRenderer() });
-      if (window.MathTools) MathTools.renderMathIn(bodyEl);
+      if (!res.ok)
+        throw new Error(`Could not load ${note.file} (${res.status})`);
+
+      if (isHtml) {
+        const html = await res.text();
+        bodyEl.innerHTML = "";
+        const iframe = document.createElement("iframe");
+        iframe.setAttribute(
+          "sandbox",
+          "allow-scripts allow-same-origin allow-popups"
+        );
+        iframe.style.cssText =
+          "width:100%; border:0; display:block; background:transparent;";
+        iframe.addEventListener("load", () => {
+          try {
+            const doc = iframe.contentDocument;
+            const resize = () =>
+              (iframe.style.height =
+                doc.documentElement.scrollHeight + "px");
+            resize();
+            // Interactive answer reveals change layout height after load,
+            // so keep resizing briefly as the lesson's own JS runs/settles.
+            new ResizeObserver(resize).observe(doc.body);
+          } catch (e) {
+            iframe.style.height = "1400px";
+          }
+        });
+        iframe.srcdoc = html;
+        bodyEl.appendChild(iframe);
+      } else {
+        const md = await res.text();
+        bodyEl.innerHTML = marked.parse(md, { renderer: makeSlugRenderer() });
+        if (window.MathTools) MathTools.renderMathIn(bodyEl);
+      }
     } catch (err) {
-      bodyEl.innerHTML = `<p style="color: var(--error);">Failed to load note: ${escapeHtml(err.message)}</p>`;
+      bodyEl.innerHTML = `<p style="color: var(--error);">Failed to load note: ${escapeHtml(
+        err.message
+      )}</p>`;
     }
 
-    container.querySelector("#pdfBtn").addEventListener("click", () => {
-      exportPdf(container.querySelector(".note-pane"), note.title);
-    });
+    const pdfBtn = container.querySelector("#pdfBtn");
+    if (pdfBtn) {
+      pdfBtn.addEventListener("click", () => {
+        exportPdf(container.querySelector(".note-pane"), note.title);
+      });
+    }
 
     const markReadBtn = container.querySelector("#markReadBtn");
     markReadBtn.addEventListener("click", async () => {
@@ -95,7 +156,8 @@ const Notes = (() => {
   }
 
   function exportPdf(noteEl, title) {
-    const filename = (title || "note").toLowerCase().replace(/[^a-z0-9]+/g, "-") + ".pdf";
+    const filename =
+      (title || "note").toLowerCase().replace(/[^a-z0-9]+/g, "-") + ".pdf";
     const opt = {
       margin: [12, 12, 12, 12],
       filename,

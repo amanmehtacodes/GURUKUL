@@ -56,7 +56,9 @@
       const chip = document.createElement("div");
       chip.className = "user-chip";
       chip.innerHTML = `
-        <img src="${user.picture}" alt="${escapeHtml(user.name)}" referrerpolicy="no-referrer">
+        <img src="${user.picture}" alt="${escapeHtml(
+        user.name
+      )}" referrerpolicy="no-referrer">
         <span class="name">${escapeHtml(user.name)}</span>
       `;
       const signOutBtn = document.createElement("button");
@@ -73,33 +75,16 @@
     }
   }
 
-  // Tints the fixed site header with the active subject's color — same
-  // vars Sidebar uses for its own panel, applied directly to .site-header
-  // since it's a sibling of the sidebar, not an ancestor (so CSS
-  // inheritance alone can't carry the color across). Cleared (null) on
-  // every picker/back screen where no single subject is "open".
-  function setHeaderAccent(subjectKey) {
+  // Per-subject header tinting has been removed — the header now always
+  // stays the one neutral glass look, regardless of which subject/class
+  // is open. This just makes sure any tint from an older session/markup
+  // never lingers.
+  function setHeaderAccent() {
     const headerEl = document.querySelector(".site-header");
     if (!headerEl) return;
     headerEl.classList.remove("subject-tinted");
     headerEl.style.removeProperty("--header-accent");
     headerEl.style.removeProperty("--header-accent-panel");
-    if (subjectKey && window.SubjectColors) {
-      const vars = SubjectColors.varsFor(subjectKey);
-      headerEl.style.setProperty("--header-accent", vars.bold);
-      headerEl.style.setProperty("--header-accent-panel", vars.panel);
-      headerEl.classList.add("subject-tinted");
-    }
-  }
-
-  function renderEmptyState() {
-    mainEl.innerHTML = `
-      <div class="empty-state">
-        <svg class="glyph" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.2"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-        <h2>Select a topic to begin</h2>
-        <p>Choose a section from the left to open its notes, or start a test once you're signed in.</p>
-      </div>
-    `;
   }
 
   function hideAllViews() {
@@ -157,8 +142,19 @@
   function handleClassPick(entry) {
     if (entry.type === "exam") {
       showYears(entry);
+      return;
+    }
+    // Every regular class has exactly one subject now (English), so skip
+    // the subject-picker screen entirely and go straight to its track
+    // picker — Language/Literature for VIII-X, or straight to the book
+    // tracks (Hornbill/Snapshots/...) for XI-XII.
+    activeClass = entry;
+    activeTrack = null;
+    const subject = (entry.subjects || [])[0];
+    if (subject) {
+      handleSubjectPick(subject);
     } else {
-      showSubjects(entry);
+      showSubjects(entry); // fallback safety net if a class ever has 0 subjects
     }
   }
 
@@ -214,9 +210,30 @@
     document.querySelector(".site-header").classList.add("header-picker");
     setHeaderAccent(null);
     TrackPicker.setOnPick(handleTopTrackPick);
-    TrackPicker.setOnChangeSubject(backToSubjects);
-    TrackPicker.render(trackRootEl, { cls: activeClass, subject });
+    TrackPicker.setOnChangeSubject(backFromTopTracks);
+    TrackPicker.render(trackRootEl, {
+      cls: activeClass,
+      subject,
+      // Reached directly from the class picker now (subject-picker is
+      // skipped), so the back button should say "All classes" rather
+      // than the default "<class> subjects" — unless we got here via an
+      // exam/year track, where subjects is still a real intermediate step.
+      backLabel: activeTrack ? undefined : "All classes",
+    });
     window.scrollTo(0, 0);
+  }
+
+  // Back button from the top-level track picker (Language/Literature, or
+  // book tracks for XI-XII). Regular classes skip the subject-picker
+  // screen entirely now, so go straight back to the class picker; an
+  // exam/year track (if one ever has a tracked subject) still has a real
+  // subject-picker step to return to.
+  function backFromTopTracks() {
+    if (activeTrack) {
+      showSubjects(activeClass);
+    } else {
+      showPicker();
+    }
   }
 
   // A picked track can itself split further into books (e.g. Literature ->
@@ -269,7 +286,9 @@
     // Small bridge so Tests.js can attach class/subject names to a
     // submission payload without threading them through every call.
     window.__gurukulActiveClassName = activeClass ? activeClass.name : "";
-    window.__gurukulActiveSubjectName = activeSubject ? activeSubject.title : "";
+    window.__gurukulActiveSubjectName = activeSubject
+      ? activeSubject.title
+      : "";
     renderSidebar();
     renderMain();
     window.scrollTo(0, 0);
@@ -283,7 +302,11 @@
   function backToTracksOrSubjects() {
     if (activeBook && activeSubjectTrack) {
       showBooks(activeSubjectTrack);
-    } else if (activeSubject && activeSubject.tracks && activeSubject.tracks.length) {
+    } else if (
+      activeSubject &&
+      activeSubject.tracks &&
+      activeSubject.tracks.length
+    ) {
       showTracks(activeSubject);
     } else {
       backToSubjects();
@@ -310,6 +333,12 @@
   function renderMain() {
     const sectionsSource = activeBook || activeSubjectTrack || activeSubject;
 
+    // Reset on every navigation — only Notes.renderNote (for a standalone
+    // HTML lesson; see notes.js isHtmlNote) re-adds this, so switching to
+    // a test, the topic overview, or a plain markdown note always goes
+    // back to the normal reading width instead of staying wide.
+    mainEl.classList.remove("content-wrap-wide");
+
     if (!sectionsSource || !sectionsSource.ready || !sectionsSource.sections) {
       mainEl.style.removeProperty("--section-accent");
       mainEl.style.removeProperty("--section-accent-soft");
@@ -323,7 +352,14 @@
     if (!current) {
       mainEl.style.removeProperty("--section-accent");
       mainEl.style.removeProperty("--section-accent-soft");
-      renderEmptyState();
+      TopicOverview.render(mainEl, {
+        sectionsSource,
+        subjectTitle: sectionsSource.title,
+        loggedIn: Auth.isLoggedIn(),
+        classId: activeClass.id,
+        doneIds: window.Progress ? Progress.doneItemIds() : new Set(),
+        onSelect: handleSelect,
+      });
       return;
     }
 
@@ -336,7 +372,9 @@
     } else if (current.type === "test") {
       if (!Auth.isLoggedIn()) {
         Tests.renderLocked(mainEl, current);
-      } else if (!AccessControl.hasChapterAccess(activeClass.id, current.section.id)) {
+      } else if (
+        !AccessControl.hasChapterAccess(activeClass.id, current.section.id)
+      ) {
         Tests.renderNeedsAccess(mainEl, current);
       } else {
         Tests.renderTest(mainEl, current);
@@ -345,7 +383,13 @@
   }
 
   function handleSelect(type, section, sub, item) {
-    current = { type, section, sub, item, [type === "note" ? "note" : "test"]: item };
+    current = {
+      type,
+      section,
+      sub,
+      item,
+      [type === "note" ? "note" : "test"]: item,
+    };
     renderMain();
     if (window.innerWidth <= 860) sidebarEl.classList.remove("open");
   }
@@ -367,11 +411,15 @@
     mainEl.addEventListener("keydown", (e) => {
       const key = e.key.toLowerCase();
       const isModifier = e.ctrlKey || e.metaKey;
-      const isFormField = e.target.tagName === "TEXTAREA" || e.target.tagName === "INPUT";
+      const isFormField =
+        e.target.tagName === "TEXTAREA" || e.target.tagName === "INPUT";
 
       // Always block copy/cut/select-all, even in form fields, to prevent
       // lifting question text out via a focused input.
-      if (isModifier && (key === "c" || key === "x" || key === "a" || key === "s")) {
+      if (
+        isModifier &&
+        (key === "c" || key === "x" || key === "a" || key === "s")
+      ) {
         if (key === "a" && isFormField) return; // allow select-all within an answer box itself
         e.preventDefault();
       }
@@ -426,8 +474,6 @@
       sidebarEl.classList.toggle("open");
     });
 
-    if (window.Theme) Theme.attachToggleButton(document.getElementById("themeToggle"));
-
     document.addEventListener("gurukul:home", () => showPicker());
     document.addEventListener("gurukul:progress-changed", () => {
       // Update progress bars/checkmarks in place — never call
@@ -435,7 +481,8 @@
       // would collapse any chapter/topic the student currently has
       // open. Also never touch mainEl, or a just-submitted test's
       // results would be wiped out from under the student.
-      if (view === "class" && window.Sidebar) Sidebar.refreshProgressMarks(Progress.doneItemIds());
+      if (view === "class" && window.Sidebar)
+        Sidebar.refreshProgressMarks(Progress.doneItemIds());
     });
   }
 

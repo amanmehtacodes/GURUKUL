@@ -1,11 +1,13 @@
 /* ==========================================================================
    REPORT — layout only. Colors/type all come from the shared tokens in
-   style.css (same --paper/--ink/--accent variables as the rest of the
-   site), so this automatically matches light/dark mode with no
-   separate palette to maintain.
+   style.css (same --ink/--accent/--glass-tile-* variables as the rest of
+   the site). Every card surface here uses the same glass-tile recipe as
+   .class-card and the site's buttons, over the animated wallpaper — no
+   opaque "paper" surfaces left on this page.
    ========================================================================== */
 
-.report-loading, .report-gate {
+.report-loading,
+.report-gate {
   max-width: 480px;
   margin: 18vh auto 0;
   text-align: center;
@@ -13,10 +15,26 @@
   font-family: var(--font-mono);
   font-size: 14.5px;
 }
-.report-gate h1 { color: var(--ink); font-size: 22.5px; margin-bottom: 10px; font-family: var(--font-mono); }
-.report-gate-detail { color: var(--ink-soft); font-size: 15.5px; line-height: 1.6; }
+.report-gate h1 {
+  color: var(--ink);
+  font-size: 22.5px;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+}
+.report-gate-detail {
+  color: var(--ink-soft);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
 
-.report-main { padding: 48px 0 100px; }
+.report-main {
+  padding: 48px 0 100px;
+  min-height: 100vh;
+  /* No more opaque surface — the animated wallpaper shows straight
+     through now, and every card/stat/panel below carries its own
+     glass-tile background instead (same recipe as .class-card and the
+     site's buttons). */
+}
 .report-page {
   max-width: 920px;
   margin: 0 auto;
@@ -55,8 +73,10 @@
 .report-hero-stat {
   flex: 1;
   min-width: 170px;
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
+  background: var(--glass-tile-bg);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
+  border: 1px solid var(--glass-tile-border);
   border-radius: var(--radius);
   padding: 22px;
   display: flex;
@@ -76,7 +96,10 @@
   font-family: var(--font-mono);
   font-size: 17px;
   font-weight: 700;
-  background: conic-gradient(var(--ring-color, var(--accent)) calc(var(--pct) * 1%), var(--line) 0);
+  background: conic-gradient(
+    var(--ring-color, var(--accent)) calc(var(--pct) * 1%),
+    var(--line) 0
+  );
   position: relative;
 }
 .report-hero-ring::before {
@@ -84,13 +107,27 @@
   position: absolute;
   inset: 6px;
   border-radius: 50%;
-  background: var(--paper-raised);
+  background: var(--glass-tile-bg);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
 }
-.report-hero-ring span { position: relative; z-index: 1; color: var(--ink); }
-.report-hero-ring.strong { --ring-color: var(--accent); }
-.report-hero-ring.mid { --ring-color: var(--amber); }
-.report-hero-ring.weak { --ring-color: var(--error); }
-.report-hero-ring.unknown { --ring-color: var(--line-strong); }
+.report-hero-ring span {
+  position: relative;
+  z-index: 1;
+  color: var(--ink);
+}
+.report-hero-ring.strong {
+  --ring-color: var(--accent);
+}
+.report-hero-ring.mid {
+  --ring-color: var(--amber);
+}
+.report-hero-ring.weak {
+  --ring-color: var(--error);
+}
+.report-hero-ring.unknown {
+  --ring-color: var(--line-strong);
+}
 
 .report-hero-label {
   font-family: var(--font-mono);
@@ -99,13 +136,19 @@
   text-transform: uppercase;
   color: var(--ink-faint);
 }
-.report-hero-value { font-size: 16px; font-weight: 600; color: var(--ink); }
+.report-hero-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
 
 .report-classavg {
   flex: 1;
   min-width: 170px;
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
+  background: var(--glass-tile-bg);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
+  border: 1px solid var(--glass-tile-border);
   border-radius: var(--radius);
   padding: 22px;
   display: flex;
@@ -122,8 +165,17 @@
   text-transform: uppercase;
   color: var(--ink-faint);
 }
-.report-classavg-value { font-family: var(--font-mono); font-size: 22.5px; font-weight: 700; color: var(--ink); }
-.report-classavg-count { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-soft); }
+.report-classavg-value {
+  font-family: var(--font-mono);
+  font-size: 22.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.report-classavg-count {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
 
 /* Section labels */
 .report-section-label {
@@ -138,14 +190,21 @@
 }
 
 /* Revision chips */
-.report-revision-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.report-revision-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 .report-chip {
   font-family: var(--font-mono);
   font-size: 13px;
   padding: 5px 13px;
   border-radius: 20px;
 }
-.report-chip.weak { background: var(--error-soft); color: var(--error); }
+.report-chip.weak {
+  background: var(--error-soft);
+  color: var(--error);
+}
 
 /* Topic cards */
 .report-topics {
@@ -154,15 +213,23 @@
   gap: 10px;
 }
 .report-topic-card {
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
+  background: var(--glass-tile-bg);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
+  border: 1px solid var(--glass-tile-border);
   border-left: 3px solid var(--line-strong);
   border-radius: var(--radius);
   padding: 14px 16px;
 }
-.report-topic-card.strong { border-left-color: var(--accent); }
-.report-topic-card.mid { border-left-color: var(--amber); }
-.report-topic-card.weak { border-left-color: var(--error); }
+.report-topic-card.strong {
+  border-left-color: var(--accent);
+}
+.report-topic-card.mid {
+  border-left-color: var(--amber);
+}
+.report-topic-card.weak {
+  border-left-color: var(--error);
+}
 .report-topic-name {
   font-size: 15.5px;
   color: var(--ink);
@@ -175,9 +242,17 @@
   overflow: hidden;
   margin-bottom: 9px;
 }
-.report-topic-bar-fill { height: 100%; background: var(--accent); border-radius: 4px; }
-.report-topic-card.mid .report-topic-bar-fill { background: var(--amber); }
-.report-topic-card.weak .report-topic-bar-fill { background: var(--error); }
+.report-topic-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+}
+.report-topic-card.mid .report-topic-bar-fill {
+  background: var(--amber);
+}
+.report-topic-card.weak .report-topic-bar-fill {
+  background: var(--error);
+}
 .report-topic-footer {
   display: flex;
   justify-content: space-between;
@@ -185,20 +260,37 @@
   font-size: 13px;
   color: var(--ink-soft);
 }
-.report-topic-pct { font-weight: 700; color: var(--ink); }
+.report-topic-pct {
+  font-weight: 700;
+  color: var(--ink);
+}
 
 /* Question review cards */
-.report-questions { display: flex; flex-direction: column; gap: 10px; }
+.report-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .report-qcard {
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
+  background: var(--glass-tile-bg);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
+  border: 1px solid var(--glass-tile-border);
   border-radius: var(--radius);
   padding: 16px 18px;
 }
-.report-qcard.correct { border-left: 3px solid var(--accent); }
-.report-qcard.incorrect { border-left: 3px solid var(--error); }
-.report-qcard.skipped { border-left: 3px solid var(--line-strong); }
-.report-qcard.theory { border-left: 3px solid var(--c4); }
+.report-qcard.correct {
+  border-left: 3px solid var(--accent);
+}
+.report-qcard.incorrect {
+  border-left: 3px solid var(--error);
+}
+.report-qcard.skipped {
+  border-left: 3px solid var(--line-strong);
+}
+.report-qcard.theory {
+  border-left: 3px solid var(--c4);
+}
 
 .report-qcard-head {
   display: flex;
@@ -216,9 +308,19 @@
   background: var(--line);
   color: var(--ink-soft);
 }
-.report-qtype-badge.mcq { background: var(--accent-soft); color: var(--accent); }
-.report-qtype-badge.theory { background: var(--c4-soft); color: var(--c4); }
-.report-qtopic { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-faint); }
+.report-qtype-badge.mcq {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.report-qtype-badge.theory {
+  background: var(--c4-soft);
+  color: var(--c4);
+}
+.report-qtopic {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
 .report-qscore {
   margin-left: auto;
   font-family: var(--font-mono);
@@ -226,7 +328,10 @@
   font-weight: 700;
   color: var(--ink);
 }
-.report-qscore.pending { color: var(--amber); font-weight: 500; }
+.report-qscore.pending {
+  color: var(--amber);
+  font-weight: 500;
+}
 
 .report-qprompt {
   font-family: var(--font-serif);
@@ -243,7 +348,11 @@
   font-size: 14.5px;
   padding: 4px 0;
 }
-.report-qanswer-row.block { flex-direction: column; align-items: stretch; gap: 4px; }
+.report-qanswer-row.block {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+}
 .report-qanswer-label {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -253,29 +362,54 @@
   flex-shrink: 0;
   min-width: 110px;
 }
-.report-qanswer-value { color: var(--ink-soft); }
-.report-qanswer-value.correct { color: var(--accent); font-weight: 600; }
+.report-qanswer-value {
+  color: var(--ink-soft);
+}
+.report-qanswer-value.correct {
+  color: var(--accent);
+  font-weight: 600;
+}
 .report-qanswer-value.block {
-  background: var(--paper);
+  background: var(--glass-tile-bg);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
   border-radius: 6px;
   padding: 10px 12px;
   color: var(--ink);
   line-height: 1.6;
 }
-.report-qanswer-value.block.reference { border-left: 2px solid var(--accent); }
-.report-qanswer-value.block.feedback { border-left: 2px solid var(--amber); font-style: italic; }
+.report-qanswer-value.block.reference {
+  border-left: 2px solid var(--accent);
+}
+.report-qanswer-value.block.feedback {
+  border-left: 2px solid var(--amber);
+  font-style: italic;
+}
 
 /* Inline usage (embedded directly under a just-submitted test, rather
    than on the standalone report page) — a touch more compact, no outer
    page padding since it's already inside the test container. */
-.report-inline .report-page { padding: 0; max-width: none; }
+.report-inline .report-page {
+  padding: 0;
+  max-width: none;
+}
 .report-inline .report-eyebrow,
 .report-inline .report-title,
-.report-inline .report-meta { display: none; }
-.report-inline .report-section-label:first-of-type { margin-top: 8px; }
+.report-inline .report-meta {
+  display: none;
+}
+.report-inline .report-section-label:first-of-type {
+  margin-top: 8px;
+}
 
 @media (max-width: 640px) {
-  .report-page { padding: 0 16px; }
-  .report-hero { flex-direction: column; }
-  .report-topics { grid-template-columns: 1fr; }
+  .report-page {
+    padding: 0 16px;
+  }
+  .report-hero {
+    flex-direction: column;
+  }
+  .report-topics {
+    grid-template-columns: 1fr;
+  }
 }

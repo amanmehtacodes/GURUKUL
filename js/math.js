@@ -33,7 +33,10 @@ const MathTools = (() => {
   function renderMathIn(el) {
     if (!isReady() || !el) return;
     try {
-      window.renderMathInElement(el, { delimiters: DELIMITERS, throwOnError: false });
+      window.renderMathInElement(el, {
+        delimiters: DELIMITERS,
+        throwOnError: false,
+      });
     } catch (e) {
       console.warn("Math render failed:", e);
     }

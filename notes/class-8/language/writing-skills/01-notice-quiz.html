@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz 1 — Notice | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 20px;
+  }
+  .callout p{margin:0 0 8px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout strong{color:var(--ink);}
+  .ref-card{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:16px 20px; margin:0 0 32px; font-size:15px; color:var(--ink-soft);
+  }
+  .ref-card .rc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .ref-card code{font-family:var(--font-mono); background:var(--accent-soft); color:var(--pink); padding:1px 6px; border-radius:4px; font-size:13.5px;}
+
+  h2.qtitle{
+    font-family:var(--font-mono); font-size:16px; font-weight:700;
+    color:var(--c3); margin:0 0 4px; letter-spacing:.02em;
+  }
+  .qtag{
+    display:inline-block; font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;
+    letter-spacing:.05em; color:var(--cyan); background:var(--cyan-soft); border:1px solid var(--cyan);
+    border-radius:20px; padding:2px 10px; margin-left:10px; vertical-align:middle;
+  }
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:20px 22px; margin:20px 0; background:var(--paper-raised);
+  }
+  .q p.prompt{margin:8px 0 12px; font-size:16px;}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q-footer{display:flex; justify-content:space-between; align-items:center; margin-top:8px;}
+  .wc{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint);}
+  .wc.warn{color:var(--pink);}
+  .wc.ok{color:var(--cyan);}
+
+  .finish-bar{
+    position:sticky; bottom:0; margin-top:36px; padding:20px 24px;
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius);
+    box-shadow:0 -8px 24px rgba(0,0,0,0.35);
+  }
+  .finish-bar p{margin:0 0 14px; color:var(--ink-soft); font-size:15px;}
+  .btn-row{display:flex; gap:10px; flex-wrap:wrap;}
+  button.primary{
+    font-family:var(--font-mono); font-size:13px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:11px 22px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.primary:hover{background:var(--c3-panel);}
+  button.secondary{
+    font-family:var(--font-mono); font-size:13px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:11px 22px; border:1px solid var(--line-strong);
+    border-radius:8px; background:transparent; color:var(--ink-soft); cursor:pointer;
+  }
+  button.secondary:hover{border-color:var(--ink-faint); color:var(--ink);}
+  button.ghost-copy{
+    font-family:var(--font-mono); font-size:12px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--cyan);
+    border-radius:7px; background:var(--cyan-soft); color:var(--cyan); cursor:pointer;
+  }
+  button.ghost-copy:hover{background:rgba(56,189,248,0.24);}
+
+  #output-wrap{display:none; margin-top:18px;}
+  #output-wrap.show{display:block;}
+  #output{
+    width:100%; box-sizing:border-box; min-height:360px; font-family:var(--font-mono);
+    font-size:13px; line-height:1.6; padding:16px 18px; border:1px solid var(--accent2);
+    border-radius:8px; background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .copy-status{font-family:var(--font-mono); font-size:12px; color:var(--cyan); margin-left:10px;}
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills · Practice Quiz</div>
+  <h1 class="title">Quiz 1 — Notice</h1>
+  <p class="subtitle">8 fresh notice-writing prompts — a follow-up to Lesson 1, not a repeat of it.</p>
+
+  <div class="callout">
+    <p><strong>How this works:</strong> there's no answer key baked into this quiz. Write your notice for each question in its box, in the same style as Lesson 1.</p>
+    <p>When you're done, press <strong>Generate submission</strong> at the bottom. It compiles all eight questions and your answers into one text block — copy that and paste it to an AI (or hand it to a teacher) with a request like <em>"Grade these Class 8 CBSE notice-writing answers, 5 marks each (2 for format, 3 for content)."</em></p>
+  </div>
+
+  <div class="ref-card">
+    <div class="rc-label">Quick format reminder</div>
+    Every notice needs, in a box: <code>NAME OF THE ORGANISATION</code> (capitals, centred) · <code>NOTICE</code> (centred) · Date (left) · a short catchy Heading (centred) · the Body with all relevant facts · Signature, Name (capitals) and Designation (left). Formal, impersonal language — avoid contractions, slang and personal opinions. See Lesson 1 for the full format and worked examples.
+  </div>
+
+  <div class="q" id="quiz-q1">
+    <h2 class="qtitle">Question 1<span class="qtag">Lost</span></h2>
+    <p class="prompt">You are Meera Kapoor, a student of Class VIII B, Delhi Public School, Faridabad. You have lost your school blazer, with your name embroidered on the collar, somewhere in the school building. Draft a notice in about 50 words requesting the finder to return it to you. Invent necessary details.</p>
+    <textarea rows="6" placeholder="Draft your notice here…" data-q="1"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="1">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q2">
+    <h2 class="qtitle">Question 2<span class="qtag">Lost</span></h2>
+    <p class="prompt">You are Rohan Verma, Class VIII A, St. Xavier's School, Patna. You have lost your mathematics textbook, with your homework notebook tucked inside it, somewhere on the school premises. Draft a notice in not more than 50 words appealing to the finder to return them.</p>
+    <textarea rows="6" placeholder="Draft your notice here…" data-q="2"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="2">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q3">
+    <h2 class="qtitle">Question 3<span class="qtag">Found</span></h2>
+    <p class="prompt">You are Ishita Sen, a student of Kendriya Vidyalaya, Guwahati. You have found a pair of spectacles in a black case near the school library. Draft a notice in about 50 words asking the owner to identify and claim it.</p>
+    <textarea rows="6" placeholder="Draft your notice here…" data-q="3"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="3">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q4">
+    <h2 class="qtitle">Question 4<span class="qtag">Found</span></h2>
+    <p class="prompt">You are Arjun Malhotra, Class Monitor, Class VIII C, Delhi Public School, Ranchi. A silver bracelet has been found lying unclaimed in the school gymnasium. Draft a notice in not more than 50 words inviting the owner to identify and collect it.</p>
+    <textarea rows="6" placeholder="Draft your notice here…" data-q="4"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="4">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q5">
+    <h2 class="qtitle">Question 5<span class="qtag">Meeting</span></h2>
+    <p class="prompt">You are Priya Nair, Secretary, Eco Club, Christ Church School, Lucknow. Draft a notice in about 50 words calling a meeting of all Eco Club members to discuss preparations for the upcoming Tree Plantation Drive. Invent necessary details.</p>
+    <textarea rows="6" placeholder="Draft your notice here…" data-q="5"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="5">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q6">
+    <h2 class="qtitle">Question 6<span class="qtag">Meeting</span></h2>
+    <p class="prompt">You are Kabir Malhotra, Captain, Blue House, Green Valley Public School, Nagpur. Draft a notice in not more than 50 words informing all Blue House members of an urgent meeting to select participants for the Inter-House Quiz Competition. Invent necessary details.</p>
+    <textarea rows="6" placeholder="Draft your notice here…" data-q="6"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="6">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q7">
+    <h2 class="qtitle">Question 7<span class="qtag">Event / Competition</span></h2>
+    <p class="prompt">You are Ananya Iyer, Secretary, Photography Club, Sunrise International School, Pune. Your school is organising a Photography Exhibition on the theme "My India" next month. Draft a notice in about 50 words inviting interested students to submit their entries. Invent necessary details.</p>
+    <textarea rows="6" placeholder="Draft your notice here…" data-q="7"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="7">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q8">
+    <h2 class="qtitle">Question 8<span class="qtag">Event / Competition</span></h2>
+    <p class="prompt">You are Devansh Rao, Head Boy, Modern Public School, Bhopal. The Principal has asked you to draft a notice informing students of an inter-school Debate Competition to be held in the school auditorium. Draft the notice in not more than 50 words, inventing necessary details.</p>
+    <textarea rows="6" placeholder="Draft your notice here…" data-q="8"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="8">0 words</span></div>
+  </div>
+
+  <div class="finish-bar">
+    <p>Answered all eight? Generate a submission you can hand to an AI or teacher for grading.</p>
+    <div class="btn-row">
+      <button class="primary" id="generateBtn">Generate submission</button>
+      <button class="secondary" id="resetBtn">Clear all answers</button>
+    </div>
+    <div id="output-wrap">
+      <div class="btn-row" style="margin-top:16px;">
+        <button class="ghost-copy" id="copyBtn">Copy to clipboard</button>
+        <span class="copy-status" id="copyStatus"></span>
+      </div>
+      <textarea id="output" readonly></textarea>
+    </div>
+  </div>
+
+  <footer>Class 8 · English · Writing Skills · Quiz 1 of 30 — no answers are auto-graded here; grade the generated submission with an AI or teacher.</footer>
+</div>
+
+<script>
+  var QUESTIONS = [
+    {n:1, tag:"Lost", prompt: document.querySelector('#quiz-q1 .prompt').textContent},
+    {n:2, tag:"Lost", prompt: document.querySelector('#quiz-q2 .prompt').textContent},
+    {n:3, tag:"Found", prompt: document.querySelector('#quiz-q3 .prompt').textContent},
+    {n:4, tag:"Found", prompt: document.querySelector('#quiz-q4 .prompt').textContent},
+    {n:5, tag:"Meeting", prompt: document.querySelector('#quiz-q5 .prompt').textContent},
+    {n:6, tag:"Meeting", prompt: document.querySelector('#quiz-q6 .prompt').textContent},
+    {n:7, tag:"Event / Competition", prompt: document.querySelector('#quiz-q7 .prompt').textContent},
+    {n:8, tag:"Event / Competition", prompt: document.querySelector('#quiz-q8 .prompt').textContent}
+  ];
+
+  function countWords(str) {
+    var trimmed = (str || "").trim();
+    if (!trimmed) return 0;
+    return trimmed.split(/\s+/).length;
+  }
+
+  function updateWordCount(n) {
+    var ta = document.querySelector('textarea[data-q="' + n + '"]');
+    var wc = document.querySelector('span[data-wc-for="' + n + '"]');
+    var count = countWords(ta.value);
+    wc.textContent = count + " word" + (count === 1 ? "" : "s");
+    wc.className = "wc" + (count > 0 && (count < 30 || count > 70) ? " warn" : count >= 30 && count <= 70 ? " ok" : "");
+  }
+
+  QUESTIONS.forEach(function (q) {
+    var ta = document.querySelector('textarea[data-q="' + q.n + '"]');
+    ta.addEventListener("input", function () { updateWordCount(q.n); });
+  });
+
+  document.getElementById("generateBtn").addEventListener("click", function () {
+    var lines = [];
+    lines.push("CLASS 8 ENGLISH — WRITING SKILLS");
+    lines.push("Quiz 1 — Notice — Student Submission");
+    lines.push("");
+    lines.push("Instructions for the grader: Each notice is out of 5 marks (2 for format, 3 for");
+    lines.push("body/content). Check for: organisation name and 'NOTICE' in capitals and centred;");
+    lines.push("date left-aligned; a short, catchy, centred heading; a complete body covering the");
+    lines.push("relevant facts (5 W's + H as applicable); a signature block (name in capitals +");
+    lines.push("designation); formal, impersonal, passive-preferred language; and roughly a 50-word");
+    lines.push("body. Please give a score out of 5 and brief feedback for each question below.");
+    lines.push("");
+    lines.push("=".repeat(70));
+
+    var answeredCount = 0;
+    QUESTIONS.forEach(function (q) {
+      var ta = document.querySelector('textarea[data-q="' + q.n + '"]');
+      var answer = ta.value.trim();
+      var words = countWords(answer);
+      if (answer) answeredCount++;
+      lines.push("");
+      lines.push("Q" + q.n + " [" + q.tag + "]");
+      lines.push(q.prompt);
+      lines.push("");
+      lines.push("Student's answer (" + words + " words):");
+      lines.push(answer || "(left blank)");
+      lines.push("");
+      lines.push("-".repeat(70));
+    });
+
+    lines.push("");
+    lines.push(answeredCount + " of " + QUESTIONS.length + " questions answered.");
+
+    document.getElementById("output").value = lines.join("\n");
+    document.getElementById("output-wrap").classList.add("show");
+    document.getElementById("copyStatus").textContent = "";
+    document.getElementById("output").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  document.getElementById("copyBtn").addEventListener("click", function () {
+    var out = document.getElementById("output");
+    var status = document.getElementById("copyStatus");
+    out.focus();
+    out.select();
+    var done = false;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(out.value).then(function () {
+        status.textContent = "Copied.";
+      }).catch(function () {
+        fallbackCopy();
+      });
+      done = true;
+    }
+    if (!done) fallbackCopy();
+    function fallbackCopy() {
+      try {
+        var ok = document.execCommand("copy");
+        status.textContent = ok ? "Copied." : "Select the text above and press Ctrl/Cmd+C.";
+      } catch (e) {
+        status.textContent = "Select the text above and press Ctrl/Cmd+C.";
+      }
+    }
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function () {
+    if (!confirm("Clear all eight answers? This can't be undone.")) return;
+    QUESTIONS.forEach(function (q) {
+      document.querySelector('textarea[data-q="' + q.n + '"]').value = "";
+      updateWordCount(q.n);
+    });
+    document.getElementById("output-wrap").classList.remove("show");
+    document.getElementById("output").value = "";
+  });
+</script>
+</body>
+</html>

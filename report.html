@@ -1,58 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>report — gurukul</title>
-<meta name="robots" content="noindex, nofollow">
-<script>
-  (function () {
-    var saved = localStorage.getItem("gurukul_theme");
-    var theme = saved || ((window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
-    document.documentElement.setAttribute("data-theme", theme);
-  })();
-</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>report — gurukul</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <script>
+      // The site always renders in dark theme now — see the same comment in
+      // classes.html's <head>.
+      document.documentElement.setAttribute("data-theme", "dark");
+    </script>
 
-<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/admin.css">
-<link rel="stylesheet" href="css/report.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/report.css" />
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-</head>
-<body>
+    <!-- All deferred — none of these are needed until report.js's init()
+     runs on DOMContentLoaded, so there's no reason to block first paint
+     on them (see the fuller comment in classes.html's <head>). -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    /></noscript>
+    <script
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <div class="site-bg" id="siteBg" aria-hidden="true"></div>
 
-<header class="site-header">
-  <a href="classes.html" class="brand">
-    <img src="assets/logo.svg" alt="gurukul" class="brand-mark">
-  </a>
-  <div class="header-right">
-    <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode" type="button">
-      <svg class="icon-moon" viewBox="0 0 16 16" fill="none"><path d="M13.5 9.9A5.8 5.8 0 116.1 2.5a4.6 4.6 0 007.4 7.4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-      <svg class="icon-sun" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.5 3.5l1.4 1.4M11.1 11.1l1.4 1.4M3.5 12.5l1.4-1.4M11.1 4.9l1.4-1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-    </button>
-    <span class="admin-badge">Report</span>
-  </div>
-</header>
+    <header class="site-header">
+      <a href="classes.html" class="brand">
+        <img src="assets/logo.svg" alt="gurukul" class="brand-mark" />
+      </a>
+      <div class="header-right">
+        <span class="admin-badge">Report</span>
+      </div>
+    </header>
 
-<main id="reportRoot" class="report-main">
-  <div class="report-loading">Loading report…</div>
-</main>
+    <main id="reportRoot" class="report-main">
+      <div class="report-loading">Loading report…</div>
+    </main>
 
-<script src="js/config.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/math.js"></script>
-<script src="js/auth.js"></script>
-<script src="js/backend.js"></script>
-<script src="js/report-view.js"></script>
-<script src="js/report.js"></script>
-</body>
+    <script src="js/config.js"></script>
+    <script src="js/molten-metal.js"></script>
+    <script>
+      // Site-wide animated background — same on every page and every device.
+      // Interior pages use a lower `detail` than the landing hero — see the
+      // same comment in classes.html.
+      MoltenMetal.mount(document.getElementById("siteBg"), { detail: 3 });
+    </script>
+    <script src="js/math.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/backend.js"></script>
+    <script src="js/report-view.js"></script>
+    <script src="js/report.js"></script>
+  </body>
 </html>

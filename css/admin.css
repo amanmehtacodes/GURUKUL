@@ -19,6 +19,10 @@
   margin-top: var(--header-h);
   min-height: calc(100vh - var(--header-h));
   padding: 48px 32px 80px;
+  /* Opaque surface — admin tooling isn't part of the glass-over-wallpaper
+     look; body's background is always the dark #siteBg wallpaper now
+     (see style.css), so this needs its own explicit paper background. */
+  background: var(--paper);
 }
 
 /* Password gate */
@@ -52,7 +56,10 @@
   background: var(--paper-raised);
   color: var(--ink);
 }
-#passwordInput:focus { border-color: var(--accent); outline: none; }
+#passwordInput:focus {
+  border-color: var(--accent);
+  outline: none;
+}
 .admin-gate-error {
   color: var(--error);
   font-size: 14.5px;
@@ -101,13 +108,17 @@
   margin-right: 24px;
   cursor: pointer;
 }
-.admin-tab:hover { color: var(--ink); }
+.admin-tab:hover {
+  color: var(--ink);
+}
 .admin-tab.active {
   color: var(--ink);
   border-bottom-color: var(--accent);
 }
 
-.admin-panel-head { margin-bottom: 18px; }
+.admin-panel-head {
+  margin-bottom: 18px;
+}
 .admin-panel-head h2 {
   font-family: var(--font-mono);
   font-size: 18px;
@@ -138,16 +149,25 @@
   background: var(--paper-raised);
   color: var(--ink);
 }
-.admin-grant-form input[type="email"] { flex: 1; min-width: 220px; }
-.admin-grant-form select#grantValue { min-width: 260px; }
+.admin-grant-form input[type="email"] {
+  flex: 1;
+  min-width: 220px;
+}
+.admin-grant-form select#grantValue {
+  min-width: 260px;
+}
 .admin-grant-status {
   margin-top: 10px;
   font-family: var(--font-mono);
   font-size: 13.5px;
   min-height: 16px;
 }
-.admin-grant-status.success { color: var(--accent); }
-.admin-grant-status.error { color: var(--error); }
+.admin-grant-status.success {
+  color: var(--accent);
+}
+.admin-grant-status.error {
+  color: var(--error);
+}
 
 /* Tables */
 .admin-table-wrap {
@@ -178,8 +198,12 @@
   color: var(--ink);
   vertical-align: top;
 }
-.admin-table tr:last-child td { border-bottom: none; }
-.admin-table tr:hover td { background: var(--accent-soft); }
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+.admin-table tr:hover td {
+  background: var(--accent-soft);
+}
 
 .admin-empty-cell {
   color: var(--ink-faint);
@@ -213,11 +237,19 @@
   padding: 3px 8px;
   cursor: pointer;
 }
-.grant-revoke:hover { opacity: 0.8; }
-.grant-revoke:disabled { opacity: 0.5; cursor: not-allowed; }
+.grant-revoke:hover {
+  opacity: 0.8;
+}
+.grant-revoke:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 /* Manual grading panel */
-.grade-detail-row td { padding: 0; border-bottom: 1px solid var(--line); }
+.grade-detail-row td {
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+}
 .grade-panel {
   padding: 18px 20px;
   background: var(--paper);
@@ -240,7 +272,10 @@
   margin-bottom: 12px;
   background: var(--paper-raised);
 }
-.grade-question-prompt { font-size: 15.5px; margin-bottom: 8px; }
+.grade-question-prompt {
+  font-size: 15.5px;
+  margin-bottom: 8px;
+}
 .grade-student-answer {
   font-size: 14.5px;
   color: var(--ink-soft);
@@ -266,8 +301,14 @@
   background: var(--paper);
   color: var(--ink);
 }
-.grade-topic { flex: 1; min-width: 180px; }
-.grade-score, .grade-max { width: 64px; }
+.grade-topic {
+  flex: 1;
+  min-width: 180px;
+}
+.grade-score,
+.grade-max {
+  width: 64px;
+}
 .grade-feedback {
   width: 100%;
   min-height: 60px;
@@ -310,14 +351,31 @@
   color: var(--ink);
 }
 .student-lookup-controls select:disabled,
-.student-lookup-controls input:disabled { opacity: 0.5; }
+.student-lookup-controls input:disabled {
+  opacity: 0.5;
+}
 .student-lookup-controls select#studentClassSelect,
-.student-lookup-controls select#studentSubjectSelect { min-width: 200px; }
-.student-lookup-controls input#studentSearchInput { flex: 1; min-width: 180px; }
+.student-lookup-controls select#studentSubjectSelect {
+  min-width: 200px;
+}
+.student-lookup-controls input#studentSearchInput {
+  flex: 1;
+  min-width: 180px;
+}
 
-.student-detail { margin-top: 28px; }
-.student-detail-head h3 { font-family: var(--font-mono); font-size: 17px; margin: 0 0 4px; }
-.student-detail-head p { color: var(--ink-soft); font-size: 14.5px; margin: 0 0 20px; }
+.student-detail {
+  margin-top: 28px;
+}
+.student-detail-head h3 {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  margin: 0 0 4px;
+}
+.student-detail-head p {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  margin: 0 0 20px;
+}
 
 .student-charts {
   display: grid;
@@ -339,9 +397,15 @@
   color: var(--ink-faint);
   margin-bottom: 12px;
 }
-.student-chart-card canvas { max-height: 240px; }
+.student-chart-card canvas {
+  max-height: 240px;
+}
 
-.student-submission-list { display: flex; flex-direction: column; gap: 8px; }
+.student-submission-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 .student-submission-row {
   display: flex;
   flex-direction: column;
@@ -352,15 +416,37 @@
   text-decoration: none;
   background: var(--paper-raised);
 }
-.student-submission-row:hover { border-color: var(--accent); background: var(--accent-soft); }
-.student-submission-test { font-size: 16px; color: var(--ink); }
-.student-submission-meta { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-faint); }
+.student-submission-row:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.student-submission-test {
+  font-size: 16px;
+  color: var(--ink);
+}
+.student-submission-meta {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
 
 @media (max-width: 700px) {
-  .admin-main { padding: 32px 16px 60px; }
-  .admin-grant-form { flex-direction: column; align-items: stretch; }
-  .admin-grant-form select#grantValue { min-width: 0; }
-  .student-lookup-controls { flex-direction: column; align-items: stretch; }
+  .admin-main {
+    padding: 32px 16px 60px;
+  }
+  .admin-grant-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .admin-grant-form select#grantValue {
+    min-width: 0;
+  }
+  .student-lookup-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
   .student-lookup-controls select,
-  .student-lookup-controls input { min-width: 0; }
+  .student-lookup-controls input {
+    min-width: 0;
+  }
 }

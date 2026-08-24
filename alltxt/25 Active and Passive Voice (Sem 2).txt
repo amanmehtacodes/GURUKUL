@@ -1,0 +1,474 @@
+Chapter-11                            Active and Passive Voice
+
+Read the following pair of sentences carefully.
+     1. He reads a book.
+     2. A book is read by him.
+The meaning of both sentences is the same. However, the structure is different. In Sentence 1, the subject of the
+verb 'reads' is 'He'. Here, the subject 'he' is the active doer of the verb/action. Hence, the sentence is in active
+voice.
+In sentence 2, the subject of the verb 'is read' is 'A book'. Here, the subject is not the active doer of the verb/action.
+It is the passive receiver of the action. Hence, the sentence is in passive voice.
+Active Voice: When the verb shows that the subject does something, it is said to be in Active Voice.
+Passive Voice: When the verb shows that something is done to the subject, it is said to be in Passive Voice.
+
+Now read the following examples carefully and observe how sentences are changed from active to passive
+voice.
+                       Active Voice                                           Passive Voice
+        Boys are playing cricket.                             Cricket is being played by boys.
+        Children made a noise.                                A noise was made by children.
+        She teaches us maths.                                 We are taught maths by her.
+        This box contains sweets.                             Sweets are contained in this box.
+        He knows me.                                          I am known to him.
+
+
+The following steps are followed while converting a sentence from active to passive voice.
+    1. The object of the active verb is put in the place of subject.
+    2. The active verb is changed in passive form by using a form of 'be' according to tense of the active voice
+        and the III form of the verb. Other auxiliaries are also used according to the tense.
+    3. The passive verb should be in agreement with the object which is brought forward.
+    4. The subject is kept after the passive verb and it is preceded by the preposition 'by', thus converting the
+        subject into agent or doer.
+    5. In most of the cases preposition 'by' is used before agent. In certain cases preposition other than 'by' is
+        used.
+
+                Important Rules to follow while changing the Active Voice into Passive Voice
+
+    1. Don't change the tense.
+    2. The passive voice of future continuous tense and all perfect continuous tenses is not possible.
+    3. Don't change the type of sentence.
+    4. Subject-verb agreement must be followed in passive voice too.
+
+
+
+                                                          112
+                                                   Change in Verbs from Active to Passive
+       Tense            Active Voice                     Examples                           Passive Voice                              Examples
+      Simple     S+V1+(s/es)+O                He plays cricket.                   O+is/am/are + V3+by+S                 Cricket is played by him.
+      Present    S+does/do not +V1+O          He does not play cricket.           O+is/am/are+not+V3+by+S               Cricket is not played by him.
+      Tense      Does/do+S+V1+O               Does he play cricket?               Is/am/are+O+V3+by+S                   Is cricket played by him?
+                 Does/do+S+not+V1+O           Does he not play cricket?           Is/am/are+O+not+V3+by+S               Is cricket not played by him?
+      Simple     S+V2+O                       He played cricket.                  O+was/were+V3+by+S                    Cricket was played by him.
+      Past       S+did + not + V1+O           He did not play cricket.            O+was/were+not+V3+by+S                Cricket was not played by him.
+      Tense      Did+S+V1+O                   Did he play cricket?                Was/were+O+V3+by+S                    Was cricket played by him?
+                 Did+S+not+V1+O               Did he not play cricket?            Was/were+O+not+V3+by+S                Was cricket not played by him?
+      Simple     S+Will/shall+V1+O            He will play cricket.               O+will/shall+be+V3+by+S               Cricket will be played by him.
+      Future     S+Will/shall+not+V1+O        He will not play cricket.           O+will/shall+ not + be +V3+by+S       Cricket will not be played by him.
+      Tense      Will/shall+S+V1+O            Will he play cricket?               Will/shall+O+be+V3+by+S               Will cricket be played by him?
+                 Will/shall+S+not+V1+O        Will he not play cricket?           Will/shall+O+not+be+V3+by+S           Will cricket not be played by him?
+      Present    S+is/am/are +V1+ ing+O       He is playing cricket.              O+is/am/are+being+V3+by+S             Cricket is being played by him.
+      Continuous S+is/am/are+not+V1+ ing+O    He is not playing cricket.          O+is/am/are+not+being+V3+by+S         Cricket is not being played by him.
+      Tense      Is/am/are +S+V1+ ing+O       Is he playing cricket?              Is/am/are+O+being+V3+by+S             Is cricket being played by him?
+                 Is/am/are+S+not+V1+ ing+O    Is he not playing cricket?          Is/am/are+O+not+being+V3+by+S         Is cricket not being played by him?
+      Past       S+Was/were +V1+ing+O         He was playing cricket.             O+was/were+being+V3+by+S              Cricket was being played by him.
+      Continuous S+Was/were+not+V1+ing+O      He was not playing cricket.         O+was/were+not+being+V3+by+S          Cricket was not being played by him.
+      Tense      Was/were+S +V1+ing+O         Was he playing cricket?             Was/were+O+being+V3+by+S              Was cricket being played by him?
+                 Was/were+S+not+V1+ing+O      Was he not playing cricket?         Was/were+O+not+being+V3+by+S          Was cricket not being played by him?
+
+
+
+
+113
+      Present    S+Has/have +V3+O             He has played cricket.              O+has/have+been+V3+by+S               Cricket has been played by him.
+      Perfect    S+Has/have +not +V3+O        He has not played cricket.          O+has/have+not+been+V3+by+S           Cricket has not been played by him.
+      Tense      Has/have+S +V3+O             Has he played cricket?              Has/have +O+ been+V3+by+S             Has cricket been played by him?
+                 Has/have+S +not +V3+O        Has he not played cricket?          Has/have+O+not+been+V3+by+S           Has cricket not been played by him?
+      Past       S+Had+V3+O                   He had played cricket.              O+Had+been+V3+by+S                    Cricket had been played by him.
+      Perfect    S+Had+not +V3+O              He had not played cricket.          O+Had+not+been+V3+by+S                Cricket had not been played by him.
+      Tense      Had+S+V3+O                   Had he played cricket?              Had+O+been+V3+by+S                    Had cricket been played by him?
+                 Had+S+not +V3+O              Had he not played cricket?          Had+O+ not+been+V3+by+S               Had cricket not been played by him?
+      Future     S+Will/shall+have+V3+O       He will have played cricket.        O+Will/shall+have+been+V3+by+S        Cricket will have been played by him.
+      Perfect    S+Will/shall+not+have+V3+O   He will not have played cricket.    O+Will/shall+not+have+been+V3+ by+S   Cricket will not have been played by him.
+      Tense      Will/shall+S+have+V3+O       Will he have played cricket?        Will/shall+O+have+been+V3+by+S        Will cricket have been played by him?
+                 Will/shall+S+not+have+V3+O   Will he not have played cricket?    Will/shall+O+not+have+been+V3+by+S    Will cricket not have been played by him?
+      Modal       S+Modal + V1+O              He can play cricket.                O+Modal +be+V3+by+S                   Cricket can be played by him.
+      Auxiliary   S+Modal+not+V1+O            He cannot play cricket.             O+Modal +not+be+V3+by+S               Cricket cannot be played by him.
+                  Modal+S+V1+O                Can he play cricket?                Modal+O +be+V3+by+S                   Can cricket be played by him?
+                  Modal+S+not+V1+O            Can he not play cricket?            Modal +O+not+be+V3+by+S               Can cricket not be played by him?
+      Inﬁnitive   S+V+to + V1+O               He wants to play cricket.           S+V+O+to + be+V3                      He wants cricket to be played.
+                                              He does not want to play cricket.                                         He does not want cricket to be played.
+                                              Does he want to play cricket?                                             Does he want cricket to be played?
+                                              Does he not want to play                                                  Does he not want cricket to be played?
+                                              cricket?
+                                               1. Simple Present Tense
+         Type of Sentence                               Active Voice                                         Passive Voice
+       Afﬁrmative                              S+V1+(s/es)+O                                       O+ is/am/are + V3+by+S
+                                               He eats an apple.                                   An apple is eaten by him.
+       Negative                                S + does/do not +V1+O                               O + is/am/are + not + V3+by+S
+                                               He does not eat an apple.                           An apple is not eaten by him.
+       Interrogative                           Does/do +S+ V1+O                                    Is/am/are + O + V3+ by + S
+                                               Does he eat an apple?                               Is an apple eaten by him?
+       Interrogative Negative                  Does/do +S+not+ V1+O                                Is/am/are + O +not+ V3+ by + S
+                                               Does he not eat an apple?                           Is an apple not eaten by him?
+Exercise: Change the following sentences into passive voice.
+1.     Riya sings a song. ......................................................................................................................................
+2.     Mohit ﬂies a kite. ......................................................................................................................................
+3.     He writes a letter. .......................................................................................................................................
+4.     I like mangoes. ..........................................................................................................................................
+5.     He does not buy a book. ..............................................................................................................................
+6.     They do not obey their father. .....................................................................................................................
+7.     Does your mother cook tasty food? ............................................................................................................
+8.     Do the children paint pictures? ...................................................................................................................
+9.     Do you like me? .........................................................................................................................................
+10.    Does Radhika not help the needy? ..............................................................................................................
+
+                                                   2. Simple Past Tense
+         Type of Sentence                                    Active Voice                                   Passive Voice
+       Afﬁrmative                              S+V2+O                                              O+ was/were + V3+by+S
+                                               He ate an apple.                                    An apple was eaten by him.
+       Negative                                S + did not +V1+O                                   O + was/were + not + V3+by+S
+                                               He did not eat an apple.                            An apple was not eaten by him.
+       Interrogative                           Did +S+ V1+O                                        Was/were + O + V3+ by + S
+                                               Did he eat an apple?                                Was an apple eaten by him?
+       Interrogative Negative                  Did+S+not+ V1+O                                     Was/were + O +not+ V3+ by + S
+                                               Did he not eat an apple?                            Was an apple not eaten by him?
+Exercise: Change the following sentences into Passive Voice.
+1.     Richa sang a song.
+2.     Children read their books.
+3.     They built a new house.
+4.     Did he open the window?
+5.     She did not take coffee.
+
+                                                                            114
+6. The boy did not welcome his friends. ...............................................................................................................
+7. Did she get any message? ................................................................................................................................
+8. Mina did not write letters. ................................................................................................................................
+9. Did you not buy any clothes? ...........................................................................................................................
+10. The teacher did not correct my notebook. ........................................................................................................
+
+                                                  3. Simple Future Tense
+             Type of Sentence                            Active Voice                                    Passive Voice
+           Afﬁrmative                            S+will/shall+V1+O                            O+ will/shall+be + V3+by+S
+                                                 He will eat an apple.                        An apple will be eaten by him.
+           Negative                              S+ will/shall+ not +V1+O                     O+ will/shall + not + be+ V3+by+S
+                                                 He will not eat an apple.                    An apple will not be eaten by him.
+           Interrogative                         Will/shall+S+V1+O                            Will/shall+O+ be+V3+ by+ S
+                                                 Will he eat an apple?                        Will an apple be eaten by him?
+           Interrogative Negative                Will/shall+S+not+V1+O                        Will/shall+O+ not+be+V3+ by+ S
+                                                 Will he not eat an apple?                    Will an apple not be eaten by him?
+Exercise: Change the following sentences into passive voice.
+1.        Riya will tell a story.
+2.        He will attend a party tomorrow.
+3.        The shopkeepers will close the shops at 9pm.
+4.        I will always obey my parents.
+5.        We shall say our prayers.
+6.        Will you not sﬁnish your work today?
+7.        Will they kill the snake?
+8.        She will not tell a lie.
+9.        Shall I help you?
+10.       Will the children not miss their school bus?
+
+                                               4. Present Continuous Tense
+            Type of Sentence                         Active Voice                                       Passive Voice
+           Afﬁrmative                       S+ is/am/are+V1+ ing + O                        O+ is/am/are + being + V3+by+S
+                                            He is eating an apple.                          An apple is being eaten by him.
+           Negative                         S+is/am/are+not+V1+ing+O                        O+is/am/are+ not + being+V3+by+S
+                                            He is not eating an apple.                      An apple is not being eaten by him.
+           Interrogative                    Is/am/are+S+V1+ing+O                            Is/am/are+O+being+V3+ by+ S
+                                            Is he eating an apple?                          Is an apple being eaten by him?
+           Interrogative                    Is/am/are+S+not+V1+ing+O                        Is/am/are+O+not+being+V3+ by+ S
+           Negative                         Is he not eating an apple?                      Is an apple not being eaten by him?
+
+                                                                            115
+Exercise: Change the following sentences into passive voice.
+1.    Girls are singing a song. .............................................................................................................................
+2.    The carpenter is making a chair. .................................................................................................................
+3.    People are cutting trees in this forest. .........................................................................................................
+4.    My father is reading newspaper. .................................................................................................................
+5.    They are completing their work. ................................................................................................................
+6.    He is not plucking the ﬂower. .....................................................................................................................
+7.    Are you following me? ..............................................................................................................................
+8.    Is he ﬂying a kite? .......................................................................................................................................
+9.    Are the workers not repairing the roads? ....................................................................................................
+10. Am I troubling you? ...................................................................................................................................
+                                               5. Past Continuous Tense
+            Type of Sentence                       Active Voice                                          Passive Voice
+           Afﬁrmative                      S+ was/were+V1+ ing + O                             O+ was/were + being + V3+by+S
+                                           He was eating an apple.                             An apple was being eaten by him.
+           Negative                        S+was/were+not+V1+ing+O                             O+was/were+ not + being V3+by+S
+                                           He was not eating an apple.                         An apple was not being eaten by him.
+           Interrogative                   Was/were+S+V1+ing+O                                 Was/were+O+being+V3+ by+ S
+                                           Was he eating an apple?                             Was an apple being eaten by him?
+           Interrogative                   Was/were+S+not+V1+ing+O                             Was/were+O+not+being+V3+ by+ S
+           Negative                        Was he not eating an apple?                         Was an apple not being eaten by him?
+Exercise: Change the following sentences into passive voice.
+1.    We were taking exercise. ............................................................................................................................
+2.    Students were preparing their lessons. .......................................................................................................
+3.    He was not reading a book. .........................................................................................................................
+4.    They were not killing tigers. .......................................................................................................................
+5.    Were they stealing money? ........................................................................................................................
+6.    Were the students revising their lessons? ....................................................................................................
+7.    Was I disturbing you? .................................................................................................................................
+8.    The teacher was not scolding me. ...............................................................................................................
+9.    Were you not taking lunch? ........................................................................................................................
+10. He was not avoiding me. ............................................................................................................................
+
+                                                                              116
+                                                    6. Present Perfect Tense
+            Type of Sentence                        Active Voice                                      Passive Voice
+           Afﬁrmative                       S+has/have+V3+O                                O+ has/have + been+V3+by+S
+                                            He has eaten an apple.                         An apple has been eaten by him.
+           Negative                         S+has/have+ not +V3+O                          O+ has/have + not+ been + V3+by+S
+                                            He has not eaten an apple.                     An apple has not been eaten by him.
+           Interrogative                    Has/have +S+ V3+O                              Has/have +O+ been+V3+ by+ S
+                                            Has he eaten an apple?                         Has an apple been eaten by him?
+           Interrogative                    Has/have +S+not+ V3+O                          Has/have +O+not+ been+V3+ by+ S
+           Negative                         Has he not eaten an apple?                     Has an apple not been eaten by him?
+Exercise: Change the following sentences into passive voice.
+1. I have cleaned my room. ..................................................................................................................................
+2. She has closed the windows. ...........................................................................................................................
+3. My mother has said her prayers. ......................................................................................................................
+4. My father has not bought a new car. .................................................................................................................
+5. Students have not prepared presentations. .......................................................................................................
+6. Have you posted the letters? ............................................................................................................................
+7. Has he painted a picture? .................................................................................................................................
+8. Have your parents adopted this girl? ...............................................................................................................
+9. Has the gardener watered the plants? ..............................................................................................................
+10. Have you not broken the window? ..................................................................................................................
+
+                                                        7. Past Perfect Tense
+            Type of Sentence                        Active Voice                                      Passive Voice
+           Afﬁrmative                       S+had+V3+O                                     O+ had + been+V3+by+S
+                                            He had eaten an apple.                         An apple had been eaten by him.
+           Negative                         S+had not +V3+O                                O+had + not + been+V3+by+S
+                                            He had not eaten an apple.                     An apple had not been eaten by him.
+           Interrogative                    Had +S+ V3+O                                   Had +O+ been+V3+ by+ S
+                                            Had he eaten an apple?                         Had an apple been eaten by him?
+           Interrogative                    Had +S+not+ V3+O                               Had +O+ not+ been+V3+ by+ S
+           Negative                         Had he not eaten an apple?                     Had an apple not been eaten by him?
+Exercise: Change the following sentences into passive voice.
+1.        The peon had rung the bell. ........................................................................................................................
+2.        He had not stolen my camera. .....................................................................................................................
+3.        He had seen some lions. .............................................................................................................................
+4.        They had covered their faces. .....................................................................................................................
+5.        Boys had visited the museum. ....................................................................................................................
+
+                                                                            117
+6.    Had the team won the match? ............................................................................................................................
+
+7.    The clerk had not checked the accounts. ............................................................................................................
+
+8.    Had she insulted you? ........................................................................................................................................
+
+9.    Had they not crossed the river? ..........................................................................................................................
+
+10. They had not chosen their representative. ..........................................................................................................
+
+                                                        8. Future Perfect Tense
+                Type of                              Active Voice                                              Passive Voice
+               Sentence
+             Afﬁrmative             S+ will/shall+ have+V3+O                               O+ will/shall+have+been+V3+by+S
+                                    He will have eaten an apple.                           An apple will have been eaten by him.
+             Negative               S+ will/shall + not +have +V3+O                        O+will/shall+not+have+been+V3+by+S
+                                    He will not have eaten an apple.                       An apple will not have been eaten by him.
+             Interrogative          Will/shall+S+ have+V3+O                                Will/shall+O+have+been+V3+by+ S
+                                    Will he have eaten an apple?                           Will an apple have been eaten by him?
+             Interrogative          Will/shall+S+not+ have+V3+O                            Will/shall+O+not+have+been+V3+by+ S
+             Negative               Will he not have eaten an apple?                       Will an apple not have been eaten by him?
+Exercise: Change the following sentences into passive voice.
+
+1.    She will have kept her promise. ........................................................................................................................
+
+2.    They will have won the scholarship. .................................................................................................................
+
+3.    He will have learnt English. ..............................................................................................................................
+
+4.    We shall not have wasted our time. ....................................................................................................................
+
+5.    The teacher will not have punished these boys. .................................................................................................
+
+6.    Will they have spoken the truth? .......................................................................................................................
+
+7.    Rajan will not have solved the sums. .................................................................................................................
+
+8.    We shall have had our dinner. ............................................................................................................................
+
+9.    Will you not have received the invitation? ........................................................................................................
+
+10. Will they have dusted the carpet? ......................................................................................................................
+
+                             Changing Voice of Some Particular Categories
+                                            with various
+                                        Sentence Structures
+Important note: While changing voice, the rules of tenses, subject-verb agreement and types of sentences, as
+explained previously, will remain the same.
+
+                                                                               118
+                                       9. Sentences with Modal Auxiliaries
+        Active: Subject+ can/could/may/might/should/ought to/must/used to/would+V1+Object
+        Passive: Object+ can/could/may/might/should/ought to/must/used to/would+ be+V3+by+Subject
+
+             Type of Sentence                           Active Voice                                    Passive Voice
+           Afﬁrmative                             S+Modal+V1+O                               O+ Modal +be + V3+by+S
+                                                  He can solve this sum.                     This sum can be solved by him.
+           Negative                               S+ Modal+ not +V1+O                        O+ Modal + not + be+ V3+by+S
+                                                  He cannot solve this sum.                  This sum cannot be solved him.
+           Interrogative                          Modal+S+V1+O                               Modal+O+ be+V3+ by+ S
+                                                  Can he solve this sum?                     Can this sum be solved by him?
+           Interrogative Negative                 Modal+S+not+V1+O                           Modal+O+not+ be+V3+ by+ S
+                                                  Can he not solve this sum?                 Can this sum not be solved by him?
+Exercise: Change the following sentences into passive voice.
+1. The rich should help the poor. ..........................................................................................................................
+2. You can drive a car. ..........................................................................................................................................
+3. You must do your duty. ....................................................................................................................................
+4. He may win the case. .......................................................................................................................................
+5. He could catch the train. ..................................................................................................................................
+6. They ought to respect their elders. ...................................................................................................................
+7. Would you take a cup of tea? ...........................................................................................................................
+8. He might not like the movie. ............................................................................................................................
+9. He need not trouble you. ..................................................................................................................................
+10. He dare not oppose me. ...................................................................................................................................
+
+                         10. Interrogative Sentences with Wh-word
+                       Active Voice                                                            Passive Voice
+        Who has broken the window?                                            By whom has the window been broken?
+        What do you want?                                                     What is wanted by you?
+        Where did you keep your book?                                         Where was your book kept by you?
+        Why are you troubling him?                                            Why is he being troubled by you?
+        Whom will you inform?                                                 Who will be informed by you?
+        When did you complete your homework?                                  When was your homework completed by you?
+Exercise: Change the following sentences into passive voice.
+1. What did you require? .......................................................................................................................................
+2. Who has painted this picture? ...........................................................................................................................
+3. When will you return my book? ........................................................................................................................
+4. How will you help him? ....................................................................................................................................
+5. Who will help you? ...........................................................................................................................................
+                                                                      119
+6. Whom will you invite? .....................................................................................................................................
+7. Where had you parked your car? .......................................................................................................................
+8. Why have you not done your home work? ........................................................................................................
+9. When did you visit Delhi? ................................................................................................................................
+10. Whom did you help? .........................................................................................................................................
+
+                                                     11. Imperative Sentences
+Active Voice: Please switch off the fan.
+Passive Voice: You are requested to switch off the fan.
+
+Active Voice: Open the door.
+Passive Voice: Let the door be opened.
+                       Or
+               You are ordered to open the door.
+
+Active Voice: Obey your elders.
+Passive Voice: You are advised to obey your elders.
+                                Or,
+               Your elders should be obeyed.
+                                Or,
+               Let your elders be obeyed.
+Active Voice: Don't tell a lie.
+Passive Voice: You are advised not to tell a lie. Or, Let a lie not be told. Or, A lie should not be told.
+Active Voice: Let her come.
+Passive Voice: She should be allowed to come. Or, You are ordered to let her come.
+
+Exercise: Change the following sentences into passive voice
+1. Post this letter. .................................................................................................................................................
+2. Keep your city neat and clean. .........................................................................................................................
+3. Don’t disturb me. ............................................................................................................................................
+4. Submit your report by tomorrow. ....................................................................................................................
+5. Please bring me a glass of water. ......................................................................................................................
+6. Drive your vehicle carefully. ...........................................................................................................................
+7. Let me accompany you. ..................................................................................................................................
+8. Sit down. ........................................................................................................................................................
+9. Leave the room at once. ...................................................................................................................................
+10. Don’t tease the dog. .........................................................................................................................................
+
+                                                                               120
+                                   12. Sentences with Prepositional Verbs
+
+A prepositional verb is a verb followed by a preposition. While changing a prepositional verb into passive
+voice, the preposition must not be dropped.
+
+                        Active Voice                                                         Passive Voice
+         He looks after his parents.                                       His parents are looked after by him.
+         The children laughed at the beggar.                               The beggar was laughed at by the children.
+         They are cheering up the players.                                 The players are being cheered up by them.
+
+
+Exercise: Change the following sentences into passive voice.
+
+1. The thief broke into the house ........................................................................................................................
+
+2. He is looking for a new job.............................................................................................................................
+
+3. The boss shouted at the peon ..........................................................................................................................
+
+4. They were listening to music...........................................................................................................................
+
+5. Who is knocking at the door?..........................................................................................................................
+
+6. The students peeped into the deserted house ..................................................................................................
+
+7. They have worked on the project for two months. .........................................................................................
+
+8. The British ruled over India for two hundred years........................................................................................
+
+9. A speeding train ran over more than sixty people...........................................................................................
+
+10. Did the CEO preside over the meeting? .........................................................................................................
+
+                 13. Sentences with Transitive Verbs with Double Objects
+
+Transitive verbs with double objects can be changed into passive voice by changing either object into
+subject. However, it is preferable to make indirect object the subject of the passive verb.
+
+Active Voice: She teaches us maths.
+Passive Voice: (Direct Object) Maths is taught to us by her.
+               (Indirect Object) We are taught maths by her.
+Active Voice: My father gifted me a watch.
+Passive Voice: (Direct Object) A watch was gifted to me by my father.
+               (Indirect Object) I was gifted a watch by my father
+
+
+
+                                                                           121
+Exercise: Change the following sentences into passive voice.
+
+1. My friend lent me some money.......................................................................................................................
+
+2. The magistrate asked him a few questions. ....................................................................................................
+
+3. We will offer her coffee. .................................................................................................................................
+
+4. She gave the beggar a coin. ............................................................................................................................
+
+5. We gave the poor man some bananas. ............................................................................................................
+
+6. My father gave me a piece of advice. .............................................................................................................
+
+7. Did your grandmother tell you any story? ......................................................................................................
+
+8. Has the teacher asked you any questions? ......................................................................................................
+
+9. He will gift you a bicycle. ...............................................................................................................................
+
+10. They presented a memento to the chief guest. ................................................................................................
+
+                  14. Passive Voice of Sentences with Subject Understood
+Active Voice: The teacher has corrected my notebook.
+Passive Voice: My notebook has been corrected.
+Passive Voice: The police have arrested the thief.
+Active Voice: The thief has been arrested.
+
+Exercise: Change the following sentences into passive voice.
+
+1. The class teacher made him monitor of the class ...........................................................................................
+
+2. The parents have named the child Priya. ........................................................................................................
+
+3. People celebrate Diwali all over India. ...........................................................................................................
+
+4. The Indians call Mahatma Gandhi the father of the nation. ...........................................................................
+
+5. The boss has dismissed him. ...........................................................................................................................
+
+6. The magistrate has sentenced the murderer to death. ....................................................................................
+
+7. The coach made him captain of the school cricket team. ...............................................................................
+
+8. The Principal has rusticated the naughty students. .......................................................................................
+
+9. The enemy destroyed the whole city. ............................................................................................................
+
+10. The class teacher marked me absent. .............................................................................................................
+
+                                                                            122
+

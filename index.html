@@ -1,49 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gurukul — NCERT Study Notes</title>
-<meta name="description" content="Clear, complete notes for every NCERT chapter — classes 8 to 12, JEE and NEET. Free to read.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gurukul — NCERT Study Notes</title>
+    <meta
+      name="description"
+      content="Clear, complete English notes and IELTS prep for classes 8 to 12. Free to read."
+    />
 
-<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16.png"
+    />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
-<!-- Supabase client (auth) -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-</head>
-<body class="landing-page">
+    <!-- Deferred — not needed until Auth.init() runs below (which now waits
+     for DOMContentLoaded instead of calling it inline), so there's no
+     reason to block the hero's first paint on it. -->
+    <!-- Supabase client (auth) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"
+      defer
+    ></script>
+  </head>
+  <body class="landing-page">
+    <div class="site-bg" id="siteBg" aria-hidden="true"></div>
 
-<section class="hero-landing" id="heroLanding">
-  <div class="hero-badge"><span class="hero-badge-dot"></span>AI Powered Study Notes and Tests</div>
-  <img src="assets/logo.svg" alt="Gurukul" class="hero-logo">
-  <p class="hero-desc">Clear, complete notes for every NCERT chapter — classes 8 to 12, JEE and NEET.<br>Free to read. Sign in only to unlock tests and track your progress.</p>
-  <div class="hero-actions">
-    <button class="hero-btn hero-btn-primary" id="heroReadBtn" type="button">Read Notes for Free</button>
-    <button class="hero-btn hero-btn-ghost" id="heroLoginBtn" type="button">Login</button>
-  </div>
-</section>
+    <section class="hero-landing" id="heroLanding">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>AI Powered Study Notes and Tests
+      </div>
+      <img src="assets/logo.svg" alt="Gurukul" class="hero-logo" />
+      <p class="hero-desc">
+        Clear, complete English notes for every NCERT chapter — classes 8 to 12,
+        plus IELTS prep.<br />Free to read. Sign in only to unlock tests and
+        track your progress.
+      </p>
+      <div class="hero-actions">
+        <button
+          class="hero-btn hero-btn-primary"
+          id="heroReadBtn"
+          type="button"
+        >
+          Read Notes for Free
+        </button>
+        <button class="hero-btn hero-btn-ghost" id="heroLoginBtn" type="button">
+          Login
+        </button>
+      </div>
+    </section>
 
-<script src="js/config.js"></script>
-<script src="js/auth.js"></script>
-<script>
-  Auth.init();
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/molten-metal.js"></script>
+    <script>
+      // Site-wide animated background — same on every page and every device.
+      // #siteBg is the full-page fixed layer, so it covers the whole page
+      // including behind the header. The landing hero keeps the shader's
+      // full detail (6) — interior pages turn it down to 3 (see classes.html).
+      MoltenMetal.mount(document.getElementById("siteBg"), { detail: 6 });
 
-  document.getElementById("heroReadBtn").addEventListener("click", function () {
-    window.location.href = "classes.html";
-  });
-  document.getElementById("heroLoginBtn").addEventListener("click", function () {
-    Auth.promptSignIn("classes.html");
-  });
-</script>
-</body>
+      document
+        .getElementById("heroReadBtn")
+        .addEventListener("click", function () {
+          window.location.href = "classes.html";
+        });
+      document
+        .getElementById("heroLoginBtn")
+        .addEventListener("click", function () {
+          Auth.promptSignIn("classes.html");
+        });
+
+      // Waits for DOMContentLoaded because supabase-js (loaded via a deferred
+      // <script> in <head> now, so it doesn't block the hero's first paint)
+      // isn't guaranteed to have executed yet at this point in the document —
+      // deferred scripts always run after parsing finishes, but this inline
+      // script is a plain one that runs immediately as the parser reaches it.
+      document.addEventListener("DOMContentLoaded", function () {
+        Auth.init();
+      });
+    </script>
+  </body>
 </html>

@@ -26,7 +26,12 @@ const Progress = (() => {
 
     const result = await Backend.getProgress(user.email);
     if (result.status === "ok") {
-      items = new Map((result.progress || []).map((p) => [p.itemId, { itemType: p.itemType, status: p.status }]));
+      items = new Map(
+        (result.progress || []).map((p) => [
+          p.itemId,
+          { itemType: p.itemType, status: p.status },
+        ])
+      );
       submissions = result.submissions || [];
     } else {
       items = new Map();
@@ -51,7 +56,12 @@ const Progress = (() => {
     items.set(noteId, { itemType: "note", status: "read" });
     const user = Auth.getUser();
     if (user && !CONFIG.PROTOTYPE_MODE_SKIP_LOGIN) {
-      await Backend.markProgress({ email: user.email, itemId: noteId, itemType: "note", status: "read" });
+      await Backend.markProgress({
+        email: user.email,
+        itemId: noteId,
+        itemType: "note",
+        status: "read",
+      });
     }
     if (window.Sidebar) Sidebar.refreshProgressMarks(doneItemIds());
   }
@@ -89,7 +99,10 @@ const Progress = (() => {
    * simple progress bar.
    */
   function statsFor(sectionsSource) {
-    let notesTotal = 0, notesRead = 0, testsTotal = 0, testsDone = 0;
+    let notesTotal = 0,
+      notesRead = 0,
+      testsTotal = 0,
+      testsDone = 0;
     (sectionsSource.sections || []).forEach((section) => {
       section.subsections.forEach((sub) => {
         (sub.notes || []).forEach((note) => {
@@ -111,7 +124,8 @@ const Progress = (() => {
    * chapter on the progress page.
    */
   function statsForSection(section) {
-    let total = 0, done = 0;
+    let total = 0,
+      done = 0;
     (section.subsections || []).forEach((sub) => {
       (sub.notes || []).forEach((note) => {
         total++;

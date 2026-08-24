@@ -1,13 +1,14 @@
 /**
  * SUBJECT PICKER MODULE
  * -----------------------
- * Renders the subject-selection view for a chosen class: icon cards for
- * Mathematics, Physics, Chemistry, Biology, etc. Selecting one hands off
- * to the sidebar/curriculum view for that subject.
+ * Renders the subject-selection view for a chosen class. Currently only
+ * ever shows one card (English — the site's only subject now), but stays
+ * generic since app.js falls back to it if a class ever has more than
+ * one subject, or zero. Selecting a subject hands off to the sidebar/
+ * curriculum view for it.
  *
  * Icons are illustrated SVG assets (not simple currentColor strokes), so
- * they're rendered as <img> tags. JEE/NEET tracks get their own subject
- * icon variants where provided; regular classes use the general set.
+ * they're rendered as <img> tags.
  */
 
 const SubjectPicker = (() => {
@@ -18,40 +19,22 @@ const SubjectPicker = (() => {
     return (window.Icons && Icons.get("back")) || "";
   }
 
-  // General subject icon set (used for regular classes VIII-XII).
+  // Subject icon set. Used to be Maths/Physics/Chemistry/Biology/Science/
+  // Computer too (from before the site narrowed to English-only), each
+  // with its own JEE/NEET variant — all of that was dead weight (never
+  // matched by any subject curriculum.js actually defines anymore), so
+  // it's trimmed down to just what's reachable.
   const GENERAL_ICONS = {
-    maths: "assets/icons/subject-maths.svg",
-    physics: "assets/icons/subject-physics.svg",
-    chemistry: "assets/icons/subject-chemistry.svg",
-    biology: "assets/icons/subject-biology.svg",
-    science: "assets/icons/subject-science.svg",
     english: "assets/icons/subject-english.svg",
-    computer: "assets/icons/subject-computer.svg",
   };
 
-  // Track-specific icon overrides for JEE/NEET subject cards, where a
-  // dedicated variant was provided. Falls back to GENERAL_ICONS for any
-  // subject not listed here (e.g. if a track ever adds English).
-  const TRACK_ICONS = {
-    jee: {
-      maths: "assets/icons/jee-maths.svg",
-      physics: "assets/icons/jee-neet-physics.svg",
-      chemistry: "assets/icons/jee-neet-chemistry.svg",
-    },
-    neet: {
-      physics: "assets/icons/jee-neet-physics.svg",
-      chemistry: "assets/icons/jee-neet-chemistry.svg",
-      biology: "assets/icons/neet-biology.svg",
-    },
-  };
-
-  function iconSrcFor(subject, track) {
-    const key = (subject.icon || subject.id || subject.title || "").toLowerCase();
-    const trackKey = track && (track.id || "").toLowerCase();
-
-    if (trackKey && TRACK_ICONS[trackKey] && TRACK_ICONS[trackKey][key]) {
-      return TRACK_ICONS[trackKey][key];
-    }
+  function iconSrcFor(subject) {
+    const key = (
+      subject.icon ||
+      subject.id ||
+      subject.title ||
+      ""
+    ).toLowerCase();
     if (GENERAL_ICONS[key]) return GENERAL_ICONS[key];
 
     for (const name of Object.keys(GENERAL_ICONS)) {
@@ -70,7 +53,9 @@ const SubjectPicker = (() => {
     wrap.innerHTML = `
       <button class="picker-back" id="subjectPickerBack">${backIconSvg()}<span>All classes</span></button>
       <div class="class-picker-intro">
-        <div class="class-picker-eyebrow"><span>${escapeHtml(cls.label)} · ${escapeHtml(cls.name)}</span></div>
+        <div class="class-picker-eyebrow"><span>${escapeHtml(
+          cls.label
+        )} · ${escapeHtml(cls.name)}</span></div>
         <h1>Choose a subject</h1>
         <p>Pick a subject to see its notes and tests.</p>
       </div>
@@ -78,27 +63,26 @@ const SubjectPicker = (() => {
     `;
     container.appendChild(wrap);
 
-    wrap.querySelector("#subjectPickerBack").addEventListener("click", () => onChangeClass && onChangeClass());
+    wrap
+      .querySelector("#subjectPickerBack")
+      .addEventListener("click", () => onChangeClass && onChangeClass());
 
     const grid = wrap.querySelector("#subjectGrid");
     (cls.subjects || []).forEach((subject, i) => {
-      const iconSrc = iconSrcFor(subject, track);
-      const isSparse = iconSrc === "assets/icons/jee-maths.svg";
+      const iconSrc = iconSrcFor(subject);
       const card = document.createElement("button");
-      card.className = "class-card subject-card" + (!subject.ready ? " unready" : "");
+      card.className =
+        "class-card subject-card" + (!subject.ready ? " unready" : "");
       card.style.setProperty("--card-index", i);
-      if (window.SubjectColors) {
-        const key = subject.icon || subject.id || subject.title;
-        const vars = SubjectColors.varsFor(key);
-        card.style.setProperty("--card-accent", vars.accent);
-        card.style.setProperty("--card-accent-soft", vars.soft);
-      }
       card.innerHTML = `
-        <span class="subject-card-icon${isSparse ? " icon-sparse" : ""}">${iconSrc ? `<img src="${iconSrc}" alt="" width="74" height="74">` : ""}</span>
+        <span class="subject-card-icon">${
+          iconSrc ? `<img src="${iconSrc}" alt="" width="74" height="74">` : ""
+        }</span>
         <span class="class-card-name">${escapeHtml(subject.title)}</span>
         <span class="class-card-meta">${metaTextFor(subject)}</span>
       `;
       card.addEventListener("click", () => onPick && onPick(subject));
+      if (window.BorderGlow) BorderGlow.enhance(card);
       grid.appendChild(card);
     });
   }

@@ -56,11 +56,16 @@ const Auth = (() => {
     }
 
     if (!window.supabase || !window.supabase.createClient) {
-      console.error("Supabase client library failed to load — check the script tag in index.html/admin.html.");
+      console.error(
+        "Supabase client library failed to load — check the script tag in index.html/admin.html."
+      );
       return;
     }
 
-    supabase = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
+    supabase = window.supabase.createClient(
+      CONFIG.SUPABASE_URL,
+      CONFIG.SUPABASE_ANON_KEY
+    );
 
     const { data } = await supabase.auth.getSession();
     currentUser = mapUser(data.session ? data.session.user : null);
@@ -79,7 +84,7 @@ const Auth = (() => {
     if (domain !== CONFIG.RESTRICT_DOMAIN) {
       alert(
         `Access is restricted to @${CONFIG.RESTRICT_DOMAIN} accounts. ` +
-        `You signed in with ${currentUser.email}.`
+          `You signed in with ${currentUser.email}.`
       );
       signOut();
     }
@@ -90,7 +95,9 @@ const Auth = (() => {
   // the current page, same as before.
   function signInWithGoogle(redirectPath) {
     if (!supabase) {
-      alert("Supabase isn't configured yet — add SUPABASE_ANON_KEY in js/config.js. See SETUP_CHECKLIST.md.");
+      alert(
+        "Supabase isn't configured yet — add SUPABASE_ANON_KEY in js/config.js. See SETUP_CHECKLIST.md."
+      );
       return;
     }
     const redirectTo = redirectPath

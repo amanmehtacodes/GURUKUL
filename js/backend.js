@@ -36,8 +36,15 @@ const Backend = (() => {
     const sb = client();
 
     const [{ data: profile }, { data: grants, error }] = await Promise.all([
-      sb.from("profiles").select("roll_number").eq("email", email).maybeSingle(),
-      sb.from("access_grants").select("grant_type, target_id").eq("email", email),
+      sb
+        .from("profiles")
+        .select("roll_number")
+        .eq("email", email)
+        .maybeSingle(),
+      sb
+        .from("access_grants")
+        .select("grant_type, target_id")
+        .eq("email", email),
     ]);
 
     if (error) return { status: "error", message: error.message };
@@ -45,7 +52,10 @@ const Backend = (() => {
     return {
       status: "ok",
       rollNumber: profile ? profile.roll_number : null,
-      grants: (grants || []).map((g) => ({ type: g.grant_type, value: g.target_id })),
+      grants: (grants || []).map((g) => ({
+        type: g.grant_type,
+        value: g.target_id,
+      })),
     };
   }
 
@@ -53,20 +63,33 @@ const Backend = (() => {
     if (!isConfigured()) return { status: "unavailable" };
     const sb = client();
 
-    const [{ data: progress, error: pErr }, { data: submissions, error: sErr }] = await Promise.all([
-      sb.from("progress").select("item_id, item_type, status").eq("email", email),
+    const [
+      { data: progress, error: pErr },
+      { data: submissions, error: sErr },
+    ] = await Promise.all([
+      sb
+        .from("progress")
+        .select("item_id, item_type, status")
+        .eq("email", email),
       sb
         .from("submissions")
-        .select("id, test_id, submitted_at, class_name, subject, section, subsection, test, test_kind, score, total_mcq, subjective_status, overall_report")
+        .select(
+          "id, test_id, submitted_at, class_name, subject, section, subsection, test, test_kind, score, total_mcq, subjective_status, overall_report"
+        )
         .eq("email", email)
         .order("submitted_at", { ascending: true }),
     ]);
 
-    if (pErr || sErr) return { status: "error", message: (pErr || sErr).message };
+    if (pErr || sErr)
+      return { status: "error", message: (pErr || sErr).message };
 
     return {
       status: "ok",
-      progress: (progress || []).map((p) => ({ itemId: p.item_id, itemType: p.item_type, status: p.status })),
+      progress: (progress || []).map((p) => ({
+        itemId: p.item_id,
+        itemType: p.item_type,
+        status: p.status,
+      })),
       submissions: (submissions || []).map((s) => ({
         id: s.id,
         testId: s.test_id,
@@ -148,12 +171,21 @@ const Backend = (() => {
     if (!isConfigured()) return { status: "unavailable" };
     const sb = client();
 
-    const [{ data: submission, error: sErr }, { data: answers, error: aErr }] = await Promise.all([
-      sb.from("submissions").select("*").eq("id", submissionId).maybeSingle(),
-      sb.from("submission_answers").select("*").eq("submission_id", submissionId).order("created_at"),
-    ]);
+    const [{ data: submission, error: sErr }, { data: answers, error: aErr }] =
+      await Promise.all([
+        sb.from("submissions").select("*").eq("id", submissionId).maybeSingle(),
+        sb
+          .from("submission_answers")
+          .select("*")
+          .eq("submission_id", submissionId)
+          .order("created_at"),
+      ]);
 
-    if (sErr || !submission) return { status: "error", message: (sErr && sErr.message) || "Submission not found." };
+    if (sErr || !submission)
+      return {
+        status: "error",
+        message: (sErr && sErr.message) || "Submission not found.",
+      };
     if (aErr) return { status: "error", message: aErr.message };
 
     return { status: "ok", submission, answers: answers || [] };
@@ -167,7 +199,9 @@ const Backend = (() => {
   async function getTestStats(testId) {
     if (!isConfigured()) return { status: "unavailable" };
     const sb = client();
-    const { data, error } = await sb.rpc("get_test_stats", { p_test_id: testId });
+    const { data, error } = await sb.rpc("get_test_stats", {
+      p_test_id: testId,
+    });
     if (error) return { status: "error", message: error.message };
     return { status: "ok", stats: data || {} };
   }
@@ -175,18 +209,16 @@ const Backend = (() => {
   async function markProgress(payload) {
     if (!isConfigured()) return { status: "unavailable" };
     const sb = client();
-    const { error } = await sb
-      .from("progress")
-      .upsert(
-        {
-          email: payload.email,
-          item_id: payload.itemId,
-          item_type: payload.itemType,
-          status: payload.status,
-          updated_at: new Date().toISOString(),
-        },
-        { onConflict: "email,item_id" }
-      );
+    const { error } = await sb.from("progress").upsert(
+      {
+        email: payload.email,
+        item_id: payload.itemId,
+        item_type: payload.itemType,
+        status: payload.status,
+        updated_at: new Date().toISOString(),
+      },
+      { onConflict: "email,item_id" }
+    );
     if (error) return { status: "error", message: error.message };
     return { status: "ok" };
   }
@@ -207,11 +239,18 @@ const Backend = (() => {
       { data: access, error: aErr },
       { data: submissions, error: sErr },
     ] = await Promise.all([
-      sb.from("profiles").select("email, name, roll_number, created_at").order("roll_number"),
-      sb.from("access_grants").select("email, grant_type, target_id, granted_at, granted_via"),
+      sb
+        .from("profiles")
+        .select("email, name, roll_number, created_at")
+        .order("roll_number"),
+      sb
+        .from("access_grants")
+        .select("email, grant_type, target_id, granted_at, granted_via"),
       sb
         .from("submissions")
-        .select("id, submitted_at, email, name, class_name, subject, test, test_kind, score, total_mcq, subjective_status")
+        .select(
+          "id, submitted_at, email, name, class_name, subject, test, test_kind, score, total_mcq, subjective_status"
+        )
         .order("submitted_at", { ascending: false }),
     ]);
 
@@ -222,7 +261,12 @@ const Backend = (() => {
 
     return {
       status: "ok",
-      roster: (roster || []).map((r) => ({ email: r.email, name: r.name, rollNumber: r.roll_number, firstSeen: r.created_at })),
+      roster: (roster || []).map((r) => ({
+        email: r.email,
+        name: r.name,
+        rollNumber: r.roll_number,
+        firstSeen: r.created_at,
+      })),
       access: (access || []).map((g) => ({
         email: g.email,
         grantType: g.grant_type,
@@ -250,7 +294,12 @@ const Backend = (() => {
     const sb = client();
     const { error } = await sb
       .from("access_grants")
-      .insert({ email, grant_type: grantType, target_id: grantValue, granted_via: "manual" });
+      .insert({
+        email,
+        grant_type: grantType,
+        target_id: grantValue,
+        granted_via: "manual",
+      });
     if (error) return { status: "error", message: error.message };
     return { status: "ok" };
   }
@@ -281,7 +330,8 @@ const Backend = (() => {
 
   /** All answers across several submissions in one query — used by the admin Students tab to build topic charts for one student's whole subject history. */
   async function adminGetAnswersForSubmissions(submissionIds) {
-    if (!submissionIds || !submissionIds.length) return { status: "ok", answers: [] };
+    if (!submissionIds || !submissionIds.length)
+      return { status: "ok", answers: [] };
     const sb = client();
     const { data, error } = await sb
       .from("submission_answers")
@@ -292,7 +342,13 @@ const Backend = (() => {
   }
 
   /** Saves the score/topic/feedback you entered after grading one answer with your own local LLM. */
-  async function adminSaveGrade({ answerId, llmScore, llmMaxScore, topicTag, feedbackText }) {
+  async function adminSaveGrade({
+    answerId,
+    llmScore,
+    llmMaxScore,
+    topicTag,
+    feedbackText,
+  }) {
     const sb = client();
     const { error } = await sb
       .from("submission_answers")

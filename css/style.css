@@ -3,130 +3,200 @@
    ========================================================================== */
 :root {
   /* Palette */
-  --paper: #FAFAF7;
-  --paper-raised: #FFFFFF;
-  --ink: #1A1D1B;
-  --ink-soft: #565C57;
-  --ink-faint: #9CA39A;
-  --line: #E1E2DC;
-  --line-strong: #C9CBC2;
-  --accent: #2F5233;
-  --accent-soft: #E8EEE8;
-  --amber: #B8863B;
-  --amber-soft: #F5EBDA;
-  --error: #A6402F;
-  --error-soft: #F6E7E3;
+  --paper: #fafaf7;
+  --paper-raised: #ffffff;
+  --ink: #1a1d1b;
+  --ink-soft: #565c57;
+  --ink-faint: #9ca39a;
+  --line: #e1e2dc;
+  --line-strong: #c9cbc2;
+  --accent: #2f5233;
+  --accent-soft: #e8eee8;
+  --amber: #b8863b;
+  --amber-soft: #f5ebda;
+  --error: #a6402f;
+  --error-soft: #f6e7e3;
 
   /* Dedicated gold scale for the JEE/NEET "premium — coming soon" cards.
      Kept separate from --amber (used elsewhere for locked/warning states)
      so it can be a true, unmistakable gold rather than the brownish/
      orange tone --amber reads as at small sizes. */
-  --gold: #C9971C;
-  --gold-bright: #F0B90B;
-  --gold-soft: #FDF1CB;
-  --gold-panel: #F6E29B;
-  --gold-ink: #7A5C0A;
+  --gold: #c9971c;
+  --gold-bright: #f0b90b;
+  --gold-soft: #fdf1cb;
+  --gold-panel: #f6e29b;
+  --gold-ink: #7a5c0a;
 
   /* Section color-coding palette — one fixed, identity-based color per
      subject (not a rotating cycle): 1 maths=blue, 2 science=green,
      3 english=yellow, 4 physics=purple, 5 chemistry=red, 6 biology=green
      (same green as science — same subject family). Same hue in light and
      dark mode throughout, only lightness/saturation shifts per theme. */
-  --c1: #1D4ED8;   /* maths — blue    */
-  --c1-soft: #E1EAFC;
-  --c2: #15803D;   /* science — green */
-  --c2-soft: #E1F5E7;
-  --c3: #A16207;   /* english — yellow/gold */
-  --c3-soft: #FBF0D6;
-  --c4: #6D28D9;   /* physics — purple */
-  --c4-soft: #EFE6FB;
-  --c5: #B91C1C;   /* chemistry — red */
-  --c5-soft: #FBE3E1;
-  --c6: #15803D;   /* biology — green (same as science) */
-  --c6-soft: #E1F5E7;
+  --c1: #1d4ed8; /* maths — blue    */
+  --c1-soft: #e1eafc;
+  --c2: #15803d; /* science — green */
+  --c2-soft: #e1f5e7;
+  --c3: #a16207; /* english — yellow/gold */
+  --c3-soft: #fbf0d6;
+  --c4: #6d28d9; /* physics — purple */
+  --c4-soft: #efe6fb;
+  --c5: #b91c1c; /* chemistry — red */
+  --c5-soft: #fbe3e1;
+  --c6: #15803d; /* biology — green (same as science) */
+  --c6-soft: #e1f5e7;
 
   /* Sidebar / header panel fill per subject — a clearly-tinted, bold
      wash (not the near-invisible pale --cN-soft) so the active subject's
      color actually reads against the paper background in light mode. */
-  --c1-panel: #CFE0FF;
-  --c2-panel: #C6EDD2;
-  --c3-panel: #F6DFA0;
-  --c4-panel: #DCC7F7;
-  --c5-panel: #F6C2BE;
-  --c6-panel: #C6EDD2;
+  --c1-panel: #cfe0ff;
+  --c2-panel: #c6edd2;
+  --c3-panel: #f6dfa0;
+  --c4-panel: #dcc7f7;
+  --c5-panel: #f6c2be;
+  --c6-panel: #c6edd2;
 
   /* Bold, higher-saturation variants used for chapter/topic accents,
      done-state marks, and the header/sidebar identity accent — punchier
      than the base --cN tones, which stay muted for card top-bars. */
-  --c1-bold: #1656D6;
-  --c2-bold: #0F9D4E;
-  --c3-bold: #C4890A;
-  --c4-bold: #7C3AED;
-  --c5-bold: #DC2626;
-  --c6-bold: #0F9D4E;
+  --c1-bold: #1656d6;
+  --c2-bold: #0f9d4e;
+  --c3-bold: #c4890a;
+  --c4-bold: #7c3aed;
+  --c5-bold: #dc2626;
+  --c6-bold: #0f9d4e;
 
-  /* Type */
-  --font-mono: 'Space Grotesk', 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
-  --font-serif: 'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif;
+  /* Type — leads with the system font stack so Apple devices render true
+     San Francisco; Plus Jakarta Sans (a similar geometric grotesque) is
+     the fallback everywhere else. */
+  --font-mono: "Space Grotesk", "IBM Plex Mono", "SF Mono", Consolas, monospace;
+  --font-serif: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "SF Pro Text", "Plus Jakarta Sans", "Inter", "Segoe UI", sans-serif;
 
   /* Layout */
   --sidebar-w: 300px;
   --header-h: 60px;
-  --radius: 3px;
+  --radius: 12px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* Liquid-glass surfaces — translucent, blurred panels over the animated
+     site-wide background (js/molten-metal.js + #siteBg), in the vein
+     of Apple's frosted-glass chrome: macOS menu bar/sidebar, iOS Control
+     Center, visionOS panels. Applied everywhere: header, sidebar, chapter
+     rows, picker cards, and every button. Kept deliberately see-through
+     (low alpha, heavy blur, high saturation) rather than a faint tint, so
+     the glass reads as an actual pane of material with color moving
+     behind it, not just "a slightly off-white box". */
+  --glass-bg: rgba(255, 255, 255, 0.38);
+  --glass-bg-strong: rgba(255, 255, 255, 0.56);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-highlight: rgba(255, 255, 255, 0.95);
+  --glass-shadow: 0 24px 48px -20px rgba(30, 30, 45, 0.32),
+    0 2px 12px -4px rgba(30, 30, 45, 0.16);
+  --glass-blur: 34px;
+  --glass-saturate: 2.1;
+
+  /* "Tile" glass — the literal recipe used for picker cards
+     (.class-card), and now every button and the report page's stat/
+     topic/question cards too. Deliberately a fixed light value rather
+     than --glass-bg above (which flips dark in dark theme): with the
+     site permanently in dark theme now, --glass-bg would render these
+     as a near-invisible dark-on-dark smear, whereas this recipe was
+     designed to read as a bright pane of glass over the dark wallpaper
+     regardless of theme — same reasoning as the hardcoded light text
+     colors on .class-card-numeral/.class-card-name. Not theme-relative,
+     so it isn't redefined in the dark-theme block below. */
+  --glass-tile-bg: rgba(255, 255, 255, 0.2);
+  --glass-tile-border: rgba(255, 255, 255, 0.3);
+  --glass-tile-blur: 15px;
+
+  /* "Chrome" glass — the header/sidebar shell, as opposed to the cards
+     and buttons floating on top of it. Noticeably more see-through and
+     less blurred than --glass-bg above: at the header/sidebar's size and
+     position (a large fixed pane, always on screen) the card recipe reads
+     as a solid tinted banner that hides the animated background behind
+     it, rather than a thin pane of glass with the animation visible
+     through it. */
+  --glass-chrome-bg: rgba(255, 255, 255, 0.14);
+  --glass-chrome-blur: 18px;
 }
 
 /* Dark mode — approximates the Claude.ai web app's dark theme: warm
-   charcoal background, cream text, coral/orange accent. Toggled by
-   setting data-theme="dark" on <html> (see js/theme.js). Every other
-   rule in this file, admin.css, and report.css reads these same
-   variable names, so the whole site (including the report page) picks
-   this up automatically with no per-component dark-mode rules needed. */
+   charcoal background, cream text, coral/orange accent. There's no
+   toggle anymore — every page's inline <head> script now just sets
+   data-theme="dark" unconditionally (the animated background is fixed
+   regardless of theme, so there's nothing left for a light theme to
+   vary). Every other rule in this file, admin.css, and report.css reads
+   these same variable names, so the whole site (including the report
+   page) picks this up automatically with no per-component rules needed. */
 :root[data-theme="dark"] {
   --paper: #262624;
   --paper-raised: #30302e;
-  --ink: #F5F4EE;
-  --ink-soft: #B8B5A8;
-  --ink-faint: #7C7A6E;
-  --line: #3D3D3A;
-  --line-strong: #4E4E49;
-  --accent: #D97757;
+  --ink: #f5f4ee;
+  --ink-soft: #b8b5a8;
+  --ink-faint: #7c7a6e;
+  --line: #3d3d3a;
+  --line-strong: #4e4e49;
+  --accent: #d97757;
   --accent-soft: rgba(217, 119, 87, 0.16);
-  --amber: #E8A33D;
+  --amber: #e8a33d;
   --amber-soft: rgba(232, 163, 61, 0.16);
-  --error: #E5484D;
+  --error: #e5484d;
   --error-soft: rgba(229, 72, 77, 0.16);
 
   /* Bright, unambiguously yellow-gold — not the orange --amber reads as
      against a dark background. Same gold hue as light mode, just lifted
      in lightness so it pops on dark paper instead of reading orange. */
-  --gold: #FFD666;
-  --gold-bright: #FFE066;
+  --gold: #ffd666;
+  --gold-bright: #ffe066;
   --gold-soft: rgba(255, 214, 102, 0.18);
-  --gold-panel: #4A3A0A;
-  --gold-ink: #FFD666;
+  --gold-panel: #4a3a0a;
+  --gold-ink: #ffd666;
 
   /* Same hue per subject as light mode (blue/green/yellow/purple/red),
      just lifted in lightness/saturation to pop against the dark paper. */
-  --c1: #6FA8FF;   --c1-soft: rgba(111, 168, 255, 0.18);   /* maths — blue */
-  --c2: #4ADE80;   --c2-soft: rgba(74, 222, 128, 0.18);    /* science — green */
-  --c3: #FACC15;   --c3-soft: rgba(250, 204, 21, 0.18);    /* english — yellow */
-  --c4: #B794F6;   --c4-soft: rgba(183, 148, 246, 0.18);   /* physics — purple */
-  --c5: #F87171;   --c5-soft: rgba(248, 113, 113, 0.18);   /* chemistry — red */
-  --c6: #4ADE80;   --c6-soft: rgba(74, 222, 128, 0.18);    /* biology — green */
+  --c1: #6fa8ff;
+  --c1-soft: rgba(111, 168, 255, 0.18); /* maths — blue */
+  --c2: #4ade80;
+  --c2-soft: rgba(74, 222, 128, 0.18); /* science — green */
+  --c3: #facc15;
+  --c3-soft: rgba(250, 204, 21, 0.18); /* english — yellow */
+  --c4: #b794f6;
+  --c4-soft: rgba(183, 148, 246, 0.18); /* physics — purple */
+  --c5: #f87171;
+  --c5-soft: rgba(248, 113, 113, 0.18); /* chemistry — red */
+  --c6: #4ade80;
+  --c6-soft: rgba(74, 222, 128, 0.18); /* biology — green */
 
-  --c1-panel: #15294D;
+  --c1-panel: #15294d;
   --c2-panel: #123321;
-  --c3-panel: #3A2E0A;
-  --c4-panel: #2C1F49;
-  --c5-panel: #3D1712;
+  --c3-panel: #3a2e0a;
+  --c4-panel: #2c1f49;
+  --c5-panel: #3d1712;
   --c6-panel: #123321;
 
-  --c1-bold: #4F8CFF;
-  --c2-bold: #34D07E;
-  --c3-bold: #FFD940;
-  --c4-bold: #A879F5;
-  --c5-bold: #FF6B5C;
-  --c6-bold: #34D07E;
+  --c1-bold: #4f8cff;
+  --c2-bold: #34d07e;
+  --c3-bold: #ffd940;
+  --c4-bold: #a879f5;
+  --c5-bold: #ff6b5c;
+  --c6-bold: #34d07e;
+
+  /* Same glass language, lifted for a dark backdrop: dark translucent
+     panels instead of light ones, a faint white hairline instead of a
+     solid border, and a deeper ambient shadow. */
+  --glass-bg: rgba(30, 30, 32, 0.4);
+  --glass-bg-strong: rgba(40, 40, 42, 0.58);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-highlight: rgba(255, 255, 255, 0.24);
+  --glass-shadow: 0 28px 56px -20px rgba(0, 0, 0, 0.7),
+    0 2px 14px -4px rgba(0, 0, 0, 0.5);
+
+  /* Chrome glass, dark — same "much more see-through" reasoning as light
+     mode, tinted dark-purple to match the wallpaper instead of neutral
+     gray. */
+  --glass-chrome-bg: rgba(24, 16, 34, 0.22);
+  --glass-chrome-blur: 18px;
 }
 
 /* The logo SVG is solid black paths — invert it to read against a dark
@@ -153,26 +223,32 @@
   filter: brightness(0) invert(1);
 }
 
-/* Language track icon: two dedicated, already-colored assets — shown
+/* Language track icon: a dedicated, already-colored asset — shown
    exactly as provided, no brightness/invert tint (unlike every other
-   subject-card-icon img above). Only the one matching the active theme
-   is shown, same show/hide pattern as the header's sun/moon toggle. */
-.subject-card-icon .icon-theme-light,
-.subject-card-icon .icon-theme-dark,
-:root[data-theme="dark"] .subject-card-icon .icon-theme-light,
-:root[data-theme="dark"] .subject-card-icon .icon-theme-dark {
+   subject-card-icon img above). There used to be a separate light-theme
+   variant swapped in via CSS, but the site is permanently dark theme now
+   (no toggle), so that variant was dropped entirely rather than still
+   fetching an SVG nobody ever sees — see js/track-picker.js. */
+.subject-card-icon .icon-precolored {
   filter: none;
 }
-.subject-card-icon .icon-theme-dark { display: none; }
-:root[data-theme="dark"] .subject-card-icon .icon-theme-light { display: none; }
-:root[data-theme="dark"] .subject-card-icon .icon-theme-dark { display: block; }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
+/* No `background` here on purpose — see the .site-bg comment below. Giving
+   <html> its own explicit background (even transparent-looking, even the
+   same color as body's) makes Chromium paint it above .site-bg's
+   negative z-index layer for most of the page, leaving only a sliver near
+   the top showing the animated background and the rest showing flat
+   color — confirmed by isolating the bug in a minimal repro. <body> still
+   gets its own background below (line ~259), which is what actually
+   needs one. */
+html,
+body {
   margin: 0;
   padding: 0;
-  background: var(--paper);
   color: var(--ink);
   font-family: var(--font-serif);
   -webkit-font-smoothing: antialiased;
@@ -186,7 +262,38 @@ body {
   min-height: 100vh;
 }
 
-a { color: inherit; }
+/* Site-wide animated background layer — each page mounts Molten Metal
+   (js/molten-metal.js) into this on load, same on every device. One
+   shared instance per page, fixed to the viewport and sitting behind
+   literally everything (z-index: -1, so
+   even the fixed .site-header "logo bar" — itself translucent glass —
+   shows it through). This is what every glass panel in the site (header,
+   sidebar, chapter rows, picker cards, buttons) is blurring: without it,
+   a glass panel over a flat single color just looks like a flat tinted
+   color, the way macOS's frosted menu bar needs a wallpaper behind it. */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* The page's own background — the "wallpaper" #siteBg's canvas sits on
+   top of. Molten Metal paints full-bleed once it mounts, so this is
+   mainly the instant-paint fallback color visible for the first moment
+   before it does. Deliberately the same dark tone in both light and dark
+   theme — same reasoning as
+   macOS: the desktop wallpaper doesn't change with the menu bar's light/
+   dark appearance, only the translucent chrome sitting on top of it does
+   (see --glass-bg above, which does flip per theme). */
+body {
+  background-color: #150a24;
+}
+
+a {
+  color: inherit;
+}
 
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -202,23 +309,38 @@ a { color: inherit; }
    ========================================================================== */
 .site-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  background: var(--glass-chrome-bg);
+  backdrop-filter: blur(var(--glass-chrome-blur))
+    saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-chrome-blur))
+    saturate(var(--glass-saturate));
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 1px 0 var(--glass-highlight) inset,
+    0 8px 30px -22px rgba(20, 20, 30, 0.4);
   z-index: 100;
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 /* Tinted by app.js (setHeaderAccent) with the same per-subject colors the
    sidebar uses, whenever a subject's curriculum tree is open — so the
-   header itself signals "you're in Maths / Physics / ..." at a glance. */
+   header itself signals "you're in Maths / Physics / ..." at a glance.
+   Stays translucent (backdrop-filter carries over from .site-header
+   above) rather than going flat/opaque, so it reads as a tinted pane of
+   the same glass rather than a different material. */
 .site-header.subject-tinted {
-  background: var(--header-accent-panel);
+  background: color-mix(
+    in srgb,
+    var(--header-accent-panel) 30%,
+    var(--glass-chrome-bg)
+  );
   border-bottom-color: var(--header-accent);
   border-bottom-width: 2px;
 }
@@ -236,25 +358,6 @@ a { color: inherit; }
   display: block;
 }
 
-.theme-toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid var(--line-strong);
-  background: var(--paper-raised);
-  color: var(--ink-soft);
-  cursor: pointer;
-  transition: border-color 0.12s ease, color 0.12s ease;
-}
-.theme-toggle-btn:hover { border-color: var(--accent); color: var(--accent); }
-.theme-toggle-btn svg { width: 15px; height: 15px; }
-.theme-toggle-btn .icon-sun { display: none; }
-:root[data-theme="dark"] .theme-toggle-btn .icon-moon { display: none; }
-:root[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; }
-
 .header-right {
   display: flex;
   align-items: center;
@@ -263,8 +366,10 @@ a { color: inherit; }
 
 .sidebar-toggle {
   display: none;
-  background: none;
-  border: 1px solid var(--line-strong);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
   width: 32px;
   height: 32px;
@@ -272,6 +377,10 @@ a { color: inherit; }
   justify-content: center;
   cursor: pointer;
   color: var(--ink);
+  transition: transform 0.12s ease;
+}
+.sidebar-toggle:hover {
+  transform: translateY(-1px);
 }
 
 /* Auth widget */
@@ -288,9 +397,11 @@ a { color: inherit; }
   align-items: center;
   gap: 8px;
   padding: 4px 10px 4px 4px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--glass-border);
   border-radius: 20px;
-  background: var(--paper-raised);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
 
 .user-chip img {
@@ -329,44 +440,64 @@ a { color: inherit; }
   animation: prototype-pulse 1.8s ease-in-out infinite;
 }
 @keyframes prototype-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .btn {
   font-family: var(--font-mono);
   font-size: 13.5px;
   letter-spacing: 0.03em;
-  padding: 7px 14px;
-  border-radius: var(--radius);
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: var(--paper);
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-tile-border);
+  background: var(--glass-tile-bg);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
+  color: var(--ink);
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease, transform 0.15s ease, background 0.15s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
-.btn:hover { opacity: 0.82; }
-
-.btn-ghost {
-  background: transparent;
-  color: var(--ink);
-  border-color: var(--line-strong);
+.btn:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.28);
 }
 
-.btn-sm { padding: 5px 10px; font-size: 12.5px; }
+.btn-ghost {
+  background: var(--glass-tile-bg);
+  color: var(--ink);
+  border-color: var(--glass-tile-border);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
+}
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 12.5px;
+}
 
 .google-signin-btn {
-  background: var(--paper-raised);
+  background: var(--glass-tile-bg);
   color: var(--ink);
-  border-color: var(--line-strong);
+  border-color: var(--glass-tile-border);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
   gap: 8px;
   font-weight: 500;
 }
-.google-signin-btn:hover { background: var(--accent-soft); }
+.google-signin-btn:hover {
+  background: var(--accent-soft);
+}
 
 .btn:disabled {
   opacity: 0.4;
@@ -388,8 +519,13 @@ a { color: inherit; }
 .sidebar {
   width: var(--sidebar-w);
   flex-shrink: 0;
-  border-right: 1px solid var(--line);
-  background: var(--paper);
+  border-right: 1px solid var(--glass-border);
+  background: var(--glass-chrome-bg);
+  backdrop-filter: blur(var(--glass-chrome-blur))
+    saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-chrome-blur))
+    saturate(var(--glass-saturate));
+  box-shadow: 1px 0 0 var(--glass-highlight) inset;
   height: calc(100vh - var(--header-h));
   position: sticky;
   top: var(--header-h);
@@ -398,8 +534,11 @@ a { color: inherit; }
   transition: background 0.2s ease;
 }
 
+/* Tinted glass while a subject's tree is open — same translucent
+   treatment as the header, so both panes read as one continuous sheet
+   of colored glass rather than a solid sidebar next to a glass header. */
 .sidebar.subject-tinted {
-  background: var(--sidebar-panel);
+  background: color-mix(in srgb, var(--sidebar-panel) 62%, transparent);
 }
 .sidebar.subject-tinted .sidebar-class-header {
   border-bottom-color: var(--line-strong);
@@ -414,13 +553,23 @@ a { color: inherit; }
   padding: 0 20px 10px;
 }
 
-.tree-section { margin-bottom: 2px; }
+.tree-section {
+  margin-bottom: 2px;
+}
 
+/* Chapter selection — floating rounded "pill" rows inset from the sidebar
+   edge (macOS/iOS sidebar convention: Finder, Mail, Settings) rather than
+   edge-to-edge rows with a left accent stripe. Hover/open/active states
+   are all just a tinted pill background at increasing strength, so the
+   selection state reads as "this row is highlighted", not "there's a
+   colored line next to this row". */
 .tree-section-head {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  margin: 2px 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   font-family: var(--font-mono);
   font-size: 15.5px;
@@ -428,9 +577,11 @@ a { color: inherit; }
   letter-spacing: 0.01em;
   color: var(--ink);
   user-select: none;
-  border-left: 3px solid var(--section-accent, transparent);
+  transition: background 0.15s ease;
 }
-.tree-section-head:hover { background: var(--section-accent-soft, var(--accent-soft)); }
+.tree-section-head:hover {
+  background: var(--section-accent-soft, var(--accent-soft));
+}
 .tree-section.open > .tree-section-head {
   background: var(--section-accent-soft, transparent);
 }
@@ -445,63 +596,100 @@ a { color: inherit; }
   transition: transform 0.16s ease;
   color: var(--ink-soft);
 }
-.chevron svg { width: 100%; height: 100%; display: block; }
-.tree-section.open > .tree-section-head .chevron { transform: rotate(90deg); }
+.chevron svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.tree-section.open > .tree-section-head .chevron {
+  transform: rotate(90deg);
+}
 
 .tree-subsections {
   display: none;
   padding-left: 8px;
 }
-.tree-section.open .tree-subsections { display: block; }
+.tree-section.open .tree-subsections {
+  display: block;
+}
 
 .tree-subsection-head {
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 8px 20px 8px 30px;
+  margin: 1px 10px;
+  padding: 8px 14px 8px 22px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
   color: var(--ink);
   user-select: none;
+  transition: background 0.15s ease;
 }
-.tree-subsection-head:hover { background: var(--section-accent-soft, var(--accent-soft)); color: var(--ink); }
+.tree-subsection-head:hover {
+  background: var(--section-accent-soft, var(--accent-soft));
+  color: var(--ink);
+}
 
-.tree-subsection.open > .tree-subsection-head .chevron { transform: rotate(90deg); }
-.tree-subsection .chevron { width: 10px; height: 10px; }
+.tree-subsection.open > .tree-subsection-head .chevron {
+  transform: rotate(90deg);
+}
+.tree-subsection .chevron {
+  width: 10px;
+  height: 10px;
+}
 
 .tree-items {
   display: none;
   padding-left: 8px;
 }
-.tree-subsection.open .tree-items { display: block; }
+.tree-subsection.open .tree-items {
+  display: block;
+}
 
 .tree-item {
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 7px 20px 7px 46px;
+  margin: 1px 10px;
+  padding: 7px 14px 7px 34px;
+  border-radius: var(--radius-md);
   font-size: 15.5px;
   font-weight: 500;
   color: var(--ink);
   cursor: pointer;
-  border-left: 2px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease;
 }
-.tree-item:hover { color: var(--ink); background: var(--section-accent-soft, var(--accent-soft)); }
+.tree-item:hover {
+  color: var(--ink);
+  background: var(--section-accent-soft, var(--accent-soft));
+}
 .tree-item.active {
   color: var(--section-accent, var(--accent));
-  border-left-color: var(--section-accent, var(--accent));
   background: var(--section-accent-soft, var(--accent-soft));
   font-weight: 700;
 }
 
 .tree-item .icon {
-  width: 13px; height: 13px; flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
   opacity: 0.8;
 }
-.tree-item .icon svg { width: 100%; height: 100%; display: block; }
-.tree-item.locked { color: var(--ink-faint); font-weight: 500; }
-.tree-item.locked .icon { color: var(--amber); opacity: 1; }
+.tree-item .icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.tree-item.locked {
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+.tree-item.locked .icon {
+  color: var(--amber);
+  opacity: 1;
+}
 
 /* Done vs pending status mark — used on chapter heads, topic heads, and
    individual notes/tests alike, so progress reads the same way at every
@@ -515,11 +703,26 @@ a { color: inherit; }
   align-items: center;
   justify-content: center;
 }
-.status-check svg { width: 100%; height: 100%; display: block; }
-.status-check .sc-done { display: none; color: var(--section-accent, var(--accent)); }
-.status-check .sc-pending { display: flex; color: var(--ink-faint); opacity: 0.6; }
-.status-check.done .sc-done { display: flex; }
-.status-check.done .sc-pending { display: none; }
+.status-check svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.status-check .sc-done {
+  display: none;
+  color: var(--section-accent, var(--accent));
+}
+.status-check .sc-pending {
+  display: flex;
+  color: var(--ink-faint);
+  opacity: 0.6;
+}
+.status-check.done .sc-done {
+  display: flex;
+}
+.status-check.done .sc-pending {
+  display: none;
+}
 
 .tree-title.done {
   font-weight: 700;
@@ -535,7 +738,7 @@ a { color: inherit; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-faint);
-  padding: 9px 20px 3px 46px;
+  padding: 9px 20px 3px 44px;
 }
 
 /* ==========================================================================
@@ -545,6 +748,15 @@ a { color: inherit; }
   flex: 1;
   min-width: 0;
   padding: 40px 48px 80px;
+  /* Glass, matching the sidebar's own "chrome" glass — the reading
+     surface itself (.note-pane below) is now a dedicated solid-black
+     panel, so .main no longer needs to be an opaque paper fill just to
+     stay readable; it can be the same translucent shell around it. */
+  background: var(--glass-chrome-bg);
+  backdrop-filter: blur(var(--glass-chrome-blur))
+    saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-chrome-blur))
+    saturate(var(--glass-saturate));
 }
 
 .content-wrap {
@@ -552,28 +764,117 @@ a { color: inherit; }
   margin: 0 auto;
 }
 
-/* Empty state */
-.empty-state {
-  max-width: 520px;
-  margin: 10vh auto 0;
-  text-align: center;
+/* A standalone-HTML lesson (see notes.js isHtmlNote / content-wrap-wide)
+   fills most of .main's width next to the sidebar instead of sitting in
+   the usual 760px prose column — the lesson page lays out its own
+   internal reading width, so the outer wrapper just needs to get out of
+   its way. */
+.content-wrap.content-wrap-wide {
+  max-width: 100%;
 }
-.empty-state .glyph {
-  width: 44px; height: 44px;
-  margin: 0 auto 20px;
-  color: var(--line-strong);
+
+/* ==========================================================================
+   TOPIC OVERVIEW — shown in the main pane before any note/test is picked,
+   so the full chapter/topic list is available without opening the
+   sidebar (see js/topic-overview.js). Same glass-tile language as the
+   picker cards and the rest of the site.
+   ========================================================================== */
+.topic-overview-intro {
+  margin-bottom: 28px;
 }
-.empty-state h2 {
+.topic-overview-intro h2 {
   font-family: var(--font-mono);
-  font-size: 17px;
-  letter-spacing: 0.02em;
+  font-size: 20px;
   color: var(--ink);
   margin: 0 0 8px;
 }
-.empty-state p {
+.topic-overview-intro p {
   color: var(--ink-soft);
-  font-size: 16.5px;
+  font-size: 15px;
   line-height: 1.6;
+  margin: 0;
+}
+
+.topic-overview-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.topic-overview-section {
+  background: var(--glass-tile-bg);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
+  border: 1px solid var(--glass-tile-border);
+  border-radius: var(--radius);
+  padding: 20px 22px 22px;
+}
+.topic-overview-section-head {
+  margin-bottom: 14px;
+}
+.topic-overview-section-title {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.topic-overview-subsections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.topic-overview-subsection-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+.topic-overview-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.topic-overview-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-tile-border);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.15s ease;
+}
+.topic-overview-item:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.topic-overview-item .icon {
+  width: 13px;
+  height: 13px;
+  display: flex;
+  flex-shrink: 0;
+}
+.topic-overview-item .icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.topic-overview-item.done {
+  border-color: var(--accent);
+}
+.topic-overview-item.done .topic-overview-item-title {
+  color: var(--accent);
+}
+.topic-overview-item.locked {
+  opacity: 0.6;
 }
 
 /* Note toolbar */
@@ -592,30 +893,40 @@ a { color: inherit; }
   color: var(--ink-faint);
   letter-spacing: 0.03em;
 }
-.breadcrumb .sep { margin: 0 6px; }
+.breadcrumb .sep {
+  margin: 0 6px;
+}
 
-/* Markdown note rendering — graph-paper texture, subtle */
+/* Markdown note rendering — solid black reading surface (deliberately
+   not glass/translucent like .main around it, and not the theme's
+   paper-raised dark-grey either), with a very subtle graph-paper grid.
+   Unlike the old light-theme-oriented version, there's no gradient wash
+   over the top — that was designed to fade toward a light sheen, which
+   just reads as grey against a black surface. */
 .note-pane {
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: 28px 28px;
   background-position: -1px -1px;
-  background-color: var(--paper-raised);
+  background-color: #000;
   border: 1px solid var(--line);
   border-top: 3px solid var(--section-accent, var(--line));
   border-radius: var(--radius);
   padding: 44px 52px;
   position: relative;
 }
-.note-pane::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, var(--paper-raised) 0%, rgba(255,255,255,0.55) 100%);
-  pointer-events: none;
+
+/* A standalone-HTML lesson (see notes.js isHtmlNote) paints its own
+   background/padding inside its sandboxed iframe, so the surrounding
+   pane drops the graph-paper surface and padding rather than framing
+   the iframe's own page inside another page. */
+.note-pane.note-pane-html {
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid var(--line);
+  padding: 0;
+  overflow: hidden;
 }
-.note-pane > * { position: relative; }
 
 .note-body {
   font-family: var(--font-serif);
@@ -654,10 +965,20 @@ a { color: inherit; }
   font-weight: 700;
   margin: 26px 0 10px;
 }
-.note-body p { margin: 0 0 16px; }
-.note-body ul, .note-body ol { margin: 0 0 16px; padding-left: 24px; }
-.note-body li { margin-bottom: 6px; }
-.note-body strong { font-weight: 700; }
+.note-body p {
+  margin: 0 0 16px;
+}
+.note-body ul,
+.note-body ol {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+.note-body li {
+  margin-bottom: 6px;
+}
+.note-body strong {
+  font-weight: 700;
+}
 .note-body code {
   font-family: var(--font-mono);
   background: var(--accent-soft);
@@ -688,14 +1009,17 @@ a { color: inherit; }
   color: var(--ink-soft);
   font-size: 17px;
 }
-.note-body blockquote p:last-child { margin-bottom: 0; }
+.note-body blockquote p:last-child {
+  margin-bottom: 0;
+}
 .note-body table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 20px;
   font-size: 16.5px;
 }
-.note-body th, .note-body td {
+.note-body th,
+.note-body td {
   border: 1px solid var(--line-strong);
   padding: 8px 12px;
   text-align: left;
@@ -726,7 +1050,8 @@ a { color: inherit; }
   border-radius: var(--radius);
 }
 .lock-card .lock-icon {
-  width: 34px; height: 34px;
+  width: 34px;
+  height: 34px;
   color: var(--amber);
   margin: 0 auto 18px;
 }
@@ -741,7 +1066,9 @@ a { color: inherit; }
   line-height: 1.6;
   margin: 0 0 22px;
 }
-.needs-access-card p:last-child { margin-bottom: 0; }
+.needs-access-card p:last-child {
+  margin-bottom: 0;
+}
 .needs-access-note {
   font-family: var(--font-mono);
   font-size: 13.5px !important;
@@ -805,24 +1132,36 @@ a { color: inherit; }
   color: var(--ink);
 }
 
-.mcq-options { display: flex; flex-direction: column; gap: 8px; }
+.mcq-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 .mcq-option {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 11px 15px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   cursor: pointer;
   font-size: 17.5px;
   transition: border-color 0.12s ease, background 0.12s ease;
 }
-.mcq-option:hover { border-color: var(--line-strong); }
+.mcq-option:hover {
+  border-color: var(--line-strong);
+  background: var(--glass-bg-strong);
+}
 .mcq-option.selected {
   border-color: var(--accent);
   background: var(--accent-soft);
 }
-.mcq-option input { accent-color: var(--accent); }
+.mcq-option input {
+  accent-color: var(--accent);
+}
 
 /* Post-submit grading states */
 .mcq-option.correct-answer {
@@ -846,8 +1185,10 @@ a { color: inherit; }
   width: 16px;
   height: 16px;
   background: var(--accent);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8.5l3 3 7-7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8.5l3 3 7-7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8.5l3 3 7-7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8.5l3 3 7-7' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center/contain no-repeat;
 }
 .mcq-option.wrong-answer .mcq-option-mark::after {
   content: "";
@@ -855,8 +1196,10 @@ a { color: inherit; }
   width: 16px;
   height: 16px;
   background: var(--error);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 4l8 8M12 4l-8 8' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 4l8 8M12 4l-8 8' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 4l8 8M12 4l-8 8' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")
+    center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 4l8 8M12 4l-8 8' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")
+    center/contain no-repeat;
 }
 
 .mcq-feedback {
@@ -869,9 +1212,15 @@ a { color: inherit; }
   font-family: var(--font-mono);
   font-size: 14px;
 }
-.mcq-feedback.correct { color: var(--accent); }
-.mcq-feedback.incorrect { color: var(--error); }
-.mcq-feedback.skipped { color: var(--ink-faint); }
+.mcq-feedback.correct {
+  color: var(--accent);
+}
+.mcq-feedback.incorrect {
+  color: var(--error);
+}
+.mcq-feedback.skipped {
+  color: var(--ink-faint);
+}
 
 .short-answer {
   width: 100%;
@@ -886,14 +1235,18 @@ a { color: inherit; }
   color: var(--ink);
   resize: vertical;
 }
-.short-answer:focus { border-color: var(--accent); }
+.short-answer:focus {
+  border-color: var(--accent);
+}
 .short-answer:disabled {
   opacity: 0.7;
   cursor: not-allowed;
   background: var(--line);
 }
 
-.mcq-option:has(input:disabled) { cursor: default; }
+.mcq-option:has(input:disabled) {
+  cursor: default;
+}
 
 .question-topic {
   color: var(--accent);
@@ -906,7 +1259,9 @@ a { color: inherit; }
   font-size: 14.5px;
   color: var(--ink-soft);
 }
-.mcq-correct-line strong { color: var(--ink); }
+.mcq-correct-line strong {
+  color: var(--ink);
+}
 
 .math-preview {
   margin-top: 8px;
@@ -957,8 +1312,12 @@ a { color: inherit; }
   font-size: 13.5px;
   color: var(--ink-soft);
 }
-.submit-status.success { color: var(--accent); }
-.submit-status.error { color: var(--error); }
+.submit-status.success {
+  color: var(--accent);
+}
+.submit-status.error {
+  color: var(--error);
+}
 
 .result-banner {
   padding: 14px 18px;
@@ -970,9 +1329,21 @@ a { color: inherit; }
   align-items: center;
   gap: 10px;
 }
-.result-banner.success { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent); }
-.result-banner.error { background: var(--error-soft); color: var(--error); border: 1px solid var(--error); }
-.result-banner.warn { background: var(--amber-soft); color: var(--amber); border: 1px solid var(--amber); }
+.result-banner.success {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.result-banner.error {
+  background: var(--error-soft);
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+.result-banner.warn {
+  background: var(--amber-soft);
+  color: var(--amber);
+  border: 1px solid var(--amber);
+}
 .result-banner.notice {
   background: var(--paper-raised);
   color: var(--ink-soft);
@@ -984,7 +1355,9 @@ a { color: inherit; }
 .answer-key-toggle {
   margin-top: 4px;
 }
-.answer-key-toggle.open svg { transform: rotate(90deg); }
+.answer-key-toggle.open svg {
+  transform: rotate(90deg);
+}
 .answer-key-pane {
   margin-top: 16px;
   border: 1px solid var(--line);
@@ -993,7 +1366,9 @@ a { color: inherit; }
   padding: 32px 36px;
   background: var(--paper-raised);
 }
-.answer-key-pane .note-body { font-size: 18px; }
+.answer-key-pane .note-body {
+  font-size: 18px;
+}
 .answer-key-loading {
   font-family: var(--font-mono);
   font-size: 13.5px;
@@ -1001,20 +1376,21 @@ a { color: inherit; }
 }
 
 /* Toolbar buttons on note pages */
-.note-toolbar .actions { display: flex; gap: 8px; }
+.note-toolbar .actions {
+  display: flex;
+  gap: 8px;
+}
 
 /* ==========================================================================
    HERO LANDING
    ========================================================================== */
 /* Standalone marketing splash at index.html — the site's actual front
-   door, separate from the class-picker app (classes.html). Full-page
-   CSS gradient (no photo asset needed), big white wordmark, short pitch,
-   and two CTAs (browse free / sign in). No site-header sits above this
-   page, so no header offset is needed here. Static wavy mesh gradient —
-   five overlapping elliptical washes (pink, violet, magenta, purple,
-   rose) staggered diagonally across a dark plum base so the colors
-   flow into each other like a wave rather than reading as separate
-   blobs — plus a faint grain layer for texture. No animation. */
+   door, separate from the class-picker app (classes.html). Big white
+   wordmark, short pitch, and two CTAs (browse free / sign in). No
+   site-header sits above this page, so no header offset is needed here.
+   Background is the shared #siteBg layer (see .site-bg + js/site-
+   background.js) showing straight through — .hero-landing itself paints
+   no background of its own, it's just the content sitting on top. */
 .hero-landing {
   min-height: 100vh; /* fallback for older browsers */
   min-height: 100svh; /* smallest stable viewport — never leaves a gap below the fold on iOS/Android when the browser chrome shows */
@@ -1027,19 +1403,6 @@ a { color: inherit; }
   padding: 60px 24px;
   position: relative;
   overflow: hidden;
-  background-color: #0b0710;
-  background-repeat: no-repeat;
-  background-image:
-    radial-gradient(ellipse 80% 55% at 8% 12%, rgba(236, 72, 153, 0.5) 0%, rgba(236, 72, 153, 0.22) 35%, transparent 68%),
-    radial-gradient(ellipse 75% 55% at 92% 8%, rgba(168, 85, 247, 0.45) 0%, rgba(168, 85, 247, 0.2) 35%, transparent 68%),
-    radial-gradient(ellipse 90% 60% at 50% 48%, rgba(219, 39, 119, 0.4) 0%, rgba(219, 39, 119, 0.18) 35%, transparent 70%),
-    radial-gradient(ellipse 80% 55% at 12% 92%, rgba(244, 63, 94, 0.38) 0%, rgba(244, 63, 94, 0.17) 35%, transparent 68%),
-    radial-gradient(ellipse 80% 55% at 88% 96%, rgba(124, 58, 237, 0.45) 0%, rgba(124, 58, 237, 0.2) 35%, transparent 68%),
-    linear-gradient(180deg, #0b0710 0%, #150a1a 50%, #1a0b16 100%);
-}
-
-body.landing-page {
-  background: #0b0710;
 }
 
 .hero-landing::before {
@@ -1053,7 +1416,10 @@ body.landing-page {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.hero-badge, .hero-logo, .hero-desc, .hero-actions {
+.hero-badge,
+.hero-logo,
+.hero-desc,
+.hero-actions {
   position: relative;
   z-index: 2;
 }
@@ -1070,7 +1436,7 @@ body.landing-page {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85), 0 0 14px rgba(0, 0, 0, 0.6);
   background: rgba(0, 0, 0, 0.35);
   box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
@@ -1081,15 +1447,14 @@ body.landing-page {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #FFFFFF;
-  box-shadow: 0 0 8px #FFFFFF;
+  background: #ffffff;
+  box-shadow: 0 0 8px #ffffff;
 }
 
 .hero-logo {
   width: min(460px, 62vw);
   height: auto;
-  filter: brightness(0) invert(1)
-    drop-shadow(0 4px 14px rgba(0, 0, 0, 0.75))
+  filter: brightness(0) invert(1) drop-shadow(0 4px 14px rgba(0, 0, 0, 0.75))
     drop-shadow(0 0 30px rgba(255, 255, 255, 0.55))
     drop-shadow(0 0 60px rgba(255, 255, 255, 0.3));
   margin-bottom: 30px;
@@ -1101,7 +1466,7 @@ body.landing-page {
   font-size: 19px;
   font-weight: 700;
   line-height: 1.65;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 0 16px rgba(0, 0, 0, 0.7);
   margin: 0 0 38px;
 }
@@ -1115,32 +1480,53 @@ body.landing-page {
 
 .hero-btn {
   padding: 15px 30px;
-  border-radius: 10px;
+  border-radius: 999px;
   font-family: var(--font-mono);
   font-weight: 600;
   font-size: 14.5px;
   cursor: pointer;
   border: 1px solid transparent;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur))
+    saturate(var(--glass-saturate));
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
+/* Bright frosted glass rather than flat opaque white — keeps its role as
+   the loudest thing on the page (still the highest-contrast element
+   here) while staying glass like everything else on the site. */
 .hero-btn-primary {
-  background: #FFFFFF;
-  color: #14110D;
-  box-shadow: 0 0 24px rgba(255, 255, 255, 0.55), 0 10px 26px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.82);
+  color: #14110d;
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.45),
+    0 10px 26px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
-.hero-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 0 32px rgba(255, 255, 255, 0.75), 0 12px 30px rgba(0, 0, 0, 0.4); }
+.hero-btn-primary:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0 32px rgba(255, 255, 255, 0.65), 0 12px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
 
 .hero-btn-ghost {
-  background: rgba(255, 255, 255, 0.06);
-  color: #F5F4EE;
-  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: #f5f4ee;
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
-.hero-btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
+.hero-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
 
 @media (max-width: 640px) {
-  .hero-logo { width: min(320px, 70vw); }
-  .hero-desc { font-size: 15.5px; }
+  .hero-logo {
+    width: min(320px, 70vw);
+  }
+  .hero-desc {
+    font-size: 15.5px;
+  }
 }
 
 /* ==========================================================================
@@ -1148,7 +1534,9 @@ body.landing-page {
    ========================================================================== */
 /* Logo/brand is always clickable as a "go home" shortcut, regardless of view */
 
-.hidden { display: none !important; }
+.hidden {
+  display: none !important;
+}
 
 #pickerRoot,
 #yearRoot,
@@ -1156,6 +1544,16 @@ body.landing-page {
 #trackRoot {
   margin-top: var(--header-h);
   min-height: calc(100vh - var(--header-h));
+}
+
+/* Progress page shows the animated wallpaper straight through now (no
+   more opaque reading surface) — its rows/cards/panels below all carry
+   their own glass-tile background instead, same as the rest of the
+   site. */
+#progressRoot {
+  margin-top: var(--header-h);
+  min-height: calc(100vh - var(--header-h));
+  padding-bottom: 40px;
 }
 
 .class-picker {
@@ -1180,27 +1578,41 @@ body.landing-page {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--amber);
-  background: var(--amber-soft);
+  background: color-mix(in srgb, var(--amber-soft) 70%, var(--glass-bg));
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
   padding: 6px 13px;
   border-radius: 20px;
   margin-bottom: 22px;
 }
-.class-picker-eyebrow svg { width: 14px; height: 14px; }
+.class-picker-eyebrow svg {
+  width: 14px;
+  height: 14px;
+}
 
+/* Hardcoded light colors rather than the theme's --ink (which flips dark
+   in light theme) — this text sits directly on the #siteBg wallpaper,
+   which (like the landing hero) is always dark regardless of the light/
+   dark toggle. Only text INSIDE a glass card should follow the theme. */
 .class-picker-intro h1 {
   font-family: var(--font-mono);
   font-size: 38.5px;
   font-weight: 700;
   letter-spacing: -0.015em;
   margin: 0 0 14px;
-  color: var(--ink);
+  color: #f5f4ee;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Same wallpaper reasoning as .class-picker-intro h1 above — hardcoded
+   light color (softer than the heading) instead of theme-relative --ink-soft. */
 .class-picker-intro p {
   font-size: 19px;
   line-height: 1.6;
-  color: var(--ink-soft);
+  color: rgba(245, 244, 238, 0.78);
   margin: 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Flexbox rather than CSS Grid on purpose: with flex-wrap, each wrapped
@@ -1214,17 +1626,54 @@ body.landing-page {
   gap: 18px;
 }
 
+/* Picker cards (class/subject/track/exam) — no more per-subject/per-class
+   identity colors. Every card looks identical at rest (one neutral glass
+   recipe) and gets the same colorful edge-glow on hover, driven by cursor
+   position via js/border-glow.js. --card-accent/--card-accent-soft still
+   exist (used by .class-card-meta's pill) but are now always the site's
+   one --accent, not a rotating or subject-keyed color. */
 .class-card {
-  --card-accent: var(--c1);
-  --card-accent-soft: var(--c1-soft);
+  --card-accent: var(--accent);
+  --card-accent-soft: var(--accent-soft);
+  --card-glass-bg: rgba(255, 255, 255, 0.2);
+
+  /* Border Glow hover state (js/border-glow.js drives --edge-proximity
+     and --cursor-angle per pointer move; everything else here — the
+     gradient palette and glow color — is fixed, so it's plain CSS rather
+     than JS-computed like the original React component). */
+  --edge-proximity: 0;
+  --cursor-angle: 45deg;
+  --edge-sensitivity: 30;
+  --color-sensitivity: calc(var(--edge-sensitivity) + 20);
+  --cone-spread: 25;
+  --glow-padding: 40px;
+  --gradient-one: radial-gradient(at 80% 55%, #c084fc 0px, transparent 50%);
+  --gradient-two: radial-gradient(at 69% 34%, #f472b6 0px, transparent 50%);
+  --gradient-three: radial-gradient(at 8% 6%, #38bdf8 0px, transparent 50%);
+  --gradient-four: radial-gradient(at 41% 38%, #c084fc 0px, transparent 50%);
+  --gradient-five: radial-gradient(at 86% 85%, #f472b6 0px, transparent 50%);
+  --gradient-six: radial-gradient(at 82% 18%, #38bdf8 0px, transparent 50%);
+  --gradient-seven: radial-gradient(at 51% 4%, #f472b6 0px, transparent 50%);
+  --gradient-base: linear-gradient(#c084fc 0 100%);
+  --glow-color: hsl(40deg 80% 80% / 100%);
+  --glow-color-60: hsl(40deg 80% 80% / 60%);
+  --glow-color-50: hsl(40deg 80% 80% / 50%);
+  --glow-color-40: hsl(40deg 80% 80% / 40%);
+  --glow-color-30: hsl(40deg 80% 80% / 30%);
+  --glow-color-20: hsl(40deg 80% 80% / 20%);
+  --glow-color-10: hsl(40deg 80% 80% / 10%);
+
   position: relative;
+  isolation: isolate;
   flex: 0 1 170px;
   max-width: 190px;
   min-width: 150px;
   aspect-ratio: 3 / 4;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--paper-raised);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(15px) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(15px) saturate(var(--glass-saturate));
   cursor: pointer;
   padding: 26px 18px 22px;
   display: flex;
@@ -1233,36 +1682,139 @@ body.landing-page {
   justify-content: center;
   text-align: center;
   gap: 10px;
-  box-shadow: 0 6px 16px -14px rgba(15, 17, 15, 0.4);
-  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.2s ease, box-shadow 0.3s ease, background 0.25s ease;
   font-family: inherit;
 }
 
-/* Cycle the 6-color palette across the 5 class cards for visual variety */
-.class-card:nth-child(1) { --card-accent: var(--c1); --card-accent-soft: var(--c1-soft); }
-.class-card:nth-child(2) { --card-accent: var(--c2); --card-accent-soft: var(--c2-soft); }
-.class-card:nth-child(3) { --card-accent: var(--c3); --card-accent-soft: var(--c3-soft); }
-.class-card:nth-child(4) { --card-accent: var(--c4); --card-accent-soft: var(--c4-soft); }
-.class-card:nth-child(5) { --card-accent: var(--c5); --card-accent-soft: var(--c5-soft); }
-
+/* Colored mesh-gradient border ring — only shows in the border strip
+   (padding-box is covered by --card-glass-bg, border-box shows the
+   gradients), faded in near the cursor via the conic-gradient mask. */
 .class-card::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  border-radius: 6px 6px 0 0;
-  background: var(--card-accent);
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  border: 1px solid transparent;
+  background: linear-gradient(var(--card-glass-bg) 0 100%) padding-box,
+    linear-gradient(rgb(255 255 255 / 0%) 0% 100%) border-box,
+    var(--gradient-one) border-box, var(--gradient-two) border-box,
+    var(--gradient-three) border-box, var(--gradient-four) border-box,
+    var(--gradient-five) border-box, var(--gradient-six) border-box,
+    var(--gradient-seven) border-box, var(--gradient-base) border-box;
+  opacity: calc(
+    (var(--edge-proximity) - var(--color-sensitivity)) /
+      (100 - var(--color-sensitivity))
+  );
+  mask-image: conic-gradient(
+    from var(--cursor-angle) at center,
+    black calc(var(--cone-spread) * 1%),
+    transparent calc((var(--cone-spread) + 15) * 1%),
+    transparent calc((100 - var(--cone-spread) - 15) * 1%),
+    black calc((100 - var(--cone-spread)) * 1%)
+  );
+  transition: opacity 0.25s ease-out;
+}
+
+/* Colored mesh-gradient fill, blended softly near the cursor-side edges. */
+.class-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  background: var(--gradient-one) padding-box, var(--gradient-two) padding-box,
+    var(--gradient-three) padding-box, var(--gradient-four) padding-box,
+    var(--gradient-five) padding-box, var(--gradient-six) padding-box,
+    var(--gradient-seven) padding-box, var(--gradient-base) padding-box;
+  mask-image: linear-gradient(to bottom, black, black),
+    radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%),
+    radial-gradient(ellipse at 66% 66%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 33% 33%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 66% 33%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 33% 66%, black 5%, transparent 40%),
+    conic-gradient(
+      from var(--cursor-angle) at center,
+      transparent 5%,
+      black 15%,
+      black 85%,
+      transparent 95%
+    );
+  mask-composite: subtract, add, add, add, add, add;
+  opacity: calc(
+    0.5 * (var(--edge-proximity) - var(--color-sensitivity)) /
+      (100 - var(--color-sensitivity))
+  );
+  mix-blend-mode: soft-light;
+  transition: opacity 0.25s ease-out;
+}
+
+.class-card:not(:hover)::before,
+.class-card:not(:hover)::after,
+.class-card:not(:hover) > .edge-light {
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+
+/* Outer glow ring — the real DOM span js/border-glow.js appends to each
+   card (::before/::after are already spoken for above), positioned past
+   the card's own edge by --glow-padding so the glow visibly radiates
+   outward, not just inside the border. */
+.class-card > .edge-light {
+  content: "";
+  position: absolute;
+  inset: calc(var(--glow-padding) * -1);
+  pointer-events: none;
+  z-index: -1;
+  border-radius: inherit;
+  mask-image: conic-gradient(
+    from var(--cursor-angle) at center,
+    black 2.5%,
+    transparent 10%,
+    transparent 90%,
+    black 97.5%
+  );
+  opacity: calc(
+    (var(--edge-proximity) - var(--edge-sensitivity)) /
+      (100 - var(--edge-sensitivity))
+  );
+  mix-blend-mode: plus-lighter;
+  transition: opacity 0.25s ease-out;
+}
+.class-card > .edge-light::before {
+  content: "";
+  position: absolute;
+  inset: var(--glow-padding);
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--glow-color),
+    inset 0 0 1px 0 var(--glow-color-60), inset 0 0 3px 0 var(--glow-color-50),
+    inset 0 0 6px 0 var(--glow-color-40), inset 0 0 15px 0 var(--glow-color-30),
+    inset 0 0 25px 2px var(--glow-color-20),
+    inset 0 0 50px 2px var(--glow-color-10), 0 0 1px 0 var(--glow-color-60),
+    0 0 3px 0 var(--glow-color-50), 0 0 6px 0 var(--glow-color-40),
+    0 0 15px 0 var(--glow-color-30), 0 0 25px 2px var(--glow-color-20),
+    0 0 50px 2px var(--glow-color-10);
 }
 
 .class-card:not(.disabled):not(:disabled):not(.unready):hover {
-  transform: translateY(-4px);
-  border-color: var(--card-accent);
-  box-shadow: 0 16px 32px -14px color-mix(in srgb, var(--card-accent) 55%, transparent), 0 4px 10px -6px rgba(15, 17, 15, 0.25);
+  transform: translateY(-6px) scale(1.015);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.28);
 }
 
-.class-card:not(.disabled):not(:disabled):not(.unready):hover .subject-card-icon img,
-.class-card:not(.disabled):not(:disabled):not(.unready):hover .subject-card-icon svg,
-.class-card:not(.disabled):not(:disabled):not(.unready):hover .exam-card-icon img {
+.class-card:not(.disabled):not(:disabled):not(.unready):hover
+  .subject-card-icon
+  img,
+.class-card:not(.disabled):not(:disabled):not(.unready):hover
+  .subject-card-icon
+  svg,
+.class-card:not(.disabled):not(:disabled):not(.unready):hover
+  .exam-card-icon
+  img {
   transform: scale(1.1);
 }
 
@@ -1271,17 +1823,51 @@ body.landing-page {
   cursor: not-allowed;
   position: relative;
   overflow: hidden;
-  border-width: 2px;
+  border-width: 1.5px;
   border-color: var(--gold-bright);
-  background: linear-gradient(155deg, var(--gold-soft) 0%, var(--gold-panel) 130%);
-  box-shadow: 0 0 0 1px var(--gold-bright), 0 14px 30px -16px rgba(240, 185, 11, 0.55);
+  background: color-mix(in srgb, var(--gold-soft) 50%, var(--glass-bg));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur))
+    saturate(var(--glass-saturate));
+  box-shadow: 0 0 0 1px var(--gold-bright),
+    0 14px 30px -16px rgba(240, 185, 11, 0.55),
+    inset 0 1px 0 var(--glass-highlight);
   animation: premiumGlow 3.6s ease-in-out infinite;
 }
+/* The premium/IELTS card keeps its own always-on gold shimmer bar rather
+   than the cursor-tracking mesh-gradient ring every other card now uses —
+   reset the shape back to a plain top bar (the new base ::before is a
+   full-ring inset:0 layer with a cursor-angle mask, which would otherwise
+   leak through here) and hide the hover-only mesh fill/outer glow layers
+   entirely, since this card doesn't respond to hover. */
 .class-card.disabled::before,
 .class-card:disabled::before {
-  background: linear-gradient(90deg, var(--gold), var(--gold-bright), var(--gold));
+  position: absolute;
+  inset: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border: none;
+  border-radius: 20px 20px 0 0;
+  mask-image: none;
+  -webkit-mask-image: none;
+  background: linear-gradient(
+    90deg,
+    var(--gold),
+    var(--gold-bright),
+    var(--gold)
+  );
   background-size: 200% 100%;
+  opacity: 1;
   animation: premiumBar 3.6s linear infinite;
+  transition: none;
+}
+.class-card.disabled::after,
+.class-card:disabled::after,
+.class-card.disabled > .edge-light,
+.class-card:disabled > .edge-light {
+  display: none;
 }
 .class-card.disabled:hover,
 .class-card:disabled:hover {
@@ -1310,31 +1896,54 @@ body.landing-page {
 }
 
 @keyframes premiumBar {
-  0% { background-position: 0% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 @keyframes premiumGlow {
-  0%, 100% { box-shadow: 0 0 0 1px var(--gold-bright), 0 14px 30px -16px rgba(240, 185, 11, 0.55); }
-  50% { box-shadow: 0 0 0 2px var(--gold-bright), 0 16px 34px -14px rgba(240, 185, 11, 0.8); }
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px var(--gold-bright),
+      0 14px 30px -16px rgba(240, 185, 11, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 2px var(--gold-bright),
+      0 16px 34px -14px rgba(240, 185, 11, 0.8);
+  }
 }
 @keyframes premiumSparkle {
-  0%, 100% { opacity: 0.7; transform: scale(0.9) rotate(0deg); }
-  50% { opacity: 1; transform: scale(1.15) rotate(15deg); }
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(0.9) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(15deg);
+  }
 }
 
+/* Cards sit on the fixed rgba(255,255,255,0.2) glass fill over the
+   always-dark Molten Metal wallpaper — unlike most of the site's text,
+   this isn't theme-relative (var(--ink) would go near-black in light
+   theme and be unreadable here), so it's hardcoded light, matching what
+   --ink already resolves to in dark theme. */
 .class-card-numeral {
   font-family: var(--font-mono);
   font-size: 49.5px;
   font-weight: 700;
   letter-spacing: 0.01em;
-  color: var(--ink);
+  color: #f5f4ee;
   line-height: 1;
 }
 
 .class-card-name {
   font-size: 17px;
   font-weight: 600;
-  color: var(--ink-soft);
+  color: #b8b5a8;
 }
 
 .class-card-meta {
@@ -1349,15 +1958,9 @@ body.landing-page {
   margin-top: 4px;
 }
 
-/* Exam-track cards (JEE / NEET) — visually distinguished from grade cards
-   with a target icon and a slightly bolder ink-colored top bar. */
-.exam-card {
-  --card-accent: var(--gold-ink);
-  --card-accent-soft: var(--gold-soft);
-}
-.exam-card::before {
-  background: linear-gradient(90deg, var(--gold), var(--gold-bright));
-}
+/* Exam-track cards (JEE / NEET) — same neutral glass + edge-glow
+   treatment as every other card now; only the icon/numeral sizing here
+   is exam-specific. */
 .exam-card-icon {
   width: 26px;
   height: 26px;
@@ -1366,7 +1969,12 @@ body.landing-page {
   justify-content: center;
 }
 .exam-card-icon svg,
-.exam-card-icon img { width: 100%; height: 100%; display: block; transition: transform 0.2s ease; }
+.exam-card-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.2s ease;
+}
 .exam-numeral {
   font-size: 29.5px !important;
   letter-spacing: 0.04em;
@@ -1375,6 +1983,9 @@ body.landing-page {
 /* ==========================================================================
    SUBJECT PICKER (icon cards, shown after choosing a class)
    ========================================================================== */
+/* Same wallpaper reasoning as .class-picker-intro above — this button
+   sits directly on the always-dark #siteBg, so it needs hardcoded light
+   colors rather than the theme-relative --ink-faint/--ink. */
 .picker-back {
   display: flex;
   align-items: center;
@@ -1388,12 +1999,20 @@ body.landing-page {
   font-family: var(--font-mono);
   font-size: 14px;
   letter-spacing: 0.03em;
-  color: var(--ink-faint);
+  color: rgba(245, 244, 238, 0.55);
 }
-.picker-back:hover { color: var(--ink); }
-.picker-back svg { width: 13px; height: 13px; flex-shrink: 0; }
+.picker-back:hover {
+  color: rgba(245, 244, 238, 0.92);
+}
+.picker-back svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
 
-.subject-picker .class-picker-intro { margin-bottom: 48px; }
+.subject-picker .class-picker-intro {
+  margin-bottom: 48px;
+}
 
 .subject-grid {
   max-width: 900px;
@@ -1401,7 +2020,7 @@ body.landing-page {
 }
 
 .subject-card {
-  --card-accent: var(--ink);
+  --card-accent: var(--accent);
   --card-accent-soft: var(--accent-soft);
   flex: 0 1 190px;
   max-width: 210px;
@@ -1409,14 +2028,19 @@ body.landing-page {
   aspect-ratio: 4 / 4.4;
   gap: 16px;
 }
-.subject-card::before { display: none; }
-.subject-card:hover { border-color: var(--ink); }
-.subject-card.unready:hover { border-color: var(--line); transform: none; box-shadow: none; cursor: default; }
+.subject-card.unready:hover {
+  border-color: var(--line);
+  transform: none;
+  box-shadow: none;
+  cursor: default;
+}
 /* Dim only the label, not the whole card — a parent's opacity would
    also wash out the icon (an opaque child can't opt back out of an
    ancestor's opacity), and subject icons should stay jet black in
    light mode / bright white in dark mode even while "coming soon". */
-.subject-card.unready .class-card-name { opacity: 0.72; }
+.subject-card.unready .class-card-name {
+  opacity: 0.72;
+}
 
 .subject-card-icon {
   width: 74px;
@@ -1426,7 +2050,12 @@ body.landing-page {
   justify-content: center;
 }
 .subject-card-icon svg,
-.subject-card-icon img { width: 100%; height: 100%; display: block; transition: transform 0.2s ease; }
+.subject-card-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.2s ease;
+}
 
 /* This icon's own artwork has more internal whitespace than its
    siblings, so it renders visually smaller at the same box size —
@@ -1440,7 +2069,7 @@ body.landing-page {
   font-family: var(--font-mono);
   font-weight: 600;
   font-size: 17px;
-  color: var(--ink);
+  color: #f5f4ee;
 }
 
 .subject-card .class-card-meta {
@@ -1470,8 +2099,14 @@ body.landing-page {
   color: var(--ink-faint);
   text-align: left;
 }
-.sidebar-back:hover { color: var(--ink); }
-.sidebar-back svg { width: 12px; height: 12px; flex-shrink: 0; }
+.sidebar-back:hover {
+  color: var(--ink);
+}
+.sidebar-back svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
 
 .sidebar-class-header {
   display: flex;
@@ -1537,7 +2172,9 @@ body.landing-page {
   color: var(--ink-soft);
   margin-bottom: 4px;
 }
-.progress-row-count { color: var(--ink-faint); }
+.progress-row-count {
+  color: var(--ink-faint);
+}
 .progress-bar-track {
   width: 100%;
   height: 5px;
@@ -1574,16 +2211,30 @@ body.landing-page {
   font-weight: 500;
   color: var(--ink-soft);
   text-align: left;
+  transition: background 0.15s ease, color 0.15s ease;
 }
-.subject-pill svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.75; }
-.subject-pill:hover { background: var(--accent-soft); color: var(--ink); }
+.subject-pill svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+.subject-pill:hover {
+  background: var(--glass-bg-strong);
+  border-color: var(--glass-border);
+  color: var(--ink);
+}
 .subject-pill.active {
   background: var(--ink);
   color: var(--paper);
   border-color: var(--ink);
 }
-.subject-pill.active svg { opacity: 1; }
-.subject-pill.unready { color: var(--ink-faint); }
+.subject-pill.active svg {
+  opacity: 1;
+}
+.subject-pill.unready {
+  color: var(--ink-faint);
+}
 .subject-pill .soon-tag {
   margin-left: auto;
   font-size: 10px;
@@ -1609,11 +2260,15 @@ body.landing-page {
   text-align: center;
 }
 .coming-soon-icon {
-  width: 46px; height: 46px;
+  width: 46px;
+  height: 46px;
   margin: 0 auto 22px;
   color: var(--amber);
 }
-.coming-soon-icon svg { width: 100%; height: 100%; }
+.coming-soon-icon svg {
+  width: 100%;
+  height: 100%;
+}
 .coming-soon h2 {
   font-family: var(--font-mono);
   font-size: 22.5px;
@@ -1626,14 +2281,22 @@ body.landing-page {
   line-height: 1.65;
   margin: 0;
 }
-.coming-soon p strong { color: var(--ink); }
+.coming-soon p strong {
+  color: var(--ink);
+}
 
 /* ==========================================================================
    PROGRESS PAGE
    ========================================================================== */
-.progress-link-btn { display: flex; align-items: center; gap: 6px; }
+.progress-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
-.progress-page { max-width: 760px; }
+.progress-page {
+  max-width: 760px;
+}
 .progress-page-body {
   margin-top: 8px;
 }
@@ -1655,7 +2318,9 @@ body.landing-page {
   line-height: 1.6;
 }
 
-.progress-subject-group { margin-bottom: 32px; }
+.progress-subject-group {
+  margin-bottom: 32px;
+}
 .progress-subject-title {
   font-family: var(--font-mono);
   font-size: 14.5px;
@@ -1672,7 +2337,9 @@ body.landing-page {
   gap: 8px;
 }
 
-.chapter-progress-group { margin-bottom: 40px; }
+.chapter-progress-group {
+  margin-bottom: 40px;
+}
 .chapter-progress-body {
   display: flex;
   flex-direction: column;
@@ -1687,14 +2354,18 @@ body.landing-page {
   color: var(--section-accent, var(--accent));
   margin-bottom: 10px;
 }
-.chapter-progress-subject { margin-bottom: 14px; }
+.chapter-progress-subject {
+  margin-bottom: 14px;
+}
 .chapter-progress-subject-title {
   font-size: 14.5px;
   font-weight: 600;
   color: var(--ink);
   margin-bottom: 8px;
 }
-.chapter-progress-row { margin-bottom: 10px; }
+.chapter-progress-row {
+  margin-bottom: 10px;
+}
 .chapter-progress-label {
   display: flex;
   justify-content: space-between;
@@ -1714,15 +2385,21 @@ body.landing-page {
   gap: 16px;
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--glass-tile-border);
   border-radius: var(--radius);
-  background: var(--paper-raised);
+  background: var(--glass-tile-bg);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
   font-family: inherit;
   text-align: left;
   cursor: pointer;
-  transition: border-color 0.12s ease;
+  transition: border-color 0.12s ease, background 0.12s ease;
 }
-.progress-test-row:hover, .progress-test-row.expanded { border-color: var(--accent); }
+.progress-test-row:hover,
+.progress-test-row.expanded {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.28);
+}
 .progress-test-name {
   font-size: 16.5px;
   color: var(--ink);
@@ -1746,9 +2423,18 @@ body.landing-page {
   color: var(--ink-soft);
   background: var(--line);
 }
-.progress-test-score.success { color: var(--accent); background: var(--accent-soft); }
-.progress-test-score.warn { color: var(--amber); background: var(--amber-soft); }
-.progress-test-score.error { color: var(--error); background: var(--error-soft); }
+.progress-test-score.success {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.progress-test-score.warn {
+  color: var(--amber);
+  background: var(--amber-soft);
+}
+.progress-test-score.error {
+  color: var(--error);
+  background: var(--error-soft);
+}
 
 .progress-theory-badge {
   font-family: var(--font-mono);
@@ -1757,29 +2443,53 @@ body.landing-page {
   padding: 2px 8px;
   border-radius: 20px;
 }
-.progress-theory-badge.pending { background: var(--amber-soft); color: var(--amber); }
-.progress-theory-badge.graded { background: var(--accent-soft); color: var(--accent); }
+.progress-theory-badge.pending {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+.progress-theory-badge.graded {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
 
 .progress-report-panel {
   margin: -2px 0 4px;
   padding: 18px 16px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--glass-tile-border);
   border-top: none;
   border-radius: 0 0 var(--radius) var(--radius);
-  background: var(--paper);
+  background: var(--glass-tile-bg);
+  backdrop-filter: blur(var(--glass-tile-blur));
+  -webkit-backdrop-filter: blur(var(--glass-tile-blur));
 }
-.progress-report-panel.hidden { display: none; }
+.progress-report-panel.hidden {
+  display: none;
+}
 
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 860px) {
-  .sidebar-toggle { display: flex; }
-  .class-card { flex-basis: 140px; max-width: 160px; }
-  .subject-card { flex-basis: 160px; max-width: 180px; }
-  .class-picker { padding: 40px 20px 70px; }
-  .class-picker-intro { margin-bottom: 40px; }
-  .class-picker-intro h1 { font-size: 29.5px; }
+  .sidebar-toggle {
+    display: flex;
+  }
+  .class-card {
+    flex-basis: 140px;
+    max-width: 160px;
+  }
+  .subject-card {
+    flex-basis: 160px;
+    max-width: 180px;
+  }
+  .class-picker {
+    padding: 40px 20px 70px;
+  }
+  .class-picker-intro {
+    margin-bottom: 40px;
+  }
+  .class-picker-intro h1 {
+    font-size: 29.5px;
+  }
   .sidebar {
     position: fixed;
     left: 0;
@@ -1788,17 +2498,30 @@ body.landing-page {
     transform: translateX(-100%);
     transition: transform 0.2s ease;
     background: var(--paper);
-    box-shadow: 2px 0 12px rgba(0,0,0,0.06);
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.06);
   }
-  .sidebar.open { transform: translateX(0); }
-  .main { padding: 28px 20px 60px; }
-  .note-pane { padding: 28px 22px; }
-  .user-chip .name { display: none; }
-  .content-wrap { max-width: 100%; }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .main {
+    padding: 28px 20px 60px;
+  }
+  .note-pane {
+    padding: 28px 22px;
+  }
+  .user-chip .name {
+    display: none;
+  }
+  .content-wrap {
+    max-width: 100%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 /* ==========================================================================
@@ -1830,19 +2553,36 @@ body.landing-page {
 }
 
 /* Utility */
-.hidden { display: none !important; }
+.hidden {
+  display: none !important;
+}
 .spinner {
-  width: 14px; height: 14px;
+  width: 14px;
+  height: 14px;
   border: 2px solid var(--line-strong);
   border-top-color: var(--ink);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
   display: inline-block;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 @media (max-width: 480px) {
-  .class-card { flex-basis: 42%; max-width: none; aspect-ratio: auto; padding: 22px 14px; }
-  .subject-card { flex-basis: 42%; max-width: none; }
-  .class-card-numeral { font-size: 40.5px; }
+  .class-card {
+    flex-basis: 42%;
+    max-width: none;
+    aspect-ratio: auto;
+    padding: 22px 14px;
+  }
+  .subject-card {
+    flex-basis: 42%;
+    max-width: none;
+  }
+  .class-card-numeral {
+    font-size: 40.5px;
+  }
 }

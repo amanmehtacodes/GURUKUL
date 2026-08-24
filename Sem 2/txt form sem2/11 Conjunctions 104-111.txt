@@ -1,0 +1,335 @@
+Chapter-10                             The Conjunction
+ Study carefully how the following pairs of sentences are joined.
+    1. He bought apples. He bought mangoes.
+        He bought apples and mangoes.
+    2. My brother is tall. I am short.
+        My brother is tall but I am short.
+    3. He is ill. He cannot come to school
+        He is ill, so he cannot come to school.
+        He cannot come to school because he is ill.
+ You can observe that in each pair of sentences given above, two different statements are given. These two
+ different statements are joined by using the words 'and', 'but', 'so' and 'because'. These words which join two
+ words or clauses are called conjunctions, connectors or linkers.
+ Conjunction: A word which is used to join two words, phrases or clauses is called a conjunction.
+                                   Kinds of Conjunction
+ 1. Coordinative Conjunctions: A Coordinative Conjunction joins the grammatical units of the same type
+ or equal status e.g. nouns with noun, adjective with adjective, phrase with phrase and clause with clause. It
+ joins words, phrases or clauses of equal status. In a compound Sentence, it joins two coordinate Clauses.
+ Examples: and, but, for, or, still, yet, so, therefore, as well as, otherwise, else, only etc.
+
+    s   I went home. I changed my clothes.
+        I went home and changed my clothes. (Joins verb with verb)
+    s   Take care of your health. You will fall ill.
+        Take care of your health, otherwise you will fall ill. (Joins two coordinate clauses)
+    s   He likes ice-cream. He does not like juice.
+        He likes ice-cream, but not juice. (Joins noun with noun)
+
+ 2. Subordinating Conjunction: A subordinating conjunction joins subordinate clause/clauses to the
+ principal clause in a complex sentence.
+ Examples: unless, until, because, since, as, if, whether, before, after, when, while, where, wherever etc.
+    s I used to play cricket when I was a student.
+    s He ran away because he was afraid.
+ The underlined clauses in the above sentences are Subordinate Clauses.
+ 3. Correlative Conjunctions: Correlative conjunctions also join grammatical units of the same type or
+ equal status e.g. nouns with noun, adjective with adjective, phrase with phrase and clause with clause.
+ Correlative conjunctions are followed by the same part of speech. They are always used in pairs.
+ Examples: Both..........and, Either..........or, Neither.............nor, Hardly..............when,
+ Scarcely........before, Not only..........but also etc.
+    s He is either a fool (noun) or a rogue (noun).
+    s Hardly had he reached school (clause) when the peon rang the bell. (clause)
+ 4. Compound Conjunctions: Compound conjunctions are groups of words that function as conjunctions.
+ Some expressions or phrases act as conjunctions.
+    s He will lend you money provided that you return it on time.
+    s I will let you play in my garden on condition that you do not pluck the ﬂowers.
+    s The thief ran away as soon as he heard a noise.
+ These expressions or phrases are called Compound Conjunctions.
+                                                     104
+   Exercise: Underline the conjunctions in the following sentences.
+      1. Rohit and Riya went to market.
+      2. I bought vegetables but I did not buy fruit.
+      3. You can wait here or go home.
+      4. I cannot buy this house because I do not have enough money.
+      5. He is very weak, so he cannot walk.
+      6. I will attend the party if you invite me.
+      7. I will watch TV when I have ﬁnished my homework.
+      8. He failed, for he had not worked hard.
+      9. He was tired, yet he continued his work.
+      10. I know that you have helped him with money.
+      11. Tell me why he has shifted to Delhi.
+      12. Think before you speak.
+      13. He has not called me since he shifted to his new house.
+      14. This is the house which my father built.
+      15. Although he was alone at house, he was not afraid.
+                           Types of Coordinative Conjunctions
+1. Cumulative or Copulative Conjunctions: Cumulative conjunctions add or connect words, phrases or
+clauses of the same type, status or level. They are used to convey the idea of similarity between the units being
+joined. Examples: and, also, too, as well as, both...........and, not only.............but also etc.
+Examples: Read the pair of sentences given below.
+He is smart. He is intelligent.
+In the above pair of sentences, we come to know about two qualities of 'He'. Since both the qualities are positive
+and don't show any contradiction, we will join the above pair of sentences using a cumulative conjunction.
+Examples:
+        1. He is smart and intelligent.               4. He is both smart and intelligent.
+        2. He is smart as well as intelligent.        5. He is smart; and intelligent also.
+        3. He is smart; and intelligent too.          6. He is not only smart but also intelligent.
+2. Adversative Conjunctions: These conjunctions are used to connect or join two contradictory, contrasting
+or opposite ideas. Examples: but, still, however, nevertheless, only, whereas, yet
+Example: Read the pair of sentences given below.
+        He is intelligent. He is not hard working.
+        He is intelligent, but not hardworking.
+Examples:
+            · He is poor but honest.
+            · He was weak; still he managed to walk for long.
+            · He lost everything in life; however he started his life anew with a strong will.
+            · Everyone in the family opposed him; nevertheless he chased his dreams.
+            · Do what you like, only don't disturb me.
+            · My friend is tall whereas his brother is not (tall).
+            · He has a lot of wealth, yet he is a miser.
+
+
+                                                      105
+3. Disjunctive or Alternative Conjunction: These conjunctions express a choice between two words, phrases
+or clauses. Examples: or, nor, either..............or, neither...............nor, otherwise, else
+Examples:
+            · Run fast, or you will lose the race.
+            · You can either wait or go.
+            · He is neither intelligent nor hardworking.
+            · Work hard, otherwise you will fail.
+            · Return these books on time, else you will be ﬁned.
+
+4. Illative Conjunctions: When a fact or statement is inferred or provided from another statement, the two of
+them are joined by using an illative coordinating conjunctions. Examples: so, hence, therefore, for, then
+Examples:
+            · My foot was injured, so I could not walk.
+            · It had been raining since morning; hence we could not go out.
+            · He is not well today; therefore he cannot come to school.
+            · He missed the train, for he was late.
+            · We are getting late, let's hurry up then.
+
+Important Note: Remember the Acronym FANBOYS to remember some important conjunctions.
+      F= for       A=and, as well as  N=neither......nor     B=but
+      O=or, otherwise, else           Y=yet, still           S=so, hence, therefore
+
+Exercise: Fill in the blanks with suitable conjunctions
+   1.      I called him ..........................he did not receive my call.
+   2.      She is neither a teacher............................. a doctor.
+   3.      Her condition was serious, ..........................she was admitted to a hospital.
+   4.      You must go home now,...............................you will be late.
+   5.      She is ...............................beautiful and intelligent.
+   6.      He failed, ............................he had not worked hard.
+   7.      Sit wherever you want, ..............................don’t sit here.
+   8.      I am thin ........................... my brother is fat.
+   9.      He suffered a great loss,.......................................he did not lose hope.
+   10. He is very rich,................................he is humble.
+Exercise: Join the following pairs of sentences using the conjunctions given in the brackets.
+ 1. They were late. They managed to catch the train. (however)
+ ............................................................................................................................................................................
+ 2. He is underweight. He cannot participate in this competition. (therefore)
+ ............................................................................................................................................................................
+ 3. I like chocolate. I like cake. (both............and) .........................................................................................
+ 4. Wear a sweater. You will get cold. (else) .................................................................................................
+                                                                                  106
+  5. He worked hard. He could not qualify for the post. (nevertheless)
+  ............................................................................................................................................................................
+  6. He has solved the sum. His brother has solved the sum. (either..............or)
+  ............................................................................................................................................................................
+  7. The weather was cold and wet. We had a great time. (still)
+  ............................................................................................................................................................................
+  8. Deposit your fee by tomorrow. Your name will be struck off. (or)
+  ............................................................................................................................................................................
+  9. He does not exercise regularly. He has put on weight. (hence)
+  ............................................................................................................................................................................
+  10. He is not a producer. He is not a director. (neither..............nor)
+ .....................................................................................................................................................................
+Exercise: Fill in the blanks with Conjunctions of Time by choosing the correct option.
+     1. Look ...................................................(before/after) you leap.
+     2. I will go to play..........................................(before/after) I have ﬁnished my work.
+     3. I used to play cricket...............................................(when/till) I was a student.
+     4. Make hay...............................................(before/while) the sun shines.
+     5. I haven’t seen her...............................................(since/when) she left her job.
+     6. Wait here.............................................(till/when) I come.
+     7. I waited for my friend.......................................(till/until) he came.
+Exercise: Fill in the blanks with conjunctions by choosing the correct option.
+     1.      He will follow you.............................you go. (when/wherever)
+     2.      I kept the books................................... you told me to keep. (when/where)
+     3.      Tell me the place ....................................you parked your car. (where/ since)
+     4.      They worked..............................I had instructed. (as/ since)
+     5.      He walked................................... he were lame. (as if/ if)
+     6.      He died..............................................he could not get proper treatment. (because/so)
+     7.      I will lead this project...................................... you want me to do it. (since/hence)
+     8.      We left a message for him.........................................he was not at home. (so/as)
+     9.      You can stand ﬁrst in the class.........................................you work hard. (if/unless)
+     10. You will not stand ﬁrst in the class.............................................you work hard. (if/unless)
+     11. He is..................................(so/as) weak that he cannot walk.
+     12. He worked hard........................................ he might pass the examination. (so that/so)
+     13. Run fast ................................you should miss the train. (lest/as)
+     14. ............................................he is poor, he is honest. (because/though)
+     15. You have to eat it ......................................you like it or not. (whether/unless)
+                                                                         107
+Exercise: Fill in the blanks with suitable conjunction.
+   1.      Strike the iron...........................................it is hot.
+   2.      He was playing............................................his father came home.
+   3.      ........................................you start early, you will catch the train.
+   4.      .........................................they batted badly, they won the match.
+   5.      It’s been a month.................................................she came here.
+   6.      I shall wait for you.................................................you return.
+   7.      I must believe it ........................................you say so.
+   8.      Cooperate with him, ........................................you like it or not.
+   9.      He took a short cut.................................................he might save time.
+   10. She pretended ................................................she were the princess.
+Exercise: Join the following pairs of sentences using conjunctions given in the brackets.
+   1.      He is ill. He will attend the meeting. (though)
+   ..........................................................................................................................................................................
+   2.      He walked very fast. He seemed to be in a hurry. (as if)
+   ..........................................................................................................................................................................
+   3.      He would not surrender. You beat him black and blue. (even if)
+   ..........................................................................................................................................................................
+   4.      She is a good singer. She is not a good dancer. (but)
+   ..........................................................................................................................................................................
+   5.      You will not lose. You do not accept your defeat. (unless)
+   ..........................................................................................................................................................................
+   6.      He was caught. He was stealing the money. (while)
+   ..........................................................................................................................................................................
+   7.      The child was crying. The child was hungry. (because)
+   ..........................................................................................................................................................................
+   8.      You like something. Do it. (as)
+   ..........................................................................................................................................................................
+   9.      He should leave early. He will miss the train. (unless)
+   ..........................................................................................................................................................................
+   10. There is life. There is hope. (as long as)
+   ..........................................................................................................................................................................
+
+
+
+
+                                                                                  108
+                               Types of Subordinating Conjunctions
+Subordinating functions may be divided according to their meaning or function.
+1. Time: Before, as, after, when, while, since, as soon as, till, until, so long as, as long as, now that, once etc.
+Examples:
+s Look before you leap.
+s I will go to play after I have ﬁnished my work.
+s I used to play cricket when I was a student.
+s I haven't seen her since she left her job.
+s Wait here till I come.
+2. Place: Where, wherever, whence
+s He will follow you wherever you go.
+s I kept the books where you told me to keep.
+s They returned whence they had come.
+3. Manner or Extent: as, so far as, as if, as though, as far as etc.
+s They worked as I had instructed.
+s So far as his health is concerned, he is better now.
+s As far as his behaviour is concerned, he has shown improvement.
+s He walked as if he were lame.
+s It sounds as though you had a good time.
+4. Cause: Because, since, as
+s He died because he could not get proper treatment.
+s I will lead this project since you want me to do it.
+5. Condition: Provided, provided that, on condition that, if, in case, unless, supposing, h
+s You can stand ﬁrst in the class provided you work hard.
+s You can stand ﬁrst in the class provided that you work hard.
+s You can stand ﬁrst in the class if you work hard.
+s You will not stand ﬁrst in the class unless you work hard.
+6. Result or Effect: so.....................that
+s He is so weak that he cannot walk.
+7. Purpose: that, so that, in order that, lest............should, for fear that
+s He worked hard so that he might pass the examination.
+s He is working hard in order that he may pass the examination.
+s Run fast lest you should miss the train.
+s We eat that we may live.
+8. Contrast or Concession: though, although, notwithstanding, as, even if, whether, however, whatever, while,
+when
+s Though he is poor, he is honest. He is honest though he is poor.
+s Although he is poor, he is honest. He is honest although he is poor.
+s You have to eat it whether you like it or not.
+s Whatever happens, I will ﬁght till the end.
+s While he is good at science, his brother is hopeless.
+9. Comparison: than, as
+s My brother is taller than I am.
+s Ramesh ran faster than Suresh. (did).
+                                                       109
+                                                Correlative Conjunctions
+1. Both................and (Used to join similar things/concepts)
+    • He is both a lyricist and composer.
+2. Either..................or (Used to choose/select either of two choices)
+    • You can take either a bus or a train for Delhi.
+3. Neither.....................nor (Used to reject either of the two choices)
+    • He is neither a doctor nor a lawyer.
+4. Hardly......................when (Used in the sense of ‘as soon as’)
+    • Hardly had I stepped out of my house when it started raining.
+5. Scarcely..........................when/before (Used in the sense of ‘as soon as’)
+    • I scarcely had time to ring the bell before the door opened
+    • He had scarcely reached school when the peon rang the bell.
+6. Not only......................but also (Used in the sense of ‘and’ or ‘in addition to’)
+    • He not only invited me, but also gave me a beautiful gift.
+7. No sooner.....................than (Used in the sense of ‘as soon as’)
+    • No sooner did the thief see the police than he ran away.
+    • No sooner had I reached home than it started raining.
+8. Though.................yet (Used to express contrast)
+    • Though the baby is weak yet it is active. Or,
+    • Though the baby is weak, it is active.
+9. Although..................yet (Used to express contrast)
+    • Although he worked hard yet he could not succeed. Or,
+    • Although he worked hard, he could not succeed.
+10. So.........................that (Used to show result or effect)
+    • He is so intelligent that he can solve these sums easily.
+11. Whether.......................or (Used to join two contrasting ideas)
+    • You should work under him, whether you like him or not.
+12. Lest........................should (Used in the sense of ‘otherwise’)
+    • Walk fast lest you should miss the train.
+Exercise: Fill in the blanks with pairs of conjunctions:
+1. This book is..............................useful .............................cheap.
+2. ..........................my brother........................my sister went to school today.
+3. You can..............................play...............................work.
+4. This boy can......................................hear..................................speak.
+5. Be careful..............................you........................repent later.
+6. ..........................Girish............................his brother are intelligent.
+7. He worked .........................hard .............................he won a scholarship.
+8. It is all the same for me..............................you stay here.....................go back home.
+9. ..................................he is poor............................he is honest.
+10. ...............................................did the teacher enter the class ..........................the students became silent.
+                                                                         110
+Exercise: Rewrite the following sentences by correcting the errors.
+
+1. He is a poet but novelist. ...................................................................................................................................
+
+2. She is very beautiful and proud. ........................................................................................................................
+
+3. I have not met her when she left the ofﬁce. ........................................................................................................
+
+4. Make hay before the sun shines. ........................................................................................................................
+
+5. You cannot succeed if you work hard. ...............................................................................................................
+
+6. Either John nor his brother has broken the window. ...........................................................................................
+
+7. The tea is very hot that I cannot drink it. ............................................................................................................
+
+8. Follow the rules and you will be terminated. .....................................................................................................
+
+9. He is rich and arrogant. .....................................................................................................................................
+
+10. He did not come to school, so he was ill. ............................................................................................................
+
+11. Rajat is not only hardworking but loyal. ............................................................................................................
+
+12. She is neither studying or playing. ....................................................................................................................
+
+13. I do not know that when she will go. ..................................................................................................................
+
+14. Walk carefully lest you must fall. ......................................................................................................................
+
+15. You will not catch the train unless you do not hurry up. .....................................................................................
+
+16. Wait here after the train arrives. ........................................................................................................................
+
+17. It was raining heavily so that he was late. ..........................................................................................................
+
+18. The little child was lost in the forest and he did not lose heart. ............................................................................
+
+19. I got the book when I left it. ...............................................................................................................................
+
+20. She cannot read nor write. ................................................................................................................................
+
+                                                                              111
+

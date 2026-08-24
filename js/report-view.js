@@ -23,11 +23,16 @@
  */
 
 const ReportView = (() => {
-  function render(container, { submission: s, answers, stats, showQuestions = true, inline = false }) {
+  function render(
+    container,
+    { submission: s, answers, stats, showQuestions = true, inline = false }
+  ) {
     container.classList.toggle("report-inline", inline);
 
     const submittedDate = formatDate(s.submitted_at);
-    const mcqPct = s.total_mcq ? Math.round((s.score / s.total_mcq) * 100) : null;
+    const mcqPct = s.total_mcq
+      ? Math.round((s.score / s.total_mcq) * 100)
+      : null;
 
     const hasTheory = s.subjective_status && s.subjective_status !== "n/a";
     const theoryGraded = s.subjective_status === "graded";
@@ -40,56 +45,95 @@ const ReportView = (() => {
       stats && stats.count > 0
         ? `<div class="report-classavg">
              <span class="report-classavg-label">Class average (MCQ)</span>
-             <span class="report-classavg-value">${fmt(stats.avgScore)} / ${fmt(stats.avgTotalMcq)}</span>
-             <span class="report-classavg-count">${stats.count} attempt${stats.count === 1 ? "" : "s"}</span>
+             <span class="report-classavg-value">${fmt(stats.avgScore)} / ${fmt(
+            stats.avgTotalMcq
+          )}</span>
+             <span class="report-classavg-count">${stats.count} attempt${
+            stats.count === 1 ? "" : "s"
+          }</span>
            </div>`
         : "";
 
     container.innerHTML = `
       <div class="report-page">
-        <div class="report-eyebrow">${escapeHtml(s.class_name || "")} · ${escapeHtml(s.subject || "")} · ${escapeHtml(s.section || "")}${s.subsection ? " / " + escapeHtml(s.subsection) : ""}</div>
+        <div class="report-eyebrow">${escapeHtml(
+          s.class_name || ""
+        )} · ${escapeHtml(s.subject || "")} · ${escapeHtml(s.section || "")}${
+      s.subsection ? " / " + escapeHtml(s.subsection) : ""
+    }</div>
         <h1 class="report-title">${escapeHtml(s.test || "")}</h1>
-        <div class="report-meta">${escapeHtml(s.name || s.email || "")}${s.email ? ` (${escapeHtml(s.email)})` : ""} · Submitted ${escapeHtml(submittedDate)}</div>
+        <div class="report-meta">${escapeHtml(s.name || s.email || "")}${
+      s.email ? ` (${escapeHtml(s.email)})` : ""
+    } · Submitted ${escapeHtml(submittedDate)}</div>
 
         <div class="report-hero">
           <div class="report-hero-stat">
-            <div class="report-hero-ring ${tierFor(mcqPct)}" style="--pct:${mcqPct ?? 0}">
+            <div class="report-hero-ring ${tierFor(mcqPct)}" style="--pct:${
+      mcqPct ?? 0
+    }">
               <span>${mcqPct !== null ? mcqPct + "%" : "—"}</span>
             </div>
             <div class="report-hero-label">MCQ score</div>
-            <div class="report-hero-value">${s.score ?? 0} / ${s.total_mcq ?? 0}</div>
+            <div class="report-hero-value">${s.score ?? 0} / ${
+      s.total_mcq ?? 0
+    }</div>
           </div>
 
-          ${hasTheory ? `
+          ${
+            hasTheory
+              ? `
           <div class="report-hero-stat">
-            <div class="report-hero-ring ${theoryGraded ? tierFor(theoryPct(overallReport)) : "unknown"}" style="--pct:${theoryGraded ? theoryPct(overallReport) : 0}">
-              <span>${theoryGraded ? theoryPct(overallReport) + "%" : "…"}</span>
+            <div class="report-hero-ring ${
+              theoryGraded ? tierFor(theoryPct(overallReport)) : "unknown"
+            }" style="--pct:${theoryGraded ? theoryPct(overallReport) : 0}">
+              <span>${
+                theoryGraded ? theoryPct(overallReport) + "%" : "…"
+              }</span>
             </div>
             <div class="report-hero-label">Theory score</div>
-            <div class="report-hero-value">${theoryGraded ? escapeHtml(overallReport.overall || "") : "Pending review"}</div>
-          </div>` : ""}
+            <div class="report-hero-value">${
+              theoryGraded
+                ? escapeHtml(overallReport.overall || "")
+                : "Pending review"
+            }</div>
+          </div>`
+              : ""
+          }
 
           ${classAvgHtml}
         </div>
 
-        ${weakTopics.length ? `
+        ${
+          weakTopics.length
+            ? `
         <div class="report-revision">
           <div class="report-section-label">Revise</div>
           <div class="report-revision-chips">
-            ${weakTopics.map((t) => `<span class="report-chip weak">${escapeHtml(t.topic)}</span>`).join("")}
+            ${weakTopics
+              .map(
+                (t) =>
+                  `<span class="report-chip weak">${escapeHtml(t.topic)}</span>`
+              )
+              .join("")}
           </div>
-        </div>` : ""}
+        </div>`
+            : ""
+        }
 
         <div class="report-section-label">Topic breakdown</div>
         <div class="report-topics">
           ${topics.map(renderTopicCard).join("")}
         </div>
 
-        ${showQuestions ? `
+        ${
+          showQuestions
+            ? `
         <div class="report-section-label">Question review</div>
         <div class="report-questions">
           ${answers.map(renderAnswerCard).join("")}
-        </div>` : ""}
+        </div>`
+            : ""
+        }
       </div>
     `;
 
@@ -104,7 +148,14 @@ const ReportView = (() => {
     (answers || []).forEach((a) => {
       const topic = a.topic_tag || "Untagged";
       if (!map.has(topic)) {
-        map.set(topic, { topic, mcqCorrect: 0, mcqTotal: 0, theoryScore: 0, theoryMax: 0, theoryPending: false });
+        map.set(topic, {
+          topic,
+          mcqCorrect: 0,
+          mcqTotal: 0,
+          theoryScore: 0,
+          theoryMax: 0,
+          theoryPending: false,
+        });
       }
       const t = map.get(topic);
       if (a.question_type === "mcq") {
@@ -122,7 +173,10 @@ const ReportView = (() => {
       .map((t) => {
         const combinedScore = t.mcqCorrect + t.theoryScore;
         const combinedMax = t.mcqTotal + t.theoryMax;
-        const pct = combinedMax > 0 ? Math.round((combinedScore / combinedMax) * 100) : null;
+        const pct =
+          combinedMax > 0
+            ? Math.round((combinedScore / combinedMax) * 100)
+            : null;
         return { ...t, combinedScore, combinedMax, pct };
       })
       .sort((a, b) => (a.pct ?? 100) - (b.pct ?? 100)); // weakest first
@@ -144,37 +198,69 @@ const ReportView = (() => {
 
   function renderTopicCard(t) {
     const tier = tierFor(t.pct);
-    const scoreText = t.combinedMax > 0 ? `${round1(t.combinedScore)} / ${round1(t.combinedMax)}` : t.theoryPending ? "Pending" : "—";
+    const scoreText =
+      t.combinedMax > 0
+        ? `${round1(t.combinedScore)} / ${round1(t.combinedMax)}`
+        : t.theoryPending
+        ? "Pending"
+        : "—";
     return `
       <div class="report-topic-card ${tier}">
         <div class="report-topic-name">${escapeHtml(t.topic)}</div>
-        <div class="report-topic-bar-track"><div class="report-topic-bar-fill" style="width:${t.pct ?? 0}%"></div></div>
+        <div class="report-topic-bar-track"><div class="report-topic-bar-fill" style="width:${
+          t.pct ?? 0
+        }%"></div></div>
         <div class="report-topic-footer">
           <span class="report-topic-score">${scoreText}</span>
-          <span class="report-topic-pct">${t.pct !== null ? t.pct + "%" : t.theoryPending ? "Pending" : "—"}</span>
+          <span class="report-topic-pct">${
+            t.pct !== null ? t.pct + "%" : t.theoryPending ? "Pending" : "—"
+          }</span>
         </div>
       </div>`;
   }
 
   function renderAnswerCard(a) {
     if (a.question_type === "mcq") {
-      const tier = a.correct === true ? "correct" : a.correct === false ? "incorrect" : "skipped";
+      const tier =
+        a.correct === true
+          ? "correct"
+          : a.correct === false
+          ? "incorrect"
+          : "skipped";
       return `
         <div class="report-qcard ${tier}">
           <div class="report-qcard-head">
             <span class="report-qtype-badge mcq">MCQ</span>
-            ${a.topic_tag ? `<span class="report-qtopic">${escapeHtml(a.topic_tag)}</span>` : ""}
+            ${
+              a.topic_tag
+                ? `<span class="report-qtopic">${escapeHtml(
+                    a.topic_tag
+                  )}</span>`
+                : ""
+            }
           </div>
-          <div class="report-qprompt">${escapeHtml(a.question_prompt || "")}</div>
+          <div class="report-qprompt">${escapeHtml(
+            a.question_prompt || ""
+          )}</div>
           <div class="report-qanswer-row">
             <span class="report-qanswer-label">Your answer</span>
-            <span class="report-qanswer-value">${a.student_answer ? escapeHtml(a.student_answer) : "<em>Not answered</em>"}</span>
+            <span class="report-qanswer-value">${
+              a.student_answer
+                ? escapeHtml(a.student_answer)
+                : "<em>Not answered</em>"
+            }</span>
           </div>
-          ${a.correct !== true ? `
+          ${
+            a.correct !== true
+              ? `
           <div class="report-qanswer-row">
             <span class="report-qanswer-label">Correct answer</span>
-            <span class="report-qanswer-value correct">${escapeHtml(a.reference_answer || "")}</span>
-          </div>` : ""}
+            <span class="report-qanswer-value correct">${escapeHtml(
+              a.reference_answer || ""
+            )}</span>
+          </div>`
+              : ""
+          }
         </div>`;
     }
 
@@ -184,24 +270,50 @@ const ReportView = (() => {
       <div class="report-qcard theory">
         <div class="report-qcard-head">
           <span class="report-qtype-badge theory">Theory</span>
-          ${a.topic_tag ? `<span class="report-qtopic">${escapeHtml(a.topic_tag)}</span>` : ""}
-          ${graded ? `<span class="report-qscore">${round1(a.llm_score)} / ${round1(a.llm_max_score)}</span>` : `<span class="report-qscore pending">Pending review</span>`}
+          ${
+            a.topic_tag
+              ? `<span class="report-qtopic">${escapeHtml(a.topic_tag)}</span>`
+              : ""
+          }
+          ${
+            graded
+              ? `<span class="report-qscore">${round1(a.llm_score)} / ${round1(
+                  a.llm_max_score
+                )}</span>`
+              : `<span class="report-qscore pending">Pending review</span>`
+          }
         </div>
         <div class="report-qprompt">${escapeHtml(a.question_prompt || "")}</div>
         <div class="report-qanswer-row block">
           <span class="report-qanswer-label">Your answer</span>
-          <div class="report-qanswer-value block">${a.student_answer ? escapeHtml(a.student_answer) : "<em>Not answered</em>"}</div>
+          <div class="report-qanswer-value block">${
+            a.student_answer
+              ? escapeHtml(a.student_answer)
+              : "<em>Not answered</em>"
+          }</div>
         </div>
-        ${a.reference_answer ? `
+        ${
+          a.reference_answer
+            ? `
         <div class="report-qanswer-row block">
           <span class="report-qanswer-label">Reference answer</span>
-          <div class="report-qanswer-value block reference">${escapeHtml(a.reference_answer)}</div>
-        </div>` : ""}
-        ${a.feedback_text ? `
+          <div class="report-qanswer-value block reference">${escapeHtml(
+            a.reference_answer
+          )}</div>
+        </div>`
+            : ""
+        }
+        ${
+          a.feedback_text
+            ? `
         <div class="report-qanswer-row block">
           <span class="report-qanswer-label">Feedback</span>
-          <div class="report-qanswer-value block feedback">${escapeHtml(a.feedback_text)}</div>
-        </div>` : ""}
+          <div class="report-qanswer-value block feedback">${escapeHtml(
+            a.feedback_text
+          )}</div>
+        </div>`
+            : ""
+        }
       </div>`;
   }
 
@@ -220,7 +332,13 @@ const ReportView = (() => {
     try {
       const d = new Date(iso);
       if (isNaN(d.getTime())) return iso || "";
-      return d.toLocaleString(undefined, { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+      return d.toLocaleString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
     } catch (e) {
       return iso || "";
     }

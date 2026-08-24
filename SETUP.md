@@ -4,7 +4,7 @@ This site is fully built and works out of the box for browsing notes and
 exporting PDFs. The Markdown renderer and PDF library are bundled locally
 in `js/vendor/` (no CDN dependency), so notes display reliably even behind
 strict firewalls or ad-blockers. Two features need a one-time setup with
-your own Google account, because they involve credentials tied to *your*
+your own Google account, because they involve credentials tied to _your_
 project:
 
 1. **Google Sign-In** (who can log in)
@@ -20,17 +20,20 @@ You need a live URL before Google Sign-In will work, because Google checks
 the domain making the request.
 
 ### Option A: Netlify (drag and drop, easiest)
+
 1. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
 2. Drag the whole `edusite` folder onto the page
 3. Netlify gives you a URL like `https://random-name-123.netlify.app`
 4. (Optional) Rename the site under **Site settings → Change site name**
 
 ### Option B: Vercel
+
 1. Create a free account at [vercel.com](https://vercel.com)
 2. Install the CLI: `npm i -g vercel`
 3. Run `vercel` inside the `edusite` folder and follow the prompts
 
 ### Option C: GitHub Pages
+
 1. Push the `edusite` folder contents to a GitHub repo
 2. Go to **Settings → Pages** → set source to your main branch
 3. Your site will be live at `https://yourusername.github.io/reponame`
@@ -75,9 +78,11 @@ the domain making the request.
 
 **Restricting to a school domain (optional):** if all your students have
 Google Workspace accounts under one domain (e.g. `@yourschool.edu`), set:
+
 ```js
 RESTRICT_DOMAIN: "yourschool.edu",
 ```
+
 in `js/config.js`. Leave it as `null` to allow any Google account.
 
 ---
@@ -109,9 +114,9 @@ for or maintain.
    - Description: anything, e.g. "Gurukul backend"
    - Execute as: **Me**
    - Who has access: **Anyone**
-     *(This does not make your Sheet public — it only allows the web app
+     _(This does not make your Sheet public — it only allows the web app
      endpoint to receive requests. Only your script code decides what
-     happens with them, and your Sheet itself stays private.)*
+     happens with them, and your Sheet itself stays private.)_
 9. Click **Deploy**
 10. The first time, Google will ask you to authorize the script:
     - Click **Authorize access**
@@ -134,7 +139,9 @@ for or maintain.
     adding notes/tests; set it `false` before real students use the site.
 
 ### What ends up in the Sheet
+
 Four tabs, created automatically the first time each is needed:
+
 - **Roster** — every student who's signed in, with an auto-assigned roll
   number starting at 101
 - **Access** — access grants: which class or chapter each email can open
@@ -145,6 +152,7 @@ Four tabs, created automatically the first time each is needed:
   question-by-question detail for every submission to that test
 
 ### Updating the script later
+
 If you edit `apps-script.gs` logic in the future, you must click
 **Deploy → Manage deployments → edit (pencil) → New version → Deploy**
 for changes to take effect. The `/exec` URL stays the same.
@@ -160,8 +168,8 @@ You can tell them apart by the URL: a working one looks like
 has `/library/` in it, that's the bug.
 
 **Fix:** in the Apps Script editor, click **Deploy → New deployment →**
-(gear icon) **→ Web app** specifically — not Library — set *Execute as: Me*
-and *Who has access: Anyone*, deploy, and copy the resulting `/exec` URL
+(gear icon) **→ Web app** specifically — not Library — set _Execute as: Me_
+and _Who has access: Anyone_, deploy, and copy the resulting `/exec` URL
 into `config.js`. If you're using `clasp`, use `gs-deploy/deploy.sh`
 included here — it deploys, then automatically checks the resulting URL
 actually works before touching `config.js`, refusing to overwrite a good
@@ -169,9 +177,11 @@ URL with a broken Library one.
 
 To sanity-check any URL yourself, paste this into a browser tab with your
 real URL and password filled in:
+
 ```
 YOUR_EXEC_URL?action=adminList&password=YOUR_PASSWORD
 ```
+
 A working deployment returns JSON starting with `{"status":"ok"`. A
 Library deployment or a Google Drive-style "unable to open the file"
 page means it's the wrong deployment type.
@@ -188,6 +198,7 @@ set above.
 you're taking payment) yourself — there's no automatic connection
 between payment and access. When a payment comes in, open the admin
 page, enter the student's Gmail, and grant either:
+
 - **Whole class** — unlocks every chapter across every subject in that
   class/year (e.g. granting "Class 9" unlocks all of Class 9 Maths,
   Science, English, etc. as they're added)
@@ -218,7 +229,6 @@ the admin page above.
 ---
 
 ## Editing content
-
 
 Content is organized as: **Class → Subject → Section → Subsection → Notes/Tests.**
 The person picks a class (roman numeral cards, plus JEE/NEET exam-track
@@ -279,9 +289,11 @@ steps in Part 3 above are still valid for when this is reconnected.
 ## Local testing before deploying
 
 From inside the `edusite` folder, run a simple local server:
+
 ```
 python3 -m http.server 8000
 ```
+
 Then open `http://localhost:8000`. Note: Google Sign-In will only work
 locally if you added `http://localhost:8000` as an authorized origin in
 Part 2.

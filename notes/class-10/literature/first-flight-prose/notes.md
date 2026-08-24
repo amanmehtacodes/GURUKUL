@@ -1,6 +1,6 @@
 # First Flight — Prose
 
-*First Flight — Prose — reader index, ready to be filled in.*
+_First Flight — Prose — reader index, ready to be filled in._
 
 ---
 
@@ -19,4 +19,4 @@
 
 ---
 
-*Full notes, summaries, and question practice for this section are coming soon.*
+_Full notes, summaries, and question practice for this section are coming soon._

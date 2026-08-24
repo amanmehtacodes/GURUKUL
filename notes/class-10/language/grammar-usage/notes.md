@@ -1,6 +1,6 @@
 # Grammar & Usage
 
-*Section 1 — placeholder notes, ready to be filled in.*
+_Section 1 — placeholder notes, ready to be filled in._
 
 ---
 
@@ -19,4 +19,4 @@ This section covers grammar & usage. Each topic below is a natural unit for a le
 
 ---
 
-*Full notes, summaries, and question practice for this section are coming soon.*
+_Full notes, summaries, and question practice for this section are coming soon._

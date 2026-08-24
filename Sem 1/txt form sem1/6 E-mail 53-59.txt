@@ -1,0 +1,146 @@
+ Chapter-5                                     E-mail
+We are living in a globalized world where awe-inspiring advancements in communication and information
+technology have made it extremely easy to convey messages to or share information with the people sitting in any
+part of the world within no time. People use phone calls, video-chat, text messages, e-mail and fax to share
+information.
+What is an E-mail: An e-mail, the short form of electronic mail, is the electronic form of written
+correspondence or communication. It is the digital version of letter and can be sent instantly with the help of an
+internet connection. Unlike a letter, it is the soft copy of a letter and can be sent to multiple receivers
+simultaneously. It is not only the quickest method of conveying messages or sharing information, but also
+environment friendly as it saves paper and envelop. It is also cost effective as it does not require postal charges.
+One can share text, images and other graphics using an e-mail. One can attach multiple ﬁles with a single e-mail.
+The best thing about e-mail is that one can keep a record of one’s received and sent e-mails safe in one’s account,
+and delete the ones which are not required any more. Most organizations, either government or private, prefer
+using an e-mail instead of paper letters.
+One must create an online e-mail account in order to be able to receive and send an e-mail. In the absence of an
+e-mail account, one can use someone else’s account.
+As e-mail is the electronic form of letter, it may be formal as well as informal depending on the person to whom
+one sends it. The language, style and tone of the e-mail depend on whether it is formal or informal just as in the
+case of a letter.
+                                 Constituents of an E-mail
+   1. From: The e-mail address of the sender is to be written in this box.
+   2. To: The e-mail address of the receiver is to be written in this box.
+   3. Cc: Cc means Carbon Copy. In this box, we write the e-mail addresses of the other people who are sent a
+      copy of the e-mail along with the main receiver.
+   4. Bcc: Bcc means Blind Carbon Copy. In this box, we write the e-mail addresses of the other people who are
+      sent a copy of the e-mail along with the main receiver, but these e-mail addresses are kept hidden from the
+      main receiver or from one another.
+   5. Subject: In this box the purpose of writing the e-mail is written. The Subject should be clearly stated
+      and brief.
+   6. Date: Study carefully the formats of date given below.
+                          th
+          · D/M/Y: 24 November, 20XX or 24 November, 20XX
+          · M/D/Y: November 24, 20XX
+                                      Layout of an E-mail
+               From:
+               To:
+               Cc:
+               Bcc:
+               Subject:
+               Date:
+
+                Salutation
+
+                Message/Content
+
+                Subscription
+
+
+                                                        53
+                      Points to remember while writing an e-mail
+1. Write correct e-mail address of the sender as well as the receiver. Remember that the e-mail addresses must
+    be written in small letters without any space between letters, words or symbols.
+2. The subject of the e-mail should be clearly stated and relevant to the message or information conveyed.
+3. The salutation should be appropriate according to formal or informal e-mail.
+    Formal e-mail: Dear sir/Madam or Dear Sirs/ Dear Mr./Miss/Mrs. ...............................
+    Informal e-mail:Dear, ............................./Dear (Mom/Dad/Brother/Sister)
+4. Write the message as brieﬂy as possible without missing important information. Use short sentences and
+    simple vocabulary to avoid any mis-communication. Use small paragraphs if required.
+5. Organize the message to be conveyed in appropriate sequence in terms of priority of information.
+6. Use grammatically correct sentences; avoid using slangs, abbreviations or contractions.
+7. Ensure that the ﬁles attached are not infected with virus.
+8. End your e-mail with a complimentary close such as ‘Bye, take care’ ‘With love’, Best wishes’ ‘Best
+    regards’ ‘Regards’ etc.
+9. Write suitable subscription such as ‘Yours obediently/ truly/ faithfully/ sincerely’ depending on the type of
+    e-mail: formal or informal.
+10. Write your name, designation, address, contact number at the bottom in case of formal e-mail. Write your
+    name in case of informal e-mail.
+
+                                           E-mail Sample
+Write an e-mail to your friend, congratulating him/her on his/her grand success in the examination.
+From:          Nehamehta6121@gmail.com
+To:            ankitasharma@yahoo.com
+Cc:
+Bcc:
+Subject:       Congratulations
+Date:          July 26, 20XX
+
+ Dear Ankita
+
+ My joys knew no bounds when I read your name in the newspaper on top of the list of meritorious
+ students. I am extremely happy that you have got the ﬁrst rank in your state board examination.
+ Congratulations to you on this grand success! Convey my heartiest congratulations to your parents and
+ grandparents. They all must be proud of you. I am really proud to have a friend like you.
+
+ This is the result of all the hard work you have been putting in for many months. Finally, your hard
+ work has borne fruit. This demands a great celebration. When are you giving me a treat? You have
+ brought laurels to your parents and teachers. My parents are also very happy to hear of your grand
+ success. They send their congratulations to you and your parents.
+
+ I am sure you will continue to work hard in the same way in all your future endeavours. My best wishes
+ are always with you. Convey my best regards to your parents and grandparents.
+
+ With lots of love and best wishes
+ Yours sincerely
+ Ankita
+
+                                                     54
+1. Write an e-mail to your uncle thanking him for sending you a Play Station as your birthday gift. You may
+   use the following hints.
+        Hints: Thank your uncle, explain how desperately you wanted it, brand, features, how you use it,
+        promise to keep safe
+
+
+
+
+                                                    55
+2. Write an e-mail to your friend expressing your inability to attend his birthday party. You may use the
+   following hints.
+        Hints: Wish, reason for not attending, express regret for not attending, mention what you had
+        planned, gift, promise to meet soon in future
+
+
+
+
+                                                   56
+3. You were out to an island for spending your winter vacation. Due to some reasons your ﬂight has been
+cancelled. You are unable to rejoin the school on 1st January. Send an e-mail to your Principal requesting
+him/her to sanction you leave for three days.
+       Hints: Name of island, ﬂight no, day and date of cancelled ﬂight, reason, trying to get tickets, request for
+       leave
+
+
+
+
+                                                       57
+4. Write an e-mail to your friend who has met with an accident enquiring after his health. You may use the
+   following hints.
+       Hints: Your reaction, ask how it happened, advise to take rest, eat healthy diet, proper treatment,
+       precautions, wish for speedy recovery
+
+
+
+
+                                                    58
+5. You have recently been appointed monitor of the class. Write an e-mail to your mother giving her a
+detailed account of your new experience, your rights and responsibilities as the Monitor. You may use the
+following hints.
+
+       Hints: Qualities due to which you were appointed, rights and responsibilities, discipline, cooperation
+       from other students, your popularity as monitor, change in your personality
+
+
+
+
+                                                      59
+

@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 1 — Notice | Class 8 English</title>
+<style>
+  /* Palette pulled straight from the site's own look: the molten-metal
+     hero shader (magenta #ff27df / pink #FF9FFC / white) that runs behind
+     every page via js/molten-metal.js, plus the violet/pink/cyan mesh
+     gradient js/border-glow.js uses on card hover — same family of hues,
+     read here as accents on a near-black reading surface (matching the
+     site's own solid-black .note-pane) rather than as a literal moving
+     background. */
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 32px;}
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 22px; margin-bottom:36px;
+  }
+  nav.toc div.toc-h{font-family:var(--font-mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px;}
+  nav.toc li{margin-bottom:5px;}
+  nav.toc ol ol{margin:6px 0 10px; padding-left:22px;}
+  nav.toc ol ol li{margin-bottom:4px; font-size:14.5px;}
+  nav.toc a{color:var(--accent); text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline; color:var(--violet);}
+  nav.toc ol ol a{color:var(--ink-soft);}
+  nav.toc ol ol a:hover{color:var(--cyan);}
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.03em; color:var(--c3);
+    margin:44px 0 16px; scroll-margin-top:20px;
+  }
+  h3{font-size:20px; font-weight:700; margin:26px 0 10px; scroll-margin-top:20px;}
+  p{margin:0 0 14px;}
+  ul,ol{margin:0 0 16px; padding-left:24px;}
+  li{margin-bottom:7px;}
+  strong{font-weight:700;}
+  hr{border:none; border-top:1px solid var(--line); margin:36px 0;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:12px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 16px;
+  }
+  .format-box{
+    font-family:var(--font-mono); font-size:14px; line-height:1.9;
+    background:var(--paper-raised); border:2px solid var(--ink); border-radius:6px;
+    padding:24px 20px; margin:0 0 20px; white-space:pre-wrap;
+  }
+  .format-box .center{text-align:center; font-weight:700;}
+  .sample{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:20px 24px; margin:0 0 24px;
+  }
+  .sample .sh{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;}
+  /* Unscoped (not just under .sample) so the same boxed-notice format can
+     be reused for the practice-question model answers below — a real
+     notice with a centered school/NOTICE/heading, not a plain paragraph
+     of hand-spaced monospace text. */
+  .notice-box{
+    border:1.5px solid var(--ink); border-radius:4px; padding:18px 20px;
+    font-family:var(--font-mono); font-size:14.5px; line-height:1.75;
+    background:var(--paper);
+  }
+  .notice-box .school{text-align:center; font-weight:700; letter-spacing:.02em;}
+  .notice-box .word{text-align:center; font-weight:700; text-decoration:underline; margin:2px 0 10px;}
+  .notice-box .date{margin:2px 0;}
+  .notice-box .heading{text-align:center; font-weight:700; text-decoration:underline; margin:6px 0 10px;}
+  .notice-box .sig{margin-top:14px;}
+  .sample .hint{margin-top:12px; font-size:14px; color:var(--ink-soft); font-style:italic;}
+  table{width:100%; border-collapse:collapse; margin:0 0 20px; font-size:15.5px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left;}
+  th{background:var(--accent-soft); font-family:var(--font-mono); font-size:12.5px; text-transform:uppercase;}
+  .checklist{list-style:none; padding-left:0;}
+  .checklist li{padding-left:26px; position:relative;}
+  .checklist li:before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+  /* Interactive question blocks */
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:18px 20px; margin:18px 0; background:var(--paper-raised);
+  }
+  .q .qn{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); margin-bottom:8px; letter-spacing:.03em; text-transform:uppercase;}
+  .q p.prompt{margin:0 0 12px; font-size:16px;}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q button{
+    margin-top:12px; font-family:var(--font-mono); font-size:12.5px; font-weight:700;
+    letter-spacing:.03em; text-transform:uppercase; padding:9px 18px; border:1px solid var(--c3);
+    border-radius:7px; background:var(--c3-soft); color:var(--c3); cursor:pointer;
+  }
+  .q button:hover{background:var(--c3-panel);}
+  .qa{
+    display:none; margin-top:14px; padding:14px 16px; border-radius:8px;
+    background:var(--accent2-soft); border:1px solid var(--accent2);
+  }
+  .qa .qa-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--accent2); font-weight:700; margin-bottom:8px;}
+  .qa .notice-box{border-color:var(--accent2);}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills</div>
+  <h1 class="title">Lesson 1 — Notice</h1>
+  <p class="subtitle">Semester 1</p>
+
+  <nav class="toc">
+    <div class="toc-h">Contents</div>
+    <ol>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#constituents">Constituents of a Notice</a></li>
+      <li><a href="#format">Format of a Notice</a></li>
+      <li><a href="#tips">Important Tips for Writing an Effective Notice</a></li>
+      <li><a href="#marking">Marking Scheme</a></li>
+      <li><a href="#samples">Sample Notices</a>
+        <ol type="a">
+          <li><a href="#sample-lost">Lost</a></li>
+          <li><a href="#sample-found">Found</a></li>
+          <li><a href="#sample-meeting">Meeting</a></li>
+          <li><a href="#sample-events">Events / Competition</a></li>
+        </ol>
+      </li>
+      <li><a href="#practice">Practice Questions</a>
+        <ol type="1">
+          <li><a href="#q1">Q1 · Lost colouring kit</a></li>
+          <li><a href="#q2">Q2 · Lost library book</a></li>
+          <li><a href="#q3">Q3 · Found wrist watch</a></li>
+          <li><a href="#q4">Q4 · Found wallet</a></li>
+          <li><a href="#q5">Q5 · Shakespeare Week meeting</a></li>
+          <li><a href="#q6">Q6 · Poem Recitation meeting</a></li>
+          <li><a href="#q7">Q7 · Poster Making Competition</a></li>
+          <li><a href="#q8">Q8 · Singing Competition</a></li>
+        </ol>
+      </li>
+      <li><a href="#revision">Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition">1. Definition</h2>
+  <p>A notice is a very short but formal piece of writing used by individuals or organizations to convey information to a particular group of people.</p>
+
+  <h2 id="constituents">2. Constituents of a Notice</h2>
+  <ul>
+    <li><strong>Name of the Organisation</strong> (In capital letters, centrally aligned)</li>
+    <li><strong>The word 'NOTICE'</strong> (In capital letters, centrally aligned)</li>
+    <li><strong>Date of issuing the notice</strong> (Month Date, Year e.g. April 10, 20XX or, Date Month Year e.g. 10 April 20XX or 10th April, 20XX aligned at left)</li>
+    <li><strong>Heading/Title</strong> (Heading must be short, crisp and catchy giving hint about the message. It should be centrally aligned)</li>
+    <li><strong>Body</strong> (Contains purpose of notice including information such as Date, Time, Duration, Place/Venue, Event, Names of people concerned, Charges/Fee, Dead Lines etc)</li>
+    <li><strong>Issuing Authority</strong> (Signature, Name, Designation: aligned at left)</li>
+  </ul>
+
+  <h2 id="format">3. Format of a Notice</h2>
+  <div class="format-box">
+<span class="center">NAME OF THE ORGANISATION
+NOTICE</span>
+Date                                                              <i>(Heading, centred)</i>
+..........................................................................
+..........................................................................
+..................................BODY...................................
+..........................................................................
+..........................................................................
+
+Signature
+NAME
+(Designation)
+  </div>
+
+  <h2 id="tips">4. Important Tips for Writing an Effective Notice</h2>
+  <ol>
+    <li>Keep the purpose of notice in mind while drafting the notice.</li>
+    <li>Keep the target group in mind.</li>
+    <li>Provide correct and complete information.</li>
+    <li>Use simple and short sentences.</li>
+    <li>Use capital letters for details like name of the organisation, events or any important information in the body of the message.</li>
+    <li>Generate necessary details if the same is not provided.</li>
+    <li>Keep the notice in a box.</li>
+    <li>Don't extend the word limit until it is unavoidable.</li>
+    <li>Don't add any irrelevant or unnecessary details.</li>
+    <li>Don't add your own opinions.</li>
+    <li>Use only formal language.</li>
+    <li>Avoid abbreviations or contractions.</li>
+    <li>Avoid use of personal pronouns.</li>
+    <li>Avoid use of slangs or interjections.</li>
+    <li>Prefer using passive constructions.</li>
+  </ol>
+
+  <h2 id="marking">5. Marking Scheme</h2>
+  <table>
+    <tr><th>Component</th><th>Marks</th></tr>
+    <tr><td>Format</td><td>2 Marks</td></tr>
+    <tr><td>Body</td><td>3 Marks</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>5 Marks</strong></td></tr>
+  </table>
+
+  <h2 id="samples">6. Sample Notices</h2>
+
+  <h3 id="sample-lost">Sample Notice (Lost)</h3>
+  <div class="sample">
+    <div class="notice-box">
+      <div class="school">SACRED HEART CONVENT SCHOOL, SOLAN</div>
+      <div class="word">NOTICE</div>
+      April 15, 20XX
+      <div class="heading">LUNCH BOX LOST</div>
+      A brand new Milton lunch box was lost in the playground on April 13 i.e. Saturday. It is red in colour and has a white lid. There is picture of spider man on its lid. Whosoever finds it is requested to return it to the undersigned. A suitable reward is promised.<br><br>
+      Geetika Kaushik<br>
+      GEETIKA KAUSHIK<br>
+      Roll No. 24, VI A
+    </div>
+    <p class="hint">Hints: Article lost, date, time, place, identification: colour, brand, size, shape, material etc, whom to contact, when to contact, where to contact, promise of reward</p>
+  </div>
+
+  <h3 id="sample-found">Sample Notice (Found)</h3>
+  <div class="sample">
+    <div class="notice-box">
+      <div class="school">TAGORE PUBLIC SCHOOL, JAIPUR</div>
+      <div class="word">NOTICE</div>
+      May 10, 20XX
+      <div class="heading">GEOMETRY BOX FOUND</div>
+      A geometry box has been found lying unclaimed in the maths lab. Anyone who has lost it can identify and claim it from the in charge of Lost and Found Department during the activity period within five days of this notice.<br><br>
+      Pooja Thakur<br>
+      POOJA THAKUR<br>
+      Roll No. 24, VI A
+    </div>
+    <p class="hint">Hints: Article found, person from whom the owner should claim it, date, place and time of claiming</p>
+  </div>
+
+  <h3 id="sample-meeting">Sample Notice (Meeting)</h3>
+  <div class="sample">
+    <div class="notice-box">
+      <div class="school">BLOOMING BUDS PUBLIC SCHOOL, SRI GANGANAGAR</div>
+      <div class="word">NOTICE</div>
+      September 5, 20XX
+      <div class="heading">MEETING OF SPORTS CAPTAINS AND HOUSE PREFECTS</div>
+      All the Sports Captains and House Prefects are hereby informed to attend a meeting with the Sports Teacher on September 9 i.e. Monday sharp at 9:00 am in the Conference Hall to discuss about allocation of the duties for the coming up Annual Sports Meet. Attendance is compulsory.<br><br>
+      Harshvardhan Sharma<br>
+      HARSHVARDHAN SHARMA<br>
+      (Head Boy)
+    </div>
+    <p class="hint">Hints: Date, time, venue and purpose of the meeting, who is to attend, who will hold the meeting, any other specific instruction</p>
+  </div>
+
+  <h3 id="sample-events">Sample Notice (Events/Competition)</h3>
+  <div class="sample">
+    <div class="notice-box">
+      <div class="school">RYAN INTERNATIONAL SCHOOL, NOIDA</div>
+      <div class="word">NOTICE</div>
+      August 20, 20XX
+      <div class="heading">SPORTS WEEK</div>
+      This is to inform all the students that the school is going to celebrate Sports Week from September 1 to September 7. The students who are interested in taking parts in various sports activities are required to give their names to their respective class teachers before August 25.<br><br>
+      Minal Bajaj<br>
+      MINAL BAJAJ<br>
+      (Sports Secretary)
+    </div>
+    <p class="hint">Hints: Date, time, venue of the competition/event, last date for entries, persons who can apply, person to whom the names are to be submitted, conditions/eligibility criteria, topic, time limit/duration, etc.</p>
+  </div>
+
+  <h2 id="practice">7. Practice Questions</h2>
+  <p class="callout">Draft your notice in the box below, then press <strong>Check my notice</strong> to reveal a model answer written in the same style. Compare — don't just copy — and check your own notice against the format, word limit and hints.</p>
+
+  <div class="q" id="q1">
+    <div class="qn">Question 1</div>
+    <p class="prompt">You are Vikas Bhatnagar, a student of grade VI B of Gems International School, Mumbai. You have lost your colouring kit. Draft a notice in 50 words requesting the finder to return it to you. Invent necessary details. Put the notice in a box.</p>
+    <textarea rows="7" placeholder="Draft your notice here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my notice';">Check my notice</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="notice-box">
+        <div class="school">GEMS INTERNATIONAL SCHOOL, MUMBAI</div>
+        <div class="word">NOTICE</div>
+        <div class="date">[Date]</div>
+        <div class="heading">COLOURING KIT LOST</div>
+        This is to inform all the students that I, Vikas Bhatnagar of Grade VI B, have lost my colouring kit in the school premises. It is a twenty-four shade box with my name written on the inner lid. Whosoever finds it is requested to return it to the undersigned. A suitable reward will be given.
+        <div class="sig">Vikas Bhatnagar<br>VIKAS BHATNAGAR<br>Grade VI B</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q2">
+    <div class="qn">Question 2</div>
+    <p class="prompt">You are Aparna/Apurva Roy of Grade VI C, St. Joseph's Convent School, Kolkata. You have lost the book you got issued from the school library. Draft a notice in not more than 50 words requesting the finder to return it to you.</p>
+    <textarea rows="7" placeholder="Draft your notice here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my notice';">Check my notice</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="notice-box">
+        <div class="school">ST. JOSEPH'S CONVENT SCHOOL, KOLKATA</div>
+        <div class="word">NOTICE</div>
+        <div class="date">[Date]</div>
+        <div class="heading">LIBRARY BOOK LOST</div>
+        This is to inform all the students that I, Aparna Roy of Grade VI C, have lost the library book issued to me, titled "Panchatantra Tales". It has a blue cover and my roll number is written on the first page. Whosoever finds it is requested to return it to the undersigned at the earliest.
+        <div class="sig">Aparna Roy<br>APARNA ROY<br>Grade VI C</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q3">
+    <div class="qn">Question 3</div>
+    <p class="prompt">Abha Srivastav of Lake View School, Udaipur has found a wrist watch. Draft a notice in 50 words inviting the owner to claim it.</p>
+    <textarea rows="7" placeholder="Draft your notice here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my notice';">Check my notice</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="notice-box">
+        <div class="school">LAKE VIEW SCHOOL, UDAIPUR</div>
+        <div class="word">NOTICE</div>
+        <div class="date">[Date]</div>
+        <div class="heading">WRIST WATCH FOUND</div>
+        This is to inform all the students that a wrist watch has been found lying unclaimed near the school assembly ground. It has a black leather strap and a silver dial. The owner may identify and claim it from the undersigned during the lunch break.
+        <div class="sig">Abha Srivastav<br>ABHA SRIVASTAV<br>Grade VIII</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q4">
+    <div class="qn">Question 4</div>
+    <p class="prompt">Suppose you are Mitali Vashisht, Head Girl of Spring Dales Public School, Bhopal. You have found a wallet near the skating rink. Draft a notice in not more than 50 words to announce it and ask the owner to identify and claim it.</p>
+    <textarea rows="7" placeholder="Draft your notice here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my notice';">Check my notice</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="notice-box">
+        <div class="school">SPRING DALES PUBLIC SCHOOL, BHOPAL</div>
+        <div class="word">NOTICE</div>
+        <div class="date">[Date]</div>
+        <div class="heading">WALLET FOUND</div>
+        This is to inform all the students and staff that a brown leather wallet has been found near the skating rink. It contains some cash and an identity card. The owner is requested to identify and claim it from the undersigned in the Head Girl's office.
+        <div class="sig">Mitali Vashisht<br>MITALI VASHISHT<br>(Head Girl)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q5">
+    <div class="qn">Question 5</div>
+    <p class="prompt">You are Vivek Pradhan, Secretary, Dramatics Club of Innocent Flowers Public School, Delhi. Your school is going to celebrate Shakespeare Week during which various plays by Shakespeare will be enacted. Draft a notice in 50 words inviting all the House Captains to discuss the various issues regarding the event. Invent necessary details.</p>
+    <textarea rows="7" placeholder="Draft your notice here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my notice';">Check my notice</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="notice-box">
+        <div class="school">INNOCENT FLOWERS PUBLIC SCHOOL, DELHI</div>
+        <div class="word">NOTICE</div>
+        <div class="date">[Date]</div>
+        <div class="heading">SHAKESPEARE WEEK — MEETING OF HOUSE CAPTAINS</div>
+        All House Captains are hereby informed that the school will celebrate Shakespeare Week from next Monday, during which plays by Shakespeare will be enacted by each house. A meeting will be held on Friday at 3:30 pm in the Dramatics Room to discuss allocation of scenes, costumes and rehearsal schedules. Attendance is compulsory.
+        <div class="sig">Vivek Pradhan<br>VIVEK PRADHAN<br>(Secretary, Dramatics Club)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q6">
+    <div class="qn">Question 6</div>
+    <p class="prompt">You are Tarun Sharma, Secretary, Literary Club of Blooming Dales Public School, Dehradoon. Your school is going to organise a Poem Recitation Competition. Draft a notice in 50 words inviting all the House Captains to discuss the various issues regarding the event. Invent necessary details.</p>
+    <textarea rows="7" placeholder="Draft your notice here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my notice';">Check my notice</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="notice-box">
+        <div class="school">BLOOMING DALES PUBLIC SCHOOL, DEHRADOON</div>
+        <div class="word">NOTICE</div>
+        <div class="date">[Date]</div>
+        <div class="heading">POEM RECITATION COMPETITION — MEETING OF HOUSE CAPTAINS</div>
+        All House Captains are hereby informed that the Literary Club is organising a Poem Recitation Competition next month. A meeting will be held on Wednesday at 3:30 pm in the Library Hall to discuss the theme, time limit and rules of the competition. Attendance is compulsory.
+        <div class="sig">Tarun Sharma<br>TARUN SHARMA<br>(Secretary, Literary Club)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q7">
+    <div class="qn">Question 7</div>
+    <p class="prompt">You are Akanksha Nanda, Secretary, Arts Club of Good Shepherd Convent School, Shimla. Your school is going to hold a Poster Making Competition on the Earth Day. Draft a notice announcing the event and inviting the interested students to give their names. Invent necessary details. Write the notice in 50 words.</p>
+    <textarea rows="7" placeholder="Draft your notice here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my notice';">Check my notice</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="notice-box">
+        <div class="school">GOOD SHEPHERD CONVENT SCHOOL, SHIMLA</div>
+        <div class="word">NOTICE</div>
+        <div class="date">[Date]</div>
+        <div class="heading">POSTER MAKING COMPETITION</div>
+        This is to inform all the students that the Arts Club is organising a Poster Making Competition on the occasion of Earth Day on the theme "Save the Planet". Interested students of classes VI to X may give their names to the undersigned by [date]. Chart paper and colours will be provided by the club.
+        <div class="sig">Akanksha Nanda<br>AKANKSHA NANDA<br>(Secretary, Arts Club)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q8">
+    <div class="qn">Question 8</div>
+    <p class="prompt">Bhanu Prakash, Head Boy of Pinegrove Public School, Dehradoon has been asked by the Principal to draft a notice inviting the students to participate in Singing Competition. Invent necessary details. Word limit is 50 words.</p>
+    <textarea rows="7" placeholder="Draft your notice here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my notice';">Check my notice</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="notice-box">
+        <div class="school">PINEGROVE PUBLIC SCHOOL, DEHRADOON</div>
+        <div class="word">NOTICE</div>
+        <div class="date">[Date]</div>
+        <div class="heading">SINGING COMPETITION</div>
+        This is to inform all the students that the school is organising a Singing Competition next Saturday in the school auditorium. Students interested in participating, individually or in groups, are requested to give their names to the undersigned by [date]. Songs may be in Hindi or English.
+        <div class="sig">Bhanu Prakash<br>BHANU PRAKASH<br>(Head Boy)</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="revision">8. Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>Organisation name in capitals, centred</li>
+    <li>"NOTICE" in capitals, centred</li>
+    <li>Date, left-aligned</li>
+    <li>Catchy heading, centred</li>
+    <li>Body with all relevant facts (5 W's + H as applicable)</li>
+    <li>Signature block (Name in capitals + Designation), left-aligned</li>
+    <li>Entire notice enclosed in a box</li>
+    <li>Formal, impersonal, passive-voice-preferred language</li>
+    <li>Word limit respected (typically 50 words)</li>
+  </ul>
+
+  <footer>Class 8 · English · Writing Skills · Lesson 1 of 30</footer>
+</div>
+</body>
+</html>
