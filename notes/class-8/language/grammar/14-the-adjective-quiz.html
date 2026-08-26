@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz 14 — The Adjective | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 24px;
+  }
+  .callout p{margin:0 0 8px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout strong{color:var(--ink);}
+
+  h2{
+    font-family:var(--font-mono); font-size:18px; font-weight:700; color:var(--c3);
+    margin:32px 0 10px; padding-top:14px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  p{margin:0 0 12px;}
+  ol{padding-left:22px; margin:0 0 12px;}
+  li{margin-bottom:8px;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:12px 0 24px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  input.blank-input{
+    width:130px; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:44px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  table.gram-table{width:100%; border-collapse:collapse; margin:10px 0 14px; font-size:14.5px;}
+  table.gram-table th, table.gram-table td{border:1px solid var(--line-strong); padding:8px 10px; text-align:left;}
+  table.gram-table th{background:var(--paper); font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:.03em; color:var(--ink-soft);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol{margin:0; padding-left:20px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar · Practice Quiz</div>
+  <h1 class="title">Quiz 14 — The Adjective</h1>
+  <p class="subtitle">A fresh set of adjective exercises — a follow-up to Lesson 14, not a repeat of it.</p>
+
+  <div class="callout">
+    <p><strong>How this works:</strong> adjective exercises have definite correct answers. Fill in your attempt in each box, then press the reveal button under each exercise to check your answer against the key.</p>
+  </div>
+
+  <h2><span class="num">1.</span>Kinds of Adjectives</h2>
+  <div class="exercise-block">
+    <p class="instr">Name the kind of the underlined adjective (Quality, Number, Quantity, Possessive, Demonstrative, Interrogative, Distributive or Emphasizing/Exclamatory).</p>
+    <ol>
+      <li>I have read <u>some</u> milk left in the jug. <input class="blank-input" type="text"></li>
+      <li><u>Each</u> student must carry their own lunch. <input class="blank-input" type="text"></li>
+      <li>This is <u>my</u> favourite chair. <input class="blank-input" type="text"></li>
+      <li><u>What</u> a lovely garden this is! <input class="blank-input" type="text"></li>
+      <li>She has <u>five</u> pencils in her bag. <input class="blank-input" type="text"></li>
+      <li><u>Those</u> mangoes on the tree look ripe. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. Quantity · 2. Distributive · 3. Possessive · 4. Exclamatory · 5. Number · 6. Demonstrative</p></div>
+  </div>
+
+  <h2><span class="num">2.</span>Order of Adjectives</h2>
+  <div class="exercise-block">
+    <p class="instr">Arrange the bracketed adjectives in the correct order before the noun.</p>
+    <ol>
+      <li>She wore a (silk, beautiful, red) scarf. <input class="blank-input" type="text" style="width:280px"></li>
+      <li>He bought a (round, small, wooden) table. <input class="blank-input" type="text" style="width:280px"></li>
+      <li>They live in a (old, charming, stone) cottage. <input class="blank-input" type="text" style="width:280px"></li>
+      <li>I saw a (French, tall, young) man at the café. <input class="blank-input" type="text" style="width:280px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. a beautiful, red, silk scarf · 2. a small, round, wooden table · 3. a charming, old, stone cottage · 4. a tall, young, French man</p></div>
+  </div>
+
+  <h2><span class="num">3.</span>Formation of Adjectives (Suffixes)</h2>
+  <div class="exercise-block">
+    <p class="instr">Form an adjective from the bracketed word and use it to complete the sentence.</p>
+    <ol>
+      <li>This is a very (danger) ___ road to cross. <input class="blank-input" type="text"></li>
+      <li>He gave a (courage) ___ speech before the match. <input class="blank-input" type="text"></li>
+      <li>That was a (fool) ___ mistake to make. <input class="blank-input" type="text"></li>
+      <li>She is a (care) ___ driver. <input class="blank-input" type="text"></li>
+      <li>It was a (wonder) ___ performance. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. dangerous · 2. courageous · 3. foolish · 4. careful · 5. wonderful</p></div>
+  </div>
+
+  <h2><span class="num">4.</span>Degrees of Comparison — Rule 1 (-er / -est)</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the Comparative and Superlative degrees.</p>
+    <table class="gram-table">
+      <tr><th>Positive</th><th>Comparative</th><th>Superlative</th></tr>
+      <tr><td>tall</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>small</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>cold</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>rich</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>young</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>taller/tallest · smaller/smallest · colder/coldest · richer/richest · younger/youngest</p></div>
+  </div>
+
+  <h2><span class="num">5.</span>Degrees of Comparison — Rules 2, 3 &amp; 6</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the Comparative and Superlative degrees. (Rule 2: ends in silent 'e' — add -r/-st. Rule 3: short vowel + single consonant — double the consonant. Rule 6: long words — use more/most.)</p>
+    <table class="gram-table">
+      <tr><th>Positive</th><th>Comparative</th><th>Superlative</th></tr>
+      <tr><td>wise</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>hot</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>thin</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>beautiful</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>careful</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>wiser/wisest · hotter/hottest · thinner/thinnest · more beautiful/most beautiful · more careful/most careful</p></div>
+  </div>
+
+  <h2><span class="num">6.</span>Irregular Degrees</h2>
+  <div class="exercise-block">
+    <p class="instr">Give the Comparative and Superlative degrees of these irregular adjectives.</p>
+    <table class="gram-table">
+      <tr><th>Positive</th><th>Comparative</th><th>Superlative</th></tr>
+      <tr><td>bad</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>much</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>far</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>old (family)</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>bad → worse → worst · much → more → most · far → farther/further → farthest/furthest · old → elder → eldest</p></div>
+  </div>
+
+  <h2><span class="num">7.</span>Correct Word Choice</h2>
+  <div class="exercise-block">
+    <p class="instr">Choose the correct word to complete each sentence.</p>
+    <ol>
+      <li>Ramesh is senior ___ me by two years. (than / to) <input class="blank-input" type="text"></li>
+      <li>Of the two boys, Rahul is the ___. (taller / tallest) <input class="blank-input" type="text"></li>
+      <li>This is the ___ of all the paintings in the gallery. (finer / finest) <input class="blank-input" type="text"></li>
+      <li>She is my ___ sister. (elder / older) <input class="blank-input" type="text"></li>
+      <li>He is ___ prior claim to the property. (a / the) — Sunita has a ___ claim to it. (prior) <input class="blank-input" type="text" style="width:220px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. to · 2. taller · 3. finest · 4. elder · 5. a prior claim</p></div>
+  </div>
+
+  <h2><span class="num">8.</span>Verbs Used as Adjectives</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blank with the correct participle form of the bracketed verb (present or past).</p>
+    <ol>
+      <li>The (bore) ___ lecture put everyone to sleep. <input class="blank-input" type="text"></li>
+      <li>The (break) ___ vase lay in pieces on the floor. <input class="blank-input" type="text"></li>
+      <li>We watched the (rise) ___ sun from the hilltop. <input class="blank-input" type="text"></li>
+      <li>The (excite) ___ crowd cheered loudly. <input class="blank-input" type="text"></li>
+      <li>The (lose) ___ dog wandered the streets. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. boring · 2. broken · 3. rising · 4. excited · 5. lost</p></div>
+  </div>
+
+  <h2><span class="num">9.</span>Similes</h2>
+  <div class="exercise-block">
+    <p class="instr">Complete each simile with the missing adjective or noun.</p>
+    <ol>
+      <li>As white as ___ <input class="blank-input" type="text"></li>
+      <li>As busy as a ___ <input class="blank-input" type="text"></li>
+      <li>As slow as a ___ <input class="blank-input" type="text"></li>
+      <li>As proud as a ___ <input class="blank-input" type="text"></li>
+      <li>As cool as a ___ <input class="blank-input" type="text"></li>
+      <li>As strong as an ___ <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. snow · 2. bee · 3. snail · 4. peacock · 5. cucumber · 6. ox</p></div>
+  </div>
+
+  <h2><span class="num">10.</span>Transformation of Sentences by Degree</h2>
+  <div class="exercise-block">
+    <p class="instr">Rewrite each sentence in the degree named in brackets, keeping the meaning the same.</p>
+    <ol>
+      <li>Delhi is one of the largest cities in India. (Change to Comparative) <textarea class="answer-box"></textarea></li>
+      <li>No other boy in the class is as clever as Arjun. (Change to Superlative) <textarea class="answer-box"></textarea></li>
+      <li>Gold is more precious than silver. (Change to Positive) <textarea class="answer-box"></textarea></li>
+      <li>The Nile is the longest river in Africa. (Change to Comparative) <textarea class="answer-box"></textarea></li>
+      <li>Very few cities in India are as clean as Indore. (Change to Superlative) <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>Delhi is larger than most other cities in India.</li>
+        <li>Arjun is the cleverest boy in the class.</li>
+        <li>Silver is not so precious as gold.</li>
+        <li>The Nile is longer than any other river in Africa.</li>
+        <li>Indore is one of the cleanest cities in India.</li>
+      </ol>
+    </div>
+  </div>
+
+  <footer>Class 8 · English · Grammar · Quiz 14 — check each exercise against its own answer key above.</footer>
+</div>
+</body>
+</html>

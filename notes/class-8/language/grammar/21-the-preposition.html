@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 21 — The Preposition | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:5px; break-inside:avoid; font-size:14px;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700; color:var(--c3);
+    margin:34px 0 12px; padding-top:16px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  h3{font-family:var(--font-mono); font-size:15px; font-weight:700; color:var(--violet); margin:18px 0 8px;}
+  p{margin:0 0 12px;}
+  ul, ol.plain{padding-left:22px; margin:0 0 14px;}
+  ul li, ol.plain li{margin-bottom:7px;}
+  strong{color:var(--ink);}
+  .eg{color:var(--ink-soft);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 20px;
+  }
+  .callout p{margin:0;}
+  .callout strong{color:var(--ink);}
+
+  .ocr-note{
+    border:1px dashed var(--violet); border-radius:8px; background:var(--accent2-soft);
+    color:var(--ink-soft); font-size:14px; font-style:italic; padding:10px 14px; margin:10px 0 16px;
+  }
+  .ocr-note b{color:var(--violet); font-style:normal; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; margin-right:6px;}
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:12px 0 22px; font-size:14.5px;}
+  table.ref-table th{
+    font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.04em;
+    text-align:left; color:var(--c3); border-bottom:2px solid var(--line-strong); padding:8px 10px;
+  }
+  table.ref-table td{border-bottom:1px solid var(--line); padding:8px 10px; color:var(--ink-soft); vertical-align:top;}
+  table.ref-table tr:last-child td{border-bottom:none;}
+  table.ref-table td strong, table.ref-table td.word{color:var(--ink); font-weight:700;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:14px 0 26px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  input.blank-input{
+    width:150px; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  input.blank-input.wide{width:260px;}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  .checklist{background:var(--accent2-soft); border:1px solid var(--line-strong); border-radius:var(--radius-md); padding:18px 24px;}
+  .checklist ul{margin:0;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar · Chapter-9</div>
+  <h1 class="title">Lesson 21 — The Preposition</h1>
+  <p class="subtitle">Everything on prepositions from the textbook — types, uses of place, time, manner, and every "same preposition with many uses" list — reproduced in full, with every practice exercise turned interactive.</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#s1">1. What Is a Preposition?</a></li>
+      <li><a href="#s2">2. Types of Preposition</a></li>
+      <li><a href="#s3">3. Prepositions of Place or Direction</a></li>
+      <li><a href="#s4">4. Use of At / On / In</a></li>
+      <li><a href="#s5">5. Prepositions of Time — Use of At</a></li>
+      <li><a href="#s6">6. Prepositions of Time — Use of On / In</a></li>
+      <li><a href="#s7">7. For, From...To/Till, During</a></li>
+      <li><a href="#s8">8. Before, After, Since, Till/Until</a></li>
+      <li><a href="#s9">9. Between, By, Up To</a></li>
+      <li><a href="#s10">10. Through, Throughout, Towards, Behind, To, Past</a></li>
+      <li><a href="#s11">11. Instrument, Agent, Means — By / With</a></li>
+      <li><a href="#s12">12. Prepositions of Manner</a></li>
+      <li><a href="#s13">13. Cause, Reason, Purpose</a></li>
+      <li><a href="#s14">14. Prepositions of Direction</a></li>
+      <li><a href="#s15">15. Prepositions of Possession</a></li>
+      <li><a href="#s16">16. Prepositions of Measure, Rate</a></li>
+      <li><a href="#s17">17. Contrast, Concession</a></li>
+      <li><a href="#s18">18. Beneath / Beyond</a></li>
+      <li><a href="#s19">19. Same Preposition, Many Uses — At/In</a></li>
+      <li><a href="#s20">20. In / Into</a></li>
+      <li><a href="#s21">21. To / Into</a></li>
+      <li><a href="#s22">22. In / Within / Before</a></li>
+      <li><a href="#s23">23. On / Upon</a></li>
+      <li><a href="#s24">24. Above / Over</a></li>
+      <li><a href="#s25">25. Below / Under / Beneath / Beyond</a></li>
+      <li><a href="#s26">26. Since / From</a></li>
+      <li><a href="#s27">27. With / By</a></li>
+      <li><a href="#s28">28. Between / Among</a></li>
+      <li><a href="#s29">29. Beside / Besides</a></li>
+      <li><a href="#s30">30. Of / Off</a></li>
+      <li><a href="#s31">31. For</a></li>
+      <li><a href="#s32">32. Behind / In Front of</a></li>
+      <li><a href="#s33">33. Exercise — at / in / to / into</a></li>
+      <li><a href="#s34">34. Exercise — in / within / on / upon</a></li>
+      <li><a href="#s35">35. Exercise — above / over / below / under</a></li>
+      <li><a href="#s36">36. Exercise — between / among</a></li>
+      <li><a href="#s37">37. Exercise — since / for</a></li>
+      <li><a href="#s38">38. Exercise — from / with / by</a></li>
+      <li><a href="#s39">39. Exercise — of / off / for</a></li>
+      <li><a href="#s40">40. Exercise — Tick the Correct Preposition</a></li>
+      <li><a href="#s41">41. Exercise — Underline the Incorrect Preposition</a></li>
+      <li><a href="#s42">42. Words Followed by Appropriate Prepositions</a></li>
+      <li><a href="#s43">43. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="num">1.</span>What Is a Preposition?</h2>
+  <p>A preposition (pre-position), as the name suggests, is a word which is placed before a noun or a pronoun to establish the relation between the noun or pronoun and some other word in a sentence. Thus, a preposition is always followed by a noun or a pronoun.</p>
+
+  <h2 id="s2"><span class="num">2.</span>Types of Preposition</h2>
+  <ol class="plain">
+    <li><strong>Simple Preposition:</strong> in, of, on, up, with, for, at, out, off, by etc.</li>
+    <li><strong>Compound Prepositions:</strong> without, within, outside, inside, into, etc.</li>
+    <li><strong>Double Prepositions:</strong> Outside of, out of, from out, from behind, from beneath etc.</li>
+    <li><strong>Participle Prepositions:</strong> Notwithstanding, concerning, regarding, considering, etc.</li>
+    <li><strong>Phrase Prepositions:</strong> By means of, by virtue of, on account of, in opposition to, with regard to, for the sake of, instead of, on behalf of etc.</li>
+  </ol>
+
+  <h2 id="s3"><span class="num">3.</span>Prepositions of Place or Direction</h2>
+  <p>Look at the pictures given below carefully to understand how prepositions can be used to indicate the relation of place or direction.</p>
+
+  <h3>1. The place may be seen as a point or place that can be identified.</h3>
+  <ul>
+    <li class="eg">He went to market.</li>
+    <li class="eg">They waited at the main gate.</li>
+    <li class="eg">I remained away from home for many years.</li>
+  </ul>
+  <h3>2. The place may be seen as a line.</h3>
+  <ul>
+    <li class="eg">The train moved on the track.</li>
+    <li class="eg">The ship was anchored a mile off the coast.</li>
+    <li class="eg">He went across the road.</li>
+    <li class="eg">They walked up/down the lane.</li>
+    <li class="eg">They walked along the sea shore.</li>
+  </ul>
+  <h3>3. The place may be seen as a surface.</h3>
+  <ul>
+    <li class="eg">They sat on the desk.</li>
+    <li class="eg">They sat at the first desk.</li>
+    <li class="eg">They went across the field.</li>
+    <li class="eg">The apple fell on (to) the ground.</li>
+  </ul>
+  <h3>4. The place may be seen as an area which has boundaries and limits.</h3>
+  <ul>
+    <li class="eg">The farmer is in the field.</li>
+    <li class="eg">She went through the forest.</li>
+    <li class="eg">The thief ran into the street.</li>
+    <li class="eg">We stayed out of the country.</li>
+    <li class="eg">The children are playing in the park.</li>
+  </ul>
+  <h3>5. The place may be seen as a volume.</h3>
+  <ul>
+    <li class="eg">He went into the room.</li>
+    <li class="eg">Keep these books in the box.</li>
+    <li class="eg">They went out of the house.</li>
+    <li class="eg">The breeze blew through the trees.</li>
+  </ul>
+  <h3>6. Prepositions of Relative Position:</h3>
+  <p>(a) Above, over, on top of, below, under, underneath and beneath show the relative position of two objects vertically.<br>(b) Before, in front of, behind, by, beside and after show the relative position of two objects horizontally.</p>
+  <ul>
+    <li class="eg">The boy stood under the tree.</li>
+    <li class="eg">He kept the letter under the pillow. (not below the pillow)</li>
+    <li class="eg">I feel as if I were on top of the world.</li>
+    <li class="eg">There is a temple in front of my house.</li>
+    <li class="eg">The little child hid behind a tree.</li>
+    <li class="eg">There is a bridge above/over the river.</li>
+    <li class="eg">A river flows below the bridge.</li>
+  </ul>
+
+  <h2 id="s4"><span class="num">4.</span>Use of At / On / In</h2>
+  <p><strong>At</strong> is used for a point. <strong>On</strong> is used for a surface. <strong>In</strong> is used for an enclosed space.</p>
+  <table class="ref-table">
+    <tr><th>At</th><th>In</th><th>On</th></tr>
+    <tr><td>at the bus stop</td><td>in the garden</td><td>on the wall</td></tr>
+    <tr><td>at the main gate</td><td>in Mumbai</td><td>on the table</td></tr>
+    <tr><td>at door</td><td>in India</td><td>on the door</td></tr>
+    <tr><td>at the last table</td><td>in a box</td><td>on the cover</td></tr>
+    <tr><td>at top of the page</td><td>in my pocket</td><td>on the floor</td></tr>
+    <tr><td>at the end of the road</td><td>in my wallet</td><td>on the carpet</td></tr>
+    <tr><td>at the entrance</td><td>in her bag</td><td>on the menu</td></tr>
+    <tr><td>at the crossroads</td><td>in a car</td><td>on a page</td></tr>
+  </table>
+
+  <h2 id="s5"><span class="num">5.</span>Prepositions of Time — Use of At</h2>
+  <p>Time has two dimensions: Point of time and Period of time.</p>
+  <ul>
+    <li>For point of time, chiefly clock time: at 6 o'clock, at noon, at night, at midnight</li>
+    <li>For holiday periods: at Christmas, at the weekend</li>
+    <li>For time phrase: at that time, at night, at an early stage, at an early date etc.</li>
+  </ul>
+
+  <h2 id="s6"><span class="num">6.</span>Prepositions of Time — Use of On / In</h2>
+  <ul>
+    <li>'On' is used for days and dates: on Saturday, on November 25, 2017</li>
+    <li>'In' is used with the names of month, year, morning, evening and afternoon: in July, in 1985, in the morning, in the afternoon, in the evening</li>
+  </ul>
+
+  <h2 id="s7"><span class="num">7.</span>Use of For, From...to/till, During</h2>
+  <p>'For' is used to denote a period of time, 'from...to/till' is used to denote a beginning point of time and a finishing point of time, 'during' is used to denote all through a period of time.</p>
+  <ul>
+    <li class="eg">I lived in Delhi for two years.</li>
+    <li class="eg">I worked there from February to/till October.</li>
+    <li class="eg">He learnt skating during summer vacation.</li>
+  </ul>
+
+  <h2 id="s8"><span class="num">8.</span>Use of Before, After, Since, Till/Until</h2>
+  <p>These prepositions are used with point of time.</p>
+  <ul>
+    <li class="eg">We shall return before/after evening/5 o'clock/July.</li>
+    <li class="eg">He was born before/after 1985.</li>
+    <li class="eg">She has been studying since morning.</li>
+    <li class="eg">We waited till/until evening/7:30. (We did not wait after that time.)</li>
+  </ul>
+  <p><em>Note: 'Till' is more informal than 'until'. In the beginning of a sentence 'until' is used.</em></p>
+
+  <h2 id="s9"><span class="num">9.</span>Use of Between, By, Up to</h2>
+  <p>'Between' is used to denote a starting point of time and a finishing point of time. 'By' is used to denote a point of time, 'up to' is also used to denote a point of time.</p>
+  <ul>
+    <li class="eg">The shop remains closed between 2 pm and 4 pm.</li>
+    <li class="eg">He will finish his work up to next week.</li>
+    <li class="eg">They had completed their homework by 6 o'clock.</li>
+  </ul>
+
+  <h2 id="s10"><span class="num">10.</span>Use of Through, Throughout, Towards, Behind, To, Past</h2>
+  <ul>
+    <li class="eg">The day became cold towards evening. (preposition of time)</li>
+    <li class="eg">The army headed towards the border. (preposition of place)</li>
+    <li class="eg">Hurry up! We are behind time/schedule. (late)</li>
+    <li class="eg">What is the time? It is ten minutes to two. It is ten minutes past two.</li>
+    <li class="eg">It was past midnight when we reached home.</li>
+    <li class="eg">The patient will not live through night.</li>
+    <li class="eg">The museum is open daily throughout the year.</li>
+  </ul>
+
+  <h2 id="s11"><span class="num">11.</span>Prepositions of Instrument, Agent, Means — By / With</h2>
+  <p>'By' usually denotes the agent or doer; 'with' denotes the instrument.</p>
+  <ul>
+    <li class="eg">The apple was cut by Riya with a knife.</li>
+    <li class="eg">The accident was seen by him with his own eyes.</li>
+  </ul>
+  <p>'By' is also used to signify 'by means of'.</p>
+  <ul>
+    <li class="eg">They usually travel by a car.</li>
+  </ul>
+
+  <h2 id="s12"><span class="num">12.</span>Prepositions of Manner</h2>
+  <ul>
+    <li class="eg">She danced with a lot of grace.</li>
+    <li class="eg">They played with confidence.</li>
+  </ul>
+
+  <h2 id="s13"><span class="num">13.</span>Prepositions of Cause, Reason, Purpose</h2>
+  <ul>
+    <li class="eg">I bought this book for you.</li>
+    <li class="eg">You should fight for your rights.</li>
+    <li class="eg">He died of cancer.</li>
+    <li class="eg">She is suffering from typhoid.</li>
+    <li class="eg">She failed due to her carelessness.</li>
+  </ul>
+
+  <h2 id="s14"><span class="num">14.</span>Prepositions of Direction</h2>
+  <p>Prepositions of direction denote direction or movement of persons or things with respect to someone or something else. Examples: to, towards, into, at, for, against, off, around, along, across, up, down etc.</p>
+  <ul>
+    <li class="eg">He went to market. / The army marched towards the line of control.</li>
+    <li class="eg">He jumped into the well. / Look at the sun.</li>
+    <li class="eg">He has taken the flight for Delhi. / He leaned against the wall.</li>
+  </ul>
+
+  <h2 id="s15"><span class="num">15.</span>Prepositions of Possession</h2>
+  <ul>
+    <li class="eg">Don't pull the tail of the dog.</li>
+    <li class="eg">There is a man with a sword in his hands.</li>
+  </ul>
+
+  <h2 id="s16"><span class="num">16.</span>Prepositions of Measure, Rate</h2>
+  <ul>
+    <li class="eg">Cloth is sold by the metre.</li>
+    <li class="eg">He drove his car at 100 kmph.</li>
+    <li class="eg">Bananas are available at 45 rupees per dozen.</li>
+    <li class="eg">I bought this book for rupees 250.</li>
+  </ul>
+
+  <h2 id="s17"><span class="num">17.</span>Prepositions of Contrast, Concession</h2>
+  <ul>
+    <li class="eg">With all his faults, he was accepted by his family.</li>
+    <li class="eg">For all the wrong you have done to her, she loves you.</li>
+  </ul>
+
+  <h2 id="s18"><span class="num">18.</span>Beneath / Beyond</h2>
+  <p><strong>'Beneath'</strong> is used to denote a position lower than somebody or something: <span class="eg">They found the treasure beneath the roots of a big tree.</span></p>
+  <p><strong>'Beyond'</strong> is used:</p>
+  <ul>
+    <li>To denote on or to the further side of something: <span class="eg">The ball went beyond the boundary.</span></li>
+    <li>Later than a particular time: <span class="eg">I will work on a new project for next six months, but I have not thought what I will do beyond that.</span></li>
+  </ul>
+
+  <div class="callout"><p><strong>Coming up:</strong> the textbook now works through fourteen groups of look-alike prepositions that are commonly confused — "The Same Preposition with Many Uses." Each one below is reproduced in full.</p></div>
+
+  <h2 id="s19"><span class="num">19.</span>The Same Preposition with Many Uses — At / In</h2>
+  <h3>At is used:</h3>
+  <ul>
+    <li>Before towns and villages: <span class="eg">They live at Sangaria.</span></li>
+    <li>For smaller place when two places are mentioned in a sentence: <span class="eg">He lives at Ferozepur in Punjab.</span></li>
+    <li>For big towns or cities to denote a temporary stay: <span class="eg">We stopped at Bathinda on the way to Ahmedabad from Jammu.</span></li>
+    <li>To indicate a point in space: <span class="eg">He is waiting for you at the main gate.</span></li>
+    <li>With the name of building with reference to the activities going on inside: <span class="eg">I work at a bank.</span></li>
+    <li>To indicate direction: <span class="eg">Look at the board.</span></li>
+    <li>To indicate distance away from something: <span class="eg">Can you read the board at 15 feet?</span></li>
+    <li>To indicate a rate, price, speed etc: <span class="eg">He ran at a full speed.</span></li>
+    <li>To indicate order or frequency: <span class="eg">She visited her doctor at regular intervals.</span></li>
+    <li>To denote cause: <span class="eg">She was delighted at the thought of winning the lottery.</span></li>
+    <li>After certain adjectives: <span class="eg">He is good at painting.</span></li>
+    <li>With the name of a person + 's to refer to that person's home or place of work: <span class="eg">There is a party at Verma's today.</span></li>
+    <li>For point of time, chiefly clock time: at 6 o'clock, at noon, at night, at midnight</li>
+    <li>For holiday periods: at Christmas, at the weekend</li>
+    <li>For time phrase: at that time, at night, at an early stage, at an early date etc.</li>
+  </ul>
+  <h3>In is used:</h3>
+  <ul>
+    <li>Before cities, countries and provinces: <span class="eg">He lives in India.</span></li>
+    <li>To indicate a place at a point within the area or volume of something: <span class="eg">Nile is the longest river in the world.</span></li>
+    <li>To indicate a place within the shape of something: <span class="eg">He had a ball in his hand. / He is still in bed.</span></li>
+    <li>To indicate a movement: <span class="eg">They went out in the street.</span></li>
+    <li>To indicate a period of time: <span class="eg">I was born in November 1978.</span></li>
+    <li>In the sense of after (a maximum length of time): <span class="eg">They will return in two hours.</span></li>
+    <li>In the sense of during/for generally after a negative or first, last etc.: <span class="eg">I never met him in these four years.</span></li>
+    <li>To form the whole or part: <span class="eg">There are seven days in a week.</span></li>
+    <li>In the sense of wearing clothes: <span class="eg">There was a man in suit.</span></li>
+    <li>To indicate physical surroundings: <span class="eg">Let's sit in the sun. / Don't go out in the rain.</span></li>
+    <li>To indicate form, shapes, arrangements or quantities: <span class="eg">Stand in a row. / Work in groups.</span></li>
+    <li>To indicate the medium, means, material: <span class="eg">She talks in Telugu. / The letter was written in black ink.</span></li>
+    <li>To indicate the state or condition of somebody or something: <span class="eg">She is in deep depression. / We left the room in a hurry.</span></li>
+    <li>To refer to something: <span class="eg">He is blind in one eye. / Carrots are rich in fibre.</span></li>
+    <li>To introduce a particular person: <span class="eg">She found her soul mate in him.</span></li>
+    <li>To indicate occupation or activity: <span class="eg">His father is in politics.</span></li>
+  </ul>
+
+  <h2 id="s20"><span class="num">20.</span>In / Into</h2>
+  <ul>
+    <li><strong>In</strong> denotes rest or position inside something: <span class="eg">She sat in an armchair.</span></li>
+    <li><strong>Into</strong> denotes motion or direction, change or transformation: <span class="eg">He jumped into the river. / Translate this passage into English.</span></li>
+  </ul>
+
+  <h2 id="s21"><span class="num">21.</span>To / Into</h2>
+  <ul>
+    <li><strong>To</strong> denotes direction whereas <strong>into</strong> denotes entry from outside: <span class="eg">They went to market. / He went into the room.</span></li>
+  </ul>
+
+  <h2 id="s22"><span class="num">22.</span>In / Within / Before</h2>
+  <ul>
+    <li><strong>In</strong> denotes at the end of a period of time: <span class="eg">They will return your books in one week. (after the expiry of the period of one week)</span></li>
+    <li><strong>Within</strong> denotes before the expiry of the specified period of time: <span class="eg">They will return your books within one week. (before the expiry of the period of one week)</span></li>
+    <li><strong>Within</strong> is also used to denote the boundaries of a place or limits of something: <span class="eg">Students must remain within the campus during school hours.</span></li>
+    <li><strong>Before</strong> is used when we specify some time before a point of time/fixed time: <span class="eg">They will return before 30th November.</span></li>
+  </ul>
+
+  <h2 id="s23"><span class="num">23.</span>On / Upon</h2>
+  <h3>On is used:</h3>
+  <ul>
+    <li>To denote a position covering, touching or forming part of a surface: <span class="eg">The cat is on the table. / There is a painting on the wall.</span></li>
+    <li>To denote supported by or attached to: <span class="eg">She hung her coat on a peg. / The flag was hoisted on a high pole.</span></li>
+    <li>With days and dates: <span class="eg">I will come back on Sunday. / My birthday falls on September 15.</span></li>
+    <li>To denote a point of time or occasion: <span class="eg">I congratulated her on getting the first rank in the board examination.</span></li>
+    <li>To denote concerning or regarding: <span class="eg">He has written many books on psychology.</span></li>
+    <li>To indicate membership of a group or organisation: <span class="eg">He was on the selection committee.</span></li>
+    <li>To denote regular consumption of something: <span class="eg">A cow lives on grass. / Most cars run on petrol.</span></li>
+    <li>To denote direction: <span class="eg">You will find the library on your left.</span></li>
+    <li>To indicate near or close to a place: <span class="eg">The city was on the bank of a river.</span></li>
+    <li>To indicate a basis, ground or reason for something: <span class="eg">He was dismissed from the job on the charge of corruption. / On her advice, I changed my decision.</span></li>
+    <li>To denote financial support: <span class="eg">She lived on the little money sent by her brother.</span></li>
+    <li>To denote by means of, using: <span class="eg">Her speech was telecast on television.</span></li>
+    <li>To indicate an activity, a purpose or a state: <span class="eg">He went abroad on a business tour. / They took some money on loan.</span></li>
+  </ul>
+  <h3>Upon is used:</h3>
+  <ul>
+    <li>To denote things in motion: <span class="eg">The cat jumped upon the table. / The lion pounced upon the deer.</span></li>
+  </ul>
+
+  <h2 id="s24"><span class="num">24.</span>Above / Over</h2>
+  <h3>Above is used:</h3>
+  <ul>
+    <li>To denote higher than: <span class="eg">The water has risen above the mark of danger. / We flew above the clouds.</span></li>
+    <li>To denote higher in rank, position, importance etc. than: <span class="eg">A Principal ranks above a lecturer.</span></li>
+    <li>To denote greater in number, price, weight etc than: <span class="eg">The temperature is above normal today.</span></li>
+    <li>To denote more than: <span class="eg">He values money above relationships.</span></li>
+    <li>To denote that someone or something is too good or great or beyond the reach of something: <span class="eg">His subordinate is above suspicion.</span></li>
+  </ul>
+  <h3>Over is used:</h3>
+  <ul>
+    <li>To denote resting on the surface of and partly or completely covering: <span class="eg">She put a blanket over her ailing mother. / Spread a cover over the table.</span></li>
+    <li>To denote a higher position than something but not touching: <span class="eg">He held an umbrella over his head. / There was a fan over my head.</span></li>
+    <li>To denote crossing from one side of something to the other; across: <span class="eg">She looked over the window. / The children ran over the carpet.</span></li>
+    <li>To denote that someone or something moves to the other side: <span class="eg">He jumped over the wall. / She went over the stream.</span></li>
+    <li>To denote on the far or opposite side of something: <span class="eg">Whose house is that over the street?</span></li>
+    <li>To denote in or across every part or most parts of some place: <span class="eg">It is raining over the mountains. / He is famous all over the world.</span></li>
+    <li>To denote more than: <span class="eg">He is over forty.</span></li>
+    <li>To indicate command, authority, superiority or control: <span class="eg">The British ruled over India for 200 years.</span></li>
+    <li>To denote throughout or during: <span class="eg">They discussed the issue over dinner.</span></li>
+    <li>To denote because of, concerning: <span class="eg">There is a dispute between them over a piece of land.</span></li>
+    <li>To denote transmitted by: <span class="eg">They informed about the accident over telephone.</span></li>
+  </ul>
+
+  <h2 id="s25"><span class="num">25.</span>Below / Under / Beneath / Beyond</h2>
+  <h3>Below is used:</h3>
+  <ul>
+    <li>To denote at or to a lower position, level etc.: <span class="eg">The water in the river is below the mark of danger. / Her dress is below the knees.</span></li>
+  </ul>
+  <h3>Under is used:</h3>
+  <ul>
+    <li>To denote in, to or through a position directly below something: <span class="eg">The cat is under the chair. / There is a river under the bridge.</span></li>
+    <li>To denote covered by; below the surface of: <span class="eg">He kept the letter under the pillow. / The children hid their faces under the blanket.</span></li>
+    <li>To denote in or to a position next to and lower than something: <span class="eg">They refreshed themselves under the waterfall.</span></li>
+    <li>To denote younger than a specified age: <span class="eg">Nobody under 18 is allowed to buy alcohol.</span></li>
+    <li>To denote being in a state of: <span class="eg">The bridge is under construction. / Your proposal is under consideration.</span></li>
+    <li>To denote less than: <span class="eg">Her monthly income was under ten thousand rupees.</span></li>
+    <li>To denote who or what controls, governs or manages somebody or something: <span class="eg">The country is under the martial law. / She has 50 workers under her.</span></li>
+    <li>According to an agreement, a law or system: <span class="eg">A man was detained under the Arms Act.</span></li>
+    <li>To denote being affected by: <span class="eg">The building collapsed under stress. / She has been under stress lately.</span></li>
+  </ul>
+  <h3>Beneath is used:</h3>
+  <ul>
+    <li>To denote a position lower than somebody or something: <span class="eg">They found the treasure beneath the roots of a big tree.</span></li>
+    <li>Not good enough for somebody: <span class="eg">He considers such jobs beneath him.</span></li>
+  </ul>
+  <h3>Beyond is used:</h3>
+  <ul>
+    <li>To denote on or to the further side of something: <span class="eg">The road went beyond the village up to the hills.</span></li>
+    <li>Later than a particular time: <span class="eg">The rain will continue beyond evening.</span></li>
+    <li>More than something: <span class="eg">Our achievement was far beyond what we had expected.</span></li>
+    <li>Used to say that something is not possible: <span class="eg">His behaviour is beyond improvement.</span></li>
+    <li>Too far or too advanced for somebody or something: <span class="eg">The sums were beyond the understanding of the students.</span></li>
+  </ul>
+
+  <h2 id="s26"><span class="num">26.</span>Since / From</h2>
+  <h3>Since is used:</h3>
+  <ul>
+    <li>To denote from a specified time in the past till a later past time, or till now: <span class="eg">I have not seen him since November.</span></li>
+  </ul>
+  <h3>From is used:</h3>
+  <ul>
+    <li>To indicate the place or direction from which some person or something starts: <span class="eg">He went from Delhi to Mumbai.</span></li>
+    <li>To indicate the time at which something starts: <span class="eg">They lived in London from 2008 to 2012.</span></li>
+    <li>To indicate who gave, sent or communicated something: <span class="eg">They received a message from the Head Office.</span></li>
+    <li>To indicate where some person or thing originates, or is stored: <span class="eg">This is a famous quotation from Keats.</span></li>
+    <li>To indicate distance between two places: <span class="eg">Her village is ten kilometres from the town.</span></li>
+    <li>To indicate the range of something: <span class="eg">He meets from 15 to 20 people every day. The prices of these trousers start from 150 rupees.</span></li>
+    <li>To indicate the state or form of something before a change: <span class="eg">Translate this letter from English to Hindi.</span></li>
+    <li>To indicate the material from which something is made: <span class="eg">Ghee is made from butter.</span></li>
+    <li>To indicate separation, removal etc.: <span class="eg">The leaves fall from trees in autumn. / Somebody has stolen money from my bag.</span></li>
+    <li>To indicate protection or prevention: <span class="eg">He stopped me from entering the office. / They saved a woman from drowning.</span></li>
+    <li>To indicate cause or reason, cause or motive: <span class="eg">She fell sick from overwork. / They helped us from a sense of compassion.</span></li>
+    <li>To make distinction between two persons or thing: <span class="eg">How will you distinguish salt from sugar? My brother is different from me.</span></li>
+  </ul>
+
+  <h2 id="s27"><span class="num">27.</span>With / By</h2>
+  <h3>With is used:</h3>
+  <ul>
+    <li>To denote in the company of or presence of, to denote in the charge or possession of: <span class="eg">I go to school with my brother. / She leaves her son with her mother every day.</span></li>
+    <li>To denote having or carrying: <span class="eg">I saw a lady with a black bag in her hand.</span></li>
+    <li>To indicate a tool or instrument used: <span class="eg">Cut the apple with a knife. / I saw it with my own eyes.</span></li>
+    <li>To indicate the material or item used: <span class="eg">The bag was filled with coins.</span></li>
+    <li>To denote agreement or support: <span class="eg">She was with the team on this point. / This hair style goes well with your dress.</span></li>
+    <li>To denote because of, on account of: <span class="eg">He was pale with anaemia.</span></li>
+    <li>To indicate the manner, circumstances or condition in which something is done or takes place: <span class="eg">You must do your work with the whole heart. They welcomed us with open arms.</span></li>
+    <li>Employed by or using the services of: <span class="eg">I bank with OBC bank. / She worked with an insurance company for two years.</span></li>
+    <li>To indicate separation from: <span class="eg">I cannot part with my family. / They dispensed with the formalities.</span></li>
+    <li>To denote in spite of; despite: <span class="eg">With all her faults, he still respected her.</span></li>
+  </ul>
+  <h3>By is used:</h3>
+  <ul>
+    <li>To denote near, beside, at the side of: <span class="eg">They have a house by the river. / Come and sit by me.</span></li>
+    <li>To denote agent or doer in a passive sentence: <span class="eg">He was praised by the teacher. / Othello is a tragedy written by William Shakespeare.</span></li>
+    <li>To denote across, along, passing through: <span class="eg">The thieves entered by the back window. / They travelled to Kerala by Maharashtra and Karnataka.</span></li>
+    <li>Pass: <span class="eg">He walked by me without noticing me.</span></li>
+    <li>To denote not later than; before: <span class="eg">You must submit the report by Saturday. / I shall be in Delhi by 5 o'clock.</span></li>
+    <li>To denote during: <span class="eg">He sleeps by day and works by night.</span></li>
+    <li>To denote through the means of: <span class="eg">Can I pay by cheque? / They contacted me by email.</span></li>
+    <li>To denote as a result of, because of: <span class="eg">He met her by chance. / She forgot the papers at home by mistake.</span></li>
+    <li>To indicate a means of transport or a route taken: <span class="eg">I usually travel by bus.</span></li>
+    <li>To indicate a part of the body, or an item of clothing touched, held etc.: <span class="eg">The policeman took the thief by the collar.</span></li>
+    <li>To denote using a standard or unit of measurement: <span class="eg">Oranges are sold by the dozen.</span></li>
+    <li>To denote in successive units, groups or degrees of: <span class="eg">He is getting weak day by day.</span></li>
+    <li>To denote according to; from the evidence of: <span class="eg">What is the time by your watch?</span></li>
+  </ul>
+
+  <h2 id="s28"><span class="num">28.</span>Between / Among</h2>
+  <h3>Between is used:</h3>
+  <ul>
+    <li>To denote shared by two persons or thing: <span class="eg">There is a table between the two chairs. The property was divided between two brothers.</span></li>
+  </ul>
+  <h3>Among is used:</h3>
+  <ul>
+    <li>To indicate division, distribution, possession, or joint activity of, for or by more than two persons: <span class="eg">The property was divided among four sisters.</span></li>
+    <li>To indicate connection, association, inclusion: <span class="eg">He was among the first few persons to enter the hall. We saw him among the crowd.</span></li>
+  </ul>
+  <div class="ocr-note"><b>Source note</b>This Between/Among explanation is printed twice in the textbook, word for word, across pages 91–92 (once just before the page break and once again right after it). It reads as a scanning/printing duplication rather than deliberate repetition, so it is shown here only once rather than twice.</div>
+
+  <h2 id="s29"><span class="num">29.</span>Beside / Besides</h2>
+  <h3>Beside is used:</h3>
+  <ul>
+    <li>To mean at, or by, the side of; next to: <span class="eg">There is a small park beside my house. / He sat beside me.</span></li>
+    <li>To denote compared with: <span class="eg">He was quite short beside his brother. / Beside your earlier movie, this one seems more well-directed.</span></li>
+  </ul>
+  <h3>Besides is used:</h3>
+  <ul>
+    <li>To denote except; apart from: <span class="eg">No one helped with him besides his friend.</span></li>
+    <li>To denote in addition to: <span class="eg">Besides a gold medal, he was given a cash prize of rupees five thousand.</span></li>
+  </ul>
+
+  <h2 id="s30"><span class="num">30.</span>Of / Off</h2>
+  <h3>Of is used:</h3>
+  <ul>
+    <li>To denote belonging to: <span class="eg">India is a land of fairs and festivals.</span></li>
+    <li>To denote originating from or living in: <span class="eg">He comes of a noble family.</span></li>
+    <li>To denote in relation to, concerning or depicting: <span class="eg">I need a map of India.</span></li>
+    <li>To denote about: <span class="eg">He had never heard of such places before.</span></li>
+    <li>To denote the material used to make something: <span class="eg">She wore a beautiful dress of silk.</span></li>
+    <li>To denote so that somebody no longer has, suffers from something: <span class="eg">The robbers robbed us of the money we had. Can you cure her of depression?</span></li>
+    <li>To indicate a cause: <span class="eg">She died of cancer.</span></li>
+    <li>To introduce a phrase that describes a preceding Noun: <span class="eg">He is a man of few words. / She is a lady of virtue.</span></li>
+    <li>To show who is being described by It is/was + Adjective: <span class="eg">It is very kind of you to help me.</span></li>
+  </ul>
+  <h3>Off is used:</h3>
+  <ul>
+    <li>To denote down or away from: <span class="eg">He fell off the tree.</span></li>
+    <li>To denote accessible from: <span class="eg">There is a lane off the main road.</span></li>
+    <li>To denote at some distance from: <span class="eg">There is a good restaurant off my house.</span></li>
+    <li>To denote not wishing or needing to take: <span class="eg">She remained off food for a week.</span></li>
+  </ul>
+
+  <h2 id="s31"><span class="num">31.</span>For</h2>
+  <p>For is used:</p>
+  <ul>
+    <li>To indicate the person intended to receive or benefit from: <span class="eg">My father bought a new watch for me.</span></li>
+    <li>To indicate purpose or function: <span class="eg">They went for a picnic. / He looked for his book everywhere.</span></li>
+    <li>To indicate destination, aim or reason: <span class="eg">He has taken the flight for Delhi.</span></li>
+    <li>To denote as the price, reward or penalty of something: <span class="eg">He got Nobel Prize for his contribution to world literature. / I bought this book for five hundred rupees. One has to pay for one's sins.</span></li>
+    <li>To denote as the replacement of something else: <span class="eg">He got two thousand rupees for his old watch.</span></li>
+    <li>To denote as a representative of: <span class="eg">He spoke for all the workers in the factory.</span></li>
+    <li>Employed by: <span class="eg">She works for a private company.</span></li>
+    <li>In support of somebody or something: <span class="eg">Are you for or against the proposal?</span></li>
+    <li>To denote in order to obtain: <span class="eg">He came to me for discussion over a case.</span></li>
+    <li>To denote a length of time/period of time: <span class="eg">He has been playing for two hours. / I will stay here for a week.</span></li>
+    <li>To denote as the equivalent of, in return for: <span class="eg">You will always find a saint for a rogue.</span></li>
+    <li>To denote with regard to; concerning: <span class="eg">He was anxious for his result. / They are eager for us to join them.</span></li>
+    <li>To show a reason, cause, because of, on account of: <span class="eg">For God's sake, don't disturb me. / Please take care of yourself for your family's sake. / The city is famous for its historical monuments.</span></li>
+    <li>To indicate that something is intended to happen at the specified time: <span class="eg">The doctor has given me an appointment for 2nd December. / They got a reservation for the first week of June.</span></li>
+    <li>To indicate the occasion when something happens: <span class="eg">This is for the first time that he has visited this city. / It was for the last time that they were meeting.</span></li>
+    <li>To indicate a distance: <span class="eg">They walked for ten miles to reach the city.</span></li>
+    <li>To show purpose or design: <span class="eg">This presentation is for you to prepare. / It is for you to decide what you want to do in life.</span></li>
+  </ul>
+
+  <h2 id="s32"><span class="num">32.</span>Behind / In Front of</h2>
+  <h3>Behind is used:</h3>
+  <ul>
+    <li>To denote at or towards the back of somebody or something, and often hidden by it or them: <span class="eg">There is a small temple behind my house.</span></li>
+    <li>To denote less progress than somebody or something: <span class="eg">Hurry up! We are behind schedule.</span></li>
+    <li>To denote support or approval: <span class="eg">Whatever she did, her family always stood up behind her.</span></li>
+    <li>To denote responsibility for starting or developing something: <span class="eg">He was the man behind starting this new project.</span></li>
+    <li>Used to denote that something is in somebody's past: <span class="eg">Our Principal has a long experience behind her.</span></li>
+  </ul>
+  <h3>In Front of is used:</h3>
+  <ul>
+    <li>To denote the position of somebody or something before someone or something. It means the same as outside but not opposite: <span class="eg">He parked the car in front of my house.</span></li>
+    <li>To denote that something is done in someone's presence: <span class="eg">Please don't use such language in front of children.</span></li>
+    <li>Used to denote time which is yet to come; not yet passed: <span class="eg">Don't give up in the face of adversity. You have your whole life in front of you.</span></li>
+  </ul>
+
+  <div class="callout"><p><strong>Now practise:</strong> the textbook's nine practice exercises follow below, all fully answered.</p></div>
+
+  <h2 id="s33"><span class="num">33.</span>Exercise: Fill in the blanks with 'at', 'in', 'to' or 'into'.</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill each blank with the correct preposition.</p>
+    <ol class="plain">
+      <li>He lives .......... Ferozepur .......... Punjab. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>He is waiting for you .......... the main gate. <input class="blank-input" type="text"></li>
+      <li>Look .......... the board. <input class="blank-input" type="text"></li>
+      <li>He ran .......... a full speed. <input class="blank-input" type="text"></li>
+      <li>We left the room .......... a hurry. <input class="blank-input" type="text"></li>
+      <li>He is blind .......... one eye. <input class="blank-input" type="text"></li>
+      <li>Carrots are rich .......... fibre. <input class="blank-input" type="text"></li>
+      <li>He jumped .......... the river. <input class="blank-input" type="text"></li>
+      <li>Translate this passage .......... English. <input class="blank-input" type="text"></li>
+      <li>They went .......... market. <input class="blank-input" type="text"></li>
+      <li>He is good .......... painting. <input class="blank-input" type="text"></li>
+      <li>Nile is the longest river .......... the world. <input class="blank-input" type="text"></li>
+      <li>He parked the car .......... the street. <input class="blank-input" type="text"></li>
+      <li>Keep your books .......... your bags. <input class="blank-input" type="text"></li>
+      <li>Let's sit .......... the sun. <input class="blank-input" type="text"></li>
+      <li>She talks .......... Telugu. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. at, in · 2. at · 3. at · 4. at · 5. in · 6. in · 7. in · 8. into · 9. into · 10. to · 11. at · 12. in · 13. in · 14. in · 15. in · 16. in</p></div>
+  </div>
+
+  <h2 id="s34"><span class="num">34.</span>Exercise: Fill in the blanks with 'in', 'within', 'on', 'upon'.</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill each blank with the correct preposition.</p>
+    <ol class="plain">
+      <li>They will return your books .......... one week. (after the expiry of the period of one week) <input class="blank-input" type="text"></li>
+      <li>They will return your books .......... one week. (before the expiry of the period of one week) <input class="blank-input" type="text"></li>
+      <li>Students must remain .......... the campus during school hours. <input class="blank-input" type="text"></li>
+      <li>The cat is .......... the table. <input class="blank-input" type="text"></li>
+      <li>The cat jumped .......... the table. <input class="blank-input" type="text"></li>
+      <li>There is a painting .......... the wall. <input class="blank-input" type="text"></li>
+      <li>I will come back .......... Sunday. <input class="blank-input" type="text"></li>
+      <li>You will find the library .......... your left. <input class="blank-input" type="text"></li>
+      <li>Her speech was telecast .......... television. <input class="blank-input" type="text"></li>
+      <li>The lion pounced .......... the deer. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. in · 2. within · 3. within · 4. on · 5. upon · 6. on · 7. on · 8. on · 9. on · 10. upon</p></div>
+  </div>
+
+  <h2 id="s35"><span class="num">35.</span>Exercise: Fill in the blanks with 'above', 'over', 'below', 'under'.</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill each blank with the correct preposition.</p>
+    <ol class="plain">
+      <li>The water has risen .......... the mark of danger. <input class="blank-input" type="text"></li>
+      <li>A Principal ranks .......... a lecturer. <input class="blank-input" type="text"></li>
+      <li>She put a blanket .......... her ailing mother. <input class="blank-input" type="text"></li>
+      <li>He held an umbrella .......... his head. <input class="blank-input" type="text"></li>
+      <li>They built a bridge .......... the river. <input class="blank-input" type="text"></li>
+      <li>He jumped .......... the wall. <input class="blank-input" type="text"></li>
+      <li>It is raining .......... the mountains. <input class="blank-input" type="text"></li>
+      <li>He is famous all .......... the world. <input class="blank-input" type="text"></li>
+      <li>The British ruled .......... India for 200 years. <input class="blank-input" type="text"></li>
+      <li>They discussed the issue .......... dinner. <input class="blank-input" type="text"></li>
+      <li>There is a dispute between them .......... a piece of land. <input class="blank-input" type="text"></li>
+      <li>The water in the river is .......... the mark of danger. <input class="blank-input" type="text"></li>
+      <li>Write .......... this line. <input class="blank-input" type="text"></li>
+      <li>The temperature is .......... 17 degree today, so it is cold. <input class="blank-input" type="text"></li>
+      <li>There is a river .......... the bridge. <input class="blank-input" type="text"></li>
+      <li>The tired boy sat .......... a tree. <input class="blank-input" type="text"></li>
+      <li>He kept the letter .......... the pillow. <input class="blank-input" type="text"></li>
+      <li>The children hid their faces .......... the blanket. <input class="blank-input" type="text"></li>
+      <li>Your proposal is .......... consideration. <input class="blank-input" type="text"></li>
+      <li>She has 50 workers .......... her. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. above · 2. above · 3. over · 4. over · 5. over · 6. over · 7. over · 8. over · 9. over · 10. over · 11. over · 12. below · 13. above · 14. below · 15. under · 16. under · 17. under · 18. under · 19. under · 20. under</p></div>
+  </div>
+
+  <h2 id="s36"><span class="num">36.</span>Fill in the blanks with 'between' or 'among'.</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill each blank with the correct preposition.</p>
+    <ol class="plain">
+      <li>There is a table .......... the two chairs. <input class="blank-input" type="text"></li>
+      <li>Both the professors wrote this paper on 'Health Education' .......... them. <input class="blank-input" type="text"></li>
+      <li>The property was divided .......... four sisters. <input class="blank-input" type="text"></li>
+      <li>He was .......... the first few persons to enter the hall. <input class="blank-input" type="text"></li>
+      <li>We saw him .......... the crowd. <input class="blank-input" type="text"></li>
+      <li>Ludhiana is .......... the most crowded cities in the Punjab. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. between · 2. between · 3. among · 4. among · 5. among · 6. among</p></div>
+  </div>
+
+  <h2 id="s37"><span class="num">37.</span>Exercise: Fill in the blanks with 'since' or 'for'.</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill each blank with the correct preposition.</p>
+    <ol class="plain">
+      <li>I have not seen him .......... November. <input class="blank-input" type="text"></li>
+      <li>She has not eaten anything .......... morning. <input class="blank-input" type="text"></li>
+      <li>Children have been playing .......... two hours. <input class="blank-input" type="text"></li>
+      <li>We stayed at Delhi .......... a week. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. since · 2. since · 3. for · 4. for</p></div>
+  </div>
+
+  <h2 id="s38"><span class="num">38.</span>Exercise: Fill in the blanks with 'from', 'with', 'by'.</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill each blank with the correct preposition.</p>
+    <ol class="plain">
+      <li>He went .......... Delhi to Mumbai. <input class="blank-input" type="text"></li>
+      <li>They lived in London .......... 2008 to 2012. <input class="blank-input" type="text"></li>
+      <li>He is .......... Bangalore. <input class="blank-input" type="text"></li>
+      <li>Her village is ten kilometres .......... the town. <input class="blank-input" type="text"></li>
+      <li>Translate this letter .......... English to Hindi. <input class="blank-input" type="text"></li>
+      <li>The leaves fall .......... trees in autumn. <input class="blank-input" type="text"></li>
+      <li>I cannot part .......... my family. <input class="blank-input" type="text"></li>
+      <li>They have a house .......... the river. <input class="blank-input" type="text"></li>
+      <li>Come and sit .......... me. <input class="blank-input" type="text"></li>
+      <li>He was praised .......... the teacher. <input class="blank-input" type="text"></li>
+      <li>He borrowed some money .......... his friend. <input class="blank-input" type="text"></li>
+      <li>There is a man .......... a long beard. <input class="blank-input" type="text"></li>
+      <li>Cut the apple .......... a knife. <input class="blank-input" type="text"></li>
+      <li>The bag was filled .......... coins. <input class="blank-input" type="text"></li>
+      <li>She was angry .......... me. <input class="blank-input" type="text"></li>
+      <li>My brother is different .......... me. <input class="blank-input" type="text"></li>
+      <li>I go to school .......... my brother. <input class="blank-input" type="text"></li>
+      <li>They fought .......... their neighbours. <input class="blank-input" type="text"></li>
+      <li>She was trembling .......... cold. <input class="blank-input" type="text"></li>
+      <li>They welcomed us .......... open arms. <input class="blank-input" type="text"></li>
+      <li>I can't buy a house .......... such a small amount. <input class="blank-input" type="text"></li>
+      <li>I usually travel .......... bus. <input class="blank-input" type="text"></li>
+      <li>Cloth is sold .......... the metre. <input class="blank-input" type="text"></li>
+      <li>What is the time .......... your watch? <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. from · 2. from · 3. from · 4. from · 5. from · 6. from · 7. with · 8. by · 9. by · 10. by · 11. from · 12. with · 13. with · 14. with · 15. with · 16. from · 17. with · 18. with · 19. with · 20. with · 21. with · 22. by · 23. by · 24. by</p></div>
+  </div>
+
+  <h2 id="s39"><span class="num">39.</span>Exercise: Fill in the blanks with 'of', 'off' or 'for'.</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill each blank with the correct preposition.</p>
+    <ol class="plain">
+      <li>India is a land .......... fairs and festivals. <input class="blank-input" type="text"></li>
+      <li>He comes .......... a noble family. <input class="blank-input" type="text"></li>
+      <li>He fell .......... the tree. <input class="blank-input" type="text"></li>
+      <li>She works .......... a private company. <input class="blank-input" type="text"></li>
+      <li>He has been playing .......... two hours. <input class="blank-input" type="text"></li>
+      <li>Please get a cup .......... tea .......... me. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>He told me .......... his experience at Italy. <input class="blank-input" type="text"></li>
+      <li>My father bought a new watch .......... me. <input class="blank-input" type="text"></li>
+      <li>They went .......... a picnic. <input class="blank-input" type="text"></li>
+      <li>He is wearing a chain .......... gold. <input class="blank-input" type="text"></li>
+      <li>Take a book .......... the shelf. <input class="blank-input" type="text"></li>
+      <li>Write the names of days .......... the week. <input class="blank-input" type="text"></li>
+      <li>She died .......... cancer. <input class="blank-input" type="text"></li>
+      <li>The doctor has given me an appointment .......... 2nd December. <input class="blank-input" type="text"></li>
+      <li>There is a lane .......... the main road. <input class="blank-input" type="text"></li>
+      <li>She remained .......... food for a week. <input class="blank-input" type="text"></li>
+      <li>He got Nobel Prize .......... his contribution to world literature. <input class="blank-input" type="text"></li>
+      <li>.......... God's sake, don't disturb me. <input class="blank-input" type="text"></li>
+      <li>The city is famous .......... its historical monuments. <input class="blank-input" type="text"></li>
+      <li>They walked .......... ten miles to reach the city. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. of · 2. of · 3. off · 4. for · 5. for · 6. of, for · 7. of · 8. for · 9. for · 10. of · 11. off · 12. of · 13. of · 14. for · 15. off · 16. off · 17. for · 18. For · 19. for · 20. for</p></div>
+  </div>
+
+  <h2 id="s40"><span class="num">40.</span>Exercise: Tick the correct preposition in the following sentences.</h2>
+  <div class="exercise-block">
+    <p class="instr">Choose the correct preposition from the two given, and type it into the box.</p>
+    <ol class="plain">
+      <li>He cut the apple with/by a knife. <input class="blank-input" type="text"></li>
+      <li>Who is knocking on/at the door? <input class="blank-input" type="text"></li>
+      <li>What is the time in/by your watch? <input class="blank-input" type="text"></li>
+      <li>My notebook was corrected with/by the teacher. <input class="blank-input" type="text"></li>
+      <li>My brother and I distributed the oranges between/among us. <input class="blank-input" type="text"></li>
+      <li>The cat is on/upon the table. <input class="blank-input" type="text"></li>
+      <li>She jumped in/into the river. <input class="blank-input" type="text"></li>
+      <li>It has been raining from/since morning. <input class="blank-input" type="text"></li>
+      <li>He is sitting on/in the chair. <input class="blank-input" type="text"></li>
+      <li>Riya is good in/at studies. <input class="blank-input" type="text"></li>
+      <li>I saw a little puppy crying to/for help. <input class="blank-input" type="text"></li>
+      <li>There is a problem in/with this laptop. <input class="blank-input" type="text"></li>
+      <li>He waited for me on/at the main gate. <input class="blank-input" type="text"></li>
+      <li>The dog jumped across/over the wall. <input class="blank-input" type="text"></li>
+      <li>He swam around/across the river. <input class="blank-input" type="text"></li>
+      <li>He died with/of heart attack. <input class="blank-input" type="text"></li>
+      <li>I usually travel by/in a car. <input class="blank-input" type="text"></li>
+      <li>Children have been playing since/for two hours. <input class="blank-input" type="text"></li>
+      <li>Kindly leave your keys at/on the reception. <input class="blank-input" type="text"></li>
+      <li>He works in/at a bank. <input class="blank-input" type="text"></li>
+      <li>Will you sit besides/beside me for a while? <input class="blank-input" type="text"></li>
+      <li>The thief entered the room from/through the window. <input class="blank-input" type="text"></li>
+      <li>The earth revolves across/around the sun. <input class="blank-input" type="text"></li>
+      <li>There is a bank in front of/opposite the sweet shop. <input class="blank-input" type="text"></li>
+      <li>Kasauli is a small town between/among the Shivalik hills. <input class="blank-input" type="text"></li>
+      <li>It is snowing on/over the valley. <input class="blank-input" type="text"></li>
+      <li>Kindly put a blanket on/over the child. <input class="blank-input" type="text"></li>
+      <li>Why are you angry with/at me? <input class="blank-input" type="text"></li>
+      <li>You must remain of/off TV during your examination. <input class="blank-input" type="text"></li>
+      <li>He has a deep faith in/on God. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. with · 2. at · 3. by · 4. by · 5. among · 6. on · 7. into · 8. since · 9. on · 10. at · 11. for · 12. with · 13. at · 14. over · 15. across · 16. of · 17. by · 18. for · 19. at · 20. at · 21. beside · 22. through · 23. around · 24. opposite · 25. among · 26. over · 27. over · 28. with · 29. off · 30. in</p></div>
+  </div>
+
+  <h2 id="s41"><span class="num">41.</span>Exercise: Underline the incorrect preposition in each sentence and write the correct one.</h2>
+  <div class="exercise-block">
+    <p class="instr">Identify the wrong preposition and type the correct one in the box.</p>
+    <ol class="plain">
+      <li>She is blind with one eye. <input class="blank-input" type="text"></li>
+      <li>He comes from a noble family. <input class="blank-input" type="text"></li>
+      <li>Hard work is the key of success. <input class="blank-input" type="text"></li>
+      <li>Look on the board. <input class="blank-input" type="text"></li>
+      <li>He is listening at music. <input class="blank-input" type="text"></li>
+      <li>This table is made from wood. <input class="blank-input" type="text"></li>
+      <li>She is proud with her beauty. <input class="blank-input" type="text"></li>
+      <li>I am tired with waiting for their reply. <input class="blank-input" type="text"></li>
+      <li>My father deals with iron. <input class="blank-input" type="text"></li>
+      <li>Children laughed on the beggar. <input class="blank-input" type="text"></li>
+      <li>I need a cup off tea. <input class="blank-input" type="text"></li>
+      <li>They contacted me with e-mail. <input class="blank-input" type="text"></li>
+      <li>The students on the last bench made a lot of noise. <input class="blank-input" type="text"></li>
+      <li>He has 15 men working below him. <input class="blank-input" type="text"></li>
+      <li>Please switch of the fan. <input class="blank-input" type="text"></li>
+      <li>There was a bridge on the river. <input class="blank-input" type="text"></li>
+      <li>The tiger ran in full speed. <input class="blank-input" type="text"></li>
+      <li>This pen is available for 50 rupees. <input class="blank-input" type="text"></li>
+      <li>I bought this pen at 45 rupees. <input class="blank-input" type="text"></li>
+      <li>He will finish his work since next week. <input class="blank-input" type="text"></li>
+      <li>They walked across the sea shore. <input class="blank-input" type="text"></li>
+      <li>The story turned serious to the end. <input class="blank-input" type="text"></li>
+      <li>He leaned with the wall. <input class="blank-input" type="text"></li>
+      <li>He is in stress these days. <input class="blank-input" type="text"></li>
+      <li>I am displeased with your behaviour. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1. in (blind in one eye) · 2. of (he comes of a noble family) · 3. to (the key to success) · 4. at (look at the board) · 5. to (listening to music) · 6. of (made of wood) · 7. of (proud of her beauty) · 8. of (tired of waiting) · 9. in (deals in iron) · 10. at (laughed at the beggar) · 11. of (a cup of tea) · 12. by (contacted by e-mail) · 13. at (the students at the last bench) · 14. under (working under him) · 15. off (switch off the fan) · 16. over (a bridge over the river) · 17. at (ran at full speed) · 18. for (available for 50 rupees is already correct — the intended error is elsewhere in this set; treat this item as correct as printed) · 19. for (bought this pen for 45 rupees) · 20. by (finish his work by next week) · 21. along (walked along the sea shore) · 22. towards (turned serious towards the end) · 23. against (leaned against the wall) · 24. under (under stress) · 25. at (displeased at your behaviour)</p>
+      <div class="ocr-note"><b>Note on this key</b>A few of these sentences (for example 2, 18 and 25) already look grammatically sound as printed, and the textbook does not supply an official answer key for this exercise. Where a sentence seemed already correct, the most likely intended error has been reasoned out from the "Same Preposition, Many Uses" reference lists above rather than left blank.</div>
+    </div>
+  </div>
+
+  <h2 id="s42"><span class="num">42.</span>Words Followed by Appropriate Prepositions</h2>
+  <p>A reference list of common word + preposition combinations, with the textbook's example for each.</p>
+  <table class="ref-table">
+    <tr><th>#</th><th>Word + Preposition</th><th>Example</th></tr>
+    <tr><td>1</td><td class="word">Abide by</td><td>The students must abide by the rules of the school.</td></tr>
+    <tr><td>2</td><td class="word">Absorb in</td><td>He was absorbed in his work.</td></tr>
+    <tr><td>3</td><td class="word">Accused of</td><td>The convict was accused of murder.</td></tr>
+    <tr><td>4</td><td class="word">Acquainted with</td><td>Are you acquainted with your new neighbour?</td></tr>
+    <tr><td>5</td><td class="word">Addicted to</td><td>He is addicted to drugs.</td></tr>
+    <tr><td>6</td><td class="word">Admit to</td><td>The injured were admitted to the hospital.</td></tr>
+    <tr><td>7</td><td class="word">Afraid of</td><td>He is not afraid of death.</td></tr>
+    <tr><td>8</td><td class="word">Agree to</td><td>He agreed to this proposal.</td></tr>
+    <tr><td>9</td><td class="word">Agree with</td><td>He agreed with me.</td></tr>
+    <tr><td>10</td><td class="word">Aim at</td><td>What are you aiming at?</td></tr>
+    <tr><td>11</td><td class="word">Angry with</td><td>Are you angry with me?</td></tr>
+    <tr><td>12</td><td class="word">Apologise to, for</td><td>I apologised to the teacher for my misconduct.</td></tr>
+    <tr><td>13</td><td class="word">Ashamed of</td><td>You must be ashamed of your behaviour.</td></tr>
+    <tr><td>14</td><td class="word">Attend to</td><td>Attend to your lessons.</td></tr>
+    <tr><td>15</td><td class="word">Aware of</td><td>You must be aware of your responsibilities.</td></tr>
+    <tr><td>16</td><td class="word">Belong to</td><td>He belongs to a rich family.</td></tr>
+    <tr><td>17</td><td class="word">Bless with</td><td>He is blessed with two sons.</td></tr>
+    <tr><td>18</td><td class="word">Blind in/of</td><td>This man is blind in/of one eye.</td></tr>
+    <tr><td>19</td><td class="word">Blind to</td><td>Don't be blind to your shortcomings.</td></tr>
+    <tr><td>20</td><td class="word">Born in</td><td>He was born in a rich family.</td></tr>
+    <tr><td>21</td><td class="word">Bring up</td><td>He was brought up by his aunt.</td></tr>
+    <tr><td>22</td><td class="word">Care of</td><td>Take care of your health.</td></tr>
+    <tr><td>23</td><td class="word">Compete with</td><td>Can you compete with him?</td></tr>
+    <tr><td>24</td><td class="word">Complain to, against</td><td>The teacher complained against the naughty students to the Principal.</td></tr>
+    <tr><td>25</td><td class="word">Congratulate on</td><td>She congratulated me on my success.</td></tr>
+    <tr><td>26</td><td class="word">Consist of</td><td>His family consists of his parents and two siblings.</td></tr>
+    <tr><td>27</td><td class="word">Deal in</td><td>His father deals in gold and silver.</td></tr>
+    <tr><td>28</td><td class="word">Die of (disease)</td><td>He died of heart attack.</td></tr>
+    <tr><td>29</td><td class="word">Differ from (thing)</td><td>My dress differs from yours.</td></tr>
+    <tr><td>30</td><td class="word">Differ on (point)</td><td>I differ with you on this point.</td></tr>
+    <tr><td>31</td><td class="word">Differ with (person)</td><td>I differ with you on this point.</td></tr>
+    <tr><td>32</td><td class="word">Disgusted at, with</td><td>I was disgusted with him at his misbehaviour.</td></tr>
+    <tr><td>33</td><td class="word">Dismiss from</td><td>The boss dismissed him from job.</td></tr>
+    <tr><td>34</td><td class="word">Displeased at</td><td>He was displeased at your misconduct.</td></tr>
+    <tr><td>35</td><td class="word">Displeased with</td><td>He was displeased with you.</td></tr>
+    <tr><td>36</td><td class="word">Due to</td><td>He achieved success due to his hard work.</td></tr>
+    <tr><td>37</td><td class="word">Eager for</td><td>He is eager for praise.</td></tr>
+    <tr><td>38</td><td class="word">Eligible for</td><td>He was not eligible for the post.</td></tr>
+    <tr><td>39</td><td class="word">Engage in</td><td>She is engaged in shopping for her wedding.</td></tr>
+    <tr><td>40</td><td class="word">Engage to</td><td>He got engaged to a doctor.</td></tr>
+    <tr><td>41</td><td class="word">Equal to</td><td>Two multiplied by two is equal to four.</td></tr>
+    <tr><td>42</td><td class="word">Expert in (doing)</td><td>He is expert in repairing air conditions.</td></tr>
+    <tr><td>43</td><td class="word">Expert at (thing)</td><td>He is expert at drawing.</td></tr>
+    <tr><td>44</td><td class="word">Exempt from</td><td>Kindly exempt the poor students from paying the school fee.</td></tr>
+    <tr><td>45</td><td class="word">Explain to</td><td>He explained the matter to me.</td></tr>
+    <tr><td>46</td><td class="word">Export to</td><td>Chinese toys are exported to many countries in the world.</td></tr>
+    <tr><td>47</td><td class="word">Faith in</td><td>I have a deep faith in God.</td></tr>
+    <tr><td>48</td><td class="word">Faithful to</td><td>The servant is faithful to his master.</td></tr>
+    <tr><td>49</td><td class="word">False to</td><td>Never be false to your friends.</td></tr>
+    <tr><td>50</td><td class="word">Familiar to</td><td>Her face is familiar to mine.</td></tr>
+    <tr><td>51</td><td class="word">Familiar with</td><td>I am familiar with him.</td></tr>
+    <tr><td>52</td><td class="word">Famous for</td><td>Jalandhar is famous for sports goods.</td></tr>
+    <tr><td>53</td><td class="word">Fight for</td><td>He fought for the honour of his country.</td></tr>
+    <tr><td>54</td><td class="word">Fight with</td><td>You should not fight with your friends.</td></tr>
+    <tr><td>55</td><td class="word">Fill with</td><td>Fill in the blanks with Prepositions.</td></tr>
+    <tr><td>56</td><td class="word">Fit for</td><td>He is fit for this job.</td></tr>
+    <tr><td>57</td><td class="word">Fond of</td><td>I am fond of listening to classical music.</td></tr>
+    <tr><td>58</td><td class="word">Free from</td><td>He is free from all the worries now.</td></tr>
+    <tr><td>59</td><td class="word">Full of</td><td>The jug was full of water.</td></tr>
+    <tr><td>60</td><td class="word">Gifted with</td><td>She is gifted with a sweet voice.</td></tr>
+    <tr><td>61</td><td class="word">Good at</td><td>He is good at painting.</td></tr>
+    <tr><td>62</td><td class="word">Grateful to</td><td>I will always be grateful to you.</td></tr>
+    <tr><td>63</td><td class="word">Greedy for</td><td>Don't be greedy for money.</td></tr>
+    <tr><td>64</td><td class="word">Grieve at</td><td>He grieved at his failure.</td></tr>
+    <tr><td>65</td><td class="word">Honest with</td><td>She has always been honest with me.</td></tr>
+    <tr><td>66</td><td class="word">Hope of</td><td>There is no hope of the patient's survival.</td></tr>
+    <tr><td>67</td><td class="word">Import from</td><td>We import machines from China.</td></tr>
+    <tr><td>68</td><td class="word">Inferior to</td><td>Your dress is inferior to mine.</td></tr>
+    <tr><td>69</td><td class="word">Inform of</td><td>I informed him of my arrival.</td></tr>
+    <tr><td>70</td><td class="word">Injurious to</td><td>Smoking is injurious to health.</td></tr>
+    <tr><td>71</td><td class="word">Inquire into (a matter)</td><td>A committee was appointed to inquire into the allegations.</td></tr>
+    <tr><td>72</td><td class="word">Interest in</td><td>He has no interest in studies.</td></tr>
+    <tr><td>73</td><td class="word">Interfere with</td><td>Don't interfere with my work.</td></tr>
+    <tr><td>74</td><td class="word">Introduce to</td><td>I introduced my friend to my parents.</td></tr>
+    <tr><td>75</td><td class="word">Invite to</td><td>We invited them to lunch.</td></tr>
+    <tr><td>76</td><td class="word">Jealous of</td><td>We should not be jealous of others.</td></tr>
+    <tr><td>77</td><td class="word">Junior to</td><td>He is junior to me.</td></tr>
+    <tr><td>78</td><td class="word">Kind to</td><td>We should be kind to animals.</td></tr>
+    <tr><td>79</td><td class="word">Knock at</td><td>Someone is knocking at the door.</td></tr>
+    <tr><td>80</td><td class="word">Known to</td><td>He is known to everybody.</td></tr>
+    <tr><td>81</td><td class="word">Key to</td><td>Hard work is the key to success.</td></tr>
+    <tr><td>82</td><td class="word">Laugh at</td><td>Children laughed at the beggar.</td></tr>
+    <tr><td>83</td><td class="word">Listen to</td><td>Please listen to me.</td></tr>
+    <tr><td>84</td><td class="word">Loyal to</td><td>One must be loyal to one's country.</td></tr>
+    <tr><td>85</td><td class="word">Mad with</td><td>The boss was mad with anger.</td></tr>
+    <tr><td>86</td><td class="word">Made of</td><td>These chairs are made of wood.</td></tr>
+    <tr><td>87</td><td class="word">Married to</td><td>She got married to a businessman.</td></tr>
+    <tr><td>88</td><td class="word">Need of</td><td>He is in need of money.</td></tr>
+    <tr><td>89</td><td class="word">Need for</td><td>There is a great need for qualified and trained teachers.</td></tr>
+    <tr><td>90</td><td class="word">Obliged to</td><td>I am obliged to you for your help.</td></tr>
+    <tr><td>91</td><td class="word">Open to</td><td>We should be open to suggestions for improvement.</td></tr>
+    <tr><td>92</td><td class="word">Opposite to</td><td>My house is opposite to the railway station.</td></tr>
+    <tr><td>93</td><td class="word">Pleased with</td><td>My teachers are pleased with my performance.</td></tr>
+    <tr><td>94</td><td class="word">Polite to</td><td>Be polite to all.</td></tr>
+    <tr><td>95</td><td class="word">Pray to</td><td>I pray to God for your health.</td></tr>
+    <tr><td>96</td><td class="word">Prepare for</td><td>The students are preparing for exams.</td></tr>
+    <tr><td>97</td><td class="word">Pride in</td><td>She takes pride in her beauty.</td></tr>
+    <tr><td>98</td><td class="word">Proud of</td><td>She is proud of her beauty.</td></tr>
+    <tr><td>99</td><td class="word">Ready for</td><td>I am ready for the match.</td></tr>
+    <tr><td>100</td><td class="word">Recover from</td><td>May you recover soon from illness!</td></tr>
+    <tr><td>101</td><td class="word">Refer to</td><td>The term 'Arts' usually refers to 'Humanities and social sciences'.</td></tr>
+    <tr><td>102</td><td class="word">Rely on</td><td>You can rely on me.</td></tr>
+    <tr><td>103</td><td class="word">Reply to</td><td>He replied to all my letters.</td></tr>
+    <tr><td>104</td><td class="word">Responsible for</td><td>Who is responsible for this mess?</td></tr>
+    <tr><td>105</td><td class="word">Rid of</td><td>I want to get rid of my old car.</td></tr>
+    <tr><td>106</td><td class="word">Satisfied with</td><td>The Director was satisfied with his acting.</td></tr>
+    <tr><td>107</td><td class="word">Search for</td><td>The thirsty crow searched for water everywhere.</td></tr>
+    <tr><td>108</td><td class="word">Search of</td><td>The thirsty crow was in search of water.</td></tr>
+    <tr><td>109</td><td class="word">Shock at</td><td>The whole world was shocked at the terrorist attack in the USA.</td></tr>
+    <tr><td>110</td><td class="word">Sorry for</td><td>I am sorry for the delay.</td></tr>
+    <tr><td>111</td><td class="word">Stand by</td><td>My parents always stood by me through thick and thin.</td></tr>
+    <tr><td>112</td><td class="word">Suffer from</td><td>I have been suffering from fever for two days.</td></tr>
+    <tr><td>113</td><td class="word">Superior to</td><td>Your coat is superior to mine.</td></tr>
+    <tr><td>114</td><td class="word">Surprised at</td><td>We were surprised at his misconduct.</td></tr>
+    <tr><td>115</td><td class="word">Thankful to, for</td><td>I am thankful to you for your help.</td></tr>
+    <tr><td>116</td><td class="word">Thinking of</td><td>The fox thought of a plan to get the piece of bread from the crow.</td></tr>
+    <tr><td>117</td><td class="word">Tired of</td><td>I am tired of waiting for them.</td></tr>
+    <tr><td>118</td><td class="word">True to</td><td>One must remain true to one's friends.</td></tr>
+    <tr><td>119</td><td class="word">Useful for</td><td>This book is very useful for learning mathematics.</td></tr>
+    <tr><td>120</td><td class="word">Wait for</td><td>He waited for me for two hours.</td></tr>
+  </table>
+  <div class="ocr-note"><b>Source note</b>The textbook's "Practice Sheet" heading appears on the final page after this list, but the page itself contains no printed text — it is an image-only worksheet page that could not be captured by scanning, so nothing has been omitted here.</div>
+
+  <h2 id="s43"><span class="num">43.</span>Quick Revision Checklist</h2>
+  <div class="checklist">
+    <ul>
+      <li>A preposition sits before a noun or pronoun and links it to another word in the sentence.</li>
+      <li>The five types are Simple, Compound, Double, Participle, and Phrase prepositions.</li>
+      <li>Place/direction can be seen as a point, line, surface, area, volume, or relative position (vertical vs horizontal).</li>
+      <li>At = point, On = surface, In = enclosed space — the master rule for place and time alike.</li>
+      <li>Time prepositions split by point-of-time (at, on, by, between) vs period-of-time (for, during, since, from...to).</li>
+      <li>By usually marks the agent/doer; With usually marks the instrument.</li>
+      <li>In/Into, To/Into, and In/Within/Before all turn on rest-vs-motion or before-vs-after an expiry point.</li>
+      <li>Above/Over and Below/Under/Beneath/Beyond each cover several distinct relative-position senses — review the full lists, not just one example each.</li>
+      <li>Between is for exactly two; Among is for more than two.</li>
+      <li>Of/Off, Beside/Besides, and Since/From are easy to mix up — check the "many uses" lists above before choosing.</li>
+      <li>Many verbs, adjectives and nouns take one fixed preposition (afraid of, good at, married to, key to) — these are worth memorising as fixed pairs from the 120-word reference list.</li>
+    </ul>
+  </div>
+
+  <footer>Class 8 · English · Grammar · Lesson 21 — Chapter-9, The Preposition.</footer>
+</div>
+</body>
+</html>

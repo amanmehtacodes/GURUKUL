@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 4 — Diary Entry | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 32px;}
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 22px; margin-bottom:36px;
+  }
+  nav.toc div.toc-h{font-family:var(--font-mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px;}
+  nav.toc li{margin-bottom:5px;}
+  nav.toc ol ol{margin:6px 0 10px; padding-left:22px;}
+  nav.toc ol ol li{margin-bottom:4px; font-size:14.5px;}
+  nav.toc a{color:var(--accent); text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline; color:var(--violet);}
+  nav.toc ol ol a{color:var(--ink-soft);}
+  nav.toc ol ol a:hover{color:var(--cyan);}
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.03em; color:var(--c3);
+    margin:44px 0 16px; scroll-margin-top:20px;
+  }
+  h3{font-size:20px; font-weight:700; margin:26px 0 10px; scroll-margin-top:20px;}
+  p{margin:0 0 14px;}
+  ul,ol{margin:0 0 16px; padding-left:24px;}
+  li{margin-bottom:7px;}
+  li ul, li ol{margin-top:8px;}
+  strong{font-weight:700;}
+  hr{border:none; border-top:1px solid var(--line); margin:36px 0;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:12px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 16px;
+  }
+  .format-box{
+    font-family:var(--font-mono); font-size:14px; line-height:1.9;
+    background:var(--paper-raised); border:2px solid var(--ink); border-radius:6px;
+    padding:24px 20px; margin:0 0 20px; white-space:pre-wrap;
+  }
+  .sample{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:20px 24px; margin:0 0 24px;
+  }
+  .sample .sh{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;}
+  .sample .hint{margin-top:12px; font-size:14px; color:var(--ink-soft); font-style:italic;}
+  /* Boxed diary-entry format — Day/Date + Time, a salutation, the body
+     as prose paragraphs, a leave-taking line, and a signature. Unscoped
+     so it's reusable for both worked samples and every practice-question
+     model answer below. */
+  .diary-box{
+    border:1.5px solid var(--ink); border-radius:4px; padding:20px 22px;
+    font-size:15.5px; line-height:1.7; background:var(--paper);
+  }
+  .diary-box .dt{font-weight:700; margin:0 0 2px;}
+  .diary-box .time{color:var(--ink-soft); font-size:14px; margin:0 0 14px;}
+  .diary-box .sal{font-weight:700; margin:0 0 12px;}
+  .diary-box p{margin:0 0 12px;}
+  .diary-box p:last-of-type{margin-bottom:0;}
+  .diary-box .leave{margin-top:14px; font-style:italic;}
+  .diary-box .sig{margin-top:4px; font-weight:700;}
+  table{width:100%; border-collapse:collapse; margin:0 0 20px; font-size:15px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--accent-soft); font-family:var(--font-mono); font-size:12.5px; text-transform:uppercase;}
+  .about-table td:first-child{font-weight:700; white-space:nowrap; width:1%;}
+  .feelings-table td{font-size:14.5px;}
+  .checklist{list-style:none; padding-left:0;}
+  .checklist li{padding-left:26px; position:relative;}
+  .checklist li:before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+  /* Interactive question blocks */
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:18px 20px; margin:18px 0; background:var(--paper-raised);
+  }
+  .q .qn{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); margin-bottom:8px; letter-spacing:.03em; text-transform:uppercase;}
+  .q p.prompt{margin:0 0 12px; font-size:16px;}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q button{
+    margin-top:12px; font-family:var(--font-mono); font-size:12.5px; font-weight:700;
+    letter-spacing:.03em; text-transform:uppercase; padding:9px 18px; border:1px solid var(--c3);
+    border-radius:7px; background:var(--c3-soft); color:var(--c3); cursor:pointer;
+  }
+  .q button:hover{background:var(--c3-panel);}
+  .qa{
+    display:none; margin-top:14px; padding:14px 16px; border-radius:8px;
+    background:var(--accent2-soft); border:1px solid var(--accent2);
+  }
+  .qa .qa-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--accent2); font-weight:700; margin-bottom:8px;}
+  .qa .diary-box{border-color:var(--accent2);}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills</div>
+  <h1 class="title">Lesson 4 — Diary Entry</h1>
+  <p class="subtitle">Semester 2</p>
+
+  <nav class="toc">
+    <div class="toc-h">Contents</div>
+    <ol>
+      <li><a href="#definition">What is Diary Entry?</a></li>
+      <li><a href="#understanding">Understanding Diary Entry</a></li>
+      <li><a href="#format">Format of Diary Entry</a></li>
+      <li><a href="#marking">Marking Scheme</a></li>
+      <li><a href="#feelings">List of Feelings Mostly Used in Diary Entry</a></li>
+      <li><a href="#creative">How to Make Diary Entry Creative and Effective</a></li>
+      <li><a href="#samples">Sample Diary Entries (Worked Examples)</a>
+        <ol type="a">
+          <li><a href="#sample1">Sample I · Topped the class</a></li>
+          <li><a href="#sample2">Sample II · The injured puppy</a></li>
+        </ol>
+      </li>
+      <li><a href="#practice">Practice Questions</a>
+        <ol type="1">
+          <li><a href="#q1">Q1 · Trip to Shimla</a></li>
+          <li><a href="#q2">Q2 · Best friend's last day</a></li>
+          <li><a href="#q3">Q3 · Aunt visiting from the USA</a></li>
+          <li><a href="#q4">Q4 · Lost grandfather's pen</a></li>
+          <li><a href="#q5">Q5 · Scolded for incomplete homework</a></li>
+          <li><a href="#q6">Q6 · Appointed class monitor</a></li>
+        </ol>
+      </li>
+      <li><a href="#revision">Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition">1. What is Diary Entry?</h2>
+  <p>It is human nature to share one's personal experiences with near and dear ones. Many people keep a record of their day to day experiences in a diary. Diary entry is a very personal and informal way of writing. It is a means of keeping record of day to day events, happenings, activities, personal experiences, plans, hopes, opinions, fears, joys, sorrow, aims, targets, achievements, gains, loss, mistakes, apologies and many such human feelings.</p>
+  <p>Remember, it is not just enlisting what happened chronically. As it is a personal record, it is often fused with lots of emotions, personal expressions and opinions. It is the description of how the diary keeper feels about a particular incident that happens in his life or that he witnesses or experiences.</p>
+  <p>Although personal, the record may be about any theme such as friends, teachers, classmates, school teachers, neighbours, animals, social or political issues, or issues related to one's area, country or world. Some people treat their diary as their close friend and converse with it as if it were a human being. They even give a name to their diary.</p>
+
+  <h2 id="understanding">2. Understanding Diary Entry</h2>
+  <table class="about-table">
+    <tr><td>Style of Diary Entry</td><td>Personal, Informal, Colloquial</td></tr>
+    <tr><td>Difference between Diary and other forms of writing</td><td>Diary entry is a personal document, only to be read by the owner. Unlike other forms of writing, it is not published or meant to be commented on by the general public.</td></tr>
+    <tr><td>Length</td><td>The length of diary entry varies from a few lines to several pages. For examination purpose, there is always a word limit, generally 150 to 200 words.</td></tr>
+    <tr><td>Language</td><td>The language is mostly informal and communicative, written in First Person (I, me, my, we, us, our, myself, ourselves). It may be full of interjections or exclamatory sentences.</td></tr>
+    <tr><td>Tense employed</td><td>
+      Simple Past: To describe the incident that happened in the past with past time reference<br>
+      Simple Present: To describe general statements or views regarding the incident<br>
+      Present Perfect: To denote actions recently happened<br>
+      Simple Future: To express future plans or determination
+    </td></tr>
+    <tr><td>Salutation</td><td>Dear Diary/Dear...............(in case the writer has given his/her diary a name)</td></tr>
+    <tr><td>Subscription / Signing off / Leave taking</td><td>Bye/See you later/See you tomorrow/ Catch you later/ Good night etc.</td></tr>
+  </table>
+
+  <h2 id="format">3. Format of Diary Entry</h2>
+  <div class="format-box">Day and Date of Diary entry
+Time
+
+Salutation (Hiii/Dear Diary/Dear............)
+..........................................................................
+...................................Body of Diary Entry....................
+..........................................................................
+
+
+Leave Taking
+Name or signature
+  </div>
+
+  <h2 id="marking">4. Marking Scheme</h2>
+  <table>
+    <tr><th>Component</th><th>Marks</th></tr>
+    <tr><td>Day, Date and Time</td><td>1 Mark</td></tr>
+    <tr><td>Salutation</td><td>½ Mark</td></tr>
+    <tr><td>Body (Content, Spellings, Grammar)</td><td>3 Marks</td></tr>
+    <tr><td>Leave Taking</td><td>½ Mark</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>5 Marks</strong></td></tr>
+  </table>
+
+  <h2 id="feelings">5. List of Feelings Mostly Used in Diary Entry</h2>
+  <table class="feelings-table">
+    <tr><th>Happy</th><th>Sad</th><th>Angry</th><th>Other Feelings</th></tr>
+    <tr><td>calm</td><td>ashamed</td><td>annoyed</td><td>afraid</td></tr>
+    <tr><td>cheerful</td><td>awful</td><td>bugged</td><td>anxious</td></tr>
+    <tr><td>confident</td><td>disappointed</td><td>destructive</td><td>bored</td></tr>
+    <tr><td>content</td><td>discouraged</td><td>disgusted</td><td>confused</td></tr>
+    <tr><td>delighted</td><td>gloomy</td><td>frustrated</td><td>curious</td></tr>
+    <tr><td>excited</td><td>hurt</td><td>fuming</td><td>embarrassed</td></tr>
+    <tr><td>glad</td><td>lonely</td><td>furious</td><td>jealous</td></tr>
+    <tr><td>loved</td><td>miserable</td><td>grumpy</td><td>moody</td></tr>
+    <tr><td>proud</td><td>sorry</td><td>irritated</td><td>responsible</td></tr>
+    <tr><td>satisfied</td><td>unhappy</td><td>mad</td><td>scared</td></tr>
+    <tr><td>relaxed</td><td>unloved</td><td>mean</td><td>shy</td></tr>
+    <tr><td>tickled</td><td>withdrawn</td><td>violent</td><td>uncomfortable</td></tr>
+    <tr><td>thankful</td><td>rejected</td><td></td><td>married</td></tr>
+    <tr><td>terrific</td><td></td><td></td><td></td></tr>
+    <tr><td>wonderful</td><td></td><td></td><td></td></tr>
+  </table>
+
+  <h2 id="creative">6. How to Make Diary Entry Creative and Effective</h2>
+  <ul>
+    <li>Use your imaginative powers.</li>
+    <li>Use a variety of vocabulary.</li>
+    <li>Explain in detail how you feel about a particular event or incident.</li>
+    <li>Use appropriate words to express your feeling.</li>
+    <li>Use appropriate tense to describe past events or future planning.</li>
+    <li>Don't deviate from the topic.</li>
+    <li>Use poetic language if you can.</li>
+    <li>Avoid spelling or grammatical mistakes.</li>
+    <li>Add pictures, stickers, sketches, doodles, smileys etc to match your feelings.</li>
+  </ul>
+
+  <h2 id="samples">7. Sample Diary Entries (Worked Examples)</h2>
+
+  <div class="sample" id="sample1">
+    <div class="sh">Sample-I</div>
+    <p><strong>You have topped your class in final examination. Write your diary entry expressing your feelings.</strong></p>
+    <div class="diary-box">
+      <div class="dt">Tuesday, 30th March 20XX</div>
+      <div class="time">10:00 p.m.</div>
+      <div class="sal">Dear Diary</div>
+      <p>It was the happiest day of my life. The result of final examination was declared, a moment I was eagerly waiting for since the day final examination ended.</p>
+      <p>I have stood first in the final examination and scored 99% marks. My joys knew no bounds when the result was declared. As soon as my name was announced as the topper of the class, all the students started shouting jubilantly. They all started congratulating me. I was on the seventh sky at that moment. My class teacher also congratulated me and patted my back. I also thanked her and all other teachers for teaching so well.</p>
+      <p>My parents, grandparents and siblings were all extremely happy to know about my glorious success in the final examination. They all were proud of me. I had burnt midnight oil for this day. My parents were congratulated by the Principal, my teachers, friends and neighbours. I went to temple to say 'Thanks' to God. We offered sweets at temple and distributed the same among our near and dear ones. I also thanked my mother who has always helped me in studies. In the evening my friends and I went to a restaurant to celebrate my grand success. I will always cherish the memories of this day. I hope I continue to achieve success in years to come as well.</p>
+      <div class="leave">Good night!</div>
+      <div class="sig">Advika</div>
+    </div>
+  </div>
+
+  <div class="sample" id="sample2">
+    <div class="sh">Sample-II</div>
+    <p><strong>On your way to school, you saw a car run over a little puppy. Write your diary entry expressing your feelings about the incident.</strong></p>
+    <div class="diary-box">
+      <div class="dt">Friday, Novemeber 26, 20XX</div>
+      <div class="time">9:30 p.m.</div>
+      <div class="sal">Dear Diary</div>
+      <p>I had a terrible experience today. It was a day of mixed emotions: anger, pity, satisfaction and what not.</p>
+      <p>Today afternoon while I was coming back from my school, I saw a speeding car run over a liitle, innocent puppy. I was shocked to see the plight of the puppy. The driver of the car seemed to be a man without heart as he did not even bother to stop his car and look at the bleeding puppy whose leg was badly wounded under his car. I was mad with fury and wanted to hit the driver hard, but at that time I thought it more important to take care of the injured puppy. I felt really pained to see how indifferent people have become to others' pains be it a human being or an innocent animal. No one bothered to take the puppy to a vet.</p>
+      <p>I took pity on the poor thing and rushed to a veterinarian. The doctor was a nice man who immediately cleaned the wounded leg and put bandage around it. He gave puppy an injection to reduce the pain. He did not even charge a single penny when I told him that the puppy was a stray dog. He also gave the puppy milk and buiscuits. I was overwhelmed to see the kind treatment given by the vet. I brought the puppy home. My uniform was all blood stained, but I had a great sense of pride and satisfaction that I had saved the life of a poor puppy. The incident has set me thimking about providing a shelter to the poor stray animals.</p>
+      <div class="leave">See you later.</div>
+      <div class="sig">Prateek</div>
+    </div>
+  </div>
+
+  <h2 id="practice">8. Practice Questions</h2>
+  <p class="callout">Read each prompt, draft your diary entry in the box below in not more than 150 words, then press <strong>Check my diary entry</strong> to reveal a model answer written in the same style. Compare — don't just copy — and check your own entry against the format and the feelings word bank above.</p>
+
+  <div class="q" id="q1">
+    <div class="qn">Question 1</div>
+    <p class="prompt">You are going to Shimla tomorrow for a three day trip organised by your school. Express your feelings in your diary in not more than 150 words.</p>
+    <textarea rows="9" placeholder="Draft your diary entry here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my diary entry';">Check my diary entry</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="diary-box">
+        <div class="dt">Wednesday, [Date]</div>
+        <div class="time">9:00 p.m.</div>
+        <div class="sal">Dear Diary</div>
+        <p>I can hardly sit still tonight because tomorrow I am leaving for a three-day school trip to Shimla! I have been looking forward to this trip ever since our class teacher first announced it, and now that the day has finally arrived, I feel a strange mix of excitement and nervousness. This will be my first trip away from home without my parents, and though I am a little anxious about managing on my own, I am mostly thrilled at the thought of the snow-capped mountains and the fun of staying with my friends for three whole days. I have already packed my bag twice, checking that I haven't forgotten my woollens, camera and torch. My friends and I have planned mountain walks, a bonfire night, and endless games on the bus. I hope the weather stays clear so we can see the mountains properly. I can't wait for tomorrow morning to come!</p>
+        <div class="leave">Good night,</div>
+        <div class="sig">Riya</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q2">
+    <div class="qn">Question 2</div>
+    <p class="prompt">Your best friend has left the school as his/her father has been transferred to some other city. It was his/her last day in the school today. Write your diary entry expressing your feelings about how you felt and how you spent the last day with your friend.</p>
+    <textarea rows="9" placeholder="Draft your diary entry here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my diary entry';">Check my diary entry</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="diary-box">
+        <div class="dt">Thursday, [Date]</div>
+        <div class="time">8:30 p.m.</div>
+        <div class="sal">Dear Diary</div>
+        <p>Today was one of the saddest days I have had in a long time. My best friend's father has been transferred to another city, and today was her last day at school. I still cannot believe that from tomorrow, her seat next to mine will be empty. During the lunch break, all of us gathered around her and gave her small farewell gifts and cards we had secretly made over the past few days. She cried, and so did I, though we both tried hard to smile through it. After school, I walked home with her one last time, remembering all the silly jokes we shared and the secrets we told no one else. We promised to call each other every week and to visit during the holidays, but I know things will not feel the same without her around every day. I will always treasure the years of friendship we have shared.</p>
+        <div class="leave">Good night,</div>
+        <div class="sig">Meher</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q3">
+    <div class="qn">Question 3</div>
+    <p class="prompt">An aunt of yours is coming from the USA to spend some days with your familly. Describe how you feel about her coming and how you have planned to spend your days with her.</p>
+    <textarea rows="9" placeholder="Draft your diary entry here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my diary entry';">Check my diary entry</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="diary-box">
+        <div class="dt">Saturday, [Date]</div>
+        <div class="time">7:00 p.m.</div>
+        <div class="sal">Dear Diary</div>
+        <p>I am so excited today because my aunt is arriving from the USA next week to spend a few days with our family! It has been almost three years since I last saw her, and I have missed her warmth and her wonderful stories terribly. Amma has already started planning what special dishes she will cook, and Papa has taken a few days off from work so that we can all spend time together. I have made a small list of places I want to show her — the new park near our house, my school, and my favourite ice-cream shop. I remember how she used to tell me fascinating stories about her travels and always brought thoughtful little gifts for everyone. I have decided to make a small welcome card for her at the airport. I can hardly wait for the days ahead — I am sure they will be full of laughter, good food and precious memories with her.</p>
+        <div class="leave">Good night,</div>
+        <div class="sig">Anaya</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q4">
+    <div class="qn">Question 4</div>
+    <p class="prompt">You have lost your pen gifted to you by your grandfather. Express your feelings about the loss in your diary.</p>
+    <textarea rows="9" placeholder="Draft your diary entry here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my diary entry';">Check my diary entry</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="diary-box">
+        <div class="dt">Monday, [Date]</div>
+        <div class="time">9:15 p.m.</div>
+        <div class="sal">Dear Diary</div>
+        <p>I feel absolutely heartbroken today. I have lost the beautiful fountain pen my grandfather had gifted me on my birthday last year, and I cannot stop thinking about it. I searched my school bag, my desk, and every corner of my room, but it is nowhere to be found. That pen was not just an ordinary object to me — it carried so many memories of the afternoon my grandfather sat with me and taught me how to hold it properly, telling me stories of how he used to write with a similar pen in his own school days. I feel terrible for being so careless with something so precious. I have decided to check with my class teacher tomorrow and ask if anyone found it in the classroom, and I will also put up a note on the school notice board. I know a pen can be replaced, but the memory attached to this one cannot.</p>
+        <div class="leave">Good night,</div>
+        <div class="sig">Kabir</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q5">
+    <div class="qn">Question 5</div>
+    <p class="prompt">You have been scolded by your favourite teacher as you could not complete your homework. Describe how you feel about the incident.</p>
+    <textarea rows="9" placeholder="Draft your diary entry here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my diary entry';">Check my diary entry</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="diary-box">
+        <div class="dt">Tuesday, [Date]</div>
+        <div class="time">8:45 p.m.</div>
+        <div class="sal">Dear Diary</div>
+        <p>I feel quite low today. My favourite teacher, Mrs. Sharma, scolded me in front of the entire class because I had not completed my homework. I know I deserved it, since I had spent yesterday evening watching television instead of finishing my assignments, but hearing her disappointed voice hurt me far more than any punishment could have. She has always been so encouraging and kind to me, and I hate the thought that I have let her down. After school, I went up to her and apologised, promising that I would never repeat this mistake, and she smiled and told me she was only strict because she believed I could do much better. Her words made me feel a little better, but I have decided that from tomorrow, I will finish my homework the same evening it is given, no matter how tired I am.</p>
+        <div class="leave">Good night,</div>
+        <div class="sig">Ishaan</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q6">
+    <div class="qn">Question 6</div>
+    <p class="prompt">You have been appointed monitor of your class by your class teacher. Write your feelings about your new responsibility mentioning how you plan to discharge your duty.</p>
+    <textarea rows="9" placeholder="Draft your diary entry here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my diary entry';">Check my diary entry</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="diary-box">
+        <div class="dt">Friday, [Date]</div>
+        <div class="time">7:30 p.m.</div>
+        <div class="sal">Dear Diary</div>
+        <p>I am bursting with pride today! My class teacher announced this morning that she has appointed me as the new monitor of our class, and I still cannot believe it. Out of so many deserving classmates, she chose me, and I intend to prove that her trust in me was not misplaced. As monitor, I will be responsible for maintaining discipline in the classroom, helping the teacher take attendance, ensuring the blackboard is clean before every class, and setting a good example for my classmates to follow. I have decided that I will not misuse this responsibility to boss over my friends, but instead try to lead by being fair, patient and helpful to everyone. My parents were thrilled when I told them the news. I know this new role will come with its own challenges, but I am determined to discharge my duties sincerely and make my teacher and parents proud.</p>
+        <div class="leave">Good night,</div>
+        <div class="sig">Tara</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="revision">9. Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>Day and Date, plus Time, written at the top</li>
+    <li>A salutation — "Dear Diary" or a name given to the diary</li>
+    <li>Written in the First Person (I, me, my, we)</li>
+    <li>Correct tense used — past for what happened, present for views, future for plans</li>
+    <li>Feelings and personal reactions clearly expressed, not just a list of events</li>
+    <li>Informal, colloquial, conversational tone throughout</li>
+    <li>A leave-taking line — Bye/Good night/See you later, etc.</li>
+    <li>Signed with a name, and entry kept close to the word limit (150–200 words)</li>
+  </ul>
+
+  <footer>Class 8 · English · Writing Skills · Lesson 4 of 30</footer>
+</div>
+</body>
+</html>

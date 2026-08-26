@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 11 — Short Stories | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc li ul{margin:4px 0 4px 6px; padding-left:16px;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:22px 0 8px; scroll-margin-top:20px;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:8px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+
+  .story-flow{
+    display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
+    margin:20px 0; padding:20px; background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius);
+  }
+  .story-flow .step{
+    font-family:var(--font-mono); font-weight:700; font-size:14px; color:var(--ink);
+    background:var(--c3-soft); border:1px solid var(--magenta); border-radius:10px;
+    padding:12px 22px; text-align:center;
+  }
+  .story-flow .arrow{color:var(--cyan); font-size:20px; font-weight:700;}
+
+  .constituents-wrap{margin:20px 0; padding:24px; background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius); text-align:center;}
+  .constituents-center{
+    display:inline-block; font-family:var(--font-mono); font-weight:700; font-size:14px; color:var(--pink);
+    background:var(--c3-soft); border:1px solid var(--magenta); border-radius:50%; width:120px; height:120px;
+    line-height:1.3; padding-top:44px; margin:10px auto 18px;
+  }
+  .constituents-grid{display:flex; flex-wrap:wrap; gap:10px; justify-content:center;}
+  .constituents-grid .item{
+    font-family:var(--font-mono); font-size:13.5px; color:var(--ink-soft);
+    background:var(--paper); border:1px solid var(--line-strong); border-radius:20px; padding:8px 18px;
+  }
+
+  .outline-box{
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-left:4px solid var(--cyan);
+    border-radius:10px; padding:16px 20px; margin:12px 0 18px; font-family:var(--font-mono);
+    font-size:14px; color:var(--ink-soft); line-height:1.8;
+  }
+  .missing-visual{
+    background:var(--accent2-soft); border:1px dashed var(--violet); border-radius:8px;
+    padding:12px 16px; margin:10px 0 18px; color:var(--ink-faint); font-size:14px; font-style:italic;
+  }
+
+  .story-box{
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius-md);
+    padding:22px 26px; margin:16px 0;
+  }
+  .story-title{font-family:var(--font-mono); font-weight:700; font-size:17px; color:var(--ink); text-align:center; margin:0 0 16px;}
+  .story-box p{color:var(--ink-soft); font-size:16px;}
+  .story-moral{
+    margin-top:16px; padding-top:14px; border-top:1px dashed var(--line-strong);
+    font-family:var(--font-mono); font-size:13.5px; color:var(--cyan); font-weight:700;
+  }
+
+  .qa-wrap{margin:20px 0 36px; border:1px solid var(--line); border-radius:var(--radius-md); padding:20px 22px; background:var(--paper-raised);}
+  .qa-wrap h3{margin-top:0;}
+  .qtag{
+    display:inline-block; font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;
+    letter-spacing:.05em; color:var(--cyan); background:var(--cyan-soft); border:1px solid var(--cyan);
+    border-radius:20px; padding:2px 10px; margin-left:10px; vertical-align:middle;
+  }
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:200px; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:10px 0 12px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:13px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:9px 18px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:16px; padding-top:16px; border-top:1px dashed var(--line-strong);}
+  .qa-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills</div>
+  <h1 class="title">Lesson 11 — Short Stories</h1>
+  <p class="subtitle">Semester 2</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#definition">1. What Is a Short Story?</a></li>
+      <li><a href="#layout">2. Layout of a Story</a></li>
+      <li><a href="#constituents">3. Constituents of a Story</a></li>
+      <li><a href="#points">4. Important Points to Consider for Writing a Short Story</a></li>
+      <li><a href="#developing">5. Ways of Developing a Story</a>
+        <ul>
+          <li><a href="#dev1">1. Taking Hints from Visuals</a></li>
+          <li><a href="#dev2">2. Developing a Story from the Beginning</a></li>
+          <li><a href="#dev3">3. Developing a Story from the Outlines</a></li>
+        </ul>
+      </li>
+      <li><a href="#sample">6. Sample Story (Worked Example) — The Midas Touch</a></li>
+      <li><a href="#practice">7. Practice Questions</a>
+        <ul>
+          <li><a href="#q1">Q1. The Fox and the Goat</a></li>
+          <li><a href="#q2">Q2. Rohan and Sumit</a></li>
+          <li><a href="#q3">Q3. Varun's Determination</a></li>
+          <li><a href="#q4">Q4. The Fox and the Crow</a></li>
+          <li><a href="#q5">Q5. Ram and Sham</a></li>
+        </ul>
+      </li>
+      <li><a href="#revision">8. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition"><span class="num">1.</span>What Is a Short Story?</h2>
+  <p>Since times immemorial, stories have tempted people of all ages particularly the young children. A short story narrates an incident in the life of one or more characters. These characters may be real or imaginary. Stories are told both for entertainment and for developing moral values. There are several types of stories each with its peculiarities. Fairy tales, fables, bedtime stories, detective stories, thriller stories, historical stories, parables, are all types of stories with different themes, settings, styles, characters, style of narration, moral etc. However, there are certain elements which are common to all. All stories have a basic layout with a beginning, middle and an end.</p>
+
+  <h2 id="layout"><span class="num">2.</span>Layout of a Story</h2>
+  <div class="story-flow">
+    <div class="step">Beginning</div>
+    <div class="arrow">→</div>
+    <div class="step">Middle</div>
+    <div class="arrow">→</div>
+    <div class="step">End</div>
+  </div>
+
+  <h3>The Beginning</h3>
+  <p>The beginning is the most important part of the story writing. It introduces all the major characters around which the plot of the story is wound. It sets up the time, background and action of the story. It should be so well written that it catches the reader's attraction. It highlights the people, places and situations in a creative way with a vivid description. It is the part where the writer can take his flights of imagination wherever he wishes keeping the plot in mind.</p>
+
+  <h3>The Middle</h3>
+  <p>The middle of the story develops the action. It introduces an element of conflict by creating situations where the characters of the story struggle to get a solution to their problem. It makes the readers curious to know what would happen next. All the major events and happenings of the plot happen in this part. The developments that take place in this part pave the way for the climax and the end of the story.</p>
+
+  <h3>The End</h3>
+  <p>The end marks the climax of the story and brings it to a close in an unexpected and interesting way. The end of the story may be either happy or tragic. Whatever be the type of story, it always conveys a message.</p>
+
+  <h2 id="constituents"><span class="num">3.</span>Constituents of a Story</h2>
+  <div class="constituents-wrap">
+    <div class="constituents-center">Constituents<br>of a Story</div>
+    <div class="constituents-grid">
+      <div class="item">Plot</div>
+      <div class="item">Time and Setting</div>
+      <div class="item">Dialogues</div>
+      <div class="item">Characters</div>
+      <div class="item">Actions &amp; Happenings</div>
+    </div>
+  </div>
+
+  <h2 id="points"><span class="num">4.</span>Important Points to Consider for Writing a Short Story</h2>
+  <ol>
+    <li>Choose a theme. Think of the characters and major actions.</li>
+    <li>Arrange the actions and events in a logical sequence and develop an outline.</li>
+    <li>Think of a suitable title.</li>
+    <li>Set the story in a certain time and space.</li>
+    <li>Write the beginning in an interesting and dramatic way by giving a vivid description of people, places and objects depending on the requirement of the story. Make sure that the description is not very long.</li>
+    <li>Use a variety of verbs in explaining the actions and happenings. Remember, a story is usually written in Past Tense, but the dialogues of the story may be in Present or Future Tense too. Use a variety of expressions and interjections to make the characters alive.</li>
+    <li>Use appropriate sequence markers (firstly, then, later on, soon, eventually etc.) and cohesive devices (but, so, however, thus, gradually etc.) to connect the actions.</li>
+    <li>Make use of appropriate adjectives and adverbs to create an everlasting effect about the characters and actions.</li>
+    <li>Use similes, metaphors, hyperboles and other figures of speech to beautify your language and narrate the story in a realistic way.</li>
+    <li>Make the end of the story interesting, dramatic and appropriate.</li>
+    <li>End your story with a moral or social message.</li>
+  </ol>
+
+  <h2 id="developing"><span class="num">5.</span>Ways of Developing a Story</h2>
+
+  <h3 id="dev1">1. Taking Hints from Visuals</h3>
+  <p>A story may be developed taking hints from the visuals provided. The story must be related to the visuals provided.</p>
+  <div class="missing-visual">Example: the source textbook illustrates this method with a picture prompt here — the image itself could not be carried over from the scanned page, so no text example is given for this method in the original.</div>
+
+  <h3 id="dev2">2. Developing Story from the Beginning</h3>
+  <p>In this method, only the beginning of the story is provided. The story developer is free to use his flight of imagination to develop a story and give it a suitable title.</p>
+  <div class="outline-box">Example: Once upon a time, there were two ants, George and John. George always worked hard whereas John was a shirker. One day..........................................................</div>
+
+  <h3 id="dev3">3. Developing a Story from the Outlines</h3>
+  <p>A story may be developed from the given outlines which provide a clue about the plot of the story.</p>
+  <div class="outline-box">Example:<br>A king — had a lot of gold — proud of gold — still greedy for more gold — hungry old man — orders servant to feed the old man — old man angel — grants golden touch — touches daughter — daughter turns into gold statue — repents — requests angel to reverse the golden touch — learnt a lesson — gave away all his wealth.</div>
+
+  <h2 id="sample"><span class="num">6.</span>Sample Story (Worked Example)</h2>
+  <div class="story-box">
+    <div class="story-title">The Midas Touch</div>
+    <p>Many centuries ago, there lived a king named Midas in Greece. The king had a beautiful kingdom. He owned so much gold that he could buy an entire city. His throne, his bed, his utensils were all made of gold. He loved his gold dearly and was proud of it. He had innumerable bricks and coins of gold which he kept safe in a dungeon. The king used to visit his dungeon everyday and count the bricks and coins of gold. The queen greatly disliked the king's obsession with gold. One day the queen said, "O king, don't give so much value to gold all the time. Gold is not everything." The king replied, "I can buy anything with gold. Now don't argue with me anymore."</p>
+    <p>The king's love for gold kept increasing each passing day. He loved it so much that he named his beloved daughter Marigold. Marigold was the dearest to her father. One day she called out to her father and said, "Father, come and see how beautiful these flowers are. What a beautiful day it is! Look how the dewdrops shine on the grass! "It is still not shinier than my gold", boasted the king. "You won't understand dear. You go and play alone." The little Marigold wondered how gold could be more beautiful than flowers.</p>
+    <p>As time passed by, King Midas started spending more and more time in the dungeon alone counting the gold bricks and coins over and over again. A few days later, the royal guards brought a strange, old man into the court of the king. The man was dressed in simple clothes. He wore no sandals on his feet. "Who is this man?" asked the King. "Your highness! I found him wandering in the streets. He says that he has lost his way and hasn't eaten anything for three days", said one of the guards. The king ordered his servants to make provisions for the old man's food and stay. Suddenly, the old man changed into an angel. He told King Midas that he was impressed with his greatness and wanted to grant him a wish.</p>
+    <p>The king, greedy for gold, asked the angel to give him more and more gold. The angel told that he could not give him gold, but he could give him a golden touch. The angel touched the king's hands and spelled a magic. He asked the king to touch a wooden stick. As soon as the king touched the wooden stick, it changed into gold. The king became mad with happiness to get the golden touch. He started touching things and changing everything into gold. A little later, he felt thirsty and ordered his servants to bring him a glass of water. As soon as the king held the glass of water, it changed into solid gold. The king tried to eat an orange and quench his thirst, the orange too changed into gold. The king was dumbfounded. He did not know what to do. Before he could understand anything, his little daughter ran into the court and jumped up into the king's arms. No sooner did the king catch hold of her daughter than she turned into a golden statue. The king started shouting and crying to see his daughter become a lifeless statue. He fell into the angel's feet and said, "I am extremely sorry for being so greedy. Please take your golden touch back and change and give me my daughter back." The angel took the golden touch back and wound a magic wand bringing Marigold to life again. King Midas had learnt his lesson that gold could not buy everything. He gave away all his gold to the poor.</p>
+    <div class="story-moral">Moral: Never be greedy.</div>
+  </div>
+
+  <h2 id="practice"><span class="num">7.</span>Practice Questions</h2>
+  <p>The source gives no model answers for these five prompts, so a full model story is provided for each — write your own attempt first, then check it against the model.</p>
+
+  <div class="qa-wrap" id="q1">
+    <h3>Q1. The Fox and the Goat<span class="qtag">Flow chart</span></h3>
+    <p>Look at the flow chart given in the box below. Taking hints from the flow chart develop a story. Give your story a suitable title and write the moral of the story.</p>
+    <div class="outline-box">A fox falls in a well — not much water — no way to get out — a goat leans over the well — asks what the fox is doing — fox says terrible drought coming — this well will not dry — he tells the goat that his seat is reserved — goat jumps into the well — fox climbs on the back of the goat and jumps out of the well — think before you act</div>
+    <textarea class="answer-box" placeholder="Write your story here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my story';">Check my story</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="story-box">
+        <div class="story-title">The Clever Fox and the Foolish Goat</div>
+        <p>One hot summer afternoon, a fox was wandering through a village in search of water. Seeing an open well, he peered inside and, finding a little water at the bottom, jumped in without thinking. He drank his fill, but when he tried to climb back out, he realised there was no way up the smooth, steep walls. The fox sat down and began to think of a plan.</p>
+        <p>A little later, a thirsty goat came trotting by and leaned over the edge of the well. "What are you doing down there, friend fox?" asked the goat. The fox, quick-witted as ever, put on a worried face and said, "Haven't you heard? A terrible drought is coming, and every other well in the village has already dried up. I climbed in here because this well will never run dry — the water is so sweet and cool that I decided to stay. In fact, my seat down here is already reserved!"</p>
+        <p>The goat, foolish and impatient, believed every word. Without a second thought, he jumped straight into the well to enjoy the water for himself. The moment the goat landed, the clever fox placed his front paws on the goat's back, climbed up onto his horns, and leapt out of the well to freedom. Looking down at the goat trapped below, the fox called out with a laugh, "Next time, my friend, look before you leap — and think before you trust a stranger's word!" And with that, he trotted away, leaving the goat to find his own way out.</p>
+        <div class="story-moral">Moral: Think before you act.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-wrap" id="q2">
+    <h3>Q2. Rohan and Sumit<span class="qtag">Flow chart</span></h3>
+    <p>Look at the flow chart given in the box below. Taking hints from the flow chart develop a story. Give your story a suitable title and write the moral of the story.</p>
+    <div class="outline-box">Rohan and Sumit — friends — crossing jungle — see a bear — bears don't climb up trees — Rohan climbed up — Sumit afraid — lies quietly — holds breath as if dead — bear comes — goes near Sumit, sniffs — goes away — Rohan climbs down — Sumit silent — Rohan asks what bear said — Rohan said don't trust fake friends...</div>
+    <textarea class="answer-box" placeholder="Write your story here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my story';">Check my story</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="story-box">
+        <div class="story-title">A Friend in Need</div>
+        <p>Rohan and Sumit were the best of friends and lived in a small village bordered by a thick jungle. One evening, they decided to take a shortcut home through the jungle before it got dark. They chatted and laughed as they walked, unaware of the danger that lay ahead.</p>
+        <p>Suddenly, they heard a low growl. To their horror, a huge bear emerged from the bushes and began lumbering towards them. Rohan, without a word, sprinted to the nearest tree and climbed up as fast as he could, knowing that bears cannot climb trees. Sumit, however, was left standing alone with nowhere to run. Remembering that bears often leave a body alone if it appears lifeless, he quickly lay down flat on the ground, held his breath, and pretended to be dead.</p>
+        <p>The bear lumbered up to Sumit, sniffed him carefully from head to toe, and, finding no sign of life, turned around and walked away into the trees. Once the danger had passed, Rohan climbed down from the tree, relieved to find his friend safe. Curious, he asked Sumit, "What did the bear whisper in your ear?" Sumit, still shaken but composed, replied gravely, "He told me never to trust a friend who abandons you the moment danger appears." Rohan hung his head in shame, realising how selfishly he had acted.</p>
+        <div class="story-moral">Moral: Don't trust fake friends.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-wrap" id="q3">
+    <h3>Q3. Varun's Determination<span class="qtag">Flow chart</span></h3>
+    <p>Look at the flow chart given in the box below. Taking hints from the flow chart develop a story. Give your story a suitable title and write the moral of the story.</p>
+    <div class="outline-box">Varun — 14 year old boy — bright and hardworking — wants to become doctor — meets an accident — loses one hand — depressed — family supports him — determined to pursue his dream — works hard to achieve his goal — hard work pays back — becomes a celebrated surgeon — proves — where there is a will there is a way</div>
+    <textarea class="answer-box" placeholder="Write your story here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my story';">Check my story</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="story-box">
+        <div class="story-title">Where There Is a Will, There Is a Way</div>
+        <p>Varun was a bright and hardworking fourteen-year-old boy who dreamed of becoming a doctor one day. He studied late into the night, topped every science exam at school, and often told his friends that he wanted to heal people who were suffering. Everyone who knew him believed he was destined for great things.</p>
+        <p>One evening, while returning home from tuition on his bicycle, Varun was struck by a speeding car. He survived, but the accident left him with severe injuries, and the doctors had no choice but to amputate one of his hands. Varun was devastated. He shut himself in his room for days, convinced that his dream of becoming a doctor — let alone a surgeon — was now impossible.</p>
+        <p>It was his family who refused to let him give up. His parents sat by his side every evening, reminding him of his courage and his love for medicine, while his elder sister researched surgeons and specialists who had overcome similar disabilities. Slowly, Varun's grief turned into determination. He learned to write, hold instruments and manage daily tasks with his other hand, practising for hours every single day until it became second nature.</p>
+        <p>Years of relentless hard work followed — through school, medical college and rigorous surgical training — and Varun refused to let his disability define his limits. His dedication eventually paid off: he became a celebrated surgeon, known not only for his skill but for the extraordinary journey that had brought him there, inspiring countless other students with disabilities to chase their dreams without fear.</p>
+        <div class="story-moral">Moral: Where there is a will, there is a way.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-wrap" id="q4">
+    <h3>Q4. The Fox and the Crow<span class="qtag">Beginning given</span></h3>
+    <p>Given below is the beginning of a story. Use the beginning to develop a story and name it as 'The Fox and the Crow'. Also write the moral of the story.</p>
+    <div class="outline-box">One day, a fox was wandering in a garden. He saw a crow swoop down and pick up a piece of cheese in its beak. Flapping its wings, the crow, flew onto a high branch of a tree and settled there to relish the piece of cheese. ..........</div>
+    <textarea class="answer-box" placeholder="Write your story here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my story';">Check my story</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="story-box">
+        <div class="story-title">The Fox and the Crow</div>
+        <p>One day, a fox was wandering in a garden. He saw a crow swoop down and pick up a piece of cheese in its beak. Flapping its wings, the crow flew onto a high branch of a tree and settled there to relish the piece of cheese.</p>
+        <p>The fox's mouth watered at the sight of the cheese, but the branch was far too high for him to reach. He sat beneath the tree and began to think of a clever plan. Looking up at the crow with an admiring smile, he called out, "Good morning, dear crow! What a magnificent bird you are today. Your feathers shine like polished ebony in the sunlight, and I have always heard that a bird with such beauty must surely have the sweetest voice in the whole forest. Won't you sing a little song for me?"</p>
+        <p>The crow, flattered by such generous praise, forgot all caution. Eager to prove that her voice was as lovely as her feathers, she opened her beak wide to sing — and the piece of cheese tumbled straight down to the ground. In a flash, the fox snatched it up, and looking up at the crow, he said with a sly grin, "Thank you for the cheese, dear crow. In future, do not trust everyone who flatters you." With that, the fox trotted away, leaving the crow perched silently on the branch, wiser but hungrier than before.</p>
+        <div class="story-moral">Moral: Do not trust flatterers; they only want to take advantage of you.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-wrap" id="q5">
+    <h3>Q5. Ram and Sham<span class="qtag">Beginning given</span></h3>
+    <p>Given below is the beginning of a story. Use the beginning to develop a story and give it a suitable title. Also write the moral of the story.</p>
+    <div class="outline-box">Once upon a time, there were two farmers. They were great friends. Ram lived in a village while Sham lived in a town. One day Ram gave his plough to Sham to mend it. But the dishonest friend Sham sold it and kept the money with him.</div>
+    <textarea class="answer-box" placeholder="Write your story here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my story';">Check my story</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="story-box">
+        <div class="story-title">The Dishonest Friend</div>
+        <p>Once upon a time, there were two farmers. They were great friends. Ram lived in a village while Sham lived in a town. One day Ram gave his plough to Sham to mend it. But the dishonest friend Sham sold it and kept the money with him.</p>
+        <p>When the sowing season arrived, Ram travelled to the town to collect his plough, only to be met by Sham with a sorrowful face. "My dear friend," said Sham, "a terrible thing happened. A rat gnawed through the wooden handle of your plough and it broke into pieces, so I had to throw it away." Ram, trusting his old friend completely, believed the story and returned home empty-handed, though a little confused, since he had never heard of a rat strong enough to destroy an entire plough.</p>
+        <p>Some months later, Sham invited Ram's young son to town to help him with some work, promising to send him back safely by evening. When evening came and the boy had not returned, Ram grew anxious and went to fetch him himself. Sham met him at the door and said gravely, "I am so sorry, my friend, but a hawk swooped down and carried your son away." Ram was outraged. "A hawk carrying away a grown boy? That is impossible, and you know it!" he cried. Sham calmly replied, "In a town where a rat can eat an entire iron plough, why should a hawk not be strong enough to carry away a boy?"</p>
+        <p>Sham fell silent, caught in his own trap of lies. Ashamed, he confessed the truth about the plough, returned the money he owed, and sent Ram's son home at once. From that day, Ram was more careful about the company he kept, and Sham learnt that dishonesty, however cleverly hidden, always finds a way to expose itself.</p>
+        <div class="story-moral">Moral: Dishonesty always comes back to expose itself.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="revision"><span class="num">8.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>Does your story have a clear beginning, middle and end?</li>
+    <li>Have you set the story in a specific time and place?</li>
+    <li>Is there a clear conflict or problem that the characters struggle with in the middle?</li>
+    <li>Have you used a variety of verbs, adjectives, adverbs and figures of speech?</li>
+    <li>Is the story written mainly in the Past Tense, with dialogues in an appropriate tense?</li>
+    <li>Have you used sequence markers and cohesive devices to connect events?</li>
+    <li>Does the end bring the story to an interesting and unexpected close?</li>
+    <li>Have you given your story a suitable title and ended it with a moral or message?</li>
+  </ul>
+
+  <footer>Class 8 · English · Writing Skills · Lesson 11 of 30</footer>
+</div>
+</body>
+</html>

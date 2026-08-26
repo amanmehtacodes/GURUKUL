@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 22 — The Conjunction | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:5px; break-inside:avoid; font-size:14px;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700; color:var(--c3);
+    margin:34px 0 12px; padding-top:16px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  h3{font-family:var(--font-mono); font-size:15px; font-weight:700; color:var(--violet); margin:18px 0 8px;}
+  p{margin:0 0 12px;}
+  ul, ol.plain{padding-left:22px; margin:0 0 14px;}
+  ul li, ol.plain li{margin-bottom:7px;}
+  strong{color:var(--ink);}
+  .eg{color:var(--ink-soft);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 20px;
+  }
+  .callout p{margin:0;}
+  .callout strong{color:var(--ink);}
+
+  .fanbo{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px;
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius-md);
+    padding:18px; margin:12px 0 22px;
+  }
+  .fanbo div{font-size:14px; color:var(--ink-soft);}
+  .fanbo b{color:var(--c3); font-family:var(--font-mono);}
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:12px 0 22px; font-size:14.5px;}
+  table.ref-table th{
+    font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.04em;
+    text-align:left; color:var(--c3); border-bottom:2px solid var(--line-strong); padding:8px 10px;
+  }
+  table.ref-table td{border-bottom:1px solid var(--line); padding:8px 10px; color:var(--ink-soft); vertical-align:top;}
+  table.ref-table tr:last-child td{border-bottom:none;}
+  table.ref-table td strong, table.ref-table td.word{color:var(--ink); font-weight:700;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:14px 0 26px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  input.blank-input{
+    width:150px; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:44px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol{margin:0; padding-left:20px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  .checklist{background:var(--accent2-soft); border:1px solid var(--line-strong); border-radius:var(--radius-md); padding:18px 24px;}
+  .checklist ul{margin:0;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar · Chapter-10</div>
+  <h1 class="title">Lesson 22 — The Conjunction</h1>
+  <p class="subtitle">Every kind of conjunction from the textbook — coordinative, subordinating, correlative, compound — with all nine practice exercises made interactive.</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#s1">1. What Is a Conjunction?</a></li>
+      <li><a href="#s2">2. Kinds of Conjunction</a></li>
+      <li><a href="#s3">3. Exercise — Underline the Conjunctions</a></li>
+      <li><a href="#s4">4. Coordinative Conjunctions — Cumulative/Copulative</a></li>
+      <li><a href="#s5">5. Coordinative Conjunctions — Adversative</a></li>
+      <li><a href="#s6">6. Coordinative Conjunctions — Disjunctive/Alternative</a></li>
+      <li><a href="#s7">7. Coordinative Conjunctions — Illative</a></li>
+      <li><a href="#s8">8. Remember: FANBOYS</a></li>
+      <li><a href="#s9">9. Exercise — Fill in Suitable Conjunctions</a></li>
+      <li><a href="#s10">10. Exercise — Join the Sentence Pairs (Set 1)</a></li>
+      <li><a href="#s11">11. Exercise — Conjunctions of Time</a></li>
+      <li><a href="#s12">12. Exercise — Choose the Correct Conjunction</a></li>
+      <li><a href="#s13">13. Exercise — Fill in a Suitable Conjunction</a></li>
+      <li><a href="#s14">14. Exercise — Join the Sentence Pairs (Set 2)</a></li>
+      <li><a href="#s15">15. Subordinating Conjunctions — Time</a></li>
+      <li><a href="#s16">16. Subordinating Conjunctions — Place</a></li>
+      <li><a href="#s17">17. Subordinating Conjunctions — Manner or Extent</a></li>
+      <li><a href="#s18">18. Subordinating Conjunctions — Cause</a></li>
+      <li><a href="#s19">19. Subordinating Conjunctions — Condition</a></li>
+      <li><a href="#s20">20. Subordinating Conjunctions — Result or Effect</a></li>
+      <li><a href="#s21">21. Subordinating Conjunctions — Purpose</a></li>
+      <li><a href="#s22">22. Subordinating Conjunctions — Contrast or Concession</a></li>
+      <li><a href="#s23">23. Subordinating Conjunctions — Comparison</a></li>
+      <li><a href="#s24">24. Correlative Conjunctions</a></li>
+      <li><a href="#s25">25. Exercise — Fill in Pairs of Conjunctions</a></li>
+      <li><a href="#s26">26. Exercise — Rewrite by Correcting the Errors</a></li>
+      <li><a href="#s27">27. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="num">1.</span>What Is a Conjunction?</h2>
+  <p>Study carefully how the following pairs of sentences are joined.</p>
+  <ol class="plain">
+    <li>He bought apples. He bought mangoes.<br><span class="eg">He bought apples and mangoes.</span></li>
+    <li>My brother is tall. I am short.<br><span class="eg">My brother is tall but I am short.</span></li>
+    <li>He is ill. He cannot come to school.<br><span class="eg">He is ill, so he cannot come to school.<br>He cannot come to school because he is ill.</span></li>
+  </ol>
+  <p>You can observe that in each pair of sentences given above, two different statements are given. These two different statements are joined by using the words 'and', 'but', 'so' and 'because'. These words which join two words or clauses are called conjunctions, connectors or linkers.</p>
+  <p><strong>Conjunction:</strong> A word which is used to join two words, phrases or clauses is called a conjunction.</p>
+
+  <h2 id="s2"><span class="num">2.</span>Kinds of Conjunction</h2>
+  <h3>1. Coordinative Conjunctions</h3>
+  <p>A Coordinative Conjunction joins the grammatical units of the same type or equal status e.g. nouns with noun, adjective with adjective, phrase with phrase and clause with clause. It joins words, phrases or clauses of equal status. In a compound Sentence, it joins two coordinate Clauses.</p>
+  <p><strong>Examples:</strong> and, but, for, or, still, yet, so, therefore, as well as, otherwise, else, only etc.</p>
+  <ul>
+    <li>I went home. I changed my clothes.<br><span class="eg">I went home and changed my clothes. (Joins verb with verb)</span></li>
+    <li>Take care of your health. You will fall ill.<br><span class="eg">Take care of your health, otherwise you will fall ill. (Joins two coordinate clauses)</span></li>
+    <li>He likes ice-cream. He does not like juice.<br><span class="eg">He likes ice-cream, but not juice. (Joins noun with noun)</span></li>
+  </ul>
+  <h3>2. Subordinating Conjunction</h3>
+  <p>A subordinating conjunction joins subordinate clause/clauses to the principal clause in a complex sentence.</p>
+  <p><strong>Examples:</strong> unless, until, because, since, as, if, whether, before, after, when, while, where, wherever etc.</p>
+  <ul>
+    <li class="eg">I used to play cricket when I was a student.</li>
+    <li class="eg">He ran away because he was afraid.</li>
+  </ul>
+  <p>The underlined clauses in the above sentences are Subordinate Clauses.</p>
+  <h3>3. Correlative Conjunctions</h3>
+  <p>Correlative conjunctions also join grammatical units of the same type or equal status e.g. nouns with noun, adjective with adjective, phrase with phrase and clause with clause. Correlative conjunctions are followed by the same part of speech. They are always used in pairs.</p>
+  <p><strong>Examples:</strong> Both...and, Either...or, Neither...nor, Hardly...when, Scarcely...before, Not only...but also etc.</p>
+  <ul>
+    <li class="eg">He is either a fool (noun) or a rogue (noun).</li>
+    <li class="eg">Hardly had he reached school (clause) when the peon rang the bell. (clause)</li>
+  </ul>
+  <h3>4. Compound Conjunctions</h3>
+  <p>Compound conjunctions are groups of words that function as conjunctions. Some expressions or phrases act as conjunctions.</p>
+  <ul>
+    <li class="eg">He will lend you money provided that you return it on time.</li>
+    <li class="eg">I will let you play in my garden on condition that you do not pluck the flowers.</li>
+    <li class="eg">The thief ran away as soon as he heard a noise.</li>
+  </ul>
+  <p>These expressions or phrases are called Compound Conjunctions.</p>
+
+  <h2 id="s3"><span class="num">3.</span>Exercise: Underline the conjunctions in the following sentences.</h2>
+  <div class="exercise-block">
+    <p class="instr">Type the conjunction found in each sentence.</p>
+    <ol class="plain">
+      <li>Rohit and Riya went to market. <input class="blank-input" type="text"></li>
+      <li>I bought vegetables but I did not buy fruit. <input class="blank-input" type="text"></li>
+      <li>You can wait here or go home. <input class="blank-input" type="text"></li>
+      <li>I cannot buy this house because I do not have enough money. <input class="blank-input" type="text"></li>
+      <li>He is very weak, so he cannot walk. <input class="blank-input" type="text"></li>
+      <li>I will attend the party if you invite me. <input class="blank-input" type="text"></li>
+      <li>I will watch TV when I have finished my homework. <input class="blank-input" type="text"></li>
+      <li>He failed, for he had not worked hard. <input class="blank-input" type="text"></li>
+      <li>He was tired, yet he continued his work. <input class="blank-input" type="text"></li>
+      <li>I know that you have helped him with money. <input class="blank-input" type="text"></li>
+      <li>Tell me why he has shifted to Delhi. <input class="blank-input" type="text"></li>
+      <li>Think before you speak. <input class="blank-input" type="text"></li>
+      <li>He has not called me since he shifted to his new house. <input class="blank-input" type="text"></li>
+      <li>This is the house which my father built. <input class="blank-input" type="text"></li>
+      <li>Although he was alone at house, he was not afraid. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. and · 2. but · 3. or · 4. because · 5. so · 6. if · 7. when · 8. for · 9. yet · 10. that · 11. why · 12. before · 13. since · 14. which · 15. although</p></div>
+  </div>
+
+  <h2 id="s4"><span class="num">4.</span>Types of Coordinative Conjunctions — Cumulative or Copulative Conjunctions</h2>
+  <p>Cumulative conjunctions add or connect words, phrases or clauses of the same type, status or level. They are used to convey the idea of similarity between the units being joined.</p>
+  <p><strong>Examples:</strong> and, also, too, as well as, both...and, not only...but also etc.</p>
+  <p>Read the pair of sentences given below.</p>
+  <p class="eg">He is smart. He is intelligent.</p>
+  <p>In the above pair of sentences, we come to know about two qualities of 'He'. Since both the qualities are positive and don't show any contradiction, we will join the above pair of sentences using a cumulative conjunction.</p>
+  <ol class="plain">
+    <li class="eg">He is smart and intelligent.</li>
+    <li class="eg">He is smart as well as intelligent.</li>
+    <li class="eg">He is smart; and intelligent too.</li>
+    <li class="eg">He is both smart and intelligent.</li>
+    <li class="eg">He is smart; and intelligent also.</li>
+    <li class="eg">He is not only smart but also intelligent.</li>
+  </ol>
+
+  <h2 id="s5"><span class="num">5.</span>Types of Coordinative Conjunctions — Adversative Conjunctions</h2>
+  <p>These conjunctions are used to connect or join two contradictory, contrasting or opposite ideas.</p>
+  <p><strong>Examples:</strong> but, still, however, nevertheless, only, whereas, yet</p>
+  <p>Read the pair of sentences given below.</p>
+  <p class="eg">He is intelligent. He is not hard working.<br>He is intelligent, but not hardworking.</p>
+  <ul>
+    <li class="eg">He is poor but honest.</li>
+    <li class="eg">He was weak; still he managed to walk for long.</li>
+    <li class="eg">He lost everything in life; however he started his life anew with a strong will.</li>
+    <li class="eg">Everyone in the family opposed him; nevertheless he chased his dreams.</li>
+    <li class="eg">Do what you like, only don't disturb me.</li>
+    <li class="eg">My friend is tall whereas his brother is not (tall).</li>
+    <li class="eg">He has a lot of wealth, yet he is a miser.</li>
+  </ul>
+
+  <h2 id="s6"><span class="num">6.</span>Types of Coordinative Conjunctions — Disjunctive or Alternative Conjunction</h2>
+  <p>These conjunctions express a choice between two words, phrases or clauses.</p>
+  <p><strong>Examples:</strong> or, nor, either...or, neither...nor, otherwise, else</p>
+  <ul>
+    <li class="eg">Run fast, or you will lose the race.</li>
+    <li class="eg">You can either wait or go.</li>
+    <li class="eg">He is neither intelligent nor hardworking.</li>
+    <li class="eg">Work hard, otherwise you will fail.</li>
+    <li class="eg">Return these books on time, else you will be fined.</li>
+  </ul>
+
+  <h2 id="s7"><span class="num">7.</span>Types of Coordinative Conjunctions — Illative Conjunctions</h2>
+  <p>When a fact or statement is inferred or provided from another statement, the two of them are joined by using an illative coordinating conjunction.</p>
+  <p><strong>Examples:</strong> so, hence, therefore, for, then</p>
+  <ul>
+    <li class="eg">My foot was injured, so I could not walk.</li>
+    <li class="eg">It had been raining since morning; hence we could not go out.</li>
+    <li class="eg">He is not well today; therefore he cannot come to school.</li>
+    <li class="eg">He missed the train, for he was late.</li>
+    <li class="eg">We are getting late, let's hurry up then.</li>
+  </ul>
+
+  <h2 id="s8"><span class="num">8.</span>Important Note: The Acronym FANBOYS</h2>
+  <p>Remember the Acronym FANBOYS to remember some important conjunctions.</p>
+  <div class="fanbo">
+    <div><b>F</b> = for</div>
+    <div><b>A</b> = and, as well as</div>
+    <div><b>N</b> = neither...nor</div>
+    <div><b>B</b> = but</div>
+    <div><b>O</b> = or, otherwise, else</div>
+    <div><b>Y</b> = yet, still</div>
+    <div><b>S</b> = so, hence, therefore</div>
+  </div>
+
+  <h2 id="s9"><span class="num">9.</span>Exercise: Fill in the blanks with suitable conjunctions.</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill each blank with a suitable conjunction.</p>
+    <ol class="plain">
+      <li>I called him ........... he did not receive my call. <input class="blank-input" type="text"></li>
+      <li>She is neither a teacher ........... a doctor. <input class="blank-input" type="text"></li>
+      <li>Her condition was serious, ........... she was admitted to a hospital. <input class="blank-input" type="text"></li>
+      <li>You must go home now, ........... you will be late. <input class="blank-input" type="text"></li>
+      <li>She is ........... beautiful and intelligent. <input class="blank-input" type="text"></li>
+      <li>He failed, ........... he had not worked hard. <input class="blank-input" type="text"></li>
+      <li>Sit wherever you want, ........... don't sit here. <input class="blank-input" type="text"></li>
+      <li>I am thin ........... my brother is fat. <input class="blank-input" type="text"></li>
+      <li>He suffered a great loss, ........... he did not lose hope. <input class="blank-input" type="text"></li>
+      <li>He is very rich, ........... he is humble. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. but · 2. nor · 3. so · 4. otherwise · 5. both · 6. for · 7. only · 8. but · 9. yet · 10. yet</p></div>
+  </div>
+
+  <h2 id="s10"><span class="num">10.</span>Exercise: Join the following pairs of sentences using the conjunctions given in the brackets.</h2>
+  <div class="exercise-block">
+    <p class="instr">Rewrite each pair as one joined sentence using the given conjunction.</p>
+    <ol class="plain">
+      <li>They were late. They managed to catch the train. (however) <textarea class="answer-box"></textarea></li>
+      <li>He is underweight. He cannot participate in this competition. (therefore) <textarea class="answer-box"></textarea></li>
+      <li>I like chocolate. I like cake. (both...and) <textarea class="answer-box"></textarea></li>
+      <li>Wear a sweater. You will get cold. (else) <textarea class="answer-box"></textarea></li>
+      <li>He worked hard. He could not qualify for the post. (nevertheless) <textarea class="answer-box"></textarea></li>
+      <li>He has solved the sum. His brother has solved the sum. (either...or) <textarea class="answer-box"></textarea></li>
+      <li>The weather was cold and wet. We had a great time. (still) <textarea class="answer-box"></textarea></li>
+      <li>Deposit your fee by tomorrow. Your name will be struck off. (or) <textarea class="answer-box"></textarea></li>
+      <li>He does not exercise regularly. He has put on weight. (hence) <textarea class="answer-box"></textarea></li>
+      <li>He is not a producer. He is not a director. (neither...nor) <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answers</div>
+      <ol>
+        <li>They were late; however, they managed to catch the train.</li>
+        <li>He is underweight; therefore, he cannot participate in this competition.</li>
+        <li>I like both chocolate and cake.</li>
+        <li>Wear a sweater, else you will get cold.</li>
+        <li>He worked hard; nevertheless, he could not qualify for the post.</li>
+        <li>Either he has solved the sum or his brother has solved the sum.</li>
+        <li>The weather was cold and wet; still, we had a great time.</li>
+        <li>Deposit your fee by tomorrow, or your name will be struck off.</li>
+        <li>He does not exercise regularly; hence, he has put on weight.</li>
+        <li>He is neither a producer nor a director.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s11"><span class="num">11.</span>Exercise: Fill in the blanks with Conjunctions of Time by choosing the correct option.</h2>
+  <div class="exercise-block">
+    <p class="instr">Choose the correct option and type it into the box.</p>
+    <ol class="plain">
+      <li>Look ........... (before/after) you leap. <input class="blank-input" type="text"></li>
+      <li>I will go to play ........... (before/after) I have finished my work. <input class="blank-input" type="text"></li>
+      <li>I used to play cricket ........... (when/till) I was a student. <input class="blank-input" type="text"></li>
+      <li>Make hay ........... (before/while) the sun shines. <input class="blank-input" type="text"></li>
+      <li>I haven't seen her ........... (since/when) she left her job. <input class="blank-input" type="text"></li>
+      <li>Wait here ........... (till/when) I come. <input class="blank-input" type="text"></li>
+      <li>I waited for my friend ........... (till/until) he came. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. before · 2. after · 3. when · 4. while · 5. since · 6. till · 7. till</p></div>
+  </div>
+
+  <h2 id="s12"><span class="num">12.</span>Exercise: Fill in the blanks with conjunctions by choosing the correct option.</h2>
+  <div class="exercise-block">
+    <p class="instr">Choose the correct option and type it into the box.</p>
+    <ol class="plain">
+      <li>He will follow you ........... you go. (when/wherever) <input class="blank-input" type="text"></li>
+      <li>I kept the books ........... you told me to keep. (when/where) <input class="blank-input" type="text"></li>
+      <li>Tell me the place ........... you parked your car. (where/since) <input class="blank-input" type="text"></li>
+      <li>They worked ........... I had instructed. (as/since) <input class="blank-input" type="text"></li>
+      <li>He walked ........... he were lame. (as if/if) <input class="blank-input" type="text"></li>
+      <li>He died ........... he could not get proper treatment. (because/so) <input class="blank-input" type="text"></li>
+      <li>I will lead this project ........... you want me to do it. (since/hence) <input class="blank-input" type="text"></li>
+      <li>We left a message for him ........... he was not at home. (so/as) <input class="blank-input" type="text"></li>
+      <li>You can stand first in the class ........... you work hard. (if/unless) <input class="blank-input" type="text"></li>
+      <li>You will not stand first in the class ........... you work hard. (if/unless) <input class="blank-input" type="text"></li>
+      <li>He is ........... (so/as) weak that he cannot walk. <input class="blank-input" type="text"></li>
+      <li>He worked hard ........... he might pass the examination. (so that/so) <input class="blank-input" type="text"></li>
+      <li>Run fast ........... you should miss the train. (lest/as) <input class="blank-input" type="text"></li>
+      <li>........... he is poor, he is honest. (because/though) <input class="blank-input" type="text"></li>
+      <li>You have to eat it ........... you like it or not. (whether/unless) <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. wherever · 2. where · 3. where · 4. as · 5. as if · 6. because · 7. since · 8. as · 9. if · 10. unless · 11. so · 12. so that · 13. lest · 14. Though · 15. whether</p></div>
+  </div>
+
+  <h2 id="s13"><span class="num">13.</span>Exercise: Fill in the blanks with suitable conjunction.</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill each blank with a suitable conjunction.</p>
+    <ol class="plain">
+      <li>Strike the iron ........... it is hot. <input class="blank-input" type="text"></li>
+      <li>He was playing ........... his father came home. <input class="blank-input" type="text"></li>
+      <li>........... you start early, you will catch the train. <input class="blank-input" type="text"></li>
+      <li>........... they batted badly, they won the match. <input class="blank-input" type="text"></li>
+      <li>It's been a month ........... she came here. <input class="blank-input" type="text"></li>
+      <li>I shall wait for you ........... you return. <input class="blank-input" type="text"></li>
+      <li>I must believe it ........... you say so. <input class="blank-input" type="text"></li>
+      <li>Cooperate with him, ........... you like it or not. <input class="blank-input" type="text"></li>
+      <li>He took a short cut ........... he might save time. <input class="blank-input" type="text"></li>
+      <li>She pretended ........... she were the princess. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. while · 2. when · 3. If · 4. Although · 5. since · 6. until · 7. since/as · 8. whether · 9. so that · 10. as if</p></div>
+  </div>
+
+  <h2 id="s14"><span class="num">14.</span>Exercise: Join the following pairs of sentences using conjunctions given in the brackets.</h2>
+  <div class="exercise-block">
+    <p class="instr">Rewrite each pair as one joined sentence using the given conjunction.</p>
+    <ol class="plain">
+      <li>He is ill. He will attend the meeting. (though) <textarea class="answer-box"></textarea></li>
+      <li>He walked very fast. He seemed to be in a hurry. (as if) <textarea class="answer-box"></textarea></li>
+      <li>He would not surrender. You beat him black and blue. (even if) <textarea class="answer-box"></textarea></li>
+      <li>She is a good singer. She is not a good dancer. (but) <textarea class="answer-box"></textarea></li>
+      <li>You will not lose. You do not accept your defeat. (unless) <textarea class="answer-box"></textarea></li>
+      <li>He was caught. He was stealing the money. (while) <textarea class="answer-box"></textarea></li>
+      <li>The child was crying. The child was hungry. (because) <textarea class="answer-box"></textarea></li>
+      <li>You like something. Do it. (as) <textarea class="answer-box"></textarea></li>
+      <li>He should leave early. He will miss the train. (unless) <textarea class="answer-box"></textarea></li>
+      <li>There is life. There is hope. (as long as) <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answers</div>
+      <ol>
+        <li>Though he is ill, he will attend the meeting.</li>
+        <li>He walked very fast as if he were in a hurry.</li>
+        <li>He would not surrender even if you beat him black and blue.</li>
+        <li>She is a good singer but not a good dancer.</li>
+        <li>You will not lose unless you accept your defeat.</li>
+        <li>He was caught while he was stealing the money.</li>
+        <li>The child was crying because he was hungry.</li>
+        <li>Do it as you like.</li>
+        <li>He should leave early, unless he wants to miss the train.</li>
+        <li>As long as there is life, there is hope.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s15"><span class="num">15.</span>Types of Subordinating Conjunctions — Time</h2>
+  <p>Subordinating conjunctions may be divided according to their meaning or function.</p>
+  <p><strong>Examples:</strong> Before, as, after, when, while, since, as soon as, till, until, so long as, as long as, now that, once etc.</p>
+  <ul>
+    <li class="eg">Look before you leap.</li>
+    <li class="eg">I will go to play after I have finished my work.</li>
+    <li class="eg">I used to play cricket when I was a student.</li>
+    <li class="eg">I haven't seen her since she left her job.</li>
+    <li class="eg">Wait here till I come.</li>
+  </ul>
+
+  <h2 id="s16"><span class="num">16.</span>Types of Subordinating Conjunctions — Place</h2>
+  <p><strong>Examples:</strong> Where, wherever, whence</p>
+  <ul>
+    <li class="eg">He will follow you wherever you go.</li>
+    <li class="eg">I kept the books where you told me to keep.</li>
+    <li class="eg">They returned whence they had come.</li>
+  </ul>
+
+  <h2 id="s17"><span class="num">17.</span>Types of Subordinating Conjunctions — Manner or Extent</h2>
+  <p><strong>Examples:</strong> as, so far as, as if, as though, as far as etc.</p>
+  <ul>
+    <li class="eg">They worked as I had instructed.</li>
+    <li class="eg">So far as his health is concerned, he is better now.</li>
+    <li class="eg">As far as his behaviour is concerned, he has shown improvement.</li>
+    <li class="eg">He walked as if he were lame.</li>
+    <li class="eg">It sounds as though you had a good time.</li>
+  </ul>
+
+  <h2 id="s18"><span class="num">18.</span>Types of Subordinating Conjunctions — Cause</h2>
+  <p><strong>Examples:</strong> Because, since, as</p>
+  <ul>
+    <li class="eg">He died because he could not get proper treatment.</li>
+    <li class="eg">I will lead this project since you want me to do it.</li>
+  </ul>
+
+  <h2 id="s19"><span class="num">19.</span>Types of Subordinating Conjunctions — Condition</h2>
+  <p><strong>Examples:</strong> Provided, provided that, on condition that, if, in case, unless, supposing</p>
+  <ul>
+    <li class="eg">You can stand first in the class provided you work hard.</li>
+    <li class="eg">You can stand first in the class provided that you work hard.</li>
+    <li class="eg">You can stand first in the class if you work hard.</li>
+    <li class="eg">You will not stand first in the class unless you work hard.</li>
+  </ul>
+
+  <h2 id="s20"><span class="num">20.</span>Types of Subordinating Conjunctions — Result or Effect</h2>
+  <p><strong>Examples:</strong> so...that</p>
+  <ul>
+    <li class="eg">He is so weak that he cannot walk.</li>
+  </ul>
+
+  <h2 id="s21"><span class="num">21.</span>Types of Subordinating Conjunctions — Purpose</h2>
+  <p><strong>Examples:</strong> that, so that, in order that, lest...should, for fear that</p>
+  <ul>
+    <li class="eg">He worked hard so that he might pass the examination.</li>
+    <li class="eg">He is working hard in order that he may pass the examination.</li>
+    <li class="eg">Run fast lest you should miss the train.</li>
+    <li class="eg">We eat that we may live.</li>
+  </ul>
+
+  <h2 id="s22"><span class="num">22.</span>Types of Subordinating Conjunctions — Contrast or Concession</h2>
+  <p><strong>Examples:</strong> though, although, notwithstanding, as, even if, whether, however, whatever, while, when</p>
+  <ul>
+    <li class="eg">Though he is poor, he is honest. He is honest though he is poor.</li>
+    <li class="eg">Although he is poor, he is honest. He is honest although he is poor.</li>
+    <li class="eg">You have to eat it whether you like it or not.</li>
+    <li class="eg">Whatever happens, I will fight till the end.</li>
+    <li class="eg">While he is good at science, his brother is hopeless.</li>
+  </ul>
+
+  <h2 id="s23"><span class="num">23.</span>Types of Subordinating Conjunctions — Comparison</h2>
+  <p><strong>Examples:</strong> than, as</p>
+  <ul>
+    <li class="eg">My brother is taller than I am.</li>
+    <li class="eg">Ramesh ran faster than Suresh (did).</li>
+  </ul>
+
+  <h2 id="s24"><span class="num">24.</span>Correlative Conjunctions</h2>
+  <table class="ref-table">
+    <tr><th>#</th><th>Pair</th><th>Sense / Use</th><th>Example</th></tr>
+    <tr><td>1</td><td class="word">Both...and</td><td>Used to join similar things/concepts</td><td>He is both a lyricist and composer.</td></tr>
+    <tr><td>2</td><td class="word">Either...or</td><td>Used to choose/select either of two choices</td><td>You can take either a bus or a train for Delhi.</td></tr>
+    <tr><td>3</td><td class="word">Neither...nor</td><td>Used to reject either of the two choices</td><td>He is neither a doctor nor a lawyer.</td></tr>
+    <tr><td>4</td><td class="word">Hardly...when</td><td>Used in the sense of 'as soon as'</td><td>Hardly had I stepped out of my house when it started raining.</td></tr>
+    <tr><td>5</td><td class="word">Scarcely...when/before</td><td>Used in the sense of 'as soon as'</td><td>I scarcely had time to ring the bell before the door opened. He had scarcely reached school when the peon rang the bell.</td></tr>
+    <tr><td>6</td><td class="word">Not only...but also</td><td>Used in the sense of 'and' or 'in addition to'</td><td>He not only invited me, but also gave me a beautiful gift.</td></tr>
+    <tr><td>7</td><td class="word">No sooner...than</td><td>Used in the sense of 'as soon as'</td><td>No sooner did the thief see the police than he ran away. No sooner had I reached home than it started raining.</td></tr>
+    <tr><td>8</td><td class="word">Though...yet</td><td>Used to express contrast</td><td>Though the baby is weak yet it is active. / Though the baby is weak, it is active.</td></tr>
+    <tr><td>9</td><td class="word">Although...yet</td><td>Used to express contrast</td><td>Although he worked hard yet he could not succeed. / Although he worked hard, he could not succeed.</td></tr>
+    <tr><td>10</td><td class="word">So...that</td><td>Used to show result or effect</td><td>He is so intelligent that he can solve these sums easily.</td></tr>
+    <tr><td>11</td><td class="word">Whether...or</td><td>Used to join two contrasting ideas</td><td>You should work under him, whether you like him or not.</td></tr>
+    <tr><td>12</td><td class="word">Lest...should</td><td>Used in the sense of 'otherwise'</td><td>Walk fast lest you should miss the train.</td></tr>
+  </table>
+
+  <h2 id="s25"><span class="num">25.</span>Exercise: Fill in the blanks with pairs of conjunctions.</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill each blank with the correct half of a correlative pair.</p>
+    <ol class="plain">
+      <li>This book is ........... useful ........... cheap. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>........... my brother ........... my sister went to school today. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>You can ........... play ........... work. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>This boy can ........... hear ........... speak. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>Be careful ........... you ........... repent later. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>........... Girish ........... his brother are intelligent. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>He worked ........... hard ........... he won a scholarship. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>It is all the same for me ........... you stay here ........... go back home. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>........... he is poor ........... he is honest. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+      <li>........... did the teacher enter the class ........... the students became silent. <input class="blank-input" type="text" style="width:100px"> <input class="blank-input" type="text" style="width:100px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. both, and · 2. Either, or · 3. either, or · 4. neither, nor · 5. lest, should · 6. Both, and · 7. so, that · 8. whether, or · 9. Though, yet · 10. No sooner, than</p></div>
+  </div>
+
+  <h2 id="s26"><span class="num">26.</span>Exercise: Rewrite the following sentences by correcting the errors.</h2>
+  <div class="exercise-block">
+    <p class="instr">Rewrite each sentence, correcting the conjunction error.</p>
+    <ol class="plain">
+      <li>He is a poet but novelist. <textarea class="answer-box"></textarea></li>
+      <li>She is very beautiful and proud. <textarea class="answer-box"></textarea></li>
+      <li>I have not met her when she left the office. <textarea class="answer-box"></textarea></li>
+      <li>Make hay before the sun shines. <textarea class="answer-box"></textarea></li>
+      <li>You cannot succeed if you work hard. <textarea class="answer-box"></textarea></li>
+      <li>Either John nor his brother has broken the window. <textarea class="answer-box"></textarea></li>
+      <li>The tea is very hot that I cannot drink it. <textarea class="answer-box"></textarea></li>
+      <li>Follow the rules and you will be terminated. <textarea class="answer-box"></textarea></li>
+      <li>He is rich and arrogant. <textarea class="answer-box"></textarea></li>
+      <li>He did not come to school, so he was ill. <textarea class="answer-box"></textarea></li>
+      <li>Rajat is not only hardworking but loyal. <textarea class="answer-box"></textarea></li>
+      <li>She is neither studying or playing. <textarea class="answer-box"></textarea></li>
+      <li>I do not know that when she will go. <textarea class="answer-box"></textarea></li>
+      <li>Walk carefully lest you must fall. <textarea class="answer-box"></textarea></li>
+      <li>You will not catch the train unless you do not hurry up. <textarea class="answer-box"></textarea></li>
+      <li>Wait here after the train arrives. <textarea class="answer-box"></textarea></li>
+      <li>It was raining heavily so that he was late. <textarea class="answer-box"></textarea></li>
+      <li>The little child was lost in the forest and he did not lose heart. <textarea class="answer-box"></textarea></li>
+      <li>I got the book when I left it. <textarea class="answer-box"></textarea></li>
+      <li>She cannot read nor write. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>He is both a poet and a novelist. ('but' wrongly joins two similar, non-contrasting roles — use 'both...and')</li>
+        <li>She is very beautiful but proud. (beauty and vanity contrast, so 'and' should be 'but')</li>
+        <li>I have not met her since she left the office. ('when' cannot mark a stretch of time up to now — use 'since')</li>
+        <li>Make hay while the sun shines. (the idiom uses 'while', not 'before')</li>
+        <li>You cannot succeed unless you work hard. ('if' reverses the meaning — needs the negative-condition 'unless')</li>
+        <li>Neither John nor his brother has broken the window. ('either' cannot pair with 'nor' — needs 'neither')</li>
+        <li>The tea is so hot that I cannot drink it. ('very...that' is not a correlative pair — needs 'so...that')</li>
+        <li>Follow the rules, or you will be terminated. ('and' wrongly implies obeying causes termination — needs 'or')</li>
+        <li>He is rich but arrogant. (wealth and arrogance contrast, so 'and' should be 'but')</li>
+        <li>He did not come to school because he was ill. ('so' reverses cause and effect — needs 'because')</li>
+        <li>Rajat is not only hardworking but also loyal. ('but' must be completed with 'also' in this correlative pair)</li>
+        <li>She is neither studying nor playing. ('or' cannot pair with 'neither' — needs 'nor')</li>
+        <li>I do not know when she will go. ('that' is redundant before the question word 'when')</li>
+        <li>Walk carefully lest you should fall. ('lest' is completed by 'should', not 'must')</li>
+        <li>You will not catch the train unless you hurry up. ('unless' already carries the negative — a second 'not' cancels the meaning)</li>
+        <li>Wait here till/until the train arrives. ('after' contradicts waiting — needs 'till'/'until')</li>
+        <li>It was raining heavily, so he was late. ('so that' expresses purpose, not simple result — needs plain 'so')</li>
+        <li>The little child was lost in the forest, but he did not lose heart. ('and' should be 'but' to show contrast with the danger just described)</li>
+        <li>I got back the book that I had left. (the original is illogical — 'when' does not show what was recovered)</li>
+        <li>She can neither read nor write. ('cannot...nor' is not a valid pair — needs 'neither...nor', or 'cannot read or write')</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s27"><span class="num">27.</span>Quick Revision Checklist</h2>
+  <div class="checklist">
+    <ul>
+      <li>A conjunction joins two words, phrases or clauses.</li>
+      <li>There are four kinds: Coordinative, Subordinating, Correlative, and Compound conjunctions.</li>
+      <li>Coordinative conjunctions split further into Cumulative, Adversative, Disjunctive, and Illative — remember FANBOYS for the core set.</li>
+      <li>Subordinating conjunctions are grouped by function: Time, Place, Manner/Extent, Cause, Condition, Result, Purpose, Contrast/Concession, and Comparison.</li>
+      <li>Correlative conjunctions always work in fixed pairs — both...and, either...or, neither...nor, not only...but also, and more.</li>
+      <li>Watch for the classic errors: mismatched pairs (either...nor), double negatives (unless...not), and 'that' stacked in front of a question word (that when).</li>
+    </ul>
+  </div>
+
+  <footer>Class 8 · English · Grammar · Lesson 22 — Chapter-10, The Conjunction.</footer>
+</div>
+</body>
+</html>

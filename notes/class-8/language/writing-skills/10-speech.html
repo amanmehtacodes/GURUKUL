@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 10 — Speech | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc li ul{margin:4px 0 4px 6px; padding-left:16px;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:22px 0 8px; scroll-margin-top:20px;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:8px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+
+  .oratory-grid{display:flex; flex-direction:column; gap:12px; margin:16px 0;}
+  .orat-item{
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-left:4px solid var(--accent2);
+    border-radius:10px; padding:14px 18px;
+  }
+  .orat-item .orat-label{font-family:var(--font-mono); font-weight:700; color:var(--accent2); font-size:14px;
+    text-transform:uppercase; letter-spacing:.04em; margin-bottom:4px;}
+  .orat-item p{margin:0; color:var(--ink-soft); font-size:15.5px;}
+
+  .hints{
+    background:var(--accent2-soft); border-left:3px solid var(--violet);
+    border-radius:6px; padding:12px 16px; color:var(--ink-soft); font-size:15px; margin:12px 0 18px;
+  }
+  .hints strong{color:var(--ink);}
+
+  .phrase-list{
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius);
+    padding:18px 22px; margin:16px 0; columns:2; column-gap:30px; font-size:15px; color:var(--ink-soft);
+  }
+  .phrase-list ol{margin:0; padding-left:20px;}
+  .phrase-list li{margin-bottom:10px; break-inside:avoid;}
+
+  .speech-box{
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius-md);
+    padding:22px 26px; margin:16px 0;
+  }
+  .sp-title{font-family:var(--font-mono); font-weight:700; font-size:16px; color:var(--ink); text-align:center; margin:0 0 4px;}
+  .sp-byline{text-align:center; color:var(--ink-faint); font-size:13.5px; margin:0 0 16px; font-style:italic;}
+  .sp-topic{font-family:var(--font-mono); font-weight:700; font-size:15px; color:var(--c3); margin:0 0 14px;}
+  .sp-salutation{font-weight:700; color:var(--ink); margin:0 0 14px;}
+  .speech-box p{color:var(--ink-soft); font-size:16px;}
+  .sp-close{font-weight:700; color:var(--ink); margin-top:14px;}
+
+  .qa-wrap{margin:20px 0 36px; border:1px solid var(--line); border-radius:var(--radius-md); padding:20px 22px; background:var(--paper-raised);}
+  .qa-wrap h3{margin-top:0;}
+  .qtag{
+    display:inline-block; font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;
+    letter-spacing:.05em; color:var(--cyan); background:var(--cyan-soft); border:1px solid var(--cyan);
+    border-radius:20px; padding:2px 10px; margin-left:10px; vertical-align:middle;
+  }
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:200px; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:10px 0 12px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:13px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:9px 18px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:16px; padding-top:16px; border-top:1px dashed var(--line-strong);}
+  .qa-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills</div>
+  <h1 class="title">Lesson 10 — Speech</h1>
+  <p class="subtitle">Semester 2</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#definition">1. What Is a Speech?</a></li>
+      <li><a href="#components">2. Three Components of Great Oratory</a></li>
+      <li><a href="#layout">3. Layout of a Speech</a></li>
+      <li><a href="#tips">4. Tips for Writing an Effective Speech</a></li>
+      <li><a href="#phrases">5. Some Useful Phrases or Sentences</a></li>
+      <li><a href="#samples">6. Sample Speeches (Worked Examples)</a>
+        <ul>
+          <li><a href="#sample1">Sample 1 — Swami Vivekananda's Chicago Speech</a></li>
+          <li><a href="#sample2">Sample 2 — Importance of Discipline in Our Life</a></li>
+        </ul>
+      </li>
+      <li><a href="#practice">7. Practice Questions</a>
+        <ul>
+          <li><a href="#q1">Q1. Drug Addiction</a></li>
+          <li><a href="#q2">Q2. Importance of Physical Education</a></li>
+          <li><a href="#q3">Q3. Wastage of Food in Weddings</a></li>
+          <li><a href="#q4">Q4. Blessings of a Joint Family</a></li>
+          <li><a href="#q5">Q5. Save Water</a></li>
+          <li><a href="#q6">Q6. Friends Are the Lifelines</a></li>
+        </ul>
+      </li>
+      <li><a href="#revision">8. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition"><span class="num">1.</span>What Is a Speech?</h2>
+  <p>A speech is a formal address or discourse delivered to an audience. A speech seeks to convince, persuade, inspire or inform. The main purpose of the speech is to convey the speaker's message in such an effective way as may greatly influence the audience. History is full of examples where speeches made by great orators brought about great revolutions. Mark Antony's speech in Shakespeare's 'Julius Caesar' and Portia's speech on mercy in Shakespeare's 'Merchant of Venice', Satan's speech in John Milton's 'Paradise Lost' are examples of some famous speeches in literature.</p>
+
+  <h2 id="components"><span class="num">2.</span>Three Components of Great Oratory</h2>
+  <p>Great oratory has three components.</p>
+  <div class="oratory-grid">
+    <div class="orat-item">
+      <div class="orat-label">Style</div>
+      <p>A great speech must be masterfully constructed. The best orators are masters of both the written and spoken word, and use words to create texts that are beautiful to both hear and read.</p>
+    </div>
+    <div class="orat-item">
+      <div class="orat-label">Substance</div>
+      <p>A speech may be flowery and charismatically presented, and yet lack any true substance at all. Great oratory must centre on a worthy theme; it must appeal to and inspire the audience's finest values and ideals.</p>
+    </div>
+    <div class="orat-item">
+      <div class="orat-label">Impact</div>
+      <p>Great oratory always seeks to persuade the audience of some fact or idea. The very best speeches change hearts and minds and seem as revelatory several decades or centuries removed as when they were first given.</p>
+    </div>
+  </div>
+
+  <h2 id="layout"><span class="num">3.</span>Layout of a Speech</h2>
+  <ol>
+    <li><strong>Introduction:</strong>
+      <ul>
+        <li>Welcome, Greeting and Formal Address: First of all, the speaker is required to welcome, greet and formally address the audience. The names of the addressees should be in correct sequence of institutional hierarchy. For example: Address the Principal first, and then teachers and fellow students. Don't forget to mention the chief guests, dignitaries and other people who are a part of the audience in the very beginning of your speech.</li>
+        <li>Introduce yourself telling your name, class, section and/or designation.</li>
+        <li>Introduce the topic or theme on which you are going to speak. You may introduce the topic by sharing an anecdote, giving an example, citing a quotation, quoting some statistics in the very beginning of your speech and then moving ahead with the rest of introduction.</li>
+      </ul>
+    </li>
+    <li><strong>Body:</strong>
+      <ul>
+        <li>Provide information on various aspects of the theme you have selected to speak on. The information may consist of arguments, examples, definitions, descriptions, comparisons, quotations, facts supported with statistics etc.</li>
+        <li>Present your views in a logical sequence using appropriate cohesive devices and transitional words and expressions.</li>
+      </ul>
+    </li>
+    <li><strong>Conclusion:</strong>
+      <ul>
+        <li>Sum up your views and conclude your speech.</li>
+        <li>You may end by inspiring the audience to think and act in a particular way, warning the audience, or by asking questions for the audience to ponder over or answer.</li>
+        <li>End with formal thanks by saying 'Thank you', 'Thank you everyone' or 'Thank you for the patient hearing'.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2 id="tips"><span class="num">4.</span>Tips for Writing an Effective Speech</h2>
+  <ol>
+    <li>Consider your audience.</li>
+    <li>Collect information relevant to the topic or theme of your speech.</li>
+    <li>Organise the information in a logical sequence and prepare a rough draft.</li>
+    <li>Keep the time limit in mind.</li>
+    <li>Keep the language conversational by using appropriate cohesive devices and by applying appropriate stress, tone and intonation. Use a variety of sentences: Affirmative, Negative, Questions, Imperative, Exclamatory and Optative to make the speech as communicative as possible. Read the golden rules given below to add an extra pinch of spice to your speech.
+      <ul>
+        <li><strong>Rule of 3:</strong> The human brain responds magically to things that come in threes. Whether it's a list of adjectives, a joke, or your main points, it's most effective if you keep it to this structure.</li>
+        <li><strong>Imagery:</strong> Metaphors, similes and description will help an audience understand you, and keep them entertained.</li>
+        <li><strong>Pronouns:</strong> Use "we" to create a sense of unity, "them" for a common enemy, "you" if you're reaching out to your audience, and "I" / "me" if you want to take control.</li>
+        <li><strong>Poetry:</strong> Repetition, rhyme and alliteration are sound effects, used by poets and orators alike. They make a speech much more memorable. Also remember to structure pauses and parentheses into a speech. This will vary the flow of sound, helping you hold your audience's attention.</li>
+        <li><strong>Jokes:</strong> Humour is powerful. Use it to perk up a sleepy audience, as well as a rhetorical tool. Laughter is based on people having common, shared assumptions – and can therefore be used to persuade.</li>
+      </ul>
+    </li>
+    <li>Edit the rough draft and remove grammatical or spelling errors. Try to replace the same words with synonyms. Conclude effectively and urge the audience to take required action. End with a hope or positive statement.</li>
+    <li>Thank your audience.</li>
+  </ol>
+
+  <h2 id="phrases"><span class="num">5.</span>Some Useful Phrases or Sentences</h2>
+  <div class="phrase-list">
+    <ol>
+      <li>I am sure all of you will agree if I say...</li>
+      <li>There is no doubt that...</li>
+      <li>What would happen if...</li>
+      <li>You all must have heard that...</li>
+      <li>As you all know that...</li>
+      <li>Let me relate an anecdote at this point.</li>
+      <li>There would be no exaggeration if I say...</li>
+      <li>It is a proven fact that...</li>
+      <li>Don't you think that...?</li>
+      <li>As far as I believe...</li>
+      <li>I strongly believe that...</li>
+      <li>Let's take the example of...</li>
+      <li>You will be stunned to know that...</li>
+      <li>The matter of the fact is that...</li>
+      <li>On the contrary...</li>
+      <li>I would also like to tell/inform you that...</li>
+      <li>You will be delighted/surprised/shocked to learn that...</li>
+      <li>Do you know that...?</li>
+      <li>All of you must have heard the saying...</li>
+      <li>You won't believe that...</li>
+    </ol>
+  </div>
+
+  <h2 id="samples"><span class="num">6.</span>Sample Speeches (Worked Examples)</h2>
+
+  <h3 id="sample1">Sample 1 — Swami Vivekananda's Speech at the Chicago Convention of Parliament of Religions</h3>
+  <div class="speech-box">
+    <p class="sp-salutation">Sisters and Brothers of America,</p>
+    <p>It fills my heart with joy unspeakable to rise in response to the warm and cordial welcome which you have given us. I thank you in the name of the most ancient order of monks in the world; I thank you in the name of the mother of religions, and I thank you in the name of millions and millions of Hindu people of all classes and sects.</p>
+    <p>My thanks, also, to some of the speakers on this platform who, referring to the delegates from the Orient, have told you that these men from far-off nations may well claim the honour of bearing to different lands the idea of toleration. I am proud to belong to a religion which has taught the world both tolerance and universal acceptance. We believe not only in universal toleration, but we accept all religions as true. I am proud to belong to a nation which has sheltered the persecuted and the refugees of all religions and all nations of the earth. I am proud to tell you that we have gathered in our bosom the purest remnant of the Israelites, who came to Southern India and took refuge with us in the very year in which their holy temple was shattered to pieces by Roman tyranny. I am proud to belong to the religion which has sheltered and is still fostering the remnant of the grand Zoroastrian nation. I will quote to you, brethren, a few lines from a hymn which I remember to have repeated from my earliest boyhood, which is every day repeated by millions of human beings: "As the different streams having their sources in different paths which men take through different tendencies, various though they appear, crooked or straight, all lead to Thee."</p>
+    <p>The present convention, which is one of the most august assemblies ever held, is in itself a vindication, a declaration to the world of the wonderful doctrine preached in the Geeta: "Whosoever comes to me, through whatsoever form, I reach him; all men are struggling through paths which in the end lead to me." Sectarianism, bigotry, and its horrible descendant, fanaticism, have long possessed this beautiful earth. They have filled the earth with violence, drenched it often and often with human blood, destroyed civilization and sent whole nations to despair. Had it not been for these horrible demons, human society would be far more advanced than it is now. But their time is come; and I fervently hope that the bell that tolled this morning in honour of this convention may be the death-knell of all fanaticism, of all persecutions with the sword or with the pen, and of all uncharitable feelings between persons wending their way to the same goal.</p>
+  </div>
+
+  <h3 id="sample2">Sample 2 — Importance of Discipline in Our Life</h3>
+  <p class="sp-topic">Write a speech on the topic 'Importance of Discipline in Our Life'.</p>
+  <div class="speech-box">
+    <p>Have you ever imagined what would happen if the earth stopped moving around the sun or the sun stopped giving heat and light to the world?</p>
+    <p class="sp-salutation">Honourable Principal, worthy teachers and my dear friends. A very good morning to all of you. I am Ankita Sinha of grade VI A. Today I stand before you to express my views on the importance of discipline in our lives.</p>
+    <p>Since the creation of this universe, the earth has been moving around the sun, the sun has been spreading its bright rays to one and all without any discrimination, the pole star has been guiding the travellers and the trees have been providing us Oxygen. All the objects, living or non-living maintain a strict discipline. Life would be chaotic in the absence of discipline. To be disciplined is to submit to a good rule or system, to maintain certain restraints for ultimate general good. If discipline is violated, steps must be taken against the offender.</p>
+    <p>Discipline is necessary in all spheres of life. An army cannot fight without strict discipline. An educational institution cannot run without discipline. Teachers and students must come to the school at a fixed hour every day, and observe the rules of the institution. Courts, offices, auditoriums, and even private houses have to maintain discipline. One cannot go into a hospital at hours when visitors are not allowed. One has to stand in a queue to pay bills for electricity or telephone, or for buying tickets for cinema or train journey.</p>
+    <p>In personal life, too, one has to practice discipline for a stable and worthy life. If you give in to temptations and overeat yourself, the stomach will revolt. If you watch TV throughout night, you will get sick the next day. If you do not restrain yourself from music and story-books before the examinations, you are sure to fare ill. Similarly, one cannot enjoy any sport if one is not disciplined as discipline is the very soul of any sport.</p>
+    <p>In fact, life is best enjoyed only if discipline is maintained. Nothing can be properly enjoyed, not even a game of cricket or a musical concert, if indiscipline is allowed to invade it. Therefore, we should all try to maintain discipline in our lives.</p>
+    <p class="sp-close">Thank you. Have a great day!</p>
+  </div>
+
+  <h2 id="practice"><span class="num">7.</span>Practice Questions</h2>
+  <p>The source gives no model answers for these six prompts, so a full sample speech is provided as a model answer for each — write your own attempt first, then check it against the model.</p>
+
+  <div class="qa-wrap" id="q1">
+    <h3>Q1. Drug Addiction<span class="qtag">Speech</span></h3>
+    <p>Write a speech on the topic 'Drug Addiction'.</p>
+    <div class="hints"><strong>Hints:</strong> Explain the meaning of drug addiction, types of drugs, people responsible, ill effects on physical, mental and emotional health, attitude of parents, peers, friends, how to get rid of drug addiction, role of government and administration.</div>
+    <textarea class="answer-box" placeholder="Write your speech here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my speech';">Check my speech</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="speech-box">
+        <p class="sp-salutation">Respected Principal, teachers and my dear friends,</p>
+        <p>A very good morning to all of you. Today I wish to speak on a menace that is silently destroying our youth — drug addiction.</p>
+        <p>Drug addiction is a condition in which a person becomes dependent on harmful substances such as tobacco, alcohol, cocaine, heroin or prescription drugs, using them repeatedly despite knowing their harmful effects. It often begins out of curiosity, peer pressure, stress or the desire to escape personal problems, and slowly turns into a habit the person cannot control.</p>
+        <p>Several people are responsible for pushing the youth towards this path — peer groups who normalise substance use, drug peddlers who target schools and colleges, and sometimes even family environments where addiction is common. The ill effects are devastating: physically, it damages the liver, lungs, heart and brain; mentally, it causes anxiety, depression and loss of memory; and emotionally, it isolates the addict from family and friends, destroying relationships and self-respect.</p>
+        <p>Parents and peers play a crucial role here. Parents must maintain open communication with their children instead of being distant or overly strict, and friends must have the courage to discourage rather than encourage experimentation.</p>
+        <p>To get rid of drug addiction, awareness campaigns, counselling, rehabilitation centres and strict vigilance in schools are essential. The government and administration must strengthen laws against drug trafficking, ensure de-addiction centres are accessible, and run consistent awareness drives in educational institutions.</p>
+        <p>Let us pledge today to say no to drugs and to help anyone around us who may be struggling with this addiction, because a drug-free society is a healthier and happier society.</p>
+        <p class="sp-close">Thank you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-wrap" id="q2">
+    <h3>Q2. Importance of Physical Education<span class="qtag">Speech</span></h3>
+    <p>Write a speech on the topic 'Importance of Physical Education'.</p>
+    <div class="hints"><strong>Hints:</strong> healthy body, healthy mind, physical fitness, blood circulation, metabolism, energy channelized, team spirit, great pastime, discipline, stress management, career opportunities, physical, emotional and mental strength, role of teachers and school administration.</div>
+    <textarea class="answer-box" placeholder="Write your speech here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my speech';">Check my speech</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="speech-box">
+        <p class="sp-salutation">Honourable Principal, respected teachers and my dear friends,</p>
+        <p>Good morning everyone. Today I stand before you to speak about something that shapes not just our bodies but our entire lives — the importance of physical education.</p>
+        <p>A healthy body houses a healthy mind, and physical education is what builds that healthy body. Regular exercise improves blood circulation, boosts metabolism and channelizes our excess energy in a productive direction, keeping lifestyle diseases at bay from a young age.</p>
+        <p>But the benefits go far beyond fitness. Sports and games taught in physical education periods build team spirit, teach us to win gracefully and lose with dignity, and instil discipline that stays with us for life. After a tiring day of studies, physical activity also acts as a wonderful pastime and a natural stress management tool, refreshing both body and mind.</p>
+        <p>Physical education also strengthens us emotionally and mentally, building confidence and resilience, and today it even opens doors to promising career opportunities in sports, coaching and sports science.</p>
+        <p>For all this to happen, teachers and school administrations must give physical education the same importance as academic subjects — ensuring proper grounds, equipment and trained instructors for every student.</p>
+        <p>Let us all make physical activity a regular part of our lives, because a fit nation is truly a strong nation.</p>
+        <p class="sp-close">Thank you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-wrap" id="q3">
+    <h3>Q3. Wastage of Food in Weddings or Other Ceremonies<span class="qtag">Speech</span></h3>
+    <p>Write a speech on the topic 'Wastage of Food in Weddings or Other Ceremonies'.</p>
+    <div class="hints"><strong>Hints:</strong> wastage of food by people, wastage of money, wastage of resources such as fuel, water, importance of food, importance for poor people, suggestions, donation.</div>
+    <textarea class="answer-box" placeholder="Write your speech here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my speech';">Check my speech</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="speech-box">
+        <p class="sp-salutation">Respected elders and dear friends,</p>
+        <p>Good evening to all of you. Today I want to draw your attention to a problem we often witness but rarely speak about — the wastage of food at weddings and other ceremonies.</p>
+        <p>Every wedding season, buffet tables are loaded with far more food than guests can eat, and a large portion ends up in the dustbin at the end of the function. This is not just a wastage of food, it is a wastage of the money spent on it, and a wastage of precious resources like fuel and water used to grow, transport and cook it.</p>
+        <p>We must remember that food is not merely a decoration for our functions — for millions of poor people in our country, a single proper meal is still a struggle. When we throw away plates of untouched food, we are, in effect, throwing away resources that could have fed someone in need.</p>
+        <p>The solution lies in simple, mindful steps: planning quantities based on the actual number of guests, avoiding an excessive variety of dishes, and, most importantly, arranging for the surplus food to be collected and donated to shelters or NGOs working with the underprivileged.</p>
+        <p>Let us celebrate our happy occasions responsibly, so that our joy does not come at the cost of someone else's hunger.</p>
+        <p class="sp-close">Thank you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-wrap" id="q4">
+    <h3>Q4. Blessings of a Joint Family<span class="qtag">Speech</span></h3>
+    <p>Write a speech on the topic 'Blessings of a Joint Family'.</p>
+    <div class="hints"><strong>Hints:</strong> Types of family, structure of joint family, security, entertainment, financial and moral support in times of emergency, blessings of grandparents, experience, better rearing of kids, strong bond, social status, no need of old age home, counselling, beneficial for all.</div>
+    <textarea class="answer-box" placeholder="Write your speech here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my speech';">Check my speech</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="speech-box">
+        <p class="sp-salutation">Honourable Principal, teachers and my dear friends,</p>
+        <p>A very good morning to you all. Today I would like to share my thoughts on a beautiful institution that is slowly disappearing from our society — the joint family.</p>
+        <p>Broadly, families can be classified as nuclear, where parents live with only their children, and joint, where grandparents, parents, children, uncles and aunts live together under one roof. A joint family offers a sense of security that is hard to find elsewhere — in times of financial or emotional emergency, there is always someone at hand to support you.</p>
+        <p>Living with grandparents is perhaps the greatest blessing of a joint family. Their experience and wisdom guide the younger generation, and children raised amid multiple caregivers tend to be better socialised, more patient and more emotionally secure. A joint family also means built-in entertainment and companionship, a strong emotional bond between members, and often, greater social status and respect in the community.</p>
+        <p>Perhaps most importantly, elderly members of a joint family are cared for at home with love, doing away with the need to send them to an old age home, and younger members always have someone experienced to counsel them through difficult decisions.</p>
+        <p>In a world that is increasingly individualistic, the joint family reminds us of the strength that lies in togetherness, and I believe it remains one of the greatest blessings a person can have.</p>
+        <p class="sp-close">Thank you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-wrap" id="q5">
+    <h3>Q5. Save Water<span class="qtag">Speech</span></h3>
+    <p>Write a speech on the topic 'Save Water'.</p>
+    <div class="hints"><strong>Hints:</strong> Importance of water in routine life, drinking, bathing, washing clothes, cleaning, scarcity of usable or drinkable water, falling water level of ground water, drying rivers, melting glaciers, sea water, ways to save water, rain water harvesting, judicious use of water, reuse of water for gardening, turn off taps when not in use.</div>
+    <textarea class="answer-box" placeholder="Write your speech here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my speech';">Check my speech</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="speech-box">
+        <p class="sp-salutation">Respected Principal, teachers and my dear friends,</p>
+        <p>Good morning everyone. Today I want to speak on a resource we use every single day, yet take dangerously for granted — water.</p>
+        <p>Water is central to our very existence — we need it for drinking, bathing, washing clothes and utensils, cleaning our homes, cooking and irrigation. Yet, despite nearly seventy percent of our planet being covered in water, the amount that is actually usable and drinkable is shockingly small, since most of it is locked away as sea water or ice.</p>
+        <p>Today, this small share is under severe threat. Groundwater levels are falling at an alarming rate in many regions, once-mighty rivers are drying up during summers, and melting glaciers are disrupting the natural water cycle. If we do not act now, future generations may face a crisis far more severe than what we see today.</p>
+        <p>The solution begins with each one of us. Simple habits like turning off the tap while brushing our teeth, fixing leaking pipes promptly, reusing water from washing vegetables for gardening, and practising judicious use of water at home can make a real difference. On a larger scale, rain water harvesting in our homes, schools and societies can significantly recharge our depleting groundwater.</p>
+        <p>Water is a gift, not an infinite resource, and saving it today is the only way to secure it for tomorrow.</p>
+        <p class="sp-close">Thank you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qa-wrap" id="q6">
+    <h3>Q6. Friends Are the Lifelines<span class="qtag">Speech</span></h3>
+    <p>Write a speech on the topic 'Friends Are the Lifelines'.</p>
+    <div class="hints"><strong>Hints:</strong> playing and studying together, helpful in need, share joys, sorrows and secrets, great company, learn from one another, teach moral values, complement one another, as important as family, teach how to maintain a social life, counsel, keep away from bad habits, keep one emotionally fit.</div>
+    <textarea class="answer-box" placeholder="Write your speech here..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my speech';">Check my speech</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="speech-box">
+        <p class="sp-salutation">Dear teachers and my dear friends,</p>
+        <p>A very good morning to all of you. Today I wish to speak about a relationship that colours our lives in the most beautiful way — friendship, and why friends truly are our lifelines.</p>
+        <p>From playing together in the playground to studying together for exams, friends are present at every important stage of our growing years. A true friend stands by us in our time of need, without expecting anything in return. We share our deepest joys and our quietest sorrows with friends, and often our closest secrets too, knowing they will be kept safe.</p>
+        <p>Good friends are also great company — they make us laugh on our worst days and celebrate with us on our best ones. We learn a great deal from our friends, and in turn we teach them, and this exchange often shapes our moral values and our understanding of the world. Friends complement us where we lack, and teach us how to build and maintain healthy relationships in society.</p>
+        <p>A true friend counsels us wisely, keeps us away from bad habits and bad company, and keeps us emotionally fit through the ups and downs of life. In many ways, friends become as important to us as family itself.</p>
+        <p>Let us cherish our friendships and be as good a friend to others as we hope others will be to us, because life without friends is a life without colour.</p>
+        <p class="sp-close">Thank you.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="revision"><span class="num">8.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>Have you formally welcomed and addressed the audience in correct hierarchy (Principal, teachers, then students)?</li>
+    <li>Have you introduced yourself with your name, class and section?</li>
+    <li>Does your introduction hook the audience with a quote, question, anecdote or statistic?</li>
+    <li>Is the body organised in a logical sequence with facts, examples and arguments?</li>
+    <li>Have you used a variety of sentence types and cohesive devices to keep it conversational?</li>
+    <li>Does your conclusion sum up your views and inspire, warn or question the audience?</li>
+    <li>Have you ended with formal thanks?</li>
+    <li>Have you kept the language formal, correct and free of slang?</li>
+  </ul>
+
+  <footer>Class 8 · English · Writing Skills · Lesson 10 of 30</footer>
+</div>
+</body>
+</html>

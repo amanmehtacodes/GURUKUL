@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3 — Bio-Sketch | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 32px;}
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 22px; margin-bottom:36px;
+  }
+  nav.toc div.toc-h{font-family:var(--font-mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px;}
+  nav.toc li{margin-bottom:5px;}
+  nav.toc ol ol{margin:6px 0 10px; padding-left:22px;}
+  nav.toc ol ol li{margin-bottom:4px; font-size:14.5px;}
+  nav.toc a{color:var(--accent); text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline; color:var(--violet);}
+  nav.toc ol ol a{color:var(--ink-soft);}
+  nav.toc ol ol a:hover{color:var(--cyan);}
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.03em; color:var(--c3);
+    margin:44px 0 16px; scroll-margin-top:20px;
+  }
+  h3{font-size:20px; font-weight:700; margin:26px 0 10px; scroll-margin-top:20px;}
+  p{margin:0 0 14px;}
+  ul,ol{margin:0 0 16px; padding-left:24px;}
+  li{margin-bottom:7px;}
+  li ul, li ol{margin-top:8px;}
+  strong{font-weight:700;}
+  hr{border:none; border-top:1px solid var(--line); margin:36px 0;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:12px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 16px;
+  }
+  /* Note-style raw facts, as given in the question — a plain bordered box,
+     one fact-group per line, distinct from the flowing prose of the
+     finished bio-sketch. */
+  .facts-box{
+    font-family:var(--font-mono); font-size:13.5px; line-height:1.85;
+    background:var(--paper); border:1px solid var(--line-strong); border-radius:6px;
+    padding:16px 20px; margin:0 0 16px;
+  }
+  .facts-box p{margin:0 0 6px;}
+  .facts-box p:last-child{margin-bottom:0;}
+  /* The finished bio-sketch: a boxed paragraph, unscoped so it's reusable
+     for both worked samples and every practice-question model answer. */
+  .biosketch-box{
+    border:1.5px solid var(--ink); border-radius:4px; padding:18px 20px;
+    font-size:15.5px; line-height:1.75; background:var(--paper);
+  }
+  .sample{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:20px 24px; margin:0 0 24px;
+  }
+  .sample .sh{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;}
+  table{width:100%; border-collapse:collapse; margin:0 0 20px; font-size:15.5px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left;}
+  th{background:var(--accent-soft); font-family:var(--font-mono); font-size:12.5px; text-transform:uppercase;}
+  .checklist{list-style:none; padding-left:0;}
+  .checklist li{padding-left:26px; position:relative;}
+  .checklist li:before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+  /* Interactive question blocks */
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:18px 20px; margin:18px 0; background:var(--paper-raised);
+  }
+  .q .qn{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); margin-bottom:8px; letter-spacing:.03em; text-transform:uppercase;}
+  .q p.prompt{margin:0 0 12px; font-size:16px;}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q button{
+    margin-top:12px; font-family:var(--font-mono); font-size:12.5px; font-weight:700;
+    letter-spacing:.03em; text-transform:uppercase; padding:9px 18px; border:1px solid var(--c3);
+    border-radius:7px; background:var(--c3-soft); color:var(--c3); cursor:pointer;
+  }
+  .q button:hover{background:var(--c3-panel);}
+  .qa{
+    display:none; margin-top:14px; padding:14px 16px; border-radius:8px;
+    background:var(--accent2-soft); border:1px solid var(--accent2);
+  }
+  .qa .qa-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--accent2); font-weight:700; margin-bottom:8px;}
+  .qa .biosketch-box{border-color:var(--accent2);}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills</div>
+  <h1 class="title">Lesson 3 — Bio-Sketch</h1>
+  <p class="subtitle">Semester 1</p>
+
+  <nav class="toc">
+    <div class="toc-h">Contents</div>
+    <ol>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#points">Important Points for Writing a Bio-Sketch</a></li>
+      <li><a href="#marking">Marking Scheme</a></li>
+      <li><a href="#samples">Sample Bio-Sketches (Worked Examples)</a>
+        <ol type="a">
+          <li><a href="#sample1">Sample 1 · Lata Mangeshkar</a></li>
+          <li><a href="#sample2">Sample 2 · Kalpana Chawla</a></li>
+        </ol>
+      </li>
+      <li><a href="#practice">Practice Questions</a>
+        <ol type="1">
+          <li><a href="#q1">Q1 · Amitabh Bacchhan</a></li>
+          <li><a href="#q2">Q2 · Rabindra Nath Tagore</a></li>
+          <li><a href="#q3">Q3 · Albert Einstein</a></li>
+          <li><a href="#q4">Q4 · Shaheed Bhagat Singh</a></li>
+          <li><a href="#q5">Q5 · Kapil Dev</a></li>
+        </ol>
+      </li>
+      <li><a href="#revision">Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition">1. Definition</h2>
+  <p>A bio-sketch or biographical sketch is a brief but formal piece of writing. It is the description of a person's life including all the significant aspects such as birth, family, education, occupation, achievements, social status, death (if the person is no more). All the major events are described along with important dates or years. It may be the description of a celebrity or a common person. It is a brief description in about 100 words, although the word limit may vary according to the notes provided for the description. The key events along with the dates are provided in the question.</p>
+
+  <h2 id="points">2. Important Points for Writing a Bio-Sketch</h2>
+  <ol>
+    <li>Date and Place of Birth</li>
+    <li>Name and occupation of parents</li>
+    <li>Early childhood and schooling</li>
+    <li>Educational Qualification, College, University</li>
+    <li>Hobbies/Interests</li>
+    <li>Educational Achievements</li>
+    <li>Profession/Occupation</li>
+    <li>Major Achievements along with dates</li>
+    <li>Personal life</li>
+    <li>Social status</li>
+    <li>Awards/Honours</li>
+    <li>Date and cause of Death</li>
+  </ol>
+
+  <h2 id="marking">3. Marking Scheme</h2>
+  <table>
+    <tr><th>Component</th><th>Marks</th></tr>
+    <tr><td>Organization and Fluency</td><td>2 Marks</td></tr>
+    <tr><td>Language and Expression</td><td>3 Marks</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>5 Marks</strong></td></tr>
+  </table>
+
+  <h2 id="samples">4. Sample Bio-Sketches (Worked Examples)</h2>
+
+  <div class="sample" id="sample1">
+    <div class="sh">Bio-Sketch Sample-1</div>
+    <p><strong>Read the following notes written on the famous playback singer Lata Mangeshkar. Taking help from the notes, write a bio-sketch of Lata Mangeshkar.</strong></p>
+    <div class="facts-box">
+      <p>Name: Lata Mangeshkar, Date of birth: 28 September 1929, Place of birth: Indore, Madhya Pradesh</p>
+      <p>Occupation: Playback singer, music director, producer</p>
+      <p>Parents: Pandit Deenanath Mangeshkar (Marathi father), classical singer and theatre actor; Shevanti Manageshkar (Gujrati mother)</p>
+      <p>Siblings: Asha Bhosle, Hridaynath Mangeshkar, Usha Mangeshkar, Meena Mangeshkar; Lata: eldest, started working at the age of five in father's musical plays</p>
+      <p>First song: at the age of 13</p>
+      <p>Other names: Queen of Melody, Voice of the Nation, Voice of the Millennium, Nightingale of India</p>
+      <p>Awards: Three National Film Awards, 15 Bengali Film Journalists' Association Awards, Four Filmfare Best Female Playback Awards, two Filmfare Special Awards, Filmfare Life Achievement Award</p>
+      <p>Honours: Padma Bhushan 1969, Dadasaheb Phalke Award 1989, Padma Vibhushan 1999, Bharat Ratna 2001, Leign of Honour 2007</p>
+    </div>
+    <div class="biosketch-box">Lata Mangeshkar, one of the best Indian playback singers and music director, was born to Marathi Father, Pandit Deenanath Mangeshakar and Gujrati Mother, Shevanti Mangeshkar on 28th September, 1929 at Indiore in Madhya Pradesh. She is the eldest child of her parents with three sisters Asha Bhosle, Usha Mangeshkar and Meena Mangeshkar, and a brother Hridaynath Mangeshkar. She received her first music lesson from her father. She started working in father's musical plays at the age of five. She recorded her first song at the age of 13. She is the recipient of three National Film Awards, 15 Bengali Film Journalists' Association Awards, Four Filmfare Best Female Playback Awards, two Filmfare Special Awards, Filmfare Life Achievement Award. She was honoured with Padma Bhushan in 1969, Dadasaheb Phalke Award in 1989, Padma Vibhushan in 1999, Bharat Ratna in 2001, and Leign of Honour in 2007. It is due to her melodious voice and great contribution to Indian music industry that she is rightfully known as Queen of Melody, Voice of the Nation, Voice of the Millennium, and Nightingale of India.</div>
+  </div>
+
+  <div class="sample" id="sample2">
+    <div class="sh">Bio-Sketch Sample-2</div>
+    <p><strong>Read the following notes written on the famous astronaut Kalpana Chawla. Based on the facts provided, write a bio-sketch of Kalpana Chawla.</strong></p>
+    <div class="facts-box">
+      <p>Name: Kalpana Chawla, first Indian born woman in space</p>
+      <p>Date of birth: 17 March, 1962, youngest of four children</p>
+      <p>Official Date of Birth: 1 July, 1961, to allow her to become eligible for matriculation examination</p>
+      <p>Place of birth: Karnal, Haryana</p>
+      <p>Education: Bachelor of Engineering in Aeronautical Engineering from Punjab Engineering College. Moved to USA in 1982, Master of Science degree in Aerospace Engineering from the University of Texas at Arlington in 1984, second Masters in 1986 and a PhD in aerospace engineering in 1988 from the University of Colorado Boulder.</p>
+      <p>Career: In 1988, began working at NASA where she did computational fluid dynamics (CFD) research on vertical and/or short take-off and landing (V/STOL) concepts, held a Certificated Flight Instructor rating for airplanes, gliders and Commercial Pilot licenses for single and multi-engine airplanes, seaplanes and gliders, naturalized U.S. citizenship in April 1991, applied for the NASA Astronaut Corps, joined the corps in March 1995, selected for her first flight in 1996.</p>
+      <p>First space mission: November 17, 1997, as part of the six-astronaut crew that flew the Space Shuttle Columbia flight STS-87, the first Indian woman to fly in space</p>
+      <p>In 2000, selected for her second flight as part of the crew of space shuttle Columbia on the ill fated flight STS-107.</p>
+      <p>Death: Space Shuttle Columbia disaster on February 1, 2003, killed along with the other six crew members, when the Columbia disintegrated over Texas during re-entry into the Earth's atmosphere</p>
+    </div>
+    <div class="biosketch-box">The first Indian-born woman in space, Kalpana Chawla was born on March 17, 1962 at Karnal, Haryana, but her official date of birth was altered to 1 July 1961 to allow her to become eligible for the matriculation exam. She was the youngest of four children. After getting a Bachelor of Engineering degree in Aeronautical Engineering from Punjab Engineering College, India, she moved to the United States in 1982 and obtained a Master of Science degree in Aerospace Engineering from the University of Texas at Arlington in 1984. Chawla earned a second Masters in 1986 and a PhD in aerospace engineering in 1988 from the University of Colorado Boulder. In 1988, she began working at NASA, where she did computational fluid dynamics (CFD) research on vertical and/or short take-off and landing (V/STOL) concepts. Chawla held a Certificated Flight Instructor rating for airplanes, gliders and Commercial Pilot licenses for single and multi-engine airplanes, seaplanes and gliders. After becoming a naturalized U.S. citizen in April 1991, she applied for the NASA Astronaut Corps. She joined the corps in March 1995 and was selected for her first flight in 1996. Her first space mission began on November 17, 1997, as part of the six-astronaut crew that flew the Space Shuttle Columbia flight STS-87. Chawla was the first Indian woman to fly in space. In 2000, Chawla was selected for her second flight as part of the crew of flight STS-107 of the space shuttle Columbia. Chawla died in the Space Shuttle Columbia disaster which occurred on February 1, 2003; she was killed, along with the other six crew members, when the Columbia disintegrated over Texas during re-entry into the Earth's atmosphere.</div>
+  </div>
+
+  <h2 id="practice">5. Practice Questions</h2>
+  <p class="callout">Read each set of notes, draft your bio-sketch in the box below in about 100 words, then press <strong>Check my bio-sketch</strong> to reveal a model answer written in the same style. Compare — don't just copy — and check your own bio-sketch against the important points listed above.</p>
+
+  <div class="q" id="q1">
+    <div class="qn">Question 1</div>
+    <p class="prompt">Use the following information to write a biographical sketch of Amitabh Bacchhan.</p>
+    <div class="facts-box">
+      <p>Name: Amitabh Bacchhan, famous Indian film actor, producer, television host, occasional singer and former politician</p>
+      <p>Date of birth: October 11, 1942, Place of Birth: Allahabad</p>
+      <p>Father: Harivansh Rai Bacchhan, famous Hindi poet</p>
+      <p>Mother: Tejwant Kaur, social activist</p>
+      <p>First role as an actor: Saat Hindustani, Film Zanjeer (1973), famous as Angry Young Man</p>
+      <p>Some Blockbusters: Zanjeer, Deeewar, Trishul, Kaala Patthar, Shakti, Andha Kanoon, Shehenshah Abhiman, Namak Haram, Sharabi, Chupke Chupke and many more.</p>
+      <p>Hosted television show: Kaun Banega Crorepati</p>
+      <p>Awards and achievements: Four National Film Awards as Best Actor and many awards at international film festivals and award ceremonies.</p>
+      <p>Honours: the Padma Shri in 1984, the Padma Bhushan in 2001 and the Padma Vibhushan in 2015</p>
+      <p>Referred to as the Shahenshah of Bollywood, Sadi ka Mahanayak, Star of the Millennium</p>
+    </div>
+    <textarea rows="7" placeholder="Draft your bio-sketch here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my bio-sketch';">Check my bio-sketch</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="biosketch-box">Amitabh Bachchan, one of the most famous Indian film actors, producers, television hosts and occasional singers, and a former politician, was born to the famous Hindi poet Harivansh Rai Bachchan and social activist Tejwant Kaur on October 11, 1942 at Allahabad. He made his acting debut with Saat Hindustani and rose to fame as the "Angry Young Man" with the film Zanjeer in 1973. He went on to deliver blockbusters such as Zanjeer, Deewar, Trishul, Kaala Patthar, Shakti, Andha Kanoon, Shehenshah, Abhimaan, Namak Haram, Sharabi and Chupke Chupke, and also hosted the popular television show Kaun Banega Crorepati. He is the recipient of four National Film Awards as Best Actor along with numerous international honours, and was awarded the Padma Shri in 1984, the Padma Bhushan in 2001 and the Padma Vibhushan in 2015. He is fondly referred to as the Shahenshah of Bollywood, Sadi ka Mahanayak and Star of the Millennium.</div>
+    </div>
+  </div>
+
+  <div class="q" id="q2">
+    <div class="qn">Question 2</div>
+    <p class="prompt">Taking help from the notes given below, write a biographical sketch of Rabindra Nath Tagore.</p>
+    <div class="facts-box">
+      <p>Name: Rabindranath Tagore nicknamed 'Rabi'</p>
+      <p>Birth: 7th May, 1881, Kolkata</p>
+      <p>Father: Debendranath Tagore, Mother: Sarada Devi</p>
+      <p>Avoided classroom schooling, tutored and conditioned by brother Hemendranath</p>
+      <p>Learned drawing, anatomy, geography and history, literature, mathematics, Sanskrit, and English, briefly read law at University College London but returned degreeless, after returning to Bengal regularly published poems, stories, and novels</p>
+      <p>1913, Nobel Prize in Literature for Geetanjali, a collection of his poems, awarded a knighthood by King George V in the 1915 Birthday Honours, renounced it after the 1919 Jallianwala Bagh Massacre.</p>
+      <p>Works: poetry, novels, essays, short stories, travelogues, dramas, and thousands of songs</p>
+      <p>Notable works: Geetanjali, Gora, Ghare-baire, National Anthem, Jana Gana Mana, Bengali Anthem, Amar Shonar Bangla, Rabindra Sangeet</p>
+      <p>Death: 7 August 1941</p>
+    </div>
+    <textarea rows="7" placeholder="Draft your bio-sketch here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my bio-sketch';">Check my bio-sketch</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="biosketch-box">Rabindranath Tagore, popularly known as "Rabi", was born to Debendranath Tagore and Sarada Devi on 7th May, 1881 at Kolkata. He avoided classroom schooling and was instead tutored and conditioned by his brother Hemendranath, learning drawing, anatomy, geography, history, literature, mathematics, Sanskrit and English. He briefly read law at University College London but returned to India without a degree, and after returning to Bengal he regularly published poems, stories and novels. In 1913 he was awarded the Nobel Prize in Literature for his collection of poems, Geetanjali, and was knighted by King George V in the 1915 Birthday Honours, an honour he renounced after the Jallianwala Bagh Massacre of 1919. Among his notable works are Geetanjali, Gora, Ghare-Baire, the national anthem Jana Gana Mana and the Bengali anthem Amar Shonar Bangla. He passed away on 7th August, 1941.</div>
+    </div>
+  </div>
+
+  <div class="q" id="q3">
+    <div class="qn">Question 3</div>
+    <p class="prompt">Use the following information to write a biographical sketch of Albert Einstein.</p>
+    <div class="facts-box">
+      <p>Name: Albert Einstein, German-born theoretical physicist</p>
+      <p>Date of Birth: 14 March 1879, Place of Birth: in Ulm, in the Kingdom of Württemberg in the German Empire</p>
+      <p>Father: Hermann Einstein, a salesman and engineer, Mother: Pauline Koch.</p>
+      <p>Learnt algebra and Euclidean geometry over a single summer, also independently discovered his own original proof of the Pythagorean theorem at age 12, mastered integral and differential calculus by 14,</p>
+      <p>In 1900, Einstein's paper "Conclusions from the Capillarity Phenomena" published in the journal Annalen der Physik, awarded a Ph.D by the University of Zürich, with his dissertation "A New Determination of Molecular Dimensions", same year, published four groundbreaking papers, on the photoelectric effect, Brownian motion, special relativity, and the equivalence of mass and energy making him famous in the academic world, at the age of 26, his mass–energy equivalence formula E = mc2 dubbed "the world's most famous equation"</p>
+      <p>Became a full professor at the German Charles-Ferdinand University in Prague in April 1911</p>
+      <p>Nobel Prize in Physics 1921</p>
+      <p>On 17 April 1955, Einstein experienced internal bleeding caused by the rupture of an abdominal aortic aneurysm, He died in Princeton Hospital on 18 April 1955 early morning at the age of 76.</p>
+    </div>
+    <textarea rows="8" placeholder="Draft your bio-sketch here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my bio-sketch';">Check my bio-sketch</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="biosketch-box">Albert Einstein, the renowned German-born theoretical physicist, was born to Hermann Einstein, a salesman and engineer, and Pauline Koch, on 14th March, 1879 at Ulm in the Kingdom of Württemberg in the German Empire. A brilliant child, he learnt algebra and Euclidean geometry over a single summer, discovered his own proof of the Pythagorean theorem at the age of 12, and mastered integral and differential calculus by 14. In 1900, his paper "Conclusions from the Capillarity Phenomena" was published in the journal Annalen der Physik, and he was awarded a Ph.D by the University of Zürich for his dissertation "A New Determination of Molecular Dimensions". The same year, at the age of 26, he published four groundbreaking papers on the photoelectric effect, Brownian motion, special relativity and the equivalence of mass and energy, giving the world his famous equation E = mc². He became a full professor at the German Charles-Ferdinand University in Prague in April 1911 and was awarded the Nobel Prize in Physics in 1921. Einstein died in Princeton Hospital on 18th April, 1955, at the age of 76, after suffering internal bleeding caused by the rupture of an abdominal aortic aneurysm.</div>
+    </div>
+  </div>
+
+  <div class="q" id="q4">
+    <div class="qn">Question 4</div>
+    <p class="prompt">Taking help from the notes given below, write a biographical sketch of Sheed Bhagat Singh.</p>
+    <div class="facts-box">
+      <p>Name: Bhagat Singh, one of the most influential revolutionaries of the Indian Independence Movement, often referred to as Shaheed Bhagat Singh,</p>
+      <p>Date of Birth: September/October 1907</p>
+      <p>Place of Birth: Banga, Punjab, British India, Now in Punjab, Pakistan</p>
+      <p>Parents: Kishan Singh and Vidyawati</p>
+      <p>Early schooling: Dayanand Anglo-Vedic High School, an Arya Samaji institution.</p>
+      <p>College: 1923, National College, Lahore</p>
+      <p>Founded Naujawan Bharat Sabha in March 1926, also joined the Hindustan Republican Association</p>
+      <p>In December 1928, Bhagat Singh and an associate, Shivaram Rajguru, fatally shot a 21-year-old British police officer, John Saunders, in Lahore, British India, mistaking Saunders for the British police superintendent, James Scott, whom they had intended to assassinate to avenge Lala Lajpat Rai's death as a result of lathi charge</p>
+      <p>April 1929, he and another associate, Batukeshwar Dutt, exploded two improvised bombs inside the Central Legislative Assembly in Delhi, got arrested, waited for trial</p>
+      <p>Convicted and hanged on March 23, 1931, aged 23.</p>
+    </div>
+    <textarea rows="8" placeholder="Draft your bio-sketch here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my bio-sketch';">Check my bio-sketch</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="biosketch-box">Bhagat Singh, one of the most influential revolutionaries of the Indian Independence Movement and often referred to as Shaheed Bhagat Singh, was born to Kishan Singh and Vidyawati in September/October 1907 at Banga, Punjab, British India, now in Punjab, Pakistan. He received his early schooling at the Dayanand Anglo-Vedic High School, an Arya Samaji institution, and joined National College, Lahore in 1923. He founded the Naujawan Bharat Sabha in March 1926 and also joined the Hindustan Republican Association. In December 1928, Bhagat Singh and his associate Shivaram Rajguru fatally shot the British police officer John Saunders in Lahore, mistaking him for the police superintendent James Scott, whom they had intended to assassinate to avenge the death of Lala Lajpat Rai. In April 1929, along with another associate, Batukeshwar Dutt, he exploded two improvised bombs inside the Central Legislative Assembly in Delhi and courted arrest, awaiting trial. He was convicted and hanged on 23rd March, 1931, at the age of 23.</div>
+    </div>
+  </div>
+
+  <div class="q" id="q5">
+    <div class="qn">Question 5</div>
+    <p class="prompt">Use the following information to write a biographical sketch of Kapil Dev.</p>
+    <div class="facts-box">
+      <p>Name: Kapil Dev Nikhanj, famous Indian Cricketer,</p>
+      <p>Date of birth: January 6, 1959, Place of Birth: Chandigarh</p>
+      <p>Parents: Ram Lal Nikhanj, a prominent timber merchant and his wife Raj Kumari</p>
+      <p>Wife: Romi Bhatia in 1980, daughter, Amiya Dev,</p>
+      <p>Career: Made impressive debut for Haryana in November 1975 against Punjab with a 06 wicket haul, won his maiden and only Ranji Trophy championship in 1991, first player to take 200 ODI wickets, the only player in the history of cricket to have taken more than 400 wickets (434 wickets) and scored more than 5000 runs in Tests, one of the greatest all-rounders to have played the game, Captained the Indian cricket team that won the 1983 Cricket World Cup, retired in 1994, holding the world record for the most number of wickets taken in Test cricket, India's national cricket coach between October 1999 and August 2000.</p>
+      <p>Awards: 1979–80 – Arjuna Award, 1982 – Padma Shri, 1983 – Wisden Cricketer of the Year, 1991 – Padma Bhushan, 2002 – Wisden Indian Cricketer of the Century, 2010 – ICC Cricket Hall of Fame, 2013 – The 25 Greatest Global Living Legends In India by NDTV, 2013 – CK Nayudu Lifetime Achievement award, Honour: 2008, Lieutenant Colonel, Indian Territorial Army</p>
+    </div>
+    <textarea rows="8" placeholder="Draft your bio-sketch here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my bio-sketch';">Check my bio-sketch</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="biosketch-box">Kapil Dev Nikhanj, the famous Indian cricketer, was born to Ram Lal Nikhanj, a prominent timber merchant, and his wife Raj Kumari, on 6th January, 1959 at Chandigarh. He married Romi Bhatia in 1980 and the couple have a daughter, Amiya Dev. Kapil Dev made an impressive debut for Haryana in November 1975 against Punjab with a six-wicket haul, and went on to win his maiden and only Ranji Trophy championship in 1991. He was the first player to take 200 ODI wickets and remains the only player in the history of cricket to have taken more than 400 wickets (434 wickets) while also scoring more than 5000 runs in Tests, making him one of the greatest all-rounders to have played the game. He captained the Indian cricket team that won the 1983 Cricket World Cup and retired in 1994, holding the world record for the most wickets taken in Test cricket. He also served as India's national cricket coach between October 1999 and August 2000. Among his honours are the Arjuna Award (1979–80), the Padma Shri (1982), the Wisden Cricketer of the Year (1983), the Padma Bhushan (1991), the Wisden Indian Cricketer of the Century (2002), induction into the ICC Cricket Hall of Fame (2010), and recognition among NDTV's 25 Greatest Global Living Legends in India (2013). He was also honoured with the rank of Lieutenant Colonel in the Indian Territorial Army in 2008.</div>
+    </div>
+  </div>
+
+  <h2 id="revision">6. Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>Date and place of birth included</li>
+    <li>Name and occupation of parents mentioned</li>
+    <li>Education and career milestones covered in order</li>
+    <li>Major achievements included along with their dates</li>
+    <li>Awards and honours listed</li>
+    <li>Date and cause of death included, if given in the notes</li>
+    <li>Written as flowing prose (not a list) in about 100 words</li>
+    <li>Facts stay in the same order as given in the notes wherever possible</li>
+  </ul>
+
+  <footer>Class 8 · English · Writing Skills · Lesson 3 of 30</footer>
+</div>
+</body>
+</html>

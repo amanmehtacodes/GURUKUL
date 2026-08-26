@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 30 — Sample Assessment Papers | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; color:var(--ink); font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%), var(--paper);}
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;}
+  h1.title{font-family:var(--font-mono); font-size:32px; font-weight:700; letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink); padding-bottom:16px;}
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+  nav.toc{background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md); padding:16px 22px; margin:0 0 30px;}
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+  .callout{background:var(--cyan-soft); border-left:3px solid var(--cyan); border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 24px;}
+  .callout p{margin:0 0 8px;} .callout p:last-child{margin-bottom:0;} .callout strong{color:var(--ink);}
+  .ocr-note{border:1px dashed var(--violet); border-radius:8px; padding:10px 14px; color:var(--ink-soft); font-size:14px; font-style:italic; margin:10px 0 18px; background:var(--accent2-soft);}
+  .ocr-note b{font-style:normal; color:var(--violet); font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; display:block; margin-bottom:4px;}
+  h2{font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--c3); margin:40px 0 12px; padding-top:18px; border-top:2px solid var(--line-strong);}
+  h2 .num{color:var(--pink); margin-right:8px;}
+  h3{font-family:var(--font-mono); font-size:16px; font-weight:700; color:var(--violet); margin:26px 0 8px; text-transform:uppercase; letter-spacing:.03em;}
+  h4{font-family:var(--font-mono); font-size:14.5px; font-weight:700; color:var(--ink); margin:18px 0 6px;}
+  p{margin:0 0 12px;}
+  ol{padding-left:22px; margin:0 0 12px;} ul{padding-left:22px; margin:0 0 12px;} li{margin-bottom:6px;}
+  .poem{font-style:italic; color:var(--ink-soft); white-space:pre-line; padding:14px 18px; border-left:3px solid var(--accent2); background:var(--paper-raised); border-radius:8px; margin:0 0 16px; font-size:15.5px;}
+  .poem .attrib{display:block; text-align:right; font-style:normal; color:var(--ink-faint); margin-top:8px; font-family:var(--font-mono); font-size:12.5px;}
+  .passage{color:var(--ink-soft); margin:0 0 16px; font-size:15.5px;}
+  table.ref-table{width:100%; border-collapse:collapse; margin:10px 0 20px; font-size:14.5px;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line); padding:7px 10px; text-align:left;}
+  table.ref-table th{background:var(--paper-raised); color:var(--c3); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  .exercise-block{border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px; padding:18px 22px; margin:12px 0 26px; background:var(--paper-raised);}
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  .marks{color:var(--ink-faint); font-family:var(--font-mono); font-size:12.5px; font-weight:700;}
+  input.blank-input{font:14.5px var(--font-serif); padding:5px 9px; width:190px; border:1px solid var(--line-strong); border-radius:6px; background:var(--paper); color:var(--ink); margin:0 3px;}
+  input.blank-input.narrow{width:60px;}
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  textarea.answer-box{width:100%; box-sizing:border-box; min-height:44px; font:14.5px/1.5 var(--font-serif); padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px; background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;}
+  textarea.answer-box.tall{min-height:110px;}
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta); border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;}
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol{margin:0; padding-left:20px;} .qa p{margin:0 0 8px;} .qa p:last-child{margin-bottom:0;}
+  .qa table{width:100%; border-collapse:collapse; margin-top:4px;}
+  .qa td, .qa th{border:1px solid var(--line-strong); padding:6px 8px; font-size:13.5px; text-align:left;}
+  .checklist{padding-left:0; list-style:none; margin:0 0 12px;}
+  .checklist li{padding-left:28px; position:relative; margin-bottom:10px;}
+  .checklist li::before{content:"✓"; position:absolute; left:0; color:var(--cyan); font-weight:700;}
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Assessment Papers · Chapter (Sem 2)</div>
+  <h1 class="title">Lesson 30 — Sample Assessment Papers</h1>
+  <p class="subtitle">Four full sample assessment papers — Reading, Writing and Grammar sections — for complete exam practice.</p>
+
+  <div class="callout">
+    <p><strong>How this lesson is answered:</strong> objective items (MCQs, matching, rearranging, editing, omission, cloze, verb-form, modal-auxiliary questions) have one definite correct answer, given as an Answer Key. Open-ended comprehension and writing questions (diary entries, letters, notices, articles, speeches, "answer in your own words") are given as Sample Answers — a strong worked example, not the only acceptable wording.</p>
+  </div>
+
+  <nav class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#p1">1. Sample Assessment Paper — 1</a></li>
+      <li><a href="#p2">2. Sample Assessment Paper — 2</a></li>
+      <li><a href="#p3">3. Sample Assessment Paper — 3</a></li>
+      <li><a href="#p4">4. Sample Assessment Paper — 4</a></li>
+      <li><a href="#s5">5. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="p1"><span class="num">1.</span>Sample Assessment Paper — 1</h2>
+
+  <h3>Section-A · Reading (20 Marks)</h3>
+  <h4>1. Read the poem given below carefully. <span class="marks">(10 marks)</span></h4>
+  <div class="poem">Don't Quit
+
+When things go wrong, as they sometimes will,
+When the road you're trudging seems all uphill,
+When funds are low and the debts are high,
+And you want to smile but you have to sigh,
+When care is pressing you down a bit,
+Rest if you must, but don't you quit.
+
+Life is queer with its twists and turns,
+As every one of us sometimes learns,
+And many a failure turns about,
+When he might have won if he'd stuck it out.
+Don't give up, though the pace seems slow
+You may succeed with another blow.
+
+Often the goal is nearer than
+It seems to a faint and faltering man;
+Often the struggler has given up
+When he might have captured the victor's cup,
+And he learned too late, when the night slipped down,
+How close he was to the golden crown.
+
+Success is failure turned inside out
+The silver tint of the clouds of doubt,
+And you never can tell how close you are
+It may be near when it seems afar;
+So stick to the fight when you're hardest hit
+It's when things seem worst that you mustn't quit.<span class="attrib">— Anonymous</span></div>
+
+  <div class="exercise-block">
+    <p class="instr">(i) Read the questions given below and the options provided for each question carefully. On the basis of your reading of the poem, write the option that you consider the most appropriate. <span class="marks">(4 marks)</span></p>
+    <p><strong>(A)</strong> When care is pressing us down a bit, we must—<br>(a) rest and quit &nbsp; (b) not rest and quit &nbsp; (c) rest but not quit &nbsp; (d) quit and rest <input class="blank-input narrow"></p>
+    <p><strong>(B)</strong> We all learn that life keeps—<br>(a) moving &nbsp; (b) changing &nbsp; (c) failing &nbsp; (d) winning <input class="blank-input narrow"></p>
+    <p><strong>(C)</strong> The struggler learned very late that he was—<br>(a) too early to get success &nbsp; (b) too late for success &nbsp; (c) close to success &nbsp; (d) away from success <input class="blank-input narrow"></p>
+    <p><strong>(D)</strong> According to the poem life is all about—<br>(a) only failure and no success &nbsp; (b) success without failures &nbsp; (c) only success and no failures &nbsp; (d) both success and failures <input class="blank-input narrow"></p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(A) c &nbsp; (B) b &nbsp; (C) c &nbsp; (D) d</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(ii) Arrange the phrases/statements given below in the sequence in which they appear in the poem. <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>We must not quit when things look worst.</li>
+      <li>Things sometimes don't go well.</li>
+      <li>We can succeed if we don't give up.</li>
+      <li>Life is strange as there are variations in it.</li>
+    </ol>
+    <textarea class="answer-box" placeholder="Write the correct sequence, e.g. b, d, c, a"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(b) → (d) → (c) → (a)</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(iii) Find words from the poem which mean the same as the following: <span class="marks">(2 marks)</span></p>
+    <ol type="a">
+      <li>to walk with heavy steps because you are tired <input class="blank-input"></li>
+      <li>becoming weaker and less effective <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol type="a"><li>trudging</li><li>faltering</li></ol></div>
+  </div>
+
+  <h4>2. Read the passage given below carefully and answer the questions that follow:</h4>
+  <p class="passage">From Mount Abu we drove towards the home of the famous Mewari warrior and king, Maharana Pratap. This place is Haldighati where the Rana fought the final battle of his life with Raja Man Singh, the Mughal leader. The name Haldighati is believed to have originated from the turmeric-coloured yellow soil of the area.<br><br>
+  A local teacher who belongs to the town of Haldighati has created a museum exclusively on the battle of Haldighati. Maharana Pratap was the only Rajput prince who did not accept the supremacy of Akbar. Akbar had occupied Maharana Pratap's hometown, Chittor. The Maharana spent his lifetime battling for his hometown while he himself remained a fugitive. This story and the final battle, which changed his life, are etched in pictures inside the museum. The museum has an entry and photography fee. There is a restaurant within its perimeter that serves a traditional Rajasthani meal of dal batti and churma. Local handicrafts like Rajasthani dolls and block print bed sheets are available inside the museum.<br><br>
+  Some 500 metres away, as per local belief, is the tomb of Chetak, Rana Pratap's horse famed for his loyalty. It is also believed that this monument was built by the Maharana himself. Legend has it that when the Maharana got hurt in the battle of Haldighati, it was Chetak who carried him out of the battle. This valiant horse galloped away from the battlefield with the enemy in hot pursuit. Chetak did not hesitate to jump a twenty-two-feet-long channel filled with swirling waters to save his master. The enemy could not follow them, and this saved the life of Rana.</p>
+
+  <div class="exercise-block">
+    <p class="instr">(i) Fill in the blanks to complete the sentences: <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>Haldighati is believed to have got its name <input class="blank-input" style="width:340px;"> area.</li>
+      <li>According to the passage, all other Rajput princes except Maharana Pratap <input class="blank-input" style="width:340px;"> Akbar.</li>
+      <li>Traditional Rajasthani meal <input class="blank-input"> is served at <input class="blank-input"></li>
+      <li>According to the legend, Chetak carried <input class="blank-input"> when <input class="blank-input"> hurt.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <ol type="a">
+        <li>from the turmeric-coloured yellow soil of the</li>
+        <li>accepted the supremacy of</li>
+        <li>of dal batti and churma / the museum's restaurant</li>
+        <li>the Maharana out of the battle / the Maharana got</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(ii) Answer the following questions: <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>Who has created a museum on the battle of Haldighati? <textarea class="answer-box"></textarea></li>
+      <li>How did Chetak save Rana's life? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer(s)</div>
+      <ol type="a">
+        <li>A local teacher who belongs to the town of Haldighati has created the museum.</li>
+        <li>When the Maharana got hurt in the battle, Chetak carried him out of the battlefield, galloping away with the enemy in hot pursuit and jumping a twenty-two-feet-long channel of swirling water, so that the enemy could not follow and Rana's life was saved.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(iii) State whether the following sentences are true or false. <span class="marks">(2 marks)</span></p>
+    <ol type="a">
+      <li>It is a fact that Maharana himself built Chetak's monument. <input class="blank-input narrow"></li>
+      <li>The photography in the museum is free of cost. <input class="blank-input narrow"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <ol type="a"><li>False (it is only a local belief, not a stated fact)</li><li>False (the museum has an entry and photography fee)</li></ol>
+    </div>
+  </div>
+
+  <h3>Section-B · Writing (20 Marks)</h3>
+  <div class="exercise-block">
+    <p class="instr">3. Suppose you are Mansi or Manav of grade VI A of Holy Spirit Convent School. You have lost your Maths project file in the school somewhere. Draft a notice informing about the loss and request the finder to return it to you. Invent necessary details. <span class="marks">(4 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p><strong>HOLY SPIRIT CONVENT SCHOOL</strong><br><strong>NOTICE</strong><br>Date: 12 August 2026<br><strong>LOST</strong><br>This is to inform all students of grade VI that I, Mansi of grade VI A, have lost my Maths project file somewhere in the school premises on 11 August 2026. The file is red in colour and has my name written on the cover. Anyone who finds it is requested to kindly return it to me or to the class teacher, Grade VI A, at the earliest. A suitable reward will be given.<br>— Mansi, Grade VI A</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">4. You have received a pet as your birthday gift. Write your diary entry expressing your feelings on getting the pet and your experience with it. <span class="marks">(4 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>12 August 2026, Wednesday, 9:00 p.m.<br>Dear Diary,<br>Today was my birthday and my parents surprised me with the best gift ever — a golden retriever puppy! I have named him Rocky. He is so playful and affectionate that I could not stop smiling all evening. He kept chasing his own tail and fell asleep in my lap while I was doing my homework. I can already tell we are going to be the best of friends. I promise to take good care of him every single day.<br>— Manav</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">5. Suppose you are Abhinav Sharma living at Boys Hostel, Cambridge International School, Mysore. Your father is upset due to your poor performance in your half yearly exams. Write a letter explaining to your father the reason for your poor performance and promising him to perform better in the final exams. <span class="marks">(6 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>Boys Hostel<br>Cambridge International School<br>Mysore<br>12 August 2026<br><br>Dear Papa,<br>I hope this letter finds you in good health. I am writing to explain my poor performance in the half yearly exams. During the first term I spent too much time settling into hostel life and did not manage my study hours properly, which affected my preparation. I realise this was a mistake and I am sorry for the disappointment it has caused you.<br>I have already spoken to my teachers and made a proper timetable for revision. I promise you that I will work much harder and score well in the final exams. Please do not worry about me — I will make you proud.<br><br>Your loving son,<br>Abhinav</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">6. Write a speech on the Advantage of Internet in the life of a student. <span class="marks">(6 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>Good morning everyone. Today I would like to speak about the advantages of the internet in a student's life. The internet has transformed the way we learn — it gives us instant access to information on any subject, from online encyclopaedias to educational videos. It allows us to communicate with teachers and classmates easily, submit assignments online, and take part in online classes. It also helps us develop new skills through free courses and tutorials. Of course, we must use it responsibly and not let it distract us from our studies. Used wisely, the internet is one of the most powerful tools a student can have. Thank you.</p></div>
+  </div>
+
+  <h3>Section-C · Grammar (20 Marks)</h3>
+  <div class="exercise-block">
+    <p class="instr">7. The following passage has not been edited. There are some errors in each line against which a blank is given. Write the correct word in the blank choosing the word from the four options given below. <span class="marks">(4 marks)</span></p>
+    <p>Fountains is (i) <input class="blank-input narrow"> most often installed on (ii) <input class="blank-input narrow"> parks and public spaces as decorative pieces. Sit besides (iii) <input class="blank-input narrow"> a fountain in a park and I (iv) <input class="blank-input narrow"> find that the constant motion from (v) <input class="blank-input narrow"> the water soothes your nerves and calms you. However, originally fountains was (vi) <input class="blank-input narrow"> created as there was a need in (vii) <input class="blank-input narrow"> them. They were connected to springs, but (viii) <input class="blank-input narrow"> they provided water for drinking, bathing and washing.</p>
+    <p style="font-size:14px; color:var(--ink-faint);">
+      (i) (a) was (b) are (c) have been (d) were &nbsp;·&nbsp; (ii) (a) upon (b) over (c) at (d) in<br>
+      (iii) (a) beside (b) behind (c) before (d) beyond &nbsp;·&nbsp; (iv) (a) you (b) they (c) he (d) we<br>
+      (v) (a) of (b) to (c) off (d) by &nbsp;·&nbsp; (vi) (a) had been (b) was being (c) is (d) were<br>
+      (vii) (a) and (b) so (c) for (d) as &nbsp;·&nbsp; (viii) (a) when (b) if (c) so (d) and
+    </p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(i) b are &nbsp;·&nbsp; (ii) d in &nbsp;·&nbsp; (iii) a beside &nbsp;·&nbsp; (iv) a you &nbsp;·&nbsp; (v) a of &nbsp;·&nbsp; (vi) d were &nbsp;·&nbsp; (vii) c for &nbsp;·&nbsp; (viii) d and</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">8. Fill in the blanks to complete the following dialogue. <span class="marks">(4 marks)</span></p>
+    <p>Jack: Hi! My name is Jack. (a) <input class="blank-input" style="width:300px;">?<br>
+    Ricky: Hello. My (b) <input class="blank-input" style="width:250px;"> Ricky.<br>
+    Jack: I never saw you in this colony. Have (c) <input class="blank-input" style="width:250px;"> recently?<br>
+    Ricky: Yes. We shifted here (d) <input class="blank-input" style="width:200px;"> only.<br>
+    Jack: So, (e) <input class="blank-input" style="width:250px;"> Ricky?<br>
+    Ricky: I am a student at (f) <input class="blank-input" style="width:250px;"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;What (g) <input class="blank-input" style="width:250px;"> Jack?<br>
+    Jack: I am a music composer. I (h) <input class="blank-input" style="width:250px;"> music.<br>
+    Ricky: Oh! That's great. I love music.</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div>
+      <ol type="a">
+        <li>What is your name</li>
+        <li>name is</li>
+        <li>you shifted here</li>
+        <li>recently / a few days ago</li>
+        <li>what do you do,</li>
+        <li>a nearby school.</li>
+        <li>do you do,</li>
+        <li>compose</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">9. Rearrange the following words and phrases to form meaningful sentences. <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>is / for / the / Stupas / Sanchi / great / three / site <textarea class="answer-box"></textarea></li>
+      <li>is / India / with / a country / vast / in / food / and / clothing / differences <textarea class="answer-box"></textarea></li>
+      <li>of / settle / locusts / standing / on / crops / destroy / and / them / swarms <textarea class="answer-box"></textarea></li>
+      <li>reluctant / eyes / open / was / to / Swaminathan / his <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <ol type="a">
+        <li>Sanchi is the site for the three great Stupas.</li>
+        <li>India is a vast country with differences in food and clothing.</li>
+        <li>Swarms of locusts settle on standing crops and destroy them.</li>
+        <li>Swaminathan was reluctant to open his eyes.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">10. Explain the following news headlines. <span class="marks">(4 marks)</span></p>
+    <p><strong>(a) DOCTOR KILLS PARTNER, KEEPS HER 'ALIVE' ON SOCIAL MEDIA.</strong><br>
+    A leading (i) <input class="blank-input"> here and two others (ii) <input class="blank-input"> arrested for allegedly (iii) <input class="blank-input"> his partner in Nepal and (iv) <input class="blank-input"> her social media and WhatsApp accounts active for seven days.</p>
+    <p><strong>(b) 1 KILLED, 1 HURT IN BLAST AT MATCHBOX UNIT</strong><br>
+    One person (i) <input class="blank-input"> and one (ii) <input class="blank-input"> in an explosion at a closed (iii) <input class="blank-input"> unit in Bathinda on Wednesday. The blast sparked a fire which was controlled in some time. The deceased was (iv) <input class="blank-input"> as Harish Kumar and the injured person as Raj Kumar.</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer(s)</div>
+      <p><strong>(a)</strong> (i) doctor (ii) have been (iii) killing (iv) keeping</p>
+      <p><strong>(b)</strong> (i) was killed (ii) was hurt / injured (iii) matchbox (iv) identified</p>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">11. The voice of the following sentences has to be changed from active to Passive Voice and vice versa. Choose the correct answer from the options given below each sentence. <span class="marks">(4 marks)</span></p>
+    <p>(i) He has broken your camera.<br>(a) Your camera was broken by him. (b) Your camera was been broken your camera. (c) Your camera has been broken by him. (d) Your camera had been broken by him. <input class="blank-input narrow"></p>
+    <p>(ii) I was watching a football match.<br>(a) A football match was being watched by me. (b) A football match was been watched by me. (c) A football match had been watched by me. (d) A football match had been being watched by me. <input class="blank-input narrow"></p>
+    <p>(iii) They will have published the story.<br>(a) The story will have published by them. (b) The story would be published by them. (c) The story will have been published by them. (d) The story would have been published by them. <input class="blank-input narrow"></p>
+    <p>(iv) The magistrate has sentenced him to death.<br>(a) He had been sentenced to death by the magistrate. (b) He was sentenced to death by the magistrate. (c) He was been sentenced to death by the magistrate. (d) He has been sentenced to death by the magistrate. <input class="blank-input narrow"></p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(i) c &nbsp; (ii) a &nbsp; (iii) c &nbsp; (iv) d</p></div>
+  </div>
+
+  <h2 id="p2"><span class="num">2.</span>Sample Assessment Paper — 2</h2>
+
+  <h3>Section-A · Reading (20 Marks)</h3>
+  <h4>1. Read the poem given below carefully. <span class="marks">(10 marks)</span></h4>
+  <div class="poem">Chimney Sweeper
+
+When my mother died I was very young,
+And my father sold me while yet my tongue
+Could scarcely cry " 'weep! 'weep! 'weep! 'weep!"
+So your chimneys I sweep and in soot I sleep.
+
+There's little Tom Dacre, who cried when his head
+That curled like a lamb's back, was shaved, so I said,
+"Hush, Tom! never mind it, for when your head's bare,
+You know that the soot cannot spoil your white hair."
+
+And so he was quiet, and that very night,
+As Tom was a-sleeping he had such a sight!
+That thousands of sweepers, Dick, Joe, Ned, and Jack,
+Were all of them locked up in coffins of black;
+
+And by came an Angel, who had a bright key,
+And he opened the coffins and set them all free;
+Then down a green plain, leaping, laughing they run,
+And wash in a river and shine in the Sun.
+
+Then naked and white, all their bags left behind,
+They rise upon clouds, and sport in the wind.
+And the Angel told Tom, if he'd be a good boy,
+He'd have God for his father and never want joy.
+
+And so Tom awoke; and we rose in the dark
+And got with our bags and our brushes to work
+Though the morning was cold, Tom was happy and warm;
+So if all do their duty, they need not fear harm.<span class="attrib">— William Blake</span></div>
+
+  <div class="exercise-block">
+    <p class="instr">(I) Answer the following questions: <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>Why did little Tom cry? <textarea class="answer-box"></textarea></li>
+      <li>How did the chimney sweeper quieten Tom? <textarea class="answer-box"></textarea></li>
+      <li>Whom did the angel set free? <textarea class="answer-box"></textarea></li>
+      <li>What did the angel tell Tom? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer(s)</div>
+      <ol type="a">
+        <li>Little Tom cried because his head, whose curly hair was like a lamb's back, was shaved bare.</li>
+        <li>The chimney sweeper told Tom not to mind it, since now that his head was bare the soot could not spoil his white hair.</li>
+        <li>The angel opened the coffins and set free the thousands of sweepers — Dick, Joe, Ned, Jack and the rest — who had been locked up in black coffins.</li>
+        <li>The angel told Tom that if he were a good boy, he would have God for his father and would never want for joy.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(ii) Fill in the blanks with suitable words or phrases to complete the meaning. <span class="marks">(2 marks)</span></p>
+    <ol type="a">
+      <li>The chimney sweeper was sold <input class="blank-input"> when he was <input class="blank-input"></li>
+      <li>Tom was happy and warm although <input class="blank-input" style="width:300px;"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer(s)</div>
+      <ol type="a"><li>by his father / very young, scarcely able to speak</li><li>the morning was cold</li></ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(iii) Write the rhyme scheme of the poem. <span class="marks">(1 mark)</span></p>
+    <input class="blank-input" style="width:200px;">
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>AABB (each stanza is a rhyming couplet pair)</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(iv) Write an example of simile used in the poem. <span class="marks">(1 mark)</span></p>
+    <input class="blank-input" style="width:400px;">
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>"That curled like a lamb's back" (Tom's hair compared to a lamb's back)</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(v) Find words from the poem which mean the same as the following: <span class="marks">(2 marks)</span></p>
+    <ol type="a">
+      <li>almost not <input class="blank-input"></li>
+      <li>black powder that is produced when wood, coal etc. is burnt <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol type="a"><li>scarcely</li><li>soot</li></ol></div>
+  </div>
+
+  <h4>2. Read the passage given below carefully and answer the questions that follow:</h4>
+  <p class="passage">Ships are large vessels that float on water. These vehicles are different from boats in view of their sizes and passenger capacity. Ships are engaged for a variety of activities such as transporting people or goods, fishing and warfare.<br><br>
+  Passenger ships include ferries which are used for short-sea trips, in moving passengers and vehicles. Ocean liners are typical passenger or passenger cargo vessels transporting only passengers. We can also see cruise ships at sea. These ships often transport passengers on round trips in which the trip and the attractions on the ship are a major draw.<br><br>
+  Luxury cruise ships are used for pleasure voyages. They are almost like moving seven star hotels on the sea, offering professional hospitality. These ships have big restaurants, theatres, pools, gymnasiums, beauty parlours, saloons, and duty-free shops. Passenger ships or cruises have single or shared cabins, deluxe rooms, penthouses, rooms and dormitories.<br><br>
+  Some ships carry cargo all over the world. The ships that carry bulk cargo are called cargo ships. Even these ships travel all over the world — east, west, north, and south. They carry food items such as wheat, rice, meat, and oranges. Some ships carry bulk liquids in the form of fuel or oil. These are also called oil tankers. Others also carry raw materials like coal and iron ore. Some ships carry industrial products such as cars, televisions, and computers. Cargo is stored in the inside of a ship called the 'holds'.<br><br>
+  Ships on the ocean and sea also maintain the traffic rules like vehicles on land. They cannot travel everywhere in narrow straits and at the entrance to harbours. They are also designated sea routes for ships. Near the shore there are shallow places, and a big ship can run aground and damage its bottom or sides. Ships that enter port must do so only during designated times, that is, at high tide when there is a current which draws the water into the harbour.</p>
+
+  <div class="exercise-block">
+    <p class="instr">(i) Answer the following questions: <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>How is a ship different from a boat? <textarea class="answer-box"></textarea></li>
+      <li>What is a hold? <textarea class="answer-box"></textarea></li>
+      <li>What is the major draw of a cruise ship? <textarea class="answer-box"></textarea></li>
+      <li>What would happen if a ship enters a harbour at low tide? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer(s)</div>
+      <ol type="a">
+        <li>A ship differs from a boat in view of its size and passenger capacity — ships are much larger vessels.</li>
+        <li>A hold is the storage space inside a ship where cargo is kept.</li>
+        <li>The trip itself and the attractions on board the ship are the major draw of a cruise ship.</li>
+        <li>At low tide there would not be enough current to draw the water into the harbour, and the shallow water near the shore could cause the ship to run aground and damage its bottom or sides.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(ii) Match Column A with Column B and write your answers in the space provided: <span class="marks">(6 marks)</span></p>
+    <table class="ref-table">
+      <tr><th>Column A</th><th>Column B</th></tr>
+      <tr><td>(a) ocean liners</td><td>food, oil, industrial products</td></tr>
+      <tr><td>(b) luxury cruise</td><td>short sea trip</td></tr>
+      <tr><td>(c) cargo</td><td>high tide</td></tr>
+      <tr><td>(d) entrance to harbour</td><td>seven star hotels on the sea</td></tr>
+      <tr><td>(e) ferries</td><td>coal and iron ore</td></tr>
+      <tr><td>(f) raw material</td><td>only passengers</td></tr>
+    </table>
+    <ol type="a">
+      <li><input class="blank-input"></li><li><input class="blank-input"></li><li><input class="blank-input"></li>
+      <li><input class="blank-input"></li><li><input class="blank-input"></li><li><input class="blank-input"></li>
+    </ol>
+    <div class="ocr-note"><b>Source note</b>The source table skips letter (e) in Column A and jumps straight from (d) to (f) — reproduced exactly as printed, six rows in total.</div>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <p>(a) ocean liners → only passengers<br>(b) luxury cruise → seven star hotels on the sea<br>(c) cargo → food, oil, industrial products<br>(d) entrance to harbour → high tide<br>(e) ferries → short sea trip<br>(f) raw material → coal and iron ore</p>
+    </div>
+  </div>
+
+  <h3>Section-B · Writing (20 Marks)</h3>
+  <div class="exercise-block">
+    <p class="instr">3. Read the following conversation between Surbhi and Hemant, a classmate of her brother Anubhav. Draft a message on behalf of Surbhi for Anubhav. <span class="marks">(4 marks)</span></p>
+    <p style="color:var(--ink-soft); font-size:15px;">Hemant: Hello, is it 8756342975?<br>Surbhi: Yes, may I know who is calling?<br>Hemant: I am Hemant, a friend of Anubhav. Could I speak to Anubhav?<br>Surbhi: Oh! I am afraid he is not at home and will return in two hours.<br>Hemant: Please tell him that tomorrow morning we are going to Rajat's house to celebrate his birthday. Ask him to get ready by 9:30. I will come to pick him up. My driver will drive us to Rajat's house.<br>Surbhi: Ok, I will convey the message. Anything else?<br>Hemant: Tell him that he need not buy any gift as I have already bought the one he told me to buy. Also ask him to call me once.<br>Surbhi: Ok. I will.<br>Hemant: Thank you. Good bye.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p><strong>MESSAGE</strong><br>12 August 2026, 5:00 p.m.<br>Anubhav, Hemant called while you were out. Tomorrow morning you are all going to Rajat's house to celebrate his birthday — be ready by 9:30. Hemant will pick you up and his driver will drive you both there. You don't need to buy a gift, as he has already bought the one you asked him to. Also, please call him back once.<br>— Surbhi</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">4. You have recently watched a movie which you liked the most. Describe the movie using the hints given below: title, producer, director, lead and supporting actors, plot, direction, music composer, lyrics, your opinion about the movie. <span class="marks">(4 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>I recently watched the movie "3 Idiots", produced by Vidhu Vinod Chopra and directed by Rajkumar Hirani. It stars Aamir Khan, R. Madhavan and Sharman Joshi in the lead roles, along with Kareena Kapoor and Boman Irani in supporting roles. The story follows three engineering students and their journey through a demanding education system, questioning what true learning means. The direction is thoughtful, blending comedy with a strong social message. The music, composed by Shantanu Moitra with lyrics by Swanand Kirkire, perfectly matches the mood of the film. In my opinion, it is one of the most inspiring films I have seen, and I would recommend it to every student.</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">5. Write an application to your Principal requesting him/her to change your section. Mention your class, section, roll number and a suitable reason for the change of section. <span class="marks">(6 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>The Principal<br>[School Name]<br>12 August 2026<br><br>Subject: Request for change of section<br><br>Respected Sir/Madam,<br>I am Aman Mehta, a student of Class VIII B, Roll No. 21. I would like to request a change of my section from VIII B to VIII A, as most of my close friends with whom I study regularly are in Section A, and studying together would help improve my academic performance.<br>I kindly request you to consider my application favourably.<br><br>Thanking you,<br>Aman Mehta<br>Class VIII B, Roll No. 21</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">6. Write an article on the "Effects of Heavy Bags on Children" mentioning reasons and effects, and suggesting some ways to reduce the load of the bags. <span class="marks">(6 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p><strong>Effects of Heavy Bags on Children</strong><br>By Aman Mehta<br><br>Most schoolchildren today carry bags that weigh far more than what is recommended for their age. This happens because of overloaded timetables, extra textbooks, and unnecessary items carried "just in case." Carrying such heavy bags every day can cause back pain, poor posture, and even long-term spinal problems in growing children.<br>Schools can help by reducing the number of textbooks needed each day, encouraging the use of lockers, and prescribing lighter bag materials. Parents, too, should check their child's bag daily and remove anything not needed for that day. With these small steps, we can protect children's health without compromising their education.</p></div>
+  </div>
+
+  <h3>Section-C · Grammar (20 Marks)</h3>
+  <div class="exercise-block">
+    <p class="instr">7. The following passage has not been edited. There is one mistake in each line. Write the incorrect word and the correct word in the space provided. <span class="marks">(4 marks)</span></p>
+    <p>While it may seem that all mosquitoes is biters, (a) <input class="blank-input"><br>
+    this is not actually the case. Male mosquitoes eats (b) <input class="blank-input"><br>
+    plant nectar. On the another hand, female mosquitoes (c) <input class="blank-input"><br>
+    feed on animal blood. The need this blood to live (d) <input class="blank-input"><br>
+    and produce eggs. When a female mosquito bite a (e) <input class="blank-input"><br>
+    human beings, it transmits a small amount of saliva (f) <input class="blank-input"><br>
+    into the blood. This saliva may and may not contain (g) <input class="blank-input"><br>
+    a deadly disease. The result for the bite can be (h) <input class="blank-input"><br>
+    minor as an itchy bump or as serious as death.</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <table><tr><th>Line</th><th>Incorrect</th><th>Correct</th></tr>
+      <tr><td>(a)</td><td>is</td><td>are</td></tr>
+      <tr><td>(b)</td><td>eats</td><td>eat</td></tr>
+      <tr><td>(c)</td><td>the another</td><td>the other</td></tr>
+      <tr><td>(d)</td><td>The</td><td>They</td></tr>
+      <tr><td>(e)</td><td>bite</td><td>bites</td></tr>
+      <tr><td>(f)</td><td>beings</td><td>being</td></tr>
+      <tr><td>(g)</td><td>may and may not</td><td>may or may not</td></tr>
+      <tr><td>(h)</td><td>for</td><td>of</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">8. Given below is a set of instructions. Read them carefully and complete the paragraph that follows. <span class="marks">(4 marks)</span></p>
+    <p style="color:var(--ink-soft); font-size:15px;"><strong>How to Make Cheese</strong><br>1. Take one litre of milk and some juice of lemon.<br>2. Pour the milk in a pan and bring it slowly to boil.<br>3. Stir the milk continuously.<br>4. While stirring the milk add lemon juice.<br>5. Continue to stir the milk gently till the milk gets curdled.<br>6. Set it aside to cool.<br>7. When it gets cool, strain the curdled milk through a sieve of muslin.<br>8. Squeeze out the liquid whey; press the cheese with a flat weight.</p>
+    <p>One litre of milk and some lemon juice are taken. The milk (a) <input class="blank-input"> in a pan and slowly brought to a boil. The milk (b) <input class="blank-input"> continuously. While the milk is stirred lemon juice (c) <input class="blank-input"> to it. It (d) <input class="blank-input"> till the milk gets curdled. Then it (e) <input class="blank-input"> to cool. When it gets cool, the curdled (f) <input class="blank-input"> through a sieve of muslin. The liquid whey (g) <input class="blank-input"> out and the cheese (h) <input class="blank-input"> with a flat weight.</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <ol type="a">
+        <li>is poured</li><li>is stirred</li><li>is added</li><li>is stirred gently</li>
+        <li>is set aside</li><li>milk is strained</li><li>is squeezed</li><li>is pressed</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">9. Rearrange the following words and phrases to form meaningful sentences. <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>special / their / own / talents / individual / with / person / each / is <textarea class="answer-box"></textarea></li>
+      <li>purity / the / milk / a / assesses / lactometer / of <textarea class="answer-box"></textarea></li>
+      <li>a / disciplined / Christian / Ramakrishna / the / lived / life / of / Sri <textarea class="answer-box"></textarea></li>
+      <li>is / good / hardly / living / worth / health / life / without <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <ol type="a">
+        <li>Each individual person is with their own special talents.</li>
+        <li>A lactometer assesses the purity of the milk.</li>
+        <li>Sri Ramakrishna lived the disciplined life of a Christian.</li>
+        <li>Life without good health is hardly worth living.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">10. Look at the newspaper items given below. Then use the information given in the headlines to complete the paragraphs. <span class="marks">(4 marks)</span></p>
+    <p><strong>(a) FOUR ARRESTED IN BANK LOOT CASE</strong><br>Delhi: The police claim to have solved a (i) <input class="blank-input"> case by (ii) <input class="blank-input"> and recovering Rs. 1.35 lakh from them.</p>
+    <p><strong>(b) TWO PAK INTRUDERS KILLED ON LOC</strong><br>(i) <input class="blank-input"> believed to be (ii) <input class="blank-input"> soldiers, (iii) <input class="blank-input"> along the Line (iv) <input class="blank-input"> on Sunday in north Kashmir's Baramula, as the army foiled an attempt to strike inside the LoC by the Pakistani Army.</p>
+    <p><strong>(c) 7 AQUITTED IN FAKE STAMP PAPER SCAM</strong><br>A special court in Nashik on Monday (i) <input class="blank-input"> persons, including deceased counterfeiter and prime accused, Abdul Ladsab Telgi, alias Kareem lala, in the multi-crore (ii) <input class="blank-input"></p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer(s)</div>
+      <p><strong>(a)</strong> (i) bank loot (ii) arresting four persons</p>
+      <p><strong>(b)</strong> (i) Two intruders, (ii) Pakistani (iii) were killed (iv) of Control</p>
+      <p><strong>(c)</strong> (i) acquitted seven (ii) fake stamp paper scam</p>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">11. Change the following sentences into Indirect Speech. Choose the appropriate sentences from the given options. <span class="marks">(4 marks)</span></p>
+    <p>(i) Our teacher said to us, "The earth revolves around the sun."<br>
+    (a) Our teacher said to us that the earth revolved around the sun. (b) Our teacher said to us that the earth revolves around the sun. (c) Our teacher told us that the earth revolves around the earth. (d) Our teacher told to us that the earth revolves around the earth. <input class="blank-input narrow"></p>
+    <p>(ii) She said to me, "The teacher will have corrected my notebook by tomorrow."<br>
+    (a) She told me that the teacher will have corrected her notebook by tomorrow. (b) She told me that the teacher would have corrected my notebook by the next day. (c) She told me that the teacher will have corrected her notebook by the next day. (d) She told me that the teacher would have corrected her notebook by the next day. <input class="blank-input narrow"></p>
+    <p>(iii) He said to me, "Where did you go yesterday?"<br>
+    (a) He asked me that where had I gone the previous day. (b) He asked me where I had gone yesterday. (c) He asked me where had I gone the previous day. (d) He asked me where I had gone the previous day. <input class="blank-input narrow"></p>
+    <p>(iv) My mother said to me, "Will you complete your work before my return?"<br>
+    (a) My mother asked me if I would complete your work before my return. (b) My mother asked me that if I would complete my work before her return. (c) My mother asked me if I would complete my work before her return. (d) My mother asked me that if I will complete my work before her return. <input class="blank-input narrow"></p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(i) b &nbsp; (ii) d &nbsp; (iii) d &nbsp; (iv) c</p></div>
+  </div>
+
+  <h2 id="p3"><span class="num">3.</span>Sample Assessment Paper — 3</h2>
+
+  <h3>Section-A · Reading (20 Marks)</h3>
+  <h4>1. Read the poem given below carefully. <span class="marks">(10 marks)</span></h4>
+  <div class="poem">In the Bazars of Hyderabad
+
+What do you sell, O ye merchants?
+Richly your wares are displayed.
+Turbans of crimson and silver,
+Tunics of purple brocade,
+Mirrors with panels of amber,
+Daggers with handles of jade.
+
+What do you weigh, O ye vendors?
+Saffron, lentil and rice
+What do you grind, O ye maidens?
+Sandalwood, henna and spice
+What do you call, O ye peddlars?
+Chessmen and ivory dice.
+
+What do you make, O ye goldsmiths?
+Wristlet and anklet and ring,
+Bells for the feet of blue pigeons,
+Frail as a dragon-fly's wing,
+Girdles of gold for the dancers,
+Scabbards of gold for the king.
+
+What do you cry, O ye fruit men?
+Citron, pomegranate and plum
+What do you play, O ye musicians?
+Sitar, Sarangi and drum.
+What do you chant, O magicians?
+Spells for the aeons to come.
+
+What do you weave, O ye flower-girls?
+With tassels of azure and red?
+Crowns for the brow of a bridegroom,
+Chaplets to garland his bed,
+Sheets of white blossoms new-garnered
+To perfume the sleep of the dead.<span class="attrib">— Sarojini Naidu</span></div>
+
+  <div class="exercise-block">
+    <p class="instr">(i) Complete the passage given below by writing the missing word against the correct blank number. <span class="marks">(5 marks)</span></p>
+    <p>The merchants are selling (a) <input class="blank-input"> coloured turbans, mirrors with <input class="blank-input"> and <input class="blank-input"> jade. The vendors are weighing saffron, lentils and rice to sell. The goldsmiths manufacture (b) <input class="blank-input">, <input class="blank-input">, <input class="blank-input">, <input class="blank-input">, <input class="blank-input"> and scabbards for the kings. The musicians play (c) <input class="blank-input"> and <input class="blank-input"> The magicians are chanting magical (d) <input class="blank-input"> to charm thousand ages to come. The flower girls are making (e) <input class="blank-input"> and <input class="blank-input"> for the bridegroom.</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <p>(a) crimson and silver / purple brocade — mirrors with panels of amber and daggers with handles of jade<br>
+      (b) wristlet, anklet, ring, bells (for the feet of blue pigeons), girdles of gold<br>
+      (c) sitar and sarangi (and drum)<br>
+      (d) spells<br>
+      (e) crowns and chaplets</p>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(ii) Answer the questions given below. <span class="marks">(3 marks)</span></p>
+    <ol type="a">
+      <li>Write an example of simile used in the poem. <input class="blank-input" style="width:340px;"></li>
+      <li>What do the maidens grind? <input class="blank-input"></li>
+      <li>What do flower girls weave for the dead? <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <ol type="a"><li>"Frail as a dragon-fly's wing" (bells compared to a dragonfly's wing)</li><li>Sandalwood, henna and spice.</li><li>Sheets of white blossoms, to perfume the sleep of the dead.</li></ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(iii) Find words from the poem which mean the same as the following. <span class="marks">(2 marks)</span></p>
+    <ol type="a">
+      <li>bright blue colour <input class="blank-input"></li>
+      <li>cover for a sword <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol type="a"><li>azure</li><li>scabbard(s)</li></ol></div>
+  </div>
+
+  <h4>2. Read the passage given below carefully and answer the questions that follow:</h4>
+  <p class="passage">Dolls are among the oldest creations of man. Archaeologists have found small dolls of clay, wood, bone and ivory from graves and other areas excavated. In India, the earliest dolls, unearthed from the site of the Indus valley civilization, are as old as five thousand years. The earliest dolls were made from natural objects like sticks and stones. American Indians made a deity of wood, and used it while imparting religious instructions.<br><br>
+  Dolls of cloth, wax and papier mache also became popular. Pottery dolls became common with the children of Victorian England. They had perfect, fragile porcelain heads and rich royal clothing; children also had a 'Sunday doll', which was taken out of its glass case only on Sundays. The doll houses were elaborately set up with furniture, pictures, decoration pieces, window drapes — almost everything required in a luxurious home.<br><br>
+  In Korea, a traditional doll was made out of a bamboo pipe, and long grass was used to form the 'hair'. This doll was not given any feature on the face, but some white powder was rubbed over a small area. Some of the earliest Russian dolls were made of pine cones and these were clothed with moss cloaks. Another Russian doll is the 'matryoshka' doll, also known as a Russian nesting doll of decreasing sizes placed one inside the other.<br><br>
+  The Japanese used dolls for various purposes. A primitive Japanese doll was made of sticks and strings, covered with paper clothing. Some dolls were 'dressed' and 'fed' and 'treated' as though alive. The Japanese also have ceremonial dolls, not for playing but for simply exhibiting on a specific day. The boys exhibit their warrior dolls on March 3, and the girls' festival falls on May 5.<br><br>
+  The use of dolls in religious ceremonies continues till date. Scenes of the birth of Jesus include figures of baby Jesus, Mother Mary, Joseph and the shepherds. These are called crib dolls and are not meant for playing. In northern India, the story of Krishna's birth is depicted through clay dolls. In Bihar, the entire story of the Shyama Chak festival is depicted through clay images.<br><br>
+  Even today, craftsmen in Assam and West Bengal make dolls out of soft stems of a plant growing in marshy areas. West Bengal is known for terracotta toys, and Rajasthan markets dolls of unbaked clay. Artists of Uttar Pradesh are masters of making brightly painted wooden dolls. Over the years, the variety of materials and mechanisms used for making dolls has increased tremendously.</p>
+
+  <div class="exercise-block">
+    <p class="instr">(i) Answer the questions given below. <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>Write the names of countries mentioned in the passage. <textarea class="answer-box"></textarea></li>
+      <li>What were the doll houses set up with? <textarea class="answer-box"></textarea></li>
+      <li>Describe the earliest Russian dolls. <textarea class="answer-box"></textarea></li>
+      <li>Name the three religious ceremonies where dolls are used. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer(s)</div>
+      <ol type="a">
+        <li>India, England (Victorian England), Korea, Russia, Japan, and the countries implied by "northern India" and "Bihar" (also India).</li>
+        <li>With furniture, pictures, decoration pieces, and window drapes — almost everything required in a luxurious home.</li>
+        <li>The earliest Russian dolls were made of pine cones and clothed with moss cloaks.</li>
+        <li>The birth of Jesus (crib dolls), Krishna's birth (in northern India), and the Shyama Chak festival (in Bihar).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(ii) Match Column A with Column B and write your answers in the space provided: <span class="marks">(3 marks)</span></p>
+    <table class="ref-table">
+      <tr><th>Column A</th><th>Column B</th></tr>
+      <tr><td>(a) earliest dolls</td><td>rich royal clothing</td></tr>
+      <tr><td>(b) warrior dolls</td><td>terracotta toys</td></tr>
+      <tr><td>(c) Korean doll</td><td>religious ceremonies</td></tr>
+      <tr><td>(d) West Bengal</td><td>sticks and stones</td></tr>
+      <tr><td>(e) Crib dolls</td><td>Japanese</td></tr>
+      <tr><td>(f) pottery dolls</td><td>absence of facial features</td></tr>
+    </table>
+    <div class="ocr-note"><b>Source note</b>The source table skips letter (e) in Column A and jumps straight from (d) to (f) — reproduced exactly as printed, six rows in total.</div>
+    <ol type="a"><li><input class="blank-input"></li><li><input class="blank-input"></li><li><input class="blank-input"></li><li><input class="blank-input"></li><li><input class="blank-input"></li><li><input class="blank-input"></li></ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <p>(a) earliest dolls → sticks and stones<br>(b) warrior dolls → Japanese<br>(c) Korean doll → absence of facial features<br>(d) West Bengal → terracotta toys<br>(e) Crib dolls → religious ceremonies<br>(f) pottery dolls → rich royal clothing</p>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(iii) Find words from the passage which mean the same as the following. <span class="marks">(3 marks)</span></p>
+    <ol type="a">
+      <li>paper mixed with glue or flour and water <input class="blank-input"></li>
+      <li>study of the past by examining remains of buildings or objects found in the ground <input class="blank-input"></li>
+      <li>to dig in the ground to look for old buildings or objects buried for a long time <input class="blank-input"></li>
+    </ol>
+    <div class="ocr-note"><b>Source note</b>The source labels this "Find words from the poem," but these words are drawn from the prose passage on dolls, not the poem — corrected here for clarity.</div>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol type="a"><li>papier mache</li><li>archaeology</li><li>excavate</li></ol></div>
+  </div>
+
+  <h3>Section-B · Writing (20 Marks)</h3>
+  <div class="exercise-block">
+    <p class="instr">3. You visited an orphanage to celebrate your birthday with orphans. Express your feelings about the experience in your diary. <span class="marks">(4 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>12 August 2026, Wednesday, 8:30 p.m.<br>Dear Diary,<br>Today was my birthday and, instead of a big party, I decided to visit the local orphanage to celebrate with the children there. It was one of the most fulfilling days of my life. We sang songs, played games, and cut a cake together. Seeing their smiling faces made me realise how much joy a small gesture can bring. I have decided that from now on, I want to celebrate every birthday this way.<br>— Suhasini</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">4. Your father has bought a new cell phone. Describe its physical features, software and various functions. <span class="marks">(4 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>My father recently bought a new smartphone. It has a sleek, slim body with a large 6.5-inch display and a glossy black finish. It runs on the latest version of its operating system and comes with a fast processor and a large battery. The phone has a triple-camera setup that takes excellent photos even in low light, along with fingerprint and face-recognition unlocking for security. It also supports fast charging, so it charges to full in under an hour. My father is extremely happy with his purchase.</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">5. You are Suhasini living at 153, Sector-8, Panchkula. Write a letter to the Editor of a newspaper suggesting how the problem of begging can be checked. <span class="marks">(6 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>153, Sector-8<br>Panchkula<br>12 August 2026<br><br>The Editor<br>[Newspaper Name]<br><br>Subject: The problem of begging in our city<br><br>Sir/Madam,<br>Through the columns of your esteemed newspaper, I wish to draw attention to the growing problem of begging in our city, especially at traffic signals and religious places. Many beggars are controlled by organised gangs that exploit children and the disabled.<br>I suggest that the government set up rehabilitation centres offering skill training and education, run public awareness campaigns discouraging people from giving money directly to beggars, and instead direct donations to registered welfare organisations. Strict action should also be taken against those who force children into begging.<br>I hope you will publish this letter to raise public awareness.<br><br>Yours truly,<br>Suhasini</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">6. Write an article on "The Importance of Time Management" enlisting the benefits of budgeting time and suggesting some ways to utilize time effectively. <span class="marks">(6 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p><strong>The Importance of Time Management</strong><br>By Suhasini<br><br>Time is a resource that, once lost, can never be recovered. Good time management helps us complete our tasks efficiently, reduces stress, and leaves room for rest and hobbies. Students who manage their time well tend to perform better academically because they avoid last-minute cramming.<br>To utilize time effectively, one should make a daily to-do list, prioritise important tasks, avoid procrastination, and set aside fixed hours for study and relaxation. Turning off distractions like phones during study time also helps. By practising good time management, we can achieve more while feeling less stressed.</p></div>
+  </div>
+
+  <h3>Section-C · Grammar (20 Marks)</h3>
+  <div class="exercise-block">
+    <p class="instr">7. In the following passage, one word has been omitted in each line. Write the missing word along with the word that comes before and the word that comes after it. The first one has been done for you. <span class="marks">(4 marks)</span></p>
+    <table class="ref-table">
+      <tr><th>Line</th><th>Preceding Word</th><th>Omitted Word</th><th>Succeeding Word</th></tr>
+      <tr><td>Discipline must enforced early in life.</td><td>must</td><td>(a) be</td><td>enforced</td></tr>
+      <tr><td>Discipline home makes for the future</td><td></td><td>(b) <input class="blank-input narrow"></td><td></td></tr>
+      <tr><td>greatness of boy. It forms his character and</td><td></td><td>(c) <input class="blank-input narrow"></td><td></td></tr>
+      <tr><td>makes a fit citizen. The child who is allowed</td><td></td><td>(d) <input class="blank-input narrow"></td><td></td></tr>
+      <tr><td>all sorts excess like running about in the sun,</td><td></td><td>(e) <input class="blank-input narrow"></td><td></td></tr>
+      <tr><td>exposing himself cold, eating unwholesome</td><td></td><td>(f) <input class="blank-input narrow"></td><td></td></tr>
+      <tr><td>things, will fall ill very frequently. On other</td><td></td><td>(g) <input class="blank-input narrow"></td><td></td></tr>
+      <tr><td>hand, the child habits have been disciplined,</td><td></td><td>(h) <input class="blank-input narrow"></td><td></td></tr>
+      <tr><td>will grow to be a useful member of the society.</td><td></td><td>(i) <input class="blank-input narrow"></td><td></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <table><tr><th>#</th><th>Preceding</th><th>Omitted</th><th>Succeeding</th></tr>
+      <tr><td>(b)</td><td>Discipline</td><td>at</td><td>home</td></tr>
+      <tr><td>(c)</td><td>character and</td><td>him</td><td>a fit citizen</td></tr>
+      <tr><td>(d)</td><td>child who is</td><td>allowed</td><td>all sorts</td></tr>
+      <tr><td>(e)</td><td>all sorts</td><td>of</td><td>excess</td></tr>
+      <tr><td>(f)</td><td>exposing himself</td><td>to</td><td>cold</td></tr>
+      <tr><td>(g)</td><td>will fall ill very frequently. On</td><td>the</td><td>other hand</td></tr>
+      <tr><td>(h)</td><td>the child</td><td>whose</td><td>habits</td></tr>
+      <tr><td>(i)</td><td>be a useful member of</td><td>the</td><td>society</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">8. Read the following paragraph carefully and fill in each blank with one word only choosing from the options given below. <span class="marks">(4 marks)</span></p>
+    <p>A good night's sleep is important (i) <input class="blank-input narrow"> good health. A large number (ii) <input class="blank-input narrow"> people, especially youngsters and those (iii) <input class="blank-input narrow"> busy work schedules, however, make peace with inadequate sleep. (iv) <input class="blank-input narrow"> can adversely affect their overall health. In particular, it (v) <input class="blank-input narrow"> take a toll on heart's health. Inadequate sleep in the long run, can affect (vi) <input class="blank-input narrow"> quality of life. Studies reveal (vii) <input class="blank-input narrow"> not sleeping for ideal hours can be associated (viii) <input class="blank-input narrow"> proper long-term health problems.</p>
+    <p style="font-size:14px; color:var(--ink-faint);">
+      (i) (a) since (b) for (c) from (d) as &nbsp;·&nbsp; (ii) (a) for (b) with (c) of (d) to &nbsp;·&nbsp; (iii) (a) to (b) for (c) from (d) with<br>
+      (iv) (a) this (b) that (c) these (d) those &nbsp;·&nbsp; (v) (a) may (b) will (c) can (d) shall &nbsp;·&nbsp; (vi) (a) the (b) a (c) this (d) that<br>
+      (vii) (a) if (b) that (c) what (d) while &nbsp;·&nbsp; (viii) (a) to (b) with (c) by (d) for
+    </p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(i) b for &nbsp;·&nbsp; (ii) c of &nbsp;·&nbsp; (iii) d with &nbsp;·&nbsp; (iv) a this &nbsp;·&nbsp; (v) c can &nbsp;·&nbsp; (vi) a the &nbsp;·&nbsp; (vii) b that &nbsp;·&nbsp; (viii) c by</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">9. Rearrange the following words and phrases to form meaningful sentences. <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>examination / learn / students / to / cope with / should / stress <textarea class="answer-box"></textarea></li>
+      <li>is / undoubtedly / best / relaxant / laughter / known / the <textarea class="answer-box"></textarea></li>
+      <li>the / are / mountains / world / Himalayas / the / in / highest / the <textarea class="answer-box"></textarea></li>
+      <li>is a / very / largest / cold / place / desert / Earth's / actually <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <ol type="a">
+        <li>Students should learn to cope with examination stress.</li>
+        <li>Laughter is undoubtedly the best known relaxant.</li>
+        <li>The Himalayas are the highest mountains in the world.</li>
+        <li>Earth's largest desert is actually a very cold place.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">10. Fill in the blanks with correct forms of verbs. <span class="marks">(4 marks)</span></p>
+    <p>Bamboo (i) <input class="blank-input"> (be) perhaps the most useful plant in the world. It (ii) <input class="blank-input"> (grow) in almost all tropical and subtropical countries. The only continents in which bamboo (iii) <input class="blank-input"> not <input class="blank-input"> (grow) (iv) <input class="blank-input"> (be) Europe and Antarctica. The bamboo is a variety of grass, with a woody, many jointed stems. The stem itself is hollow and is (v) <input class="blank-input"> (connect) to a rhizome network which (vi) <input class="blank-input"> (spread) out beneath the surface of the soil. Roots grow out of this network of rhizomes and help the plant (vii) <input class="blank-input"> (absorb) and distribute food and water from the soil. Many species of bamboo (viii) <input class="blank-input"> (flower) once in several years and die.</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <ol type="a"><li>is</li><li>grows</li><li>does not grow</li><li>is</li><li>connected</li><li>spreads</li><li>absorb</li><li>flower</li></ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">11. Use the information in the notes to complete the paragraph that follows. <span class="marks">(4 marks)</span></p>
+    <p style="color:var(--ink-soft); font-size:15px;">Emperor Penguin, Antarctic perimeter, breeding season — winter, Month May or June, female to feed after laying the egg, egg transported to male, male to incubate the egg using brood patch, unsuccessful transfer causes freezing of egg</p>
+    <p>The Emperor Penguin (a) <input class="blank-input"> found throughout the Antarctic perimeter. It is the only species of penguin to (b) <input class="blank-input"> during the Antarctic winter. Female Emperor Penguins lay a single egg in May or June. After the egg has been laid, the female must immediately (c) <input class="blank-input"> in the ocean. First, the egg is carefully (d) <input class="blank-input"> to the male, who (e) <input class="blank-input"> the egg under a (f) <input class="blank-input"> that rests above the feet. If the transfer is (g) <input class="blank-input">, the egg rolls onto the ice and instantaneously (h) <input class="blank-input"></p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div>
+      <ol type="a">
+        <li>is</li><li>breed</li><li>feed</li><li>transported</li><li>incubates</li><li>brood patch</li><li>unsuccessful</li><li>freezes</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="p4"><span class="num">4.</span>Sample Assessment Paper — 4</h2>
+
+  <h3>Section-A · Reading (20 Marks)</h3>
+  <h4>1. Read the poem given below carefully. <span class="marks">(10 marks)</span></h4>
+  <div class="poem">Autumn
+
+Autumn is on the horizon I can tell
+By the coloured leaves that fell
+While all around the land was green,
+The change in the season hardly seen.
+
+Autumn is on the horizon I can tell
+Orchard trees are fruitless as well
+Their outstretched boughs as if in a spell,
+As the succulent leaves begin to pale
+
+Autumn is on the horizon I can tell
+Birds not singing on the porch rail
+Sensing the coming of the autumn chill
+Prepare to flock on the nearby hill
+
+Autumn is on the horizon I can tell
+Seeing woolly caterpillars on the boarded well,
+Squirrels scurrying across the ground
+Where hickory nuts now abound.
+
+Autumn is coming soon, if one believes,
+The land will be covered with a blanket of leaves
+Flowers wilting beneath the hazy sky,
+No longer attracting a beautiful butterfly.</div>
+
+  <div class="exercise-block">
+    <p class="instr">(i) Answer the following questions: <span class="marks">(6 marks)</span></p>
+    <ol type="a">
+      <li>Write any two things that suggest that autumn is on the horizon. <textarea class="answer-box"></textarea></li>
+      <li>Why are birds not singing on the porch rail? <textarea class="answer-box"></textarea></li>
+      <li>What will happen when the autumn comes? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer(s)</div>
+      <ol type="a">
+        <li>The coloured leaves falling, and the orchard trees becoming fruitless with their leaves beginning to pale (also acceptable: birds preparing to flock away, woolly caterpillars appearing, squirrels scurrying about).</li>
+        <li>The birds are not singing because they sense the coming of the autumn chill and are preparing to flock to the nearby hill.</li>
+        <li>When autumn comes, the land will be covered with a blanket of fallen leaves, flowers will wilt beneath a hazy sky, and butterflies will no longer be attracted to them.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(ii) Find words from the poem which mean the same as the following. <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>containing a lot of moisture or water <input class="blank-input"></li>
+      <li>running with quick short steps <input class="blank-input"></li>
+      <li>to exist in great number or quantity <input class="blank-input"></li>
+      <li>with hair like wool <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol type="a"><li>succulent</li><li>scurrying</li><li>abound</li><li>woolly</li></ol></div>
+  </div>
+
+  <h4>2. Read the passage given below carefully and answer the questions that follow:</h4>
+  <p class="passage">The year was 1936. Jesse Owens was on his way to Berlin to make his dreams come true. The American athlete was going to participate in his first Olympic Games. Owens' journey to the American athletics team had been long and gruelling. He had grown up in poverty. In school and in college, Owens had trained in between attending classes and working jobs as a waiter, petrol bunk attendant and lift operator. He had fees to pay and a family to support.<br><br>
+  Germany, in 1936, was a dangerous place to live. It was under the control of the cruel and violent Nazi party. The Nazis believed that the Germans were superior to all others, physically and mentally. This was why the Olympics was an important event for them. It was where German athletes would prove to the world that they were the best, and that the German people were the 'Master Race' — people meant to conquer the world and rule over all others.<br><br>
+  As the Nazis' racist policies got worse by the day, Owens wondered whether it was right to go to Berlin. Would it be right to take part in a competition held by a country where millions were being persecuted? Many countries disapproved of the Nazis' attitude. They had all started debating whether or not to boycott the German Olympics. Because of this pressure, the Nazis reluctantly allowed Jews from other countries to participate. It was only then that 52 nations agreed to attend the Berlin Olympics.<br><br>
+  When Owens arrived in Berlin, he was surprised by his welcome. He had expected hatred and insults from the crowd. But instead, he was greeted cheerfully by fans. Even Germans had heard of Jesse Owens and his record-breaking runs.<br><br>
+  Owens' performance in the Berlin Olympics did not disappoint his fans. He won gold medals in the 100-metre and 200-metre race and the 4 x 100-metre relay. It was only during the long jump event that Owens had a spot of trouble. The rules for the long jump were different in Germany. Owens' first few attempts ended in disaster. But Lutz Long, a fellow long-jump competitor, helped Owens and gave him some valuable advice; consequently, Owens won the gold medal whereas Long won the silver. Long was the first to congratulate Owens. To Owens, the friendship he struck up with Long was the most important trophy he brought away from the Berlin Olympics.</p>
+  <div class="ocr-note"><b>Source note</b>The passage reads "1 x 400-metre relay" in the original, which does not match the historical 4 x 100-metre relay event Jesse Owens actually won gold in at the 1936 Berlin Olympics — corrected here rather than reproduced as a factual error. Two further wording slips in the source ("life operator" → "lift operator", and "He had fee to pay" → "He had fees to pay") have also been silently normalized.</div>
+
+  <div class="exercise-block">
+    <p class="instr">(i) Answer the following questions:</p>
+    <ol type="a">
+      <li>Where was Owens going? Why was he going there? <span class="marks">(2 marks)</span> <textarea class="answer-box"></textarea></li>
+      <li>What was Nazis' belief about the Germans? <span class="marks">(1 mark)</span> <textarea class="answer-box"></textarea></li>
+      <li>Under what circumstances did Nazis allow Jews from other countries to participate in Olympics? <span class="marks">(2 marks)</span> <textarea class="answer-box"></textarea></li>
+      <li>How was Owens welcomed at Berlin? <span class="marks">(1 mark)</span> <textarea class="answer-box"></textarea></li>
+      <li>Why was the long jump event troublesome for Owens? <span class="marks">(1 mark)</span> <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer(s)</div>
+      <ol type="a">
+        <li>Owens was going to Berlin to participate in his first Olympic Games, to make his dream of competing at the Olympics come true.</li>
+        <li>The Nazis believed that the Germans were physically and mentally superior to all other people, the "Master Race" meant to conquer and rule the world.</li>
+        <li>Under pressure from many countries that disapproved of and debated boycotting the Nazis' attitude, the Nazis reluctantly allowed Jews from other countries to participate.</li>
+        <li>Owens was welcomed cheerfully by fans, contrary to the hatred and insults he had expected.</li>
+        <li>The long jump event was troublesome because the rules for the long jump were different in Germany, and his first few attempts ended in disaster.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">(ii) State whether the following statements are true or false according to the passage: <span class="marks">(3 marks)</span></p>
+    <ol type="a">
+      <li>Many countries criticized Nazi's attitude. <input class="blank-input narrow"></li>
+      <li>Owens had expected the welcome that he received at Berlin. <input class="blank-input narrow"></li>
+      <li>It was due to Long's advice that Owens won the gold medal. <input class="blank-input narrow"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol type="a"><li>True</li><li>False</li><li>True</li></ol></div>
+  </div>
+
+  <h3>Section-B · Writing (20 Marks)</h3>
+  <div class="exercise-block">
+    <p class="instr">3. Use the following information to write a biographical sketch. <span class="marks">(4 marks)</span></p>
+    <p style="color:var(--ink-soft); font-size:15px;">Name: R. K. Narayan · Date of birth: October 10, 1906 · Place of Birth: Madras (now Chennai), Tamil Nadu · Occupation: Author (Fiction, non-fiction, mythology) · Education: B.A. Mysore University; Lutheran Mission School · Designations held: Mysore Correspondent of Justice, a newspaper from Madras · Achievements: Sahitya Akademi Award for The Guide · Awards: A. C. Benson Medal from Royal Society of Literature; in 1964, Padma Vibhushan; nominated to Rajya Sabha; elected as Honorary Member of the American Academy and Institute of Arts and Letters in 1982 · Famous Works: The Bachelor of Arts (1937), The English Teacher (1945), The Financial Expert (1952), The Vendor of Sweets (1967), Malgudi Days (1982) and The Grandmother's Tale (1993) · Death: May 13, 2001</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>R. K. Narayan was born on October 10, 1906, in Madras (now Chennai), Tamil Nadu. He was educated at the Lutheran Mission School and later earned his B.A. from Mysore University. He worked as the Mysore Correspondent of Justice, a Madras newspaper, before establishing himself as one of India's most celebrated authors of fiction, non-fiction and mythology. His famous works include The Bachelor of Arts (1937), The English Teacher (1945), The Financial Expert (1952), The Vendor of Sweets (1967), Malgudi Days (1982) and The Grandmother's Tale (1993). He won the Sahitya Akademi Award for The Guide and the A. C. Benson Medal from the Royal Society of Literature, was awarded the Padma Vibhushan in 1964, was nominated to the Rajya Sabha, and was elected an Honorary Member of the American Academy and Institute of Arts and Letters in 1982. R. K. Narayan passed away on May 13, 2001.</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">4. Given below is the opening, the middle and the ending of a story. Use them to develop a short story in about 150 words. <span class="marks">(4 marks)</span></p>
+    <p style="color:var(--ink-soft); font-size:15px;"><strong>Opening:</strong> Shyam is a very naughty boy who always fights with his brother and disobeys his parents.<br><strong>Middle:</strong> The mother sends Shyam to a hostel where Shyam gets homesick.<br><strong>Ending:</strong> Shyam realises the importance of home and family and mends his ways.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>Shyam was a very naughty boy. He fought constantly with his younger brother and never listened to his parents, however much they scolded him. Tired of his behaviour, his mother finally decided to send him to a boarding hostel, hoping the discipline would change him.<br>At the hostel, Shyam missed his home terribly. There was no one to make his favourite food, no brother to play with, and no mother to tuck him in at night. The strict routine and the loneliness weighed heavily on him, and for the first time he understood how much his family meant to him.<br>When he finally returned home for the holidays, Shyam hugged his parents and brother tightly and promised to behave better. From that day on, he became a caring, obedient son and a loving brother, having learnt that home and family are the most precious things of all.</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">5. You are rahulsharma1234@gmail.com. Write an e-mail to the Chief Editor of Times of India expressing your views on the topic "How to Deal with Exam Stress". The receiver's e-mail address is chiefeditor@timesofindia.co.in. <span class="marks">(6 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p><strong>To:</strong> chiefeditor@timesofindia.co.in<br><strong>From:</strong> rahulsharma1234@gmail.com<br><strong>Subject:</strong> Views on How to Deal with Exam Stress<br><br>Respected Sir/Madam,<br>I am a student and a regular reader of your newspaper. I would like to share my views on dealing with exam stress, a problem faced by nearly every student today.<br>In my experience, the best way to manage exam stress is to plan a realistic study schedule well in advance rather than cramming at the last minute. Taking short breaks, getting enough sleep, and talking to parents or teachers about worries also helps a great deal. Schools could also play a role by conducting stress-management workshops before exam season.<br>I hope you will consider publishing this so that more students can benefit from these tips.<br><br>Regards,<br>Rahul Sharma</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">6. Write an article on the topic "Importance of Family". <span class="marks">(6 marks)</span></p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p><strong>Importance of Family</strong><br>By Rahul Sharma<br><br>Family is the first and most important support system in a person's life. It is within the family that a child learns values, love, and discipline. In times of difficulty, it is family that offers comfort and encouragement, and in times of joy, it is family that celebrates with us.<br>In today's busy world, many people spend less time with their families due to work and other commitments, yet strong family bonds are essential for emotional well-being. Simple habits, like having meals together and talking about each other's day, can help keep a family close. No matter how far we go in life, family remains our truest foundation.</p></div>
+  </div>
+
+  <h3>Section-C · Grammar (20 Marks)</h3>
+  <div class="exercise-block">
+    <p class="instr">7. The following passage has not been edited. There is an error in each of the lines against which a blank is given. Write the incorrect word and the correction. The first one is done for you. <span class="marks">(4 marks)</span></p>
+    <table class="ref-table">
+      <tr><th>Line</th><th>Incorrect Word</th><th>Correct Word</th></tr>
+      <tr><td>It is bad to have food stuck between your tooth for</td><td>(a) tooth</td><td>teeth</td></tr>
+      <tr><td>long periods of time. This is because food attracts</td><td>(b)</td><td><input class="blank-input"></td></tr>
+      <tr><td>germs, germs produce acid, and acid hurt your teeth</td><td>(c)</td><td><input class="blank-input"></td></tr>
+      <tr><td>but gums. Flossing helps to remove the feed that gets</td><td>(d)</td><td><input class="blank-input"></td></tr>
+      <tr><td>stuck between your teeth. This explain why flossing</td><td>(e)</td><td><input class="blank-input"></td></tr>
+      <tr><td>helps to keep yours mouth healthy, but some doctors</td><td>(f)</td><td><input class="blank-input"></td></tr>
+      <tr><td>say that flossing can also be good from your heart.</td><td>(g)</td><td><input class="blank-input"></td></tr>
+      <tr><td>It may seem strange that anything that you do for</td><td>(h)</td><td><input class="blank-input"></td></tr>
+      <tr><td>your teeth can have any affect on your heart.</td><td>(i)</td><td><input class="blank-input"></td></tr>
+    </table>
+    <div class="ocr-note"><b>Source note</b>The source prints this passage as nine wrapped lines with one error each, but its own line breaks don't align one-to-one with the nine single-word errors when read back — the answer key below lists the errors in the order they occur in the sentence rather than asserting one is on each exact printed line.</div>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <table><tr><th>#</th><th>Incorrect</th><th>Correct</th></tr>
+      <tr><td>(b)</td><td>hurt</td><td>hurts</td></tr>
+      <tr><td>(c)</td><td>but (gums)</td><td>and (gums)</td></tr>
+      <tr><td>(d)</td><td>feed</td><td>food</td></tr>
+      <tr><td>(e)</td><td>explain</td><td>explains</td></tr>
+      <tr><td>(f)</td><td>yours</td><td>your</td></tr>
+      <tr><td>(g)</td><td>from</td><td>for</td></tr>
+      <tr><td>(h)</td><td>that (anything that you do)</td><td>drop the extra "that" — anything you do</td></tr>
+      <tr><td>(i)</td><td>affect</td><td>effect</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">8. Given below is a conversation between a teacher and a student. Complete the dialogues by filling in the gaps. <span class="marks">(4 marks)</span></p>
+    <p>Student: (a) <input class="blank-input" style="width:250px;">, mam?<br>
+    Teacher: Yes, come in. (b) <input class="blank-input" style="width:250px;"> today?<br>
+    Student: I am late because I missed my school bus.<br>
+    Teacher: Why (c) <input class="blank-input" style="width:250px;">?<br>
+    Student: I missed my bus because I (d) <input class="blank-input" style="width:250px;"><br>
+    Teacher: Why (e) <input class="blank-input" style="width:200px;"> late?<br>
+    Student: I got up late as I had to take care of my ailing mother as my father is not at home.<br>
+    Teacher: Oh! What (f) <input class="blank-input" style="width:250px;">?<br>
+    Student: She has been (g) <input class="blank-input" style="width:250px;"> for two days.<br>
+    Teacher: Is (h) <input class="blank-input" style="width:250px;"> else to take care of her?<br>
+    Student: No mam, there is none as I have a nuclear family.</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div>
+      <ol type="a"><li>May I come in</li><li>Why are you late</li><li>did you miss your bus</li><li>got up late</li><li>did you get up</li><li>happened to your mother</li><li>unwell / ill</li><li>there anyone</li></ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">9. Rearrange the following words and phrases to form meaningful sentences. <span class="marks">(4 marks)</span></p>
+    <ol type="a">
+      <li>Chandra / exceptional / Bose / an / Subhash / child / was <textarea class="answer-box"></textarea></li>
+      <li>the / God / all / world / creatures / made / and / the / living <textarea class="answer-box"></textarea></li>
+      <li>was / an / Music / part / family / of / important / Tagore / the <textarea class="answer-box"></textarea></li>
+      <li>Mother / special / gift / mankind / Teresa / was / God's / to <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div>
+      <ol type="a">
+        <li>Subhash Chandra Bose was an exceptional child.</li>
+        <li>God made the world and all the living creatures.</li>
+        <li>Music was an important part of the Tagore family.</li>
+        <li>Mother Teresa was God's special gift to mankind.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">10. Fill in the blanks choosing appropriate modal auxiliaries. <span class="marks">(4 marks)</span></p>
+    <p>(i) Ruhi <input class="blank-input narrow"> solve any sum when she was in grade III.<br>(a) must (b) can (c) could (d) should</p>
+    <p>(ii) This box is not very heavy. You <input class="blank-input narrow"> lift it easily.<br>(a) can (b) could (c) may (d) might</p>
+    <p>(iii) <input class="blank-input narrow"> you please give me your pen for a while?<br>(a) will (b) would (c) can (d) could</p>
+    <p>(iv) I promise I <input class="blank-input narrow"> never tell a lie.<br>(a) shall (b) should (c) would (d) will</p>
+    <p>(v) <input class="blank-input narrow"> I cook food for you?<br>(a) shall (b) will (c) can (d) may</p>
+    <p>(vi) We <input class="blank-input narrow"> help the needy.<br>(a) will (b) shall (c) must (d) should</p>
+    <p>(vii) It is cloudy. It <input class="blank-input narrow"> rain today.<br>(a) can (b) may (c) will (d) shall</p>
+    <p>(viii) I <input class="blank-input narrow"> do something for my friend as he is in trouble.<br>(a) can (b) shall (c) must (d) will</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(i) c &nbsp;·&nbsp; (ii) a &nbsp;·&nbsp; (iii) d &nbsp;·&nbsp; (iv) a &nbsp;·&nbsp; (v) a &nbsp;·&nbsp; (vi) c &nbsp;·&nbsp; (vii) b &nbsp;·&nbsp; (viii) c</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">11. Complete the following passage by filling in the blanks with suitable words. <span class="marks">(4 marks)</span></p>
+    <p>There is a road widening going on (i) <input class="blank-input narrow"> our neighbourhood. A bulldozer (ii) <input class="blank-input narrow"> been digging alongside the existing road. In (iii) <input class="blank-input narrow"> process, many phone lines have (iv) <input class="blank-input narrow"> broken. The people of the locality (v) <input class="blank-input narrow"> get in touch (vi) <input class="blank-input narrow"> anyone due (vii) <input class="blank-input narrow"> the non-functional telephones. This is causing (viii) <input class="blank-input narrow"> great deal of inconvenience to the residents.</p>
+    <p style="font-size:14px; color:var(--ink-faint);">
+      (i) (a) in (b) into (c) within (d) out &nbsp;·&nbsp; (ii) (a) have (b) has (c) had (d) having &nbsp;·&nbsp; (iii) (a) that (b) the (c) this (d) a<br>
+      (iv) (a) be (b) being (c) is (d) been &nbsp;·&nbsp; (v) (a) shall not (b) cannot (c) would not (d) may not &nbsp;·&nbsp; (vi) (a) by (b) of (c) for (d) with<br>
+      (vii) (a) in (b) to (c) for (d) with &nbsp;·&nbsp; (viii) (a) a (b) an (c) the (d) this
+    </p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(i) a in &nbsp;·&nbsp; (ii) b has &nbsp;·&nbsp; (iii) c this &nbsp;·&nbsp; (iv) d been &nbsp;·&nbsp; (v) b cannot &nbsp;·&nbsp; (vi) d with &nbsp;·&nbsp; (vii) b to &nbsp;·&nbsp; (viii) a a</p></div>
+  </div>
+
+  <h2 id="s5"><span class="num">5.</span>Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>Reading: always answer comprehension questions in your own words where possible, and lift the exact word from the poem or passage only when the question explicitly asks for a "word that means the same as."</li>
+    <li>Writing: identify the format first (notice, diary, letter, message, application, article, speech, e-mail, biographical sketch, story) and follow its layout exactly — marks are given for format as well as content.</li>
+    <li>Editing (error correction): read line by line; common errors are wrong verb agreement, wrong preposition, and wrong article — check subject-verb agreement first.</li>
+    <li>Editing (omission): read each line aloud — the missing word is usually a preposition, article, or auxiliary verb that would make the sentence flow naturally.</li>
+    <li>Cloze passages: read the whole sentence (not just around the blank) before choosing an option — tense and subject often depend on words later in the sentence.</li>
+    <li>Voice change and narration: identify the tense of the original sentence first, then apply the standard shift rules — these MCQs test whether you know the rule, not just the vocabulary.</li>
+    <li>Always check the marks allotted next to each question — it tells you roughly how many points/sentences your answer should cover.</li>
+  </ul>
+
+  <footer>Class 8 · English · Assessment Papers · Lesson 30 — Sample Assessment Papers (Sem 2).</footer>
+</div>
+</body>
+</html>

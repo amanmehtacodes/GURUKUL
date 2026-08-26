@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 24 — Active and Passive Voice | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:5px; break-inside:avoid; font-size:14px;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700; color:var(--c3);
+    margin:34px 0 12px; padding-top:16px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  h3{font-family:var(--font-mono); font-size:15px; font-weight:700; color:var(--violet); margin:18px 0 8px;}
+  p{margin:0 0 12px;}
+  ul, ol.plain{padding-left:22px; margin:0 0 14px;}
+  ul li, ol.plain li{margin-bottom:7px;}
+  strong{color:var(--ink);}
+  .eg{color:var(--ink-soft);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 20px;
+  }
+  .callout p{margin:0;}
+  .callout strong{color:var(--ink);}
+
+  .tablewrap{overflow-x:auto; margin:12px 0 22px;}
+  table.ref-table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:640px;}
+  table.ref-table th{
+    font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.03em;
+    text-align:left; color:var(--c3); border-bottom:2px solid var(--line-strong); padding:8px 9px;
+  }
+  table.ref-table td{border-bottom:1px solid var(--line); padding:8px 9px; color:var(--ink-soft); vertical-align:top;}
+  table.ref-table tr:last-child td{border-bottom:none;}
+  table.ref-table td strong, table.ref-table td.word{color:var(--ink); font-weight:700;}
+  table.ref-table code{font-family:var(--font-mono); font-size:12px; color:var(--violet);}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:14px 0 26px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:44px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol{margin:0; padding-left:20px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  .ocr-note{
+    border:1px dashed var(--violet); border-radius:8px; background:var(--accent2-soft);
+    color:var(--ink-soft); font-size:14px; font-style:italic; padding:10px 14px; margin:10px 0 16px;
+  }
+  .ocr-note b{color:var(--violet); font-style:normal; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; margin-right:6px;}
+
+  .checklist{background:var(--accent2-soft); border:1px solid var(--line-strong); border-radius:var(--radius-md); padding:18px 24px;}
+  .checklist ul{margin:0;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar · Chapter-11</div>
+  <h1 class="title">Lesson 24 — Active and Passive Voice</h1>
+  <p class="subtitle">Every tense, modal, and special sentence type converted from active to passive — the full pattern tables plus all twelve practice exercises made interactive.</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#s1">1. What Is Active and Passive Voice?</a></li>
+      <li><a href="#s2">2. Steps and Rules for Changing Voice</a></li>
+      <li><a href="#s3">3. Master Reference — Verb Change by Tense</a></li>
+      <li><a href="#s4">4. Simple Present Tense</a></li>
+      <li><a href="#s5">5. Simple Past Tense</a></li>
+      <li><a href="#s6">6. Simple Future Tense</a></li>
+      <li><a href="#s7">7. Present Continuous Tense</a></li>
+      <li><a href="#s8">8. Past Continuous Tense</a></li>
+      <li><a href="#s9">9. Present Perfect Tense</a></li>
+      <li><a href="#s10">10. Past Perfect Tense</a></li>
+      <li><a href="#s11">11. Future Perfect Tense</a></li>
+      <li><a href="#s12">12. Sentences with Modal Auxiliaries</a></li>
+      <li><a href="#s13">13. Interrogative Sentences with Wh-word</a></li>
+      <li><a href="#s14">14. Imperative Sentences</a></li>
+      <li><a href="#s15">15. Sentences with Prepositional Verbs</a></li>
+      <li><a href="#s16">16. Transitive Verbs with Double Objects</a></li>
+      <li><a href="#s17">17. Sentences with Subject Understood</a></li>
+      <li><a href="#s18">18. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="num">1.</span>What Is Active and Passive Voice?</h2>
+  <p>Read the following pair of sentences carefully.</p>
+  <ol class="plain">
+    <li class="eg">He reads a book.</li>
+    <li class="eg">A book is read by him.</li>
+  </ol>
+  <p>The meaning of both sentences is the same. However, the structure is different. In Sentence 1, the subject of the verb 'reads' is 'He'. Here, the subject 'he' is the active doer of the verb/action. Hence, the sentence is in active voice.</p>
+  <p>In sentence 2, the subject of the verb 'is read' is 'A book'. Here, the subject is not the active doer of the verb/action. It is the passive receiver of the action. Hence, the sentence is in passive voice.</p>
+  <p><strong>Active Voice:</strong> When the verb shows that the subject does something, it is said to be in Active Voice.<br><strong>Passive Voice:</strong> When the verb shows that something is done to the subject, it is said to be in Passive Voice.</p>
+  <p>Now read the following examples carefully and observe how sentences are changed from active to passive voice.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Boys are playing cricket.</td><td>Cricket is being played by boys.</td></tr>
+      <tr><td>Children made a noise.</td><td>A noise was made by children.</td></tr>
+      <tr><td>She teaches us maths.</td><td>We are taught maths by her.</td></tr>
+      <tr><td>This box contains sweets.</td><td>Sweets are contained in this box.</td></tr>
+      <tr><td>He knows me.</td><td>I am known to him.</td></tr>
+    </table>
+  </div>
+
+  <h2 id="s2"><span class="num">2.</span>Steps and Rules for Changing Voice</h2>
+  <p>The following steps are followed while converting a sentence from active to passive voice.</p>
+  <ol class="plain">
+    <li>The object of the active verb is put in the place of subject.</li>
+    <li>The active verb is changed into passive form by using a form of 'be' according to the tense of the active voice and the III form of the verb. Other auxiliaries are also used according to the tense.</li>
+    <li>The passive verb should be in agreement with the object which is brought forward.</li>
+    <li>The subject is kept after the passive verb and it is preceded by the preposition 'by', thus converting the subject into agent or doer.</li>
+    <li>In most of the cases preposition 'by' is used before agent. In certain cases preposition other than 'by' is used.</li>
+  </ol>
+  <h3>Important Rules to Follow While Changing the Active Voice into Passive Voice</h3>
+  <ol class="plain">
+    <li>Don't change the tense.</li>
+    <li>The passive voice of future continuous tense and all perfect continuous tenses is not possible.</li>
+    <li>Don't change the type of sentence.</li>
+    <li>Subject-verb agreement must be followed in passive voice too.</li>
+  </ol>
+
+  <h2 id="s3"><span class="num">3.</span>Master Reference — Change in Verbs from Active to Passive</h2>
+  <p>This master table lays out the affirmative, negative, interrogative, and interrogative-negative pattern for every tense before each is treated in full detail below.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Tense</th><th>Active Pattern</th><th>Active Example</th><th>Passive Pattern</th><th>Passive Example</th></tr>
+      <tr><td rowspan="4">Simple Present</td><td><code>S+V1+(s/es)+O</code></td><td>He plays cricket.</td><td><code>O+is/am/are+V3+by+S</code></td><td>Cricket is played by him.</td></tr>
+      <tr><td><code>S+does/do not+V1+O</code></td><td>He does not play cricket.</td><td><code>O+is/am/are+not+V3+by+S</code></td><td>Cricket is not played by him.</td></tr>
+      <tr><td><code>Does/do+S+V1+O</code></td><td>Does he play cricket?</td><td><code>Is/am/are+O+V3+by+S</code></td><td>Is cricket played by him?</td></tr>
+      <tr><td><code>Does/do+S+not+V1+O</code></td><td>Does he not play cricket?</td><td><code>Is/am/are+O+not+V3+by+S</code></td><td>Is cricket not played by him?</td></tr>
+      <tr><td rowspan="4">Simple Past</td><td><code>S+V2+O</code></td><td>He played cricket.</td><td><code>O+was/were+V3+by+S</code></td><td>Cricket was played by him.</td></tr>
+      <tr><td><code>S+did not+V1+O</code></td><td>He did not play cricket.</td><td><code>O+was/were+not+V3+by+S</code></td><td>Cricket was not played by him.</td></tr>
+      <tr><td><code>Did+S+V1+O</code></td><td>Did he play cricket?</td><td><code>Was/were+O+V3+by+S</code></td><td>Was cricket played by him?</td></tr>
+      <tr><td><code>Did+S+not+V1+O</code></td><td>Did he not play cricket?</td><td><code>Was/were+O+not+V3+by+S</code></td><td>Was cricket not played by him?</td></tr>
+      <tr><td rowspan="4">Simple Future</td><td><code>S+will/shall+V1+O</code></td><td>He will play cricket.</td><td><code>O+will/shall+be+V3+by+S</code></td><td>Cricket will be played by him.</td></tr>
+      <tr><td><code>S+will/shall+not+V1+O</code></td><td>He will not play cricket.</td><td><code>O+will/shall+not+be+V3+by+S</code></td><td>Cricket will not be played by him.</td></tr>
+      <tr><td><code>Will/shall+S+V1+O</code></td><td>Will he play cricket?</td><td><code>Will/shall+O+be+V3+by+S</code></td><td>Will cricket be played by him?</td></tr>
+      <tr><td><code>Will/shall+S+not+V1+O</code></td><td>Will he not play cricket?</td><td><code>Will/shall+O+not+be+V3+by+S</code></td><td>Will cricket not be played by him?</td></tr>
+      <tr><td rowspan="4">Present Continuous</td><td><code>S+is/am/are+V1-ing+O</code></td><td>He is playing cricket.</td><td><code>O+is/am/are+being+V3+by+S</code></td><td>Cricket is being played by him.</td></tr>
+      <tr><td><code>S+is/am/are+not+V1-ing+O</code></td><td>He is not playing cricket.</td><td><code>O+is/am/are+not+being+V3+by+S</code></td><td>Cricket is not being played by him.</td></tr>
+      <tr><td><code>Is/am/are+S+V1-ing+O</code></td><td>Is he playing cricket?</td><td><code>Is/am/are+O+being+V3+by+S</code></td><td>Is cricket being played by him?</td></tr>
+      <tr><td><code>Is/am/are+S+not+V1-ing+O</code></td><td>Is he not playing cricket?</td><td><code>Is/am/are+O+not+being+V3+by+S</code></td><td>Is cricket not being played by him?</td></tr>
+      <tr><td rowspan="4">Past Continuous</td><td><code>S+was/were+V1-ing+O</code></td><td>He was playing cricket.</td><td><code>O+was/were+being+V3+by+S</code></td><td>Cricket was being played by him.</td></tr>
+      <tr><td><code>S+was/were+not+V1-ing+O</code></td><td>He was not playing cricket.</td><td><code>O+was/were+not+being+V3+by+S</code></td><td>Cricket was not being played by him.</td></tr>
+      <tr><td><code>Was/were+S+V1-ing+O</code></td><td>Was he playing cricket?</td><td><code>Was/were+O+being+V3+by+S</code></td><td>Was cricket being played by him?</td></tr>
+      <tr><td><code>Was/were+S+not+V1-ing+O</code></td><td>Was he not playing cricket?</td><td><code>Was/were+O+not+being+V3+by+S</code></td><td>Was cricket not being played by him?</td></tr>
+      <tr><td rowspan="4">Present Perfect</td><td><code>S+has/have+V3+O</code></td><td>He has played cricket.</td><td><code>O+has/have+been+V3+by+S</code></td><td>Cricket has been played by him.</td></tr>
+      <tr><td><code>S+has/have+not+V3+O</code></td><td>He has not played cricket.</td><td><code>O+has/have+not+been+V3+by+S</code></td><td>Cricket has not been played by him.</td></tr>
+      <tr><td><code>Has/have+S+V3+O</code></td><td>Has he played cricket?</td><td><code>Has/have+O+been+V3+by+S</code></td><td>Has cricket been played by him?</td></tr>
+      <tr><td><code>Has/have+S+not+V3+O</code></td><td>Has he not played cricket?</td><td><code>Has/have+O+not+been+V3+by+S</code></td><td>Has cricket not been played by him?</td></tr>
+      <tr><td rowspan="4">Past Perfect</td><td><code>S+had+V3+O</code></td><td>He had played cricket.</td><td><code>O+had+been+V3+by+S</code></td><td>Cricket had been played by him.</td></tr>
+      <tr><td><code>S+had+not+V3+O</code></td><td>He had not played cricket.</td><td><code>O+had+not+been+V3+by+S</code></td><td>Cricket had not been played by him.</td></tr>
+      <tr><td><code>Had+S+V3+O</code></td><td>Had he played cricket?</td><td><code>Had+O+been+V3+by+S</code></td><td>Had cricket been played by him?</td></tr>
+      <tr><td><code>Had+S+not+V3+O</code></td><td>Had he not played cricket?</td><td><code>Had+O+not+been+V3+by+S</code></td><td>Had cricket not been played by him?</td></tr>
+      <tr><td rowspan="4">Future Perfect</td><td><code>S+will/shall+have+V3+O</code></td><td>He will have played cricket.</td><td><code>O+will/shall+have+been+V3+by+S</code></td><td>Cricket will have been played by him.</td></tr>
+      <tr><td><code>S+will/shall+not+have+V3+O</code></td><td>He will not have played cricket.</td><td><code>O+will/shall+not+have+been+V3+by+S</code></td><td>Cricket will not have been played by him.</td></tr>
+      <tr><td><code>Will/shall+S+have+V3+O</code></td><td>Will he have played cricket?</td><td><code>Will/shall+O+have+been+V3+by+S</code></td><td>Will cricket have been played by him?</td></tr>
+      <tr><td><code>Will/shall+S+not+have+V3+O</code></td><td>Will he not have played cricket?</td><td><code>Will/shall+O+not+have+been+V3+by+S</code></td><td>Will cricket not have been played by him?</td></tr>
+      <tr><td rowspan="4">Modal Auxiliary</td><td><code>S+Modal+V1+O</code></td><td>He can play cricket.</td><td><code>O+Modal+be+V3+by+S</code></td><td>Cricket can be played by him.</td></tr>
+      <tr><td><code>S+Modal+not+V1+O</code></td><td>He cannot play cricket.</td><td><code>O+Modal+not+be+V3+by+S</code></td><td>Cricket cannot be played by him.</td></tr>
+      <tr><td><code>Modal+S+V1+O</code></td><td>Can he play cricket?</td><td><code>Modal+O+be+V3+by+S</code></td><td>Can cricket be played by him?</td></tr>
+      <tr><td><code>Modal+S+not+V1+O</code></td><td>Can he not play cricket?</td><td><code>Modal+O+not+be+V3+by+S</code></td><td>Can cricket not be played by him?</td></tr>
+      <tr><td rowspan="4">Infinitive</td><td><code>S+V+to+V1+O</code></td><td>He wants to play cricket.<br>He does not want to play cricket.</td><td><code>S+V+O+to+be+V3</code></td><td>He wants cricket to be played.<br>He does not want cricket to be played.</td></tr>
+      <tr><td colspan="2"></td><td colspan="2"></td></tr>
+    </table>
+  </div>
+
+  <h2 id="s4"><span class="num">4.</span>Simple Present Tense</h2>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Type of Sentence</th><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Affirmative</td><td><code>S+V1+(s/es)+O</code><br>He eats an apple.</td><td><code>O+is/am/are+V3+by+S</code><br>An apple is eaten by him.</td></tr>
+      <tr><td>Negative</td><td><code>S+does/do not+V1+O</code><br>He does not eat an apple.</td><td><code>O+is/am/are+not+V3+by+S</code><br>An apple is not eaten by him.</td></tr>
+      <tr><td>Interrogative</td><td><code>Does/do+S+V1+O</code><br>Does he eat an apple?</td><td><code>Is/am/are+O+V3+by+S</code><br>Is an apple eaten by him?</td></tr>
+      <tr><td>Interrogative Negative</td><td><code>Does/do+S+not+V1+O</code><br>Does he not eat an apple?</td><td><code>Is/am/are+O+not+V3+by+S</code><br>Is an apple not eaten by him?</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>Riya sings a song. <textarea class="answer-box"></textarea></li>
+      <li>Mohit flies a kite. <textarea class="answer-box"></textarea></li>
+      <li>He writes a letter. <textarea class="answer-box"></textarea></li>
+      <li>I like mangoes. <textarea class="answer-box"></textarea></li>
+      <li>He does not buy a book. <textarea class="answer-box"></textarea></li>
+      <li>They do not obey their father. <textarea class="answer-box"></textarea></li>
+      <li>Does your mother cook tasty food? <textarea class="answer-box"></textarea></li>
+      <li>Do the children paint pictures? <textarea class="answer-box"></textarea></li>
+      <li>Do you like me? <textarea class="answer-box"></textarea></li>
+      <li>Does Radhika not help the needy? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>A song is sung by Riya.</li>
+        <li>A kite is flown by Mohit.</li>
+        <li>A letter is written by him.</li>
+        <li>Mangoes are liked by me.</li>
+        <li>A book is not bought by him.</li>
+        <li>Their father is not obeyed by them.</li>
+        <li>Is tasty food cooked by your mother?</li>
+        <li>Are pictures painted by the children?</li>
+        <li>Am I liked by you?</li>
+        <li>Is the needy not helped by Radhika?</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s5"><span class="num">5.</span>Simple Past Tense</h2>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Type of Sentence</th><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Affirmative</td><td><code>S+V2+O</code><br>He ate an apple.</td><td><code>O+was/were+V3+by+S</code><br>An apple was eaten by him.</td></tr>
+      <tr><td>Negative</td><td><code>S+did not+V1+O</code><br>He did not eat an apple.</td><td><code>O+was/were+not+V3+by+S</code><br>An apple was not eaten by him.</td></tr>
+      <tr><td>Interrogative</td><td><code>Did+S+V1+O</code><br>Did he eat an apple?</td><td><code>Was/were+O+V3+by+S</code><br>Was an apple eaten by him?</td></tr>
+      <tr><td>Interrogative Negative</td><td><code>Did+S+not+V1+O</code><br>Did he not eat an apple?</td><td><code>Was/were+O+not+V3+by+S</code><br>Was an apple not eaten by him?</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>Richa sang a song. <textarea class="answer-box"></textarea></li>
+      <li>Children read their books. <textarea class="answer-box"></textarea></li>
+      <li>They built a new house. <textarea class="answer-box"></textarea></li>
+      <li>Did he open the window? <textarea class="answer-box"></textarea></li>
+      <li>She did not take coffee. <textarea class="answer-box"></textarea></li>
+      <li>The boy did not welcome his friends. <textarea class="answer-box"></textarea></li>
+      <li>Did she get any message? <textarea class="answer-box"></textarea></li>
+      <li>Mina did not write letters. <textarea class="answer-box"></textarea></li>
+      <li>Did you not buy any clothes? <textarea class="answer-box"></textarea></li>
+      <li>The teacher did not correct my notebook. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>A song was sung by Richa.</li>
+        <li>Their books were read by children.</li>
+        <li>A new house was built by them.</li>
+        <li>Was the window opened by him?</li>
+        <li>Coffee was not taken by her.</li>
+        <li>His friends were not welcomed by the boy.</li>
+        <li>Was any message got by her?</li>
+        <li>Letters were not written by Mina.</li>
+        <li>Were any clothes not bought by you?</li>
+        <li>My notebook was not corrected by the teacher.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s6"><span class="num">6.</span>Simple Future Tense</h2>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Type of Sentence</th><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Affirmative</td><td><code>S+will/shall+V1+O</code><br>He will eat an apple.</td><td><code>O+will/shall+be+V3+by+S</code><br>An apple will be eaten by him.</td></tr>
+      <tr><td>Negative</td><td><code>S+will/shall+not+V1+O</code><br>He will not eat an apple.</td><td><code>O+will/shall+not+be+V3+by+S</code><br>An apple will not be eaten by him.</td></tr>
+      <tr><td>Interrogative</td><td><code>Will/shall+S+V1+O</code><br>Will he eat an apple?</td><td><code>Will/shall+O+be+V3+by+S</code><br>Will an apple be eaten by him?</td></tr>
+      <tr><td>Interrogative Negative</td><td><code>Will/shall+S+not+V1+O</code><br>Will he not eat an apple?</td><td><code>Will/shall+O+not+be+V3+by+S</code><br>Will an apple not be eaten by him?</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>Riya will tell a story. <textarea class="answer-box"></textarea></li>
+      <li>He will attend a party tomorrow. <textarea class="answer-box"></textarea></li>
+      <li>The shopkeepers will close the shops at 9pm. <textarea class="answer-box"></textarea></li>
+      <li>I will always obey my parents. <textarea class="answer-box"></textarea></li>
+      <li>We shall say our prayers. <textarea class="answer-box"></textarea></li>
+      <li>Will you not finish your work today? <textarea class="answer-box"></textarea></li>
+      <li>Will they kill the snake? <textarea class="answer-box"></textarea></li>
+      <li>She will not tell a lie. <textarea class="answer-box"></textarea></li>
+      <li>Shall I help you? <textarea class="answer-box"></textarea></li>
+      <li>Will the children not miss their school bus? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>A story will be told by Riya.</li>
+        <li>A party will be attended by him tomorrow.</li>
+        <li>The shops will be closed by the shopkeepers at 9pm.</li>
+        <li>My parents will always be obeyed by me.</li>
+        <li>Our prayers shall be said by us.</li>
+        <li>Will your work not be finished by you today?</li>
+        <li>Will the snake be killed by them?</li>
+        <li>A lie will not be told by her.</li>
+        <li>Shall you be helped by me?</li>
+        <li>Will their school bus not be missed by the children?</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s7"><span class="num">7.</span>Present Continuous Tense</h2>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Type of Sentence</th><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Affirmative</td><td><code>S+is/am/are+V1-ing+O</code><br>He is eating an apple.</td><td><code>O+is/am/are+being+V3+by+S</code><br>An apple is being eaten by him.</td></tr>
+      <tr><td>Negative</td><td><code>S+is/am/are+not+V1-ing+O</code><br>He is not eating an apple.</td><td><code>O+is/am/are+not+being+V3+by+S</code><br>An apple is not being eaten by him.</td></tr>
+      <tr><td>Interrogative</td><td><code>Is/am/are+S+V1-ing+O</code><br>Is he eating an apple?</td><td><code>Is/am/are+O+being+V3+by+S</code><br>Is an apple being eaten by him?</td></tr>
+      <tr><td>Interrogative Negative</td><td><code>Is/am/are+S+not+V1-ing+O</code><br>Is he not eating an apple?</td><td><code>Is/am/are+O+not+being+V3+by+S</code><br>Is an apple not being eaten by him?</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>Girls are singing a song. <textarea class="answer-box"></textarea></li>
+      <li>The carpenter is making a chair. <textarea class="answer-box"></textarea></li>
+      <li>People are cutting trees in this forest. <textarea class="answer-box"></textarea></li>
+      <li>My father is reading newspaper. <textarea class="answer-box"></textarea></li>
+      <li>They are completing their work. <textarea class="answer-box"></textarea></li>
+      <li>He is not plucking the flower. <textarea class="answer-box"></textarea></li>
+      <li>Are you following me? <textarea class="answer-box"></textarea></li>
+      <li>Is he flying a kite? <textarea class="answer-box"></textarea></li>
+      <li>Are the workers not repairing the roads? <textarea class="answer-box"></textarea></li>
+      <li>Am I troubling you? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>A song is being sung by girls.</li>
+        <li>A chair is being made by the carpenter.</li>
+        <li>Trees are being cut in this forest by people.</li>
+        <li>A newspaper is being read by my father.</li>
+        <li>Their work is being completed by them.</li>
+        <li>The flower is not being plucked by him.</li>
+        <li>Am I being followed by you?</li>
+        <li>Is a kite being flown by him?</li>
+        <li>Are the roads not being repaired by the workers?</li>
+        <li>Are you being troubled by me?</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s8"><span class="num">8.</span>Past Continuous Tense</h2>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Type of Sentence</th><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Affirmative</td><td><code>S+was/were+V1-ing+O</code><br>He was eating an apple.</td><td><code>O+was/were+being+V3+by+S</code><br>An apple was being eaten by him.</td></tr>
+      <tr><td>Negative</td><td><code>S+was/were+not+V1-ing+O</code><br>He was not eating an apple.</td><td><code>O+was/were+not+being+V3+by+S</code><br>An apple was not being eaten by him.</td></tr>
+      <tr><td>Interrogative</td><td><code>Was/were+S+V1-ing+O</code><br>Was he eating an apple?</td><td><code>Was/were+O+being+V3+by+S</code><br>Was an apple being eaten by him?</td></tr>
+      <tr><td>Interrogative Negative</td><td><code>Was/were+S+not+V1-ing+O</code><br>Was he not eating an apple?</td><td><code>Was/were+O+not+being+V3+by+S</code><br>Was an apple not being eaten by him?</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>We were taking exercise. <textarea class="answer-box"></textarea></li>
+      <li>Students were preparing their lessons. <textarea class="answer-box"></textarea></li>
+      <li>He was not reading a book. <textarea class="answer-box"></textarea></li>
+      <li>They were not killing tigers. <textarea class="answer-box"></textarea></li>
+      <li>Were they stealing money? <textarea class="answer-box"></textarea></li>
+      <li>Were the students revising their lessons? <textarea class="answer-box"></textarea></li>
+      <li>Was I disturbing you? <textarea class="answer-box"></textarea></li>
+      <li>The teacher was not scolding me. <textarea class="answer-box"></textarea></li>
+      <li>Were you not taking lunch? <textarea class="answer-box"></textarea></li>
+      <li>He was not avoiding me. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>Exercise was being taken by us.</li>
+        <li>Their lessons were being prepared by students.</li>
+        <li>A book was not being read by him.</li>
+        <li>Tigers were not being killed by them.</li>
+        <li>Was money being stolen by them?</li>
+        <li>Were their lessons being revised by the students?</li>
+        <li>Were you being disturbed by me?</li>
+        <li>I was not being scolded by the teacher.</li>
+        <li>Was lunch not being taken by you?</li>
+        <li>I was not being avoided by him.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s9"><span class="num">9.</span>Present Perfect Tense</h2>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Type of Sentence</th><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Affirmative</td><td><code>S+has/have+V3+O</code><br>He has eaten an apple.</td><td><code>O+has/have+been+V3+by+S</code><br>An apple has been eaten by him.</td></tr>
+      <tr><td>Negative</td><td><code>S+has/have+not+V3+O</code><br>He has not eaten an apple.</td><td><code>O+has/have+not+been+V3+by+S</code><br>An apple has not been eaten by him.</td></tr>
+      <tr><td>Interrogative</td><td><code>Has/have+S+V3+O</code><br>Has he eaten an apple?</td><td><code>Has/have+O+been+V3+by+S</code><br>Has an apple been eaten by him?</td></tr>
+      <tr><td>Interrogative Negative</td><td><code>Has/have+S+not+V3+O</code><br>Has he not eaten an apple?</td><td><code>Has/have+O+not+been+V3+by+S</code><br>Has an apple not been eaten by him?</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>I have cleaned my room. <textarea class="answer-box"></textarea></li>
+      <li>She has closed the windows. <textarea class="answer-box"></textarea></li>
+      <li>My mother has said her prayers. <textarea class="answer-box"></textarea></li>
+      <li>My father has not bought a new car. <textarea class="answer-box"></textarea></li>
+      <li>Students have not prepared presentations. <textarea class="answer-box"></textarea></li>
+      <li>Have you posted the letters? <textarea class="answer-box"></textarea></li>
+      <li>Has he painted a picture? <textarea class="answer-box"></textarea></li>
+      <li>Have your parents adopted this girl? <textarea class="answer-box"></textarea></li>
+      <li>Has the gardener watered the plants? <textarea class="answer-box"></textarea></li>
+      <li>Have you not broken the window? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>My room has been cleaned by me.</li>
+        <li>The windows have been closed by her.</li>
+        <li>Her prayers have been said by my mother.</li>
+        <li>A new car has not been bought by my father.</li>
+        <li>Presentations have not been prepared by students.</li>
+        <li>Have the letters been posted by you?</li>
+        <li>Has a picture been painted by him?</li>
+        <li>Has this girl been adopted by your parents?</li>
+        <li>Have the plants been watered by the gardener?</li>
+        <li>Has the window not been broken by you?</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s10"><span class="num">10.</span>Past Perfect Tense</h2>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Type of Sentence</th><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Affirmative</td><td><code>S+had+V3+O</code><br>He had eaten an apple.</td><td><code>O+had+been+V3+by+S</code><br>An apple had been eaten by him.</td></tr>
+      <tr><td>Negative</td><td><code>S+had not+V3+O</code><br>He had not eaten an apple.</td><td><code>O+had+not+been+V3+by+S</code><br>An apple had not been eaten by him.</td></tr>
+      <tr><td>Interrogative</td><td><code>Had+S+V3+O</code><br>Had he eaten an apple?</td><td><code>Had+O+been+V3+by+S</code><br>Had an apple been eaten by him?</td></tr>
+      <tr><td>Interrogative Negative</td><td><code>Had+S+not+V3+O</code><br>Had he not eaten an apple?</td><td><code>Had+O+not+been+V3+by+S</code><br>Had an apple not been eaten by him?</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>The peon had rung the bell. <textarea class="answer-box"></textarea></li>
+      <li>He had not stolen my camera. <textarea class="answer-box"></textarea></li>
+      <li>He had seen some lions. <textarea class="answer-box"></textarea></li>
+      <li>They had covered their faces. <textarea class="answer-box"></textarea></li>
+      <li>Boys had visited the museum. <textarea class="answer-box"></textarea></li>
+      <li>Had the team won the match? <textarea class="answer-box"></textarea></li>
+      <li>The clerk had not checked the accounts. <textarea class="answer-box"></textarea></li>
+      <li>Had she insulted you? <textarea class="answer-box"></textarea></li>
+      <li>Had they not crossed the river? <textarea class="answer-box"></textarea></li>
+      <li>They had not chosen their representative. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>The bell had been rung by the peon.</li>
+        <li>My camera had not been stolen by him.</li>
+        <li>Some lions had been seen by him.</li>
+        <li>Their faces had been covered by them.</li>
+        <li>The museum had been visited by boys.</li>
+        <li>Had the match been won by the team?</li>
+        <li>The accounts had not been checked by the clerk.</li>
+        <li>Had you been insulted by her?</li>
+        <li>Had the river not been crossed by them?</li>
+        <li>Their representative had not been chosen by them.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s11"><span class="num">11.</span>Future Perfect Tense</h2>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Type of Sentence</th><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Affirmative</td><td><code>S+will/shall+have+V3+O</code><br>He will have eaten an apple.</td><td><code>O+will/shall+have+been+V3+by+S</code><br>An apple will have been eaten by him.</td></tr>
+      <tr><td>Negative</td><td><code>S+will/shall+not+have+V3+O</code><br>He will not have eaten an apple.</td><td><code>O+will/shall+not+have+been+V3+by+S</code><br>An apple will not have been eaten by him.</td></tr>
+      <tr><td>Interrogative</td><td><code>Will/shall+S+have+V3+O</code><br>Will he have eaten an apple?</td><td><code>Will/shall+O+have+been+V3+by+S</code><br>Will an apple have been eaten by him?</td></tr>
+      <tr><td>Interrogative Negative</td><td><code>Will/shall+S+not+have+V3+O</code><br>Will he not have eaten an apple?</td><td><code>Will/shall+O+not+have+been+V3+by+S</code><br>Will an apple not have been eaten by him?</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>She will have kept her promise. <textarea class="answer-box"></textarea></li>
+      <li>They will have won the scholarship. <textarea class="answer-box"></textarea></li>
+      <li>He will have learnt English. <textarea class="answer-box"></textarea></li>
+      <li>We shall not have wasted our time. <textarea class="answer-box"></textarea></li>
+      <li>The teacher will not have punished these boys. <textarea class="answer-box"></textarea></li>
+      <li>Will they have spoken the truth? <textarea class="answer-box"></textarea></li>
+      <li>Rajan will not have solved the sums. <textarea class="answer-box"></textarea></li>
+      <li>We shall have had our dinner. <textarea class="answer-box"></textarea></li>
+      <li>Will you not have received the invitation? <textarea class="answer-box"></textarea></li>
+      <li>Will they have dusted the carpet? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>Her promise will have been kept by her.</li>
+        <li>The scholarship will have been won by them.</li>
+        <li>English will have been learnt by him.</li>
+        <li>Our time shall not have been wasted by us.</li>
+        <li>These boys will not have been punished by the teacher.</li>
+        <li>Will the truth have been spoken by them?</li>
+        <li>The sums will not have been solved by Rajan.</li>
+        <li>Our dinner shall have been had by us.</li>
+        <li>Will the invitation not have been received by you?</li>
+        <li>Will the carpet have been dusted by them?</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s12"><span class="num">12.</span>Sentences with Modal Auxiliaries</h2>
+  <p><strong>Active:</strong> Subject + can/could/may/might/should/ought to/must/used to/would + V1 + Object<br><strong>Passive:</strong> Object + can/could/may/might/should/ought to/must/used to/would + be + V3 + by + Subject</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Type of Sentence</th><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Affirmative</td><td><code>S+Modal+V1+O</code><br>He can solve this sum.</td><td><code>O+Modal+be+V3+by+S</code><br>This sum can be solved by him.</td></tr>
+      <tr><td>Negative</td><td><code>S+Modal+not+V1+O</code><br>He cannot solve this sum.</td><td><code>O+Modal+not+be+V3+by+S</code><br>This sum cannot be solved by him.</td></tr>
+      <tr><td>Interrogative</td><td><code>Modal+S+V1+O</code><br>Can he solve this sum?</td><td><code>Modal+O+be+V3+by+S</code><br>Can this sum be solved by him?</td></tr>
+      <tr><td>Interrogative Negative</td><td><code>Modal+S+not+V1+O</code><br>Can he not solve this sum?</td><td><code>Modal+O+not+be+V3+by+S</code><br>Can this sum not be solved by him?</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>The rich should help the poor. <textarea class="answer-box"></textarea></li>
+      <li>You can drive a car. <textarea class="answer-box"></textarea></li>
+      <li>You must do your duty. <textarea class="answer-box"></textarea></li>
+      <li>He may win the case. <textarea class="answer-box"></textarea></li>
+      <li>He could catch the train. <textarea class="answer-box"></textarea></li>
+      <li>They ought to respect their elders. <textarea class="answer-box"></textarea></li>
+      <li>Would you take a cup of tea? <textarea class="answer-box"></textarea></li>
+      <li>He might not like the movie. <textarea class="answer-box"></textarea></li>
+      <li>He need not trouble you. <textarea class="answer-box"></textarea></li>
+      <li>He dare not oppose me. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>The poor should be helped by the rich.</li>
+        <li>A car can be driven by you.</li>
+        <li>Your duty must be done by you.</li>
+        <li>The case may be won by him.</li>
+        <li>The train could be caught by him.</li>
+        <li>Their elders ought to be respected by them.</li>
+        <li>Would a cup of tea be taken by you?</li>
+        <li>The movie might not be liked by him.</li>
+        <li>You need not be troubled by him.</li>
+        <li>I dare not be opposed by him.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s13"><span class="num">13.</span>Interrogative Sentences with Wh-word</h2>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Who has broken the window?</td><td>By whom has the window been broken?</td></tr>
+      <tr><td>What do you want?</td><td>What is wanted by you?</td></tr>
+      <tr><td>Where did you keep your book?</td><td>Where was your book kept by you?</td></tr>
+      <tr><td>Why are you troubling him?</td><td>Why is he being troubled by you?</td></tr>
+      <tr><td>Whom will you inform?</td><td>Who will be informed by you?</td></tr>
+      <tr><td>When did you complete your homework?</td><td>When was your homework completed by you?</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>What did you require? <textarea class="answer-box"></textarea></li>
+      <li>Who has painted this picture? <textarea class="answer-box"></textarea></li>
+      <li>When will you return my book? <textarea class="answer-box"></textarea></li>
+      <li>How will you help him? <textarea class="answer-box"></textarea></li>
+      <li>Who will help you? <textarea class="answer-box"></textarea></li>
+      <li>Whom will you invite? <textarea class="answer-box"></textarea></li>
+      <li>Where had you parked your car? <textarea class="answer-box"></textarea></li>
+      <li>Why have you not done your home work? <textarea class="answer-box"></textarea></li>
+      <li>When did you visit Delhi? <textarea class="answer-box"></textarea></li>
+      <li>Whom did you help? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>What was required by you?</li>
+        <li>By whom has this picture been painted?</li>
+        <li>When will my book be returned by you?</li>
+        <li>How will he be helped by you?</li>
+        <li>By whom will you be helped?</li>
+        <li>Who will be invited by you?</li>
+        <li>Where had your car been parked by you?</li>
+        <li>Why has your homework not been done by you?</li>
+        <li>When was Delhi visited by you?</li>
+        <li>Who was helped by you?</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s14"><span class="num">14.</span>Imperative Sentences</h2>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>Please switch off the fan.</td><td>You are requested to switch off the fan.</td></tr>
+      <tr><td>Open the door.</td><td>Let the door be opened. / You are ordered to open the door.</td></tr>
+      <tr><td>Obey your elders.</td><td>You are advised to obey your elders. / Your elders should be obeyed. / Let your elders be obeyed.</td></tr>
+      <tr><td>Don't tell a lie.</td><td>You are advised not to tell a lie. / Let a lie not be told. / A lie should not be told.</td></tr>
+      <tr><td>Let her come.</td><td>She should be allowed to come. / You are ordered to let her come.</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>Post this letter. <textarea class="answer-box"></textarea></li>
+      <li>Keep your city neat and clean. <textarea class="answer-box"></textarea></li>
+      <li>Don't disturb me. <textarea class="answer-box"></textarea></li>
+      <li>Submit your report by tomorrow. <textarea class="answer-box"></textarea></li>
+      <li>Please bring me a glass of water. <textarea class="answer-box"></textarea></li>
+      <li>Drive your vehicle carefully. <textarea class="answer-box"></textarea></li>
+      <li>Let me accompany you. <textarea class="answer-box"></textarea></li>
+      <li>Sit down. <textarea class="answer-box"></textarea></li>
+      <li>Leave the room at once. <textarea class="answer-box"></textarea></li>
+      <li>Don't tease the dog. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answers</div>
+      <ol>
+        <li>You are requested to post this letter. / Let this letter be posted.</li>
+        <li>You are advised to keep your city neat and clean. / Let your city be kept neat and clean.</li>
+        <li>You are requested not to disturb me. / Let me not be disturbed.</li>
+        <li>You are ordered to submit your report by tomorrow. / Let your report be submitted by tomorrow.</li>
+        <li>You are requested to bring me a glass of water.</li>
+        <li>You are advised to drive your vehicle carefully.</li>
+        <li>I should be allowed to accompany you.</li>
+        <li>You are requested to sit down.</li>
+        <li>You are ordered to leave the room at once.</li>
+        <li>You are advised not to tease the dog. / Let the dog not be teased.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s15"><span class="num">15.</span>Sentences with Prepositional Verbs</h2>
+  <p>A prepositional verb is a verb followed by a preposition. While changing a prepositional verb into passive voice, the preposition must not be dropped.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>He looks after his parents.</td><td>His parents are looked after by him.</td></tr>
+      <tr><td>The children laughed at the beggar.</td><td>The beggar was laughed at by the children.</td></tr>
+      <tr><td>They are cheering up the players.</td><td>The players are being cheered up by them.</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>The thief broke into the house. <textarea class="answer-box"></textarea></li>
+      <li>He is looking for a new job. <textarea class="answer-box"></textarea></li>
+      <li>The boss shouted at the peon. <textarea class="answer-box"></textarea></li>
+      <li>They were listening to music. <textarea class="answer-box"></textarea></li>
+      <li>Who is knocking at the door? <textarea class="answer-box"></textarea></li>
+      <li>The students peeped into the deserted house. <textarea class="answer-box"></textarea></li>
+      <li>They have worked on the project for two months. <textarea class="answer-box"></textarea></li>
+      <li>The British ruled over India for two hundred years. <textarea class="answer-box"></textarea></li>
+      <li>A speeding train ran over more than sixty people. <textarea class="answer-box"></textarea></li>
+      <li>Did the CEO preside over the meeting? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>The house was broken into by the thief.</li>
+        <li>A new job is being looked for by him.</li>
+        <li>The peon was shouted at by the boss.</li>
+        <li>Music was being listened to by them.</li>
+        <li>By whom is the door being knocked at?</li>
+        <li>The deserted house was peeped into by the students.</li>
+        <li>The project has been worked on by them for two months.</li>
+        <li>India was ruled over by the British for two hundred years.</li>
+        <li>More than sixty people were run over by a speeding train.</li>
+        <li>Was the meeting presided over by the CEO?</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s16"><span class="num">16.</span>Transitive Verbs with Double Objects</h2>
+  <p>Transitive verbs with double objects can be changed into passive voice by changing either object into subject. However, it is preferable to make the indirect object the subject of the passive verb.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Active Voice</th><th>Passive Voice (Direct Object)</th><th>Passive Voice (Indirect Object — preferred)</th></tr>
+      <tr><td>She teaches us maths.</td><td>Maths is taught to us by her.</td><td>We are taught maths by her.</td></tr>
+      <tr><td>My father gifted me a watch.</td><td>A watch was gifted to me by my father.</td><td>I was gifted a watch by my father.</td></tr>
+    </table>
+  </div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>My friend lent me some money. <textarea class="answer-box"></textarea></li>
+      <li>The magistrate asked him a few questions. <textarea class="answer-box"></textarea></li>
+      <li>We will offer her coffee. <textarea class="answer-box"></textarea></li>
+      <li>She gave the beggar a coin. <textarea class="answer-box"></textarea></li>
+      <li>We gave the poor man some bananas. <textarea class="answer-box"></textarea></li>
+      <li>My father gave me a piece of advice. <textarea class="answer-box"></textarea></li>
+      <li>Did your grandmother tell you any story? <textarea class="answer-box"></textarea></li>
+      <li>Has the teacher asked you any questions? <textarea class="answer-box"></textarea></li>
+      <li>He will gift you a bicycle. <textarea class="answer-box"></textarea></li>
+      <li>They presented a memento to the chief guest. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>I was lent some money by my friend.</li>
+        <li>He was asked a few questions by the magistrate.</li>
+        <li>She will be offered coffee by us.</li>
+        <li>The beggar was given a coin by her.</li>
+        <li>The poor man was given some bananas by us.</li>
+        <li>I was given a piece of advice by my father.</li>
+        <li>Were you told any story by your grandmother?</li>
+        <li>Have you been asked any questions by the teacher?</li>
+        <li>You will be gifted a bicycle by him.</li>
+        <li>The chief guest was presented a memento (by them).</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s17"><span class="num">17.</span>Passive Voice of Sentences with Subject Understood</h2>
+  <p>Sometimes the doer of the action is too obvious or unimportant to state, so the 'by' agent is dropped altogether.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Active Voice</th><th>Passive Voice</th></tr>
+      <tr><td>The teacher has corrected my notebook.</td><td>My notebook has been corrected.</td></tr>
+      <tr><td>The police have arrested the thief.</td><td>The thief has been arrested.</td></tr>
+    </table>
+  </div>
+  <div class="ocr-note"><b>Source note</b>The textbook prints these two example rows with the Active/Passive labels swapped for the second row ("Passive Voice: The police have arrested the thief." followed by "Active Voice: The thief has been arrested."). The labels are corrected here to match the actual voice of each sentence, since "The police have arrested the thief" is clearly the active form and "The thief has been arrested" is clearly the passive form.</div>
+  <div class="exercise-block">
+    <p class="instr">Exercise: Change the following sentences into passive voice.</p>
+    <ol class="plain">
+      <li>The class teacher made him monitor of the class. <textarea class="answer-box"></textarea></li>
+      <li>The parents have named the child Priya. <textarea class="answer-box"></textarea></li>
+      <li>People celebrate Diwali all over India. <textarea class="answer-box"></textarea></li>
+      <li>The Indians call Mahatma Gandhi the father of the nation. <textarea class="answer-box"></textarea></li>
+      <li>The boss has dismissed him. <textarea class="answer-box"></textarea></li>
+      <li>The magistrate has sentenced the murderer to death. <textarea class="answer-box"></textarea></li>
+      <li>The coach made him captain of the school cricket team. <textarea class="answer-box"></textarea></li>
+      <li>The Principal has rusticated the naughty students. <textarea class="answer-box"></textarea></li>
+      <li>The enemy destroyed the whole city. <textarea class="answer-box"></textarea></li>
+      <li>The class teacher marked me absent. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>He was made monitor of the class.</li>
+        <li>The child has been named Priya.</li>
+        <li>Diwali is celebrated all over India.</li>
+        <li>Mahatma Gandhi is called the father of the nation.</li>
+        <li>He has been dismissed.</li>
+        <li>The murderer has been sentenced to death.</li>
+        <li>He was made captain of the school cricket team.</li>
+        <li>The naughty students have been rusticated.</li>
+        <li>The whole city was destroyed.</li>
+        <li>I was marked absent.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s18"><span class="num">18.</span>Quick Revision Checklist</h2>
+  <div class="checklist">
+    <ul>
+      <li>Active voice: the subject does the action. Passive voice: something is done to the subject.</li>
+      <li>To convert: object becomes subject, verb becomes a form of 'be' + V3, and the old subject follows 'by' as the agent.</li>
+      <li>Never change the tense or the sentence type (statement/question/command) when converting voice.</li>
+      <li>Future continuous and all perfect continuous tenses cannot be turned into passive voice.</li>
+      <li>Prepositional verbs keep their preposition in the passive: 'looked after', 'shouted at', 'ruled over'.</li>
+      <li>Sentences with two objects prefer the indirect object as the passive subject: 'We are taught maths by her', not 'Maths is taught to us by her'.</li>
+      <li>Imperative sentences become 'You are requested/advised/ordered to...' or 'Let... be...' in the passive.</li>
+      <li>When the doer is obvious or unimportant, the 'by' agent can be dropped entirely.</li>
+    </ul>
+  </div>
+
+  <footer>Class 8 · English · Grammar · Lesson 24 — Chapter-11, Active and Passive Voice.</footer>
+</div>
+</body>
+</html>

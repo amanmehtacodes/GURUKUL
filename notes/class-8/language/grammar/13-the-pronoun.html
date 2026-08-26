@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 13 — The Pronoun | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:26px 0 8px; scroll-margin-top:20px;}
+  h4{font-family:var(--font-mono); font-size:13.5px; color:var(--cyan); margin:18px 0 8px; text-transform:uppercase; letter-spacing:.03em;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .passage{
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius);
+    padding:18px 22px; margin:14px 0 20px; color:var(--ink-soft); font-size:16px;
+  }
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:14.5px;}
+  table.ref-table caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:11px;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line-strong); padding:7px 10px; text-align:left; color:var(--ink-soft);}
+  table.ref-table th{background:var(--paper-raised); color:var(--ink); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table td.g{color:var(--ink); font-weight:600;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:16px 0 30px; background:var(--paper-raised);
+  }
+  .exercise-block h4{margin-top:0;}
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  table.gram-table{width:100%; border-collapse:collapse; margin:10px 0 16px; font-size:14px;}
+  table.gram-table th, table.gram-table td{border:1px solid var(--line-strong); padding:6px 8px; text-align:left;}
+  table.gram-table th{background:var(--paper); color:var(--ink-faint); font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;}
+  input.blank-input{
+    width:92%; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:56px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol, .qa ul{margin:0; padding-left:20px;}
+  .qa li{margin-bottom:5px;}
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar</div>
+  <h1 class="title">Lesson 13 — The Pronoun</h1>
+  <p class="subtitle">Semester 1</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#warmup">1. Warm-up — Why We Need Pronouns</a></li>
+      <li><a href="#kinds">2. Kinds of Pronouns</a></li>
+      <li><a href="#personal">3. Personal Pronouns</a></li>
+      <li><a href="#personal-case">4. Personal Pronouns: Case</a></li>
+      <li><a href="#demonstrative">5. Demonstrative Pronouns</a></li>
+      <li><a href="#interrogative">6. Interrogative Pronouns</a></li>
+      <li><a href="#relative">7. Relative Pronouns</a></li>
+      <li><a href="#reflexive">8. Reflexive &amp; Emphatic Pronouns</a></li>
+      <li><a href="#indefinite">9. Indefinite Pronouns</a></li>
+      <li><a href="#distributive">10. Distributive Pronouns</a></li>
+      <li><a href="#reciprocal">11. Reciprocal Pronouns</a></li>
+      <li><a href="#correct-use">12. Correct Use of Pronouns</a></li>
+      <li><a href="#revision">13. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="warmup"><span class="num">1.</span>Warm-up — Why We Need Pronouns</h2>
+  <p>Read the passage given below carefully.</p>
+  <div class="passage">Rohan and Rohan's father were at railway station, waiting for the train to Delhi. Rohan told Rohan's father that Rohan had forgotten to bring Rohan's camera. Rohan's father asked Rohan what Rohan had to do with Rohan's camera. Rohan told Rohan's father that Rohan wanted to click some photographs with Rohan's camera when Rohan and Rohan's father would visit the famous places at Delhi.</div>
+  <p>The repetition of the words 'Rohan' and 'Rohan's father' makes it rather awkward. Now read the revised version of the same passage with some words replaced.</p>
+  <div class="passage">Rohan and his father were at railway station, waiting for the train to Delhi. He told his father that he had forgotten to bring his camera. His father asked him what he had to do with his camera. He told his father that he wanted to click some photographs with his camera when they would visit the famous places at Delhi.</div>
+  <p>You can observe that the revised version of the passage seems refined as there is no repetition of the noun 'Rohan'. It has been replaced with the words 'he', 'his' or 'him'. Similarly, the nouns 'Rohan and Rohan's father' have been replaced with the word 'they'. These words that replace the nouns are called pronouns.</p>
+  <div class="callout"><p><strong>Definition:</strong> The word pronoun means 'used in place of noun'. A pronoun is a word which is used in place of a noun. Thus, a pronoun replaces a noun.</p></div>
+
+  <h2 id="kinds"><span class="num">2.</span>Kinds of Pronouns</h2>
+  <table class="ref-table">
+    <tr><th>Sr. No.</th><th>Kind of Pronoun</th><th>Examples</th></tr>
+    <tr><td>1</td><td>Personal Pronouns</td><td>I, we, me, us, my, mine, our, ours, you, your, yours, he, him, his, she, her, hers, it, its, they, them, their, theirs</td></tr>
+    <tr><td>2</td><td>Possessive Pronouns</td><td>mine, ours, his, hers, its, theirs, yours</td></tr>
+    <tr><td>3</td><td>Demonstrative Pronouns</td><td>this, that, these, those etc.</td></tr>
+    <tr><td>4</td><td>Interrogative Pronoun</td><td>who, whose, whom, what, which</td></tr>
+    <tr><td>5</td><td>Reflexive Pronoun</td><td>myself, ourselves, himself, herself, themselves etc.</td></tr>
+    <tr><td>6</td><td>Emphatic Pronoun</td><td>myself, ourselves, himself, herself, themselves etc.</td></tr>
+    <tr><td>7</td><td>Indefinite Pronoun</td><td>one, some, all, few, any, many, somebody, anyone, everything, nothing, nobody, anything, something, everyone etc.</td></tr>
+    <tr><td>8</td><td>Distributive Pronouns</td><td>each, either, neither</td></tr>
+    <tr><td>9</td><td>Relative Pronouns</td><td>who, what, which, whose, whom, that, as</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <h4>Exercise — Underline the pronouns</h4>
+    <ol>
+      <li>He is a famous politician. Everyone likes him.</li>
+      <li>She is new to this city. She doesn't know anyone here.</li>
+      <li>We must follow the traffic rules. It is safe for all.</li>
+      <li>Rohan lives in Hyderabad which is a big city. He runs a business there.</li>
+      <li>That is my new bicycle gifted to me by my father.</li>
+      <li>This is the man who repaired my car. He charged me 500 rupees for this.</li>
+      <li>Somebody is knocking at the door. Will you please open it?</li>
+      <li>If I go to Delhi, I will bring a new phone for you.</li>
+      <li>You look tired today. You must rest.</li>
+      <li>My mother prepared tasty dishes for us.</li>
+      <li>All is well that ends well.</li>
+      <li>One must do one's duty.</li>
+      <li>Each of these dresses is beautiful.</li>
+      <li>This is a beautiful house. I want to buy it for myself.</li>
+      <li>She is the girl whose notebook has not been corrected.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1. He, Everyone, him · 2. She, She, anyone · 3. We, It, all · 4. which, He · 5. That, my, me, my · 6. This, who, my, He, me, this · 7. Somebody, you, it · 8. I, I, you · 9. You, You · 10. My, us · 11. All, that · 12. One, one's · 13. Each · 14. This, I, it, myself · 15. She, whose</p>
+    </div>
+  </div>
+
+  <h2 id="personal"><span class="num">3.</span>Personal Pronouns</h2>
+  <p>Personal pronouns are the words used for persons or things. There are three types of personal pronouns.</p>
+  <ol>
+    <li><strong>First Person Pronouns:</strong> 'I' and 'We' are the first person pronouns. These are used for the person/persons speaking. 'I' is used for one person whereas 'we' is used for many persons.</li>
+    <li><strong>Second Person Pronouns:</strong> 'You' is second person pronoun. It is used for the person/persons spoken to. 'You' has the same form for singular and plural pronouns.</li>
+    <li><strong>Third Person Pronouns:</strong> 'He', 'she', 'it' and 'they' are third person pronouns. These pronouns are used for the persons or things spoken of. 'He' is used to denote masculine gender, 'she' is used to denote feminine gender and 'it' is used for animals, non-living things and a baby when the gender is not specified. Although 'it' is used for non-living things, it is included in personal pronouns. Sometimes, 'it' is also called impersonal pronoun.</li>
+  </ol>
+
+  <h2 id="personal-case"><span class="num">4.</span>Personal Pronouns: Case</h2>
+  <p>Read the following sentences carefully.</p>
+  <div class="callout">
+    <p>1. Me am going to market. &nbsp; 2. He helped I a lot. &nbsp; 3. Him is a good boy. &nbsp; 4. Their are playing cricket.<br>
+    5. Mrs. Sharma is completing his work. &nbsp; 6. The students are doing his homework. &nbsp; 7. The cat licked her paw. &nbsp; 8. Smita washed its clothes. &nbsp; 9. You must do yours duty.</p>
+    <p><strong>THINK:</strong> Do you observe anything awkward in the above sentences? The words in bold are all pronouns, but their form is not correct according to gender, number and their place and function in the sentence. <em>(Corrected: I am going to market. He helped me a lot. He is a good boy. They are playing cricket. Mrs. Sharma is completing her work. The students are doing their homework. The cat licked its paw. Smita washed her clothes. You must do your duty.)</em></p>
+  </div>
+  <p>Just as nouns can be used as subjects, direct objects, indirect objects and to show possession in different sentences, pronouns can also be used in various ways. The use of pronouns in sentences decides their case. There are three cases of pronouns.</p>
+  <ol>
+    <li><strong>Subjective Case (Subject Pronouns):</strong> A pronoun used as a subject is said to be in subjective case. <em>Examples:</em> He is a good boy. She is my elder sister. They are watching T.V. In the above examples, 'He', 'She' and 'They' are the doers of the action or verb. The predicate in each sentence tells us something about 'He', 'She' or 'They'. These pronouns are subjects in the sentences; hence their case is subjective case.</li>
+    <li><strong>Objective Case (Object Pronoun):</strong> A pronoun used as direct or indirect object is said to be in objective case. <em>Examples:</em> You helped me. We invited you. I will not disturb him. He gifted me a book. She asked him a question.</li>
+    <li><strong>Possessive Case (Possessive Pronoun):</strong> A pronoun that shows possession is said to be in possessive case. <em>Example:</em> This is his car. Or, This car is his.</li>
+  </ol>
+
+  <p>Study the tables given below to understand different forms and cases of personal pronouns.</p>
+  <table class="ref-table">
+    <caption>Forms and cases of personal pronouns</caption>
+    <tr><th>Person</th><th>Subjective (Sing.)</th><th>Subjective (Plur.)</th><th>Objective (Sing.)</th><th>Objective (Plur.)</th><th>Poss. Pronoun (Sing.)</th><th>Poss. Pronoun (Plur.)</th><th>Poss. Adjective (Sing.)</th><th>Poss. Adjective (Plur.)</th></tr>
+    <tr><td>First Person</td><td>I</td><td>we</td><td>me</td><td>us</td><td>mine</td><td>ours</td><td>my</td><td>our</td></tr>
+    <tr><td>Second Person</td><td>you</td><td>you</td><td>you</td><td>you</td><td>yours</td><td>yours</td><td>your</td><td>your</td></tr>
+    <tr><td>Third Person (masc.)</td><td>he</td><td>they</td><td>him</td><td>them</td><td>his</td><td>theirs</td><td>his</td><td>their</td></tr>
+    <tr><td>Third Person (fem.)</td><td>she</td><td>they</td><td>her</td><td>them</td><td>hers</td><td>theirs</td><td>her</td><td>their</td></tr>
+    <tr><td>Third Person (neuter)</td><td>it</td><td>they</td><td>it</td><td>them</td><td>its</td><td>theirs</td><td>its</td><td>their</td></tr>
+  </table>
+
+  <h3>Use of Possessive Pronouns as Possessive Adjectives</h3>
+  <p>Both possessive pronouns and possessive adjectives are used to show possession or belonging. However, whereas pronouns replace the nouns, adjectives describe the nouns.</p>
+  <div class="callout"><p><strong>Examples:</strong> 1. This is my book. 2. This book is mine. In the examples given above, the words 'my' and 'mine' both show possession. However, the word 'my' is followed by the noun 'book'. It modifies the noun 'book'; hence it is called possessive adjective. On the other hand, the word 'mine' is used in place of the noun 'book'. It is called possessive pronoun.</p></div>
+  <table class="ref-table">
+    <tr><th>Possessive Pronoun</th><th>Possessive Adjective</th></tr>
+    <tr><td>This car is his.</td><td>This is his car.</td></tr>
+    <tr><td>That house is yours.</td><td>That is your house.</td></tr>
+    <tr><td>These bags are theirs.</td><td>These are their bags.</td></tr>
+    <tr><td>This pencil is hers.</td><td>This is her pencil.</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with personal pronouns (Set 1)</h4>
+    <ol>
+      <li>Radhika bought a book. <input class="blank-input" type="text" style="width:70px"> read <input class="blank-input" type="text" style="width:70px"> again and again.</li>
+      <li>Kunal did not take the class test. <input class="blank-input" type="text" style="width:70px"> was fined by <input class="blank-input" type="text" style="width:70px"> teacher.</li>
+      <li>You and <input class="blank-input" type="text" style="width:70px"> friend have finished <input class="blank-input" type="text" style="width:70px"> work.</li>
+      <li>Kim is wearing a beautiful frock. <input class="blank-input" type="text" style="width:70px"> is looking very pretty.</li>
+      <li>Rachna is not well. <input class="blank-input" type="text" style="width:70px"> cannot attend <input class="blank-input" type="text" style="width:70px"> class today.</li>
+      <li>They have done <input class="blank-input" type="text" style="width:70px"> work.</li>
+      <li><input class="blank-input" type="text" style="width:70px"> must obey your elders.</li>
+      <li><input class="blank-input" type="text" style="width:70px"> is raining outside.</li>
+      <li>India is <input class="blank-input" type="text" style="width:70px"> country. <input class="blank-input" type="text" style="width:70px"> are proud of its rich heritage.</li>
+      <li><input class="blank-input" type="text" style="width:70px"> has cleaned her room.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. She / it · 2. He / his · 3. your / your · 4. She · 5. She / her · 6. their · 7. You · 8. It · 9. our / We · 10. She</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with personal pronouns (Set 2)</h4>
+    <ol>
+      <li>The child is crying. <input class="blank-input" type="text" style="width:70px"> seems to be hungry.</li>
+      <li>This is Preeti's bag. Give <input class="blank-input" type="text" style="width:70px"> to <input class="blank-input" type="text" style="width:70px">.</li>
+      <li>Sir, when will <input class="blank-input" type="text" style="width:70px"> return from Delhi?</li>
+      <li>Rajan, this pencil is <input class="blank-input" type="text" style="width:70px"> and that is <input class="blank-input" type="text" style="width:70px">.</li>
+      <li><input class="blank-input" type="text" style="width:70px"> is very hot today.</li>
+      <li>Our neighbours are going to renovate their house. I will renovate <input class="blank-input" type="text" style="width:70px">.</li>
+      <li>Show him your notebook. He will show you <input class="blank-input" type="text" style="width:70px">.</li>
+      <li>Take these notebooks and keep <input class="blank-input" type="text" style="width:70px"> on the shelf.</li>
+      <li>How may <input class="blank-input" type="text" style="width:70px"> help you?</li>
+      <li>How dare <input class="blank-input" type="text" style="width:70px"> talk to me like this?</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. It · 2. it / her · 3. you · 4. yours / mine · 5. It · 6. mine · 7. his · 8. them · 9. I · 10. you</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Underline the pronouns and correct the wrong ones</h4>
+    <ol>
+      <li>Me am going to market to buy a new bag for mine. <textarea class="answer-box"></textarea></li>
+      <li>He helped I a lot, so me am thankful to his. <textarea class="answer-box"></textarea></li>
+      <li>His is a good boy. Us like his a lot. <textarea class="answer-box"></textarea></li>
+      <li>Their have been playing cricket for two hours. Call they back now. <textarea class="answer-box"></textarea></li>
+      <li>Mrs. Sharma is completing his work. You should not disturb him. <textarea class="answer-box"></textarea></li>
+      <li>The students are doing his homework. Then them will play. <textarea class="answer-box"></textarea></li>
+      <li>The cat licked her paw. She had injured itself. <textarea class="answer-box"></textarea></li>
+      <li>My friend locked my in mine room, but somehow I got me out. <textarea class="answer-box"></textarea></li>
+      <li>There teacher corrected there notebooks. <textarea class="answer-box"></textarea></li>
+      <li>Shweta sings very well. I always admire she. <textarea class="answer-box"></textarea></li>
+      <li>I took my friend's book thinking it to be my. <textarea class="answer-box"></textarea></li>
+      <li>The boys will complete his homework. <textarea class="answer-box"></textarea></li>
+      <li>Mr. Sharma has bought a new car for him son. <textarea class="answer-box"></textarea></li>
+      <li>Rohan and his friends have submitted there assignments to the teacher. <textarea class="answer-box"></textarea></li>
+      <li>Arpita is going to airport to receive she parents. Them are returning from Delhi today. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>I am going to market to buy a new bag for myself.</li>
+        <li>He helped me a lot, so I am thankful to him.</li>
+        <li>He is a good boy. We like him a lot.</li>
+        <li>They have been playing cricket for two hours. Call them back now.</li>
+        <li>Mrs. Sharma is completing her work. You should not disturb her.</li>
+        <li>The students are doing their homework. Then they will play.</li>
+        <li>The cat licked its paw. It had injured itself.</li>
+        <li>My friend locked me in my room, but somehow I got myself out.</li>
+        <li>Their teacher corrected their notebooks.</li>
+        <li>Shweta sings very well. I always admire her.</li>
+        <li>I took my friend's book thinking it to be mine.</li>
+        <li>The boys will complete their homework.</li>
+        <li>Mr. Sharma has bought a new car for his son.</li>
+        <li>Rohan and his friends have submitted their assignments to the teacher.</li>
+        <li>Arpita is going to airport to receive her parents. They are returning from Delhi today.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with possessive pronouns</h4>
+    <ol>
+      <li>My brother completed his homework and I completed <input class="blank-input" type="text" style="width:150px">.</li>
+      <li>Our house is big, but <input class="blank-input" type="text" style="width:150px"> is bigger than <input class="blank-input" type="text" style="width:150px">.</li>
+      <li>We decorated our classroom, and they decorated <input class="blank-input" type="text" style="width:150px">.</li>
+      <li>My mother purchased her new clothes and my father purchased <input class="blank-input" type="text" style="width:150px">.</li>
+      <li>I shall go my way, and you go <input class="blank-input" type="text" style="width:150px">.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. mine · 2. theirs / ours · 3. theirs · 4. his · 5. yours</p></div>
+  </div>
+
+  <h2 id="demonstrative"><span class="num">5.</span>Demonstrative Pronouns</h2>
+  <div class="callout"><p><strong>Definition:</strong> The words 'this', 'that', 'these', 'those' are called demonstratives as they are used to point out to persons or things they refer to.</p></div>
+  <p>Look at the use of demonstrative pronouns in the following sentences.</p>
+  <ol>
+    <li>This is my pencil. (Used for singular thing which is near the speaker)</li>
+    <li>That is your car. (Used for singular thing which is at a distance from the speaker)</li>
+    <li>These are his kites. (Used for plural things which are near the speaker)</li>
+    <li>These oranges are fresher than those we saw in the market. (Used for plural things which are at a distance from the speaker)</li>
+  </ol>
+  <h3>Demonstrative Pronouns and Demonstrative Adjectives</h3>
+  <p>Both demonstrative pronouns and demonstrative adjectives are used to point out to a person or a thing they refer to. However, whereas demonstrative pronouns replace the nouns, demonstrative adjectives are placed before the nouns to describe the nouns.</p>
+  <table class="ref-table">
+    <tr><th>Demonstrative Pronoun</th><th>Demonstrative Adjective</th></tr>
+    <tr><td>This is my book.</td><td>This book is mine.</td></tr>
+    <tr><td>That is your house.</td><td>That house is yours.</td></tr>
+    <tr><td>These are their bags.</td><td>These bags are theirs.</td></tr>
+    <tr><td>This is her pencil.</td><td>This pencil is hers.</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with correct demonstrative pronouns/adjectives</h4>
+    <ol>
+      <li><input class="blank-input" type="text" style="width:120px"> is a beautiful flower.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> is a very shining star.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> car is bigger than <input class="blank-input" type="text" style="width:120px"> at my office.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> is a kite flying in the sky.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> books are better than <input class="blank-input" type="text" style="width:120px">.</li>
+      <li>Both the dresses are beautiful, but <input class="blank-input" type="text" style="width:120px"> is more beautiful than <input class="blank-input" type="text" style="width:120px">.</li>
+      <li>The climate of Tamilnadu is hotter than <input class="blank-input" type="text" style="width:120px"> of Jammu and Kashmir.</li>
+      <li>The oranges of Nagpur are better than <input class="blank-input" type="text" style="width:120px"> of any other state.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> house on the hill is more beautiful than <input class="blank-input" type="text" style="width:120px">.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> boats in the sea look smaller than <input class="blank-input" type="text" style="width:120px"> on the shore.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. This/That · 2. That · 3. This / that · 4. That · 5. These / those · 6. this / that · 7. that · 8. those · 9. That / this · 10. Those / these</p></div>
+  </div>
+
+  <h2 id="interrogative"><span class="num">6.</span>Interrogative Pronouns</h2>
+  <div class="callout"><p><strong>Definition:</strong> The words 'what', 'which', 'who', 'whose' and 'whom' are interrogative pronouns. They are used to ask questions about persons or things.</p></div>
+  <p><strong>Examples:</strong> 1. What are you doing here? 2. Who are these boys? 3. Which is your favourite colour? 4. Whom did you convey the message? 5. Whose is this house?</p>
+  <div class="callout">
+    <p><strong>Important Note:</strong> 'Who', 'whom' and 'whose' are used for persons. 'What' is used for things. 'Which' is used for persons and things — it denotes selection of one or many out of the given options.</p>
+    <p><em>Example:</em> Which of these dresses do you like the most?</p>
+  </div>
+  <table class="ref-table">
+    <caption>Forms of interrogative pronouns</caption>
+    <tr><th></th><th>Subjective Case</th><th>Objective Case</th><th>Possessive Case</th></tr>
+    <tr><td>For persons</td><td>who</td><td>whom</td><td>whose</td></tr>
+    <tr><td>For things</td><td>what</td><td>what</td><td>—</td></tr>
+    <tr><td>For persons or things</td><td>which</td><td>which</td><td>—</td></tr>
+  </table>
+  <p>Read the following sentences to understand the subjective, objective and possessive cases of interrogative pronouns.</p>
+  <ol>
+    <li>What is that big thing? — 'what' is the subject of the verb 'is'.</li>
+    <li>What did you buy at market? — 'what' is the object of the verb 'buy'.</li>
+    <li>Whose is this book? — 'whose' shows possession; hence it is in possessive case.</li>
+  </ol>
+
+  <h3>Interrogative Pronoun and Interrogative Adjective</h3>
+  <p>Interrogative pronouns 'what', 'which' and 'whose' can also be used as interrogative adjectives. Interrogative adjectives are interrogative words followed immediately by a noun.</p>
+  <table class="ref-table">
+    <tr><th>Interrogative Pronoun</th><th>Interrogative Adjective</th></tr>
+    <tr><td>Which is your book?</td><td>Which book is yours?</td></tr>
+    <tr><td>What is the news he broke to you?</td><td>What news did he break to you?</td></tr>
+    <tr><td>Whose is this house?</td><td>Whose house is this?</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with correct pronouns</h4>
+    <ol>
+      <li><input class="blank-input" type="text" style="width:120px"> is your name?</li>
+      <li><input class="blank-input" type="text" style="width:120px"> has broken the window?</li>
+      <li><input class="blank-input" type="text" style="width:120px"> have you invited to your birthday party?</li>
+      <li><input class="blank-input" type="text" style="width:120px"> is your book?</li>
+      <li><input class="blank-input" type="text" style="width:120px"> is this pen?</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. What · 2. Who · 3. Whom · 4. Which · 5. Whose</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Underline the interrogative words: pronoun or adjective?</h4>
+    <ol>
+      <li>What information have you got about the accident?</li>
+      <li>Which is your favourite subject?</li>
+      <li>What do you want?</li>
+      <li>Whom do you want to meet?</li>
+      <li>Whose coat is that?</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. What — interrogative adjective (modifies "information") · 2. Which — interrogative pronoun · 3. What — interrogative pronoun · 4. Whom — interrogative pronoun · 5. Whose — interrogative adjective (modifies "coat")</p></div>
+  </div>
+
+  <h2 id="relative"><span class="num">7.</span>Relative Pronouns</h2>
+  <p>Read the following pairs of sentences carefully and observe the use of pronouns.</p>
+  <ol>
+    <li>Who is this boy?</li>
+    <li>This is the boy who helped me.</li>
+    <li>Which is your coat?</li>
+    <li>This is the coat which I bought at the market.</li>
+  </ol>
+  <p>In examples 1 and 3, 'who' and 'which' are used to ask questions. In examples 2 and 4, 'who' and 'which' do not ask questions. They are used to join two parts of sentences.</p>
+  <p>Now examine how the following sentences are joined. This is the boy. The boy helped me. → <strong>This is the boy who helped me.</strong> (who = boy)</p>
+  <p>In the example given above, the word 'who' is used to replace the noun 'boy'. The word 'who' is called a pronoun. This pronoun also functions as a conjunction as it joins the two sentences in such a way that the pronoun used in one clause relates to the noun in the other. Therefore, it is called a relative pronoun. A noun that a relative pronoun refers to is called its antecedent. In the above example, 'who' is relative pronoun and 'boy' is its antecedent.</p>
+  <div class="callout">
+    <p><strong>Examples:</strong></p>
+    <p>I saw a man. His beard was very long. → I saw a man whose beard was very long. (Whose = man's)</p>
+    <p>That is the house. I bought it last month. → That is the house which I bought last month. (Which = house)</p>
+  </div>
+  <table class="ref-table">
+    <caption>Forms and cases of relative pronouns</caption>
+    <tr><th></th><th>Subjective Case</th><th>Objective Case</th><th>Possessive Case</th></tr>
+    <tr><td>For persons</td><td>who</td><td>whom</td><td>whose</td></tr>
+    <tr><td>For things</td><td>what, that</td><td>what, that</td><td>—</td></tr>
+    <tr><td>For persons or things</td><td>which</td><td>which</td><td>—</td></tr>
+  </table>
+  <p>Read the following examples to understand the use and cases of relative pronouns:</p>
+  <ol>
+    <li>I met a boy. He was wearing a blue shirt. → I met a boy who was wearing a blue shirt. ('who' is the subject of 'wearing' — subjective case.)</li>
+    <li>This is the student. The teacher gave him a prize. → This is the student whom the teacher gave a prize. ('whom' is the object of 'gave' — objective case.)</li>
+    <li>This is the girl. Her father is a doctor. → This is the girl whose father is a doctor. ('whose' shows possession — possessive case.)</li>
+    <li>This is the house. My father built it. → This is the house which my father built. ('which' is the object of 'built' — objective case.)</li>
+    <li>All glitters. All is not gold. → All that glitters is not gold. ('that' is the subject of 'glitters' — subjective case.)</li>
+    <li>This is it. I expect it of you. → This is what I expect of you. ('what' is the object of 'expect' — objective case.)</li>
+  </ol>
+
+  <div class="exercise-block">
+    <h4>Exercise — Tick the correct relative pronouns</h4>
+    <ol>
+      <li>I know the girl who/which stole your pen. <input class="blank-input" type="text" style="width:90px"></li>
+      <li>Do you know the boy whom/what the teacher punished? <input class="blank-input" type="text" style="width:90px"></li>
+      <li>She saw a man which/whose leg was fractured. <input class="blank-input" type="text" style="width:90px"></li>
+      <li>The girl who/whom has stood first in the class is my friend. <input class="blank-input" type="text" style="width:90px"></li>
+      <li>This room has thirty tables what/which are painted red. <input class="blank-input" type="text" style="width:90px"></li>
+      <li>The Principal gave away prizes to the students which/who had stood first. <input class="blank-input" type="text" style="width:90px"></li>
+      <li>This is the watch who/which my uncle gifted. <input class="blank-input" type="text" style="width:90px"></li>
+      <li>These are the girls whose/who notebooks are complete. <input class="blank-input" type="text" style="width:90px"></li>
+      <li>This is the book whom/which I read last night. <input class="blank-input" type="text" style="width:90px"></li>
+      <li>My father is the person whom/who I love the most. <input class="blank-input" type="text" style="width:90px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. who · 2. whom · 3. whose · 4. who · 5. which · 6. who · 7. which · 8. whose · 9. which · 10. whom</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with suitable relative pronouns</h4>
+    <ol>
+      <li>The boy <input class="blank-input" type="text" style="width:90px"> met me in the market is my friend.</li>
+      <li>The man <input class="blank-input" type="text" style="width:90px"> they caught was a thief.</li>
+      <li>She is the only person <input class="blank-input" type="text" style="width:90px"> is eligible for this post.</li>
+      <li>This is the pen <input class="blank-input" type="text" style="width:90px"> my father gifted me.</li>
+      <li>This is the boy <input class="blank-input" type="text" style="width:90px"> book went missing yesterday.</li>
+      <li>All <input class="blank-input" type="text" style="width:90px"> glitters is not gold.</li>
+      <li>Nothing <input class="blank-input" type="text" style="width:90px"> you do now is going to convince me.</li>
+      <li>God helps those <input class="blank-input" type="text" style="width:90px"> help themselves.</li>
+      <li>The guests <input class="blank-input" type="text" style="width:90px"> we invited to the party could not come.</li>
+      <li>These are the boys <input class="blank-input" type="text" style="width:90px"> the teacher appreciated.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. who · 2. whom · 3. who · 4. which · 5. whose · 6. that · 7. that · 8. who · 9. whom · 10. whom</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Join the pairs of sentences using relative pronouns</h4>
+    <ol>
+      <li>This is the man. His brother is missing. <textarea class="answer-box"></textarea></li>
+      <li>He has a brother. The brother is a professor. <textarea class="answer-box"></textarea></li>
+      <li>This is Mrs. Sharma. Everyone likes her. <textarea class="answer-box"></textarea></li>
+      <li>I thanked the stranger. He had helped me. <textarea class="answer-box"></textarea></li>
+      <li>I say something. I mean it. <textarea class="answer-box"></textarea></li>
+      <li>Here are some books. I have selected them for you to read. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>This is the man whose brother is missing.</li>
+        <li>He has a brother who is a professor.</li>
+        <li>This is Mrs. Sharma whom everyone likes.</li>
+        <li>I thanked the stranger who had helped me.</li>
+        <li>I say what I mean.</li>
+        <li>Here are some books which I have selected for you to read.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="reflexive"><span class="num">8.</span>Reflexive &amp; Emphatic Pronouns</h2>
+  <h3>Reflexive Pronouns</h3>
+  <p>Compound personal pronouns are formed by adding the suffixes '-self' or '-selves' to personal pronouns. <strong>Examples:</strong> myself, ourselves, yourself, yourselves, himself, herself, itself and themselves.</p>
+  <p>A reflexive pronoun refers back to the subject and functions as an object in the sentence.</p>
+  <ol>
+    <li>The children fell down and hurt themselves.</li>
+    <li>We enjoyed ourselves a lot at the party.</li>
+    <li>She looked at herself in the mirror.</li>
+    <li>Mr. Bhatia declared himself the new Managing Director of the company.</li>
+  </ol>
+  <table class="ref-table">
+    <caption>Reflexive and emphatic pronouns</caption>
+    <tr><th>Person</th><th>Number</th><th>Personal Pronoun</th><th>Reflexive Pronoun</th><th>Emphatic Pronoun</th></tr>
+    <tr><td>First Person</td><td>Singular</td><td>I</td><td>myself</td><td>myself</td></tr>
+    <tr><td></td><td>Plural</td><td>we</td><td>ourselves</td><td>ourselves</td></tr>
+    <tr><td>Second Person</td><td>Singular</td><td>you</td><td>yourself</td><td>yourself</td></tr>
+    <tr><td></td><td>Plural</td><td>you</td><td>yourselves</td><td>yourselves</td></tr>
+    <tr><td>Third Person</td><td>Singular</td><td>he</td><td>himself</td><td>himself</td></tr>
+    <tr><td></td><td></td><td>she</td><td>herself</td><td>herself</td></tr>
+    <tr><td></td><td></td><td>it</td><td>itself</td><td>itself</td></tr>
+    <tr><td></td><td>Plural</td><td>they</td><td>themselves</td><td>themselves</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with reflexive pronouns</h4>
+    <ol>
+      <li>He blamed <input class="blank-input" type="text" style="width:120px"> for the loss.</li>
+      <li>Della prepared <input class="blank-input" type="text" style="width:120px"> to face the situation.</li>
+      <li>You must take care of <input class="blank-input" type="text" style="width:120px">.</li>
+      <li>I availed <input class="blank-input" type="text" style="width:120px"> of the opportunity.</li>
+      <li>They set <input class="blank-input" type="text" style="width:120px"> down to take their meal.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. himself · 2. herself · 3. yourself · 4. myself · 5. themselves</p></div>
+  </div>
+
+  <h3>Emphatic Pronouns</h3>
+  <p>When a compound personal pronoun is used only to lay emphasis on a noun or pronoun, it is called emphatic pronoun. It may be used just after the subject or at the end of the clause.</p>
+  <ol>
+    <li>The Principal himself declared the holiday.</li>
+    <li>She cleaned the room herself.</li>
+  </ol>
+  <p>The above two sentences can be rewritten by removing emphatic pronouns without affecting the meaning. Thus, emphatic pronouns are used only to lay emphasis. 1. The Principal declared the holiday. 2. She cleaned the room.</p>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with emphatic pronouns</h4>
+    <ol>
+      <li>My mother <input class="blank-input" type="text" style="width:120px"> prepared these dishes.</li>
+      <li>He carried the heavy luggage <input class="blank-input" type="text" style="width:120px">.</li>
+      <li>The students solved the sums <input class="blank-input" type="text" style="width:120px">.</li>
+      <li>You <input class="blank-input" type="text" style="width:120px"> should talk to the boss.</li>
+      <li>The horse <input class="blank-input" type="text" style="width:120px"> broke the rope and ran away.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. herself · 2. himself · 3. themselves · 4. yourself · 5. itself</p></div>
+  </div>
+
+  <h2 id="indefinite"><span class="num">9.</span>Indefinite Pronouns</h2>
+  <p>Read the sentences given below carefully.</p>
+  <ol>
+    <li>Somebody is knocking at the door.</li>
+    <li>None has the courage to tell the truth to the Principal.</li>
+    <li>Everyone wants to be rich.</li>
+    <li>Nobody is perfect in this world.</li>
+    <li>One must do one's duty.</li>
+    <li>Nothing can help me in this situation.</li>
+    <li>I can do anything for you.</li>
+    <li>Give me something to eat.</li>
+  </ol>
+  <p>The bolded words in the sentences above do not refer to any specific or particular person or thing. These words refer to persons and things in general. These words are called indefinite pronouns.</p>
+  <div class="callout">
+    <p><strong>Examples:</strong> one, none, all, any, many, several, both, others, much, few, some, someone, somebody, something, everybody, everyone, anyone, anybody, anything, nobody, nothing etc.</p>
+    <p><strong>Important Notes:</strong> The words 'any', 'anyone', 'anybody' and 'anything' are usually used in negative sentences and interrogative sentences. 'One of' is always followed by a plural noun and takes a singular verb. <em>Examples:</em> 1. Do you need anything? 2. I can't find anybody in the room. 3. Has anyone seen my book? 4. One of my neighbours has gifted me this book.</p>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with indefinite pronouns</h4>
+    <ol>
+      <li><input class="blank-input" type="text" style="width:120px"> is asking about you.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> is better than <input class="blank-input" type="text" style="width:120px">.</li>
+      <li>I am ready to do <input class="blank-input" type="text" style="width:120px"> to get this opportunity.</li>
+      <li>Did you ask <input class="blank-input" type="text" style="width:120px"> to go?</li>
+      <li><input class="blank-input" type="text" style="width:120px"> live to be hundred.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> have tried to cross this forest, but <input class="blank-input" type="text" style="width:120px"> could do so.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> in the village believes that this house is haunted.</li>
+      <li>Has <input class="blank-input" type="text" style="width:120px"> got a spare pencil?</li>
+      <li>Remember that <input class="blank-input" type="text" style="width:120px"> is more important than work.</li>
+      <li>This sum is very easy. <input class="blank-input" type="text" style="width:120px"> can solve it.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> has already been spoken on the subject.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> lost their lives in the struggle for independence.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. Somebody/Someone · 2. Something / nothing · 3. anything · 4. anyone · 5. Few · 6. Many / none · 7. Everyone/Everybody · 8. anybody · 9. something · 10. Anyone/Anybody · 11. Much · 12. Many</p></div>
+  </div>
+
+  <h2 id="distributive"><span class="num">10.</span>Distributive Pronouns</h2>
+  <div class="callout"><p><strong>Definition:</strong> The pronouns that refer to a single person or thing in a group, one at a time, are called distributive pronouns. Each, either, neither are called distributive pronouns. They are always singular and take a singular verb.</p></div>
+  <p><strong>Each</strong> denotes every one of a number of persons or things in a group taken separately. <em>Example:</em> Each of the boys was given a blanket.</p>
+  <p><strong>Either</strong> and <strong>neither</strong> are used while speaking about two persons or things. Either means one or the other of the two while neither means not one nor the other of the two. <em>Examples:</em> 1. Either of these two books can be purchased. Both are equally good. 2. Neither of these two roads leads to Delhi.</p>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with distributive pronouns</h4>
+    <ol>
+      <li>These pens cost rupees fifty <input class="blank-input" type="text" style="width:120px">.</li>
+      <li>You can take <input class="blank-input" type="text" style="width:120px"> of these two pens.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> of the two solutions is correct. Try to solve the sum again.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> of the seats in the hall was occupied.</li>
+      <li><input class="blank-input" type="text" style="width:120px"> of the twins kept crying.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. each · 2. either · 3. Neither · 4. Each · 5. Each</p></div>
+  </div>
+
+  <h2 id="reciprocal"><span class="num">11.</span>Reciprocal Pronouns</h2>
+  <div class="callout"><p><strong>Definition:</strong> Pronouns that express a mutual or reciprocal relationship or action are called reciprocal pronouns. There are two pairs of reciprocal pronouns: 'each other', and 'one another'. 'Each other' is used when referring to two people. 'One another' is used when referring to more than two people.</p></div>
+  <p><strong>Examples:</strong> 1. The two brothers love each other. 2. We must respect one another.</p>
+
+  <h2 id="correct-use"><span class="num">12.</span>Correct Use of Pronouns</h2>
+  <div class="exercise-block">
+    <h4>Exercise — Underline the pronouns; correct the wrong ones and mention their type</h4>
+    <ol>
+      <li>There are some boys in the playground. Them are playing football. <textarea class="answer-box"></textarea></li>
+      <li>There is a cat in the kitchen. She is drinking milk. <textarea class="answer-box"></textarea></li>
+      <li>Mohan is in the class. It is writing on the blackboard. <textarea class="answer-box"></textarea></li>
+      <li>There is a book on the table. She is a mathematics book. <textarea class="answer-box"></textarea></li>
+      <li>I always sit with Ritesh. They are friends. <textarea class="answer-box"></textarea></li>
+      <li>I have painted this house ourselves. <textarea class="answer-box"></textarea></li>
+      <li>We have a cow. She gives us milk. <textarea class="answer-box"></textarea></li>
+      <li>Who pencil is this? <textarea class="answer-box"></textarea></li>
+      <li>This are beautiful toys. <textarea class="answer-box"></textarea></li>
+      <li>The climate of Shimla is cooler than those of Ludhiana. <textarea class="answer-box"></textarea></li>
+      <li>The two brothers love one another. <textarea class="answer-box"></textarea></li>
+      <li>Please let I go. <textarea class="answer-box"></textarea></li>
+      <li>They are preparing there lessons. <textarea class="answer-box"></textarea></li>
+      <li>We must respect ours elders. <textarea class="answer-box"></textarea></li>
+      <li>What is your hat? <textarea class="answer-box"></textarea></li>
+      <li>Myself am Raj Malhotra. <textarea class="answer-box"></textarea></li>
+      <li>I have anything important to tell you. <textarea class="answer-box"></textarea></li>
+      <li>My friend and me are going to market. <textarea class="answer-box"></textarea></li>
+      <li>Where is Ritika? Anyone is looking for she. <textarea class="answer-box"></textarea></li>
+      <li>Priya says that this book is her. <textarea class="answer-box"></textarea></li>
+      <li>The officer which you want to meet is on leave. <textarea class="answer-box"></textarea></li>
+      <li>All three partners trust each other. <textarea class="answer-box"></textarea></li>
+      <li>Some of my friends has joined army. <textarea class="answer-box"></textarea></li>
+      <li>She itself cooked all the food. <textarea class="answer-box"></textarea></li>
+      <li>Anyone is knocking at the door. <textarea class="answer-box"></textarea></li>
+      <li>Your's faithfully <textarea class="answer-box"></textarea></li>
+      <li>What is your favourite subject? <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>They are playing football. (Them → They, subjective case)</li>
+        <li>It is drinking milk. (She → It, gender unspecified for the cat)</li>
+        <li>He is writing on the blackboard. (It → He, Mohan is a person)</li>
+        <li>It is a mathematics book. (She → It, inanimate object)</li>
+        <li>We are friends. (They → We)</li>
+        <li>I have painted this house myself. (ourselves → myself, matches singular subject "I")</li>
+        <li>Correct as written — "she" is conventionally used for a cow.</li>
+        <li>Whose pencil is this? (Who → Whose, possessive)</li>
+        <li>These are beautiful toys. (This → These, number agreement)</li>
+        <li>The climate of Shimla is cooler than that of Ludhiana. (those → that, agrees with "climate")</li>
+        <li>The two brothers love each other. (one another → each other, used for two people)</li>
+        <li>Please let me go. (I → me, objective case)</li>
+        <li>They are preparing their lessons. (there → their)</li>
+        <li>We must respect our elders. (ours → our, possessive adjective)</li>
+        <li>Correct as written — a valid question as it stands.</li>
+        <li>I am Raj Malhotra. (Myself → I, reflexive pronoun can't be a subject)</li>
+        <li>I have something important to tell you. (anything → something, positive statement)</li>
+        <li>My friend and I are going to market. (me → I, subjective case)</li>
+        <li>Someone is looking for her. (Anyone → Someone, she → her)</li>
+        <li>Priya says that this book is hers. (her → hers, possessive pronoun)</li>
+        <li>The officer whom you want to meet is on leave. (which → whom, used for persons)</li>
+        <li>All three partners trust one another. (each other → one another, used for more than two)</li>
+        <li>Some of my friends have joined the army. (has → have, subject-verb agreement)</li>
+        <li>She herself cooked all the food. (itself → herself)</li>
+        <li>Someone is knocking at the door. (Anyone → Someone, positive statement)</li>
+        <li>Yours faithfully (Your's → Yours, no apostrophe in possessive pronoun)</li>
+        <li>Correct as written.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with pronouns</h4>
+    <p class="instr"><strong>(a)</strong> One day <input class="blank-input" type="text" style="width:70px"> of <input class="blank-input" type="text" style="width:70px"> friends came to <input class="blank-input" type="text" style="width:70px"> house. My mother was not at home at that time. I <input class="blank-input" type="text" style="width:70px"> prepared tea for <input class="blank-input" type="text" style="width:70px"> friends. I seated <input class="blank-input" type="text" style="width:70px"> in the drawing room. <input class="blank-input" type="text" style="width:70px"> liked the tea I had prepared for <input class="blank-input" type="text" style="width:70px">. When <input class="blank-input" type="text" style="width:70px"> mother came home, <input class="blank-input" type="text" style="width:70px"> told <input class="blank-input" type="text" style="width:70px"> that <input class="blank-input" type="text" style="width:70px"> had prepared tea <input class="blank-input" type="text" style="width:70px">. My mother was very happy to know <input class="blank-input" type="text" style="width:70px">. <input class="blank-input" type="text" style="width:70px"> praised <input class="blank-input" type="text" style="width:70px"> a lot.</p>
+    <p class="instr"><strong>(b)</strong> The habit of reading is <input class="blank-input" type="text" style="width:70px"> of the greatest resources of mankind, so <input class="blank-input" type="text" style="width:70px"> all must read as much as <input class="blank-input" type="text" style="width:70px"> can. Reading not only entertains <input class="blank-input" type="text" style="width:70px"> but also increases <input class="blank-input" type="text" style="width:70px"> knowledge. <input class="blank-input" type="text" style="width:70px"> should have one's own library. However, <input class="blank-input" type="text" style="width:70px"> must be open for <input class="blank-input" type="text" style="width:70px"> and all.</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p><strong>(a)</strong> One day <strong>some</strong> of <strong>my</strong> friends came to <strong>my</strong> house. My mother was not at home at that time. I <strong>myself</strong> prepared tea for <strong>my</strong> friends. I seated <strong>them</strong> in the drawing room. <strong>They</strong> liked the tea I had prepared for <strong>them</strong>. When <strong>my</strong> mother came home, <strong>I</strong> told <strong>her</strong> that <strong>I</strong> had prepared tea <strong>myself</strong>. My mother was very happy to know <strong>this</strong>. <strong>She</strong> praised <strong>me</strong> a lot.</p>
+      <p><strong>(b)</strong> The habit of reading is <strong>one</strong> of the greatest resources of mankind, so <strong>we</strong> all must read as much as <strong>we</strong> can. Reading not only entertains <strong>us</strong> but also increases <strong>our</strong> knowledge. <strong>One</strong> should have one's own library. However, <strong>it</strong> must be open for <strong>one</strong> and all.</p>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Use the following pronouns in your own sentences</h4>
+    <p class="instr">The source gives no fixed answer key here (it's open-ended sentence writing), so a sample sentence is provided for each — write your own attempt first, then compare.</p>
+    <ol>
+      <li>One: <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>This: <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>Those: <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>Yours: <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>Himself (Reflexive): <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>Ourselves (Emphatic): <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>Some: <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>All: <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>Mine: <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>Who (Interrogative): <textarea class="answer-box" style="min-height:36px"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show sample answers</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answers (my own sentences may differ and still be correct)</div>
+      <ol>
+        <li>One must always speak the truth.</li>
+        <li>This is my favourite book.</li>
+        <li>Those are the shoes I bought yesterday.</li>
+        <li>This pen is yours.</li>
+        <li>He hurt himself while playing football.</li>
+        <li>We painted the room ourselves.</li>
+        <li>Some of the students passed the exam.</li>
+        <li>All of the cookies were eaten.</li>
+        <li>This bag is mine.</li>
+        <li>Who is coming to the party tonight?</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Editing: find and correct the error in each line</h4>
+    <p class="instr">The following passage has not been edited. There is an error in each line.</p>
+    <div class="passage">
+      Issac Asimov was a popular author, best known for their science fiction novels and stories.<br>
+      It moved his family to New York City when she was three years old.<br>
+      They studied at Columbia University in New York.<br>
+      We also wrote over 400 books. He was known for<br>
+      your ability to make complicated subjects easy.<br>
+      Some of Asimov's most popular books is the novel Robert (1950)
+    </div>
+    <textarea class="answer-box" style="min-height:100px" placeholder="Write the incorrect word and its correction for each line..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>their → his</li>
+        <li>It → He</li>
+        <li>she → he</li>
+        <li>They → He</li>
+        <li>We → He</li>
+        <li>your → his</li>
+        <li>is → are (subject-verb agreement: "books... are")</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="revision"><span class="num">13.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>Can you name the nine kinds of pronouns and give an example of each?</li>
+    <li>Do you know the three persons of personal pronouns, and the three cases (subjective, objective, possessive)?</li>
+    <li>Can you tell a possessive pronoun (mine, yours, his) apart from a possessive adjective (my, your, his)?</li>
+    <li>Do you know when to use "this/these" versus "that/those"?</li>
+    <li>Can you tell an interrogative pronoun apart from an interrogative adjective?</li>
+    <li>Do you know the difference between a relative pronoun and its antecedent?</li>
+    <li>Can you distinguish a reflexive pronoun from an emphatic pronoun?</li>
+    <li>Do you know when to use "each other" versus "one another"?</li>
+    <li>Can you correct common pronoun errors of case, number and gender agreement?</li>
+  </ul>
+
+  <footer>Class 8 · English · Grammar · Lesson 13</footer>
+</div>
+</body>
+</html>

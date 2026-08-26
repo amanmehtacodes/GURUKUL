@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz 26 — Integrated Grammar Practice | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 24px;
+  }
+  .callout p{margin:0 0 8px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout strong{color:var(--ink);}
+
+  h2{
+    font-family:var(--font-mono); font-size:18px; font-weight:700; color:var(--c3);
+    margin:32px 0 10px; padding-top:14px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  p{margin:0 0 12px;}
+  ol{padding-left:22px; margin:0 0 12px;}
+  ul{padding-left:22px; margin:0 0 12px;}
+  li{margin-bottom:8px;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:12px 0 24px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:44px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box.tall{min-height:70px;}
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  input.blank-input{
+    font:14.5px var(--font-serif); padding:4px 8px; width:150px;
+    border:1px solid var(--line-strong); border-radius:6px;
+    background:var(--paper); color:var(--ink); margin:0 3px;
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  .jumbled{
+    display:block; font-family:var(--font-mono); font-size:14px; color:var(--ink-faint);
+    border:1px dashed var(--line-strong); border-radius:8px; padding:8px 12px; margin:6px 0;
+  }
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol{margin:0; padding-left:20px;}
+  .qa ul{margin:0; padding-left:20px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+  .qa table{width:100%; border-collapse:collapse; margin-top:4px;}
+  .qa td, .qa th{border:1px solid var(--line-strong); padding:6px 8px; font-size:13.5px; text-align:left;}
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:10px 0;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line); padding:8px 10px; font-size:14.5px; text-align:left;}
+  table.ref-table th{background:var(--paper-raised); color:var(--c3); font-family:var(--font-mono); font-size:12px; text-transform:uppercase;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar · Practice Quiz</div>
+  <h1 class="title">Quiz 26 — Integrated Grammar Practice</h1>
+  <p class="subtitle">Fresh items across sentence reordering, news-headline sense, cloze, editing, and passive-voice process writing — a follow-up to Lesson 26, not a repeat of it.</p>
+
+  <div class="callout">
+    <p><strong>How this works:</strong> Sections 1, 3, 4 and 5 have one definite correct answer — check yourself against the key. Sections 2 and 6 are open-ended; the key gives one strong Sample Answer, not the only acceptable one.</p>
+  </div>
+
+  <h2 id="q1"><span class="num">1.</span>Sentence Reordering</h2>
+  <div class="exercise-block">
+    <p class="instr">Rearrange each jumbled set of words into a correct, meaningful sentence.</p>
+    <ol>
+      <li>
+        <span class="jumbled">the / rang / suddenly / bell / loudly</span>
+        <textarea class="answer-box"></textarea>
+      </li>
+      <li>
+        <span class="jumbled">has / she / finished / already / her / homework</span>
+        <textarea class="answer-box"></textarea>
+      </li>
+      <li>
+        <span class="jumbled">library / every / visits / he / evening / the</span>
+        <textarea class="answer-box"></textarea>
+      </li>
+      <li>
+        <span class="jumbled">were / children / playing / happily / the / garden / in</span>
+        <textarea class="answer-box"></textarea>
+      </li>
+      <li>
+        <span class="jumbled">will / meet / tomorrow / we / station / at / the</span>
+        <textarea class="answer-box"></textarea>
+      </li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>The bell rang suddenly and loudly. / Suddenly the bell rang loudly.</li>
+        <li>She has already finished her homework.</li>
+        <li>He visits the library every evening.</li>
+        <li>The children were playing happily in the garden.</li>
+        <li>We will meet at the station tomorrow.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="q2"><span class="num">2.</span>Interpreting a News Headline</h2>
+  <div class="exercise-block">
+    <p class="instr">Expand each compressed headline into a full sentence, and briefly explain the grammar choice (tense/omission) it relies on.</p>
+    <ol>
+      <li>"Rains lash city, roads flooded" <textarea class="answer-box"></textarea></li>
+      <li>"PM to visit three states next week" <textarea class="answer-box"></textarea></li>
+      <li>"Local team wins championship after ten years" <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answer(s)</div>
+      <ol>
+        <li>Heavy rains have lashed the city and flooded the roads. (Headline drops helping verbs and uses the present tense for a recently completed event.)</li>
+        <li>The Prime Minister is going to visit three states next week. (The infinitive "to visit" stands in for the future "is going to visit" / "will visit.")</li>
+        <li>The local team has won the championship after ten years. (Present tense "wins" reports a completed event for immediacy; articles are dropped.)</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="q3"><span class="num">3.</span>Cloze — Gap Filling</h2>
+  <div class="exercise-block">
+    <p class="instr">Choose the most appropriate word for each blank.</p>
+    <p>The Great Barrier Reef <input class="blank-input" placeholder="(1)"> the largest coral reef system in the world. It is located off the coast <input class="blank-input" placeholder="(2)"> Australia and stretches <input class="blank-input" placeholder="(3)"> more than 2,300 kilometres. Scientists say that rising sea temperatures <input class="blank-input" placeholder="(4)"> a serious threat to the reef, <input class="blank-input" placeholder="(5)"> conservation efforts are now underway to protect it.</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>is</li>
+        <li>of</li>
+        <li>for</li>
+        <li>pose</li>
+        <li>and</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="q4"><span class="num">4.</span>Editing — Error Correction</h2>
+  <div class="exercise-block">
+    <p class="instr">Read the passage. Each numbered word contains an error. Write the correct word.</p>
+    <p>Every morning, Reema (a) walk to school with her younger brother. She (b) don't like to be late, so she (c) always leaving home by seven o'clock. Yesterday, (d) it was raining heavily and she (e) forgetted her umbrella at home. Her brother (f) share his umbrella with her, and they (g) reached to school just in time.</p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <table>
+        <tr><th>Incorrect</th><th>Correct</th></tr>
+        <tr><td>(a) walk</td><td>walks</td></tr>
+        <tr><td>(b) don't</td><td>doesn't</td></tr>
+        <tr><td>(c) always leaving</td><td>always leaves</td></tr>
+        <tr><td>(d) it was raining</td><td>it rained / it was raining (context: on that day) — correct as "it rained"</td></tr>
+        <tr><td>(e) forgetted</td><td>forgot</td></tr>
+        <tr><td>(f) share</td><td>shared</td></tr>
+        <tr><td>(g) reached to</td><td>reached</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2 id="q5"><span class="num">5.</span>Editing — Omission</h2>
+  <div class="exercise-block">
+    <p class="instr">One word has been omitted in each line. Write the missing word along with the word that comes before it and the word that comes after it, as shown in the example.</p>
+    <table class="ref-table">
+      <tr><th>Line</th><th>Text</th></tr>
+      <tr><td>(a)</td><td>Mount Everest is the highest mountain the world.</td></tr>
+      <tr><td>(b)</td><td>It is located the border of Nepal and Tibet.</td></tr>
+      <tr><td>(c)</td><td>Thousands climbers attempt to reach its summit every year.</td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <table>
+        <tr><th>Line</th><th>Preceding</th><th>Omitted</th><th>Succeeding</th></tr>
+        <tr><td>(a)</td><td>mountain</td><td>in</td><td>the</td></tr>
+        <tr><td>(b)</td><td>located</td><td>on</td><td>the</td></tr>
+        <tr><td>(c)</td><td>Thousands</td><td>of</td><td>climbers</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2 id="q6"><span class="num">6.</span>Describing a Process in Passive Voice</h2>
+  <div class="exercise-block">
+    <p class="instr">Read the steps for making a cup of tea, then complete the passage below describing the process in the passive voice (present simple passive).</p>
+    <p><strong>Steps:</strong> boil water — add tea leaves — let it steep for two minutes — strain into a cup — add milk and sugar — stir well.</p>
+    <p>First, water <textarea class="answer-box tall"></textarea></p>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answer</div>
+      <p>First, water is boiled. Tea leaves are added to it. It is left to steep for two minutes. It is then strained into a cup. Milk and sugar are added, and it is stirred well.</p>
+    </div>
+  </div>
+
+  <footer>Class 8 · English · Grammar · Quiz 26 — check each exercise against its own answer key above.</footer>
+</div>
+</body>
+</html>

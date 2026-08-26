@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 8 — E-mail | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 32px;}
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 22px; margin-bottom:36px;
+  }
+  nav.toc div.toc-h{font-family:var(--font-mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px;}
+  nav.toc li{margin-bottom:5px;}
+  nav.toc ol ol{margin:6px 0 10px; padding-left:22px;}
+  nav.toc ol ol li{margin-bottom:4px; font-size:14.5px;}
+  nav.toc a{color:var(--accent); text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline; color:var(--violet);}
+  nav.toc ol ol a{color:var(--ink-soft);}
+  nav.toc ol ol a:hover{color:var(--cyan);}
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.03em; color:var(--c3);
+    margin:44px 0 16px; scroll-margin-top:20px;
+  }
+  h3{font-size:20px; font-weight:700; margin:26px 0 10px; scroll-margin-top:20px;}
+  p{margin:0 0 14px;}
+  ul,ol{margin:0 0 16px; padding-left:24px;}
+  li{margin-bottom:7px;}
+  li ul, li ol{margin-top:8px;}
+  strong{font-weight:700;}
+  hr{border:none; border-top:1px solid var(--line); margin:36px 0;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:12px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 16px;
+  }
+  .format-box{
+    font-family:var(--font-mono); font-size:14px; line-height:1.9;
+    background:var(--paper-raised); border:2px solid var(--ink); border-radius:6px;
+    padding:24px 20px; margin:0 0 20px; white-space:pre-wrap;
+  }
+  .hints{
+    background:var(--accent2-soft); border-left:3px solid var(--accent2);
+    border-radius:6px; padding:10px 16px; margin:0 0 14px; font-size:14.5px; color:var(--ink-soft);
+  }
+  .hints strong{color:var(--violet); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.04em;}
+  .sample{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:20px 24px; margin:0 0 24px;
+  }
+  .sample .sh{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;}
+  /* Boxed e-mail format — a header block (From/To/Cc/Bcc/Subject/Date)
+     styled like a real inbox message, then salutation, body paragraphs
+     and subscription. Unscoped so it's reusable for the worked sample
+     and every practice-question model answer below. */
+  .email-box{
+    border:1.5px solid var(--ink); border-radius:4px; background:var(--paper);
+    font-size:15.5px; line-height:1.7; overflow:hidden;
+  }
+  .email-box .headers{
+    font-family:var(--font-mono); font-size:13px; background:var(--paper-raised);
+    border-bottom:1px solid var(--line-strong); padding:14px 20px;
+  }
+  .email-box .headers .hrow{margin:0 0 4px;}
+  .email-box .headers .hrow:last-child{margin-bottom:0;}
+  .email-box .headers .hk{color:var(--ink-faint); display:inline-block; width:60px;}
+  .email-box .body-area{padding:18px 20px;}
+  .email-box .sal{font-weight:700; margin:0 0 12px;}
+  .email-box p{margin:0 0 12px;}
+  .email-box p:last-of-type{margin-bottom:0;}
+  .email-box .close{margin-top:16px;}
+  .email-box .sub{margin-top:2px; font-style:italic;}
+  .email-box .sig{margin-top:2px; font-weight:700;}
+  .email-box .sig-meta{margin-top:2px; color:var(--ink-soft); font-size:14.5px;}
+  table{width:100%; border-collapse:collapse; margin:0 0 20px; font-size:15.5px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left;}
+  th{background:var(--accent-soft); font-family:var(--font-mono); font-size:12.5px; text-transform:uppercase;}
+  .checklist{list-style:none; padding-left:0;}
+  .checklist li{padding-left:26px; position:relative;}
+  .checklist li:before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+  /* Interactive question blocks */
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:18px 20px; margin:18px 0; background:var(--paper-raised);
+  }
+  .q .qn{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); margin-bottom:8px; letter-spacing:.03em; text-transform:uppercase;}
+  .q p.prompt{margin:0 0 10px; font-size:16px;}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q button{
+    margin-top:12px; font-family:var(--font-mono); font-size:12.5px; font-weight:700;
+    letter-spacing:.03em; text-transform:uppercase; padding:9px 18px; border:1px solid var(--c3);
+    border-radius:7px; background:var(--c3-soft); color:var(--c3); cursor:pointer;
+  }
+  .q button:hover{background:var(--c3-panel);}
+  .qa{
+    display:none; margin-top:14px; padding:14px 16px; border-radius:8px;
+    background:var(--accent2-soft); border:1px solid var(--accent2);
+  }
+  .qa .qa-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--accent2); font-weight:700; margin-bottom:8px;}
+  .qa .email-box{border-color:var(--accent2);}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills</div>
+  <h1 class="title">Lesson 8 — E-mail</h1>
+  <p class="subtitle">Semester 1</p>
+
+  <nav class="toc">
+    <div class="toc-h">Contents</div>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#definition">What is an E-mail?</a></li>
+      <li><a href="#constituents">Constituents of an E-mail</a></li>
+      <li><a href="#layout">Layout of an E-mail</a></li>
+      <li><a href="#points">Points to Remember While Writing an E-mail</a></li>
+      <li><a href="#sample">E-mail Sample</a></li>
+      <li><a href="#practice">Practice Questions</a>
+        <ol type="1">
+          <li><a href="#q1">Q1 · Thanking uncle for a PlayStation</a></li>
+          <li><a href="#q2">Q2 · Unable to attend a birthday party</a></li>
+          <li><a href="#q3">Q3 · Leave request after a cancelled flight</a></li>
+          <li><a href="#q4">Q4 · Enquiring after a friend's accident</a></li>
+          <li><a href="#q5">Q5 · Telling mom about becoming monitor</a></li>
+        </ol>
+      </li>
+      <li><a href="#revision">Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="overview">1. Overview</h2>
+  <p>We are living in a globalized world where awe-inspiring advancements in communication and information technology have made it extremely easy to convey messages to or share information with the people sitting in any part of the world within no time. People use phone calls, video-chat, text messages, e-mail and fax to share information.</p>
+
+  <h2 id="definition">2. What is an E-mail?</h2>
+  <p>An e-mail, the short form of electronic mail, is the electronic form of written correspondence or communication. It is the digital version of letter and can be sent instantly with the help of an internet connection. Unlike a letter, it is the soft copy of a letter and can be sent to multiple receivers simultaneously. It is not only the quickest method of conveying messages or sharing information, but also environment friendly as it saves paper and envelop. It is also cost effective as it does not require postal charges. One can share text, images and other graphics using an e-mail. One can attach multiple files with a single e-mail. The best thing about e-mail is that one can keep a record of one's received and sent e-mails safe in one's account, and delete the ones which are not required any more. Most organizations, either government or private, prefer using an e-mail instead of paper letters.</p>
+  <p>One must create an online e-mail account in order to be able to receive and send an e-mail. In the absence of an e-mail account, one can use someone else's account.</p>
+  <p>As e-mail is the electronic form of letter, it may be formal as well as informal depending on the person to whom one sends it. The language, style and tone of the e-mail depend on whether it is formal or informal just as in the case of a letter.</p>
+
+  <h2 id="constituents">3. Constituents of an E-mail</h2>
+  <ol>
+    <li><strong>From:</strong> The e-mail address of the sender is to be written in this box.</li>
+    <li><strong>To:</strong> The e-mail address of the receiver is to be written in this box.</li>
+    <li><strong>Cc:</strong> Cc means Carbon Copy. In this box, we write the e-mail addresses of the other people who are sent a copy of the e-mail along with the main receiver.</li>
+    <li><strong>Bcc:</strong> Bcc means Blind Carbon Copy. In this box, we write the e-mail addresses of the other people who are sent a copy of the e-mail along with the main receiver, but these e-mail addresses are kept hidden from the main receiver or from one another.</li>
+    <li><strong>Subject:</strong> In this box the purpose of writing the e-mail is written. The Subject should be clearly stated and brief.</li>
+    <li><strong>Date:</strong> Study carefully the formats of date given below.
+      <ul>
+        <li>D/M/Y: 24th November, 20XX or 24 November, 20XX</li>
+        <li>M/D/Y: November 24, 20XX</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2 id="layout">4. Layout of an E-mail</h2>
+  <div class="format-box">From:
+To:
+Cc:
+Bcc:
+Subject:
+Date:
+
+Salutation
+
+Message/Content
+
+Subscription
+  </div>
+
+  <h2 id="points">5. Points to Remember While Writing an E-mail</h2>
+  <ol>
+    <li>Write correct e-mail address of the sender as well as the receiver. Remember that the e-mail addresses must be written in small letters without any space between letters, words or symbols.</li>
+    <li>The subject of the e-mail should be clearly stated and relevant to the message or information conveyed.</li>
+    <li>The salutation should be appropriate according to formal or informal e-mail.
+      <ul>
+        <li>Formal e-mail: Dear sir/Madam or Dear Sirs/ Dear Mr./Miss/Mrs. ...............................</li>
+        <li>Informal e-mail: Dear, ............................./Dear (Mom/Dad/Brother/Sister)</li>
+      </ul>
+    </li>
+    <li>Write the message as briefly as possible without missing important information. Use short sentences and simple vocabulary to avoid any mis-communication. Use small paragraphs if required.</li>
+    <li>Organize the message to be conveyed in appropriate sequence in terms of priority of information.</li>
+    <li>Use grammatically correct sentences; avoid using slangs, abbreviations or contractions.</li>
+    <li>Ensure that the files attached are not infected with virus.</li>
+    <li>End your e-mail with a complimentary close such as 'Bye, take care' 'With love', Best wishes' 'Best regards' 'Regards' etc.</li>
+    <li>Write suitable subscription such as 'Yours obediently/ truly/ faithfully/ sincerely' depending on the type of e-mail: formal or informal.</li>
+    <li>Write your name, designation, address, contact number at the bottom in case of formal e-mail. Write your name in case of informal e-mail.</li>
+  </ol>
+
+  <h2 id="sample">6. E-mail Sample</h2>
+  <div class="sample">
+    <div class="sh">Write an e-mail to your friend, congratulating him/her on his/her grand success in the examination.</div>
+    <div class="email-box">
+      <div class="headers">
+        <div class="hrow"><span class="hk">From:</span> Nehamehta6121@gmail.com</div>
+        <div class="hrow"><span class="hk">To:</span> ankitasharma@yahoo.com</div>
+        <div class="hrow"><span class="hk">Cc:</span></div>
+        <div class="hrow"><span class="hk">Bcc:</span></div>
+        <div class="hrow"><span class="hk">Subject:</span> Congratulations</div>
+        <div class="hrow"><span class="hk">Date:</span> July 26, 20XX</div>
+      </div>
+      <div class="body-area">
+        <div class="sal">Dear Ankita</div>
+        <p>My joys knew no bounds when I read your name in the newspaper on top of the list of meritorious students. I am extremely happy that you have got the first rank in your state board examination. Congratulations to you on this grand success! Convey my heartiest congratulations to your parents and grandparents. They all must be proud of you. I am really proud to have a friend like you.</p>
+        <p>This is the result of all the hard work you have been putting in for many months. Finally, your hard work has borne fruit. This demands a great celebration. When are you giving me a treat? You have brought laurels to your parents and teachers. My parents are also very happy to hear of your grand success. They send their congratulations to you and your parents.</p>
+        <p>I am sure you will continue to work hard in the same way in all your future endeavours. My best wishes are always with you. Convey my best regards to your parents and grandparents.</p>
+        <div class="close">With lots of love and best wishes</div>
+        <div class="sub">Yours sincerely</div>
+        <div class="sig">Ankita</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="practice">7. Practice Questions</h2>
+  <p class="callout">Read each prompt and hints, draft your e-mail in the box below, then press <strong>Check my e-mail</strong> to reveal a model answer written in the same style. Compare — don't just copy.</p>
+
+  <div class="q" id="q1">
+    <div class="qn">Question 1</div>
+    <p class="prompt">Write an e-mail to your uncle thanking him for sending you a Play Station as your birthday gift.</p>
+    <div class="hints"><strong>Hints:</strong> Thank your uncle, explain how desperately you wanted it, brand, features, how you use it, promise to keep safe.</div>
+    <textarea rows="9" placeholder="Draft your e-mail here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my e-mail';">Check my e-mail</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="email-box">
+        <div class="headers">
+          <div class="hrow"><span class="hk">From:</span> [your email]</div>
+          <div class="hrow"><span class="hk">To:</span> [uncle's email]</div>
+          <div class="hrow"><span class="hk">Cc:</span></div>
+          <div class="hrow"><span class="hk">Bcc:</span></div>
+          <div class="hrow"><span class="hk">Subject:</span> Thank You for the PlayStation</div>
+          <div class="hrow"><span class="hk">Date:</span> [Date]</div>
+        </div>
+        <div class="body-area">
+          <div class="sal">Dear Uncle</div>
+          <p>Thank you so much for the wonderful birthday gift you sent me — a brand new Sony PlayStation 5! I could not believe my eyes when I opened the box. I had been wanting this for months and had been saving up my pocket money, hoping to buy one myself someday, so this gift means the world to me.</p>
+          <p>The PlayStation has amazing graphics and comes with two wireless controllers, which means my friends can now come over and play multiplayer games with me. I have already started playing a few racing and adventure games on it, and it has quickly become my favourite way to relax after school. I promise to take good care of it and use it only after finishing my homework and studies.</p>
+          <p>Thank you once again for such a thoughtful and generous gift, Uncle. I can't wait to see you soon and show you how much I am enjoying it.</p>
+          <div class="close">With lots of love</div>
+          <div class="sig">[Your Name]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q2">
+    <div class="qn">Question 2</div>
+    <p class="prompt">Write an e-mail to your friend expressing your inability to attend his birthday party.</p>
+    <div class="hints"><strong>Hints:</strong> Wish, reason for not attending, express regret for not attending, mention what you had planned, gift, promise to meet soon in future.</div>
+    <textarea rows="9" placeholder="Draft your e-mail here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my e-mail';">Check my e-mail</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="email-box">
+        <div class="headers">
+          <div class="hrow"><span class="hk">From:</span> [your email]</div>
+          <div class="hrow"><span class="hk">To:</span> [friend's email]</div>
+          <div class="hrow"><span class="hk">Cc:</span></div>
+          <div class="hrow"><span class="hk">Bcc:</span></div>
+          <div class="hrow"><span class="hk">Subject:</span> Sorry, I Can't Make It to Your Party</div>
+          <div class="hrow"><span class="hk">Date:</span> [Date]</div>
+        </div>
+        <div class="body-area">
+          <div class="sal">Dear Riya</div>
+          <p>I hope you are having a wonderful birthday week! I am so sorry to tell you that I will not be able to attend your birthday party this Saturday, as my family and I have to travel out of town for a family function that same day.</p>
+          <p>I am extremely disappointed, as I had been looking forward to your party for weeks and had even planned to wear my new dress and bring along your favourite chocolate cake. I really wish I could be there to celebrate this special day with you.</p>
+          <p>Please accept my sincere apologies, and I promise to make it up to you as soon as I am back — maybe we could plan a small celebration together next weekend? Have a fantastic party, and give my best wishes to everyone.</p>
+          <div class="close">With lots of love</div>
+          <div class="sig">[Your Name]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q3">
+    <div class="qn">Question 3</div>
+    <p class="prompt">You were out to an island for spending your winter vacation. Due to some reasons your flight has been cancelled. You are unable to rejoin the school on 1st January. Send an e-mail to your Principal requesting him/her to sanction you leave for three days.</p>
+    <div class="hints"><strong>Hints:</strong> Name of island, flight no, day and date of cancelled flight, reason, trying to get tickets, request for leave.</div>
+    <textarea rows="9" placeholder="Draft your e-mail here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my e-mail';">Check my e-mail</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="email-box">
+        <div class="headers">
+          <div class="hrow"><span class="hk">From:</span> [your email]</div>
+          <div class="hrow"><span class="hk">To:</span> [principal's email]</div>
+          <div class="hrow"><span class="hk">Cc:</span></div>
+          <div class="hrow"><span class="hk">Bcc:</span></div>
+          <div class="hrow"><span class="hk">Subject:</span> Request for Leave Due to Flight Cancellation</div>
+          <div class="hrow"><span class="hk">Date:</span> [Date]</div>
+        </div>
+        <div class="body-area">
+          <div class="sal">Sir/Madam</div>
+          <p>I am [Name], a student of Class VIII [Section], Roll No. [Roll Number]. I am writing to inform you that I am currently unable to rejoin school on 1st January as planned.</p>
+          <p>I had gone to the Andaman Islands to spend my winter vacation with my family. Unfortunately, my return flight, Flight No. [XX123], scheduled for 31st December, has been cancelled due to bad weather conditions. We are currently trying to get tickets on the next available flight, but it may take a couple of days before we can travel back.</p>
+          <p>In view of this situation, I humbly request you to kindly sanction me leave for three days, so that I may rejoin school as soon as I return. I apologise for the inconvenience caused and assure you that I will complete any missed schoolwork promptly.</p>
+          <div class="close">Thanking you in anticipation</div>
+          <div class="sub">Yours obediently</div>
+          <div class="sig">[Name]</div>
+          <div class="sig-meta">Roll No. [Roll Number]<br>Class VIII [Section]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q4">
+    <div class="qn">Question 4</div>
+    <p class="prompt">Write an e-mail to your friend who has met with an accident enquiring after his health.</p>
+    <div class="hints"><strong>Hints:</strong> Your reaction, ask how it happened, advise to take rest, eat healthy diet, proper treatment, precautions, wish for speedy recovery.</div>
+    <textarea rows="9" placeholder="Draft your e-mail here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my e-mail';">Check my e-mail</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="email-box">
+        <div class="headers">
+          <div class="hrow"><span class="hk">From:</span> [your email]</div>
+          <div class="hrow"><span class="hk">To:</span> [friend's email]</div>
+          <div class="hrow"><span class="hk">Cc:</span></div>
+          <div class="hrow"><span class="hk">Bcc:</span></div>
+          <div class="hrow"><span class="hk">Subject:</span> Hope You Feel Better Soon</div>
+          <div class="hrow"><span class="hk">Date:</span> [Date]</div>
+        </div>
+        <div class="body-area">
+          <div class="sal">Dear Kabir</div>
+          <p>I was extremely shocked and worried when I heard about your accident yesterday. I hope you are feeling a little better now. Please tell me exactly how it happened — was anyone else hurt?</p>
+          <p>I want you to take complete rest and not worry about missing school at all, we can cover that later. Please make sure you are eating a healthy diet and following the doctor's advice properly, and do take all the necessary precautions so that you recover quickly without any complications.</p>
+          <p>I wish you a very speedy recovery, and I will come to visit you this weekend with some of your favourite comics. Take care of yourself, and let me know if you need anything at all.</p>
+          <div class="close">With lots of love</div>
+          <div class="sig">[Your Name]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q5">
+    <div class="qn">Question 5</div>
+    <p class="prompt">You have recently been appointed monitor of the class. Write an e-mail to your mother giving her a detailed account of your new experience, your rights and responsibilities as the Monitor.</p>
+    <div class="hints"><strong>Hints:</strong> Qualities due to which you were appointed, rights and responsibilities, discipline, cooperation from other students, your popularity as monitor, change in your personality.</div>
+    <textarea rows="9" placeholder="Draft your e-mail here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my e-mail';">Check my e-mail</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="email-box">
+        <div class="headers">
+          <div class="hrow"><span class="hk">From:</span> [your email]</div>
+          <div class="hrow"><span class="hk">To:</span> [mother's email]</div>
+          <div class="hrow"><span class="hk">Cc:</span></div>
+          <div class="hrow"><span class="hk">Bcc:</span></div>
+          <div class="hrow"><span class="hk">Subject:</span> I Have Been Made Class Monitor!</div>
+          <div class="hrow"><span class="hk">Date:</span> [Date]</div>
+        </div>
+        <div class="body-area">
+          <div class="sal">Dear Mom</div>
+          <p>I have such exciting news to share with you! Our class teacher has appointed me as the monitor of my class today, and I am absolutely thrilled about it.</p>
+          <p>She told me that she chose me because of my discipline, punctuality and the way I always try to help my classmates whenever they need it. As monitor, I am now responsible for maintaining discipline in the class, helping the teacher take attendance, ensuring the classroom stays clean and organised, and reporting any issues to the teacher. Everyone in my class has been extremely cooperative so far, and I feel like I have become more popular and more confident since taking on this responsibility. I can already feel myself becoming more responsible and mature in the way I handle things, both in class and otherwise.</p>
+          <p>I am really enjoying this new role, and I promise to carry out my duties sincerely and make you and Papa proud.</p>
+          <div class="close">With lots of love</div>
+          <div class="sig">[Your Name]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="revision">8. Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>From, To, Cc, Bcc, Subject and Date all filled in correctly</li>
+    <li>E-mail addresses written correctly in small letters, no stray spaces</li>
+    <li>Subject line clear, brief and relevant to the message</li>
+    <li>Salutation appropriate to formal or informal e-mail</li>
+    <li>Message brief, well organised, in short sentences and simple vocabulary</li>
+    <li>No slang, abbreviations or contractions used</li>
+    <li>Complimentary close and suitable subscription included</li>
+    <li>Name (plus designation/address/contact for a formal e-mail) at the bottom</li>
+  </ul>
+
+  <footer>Class 8 · English · Writing Skills · Lesson 8 of 30</footer>
+</div>
+</body>
+</html>

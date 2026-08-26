@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 18 — Modal Auxiliaries | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:26px 0 8px; scroll-margin-top:20px;}
+  h4{font-family:var(--font-mono); font-size:13.5px; color:var(--cyan); margin:18px 0 8px; text-transform:uppercase; letter-spacing:.03em;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .ocr-note{
+    background:var(--accent2-soft); border:1px dashed var(--violet); border-radius:8px;
+    padding:10px 14px; margin:8px 0 14px; color:var(--ink-faint); font-size:13.5px; font-style:italic;
+  }
+
+  .convo{
+    border:1px solid var(--line-strong); border-radius:var(--radius); background:var(--paper-raised);
+    padding:16px 20px; margin:14px 0 22px;
+  }
+  .convo .who{font-family:var(--font-mono); font-size:12px; color:var(--c3); font-weight:700; text-transform:uppercase; letter-spacing:.03em; margin-top:10px;}
+  .convo .who:first-child{margin-top:0;}
+  .convo p{margin:2px 0 8px;}
+  .convo ol{margin:4px 0 8px;}
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:14.5px;}
+  table.ref-table caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:11px;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line-strong); padding:7px 10px; text-align:left; color:var(--ink-soft); vertical-align:top;}
+  table.ref-table th{background:var(--paper-raised); color:var(--ink); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table td.g{color:var(--ink); font-weight:600;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:16px 0 30px; background:var(--paper-raised);
+  }
+  .exercise-block h4{margin-top:0;}
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  table.gram-table{width:100%; border-collapse:collapse; margin:10px 0 16px; font-size:14px;}
+  table.gram-table th, table.gram-table td{border:1px solid var(--line-strong); padding:6px 8px; text-align:left;}
+  table.gram-table th{background:var(--paper); color:var(--ink-faint); font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;}
+  table.gram-table td.g{color:var(--ink); font-weight:600;}
+  input.blank-input{
+    width:92%; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  input.blank-input.sm{width:150px;}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:50px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol, .qa ul{margin:0; padding-left:20px;}
+  .qa li{margin-bottom:5px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar</div>
+  <h1 class="title">Lesson 18 — Modal Auxiliaries</h1>
+  <p class="subtitle">Semester 1 · Chapter-12 · Special Verbs for Special Expressions</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#intro">1. What is a Modal Auxiliary?</a></li>
+      <li><a href="#can-could">2. Use of Can / Could</a></li>
+      <li><a href="#exercise-can-could">3. Exercise — Can or Could</a></li>
+      <li><a href="#may-might">4. Use of May / Might</a></li>
+      <li><a href="#exercise-may-might">5. Exercise — May or Might</a></li>
+      <li><a href="#should-ought-must">6. Use of Should / Ought to / Must</a></li>
+      <li><a href="#exercise-should">7. Exercise — Should, Ought to or Must</a></li>
+      <li><a href="#will-would">8. Use of Will / Would</a></li>
+      <li><a href="#shall">9. Use of Shall</a></li>
+      <li><a href="#exercise-will-shall-would">10. Exercise — Will, Shall or Would</a></li>
+      <li><a href="#used-to">11. Use of Used to</a></li>
+      <li><a href="#need">12. Use of Need</a></li>
+      <li><a href="#dare">13. Use of Dare</a></li>
+      <li><a href="#exercise-used-dare-need">14. Exercise — Used to, Dare or Need</a></li>
+      <li><a href="#review-table">15. A Quick Review of Modal Auxiliaries</a></li>
+      <li><a href="#exercise-final">16. Exercise — Modal Auxiliaries with Expression</a></li>
+      <li><a href="#revision">17. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="intro"><span class="num">1.</span>What is a Modal Auxiliary?</h2>
+  <p>Read the sets of conversation given below carefully.</p>
+
+  <div class="convo">
+    <p class="who">Set-1</p>
+    <p><strong>Francis:</strong> I have put on a lot of weight. What do you advise me to lose weight?</p>
+    <p><strong>Doctor:</strong> I have a list of things you should do to lose weight.</p>
+    <ol>
+      <li>You should go for a brisk walk every day.</li>
+      <li>You should exercise regularly.</li>
+      <li>You should reduce the intake of butter, ghee, refined flour and sweets.</li>
+      <li>You should drink a lot of water.</li>
+      <li>You should measure your weight regularly to keep it controlled.</li>
+    </ol>
+  </div>
+
+  <div class="convo">
+    <p class="who">Set-2</p>
+    <p><strong>Teacher:</strong> Good morning students. I am your new class teacher.</p>
+    <p><strong>Students:</strong> Very good morning madam. Welcome to our class.</p>
+    <p><strong>Teacher:</strong> Thank you dear. I have prepared a list of rules that you must follow in the class and the school. Always remember these rules.</p>
+    <ol>
+      <li>You must keep your class neat and clean.</li>
+      <li>You must come to school regularly.</li>
+      <li>You must remain disciplined in the class and the school.</li>
+      <li>You must complete your work on time.</li>
+      <li>You must prepare well for your exams.</li>
+    </ol>
+  </div>
+
+  <p>You can observe that the word 'should' is used to express the expression of 'advice' in the first conversation. Similarly, in the second conversation, the word 'must' is used to express the expression of 'obligation' as the students have to follow the rules mentioned here. These words, 'should' and 'must', are called Modal Auxiliaries.</p>
+  <p><strong>A modal auxiliary is a helping verb used with the first form of some other verb to talk about special expressions such as possibility, permission, request, intention, advice, suggestion, promise, obligation, duty etc.</strong></p>
+
+  <h2 id="can-could"><span class="num">2.</span>Use of Can / Could</h2>
+  <ol>
+    <li><strong>To express ability:</strong> 'Can' is used to express ability in the present and 'could' is used to express ability in the past.<br>
+      Examples: Rohan can drive a car. · Rohan could drive a car when he was 14 years old.</li>
+    <li><strong>To express possibility:</strong> Can is used to express a general possibility. 'Could' is used to express a weak possibility.<br>
+      Examples: You can get this book in the library. (a common book which is easily available) · You could get this book in the library. (a rare book)</li>
+    <li><strong>To express request:</strong> 'Can' is used to express a request in an informal way. 'Could' is used to make a very polite request or a request in a very formal situation. In this case, 'could' is more formal than modal auxiliaries 'can' and 'may'.<br>
+      Examples: Can you please help me solve this sum? · Could you tell me the way to The Principal's office?</li>
+    <li><strong>To express permission:</strong> 'Can' is used to take permission in an informal situation. 'Could' is used to express permission in the past or asking for permission in a formal and polite way.<br>
+      Examples: Jessica: Mother, can I go out to play with my friends? Mother: Yes you can but only after completing your work. · Employee to Boss: Sir, could I get a day's off today, I am not feeling well? · My father told me that I could go to watch a movie.</li>
+  </ol>
+
+  <h2 id="exercise-can-could"><span class="num">3.</span>Exercise — Can or Could</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'can' or 'could'.</p>
+    <ol>
+      <li>She ___ read and write English well. <input class="blank-input sm" type="text"></li>
+      <li>I told him that he ___ accompany me. <input class="blank-input sm" type="text"></li>
+      <li>He ___ drive a car at the age of twelve. <input class="blank-input sm" type="text"></li>
+      <li>He ___ be aggressive sometimes. <input class="blank-input sm" type="text"></li>
+      <li>___ you lend me some money? (very polite) <input class="blank-input sm" type="text"></li>
+      <li>He ___ help you if you want. <input class="blank-input sm" type="text"></li>
+      <li>He ___ come to meet me any time. <input class="blank-input sm" type="text"></li>
+      <li>I ___ have availed myself of the opportunity. (But I didn't) <input class="blank-input sm" type="text"></li>
+      <li>Who ___ be kinder than God? <input class="blank-input sm" type="text"></li>
+      <li>Three years ago, he ___ not even walk. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. can (ability) · 2. could (reported speech) · 3. could (ability in the past) · 4. can (general characteristic) · 5. Could (very polite request) · 6. can (offer/ability) · 7. can (informal possibility) · 8. could (unrealised past ability) · 9. could (rhetorical possibility) · 10. could (ability in the past, negative)</p></div>
+  </div>
+
+  <h2 id="may-might"><span class="num">4.</span>Use of May / Might</h2>
+  <ol>
+    <li><strong>To grant or seek permission formally:</strong> 'May' is more formal and polite than 'can'. 'Might' is also used to seek permission very politely, mostly with hesitation, but it is less used than 'may'.<br>
+      Examples: The Principal to the student: You may leave now. · Peon to the boss: May I come in, sir? · Candidate to the interviewer: Might I come in, sir?</li>
+    <li><strong>To express a wish:</strong> 'May' is used to express a wish in present. 'Might' is used to express a wish in the past.<br>
+      Examples: May God bless you! · May you win the match! · He wished that God might bless me.</li>
+    <li><strong>To express a possibility:</strong> 'May' is used to express a good possibility whereas 'might' is used to express a weak or remote possibility. 'Might' is also used to express possibility in the past.<br>
+      Examples: It is cloudy today. It may rain. · It might rain today. · He thought that he might win the lottery.</li>
+    <li><strong>To express a purpose:</strong> 'May' is used to express a purpose in present or future. 'Might' is used to express a purpose in the past.<br>
+      Examples: He is working hard so that he may pass the examination. · He worked hard so that he might pass the examination.</li>
+  </ol>
+
+  <h2 id="exercise-may-might"><span class="num">5.</span>Exercise — May or Might</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'may' or 'might'.</p>
+    <ol>
+      <li>___ I go home now? <input class="blank-input sm" type="text"></li>
+      <li>She asked if she ___ read my book. <input class="blank-input sm" type="text"></li>
+      <li>We eat so that we ___ live. <input class="blank-input sm" type="text"></li>
+      <li>___ God bless you! <input class="blank-input sm" type="text"></li>
+      <li>It ___ rain today. (weak possibility) <input class="blank-input sm" type="text"></li>
+      <li>You ___ have won the race if you had taken an early start. <input class="blank-input sm" type="text"></li>
+      <li>If you apologise, he ___ forgive you. <input class="blank-input sm" type="text"></li>
+      <li>She ___ have applied for a job, but I am not sure. <input class="blank-input sm" type="text"></li>
+      <li>___ his soul rest in peace! <input class="blank-input sm" type="text"></li>
+      <li>He is working hard so that he ___ stand first in the class. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. May · 2. might (reported speech) · 3. may (purpose) · 4. May (wish) · 5. might (weak possibility) · 6. might (unreal past condition) · 7. may (good possibility) · 8. may (present possibility) · 9. May (wish) · 10. may (purpose)</p></div>
+  </div>
+
+  <h2 id="should-ought-must"><span class="num">6.</span>Use of Should / Ought to / Must</h2>
+  <p>'Should', 'ought to' and 'must' are used to give advice or express necessity, duty or obligation. However, the three differ in terms of intensity.</p>
+  <ul>
+    <li><strong>Should</strong> is not very forceful. It is used to show a moral duty or obligation or something that is good to do.</li>
+    <li><strong>Ought</strong> is more forceful than should, it is mostly used in formal situations. It is used to express a situational necessity which demands that something has to be done. Still the listener is free to choose whether to do the thing suggested or not.</li>
+    <li><strong>Must</strong> is the most forceful. It suggests that the listener has no choice left. It is used to express a strong obligation, compulsion, order or rule.</li>
+  </ul>
+  <p>Examples: You should give up drinking. (a simple advice) · You should take care of your health. (good for your health) · You should serve your country. (good for country and citizens) · We should help the poor. (moral obligation) · You ought to take medicine regularly. (Otherwise you will not get well soon.) · You ought to prepare well for your exams. · He ought to submit the report by tomorrow as the deadline is near. · The patient is critical. He must be taken to the hospital. (compulsion) · We all must follow the traffic rules. (rule)</p>
+
+  <h2 id="exercise-should"><span class="num">7.</span>Exercise — Should, Ought to or Must</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'should', 'ought to' or 'must'.</p>
+    <ol>
+      <li>A judge ___ be honest and unbiased. <input class="blank-input sm" type="text"></li>
+      <li>The rich ___ help the poor. <input class="blank-input sm" type="text"></li>
+      <li>Citizens ___ pay their taxes on time. <input class="blank-input sm" type="text"></li>
+      <li>You ___ take the test tomorrow. <input class="blank-input sm" type="text"></li>
+      <li>We ___ talk politely to others. <input class="blank-input sm" type="text"></li>
+      <li>You ___ meet the deadlines of the project. <input class="blank-input sm" type="text"></li>
+      <li>One ___ not talk loudly in the library. <input class="blank-input sm" type="text"></li>
+      <li>It is very late. You ___ go home now. <input class="blank-input sm" type="text"></li>
+      <li>You ___ complete your work by tomorrow, or you would be fined. <input class="blank-input sm" type="text"></li>
+      <li>You ___ not keep a gun without a licence. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. should (moral duty) · 2. should (moral obligation) · 3. must (legal obligation) · 4. must (compulsion — a scheduled test) · 5. should (moral duty) · 6. ought to (formal, situational necessity) · 7. should (etiquette/moral duty) · 8. must (urgency/compulsion) · 9. must (compulsion with a consequence) · 10. must (legal prohibition)</p></div>
+  </div>
+
+  <h2 id="will-would"><span class="num">8.</span>Use of Will / Would</h2>
+  <ol>
+    <li><strong>To express future:</strong> 'Will' is used to express future tense or make a prediction. 'Would' is used to express the past tense of future.<br>
+      Examples: He says that he will go to Delhi tomorrow. · He said that he would go to Delhi the next day.</li>
+    <li><strong>To express willingness/intention or determination:</strong> 'Will' expresses more determination than 'would'.<br>
+      Examples: He says that he will help me. (more determined to help) · He says that he would help me. (less determined to help)</li>
+    <li><strong>To express a habit:</strong> 'Will' is used to express a present habit whereas 'would' is used to express a past habit or routine.<br>
+      Examples: He will always come late. · He would always come late when he was a student. · When I was a student, I would play cricket.</li>
+    <li><strong>Would</strong> is also used to express liking or preference. It is also used to express a desire.<br>
+      Examples: What would you like to have, tea or coffee? · I would rather die than beg. · Would that I were rich! (desire)</li>
+  </ol>
+
+  <h2 id="shall"><span class="num">9.</span>Use of Shall</h2>
+  <ol>
+    <li><strong>To express simple future or prediction</strong> when the subject is the pronoun of the first person:<br>
+      Examples: I shall meet you tomorrow. · We shall go for a picnic next week.</li>
+    <li><strong>To express suggestion</strong> (in yes/no question with 'we' as subject):<br>
+      Examples: Shall we start the game? · Shall we play cards?</li>
+    <li><strong>To express volition/will of the listener</strong> (in yes/no questions with 'I' as subject):<br>
+      Examples: Shall I come tomorrow? (Do you want me to come?) · Shall I make some tea for you? (Do you want so?)</li>
+    <li><strong>In declarative sentences:</strong> to express willingness, intention or insistence of the speaker. In this case 'shall' is used with II and III persons.<br>
+      Examples: He shall go. (It is my order.) · He will go. (He insists on his going) · He shall be rewarded for his act of bravery. (promise) · You shall attend the class. (I order so.) · Jack will do it. (simple future) · Jack shall do it. (I will see to it that Jack does it.) · You will not betray my trust. (your determination) · You shall not betray my trust. (order/threat)</li>
+    <li><strong>To express a command, compulsion, legal obligation or prohibition</strong> when the subject is the Second or Third Person:<br>
+      Examples: He shall do the job. (command) · The students shall attend the class. (compulsion) · The people shall submit their income tax return before the end of March. (legal obligation) · You shall not smoke here. (prohibition)</li>
+  </ol>
+
+  <h2 id="exercise-will-shall-would"><span class="num">10.</span>Exercise — Will, Shall or Would</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'will', 'shall' or 'would'.</p>
+    <ol>
+      <li>I ___ surely help you. (determination) <input class="blank-input sm" type="text"></li>
+      <li>You ___ love your neighbour as yourself. (command) <input class="blank-input sm" type="text"></li>
+      <li>She ___ always come late. (present habit) <input class="blank-input sm" type="text"></li>
+      <li>They ___ sit for hours talking together. (past habit) <input class="blank-input sm" type="text"></li>
+      <li>___ that I were the Prime Minister! (wish/desire) <input class="blank-input sm" type="text"></li>
+      <li>He ___ play the match. (willingness but not much determined) <input class="blank-input sm" type="text"></li>
+      <li>You ___ not leave this place. (order) <input class="blank-input sm" type="text"></li>
+      <li>___ I bring some tea for you? (Do you want me to do so?) <input class="blank-input sm" type="text"></li>
+      <li>I ___ send him to jail. (threat) <input class="blank-input sm" type="text"></li>
+      <li>___ I bring you a chair to sit? (offer) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. will · 2. shall · 3. will · 4. would · 5. Would · 6. would · 7. shall · 8. Shall · 9. shall · 10. Shall</p></div>
+  </div>
+
+  <h2 id="used-to"><span class="num">11.</span>Use of Used to</h2>
+  <ol>
+    <li><strong>To express a habit in the past or a discontinued habit:</strong> It does not have a present tense form.<br>
+      Examples: He used to go out for a walk every morning. · As a child, she used to love dolls. · I am not used to such treatment.</li>
+    <li><strong>'Used to be'</strong> is used to express something that existed in the past.<br>
+      Examples: There used to be a park where there is a shopping complex now. · There used to be a hotel in the heart of the city.</li>
+  </ol>
+
+  <h2 id="need"><span class="num">12.</span>Use of Need</h2>
+  <p>As a modal auxiliary, 'need' is used to express necessity/obligation in negative or interrogative sentences.</p>
+  <p>Examples: He need not go there again. · She need not worry for her test. · Need I stay here? · No, you need not stay here.</p>
+
+  <h2 id="dare"><span class="num">13.</span>Use of Dare</h2>
+  <p>'Dare' is used to express 'courage' or 'venture'.</p>
+  <p>Examples: He dare not oppose me. · How dare you insult me? · He dare not face me.</p>
+
+  <h2 id="exercise-used-dare-need"><span class="num">14.</span>Exercise — Used to, Dare or Need</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'used to', 'dare' or 'need'.</p>
+    <ol>
+      <li>They ___ not rewrite their lessons. <input class="blank-input sm" type="text"></li>
+      <li>She ___ come late to school every day. <input class="blank-input sm" type="text"></li>
+      <li>You ___ not waste time on it. <input class="blank-input sm" type="text"></li>
+      <li>You ___ not see him; just write a letter. <input class="blank-input sm" type="text"></li>
+      <li>The students ___ not make a noise. <input class="blank-input sm" type="text"></li>
+      <li>I ___ be very naughty in my childhood. <input class="blank-input sm" type="text"></li>
+      <li>The boys ___ not enter the Principal's office. <input class="blank-input sm" type="text"></li>
+      <li>My grandmother ___ go for a morning walk in her youth. <input class="blank-input sm" type="text"></li>
+      <li>I ___ not go out in the dark. <input class="blank-input sm" type="text"></li>
+      <li>You ___ not go to market. I have brought the grocery. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1. need (no obligation to rewrite already-completed lessons) · 2. used to (past habit) · 3. need · 4. need · 5. dare (fear/courage — of a strict teacher, say) · 6. used to (past habit) · 7. dare · 8. used to (past habit) · 9. dare · 10. need</p>
+      <div class="ocr-note">Item 1 admits more than one reading in isolation ('need not' — no obligation to rewrite — fits the everyday classroom sense best; 'dare not' would suggest fear of rewriting, which is less natural here).</div>
+    </div>
+  </div>
+
+  <h2 id="review-table"><span class="num">15.</span>A Quick Review of Modal Auxiliaries</h2>
+  <table class="ref-table">
+    <tr><th>Modal</th><th>Example</th><th>Expression</th></tr>
+    <tr><td class="g">Can</td><td>I can solve this sum.</td><td>shows ability</td></tr>
+    <tr><td></td><td>My friend can come today.</td><td>shows possibility</td></tr>
+    <tr><td></td><td>Can I take your umbrella?</td><td>shows seeking permission</td></tr>
+    <tr><td></td><td>Can you lend me some money?</td><td>making request informally</td></tr>
+    <tr><td class="g">Could</td><td>You could easily catch the train.</td><td>shows ability in past</td></tr>
+    <tr><td></td><td>He could be in the library.</td><td>shows a weak possibility</td></tr>
+    <tr><td></td><td>Could I take a leave tomorrow?</td><td>shows seeking permission hesitatingly</td></tr>
+    <tr><td></td><td>Could I speak to the manager?</td><td>shows a very polite, formal request</td></tr>
+    <tr><td class="g">May</td><td>May I say something, sir?</td><td>shows seeking permission formally</td></tr>
+    <tr><td></td><td>May you get well soon!</td><td>shows a wish</td></tr>
+    <tr><td></td><td>He has worked very hard. He may stand first in the class.</td><td>shows a good possibility</td></tr>
+    <tr><td></td><td>He leaves home early so that he may catch the train.</td><td>shows purpose</td></tr>
+    <tr><td class="g">Might</td><td>He asked if he might say something.</td><td>seeking permission in past</td></tr>
+    <tr><td></td><td>He is sincere; he might do well in life.</td><td>shows a remote possibility</td></tr>
+    <tr><td></td><td>He worked hard so that he might stand first in the class.</td><td>shows purpose in the past</td></tr>
+    <tr><td class="g">Should</td><td>You should obey your elders.</td><td>shows advice</td></tr>
+    <tr><td></td><td>You should return my book tomorrow.</td><td>shows obligation</td></tr>
+    <tr><td></td><td>He should lose weight.</td><td>shows necessity</td></tr>
+    <tr><td></td><td>We should keep the city clean.</td><td>shows moral obligation</td></tr>
+    <tr><td class="g">Ought</td><td>You ought not to be late.</td><td>shows an obligation (formal situation)</td></tr>
+    <tr><td></td><td>You ought to go home now. It is very dark.</td><td>shows necessity</td></tr>
+    <tr><td class="g">Must</td><td>You must be punctual.</td><td>shows duty/necessity/compulsion/order/command when the subject has no other choice</td></tr>
+    <tr><td></td><td>He must abide by the rules of the company.</td><td></td></tr>
+    <tr><td></td><td>We must have a licence to drive a vehicle.</td><td></td></tr>
+    <tr><td class="g">Will</td><td>I will go to Delhi next week.</td><td>shows future planning</td></tr>
+    <tr><td></td><td>Oil will float on water.</td><td>shows a fact</td></tr>
+    <tr><td></td><td>He will always tell a lie.</td><td>shows a present habit</td></tr>
+    <tr><td></td><td>I will work very hard.</td><td>shows determination</td></tr>
+    <tr><td class="g">Would</td><td>He said that he would return in a week.</td><td>shows past tense of will</td></tr>
+    <tr><td></td><td>I would like to have some coffee.</td><td>shows liking</td></tr>
+    <tr><td></td><td>I would rather resign than stoop so low.</td><td>shows preference</td></tr>
+    <tr><td></td><td>Would that I were a bird!</td><td>shows a wish/desire</td></tr>
+    <tr><td></td><td>When she was a child, she would talk a lot.</td><td>shows past habit</td></tr>
+    <tr><td class="g">Shall</td><td>I shall go to Delhi next week.</td><td>shows a future planning</td></tr>
+    <tr><td></td><td>Shall I come tomorrow?</td><td>shows asking for listener's will</td></tr>
+    <tr><td></td><td>Shall we go for a walk?</td><td>shows making suggestion</td></tr>
+    <tr><td></td><td>You shall love your neighbour as yourself.</td><td>shows command</td></tr>
+    <tr><td></td><td>He shall get a prize tomorrow.</td><td>shows promise</td></tr>
+    <tr><td class="g">Need</td><td>You need not buy a new dress.</td><td>shows absence of necessity</td></tr>
+    <tr><td class="g">Dare</td><td>How dare you enter my office?</td><td>shows challenge/courage</td></tr>
+    <tr><td class="g">Used to</td><td>Before his accident, he used to be a swimmer.</td><td>shows a discontinued habit or routine</td></tr>
+  </table>
+
+  <h2 id="exercise-final"><span class="num">16.</span>Exercise — Modal Auxiliaries with Expression</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with appropriate modal auxiliaries. Also mention the expression which the modal used by you in each sentence shows.</p>
+    <ol>
+      <li>___ that he were here! <input class="blank-input sm" type="text"></li>
+      <li>I ___ try to improve next time. <input class="blank-input sm" type="text"></li>
+      <li>We ___ go for a picnic next week. <input class="blank-input sm" type="text"></li>
+      <li>You ___ report on time at any cost. <input class="blank-input sm" type="text"></li>
+      <li>___ I make some tea for you? <input class="blank-input sm" type="text"></li>
+      <li>I assure you that he ___ be rewarded for his bravery. <input class="blank-input sm" type="text"></li>
+      <li>You ___ not leave this place. <input class="blank-input sm" type="text"></li>
+      <li>My father left home at 5 o'clock. He ___ reach here any time. <input class="blank-input sm" type="text"></li>
+      <li>How ___ you mess with me? <input class="blank-input sm" type="text"></li>
+      <li>He ___ to smoke a lot when he was young. <input class="blank-input sm" type="text"></li>
+      <li>My grandmother ___ tell me stories. <input class="blank-input sm" type="text"></li>
+      <li>She asked if she ___ read my book. <input class="blank-input sm" type="text"></li>
+      <li>___ his soul rest in peace! <input class="blank-input sm" type="text"></li>
+      <li>There ___ be a hotel in the heart of the city. <input class="blank-input sm" type="text"></li>
+      <li>You ___ wear a helmet. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>(modal → expression)</p>
+      <p>1. Would → wish/desire · 2. will → determination · 3. shall → future planning (first person) · 4. must → strong compulsion · 5. Shall → asking listener's will/offer · 6. shall → promise · 7. shall → order · 8. may → possibility · 9. dare → challenge/courage · 10. used to → discontinued habit · 11. would → past habit · 12. might → seeking permission in the past (reported speech) · 13. May → wish · 14. used to → something that existed in the past · 15. should → advice</p>
+    </div>
+  </div>
+
+  <h2 id="revision"><span class="num">17.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>A modal auxiliary is a helping verb used with the first form of another verb to express possibility, permission, request, intention, advice, suggestion, promise, obligation, duty etc.</li>
+    <li>Can/Could: ability, possibility, request, permission — 'could' is generally weaker, more polite, or set in the past.</li>
+    <li>May/Might: formal permission, wish, possibility, purpose — 'might' is weaker/more remote, or set in the past.</li>
+    <li>Should/Ought to/Must: advice to compulsion, in increasing order of forcefulness.</li>
+    <li>Will/Would and Shall: future, determination, habit, command, promise, offer, suggestion — 'shall' is classically used with the first person for simple future, and with the second/third person for command, compulsion or promise.</li>
+    <li>Used to: a discontinued past habit or something that existed in the past — it has no present tense form.</li>
+    <li>Need (as a modal): necessity, used mainly in negative or interrogative sentences.</li>
+    <li>Dare: courage or venture, mostly in negative or interrogative sentences.</li>
+  </ul>
+
+  <footer>Class 8 · English · Grammar · Lesson 18 — Chapter-12, Modal Auxiliaries.</footer>
+</div>
+</body>
+</html>

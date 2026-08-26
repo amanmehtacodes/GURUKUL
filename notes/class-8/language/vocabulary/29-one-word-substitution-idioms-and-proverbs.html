@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 29 — One Word Substitution, Idioms and Proverbs | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:16px 22px; margin:0 0 30px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 24px;
+  }
+  .callout p{margin:0 0 8px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout strong{color:var(--ink);}
+
+  .ocr-note{
+    border:1px dashed var(--violet); border-radius:8px; padding:10px 14px;
+    color:var(--ink-soft); font-size:14px; font-style:italic; margin:10px 0 18px; background:var(--accent2-soft);
+  }
+  .ocr-note b{font-style:normal; color:var(--violet); font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; display:block; margin-bottom:4px;}
+
+  h2{
+    font-family:var(--font-mono); font-size:20px; font-weight:700; color:var(--c3);
+    margin:36px 0 12px; padding-top:16px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  h3{font-family:var(--font-mono); font-size:15.5px; font-weight:700; color:var(--ink); margin:22px 0 8px;}
+  p{margin:0 0 12px;}
+  ol{padding-left:22px; margin:0 0 12px;}
+  ul{padding-left:22px; margin:0 0 12px;}
+  li{margin-bottom:6px;}
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:10px 0 20px; font-size:14.5px;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line); padding:7px 10px; text-align:left;}
+  table.ref-table th{background:var(--paper-raised); color:var(--c3); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table tr:nth-child(even) td{background:rgba(255,255,255,0.02);}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:12px 0 26px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  input.blank-input{
+    font:14.5px var(--font-serif); padding:5px 9px; width:190px;
+    border:1px solid var(--line-strong); border-radius:6px;
+    background:var(--paper); color:var(--ink); margin:0 3px;
+  }
+  input.blank-input.narrow{width:60px;}
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol{margin:0; padding-left:20px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+  .qa table{width:100%; border-collapse:collapse; margin-top:4px;}
+  .qa td, .qa th{border:1px solid var(--line-strong); padding:6px 8px; font-size:13.5px; text-align:left;}
+
+  .checklist{padding-left:0; list-style:none; margin:0 0 12px;}
+  .checklist li{padding-left:28px; position:relative; margin-bottom:10px;}
+  .checklist li::before{content:"✓"; position:absolute; left:0; color:var(--cyan); font-weight:700;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Vocabulary · Chapter-14 (Sem 2)</div>
+  <h1 class="title">Lesson 29 — One Word Substitution, Idioms and Proverbs</h1>
+  <p class="subtitle">One Word Substitution, Idioms, Proverbs, Commonly Misspelt Words, and Frequently Used Foreign Words and Phrases.</p>
+
+  <div class="callout">
+    <p><strong>How this lesson is answered:</strong> the Idioms and Proverbs sections print their meanings out of order, exactly as the source does, and ask you to match each one to its correct idiom or proverb — the meanings are not aligned row-by-row with the items beside them. The answer keys below give the correct matching worked out from the meaning of each idiom or proverb, not the scrambled print order.</p>
+  </div>
+
+  <nav class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#s1">1. One Word Substitution</a></li>
+      <li><a href="#s2">2. Idioms — Matching Exercise</a></li>
+      <li><a href="#s3">3. Proverbs — Matching Exercise</a></li>
+      <li><a href="#s4">4. Commonly Misspelt Words</a></li>
+      <li><a href="#s5">5. Frequently Used Foreign Words and Phrases</a></li>
+      <li><a href="#s6">6. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="num">1.</span>One Word Substitution</h2>
+  <p>Write the single word that means the same as each phrase below.</p>
+
+  <h3>Set A</h3>
+  <div class="exercise-block">
+    <ol>
+      <li>One who loves others <input class="blank-input"></li>
+      <li>One who does things for pleasure and not for money <input class="blank-input"></li>
+      <li>A person representing a country in a foreign country <input class="blank-input"></li>
+      <li>A vessel in which fish and water plants are kept <input class="blank-input"></li>
+      <li>One who does not believe in God <input class="blank-input"></li>
+      <li>Life history written by oneself <input class="blank-input"></li>
+      <li>One who loves and collects books <input class="blank-input"></li>
+      <li>Study of living beings <input class="blank-input"></li>
+      <li>That which can be broken easily <input class="blank-input"></li>
+      <li>Government run by officials <input class="blank-input"></li>
+      <li>The art of beautiful handwriting <input class="blank-input"></li>
+      <li>One who eats human flesh <input class="blank-input"></li>
+      <li>A period of one hundred years <input class="blank-input"></li>
+      <li>Persons working in the same office <input class="blank-input"></li>
+      <li>One who cannot hear <input class="blank-input"></li>
+      <li>Government of the people chosen by the people for the people <input class="blank-input"></li>
+      <li>A game in which no team wins <input class="blank-input"></li>
+      <li>A thing fit to be eaten <input class="blank-input"></li>
+      <li>One who goes to live in a foreign country <input class="blank-input"></li>
+      <li>A long narrative poem <input class="blank-input"></li>
+      <li>A speech given after conclusion of drama <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>altruist</li><li>amateur</li><li>ambassador</li><li>aquarium</li><li>atheist</li>
+        <li>autobiography</li><li>bibliophile</li><li>biology</li><li>brittle</li><li>bureaucracy</li>
+        <li>calligraphy</li><li>cannibal</li><li>century</li><li>colleagues</li><li>deaf</li>
+        <li>democracy</li><li>drawn</li><li>edible</li><li>emigrant</li><li>epic</li><li>epilogue</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>Set B</h3>
+  <div class="exercise-block">
+    <ol>
+      <li>A speech without previous preparation <input class="blank-input"></li>
+      <li>Having very selective taste, hard to please <input class="blank-input"></li>
+      <li>Child brought by persons who are not his parents <input class="blank-input"></li>
+      <li>Fond of eating too much <input class="blank-input"></li>
+      <li>Murder of a human being <input class="blank-input"></li>
+      <li>Worshipping of idols <input class="blank-input"></li>
+      <li>One who does not know how to read or write <input class="blank-input"></li>
+      <li>That which cannot be believed <input class="blank-input"></li>
+      <li>That which cannot be avoided <input class="blank-input"></li>
+      <li>A disease spread by contact <input class="blank-input"></li>
+      <li>That which cannot be imitated <input class="blank-input"></li>
+      <li>Loss of sleep <input class="blank-input"></li>
+      <li>That which cannot be wounded <input class="blank-input"></li>
+      <li>One who travels from place to place <input class="blank-input"></li>
+      <li>Speech made for the first time <input class="blank-input"></li>
+      <li>Very particular even about small details <input class="blank-input"></li>
+      <li>Study of formation of new words <input class="blank-input"></li>
+      <li>No longer in practice <input class="blank-input"></li>
+      <li>One who is all powerful <input class="blank-input"></li>
+      <li>One who knows everything <input class="blank-input"></li>
+      <li>One who is present everywhere <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>extempore</li><li>fastidious</li><li>foster child</li><li>glutton</li><li>homicide</li>
+        <li>idolatry</li><li>illiterate</li><li>incredible</li><li>inevitable</li><li>infectious</li>
+        <li>inimitable</li><li>insomnia</li><li>invulnerable</li><li>itinerant</li><li>maiden speech</li>
+        <li>meticulous</li><li>neology</li><li>obsolete</li><li>omnipotent</li><li>omniscient</li><li>omnipresent</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>Set C</h3>
+  <div class="exercise-block">
+    <ol>
+      <li>One who sees bright side of things <input class="blank-input"></li>
+      <li>A child whose parents are dead <input class="blank-input"></li>
+      <li>A remedy for all ills <input class="blank-input"></li>
+      <li>One who depends on others <input class="blank-input"></li>
+      <li>One who believes in total abolition of war <input class="blank-input"></li>
+      <li>One who loves own country <input class="blank-input"></li>
+      <li>One who travels on foot <input class="blank-input"></li>
+      <li>One who leads others <input class="blank-input"></li>
+      <li>An examination of body after death <input class="blank-input"></li>
+      <li>Tendency to quarrel <input class="blank-input"></li>
+      <li>Animal having four foot <input class="blank-input"></li>
+      <li>Speaking to himself or herself <input class="blank-input"></li>
+      <li>One who enjoys talking about others private affairs <input class="blank-input"></li>
+      <li>That which cannot be seen through <input class="blank-input"></li>
+      <li>One who believes in God <input class="blank-input"></li>
+      <li>A state of highest perfection <input class="blank-input"></li>
+      <li>Style full of words <input class="blank-input"></li>
+      <li>Evening prayer in a church <input class="blank-input"></li>
+      <li>A well and long experienced person in a particular occupation <input class="blank-input"></li>
+      <li>An almirah where clothes are kept <input class="blank-input"></li>
+      <li>Study of animals <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>optimist</li><li>orphan</li><li>panacea</li><li>parasite</li><li>pacifist</li>
+        <li>patriot</li><li>pedestrian</li><li>pioneer</li><li>post mortem</li><li>pugnacity</li>
+        <li>quadruped</li><li>soliloquy</li><li>telltale</li><li>transparent</li><li>theist</li>
+        <li>utopia</li><li>verbose</li><li>vesper</li><li>veteran</li><li>wardrobe</li><li>zoology</li>
+      </ol>
+    </div>
+  </div>
+  <div class="ocr-note"><b>Source note</b>Set C, item 11 ("Animal having four foot") is reproduced exactly as printed — grammatically this should read "four feet," but the wording is left as it appears in the source.</div>
+
+  <h2 id="s2"><span class="num">2.</span>Idioms — Matching Exercise</h2>
+  <p>An idiom is a group of words which has a special meaning different from the literal meaning of the words. Match each idiom below with its correct meaning from the list.</p>
+
+  <table class="ref-table">
+    <tr><th>#</th><th>Idiom</th><th>Your Match (A–Z)</th></tr>
+    <tr><td>1</td><td>Add a new feather in one's cap</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>2</td><td>All and Sundry</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>3</td><td>All in all</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>4</td><td>Alpha and Omega</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>5</td><td>An eye-wash</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>6</td><td>At sixes and sevens</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>7</td><td>Apple-pie order</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>8</td><td>Apple of discord</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>9</td><td>Apple of one's eye</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>10</td><td>At one's beck and call</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>11</td><td>Bag and baggage</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>12</td><td>Beat about the bush</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>13</td><td>By fits and starts</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>14</td><td>By hook or by crook</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>15</td><td>Cats and dogs</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>16</td><td>Cock and bull story</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>17</td><td>End in smoke</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>18</td><td>Foot the bill</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>19</td><td>Herculean task</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>20</td><td>Leave no stone unturned</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>21</td><td>On the last leg</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>22</td><td>Put the cart before the horse</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>23</td><td>Need of the hour</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>24</td><td>Read between the lines</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>25</td><td>Spick and span</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>26</td><td>Take bull by the horns</td><td><input class="blank-input narrow"></td></tr>
+  </table>
+
+  <h3>Meanings (in the order printed in the source — match by letter)</h3>
+  <table class="ref-table">
+    <tr><th>Letter</th><th>Meaning</th></tr>
+    <tr><td>A</td><td>A pretence</td></tr>
+    <tr><td>B</td><td>Much prized treasure</td></tr>
+    <tr><td>C</td><td>All possessions or belongings</td></tr>
+    <tr><td>D</td><td>Using any method, even a dishonest one</td></tr>
+    <tr><td>E</td><td>Heavily</td></tr>
+    <tr><td>F</td><td>A false story</td></tr>
+    <tr><td>G</td><td>At the last stage</td></tr>
+    <tr><td>H</td><td>Do things in wrong order</td></tr>
+    <tr><td>I</td><td>Face a difficult situation with courage</td></tr>
+    <tr><td>J</td><td>Understand the hidden meaning</td></tr>
+    <tr><td>K</td><td>Cause of quarrel</td></tr>
+    <tr><td>L</td><td>Put in very sincere efforts</td></tr>
+    <tr><td>M</td><td>Very important, unavoidable</td></tr>
+    <tr><td>N</td><td>Difficult task</td></tr>
+    <tr><td>O</td><td>Most important</td></tr>
+    <tr><td>P</td><td>Perfect order</td></tr>
+    <tr><td>Q</td><td>Pay the cost of something</td></tr>
+    <tr><td>R</td><td>Talk about something without coming to the point</td></tr>
+    <tr><td>S</td><td>Neat and clean</td></tr>
+    <tr><td>T</td><td>Persons having different opinions</td></tr>
+    <tr><td>U</td><td>Not continuously</td></tr>
+    <tr><td>V</td><td>Always ready to obey somebody's order</td></tr>
+    <tr><td>W</td><td>Go wasted</td></tr>
+    <tr><td>X</td><td>Additional success</td></tr>
+    <tr><td>Y</td><td>Beginning and end</td></tr>
+    <tr><td>Z</td><td>Without making any distinction</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1–X · 2–Z · 3–O · 4–Y · 5–A · 6–T · 7–P · 8–K · 9–B · 10–V · 11–C · 12–R · 13–U · 14–D · 15–E · 16–F · 17–W · 18–Q · 19–N · 20–L · 21–G · 22–H · 23–M · 24–J · 25–S · 26–I</p>
+    </div>
+  </div>
+
+  <h2 id="s3"><span class="num">3.</span>Proverbs — Matching Exercise</h2>
+  <p>A proverb is a short and wise saying with a deep meaning. Match each proverb below with its correct meaning from the list.</p>
+
+  <table class="ref-table">
+    <tr><th>#</th><th>Proverb</th><th>Your Match (A–O)</th></tr>
+    <tr><td>1</td><td>A bird in hand is worth two in the bush.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>2</td><td>A little knowledge is a dangerous thing.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>3</td><td>A stitch in time saves nine.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>4</td><td>Barking dogs seldom bite.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>5</td><td>Birds of a feather flock together.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>6</td><td>Cut your coat according to your cloth.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>7</td><td>Every potter praises his pot.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>8</td><td>Every dark cloud has a silver lining.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>9</td><td>It is no use crying over spilt milk.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>10</td><td>Strike the iron while it is hot.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>11</td><td>Out of the frying-pan into the fire.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>12</td><td>Riches have wings.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>13</td><td>Too many cooks spoil the broth.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>14</td><td>Union is strength.</td><td><input class="blank-input narrow"></td></tr>
+    <tr><td>15</td><td>Rome was not built in a day.</td><td><input class="blank-input narrow"></td></tr>
+  </table>
+
+  <h3>Meanings (in the order printed in the source — match by letter)</h3>
+  <table class="ref-table">
+    <tr><th>Letter</th><th>Meaning</th></tr>
+    <tr><td>A</td><td>People who boast a lot do not work that much.</td></tr>
+    <tr><td>B</td><td>People with the same thinking remain together.</td></tr>
+    <tr><td>C</td><td>We must remain united.</td></tr>
+    <tr><td>D</td><td>Things need time to settle down.</td></tr>
+    <tr><td>E</td><td>An action performed at the right time is good.</td></tr>
+    <tr><td>F</td><td>Every difficult situation has a possible solution.</td></tr>
+    <tr><td>G</td><td>Getting into one problem from another.</td></tr>
+    <tr><td>H</td><td>Incomplete information leads to problems.</td></tr>
+    <tr><td>I</td><td>Everyone praises his things.</td></tr>
+    <tr><td>J</td><td>Money and wealth remain in rotation.</td></tr>
+    <tr><td>K</td><td>When many people involve in one task, it does not produce the desired results due to differences in opinions.</td></tr>
+    <tr><td>L</td><td>It is no use repenting after making a mistake.</td></tr>
+    <tr><td>M</td><td>It is better to rely on something which one already has than wait for the thing which one does not have.</td></tr>
+    <tr><td>N</td><td>Expenses must be according to resources.</td></tr>
+    <tr><td>O</td><td>Make the most of an opportunity.</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1–M · 2–H · 3–E · 4–A · 5–B · 6–N · 7–I · 8–F · 9–L · 10–O · 11–G · 12–J · 13–K · 14–C · 15–D</p>
+    </div>
+  </div>
+
+  <h2 id="s4"><span class="num">4.</span>Commonly Misspelt Words</h2>
+  <p>Write the correct spelling of each word given below.</p>
+  <div class="exercise-block">
+    <p class="instr">Set A</p>
+    <ol>
+      <li>acelerate <input class="blank-input"></li>
+      <li>accesory <input class="blank-input"></li>
+      <li>accomodate <input class="blank-input"></li>
+      <li>agrieved <input class="blank-input"></li>
+      <li>alltogether <input class="blank-input"></li>
+      <li>bankrupcy <input class="blank-input"></li>
+      <li>bilionaire <input class="blank-input"></li>
+      <li>beleive <input class="blank-input"></li>
+      <li>buletin <input class="blank-input"></li>
+      <li>calender <input class="blank-input"></li>
+      <li>cassete <input class="blank-input"></li>
+      <li>cieling <input class="blank-input"></li>
+      <li>colaborate <input class="blank-input"></li>
+      <li>conducter <input class="blank-input"></li>
+      <li>corespondence <input class="blank-input"></li>
+      <li>desend <input class="blank-input"></li>
+      <li>disapoint <input class="blank-input"></li>
+      <li>eligibal <input class="blank-input"></li>
+      <li>enterpreneur <input class="blank-input"></li>
+      <li>facinate <input class="blank-input"></li>
+      <li>forword <input class="blank-input"></li>
+      <li>fortunatly <input class="blank-input"></li>
+      <li>gosip <input class="blank-input"></li>
+      <li>greif <input class="blank-input"></li>
+      <li>hankerchief <input class="blank-input"></li>
+      <li>humorus <input class="blank-input"></li>
+      <li>ilegible <input class="blank-input"></li>
+      <li>indipendent <input class="blank-input"></li>
+      <li>indellible <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>accelerate</li><li>accessory</li><li>accommodate</li><li>aggrieved</li><li>altogether</li>
+        <li>bankruptcy</li><li>billionaire</li><li>believe</li><li>bulletin</li><li>calendar</li>
+        <li>cassette</li><li>ceiling</li><li>collaborate</li><li>conductor</li><li>correspondence</li>
+        <li>descend</li><li>disappoint</li><li>eligible</li><li>entrepreneur</li><li>fascinate</li>
+        <li>forward</li><li>fortunately</li><li>gossip</li><li>grief</li><li>handkerchief</li>
+        <li>humorous</li><li>illegible</li><li>independent</li><li>indelible</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">Set B</p>
+    <ol>
+      <li>inflamation <input class="blank-input"></li>
+      <li>jugement <input class="blank-input"></li>
+      <li>leftinent <input class="blank-input"></li>
+      <li>litrature <input class="blank-input"></li>
+      <li>maintainance <input class="blank-input"></li>
+      <li>marvelous <input class="blank-input"></li>
+      <li>millenium <input class="blank-input"></li>
+      <li>mozarela <input class="blank-input"></li>
+      <li>necesary <input class="blank-input"></li>
+      <li>oportunity <input class="blank-input"></li>
+      <li>paralal <input class="blank-input"></li>
+      <li>percieve <input class="blank-input"></li>
+      <li>pursuade <input class="blank-input"></li>
+      <li>neumonia <input class="blank-input"></li>
+      <li>profesor <input class="blank-input"></li>
+      <li>quarel <input class="blank-input"></li>
+      <li>rendezvus <input class="blank-input"></li>
+      <li>repitition <input class="blank-input"></li>
+      <li>rhytham <input class="blank-input"></li>
+      <li>servicable <input class="blank-input"></li>
+      <li>seige <input class="blank-input"></li>
+      <li>skelton <input class="blank-input"></li>
+      <li>surender <input class="blank-input"></li>
+      <li>supplimentary <input class="blank-input"></li>
+      <li>sufficeint <input class="blank-input"></li>
+      <li>tarif <input class="blank-input"></li>
+      <li>temprament <input class="blank-input"></li>
+      <li>vaccum <input class="blank-input"></li>
+      <li>writen <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>inflammation</li><li>judgement</li><li>lieutenant</li><li>literature</li><li>maintenance</li>
+        <li>marvellous</li><li>millennium</li><li>mozzarella</li><li>necessary</li><li>opportunity</li>
+        <li>parallel</li><li>perceive</li><li>persuade</li><li>pneumonia</li><li>professor</li>
+        <li>quarrel</li><li>rendezvous</li><li>repetition</li><li>rhythm</li><li>serviceable</li>
+        <li>siege</li><li>skeleton</li><li>surrender</li><li>supplementary</li><li>sufficient</li>
+        <li>tariff</li><li>temperament</li><li>vacuum</li><li>written</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s5"><span class="num">5.</span>Frequently Used Foreign Words and Phrases</h2>
+  <p>English is an international language. It has borrowed words and phrases from all languages of the world including Greek, French, Latin, Urdu, Hindi and Sanskrit. Most of the words in English language have come from other languages of the world. Some of the foreign words are enlisted below.</p>
+  <table class="ref-table">
+    <tr><th>Words/Phrases</th><th>Meanings</th></tr>
+    <tr><td>ad hoc (L)</td><td>for this purpose</td></tr>
+    <tr><td>adieu (F)</td><td>good bye</td></tr>
+    <tr><td>ad infinitum (L)</td><td>without coming to an end</td></tr>
+    <tr><td>agenda (L)</td><td>things to be done</td></tr>
+    <tr><td>bona fide (L)</td><td>in good faith</td></tr>
+    <tr><td>bon mot (F)</td><td>a funny and clever remark</td></tr>
+    <tr><td>bonne femme (F)</td><td>used for dishes cooked in a simple way</td></tr>
+    <tr><td>bon vivant (F)</td><td>a person who loves outing with friends and eating good food</td></tr>
+    <tr><td>chic (F)</td><td>elegant</td></tr>
+    <tr><td>cosy (It)</td><td>comfortable</td></tr>
+    <tr><td>curriculum vitae (L)</td><td>information about one's life</td></tr>
+    <tr><td>cul-de-sac (L)</td><td>a street that is closed at one end</td></tr>
+    <tr><td>debut (F)</td><td>the first public appearance of a performer</td></tr>
+    <tr><td>ego (L)</td><td>self</td></tr>
+    <tr><td>extempore (L)</td><td>without previous preparation</td></tr>
+    <tr><td>id est (L)</td><td>that is (i.e.)</td></tr>
+    <tr><td>in camera (L)</td><td>in private</td></tr>
+    <tr><td>in toto (L)</td><td>completely</td></tr>
+    <tr><td>lingua franca (L)</td><td>common language</td></tr>
+    <tr><td>macho (sp)</td><td>masculine in an aggressive way</td></tr>
+    <tr><td>per annum (L)</td><td>per year</td></tr>
+    <tr><td>per capita (L)</td><td>per head/person</td></tr>
+    <tr><td>quorum (L)</td><td>minimum number of members required for voting purpose</td></tr>
+    <tr><td>resume (L)</td><td>summary of the important events of one's life</td></tr>
+    <tr><td>sine qua non (L)</td><td>something that is essential before doing something else</td></tr>
+    <tr><td>status quo (L)</td><td>the situation as it is now</td></tr>
+    <tr><td>versus (L)</td><td>against</td></tr>
+    <tr><td>viva voce (L)</td><td>orally</td></tr>
+  </table>
+  <p style="color:var(--ink-faint); font-size:13.5px;">(L) = Latin · (F) = French · (It) = Italian · (sp) = Spanish</p>
+
+  <h2 id="s6"><span class="num">6.</span>Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>For one word substitution, focus on the key clue word in the phrase ("one who...", "that which...", "a place where...") — it usually points straight to the right root word.</li>
+    <li>Idioms carry a figurative meaning that has nothing to do with the literal words — never translate them word for word.</li>
+    <li>Proverbs teach a general lesson about life; when matching, ask "what advice is this giving?" rather than looking for literal overlap in wording.</li>
+    <li>For commonly misspelt words, watch for doubled consonants (accommodate, embarrass), silent letters (lieutenant, pneumonia), and "ie" vs "ei" (believe, perceive).</li>
+    <li>Foreign words and phrases keep their original spelling — note which language each comes from, since that often hints at pronunciation.</li>
+  </ul>
+
+  <footer>Class 8 · English · Vocabulary · Lesson 29 — One Word Substitution, Idioms and Proverbs (Chapter-14, Sem 2).</footer>
+</div>
+</body>
+</html>

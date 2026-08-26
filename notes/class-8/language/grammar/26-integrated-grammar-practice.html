@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 26 — Integrated Grammar Practice | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:5px; break-inside:avoid; font-size:14px;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700; color:var(--c3);
+    margin:34px 0 12px; padding-top:16px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  h3{font-family:var(--font-mono); font-size:15px; font-weight:700; color:var(--violet); margin:22px 0 8px;}
+  p{margin:0 0 12px;}
+  ul, ol.plain{padding-left:22px; margin:0 0 14px;}
+  ul li, ol.plain li{margin-bottom:7px;}
+  strong{color:var(--ink);}
+  .eg{color:var(--ink-soft);}
+  .jumbled{font-family:var(--font-mono); font-size:13.5px; color:var(--ink-faint); background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:6px 10px; display:block; margin-bottom:6px;}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 20px;
+  }
+  .callout p{margin:0;}
+  .callout strong{color:var(--ink);}
+
+  .tablewrap{overflow-x:auto; margin:12px 0 22px;}
+  table.ref-table{width:100%; border-collapse:collapse; font-size:14px; min-width:560px;}
+  table.ref-table th{
+    font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.03em;
+    text-align:left; color:var(--c3); border-bottom:2px solid var(--line-strong); padding:8px 9px;
+  }
+  table.ref-table td{border-bottom:1px solid var(--line); padding:8px 9px; color:var(--ink-soft); vertical-align:top;}
+  table.ref-table tr:last-child td{border-bottom:none;}
+  table.ref-table td strong, table.ref-table td.word{color:var(--ink); font-weight:700;}
+  table.ref-table td.center{text-align:center;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:14px 0 26px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  input.blank-input{
+    width:150px; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:44px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box.tall{min-height:70px;}
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol{margin:0; padding-left:20px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  .ocr-note{
+    border:1px dashed var(--violet); border-radius:8px; background:var(--accent2-soft);
+    color:var(--ink-soft); font-size:14px; font-style:italic; padding:10px 14px; margin:10px 0 16px;
+  }
+  .ocr-note b{color:var(--violet); font-style:normal; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; margin-right:6px;}
+
+  .checklist{background:var(--accent2-soft); border:1px solid var(--line-strong); border-radius:var(--radius-md); padding:18px 24px;}
+  .checklist ul{margin:0;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar · Chapter-15 (Sem 1) / Chapter-13 (Sem 2)</div>
+  <h1 class="title">Lesson 26 — Integrated Grammar Practice</h1>
+  <p class="subtitle">A mixed-skills workout combining both semesters' integrated practice: sentence reordering, news headlines, dialogue completion, cloze passages, error and omission editing, and describing a process in the passive voice.</p>
+
+  <div class="ocr-note"><b>How this lesson is answered</b>Most sections here (jumbled sentences, MCQ cloze passages, editing, passive-voice process descriptions) have one clearly correct answer, and those are given as definite Answer Keys. A few sections — completing real, heavily-blanked newspaper paragraphs, and open dialogue lines — ask you to invent plausible wording, since the textbook itself doesn't supply a single fixed answer for these. Those are marked "Sample Answer" rather than "Answer Key," and any blank filled from context rather than recovered with certainty is noted.</div>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#s1">1. Sentence Reordering</a></li>
+      <li><a href="#s2">2. News Headlines — Matching Exercise</a></li>
+      <li><a href="#s3">3. Interpreting and Explaining News Headlines</a></li>
+      <li><a href="#s4">4. Complete the News Paragraphs</a></li>
+      <li><a href="#s5">5. Explain the News Headlines</a></li>
+      <li><a href="#s6">6. Dialogue Completion</a></li>
+      <li><a href="#s7">7. Cloze — Gap Filling (Passages I–IX)</a></li>
+      <li><a href="#s8">8. Editing — Error Correction</a></li>
+      <li><a href="#s9">9. Editing — Omission</a></li>
+      <li><a href="#s10">10. Describing a Process in Passive Voice</a></li>
+      <li><a href="#s11">11. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="num">1.</span>Sentence Reordering</h2>
+  <p>Rearrange the jumbled words in each set into a correctly ordered sentence.</p>
+
+  <h3>Set 1</h3>
+  <div class="exercise-block">
+    <p class="instr">Reorder the words into a correct sentence.</p>
+    <ol class="plain">
+      <li><span class="jumbled">good / without / life / hardly / worth living / health / is</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">healthy / only / mind / a / can / a / body / healthy / develop / in</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">pay attention / habit / and exercise / we / to / our / of diet / sleep / should</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">athletics / an / for / has / not everyone / aptitude</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">even / to keep / is enough / light exercise / our body / as walking / fit</span><textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol><li>Life is hardly worth living without good health.</li><li>A healthy mind can develop only in a healthy body.</li><li>We should pay attention to our habit of diet, sleep and exercise.</li><li>Not everyone has an aptitude for athletics.</li><li>Even light exercise as walking is enough to keep our body fit.</li></ol></div>
+  </div>
+
+  <h3>Set 2</h3>
+  <div class="exercise-block">
+    <p class="instr">Reorder the words into a correct sentence.</p>
+    <ol class="plain">
+      <li><span class="jumbled">India / with numberless / is / in food / differences / and languages / a vast country / clothing</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">seen / the mixture / India / various races / and traditions / has / cultures / of</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">the North West / the / came / to India / from / Aryans</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">the Muslim / and the Jews / reached / of India / the Parsis / the west / coast</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">of common / all / runs / heritage / through / these diversities / the link</span><textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol><li>India is a vast country with numberless differences in food, clothing and languages.</li><li>India has seen the mixture of various races, cultures and traditions.</li><li>The Aryans came to India from the North West.</li><li>The Parsis, the Muslim and the Jews reached the west coast of India.</li><li>The link of common heritage runs through all these diversities.</li></ol></div>
+  </div>
+
+  <h3>Set 3</h3>
+  <div class="exercise-block">
+    <p class="instr">Reorder the words into a correct sentence.</p>
+    <ol class="plain">
+      <li><span class="jumbled">as migration / the mass / of animals / from one place / movement / to another / is known</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">birds / some / visit / India / every winter / like Siberian cranes</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">are / locusts / migratory / insects / harmful</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">monarch / fly / from Canada / to Mexico / the / butterflies</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">mystery / how / find their way / it / a great / migrating animals / is</span><textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol><li>The mass movement of animals from one place to another is known as migration.</li><li>Some birds like Siberian cranes visit India every winter.</li><li>Locusts are harmful migratory insects.</li><li>The monarch butterflies fly from Canada to Mexico.</li><li>How migrating animals find their way is a great mystery.</li></ol></div>
+  </div>
+
+  <h3>Set 4</h3>
+  <div class="exercise-block">
+    <p class="instr">Reorder the words into a correct sentence.</p>
+    <ol class="plain">
+      <li><span class="jumbled">exceptional / subhash / was / chandra / bose / child / an</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">his / division / Intermediate examination / passed / in / the first / he</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">Calcutta / of / was / student / Presidency / the / College / he</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">his life / wanted / to spend / the motherland / in serving / he</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">and shivaji / were / rana / pratap / heroes / his</span><textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol><li>Subhash Chandra Bose was an exceptional child.</li><li>He passed his Intermediate examination in the first division.</li><li>He was a student of the Presidency College of Calcutta.</li><li>He wanted to spend his life in serving the motherland.</li><li>Rana Pratap and Shivaji were his heroes.</li></ol></div>
+  </div>
+
+  <h3>Set 5</h3>
+  <div class="exercise-block">
+    <p class="instr">Reorder the words into a correct sentence.</p>
+    <ol class="plain">
+      <li><span class="jumbled">the world / disease / is / dental / common / disease / in / the most</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">method of / proper / brushing / diseases / can minimise / the dental</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">our teeth / we / after / brush / every / must / meal</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">should / our gums / with fingers / we / after brushing / massage</span><textarea class="answer-box"></textarea></li>
+      <li><span class="jumbled">health / balanced / is / a / for dental / diet / necessary</span><textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><ol><li>Dental disease is the most common disease in the world.</li><li>The proper method of brushing can minimise the dental diseases.</li><li>We must brush our teeth after every meal.</li><li>We should massage our gums with fingers after brushing.</li><li>A balanced diet is necessary for dental health.</li></ol></div>
+  </div>
+
+  <h2 id="s2"><span class="num">2.</span>News Headlines — Matching Exercise</h2>
+  <p>There is no denying the fact that reading newspaper is a tried and tested way of improving one's language. A newspaper has various kinds of news items covering areas such as politics, sports, business, entertainment, advertisements, notices, articles, letters to the editor etc and hence is a very rich source of vocabulary. The language used in news headlines is made compact by using non-finite verbs, phrases and passive structures in order to provide maximum information using minimum number of words in an impressive way. The news headlines are often catchy and spicy to attract the readers' attention.</p>
+  <p>Match the following News Headlines with their respective Explanations (the explanations below are printed out of order — figure out which explanation belongs with which headline).</p>
+  <div class="exercise-block">
+    <p class="instr">Type the letter (A–G) of the matching explanation next to each headline.</p>
+    <ol class="plain">
+      <li>Adampur shivers at 1.5° Celsius <input class="blank-input" type="text"></li>
+      <li>Vigilance visits Kolianwali's village to take stock of his properties <input class="blank-input" type="text"></li>
+      <li>40,000 Acres encroached upon in Haryana villages <input class="blank-input" type="text"></li>
+      <li>Police firing unprovoked: SIT <input class="blank-input" type="text"></li>
+      <li>Football gives Kashmir much-needed respite from violence <input class="blank-input" type="text"></li>
+      <li>Sub-inspector Found Dead in Jandiala <input class="blank-input" type="text"></li>
+      <li>Ahead of Christmas, Shimla grapples with water shortage <input class="blank-input" type="text"></li>
+    </ol>
+    <p class="instr" style="margin-top:14px;">Explanations:</p>
+    <ul>
+      <li><strong>A.</strong> A Punjab police sub-inspector (SI) was found shot dead at Jandiala Town police post, 15 km from the district headquarters, on Monday morning.</li>
+      <li><strong>B.</strong> Amidst everyday violence and social unrest, football fever strikes back in Kashmir with heightened enthusiasm among young athletes to learn the sport.</li>
+      <li><strong>C.</strong> Ahead of Christmas and New Year when thousands of tourists throng Shimla, the queen of hills is grappling with water shortage.</li>
+      <li><strong>D.</strong> Cold waves sweeping most parts of Punjab and Haryana for the past few days continued unabated with the minimum temperatures hovering below normal limits at most places on Wednesday.</li>
+      <li><strong>E.</strong> Investigators have found an Uttar Pradesh Police constable guilty of unprovoked firing that left a 38-year-old executive with an American multinational tech firm dead in Lucknow on September 29.</li>
+      <li><strong>F.</strong> Around 40,000 acres of panchayat land has been illegally encroached upon by private persons, a report submitted by the government in Punjab and Haryana court reveals.</li>
+      <li><strong>G.</strong> The state vigilance bureau (VB) on Tuesday assessed the property of Shiromani Akali Dal (SAD) leader Dyal Singh Kolianwali, who was booked in a disproportionate assets case.</li>
+    </ul>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. D · 2. G · 3. F · 4. E · 5. B · 6. A · 7. C</p></div>
+  </div>
+
+  <h2 id="s3"><span class="num">3.</span>Interpreting and Explaining News Headlines</h2>
+  <p>Since news headlines are written in pithy and compressed language they often employ tense or verb forms different from the ones used in the explanation. Therefore, it is important to identify the verb form or the tense used in the headline, understand its correct meaning and explain the news item using appropriate tense. Read the table given below to understand the use of different tenses and verb forms for news headlines and their explanation.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>News Headline</th><th>Tense/Verb Form Used</th><th>Explanation</th></tr>
+      <tr><td>8 Killed, 10 hurt in pile-up due to dense fog off Jhajjar</td><td>Past Participle used to denote a past accident: killed, hurt</td><td>Eight people, including seven women, were killed and 10 injured in a massive pile-up of dozens of vehicles, including school buses, near Badli bypass on Jhajjar-Rewari highway on Monday morning due to low visibility caused by heavy fog.</td></tr>
+      <tr><td>65 US varsities move court on visa changes</td><td>Simple Present used to denote a recent action: Move</td><td>As many as 65 top US universities, including Harvard and MIT, have challenged the Trump administration in a court against its new stringent visa policy for foreign students, warning that the new 'backdating' rule will have a detrimental effect on America's higher education system.</td></tr>
+      <tr><td>PM likely to flag off first electric engine converted from diesel locos at DLW</td><td>Infinitive with to used to denote a future action: to flag off</td><td>Prime Minister Narendra Modi is likely to flag-off the world's first electric engine converted from diesel locomotive during his visit to the city on December 29.</td></tr>
+      <tr><td>GST having negative effect on tourism in J&amp;K: Par panel</td><td>Present Participle used to denote an existing situation: having</td><td>The Goods and Services Tax has had a negative effect on tourism in Jammu and Kashmir, a parliamentary panel has noted, adding the Centre should reconsider the indirect tax regime on tourism-related activities in the northern state.</td></tr>
+    </table>
+  </div>
+  <h3>Points to Remember</h3>
+  <ol class="plain">
+    <li><strong>Use of Simple Present Tense:</strong> Simple Present Tense is excessively used in news headlines. In news headlines, Simple Present Tense is used to denote an action that somebody has done in recent past or is likely to do in near future. The reporting of a news headline in the present tense can be done in simple present, simple past or simple future depending on the news. For a report in simple past, past time reference is important.</li>
+    <li><strong>Use of Infinitive with to:</strong> In news headlines, Infinitive with 'to' is used to denote an action that someone is going to do in near future.</li>
+    <li><strong>Use of Past Participle:</strong> In news headlines, Past Participle is used to denote a verb in passive form to suggest that something has been done to some subject.</li>
+    <li><strong>Use of Present Participle:</strong> In news headlines, Present Participle can be used to denote an action of present continuous tense or a future action.</li>
+    <li><strong>Use of Simple Past Tense:</strong> While reporting a news headline, if past time is added, it is written in simple past tense.</li>
+    <li><strong>Voice:</strong> The report of a news headline may be written in active or passive voice depending on the sentence structures used in the report.</li>
+  </ol>
+
+  <h2 id="s4"><span class="num">4.</span>Complete the News Paragraphs</h2>
+  <p>Read the newspaper headlines given below. Use the information in the headline to complete the paragraph.</p>
+  <div class="ocr-note"><b>Sample answers</b>These are genuine, heavily-blanked wire-service reports. The exact original wording (specific names, numbers, and dates the source article used) cannot be recovered with certainty from the headline alone, so the completions below are plausible reconstructions consistent with the headline and any details already printed in the passage — treat them as models for the sentence structure and grammar (verb tense, prepositions, passive constructions) rather than the one "correct" wording.</div>
+  <div class="exercise-block">
+    <p class="instr">Complete each news paragraph using the information in its headline.</p>
+    <ol class="plain">
+      <li><strong>2 Army JCOs die in Pak fire along LoC</strong><br>...........Junior Commissioned Officers (JCOs) of the army ...................in a ceasefire violation by ................. along the ................. in the frontier Kupwara district, officials said.<textarea class="answer-box"></textarea></li>
+      <li><strong>No ground: HC rejects Sajjan's plea for more time to surrender</strong><br>Former Congress MP ......... Kumar convicted of abetting five killings during the 1984 Sikh carnage, will have to surrender ......... by December 31 after the Delhi ......... today rejected his plea for extra .........<textarea class="answer-box"></textarea></li>
+      <li><strong>Pvt agency to track power bill defaulters (DHBVN's pending dues Rs. 583.51 crore)</strong><br>With pending dues running into a whopping Rs. ........., the Dakshin Haryana Bijli Vitran Nigam (DHBVN) ......... a ......... detective ......... to trace thousands of .........<textarea class="answer-box"></textarea></li>
+      <li><strong>Two IAS officers, one PCS transferred</strong><br>The Punjab Government on Friday ......... orders of ......... and .........<textarea class="answer-box"></textarea></li>
+      <li><strong>4 travel agents booked for duping youth of Rs. 15 lakh</strong><br>The local police ......... for duping Satnam Singh of Lohgarh village of ......... on the pretext of sending him to Canada. A case ......... Sections 420, 406 and 120B of the Indian ......... has been ......... against 'Sharma Travel Agent' (Jalandhar), Partap Singh and Nirmal Singh of New Delhi and Deepak Sharma of Yamunanagar (Haryana) at Dharamkot ......... station.<textarea class="answer-box"></textarea></li>
+      <li><strong>High Court allows 74 to take HTET</strong><br>Acting upon a petition ......... by ......... candidates possessing the B.Ed qualification, the Punjab and Haryana ......... on Friday permitted them ......... the ......... examination scheduled to be ......... on January 5 and 6 next year.<textarea class="answer-box"></textarea></li>
+      <li><strong>Kohli is a fantastic captain: Starc</strong><br>Australian pace spearhead Mitchell ......... has described ........., the captain of Indian cricket team as a ........., having shared the dressing ......... with him while representing Royal Challengers Bangalore in the Indian ......... League.<textarea class="answer-box"></textarea></li>
+      <li><strong>Swift emerges as best-selling passenger vehicle</strong><br>Maruti ........., India's hatchback ......... as the ......... model of ......... in November by ......... 22,191 units.<textarea class="answer-box"></textarea></li>
+      <li><strong>Vaishno pilgrims can now get to Bhairon temple in 3 mins</strong><br>The ambitious Bhawan-......... passenger ropeway project to connect the ......... cave shrine with the ......... temple nestled in Trikuta hills of Reasi district became a reality today when Governor Satya Pal Malik inaugurated it at a ......... held at the Raj Bhawan here.<textarea class="answer-box"></textarea></li>
+      <li><strong>Ferozepur to get passport office</strong><br>The Union Ministry of External Affairs has given nod to ......... Post Office ......... Sewa Kendra (POPSK) at ......... and the facility will ......... functioning ......... January 9.<textarea class="answer-box"></textarea></li>
+      <li><strong>Indian carriers will need 2,300 planes in 20 years: Boeing</strong><br>Indian ......... are projected to ......... worth $320 billion in the next ......... amid unprecedented increase in the number of domestic ........., air-craft maker ......... said on Wednesday as it raised the forecast for the country.<textarea class="answer-box"></textarea></li>
+      <li><strong>Bengaluru enter play-offs; Jaipur win</strong><br>Bengaluru Bulls notched up a thumping 44-28 ......... over Telugu Titans to ......... for the ......... in the sixth ......... of the VIVO Pro Kabaddi League here ......... Tuesday.<textarea class="answer-box"></textarea></li>
+      <li><strong>Cyclone Pabuk moves towards Andamans</strong><br>A 'yellow' alert ......... sounded for the ......... and ......... Islands as a cyclonic storm ......... towards the archipelago, the Home Ministry ......... on Saturday.<textarea class="answer-box"></textarea></li>
+      <li><strong>Sameer downs Kashyap</strong><br>......... Verma ......... the last point of a gripping ......... against the seasoned campaigner, P. ........., with a jump smash and clinched a third ......... for Mumbai Rockets in the Vodafone PBL season 4. He won the men's doubles thereafter to score ......... impressive 5-0 ......... against the Chennai Smashers.<textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answers</div>
+      <ol>
+        <li>Two Junior Commissioned Officers (JCOs) of the army were killed in a ceasefire violation by Pakistani troops along the Line of Control (LoC) in the frontier Kupwara district, officials said.</li>
+        <li>Former Congress MP Sajjan Kumar, convicted of abetting five killings during the 1984 Sikh carnage, will have to surrender himself by December 31 after the Delhi High Court today rejected his plea for extra time.</li>
+        <li>With pending dues running into a whopping Rs. 583.51 crore, the Dakshin Haryana Bijli Vitran Nigam (DHBVN) has hired a private detective agency to trace thousands of defaulters.</li>
+        <li>The Punjab Government on Friday issued transfer orders of two IAS officers and one PCS officer.</li>
+        <li>The local police have booked four travel agents for duping Satnam Singh of Lohgarh village of Rs. 15 lakh on the pretext of sending him to Canada. A case under Sections 420, 406 and 120B of the Indian Penal Code has been registered against 'Sharma Travel Agent' (Jalandhar), Partap Singh and Nirmal Singh of New Delhi and Deepak Sharma of Yamunanagar (Haryana) at Dharamkot police station.</li>
+        <li>Acting upon a petition filed by 74 candidates possessing the B.Ed qualification, the Punjab and Haryana High Court on Friday permitted them to appear for the HTET examination scheduled to be held on January 5 and 6 next year.</li>
+        <li>Australian pace spearhead Mitchell Starc has described Virat Kohli, the captain of Indian cricket team, as a fantastic captain, having shared the dressing room with him while representing Royal Challengers Bangalore in the Indian Premier League.</li>
+        <li>Maruti Suzuki's Swift, India's hatchback, emerged as the best-selling model of passenger vehicles in November by selling 22,191 units.</li>
+        <li>The ambitious Bhawan-Bhairon passenger ropeway project to connect the Vaishno Devi cave shrine with the Bhairon temple nestled in Trikuta hills of Reasi district became a reality today when Governor Satya Pal Malik inaugurated it at a ceremony held at the Raj Bhawan here.</li>
+        <li>The Union Ministry of External Affairs has given nod to open a Post Office Passport Sewa Kendra (POPSK) at Ferozepur and the facility will start functioning from January 9.</li>
+        <li>Indian carriers are projected to need planes worth $320 billion in the next 20 years amid unprecedented increase in the number of domestic passengers, air-craft maker Boeing said on Wednesday as it raised the forecast for the country.</li>
+        <li>Bengaluru Bulls notched up a thumping 44-28 win over Telugu Titans to qualify for the play-offs in the sixth season of the VIVO Pro Kabaddi League here on Tuesday.</li>
+        <li>A 'yellow' alert has been sounded for the Andaman and Nicobar Islands as a cyclonic storm moves towards the archipelago, the Home Ministry said on Saturday.</li>
+        <li>Sameer Verma won the last point of a gripping match against the seasoned campaigner, P. Kashyap, with a jump smash and clinched a third win for Mumbai Rockets in the Vodafone PBL season 4. He won the men's doubles thereafter to score an impressive 5-0 win against the Chennai Smashers.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s5"><span class="num">5.</span>Explain the News Headlines</h2>
+  <div class="exercise-block">
+    <p class="instr">Explain the following News Headlines in one or two sentences. Invent relevant details.</p>
+    <ol class="plain">
+      <li>Uncle sells minor for Rs. 2 lakh in Bhiwani <textarea class="answer-box"></textarea></li>
+      <li>School timings changed due to fog <textarea class="answer-box"></textarea></li>
+      <li>47-year-old hit by tanker, dies <textarea class="answer-box"></textarea></li>
+      <li>Six booked for entering border post <textarea class="answer-box"></textarea></li>
+      <li>Lalu's daughter Misa to contest from Patliputra <textarea class="answer-box"></textarea></li>
+      <li>School bus overturns near Nurpur, six students hurt <textarea class="answer-box"></textarea></li>
+      <li>Winged visitor count dips at Himachal's Pong Wetland <textarea class="answer-box"></textarea></li>
+      <li>Motorist tries to run over cop in Sonipat <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answers</div>
+      <ol>
+        <li>In a shocking case in Bhiwani, a man was arrested for selling his minor nephew to a childless couple for Rs. 2 lakh. Police recovered the child and booked the accused under child-trafficking laws.</li>
+        <li>Following a spell of dense winter fog that reduced visibility across the region, the district administration revised school timings so that classes now begin later in the morning.</li>
+        <li>A 47-year-old pedestrian died after being hit by a speeding water tanker while crossing the road near the local market on Tuesday morning.</li>
+        <li>Six persons have been booked by the border security forces after they were found trespassing near a sensitive border post without authorisation.</li>
+        <li>Misa Bharti, daughter of RJD chief Lalu Prasad Yadav, has been announced as the party's candidate from the Patliputra constituency in the upcoming elections.</li>
+        <li>A school bus overturned on a sharp curve near Nurpur on Monday morning, injuring six students who were rushed to the nearest hospital; none of the injuries were reported to be serious.</li>
+        <li>Wildlife officials have recorded a noticeable drop in the number of migratory birds visiting the Pong Dam wetland this winter, raising concerns about changing climate patterns.</li>
+        <li>A traffic policeman in Sonipat had a narrow escape after a motorist, annoyed at being stopped for checking, allegedly tried to run him over before speeding away.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s6"><span class="num">6.</span>Dialogue Completion</h2>
+  <p>Complete each dialogue by filling in the blanks with appropriate dialogue lines.</p>
+
+  <h3>Dialogue 1 — A New Dress</h3>
+  <div class="exercise-block">
+    <p class="instr">Sunidhi: Hi Arpita. You (i)................. in this dress. Where (ii).................?<br>Arpita: I (iii)................. from a new showroom.<br>Sunidhi: How (iv).................?<br>Arpita: It cost me Rs 2000/-<br>Sunidhi: Only Rs 2000/-. I also want to buy one for myself. Can you (v)................. next time?<br>Arpita: Certainly. I will take you with me whenever I visit it the next time.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>(i) are looking really nice (ii) did you buy it from (iii) bought this dress (iv) much did it cost (v) take me along</p></div>
+  </div>
+
+  <h3>Dialogue 2 — At the Library</h3>
+  <div class="exercise-block">
+    <p class="instr">Student: Good morning, madam. I want (i)................. book issued. Could (ii)................. it?<br>Librarian: Sure! Have ................. with you?<br>Student: I am sorry. I have .................<br>Librarian: In that case, I can't ................. You should get ................. reissued.<br>Student: What ................. to get it reissued?<br>Librarian: You should fill ................. and ................. it along with 100 rupees which is the fee for getting the library card re-issued.<br>Student: Ok madam. I will submit this application form tomorrow. Thank you.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>(i) to get a (ii) you help me issue (iii) your library card (iv) lost it (v) issue you a book (vi) do I need to do (vii) up this form / submit</p></div>
+  </div>
+
+  <h3>Dialogue 3 — Rushing to the Match</h3>
+  <div class="exercise-block">
+    <p class="instr">Pratham: Why (i)................. so late?<br>Rohan: (ii)................. waiting. Actually my car broke down mid way.<br>Pratham: Oh! How (iii)................. reach ................. then?<br>Rohan: I (iv)................. to ................. here. Have ................. the tickets?<br>Pratham: Yes. The match (v)................. begin. Let's ................. the stadium. I (vi)................. to miss the match.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>(i) are you so late (ii) Sorry to keep you (iii) did you manage to reach here (iv) had to walk (v) is about to (vi) don't want</p></div>
+  </div>
+
+  <h3>Dialogue 4 — Phone Call</h3>
+  <div class="exercise-block">
+    <p class="instr">Neeru: Hello! ................. 8974985059?<br>Bhavya: Yes. May ................. calling?<br>Neeru: This is ................. here? Could .................?<br>Bhavya: Hello auntie. I ................. at home, but you ................. me.<br>Neeru: Sure. Please inform ................. postponed.<br>Bhavya: I will ................. message. Do you ................. else?<br>Neeru: Nothing. Thank you.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>(i) Is this (ii) I ask who's (iii) Neeru — is your mother (iv) am (v) had asked to call (vi) her that the meeting has been (vii) pass on the (viii) need anything</p></div>
+  </div>
+
+  <h3>Dialogue 5 — The Hare and the Tortoise</h3>
+  <div class="exercise-block">
+    <p class="instr">Hare: How ................. walk! You old, lazy fellow!<br>Tortoise: Don't ................. lazy. I ................. lazy.<br>Hare: Why don't ................. fast then. Look at me and see how ................. run.<br>Tortoise: Don't ................. yourself.<br>Hare: I ................. proud. Let's ................. race.<br>Tortoise: Why not.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>(i) slowly you (ii) call me (iii) am not (iv) you walk (v) fast I (vi) flatter (vii) am not (viii) have a</p></div>
+  </div>
+
+  <h3>Dialogue 6 — The New Student</h3>
+  <div class="exercise-block">
+    <p class="instr">Teacher: Who .................?<br>Radhika: Madam, she ................. in our class.<br>Teacher: Welcome dear. What ................. name?<br>Ruchi: Thank you madam. My name .................<br>Teacher: Where .................?<br>Ruchi: I have come ................. My father ................. here.<br>Teacher: In which ................. at Delhi.<br>Ruchi: I ................. School at Delhi.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer</div><p>(i) is this new girl (ii) has just joined (iii) is your (iv) is Ruchi (v) are you from (vi) from Delhi — has been transferred (vii) school did you study (viii) studied in DAV</p></div>
+  </div>
+
+  <h2 id="s7"><span class="num">7.</span>Cloze — Gap Filling (Passages I–IX)</h2>
+
+  <h3>(I) Dubai's Burj Al Arab — choose from the options given.</h3>
+  <div class="exercise-block">
+    <p class="instr">Dubai (a)........ developing a reputation (b)........ being the home of (c) the ........ extreme buildings (d) ........ the planet. Measuring more (e)........ 320 metres high, Dubai's Burj Al Arab (f)........ the tallest hotel in (g)........ world. As if being taller than the Eiffel Tower was (h)........ enough, it also stands (i)........ a massive man-made island, 270 metres off the coast. Inspired (j)........ the shape (k)........ a traditional sail, the Burj Al Arab (l)........ faced, and withstood, numerous challenges to become Dubai's Dream Palace.</p>
+    <p class="instr">(a) is / am / are / has been · (b) of / for / from / by · (c) much / more / most / least · (d) in / over / on / around · (e) then / the / of / than · (f) is / was / will be / has been · (g) this / that / a / the · (h) never / not / neither / nor · (i) on / about / in / upon · (j) with / by / at / for · (k) of / for / from / by · (l) has / have / had / will have</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) is · (b) for · (c) most · (d) on · (e) than · (f) is · (g) the · (h) not · (i) on · (j) by · (k) of · (l) has</p></div>
+  </div>
+
+  <h3>(II) The "Mozart Effect" — choose from the options given.</h3>
+  <div class="exercise-block">
+    <p class="instr">Recently, the idea (a)........ listening (b)........ classical music can increase intelligence, especially (c)........ babies, (d)........ caught the attention (e)........ the media, researchers (f)........ parents around (g)........ globe. (h)........ the early 1990's researchers (i)........ France and (j)........ US published articles that said listening to Mozart (k)........ 10 minutes temporarily (l)........ performance on IQ tests and challenging tasks. (m)........ a result, the media quickly (n)........ reporting (o)........ the "Mozart Effect".</p>
+    <p class="instr">(a) of / by / for / that · (b) to / for / from / at · (c) in / at / for / by · (d) had / have / has / having · (e) of / on / in / by · (f) and / but / so / because · (g) the / this / that / a · (h) in / before / after / while · (i) around / of / from / by · (j) this / an / a / the · (k) at / for / by / with · (l) improves / improved / has improved / will improve · (m) with / for / in / as · (n) began / begin / begins / has begun · (o) by / around / for / on</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) that · (b) to · (c) for · (d) has · (e) of · (f) and · (g) the · (h) In · (i) from · (j) the · (k) for · (l) improved · (m) As · (n) began · (o) on</p></div>
+  </div>
+
+  <h3>(III) Dolphins — choose from the options given.</h3>
+  <div class="exercise-block">
+    <p class="instr">Dolphins ........(is/am/are) thought to ........(be/been/have been) intelligent animals ........(because/since) of their playfulness, curiosity ........(but/and) quick ability ........(to/too/two) learn. They seem to communicate ........(by/with/for) one another through ........(a/an/the) combination of squeaks, whistles ........(and/but/so) clicks. While scientists don't ........(knew/know/knows) what they are going on about, it ........(is/was/has been) thought ........(what/that) dolphins are telling one another that food is nearby, or warning one another ........(of/for/by) approaching danger. Dolphins use sonar to discover ........(a/an/the) object's size, shape and location. By sending out a series of clicks and receiving the echo that bounces off the objects, they can differentiate ........(between/among) a shark and ........(a/an) boat.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>are, be, because, and, to, with, a, and, know, is, that, of, the, between, a</p></div>
+  </div>
+
+  <h3>(IV) The Old Man at the Coffee Shop</h3>
+  <div class="exercise-block">
+    <p class="instr">There ........ a coffee shop in front of ........ house where a man in ........ sixties always came and spent his ........ day. Out ........ curiosity one day, I went ........ the shop, ordered for some coffee and sat ........ to him. ........ I could speak, he asked me ........ my home ........ family. After ........ he became quite nostalgic. Suddenly ........ eyes were filled ........ tears as he went on ........ speak. I reminded him ........ his granddaughter Nimmie ........ was in the USA. I got to know ........ his son ........ in the USA ........ the last five years.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>was, my, his, whole, of, to, next, Before, about, and, that, his, with, to, of, who, that, was, for</p></div>
+  </div>
+
+  <h3>(V) Rebecca Stephens on Everest</h3>
+  <div class="exercise-block">
+    <p class="instr">Rebecca Stephens ........ the first woman ........ climb Mount Everest. Before she went up ........ highest mountain ........ the world, she ........ a journalist and lived in ........ small flat ........ South London. In 1993, Rebecca left ........ job and her family, and travelled ........ Asia ........ some other climbers. She found ........ life on Everest ........ hard. "You must carry everything ........ your back," she explained, "so you ........ take only the things that ........ need". When Rebecca reached the ........ of Mount Everest on May 17th 1993, ........ was the best moment ........ her life. Suddenly ........ became famous. Now she ........ writing a book about ........ trip and people often ........ her to talk about it.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>was, to, the, in, was, a, in, her, to, with, the, very, on, can, you, top, it, of, she, is, her, ask</p></div>
+  </div>
+
+  <h3>(VI) All the World's a Stage</h3>
+  <div class="exercise-block">
+    <p class="instr">All ........ world ........ a stage is a speech ........ appears in Shakespeare's play, 'As You Like It'. ........ first performance ........ the play ........ held in 1603. Shakespeare was ........ the first writer to compare the world to a stage on which every individual has a ........ to play. The Roman poet, Juvenal, ........ a similar comparison ........ he wrote 'All of Greece is a stage, and every Greek's an actor.' Greek and Roman influences ........ visible in Shakespeare's other works ........ well.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>the, being, that, The, of, was, not, part, made, when, are, as</p></div>
+  </div>
+
+  <h3>(VII) Ruskin Bond's "The Blue Umbrella"</h3>
+  <div class="exercise-block">
+    <p class="instr">'Binya's Blue Umbrella' ........ an extract ........ Bond's novel, 'The Blue Umbrella' (1980). Most ........ Bond's works ........ set in the mountains. He is ........ by the beauty ........ innocence of the mountain life, a reason ........ he decided to settle down ........ Dehradun and later in Landour. Bond weaves his stories ........ the simplest ........ things in life. In 2005, the Indian film-maker, Vishal Bhardwaj, adapted The Blue Umbrella ........ a film. It ........ the National Film Award ........ Best Children's Film ........ 2007.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>is, from, of, are, fascinated, and, why, in, around, of, into, won, for, in</p></div>
+  </div>
+
+  <h3>(VIII) The Tempest — Prospero, Miranda and Ariel</h3>
+  <div class="exercise-block">
+    <p class="instr">Far away on ........ lonely island, there ........ a wise old man ........ his daughter. The man ........ Prospero, a magician. The daughter ........ Miranda, a lovely, young lady ........ sixteen. Prospero knew so ........ of the art of magic ........ he was able ........ command the spirits of the island to obey ........ The chief of these gentle spirits ........ Ariel. Ariel was not ........ devoted to his master but ........ full ........ mischief. Ariel was invisible ........ all eyes except Prospero's.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>a, lived, and, was, was, of, much, that, to, him, was, only, also, of, to</p></div>
+  </div>
+
+  <h3>(IX) Phatik Chakravati's Mischief</h3>
+  <div class="exercise-block">
+    <p class="instr">Phatik Chakravati ........ the ringleader among the boys ........ the village. ........ day a plan ........ new mischief entered ........ head. There ........ a heavy log lying on ........ mud-flat of the river, waiting to ........ shaped into a mast for a boat. His ........ was ........ they should all work together to shift ........ log by force from its place ........ roll it away. The owner of the log would ........ angry ........ surprised, while they would all enjoy ........ fun.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>was, of, One, for, his, was, the, be, plan, that, the, and, be, and, the</p></div>
+  </div>
+
+  <h2 id="s8"><span class="num">8.</span>Editing — Error Correction</h2>
+  <p>The following passages have not been edited. There is an error in each line against which a space is given. Identify the incorrect word and give the correct word.</p>
+
+  <h3>Sample</h3>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>#</th><th>Line</th><th>Incorrect Word</th><th>Correct Word</th></tr>
+      <tr><td>a</td><td>The Taj Mahal was build by the Mughal Emperor Shah</td><td class="word">build</td><td class="word">built</td></tr>
+      <tr><td>b</td><td>Jahan in the memory of her Empress Mumtaz Mahal.</td><td class="word">her</td><td class="word">his</td></tr>
+      <tr><td>c</td><td>The actual name of Mumtaz Mahal is Arjumand Banu</td><td class="word">is</td><td class="word">was</td></tr>
+      <tr><td>d</td><td>Begum. According too a popular story, Arjumand Banu,</td><td class="word">too</td><td class="word">to</td></tr>
+      <tr><td>e</td><td>as a young girl, captivated Shah Jahan when she</td><td class="word">she</td><td class="word">he</td></tr>
+      <tr><td>f</td><td>confronted her for having released one off his two</td><td class="word">off</td><td class="word">of</td></tr>
+      <tr><td>g</td><td>prize fantail pigeons. He angrily demanded how she</td><td class="word">prize</td><td class="word">prized</td></tr>
+      <tr><td>h</td><td>can have done something like this, upon which she</td><td class="word">can</td><td class="word">could</td></tr>
+      <tr><td>i</td><td>released the another one as well and said, 'Like this!'</td><td class="word">another</td><td class="word">other</td></tr>
+    </table>
+  </div>
+
+  <h3>Passage 1 — Swaminathan's Vacation</h3>
+  <div class="exercise-block">
+    <p class="instr">Much two Swaminathan's displeasure, his father's (a) / courts closed in the second weak of May and (b) / father began to spent the afternoons at home. Swami (c) / feared that it may interefere with his afternoon rambles (d) / with Rajam and Mani. And it did. On the vary third (e) / day of his vocation, father commanded Swami, just (f) / as he is stepping out of his house, 'Swami, come here.' (g) / Father was standing in the small courtyard wear a dhoti (h) / end a banian. (i)<br>For each line, give the incorrect word and its correction.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) two → to · (b) weak → week · (c) spent → spend · (d) interefere → interfere · (e) vary → very · (f) vocation → vacation · (g) is → was · (h) wear → wearing · (i) end → and</p></div>
+  </div>
+
+  <h3>Passage 2 — C. V. Raman</h3>
+  <div class="exercise-block">
+    <p class="instr">Chandrasekhara Venkata Raman was borne in 1888. (a) / When C. V. Raman was for years old, his father moved (b) / to Vishakapatnam to taught Mathmatics, Physics, and (c) / Physical Geography on Mrs. A. V. N. College. By the (d) / time he was eighteen, Raman has passed the BA and MA (e) / examinations for the Presidency College in Chennai. (f) / Raman did not took up science as a career. He joined (g) / the India Finance Department in 1907 as Assistant (h) / Accountant General by Kolkata at the salary of 400 rupees. (i)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) borne → born · (b) for → four · (c) taught → teach · (d) on → at · (e) has → had · (f) for → from · (g) took → take · (h) India → Indian · (i) by → at</p></div>
+  </div>
+
+  <h3>Passage 3 — What Katy Did</h3>
+  <div class="exercise-block">
+    <p class="instr">Now that she new there was no chance of getting well at (a) / ones, the days dragged dreadfully. She lost heart about (b) / herself and took no interest in something. Aunt Izzie (c) / brought her books, but she didn't want to reed, or to (d) / see. Everything amused her. Clover and Cecy would (e) / come and sit with her, but hearing them tell about there (f) / plays maid her cry so miserably that Aunt Izzie wouldn't (g) / let them come often. They was very sorry for Katy, but (h) / they didn't mind much not being allow to see her. (i)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) new → knew · (b) ones → once · (c) something → anything · (d) reed → read · (e) Everything → Nothing · (f) there → their · (g) maid → made · (h) was → were · (i) allow → allowed</p></div>
+  </div>
+
+  <h3>Passage 4 — Emmeline Pankhurst</h3>
+  <div class="exercise-block">
+    <p class="instr">Emmeline Pankhurst was born in England on 1858. (a) / She was born in a family that has a long history of (b) / political and social activism. Note surprisingly, she (c) / grow up to be a champion of women's suffrage, or (d) / the rite to vote. During her lifetime, she held different (e) / municipal office. As a Poor Law Guardian and a (f) / Registrar of births and deaths, she is a witness to the (g) / inferior position of womans in society and their legal (h) / and socially oppression by men. (i)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) on → in · (b) has → had · (c) Note → Not · (d) grow → grew · (e) rite → right · (f) office → offices · (g) is → was · (h) womans → women · (i) socially → social</p></div>
+  </div>
+
+  <h3>Passage 5 — Tom Sawyer</h3>
+  <div class="exercise-block">
+    <p class="instr">Monday morning find Tom Sawyer miserable. It always (a) / found him sow because it began another week's (b) / suffering in school. Tom lied thinking. Presently it (c) / occurred too him that he wished he was sick; then he (d) / can stay home from school. Suddenly he discovered (e) / something. One of his upper front tooth was loose. (f) / This is lucky. He was about to begin to groan, as a (g) / "starter", as he calls it, when it occurred to him that (h) / if he came into court by that argument, his aunt would (i) / pull it out, and that will hurt. (j)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) find → finds · (b) sow → so · (c) lied → lay · (d) too → to · (e) can → could · (f) tooth → teeth · (g) is → was · (h) calls → called · (i) by → with · (j) will → would</p></div>
+  </div>
+
+  <h3>Passage 6 — The Microwave Oven</h3>
+  <div class="exercise-block">
+    <p class="instr">The microwave oven does not come about as a result of (a) / someone try to find a better, faster way to cook. During (b) / World War II, two scientists invent the magnetron, a (c) / tube who produces microwaves. Installing magnetrons (d) / in Britain's radar system, the microwaves was able (e) / to spot Nazi warplane on their way to bomb the British (f) / Isles. Incidental, several years later, it was discovered (g) / that microwaves also cooks food. Called the radar range, (h) / the first microwave was as heavier as a refrigerator. (i)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) does → did · (b) try → trying · (c) invent → invented · (d) who → that · (e) was → were · (f) warplane → warplanes · (g) Incidental → Incidentally · (h) cooks → cook · (i) heavier → heavy</p></div>
+  </div>
+
+  <h3>Passage 7 — Jaya and Gautam Buddha</h3>
+  <div class="exercise-block">
+    <p class="instr">Long before, in a little village in India, there lived a child (a) / name Jaya. One day Gautam Buddha came to his (b) / village. The child watched fascinating. He could not (c) / take his eyes of the face of Buddha, the quiet calm look, (d) / the deep dark eyes, the heir of contentment. He could (e) / not understood much of what Buddha said, but (f) / marvel instead at the sound of his voice, soft, serene, (g) / and full of kindness. The men and women listen to (h) / Buddha enthralled.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) before → ago · (b) name → named · (c) fascinating → fascinated · (d) of → off · (e) heir → air · (f) understood → understand · (g) marvel → marvelled · (h) listen → listened</p></div>
+  </div>
+
+  <h3>Passage 8 — The Tempest (Error Correction)</h3>
+  <div class="exercise-block">
+    <p class="instr">Far away in a lonely island, there lived a wise old man (a) / and his daughter. A man was Prospero, a magician. (b) / The daughter was Miranda, a lovely old lady of (c) / sixteen. Prospero knows so much of the art of magic that (d) / he was unable to command the spirits of the island to (e) / obey him. The chief of these gentle spirit was Ariel, (f) / a lively little creature who was not only devoting to his (g) / master but also full of mischiefs. Ariel was invisible to (h) / all eyes except Prosperos. (i)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) in → on · (b) A → The · (c) old → young · (d) knows → knew · (e) unable → able · (f) spirit → spirits · (g) devoting → devoted · (h) mischiefs → mischief · (i) Prosperos → Prospero's</p></div>
+  </div>
+
+  <h2 id="s9"><span class="num">9.</span>Editing — Omission</h2>
+  <p>In the following passages, one word has been omitted in each line against which a space is given. Give the missing word along with the word that comes before it and the word that comes after it.</p>
+
+  <h3>Sample</h3>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>#</th><th>Line</th><th>Preceding Word</th><th>Omitted Word</th><th>Succeeding Word</th></tr>
+      <tr><td>a</td><td>One Kenya's greatest Olympic athletes,</td><td class="word">one</td><td class="word">of</td><td class="word">Kenya's</td></tr>
+      <tr><td>b</td><td>winning gold medal twice, Kipchoge</td><td class="word">winning</td><td class="word">the</td><td class="word">gold</td></tr>
+      <tr><td>c</td><td>is also of the world's most admired</td><td class="word">also</td><td class="word">one</td><td class="word">of</td></tr>
+      <tr><td>d</td><td>Kip among the first in</td><td class="word">Kip</td><td class="word">was</td><td class="word">among</td></tr>
+      <tr><td>e</td><td>a long line of successful middle long distance</td><td class="word">middle</td><td class="word">and</td><td class="word">long</td></tr>
+      <tr><td>f</td><td>runners to come his country and has</td><td class="word">come</td><td class="word">from</td><td class="word">his</td></tr>
+      <tr><td>g</td><td>helped and inspired of his fellow countrymen</td><td class="word">inspired</td><td class="word">many</td><td class="word">of</td></tr>
+      <tr><td>h</td><td>and women to become the athletics force that are</td><td class="word">that</td><td class="word">they</td><td class="word">are</td></tr>
+      <tr><td>i</td><td>today.</td><td class="center">—</td><td class="center">—</td><td class="center">—</td></tr>
+    </table>
+  </div>
+  <div class="ocr-note"><b>On this section's answer keys</b>These passages are visibly scanned/OCR-damaged and the textbook doesn't print an answer key, so a few of the reconstructions below (particularly in Passages 3, 5 and 7) represent the most grammatically sound reading rather than a certainty — treat the surrounding preceding/succeeding words as the reliable anchor and the exact omitted word as a well-reasoned best fit.</div>
+
+  <h3>Passage 1 — Grandfather's Garden</h3>
+  <div class="exercise-block">
+    <p class="instr">When I young, maybe two or three, I used to (a) / go out play every evening with my grandfather. (b) / We would look butterflies flitting about around (c) / in the garden. He used tell me the names of the (d) / different flowers, various plants fruits which we (e) / could spot around us. In way, I could easily (f) / identify a sunbird, sparrow, a mynah and (g) / many other birds by the tender age four. I could (h) / easily spot Amaltash tree or a Bakul tree. (i)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) I / was / young · (b) out / to / play · (c) look / at / butterflies · (d) used / to / tell · (e) plants / and / fruits · (f) In / a / way · (g) sunbird, / a / sparrow · (h) age / of / four · (i) spot / an / Amaltash</p></div>
+  </div>
+
+  <h3>Passage 2 — The Origin of Chocolate</h3>
+  <div class="exercise-block">
+    <p class="instr">The origin of chocolate can traced to the cacao (a) / plant has been cultivated for more than 3,000 (b) / years the Mayans and the Aztec people of (c) / Mexico and Central America. The 'cacao' (d) / comes from 'cacau', the Mayan word plant. (e) / To them was a very important plant, and the (f) / beans were believed possess medicinal powers (g) / and used currency. Because of a spelling (h) / error probably by the British traders ago, these (i) / beans came to be known as cocoa beans.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) can / be / traced · (b) The / word / 'cacao' — corrected placement: plant / which / has · (c) years / by / the · (d) The / word / 'cacao' · (e) word / for / plant · (f) them / it / was · (g) believed / to / possess · (h) used / as / currency · (i) traders / long / ago</p></div>
+  </div>
+
+  <h3>Passage 3 — Miss Anjali's Classroom</h3>
+  <div class="exercise-block">
+    <p class="instr">Miss Anjali is a teacher a very reputed school. (a) / She is my neighbour. I feel that is a model (b) / human being. Every day returning from her (c) / duties, she educates street children at house. (d) / There is a courtyard in her bungalow, she set up (e) / a classroom there. There is a blackboard a board (f) / to put up various charts and pictures. Highlight (g) / of the little is a projector and a screen. Children (h) / get to movies and useful videos. (i)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) teacher / in / a · (b) that / she / is · (c) day / after / returning · (d) at / her / house · (e) bungalow, / where / she · (f) blackboard / and / a · (g) pictures. / The / highlight · (h) little / school / is · (i) to / watch / movies</p></div>
+  </div>
+
+  <h3>Passage 4 — The Bermuda Triangle</h3>
+  <div class="exercise-block">
+    <p class="instr">A mysterious part of Atlantic Ocean is located (a) / off the east coast the United States. This area (b) / is a three-sided part of the known as the (c) / Bermuda Triangle, formed an imaginary (d) / drawn from Milani, Florida to Bermuda to San (e) / Juan, Puerto Rico and back Florida. (f) / What weird about this place is that (g) / it been the location of numerous strange (h) / disappearances. Over one hundred ships planes (i) / have vanished in part of the world. (j)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) of / the / Atlantic · (b) coast / of / the · (c) the / ocean / known · (d) formed / by / an · (e) imaginary / line / drawn · (f) back / to / Florida · (g) What / is / weird · (h) it / has / been · (i) ships / and / planes · (j) in / this / part</p></div>
+  </div>
+
+  <h3>Passage 5 — Delhi's Air Pollution</h3>
+  <div class="exercise-block">
+    <p class="instr">Delhi's air kids gasping for breath. Nearly (a) / half Delhi's 4.4 million school children (b) / suffer irreversible lung damage from the (c) / poisonous as pollution levels in the city continue (d) / to spike daily, New York Times journalist (e) / Gardiner Harris in last post from the Capital (f) / after three-year assignment. The shocking (g) / article went viral on the social media reflected (h) / the concerns the thousands of parents. (i)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) air / has / kids · (b) half / of / Delhi's · (c) children / may / suffer · (d) poisonous / air / as · (e) daily, / the / New · (f) Harris / in / his — with "last" understood as "his last" · (g) after / a / three-year · (h) media / and / reflected · (i) concerns / of / thousands</p></div>
+  </div>
+
+  <h3>Passage 6 — Pahom's Land</h3>
+  <div class="exercise-block">
+    <p class="instr">Pahom was ambitious peasant. He owned (a) / several of land, but was always looking (b) / for more and more land buy. One day he (c) / heard a wonderful deal in a far-off country, (d) / the land of Bashkirs. He travelled and (e) / negotiated the village elder, who seemed a (f) / fool. The elder told Pahom that could have (g) / all land he wanted for a thousand roubles a day. (h) / Pahom not understand the deal. (i)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) was / an / ambitious · (b) several / acres / of · (c) land / to / buy · (d) heard / about / a · (e) travelled / there / and · (f) negotiated / with / the · (g) that / he / could · (h) all / the / land · (i) Pahom / did / not</p></div>
+  </div>
+
+  <h3>Passage 7 — Arjun and the Old Woman</h3>
+  <div class="exercise-block">
+    <p class="instr">Arjun was very late school that day. (a) / He missed the bus and had to walk all the (b) / way to school. He was hurrying down street (c) / when he saw an old woman sitting the roadside. (d) / She was staring the distance with a sad look (e) / in eyes. Arjun was really by now, but he could (f) / not carry on stopping to talk to her. He felt (g) / very sad looking her. She reminded him of (h) / own grandmother. (i)</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) late / for / school · (b) bus / so / had · (c) down / the / street · (d) sitting / by / the · (e) staring / into / the · (f) in / her / eyes · (g) carry / on / without · (h) looking / at / her · (i) of / his / own</p></div>
+  </div>
+
+  <h3>Passage 8 — Onam</h3>
+  <div class="exercise-block">
+    <p class="instr">Onam, the state festival of Kerala, is ancient (a) / festival is still celebrated in modern times. (b) / The festival which falls the Malayalam month (c) / of Chingam, marks 'asura', or demon king, (d) / Mahabali's annual visit patala (the underworld). (e) / According legends, although King mahabali, or (f) / Bali was descendent of the asuras, many (g) / considered him to be the honourable ruler Kerala (h) / had ever had.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>(a) is / an / ancient · (b) festival / that / is · (c) falls / in / the · (d) marks / the / 'asura', · (e) visit / to / patala · (f) According / to / legends, · (g) was / a / descendent · (h) the / most / honourable</p></div>
+  </div>
+
+  <h2 id="s10"><span class="num">10.</span>Describing a Process in Passive Voice</h2>
+
+  <h3>How to Make Fruit Cream (Present Passive)</h3>
+  <div class="exercise-block">
+    <p class="instr">Recipe steps: Transfer whipping cream in a large bowl → Beat it in low speed for 1-2 minutes with an electric beater → Add 3-4 tablespoons of sugar and rose water → Beat again till sugar mixes well → Place the bowl inside a refrigerator → Add the chopped fruits and nuts and mix well → Ready to be served and savoured.</p>
+    <p class="instr">First of all, whipping cream ..................... in a large bowl. It ..................... in a low speed for 1-2 minutes with the help of ..................... Then 3-4 tablespoons of sugar and rose water ..................... in the cream. It ..................... again till sugar is ..................... well. The bowl ..................... inside a refrigerator. Chopped fruits and nuts ..................... in the whipped cream and ..................... well to combine. Creamy and scrumptious fruit cream is ready .....................</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>First of all, whipping cream is transferred in a large bowl. It is beaten in a low speed for 1-2 minutes with the help of an electric beater. Then 3-4 tablespoons of sugar and rose water are added in the cream. It is beaten again till sugar is mixed well. The bowl is placed inside a refrigerator. Chopped fruits and nuts are added in the whipped cream and mixed well to combine. Creamy and scrumptious fruit cream is ready to be served and savoured.</p></div>
+  </div>
+
+  <h3>How to Make Coffee (Present Passive)</h3>
+  <div class="exercise-block">
+    <p class="instr">Recipe steps: Take a spoon of instant coffee, add it in a mug → Add sugar → Add cream (a little bit, otherwise it will spoil) → Mix for 2-3 minutes → Add cream again (less than one teaspoon) → Mix for 3 minutes → Add hot milk → Ready!</p>
+    <p class="instr">A spoon of ..................... and ..................... in a mug. Sugar ..................... Then a little bit of cream ..................... The contents ..................... for 2-3 minutes. Less than ..................... teaspoon of cream ..................... again. It ..................... for 3 minutes. Hot ..................... to the mixture. The creamy coffee is ready.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>A spoon of instant coffee is taken and added in a mug. Sugar is added. Then a little bit of cream is added, otherwise it will be spoiled. The contents are mixed for 2-3 minutes. Less than one teaspoon of cream is added again. It is mixed for 3 minutes. Hot milk is added to the mixture. The creamy coffee is ready.</p></div>
+  </div>
+
+  <h3>How to Make Carrot Halwa (Past Passive)</h3>
+  <div class="exercise-block">
+    <p class="instr">Recipe steps: Wash carrots → Peel and grate them → Set aside → Bring milk to a boil → Add grated carrots, stir well → Cook until milk evaporates → Add sugar, stir → Add ghee, stir well → Continue cooking until moisture evaporates → Add Khoya → Stir and cook 2-3 minutes → Garnish with roasted, cooled nuts.</p>
+    <p class="instr">Now explain the process in the past tense. Carrots ..................... under running water. They ..................... and ..................... with the help of a food processor or a hand grater and ..................... aside. Milk ..................... to a boil in a heavy bottom pot or deep pan. Grated carrots ..................... to the milk and the mixture ..................... well. It ..................... until the milk had completely evaporated. Sugar and ghee ..................... and ..................... well. It ..................... until the moisture evaporated. Khoya ..................... and the mixture ..................... and ..................... for 2-3 minutes. Carrot halwa ..................... with roasted and cooled nuts.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>Carrots were washed under running water. They were peeled and grated with the help of a food processor or a hand grater and set aside. Milk was brought to a boil in a heavy bottom pot or deep pan. Grated carrots were added to the milk and the mixture was stirred well. It was cooked until the milk had completely evaporated. Sugar and ghee were added and stirred well. It was continued to be cooked until the moisture evaporated. Khoya was added and the mixture was stirred and cooked for 2-3 minutes. Carrot halwa was garnished with roasted and cooled nuts.</p></div>
+  </div>
+
+  <h3>How to Make Tomato Soup (Future Passive)</h3>
+  <div class="exercise-block">
+    <p class="instr">Recipe steps: Place tomatoes in a pan → Fill with water → Add onions and green chillies → Cook ten minutes → Remove and peel tomatoes → Grind tomatoes, onions, chillies well → Add salt to taste → Boil and serve hot.</p>
+    <p class="instr">Now explain the process in the future tense. To prepare tomato soup, tomatoes ..................... in a pan and the pan ..................... with water. Onions and green chillies ..................... and the mixture ..................... minutes. Tomatoes ..................... from the pan and ..................... After that tomatoes, onions and chillies ..................... well. Salt ..................... to the mixture. The mixture ..................... and ..................... hot.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>To prepare tomato soup, tomatoes will be placed in a pan and the pan will be filled with water. Onions and green chillies will be added and the mixture will be cooked for ten minutes. Tomatoes will be removed from the pan and peeled. After that tomatoes, onions and chillies will be ground well. Salt will be added to the mixture. The mixture will be boiled and served hot.</p></div>
+  </div>
+
+  <h3>How to Make Macaroni (Present Passive)</h3>
+  <div class="exercise-block">
+    <p class="instr">Recipe steps: Peel, chop onions → Peel, crush garlic → Cut capsicum, remove seeds, cut into strips → Heat butter → Add onion and garlic, fry a few minutes → Add capsicum, tomato puree, ketchup, stir 5 minutes → Add milk, cheese, salt, pepper, mix well → Add boiled macaroni, mix well → Plate it, sprinkle grated cheese → Serve hot.</p>
+    <p class="instr">Onions ..................... and ..................... Garlic ..................... and ..................... Capsicum ..................... and seeds ..................... It ..................... into thin strips. Butter ..................... in a saucepan. Onion and garlic ..................... and the mixture ..................... for a few minutes. Capsicum, tomato puree and ketchup ..................... and it ..................... for 5 minutes. Milk, cheese, salt and pepper ..................... and ..................... well. Boiled macaroni ..................... well. It ..................... in a serving plate. Grated cheese ..................... on top. It should ..................... hot.</p>
+    <textarea class="answer-box tall"></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>Onions are peeled and chopped. Garlic is peeled and crushed. Capsicum is cut and seeds are removed. It is cut into thin strips. Butter is heated in a saucepan. Onion and garlic are added and the mixture is fried for a few minutes. Capsicum, tomato puree and ketchup are added and it is stirred for 5 minutes. Milk, cheese, salt and pepper are added and mixed well. Boiled macaroni is added and mixed well. It is put in a serving plate. Grated cheese is sprinkled on top. It should be served hot.</p></div>
+  </div>
+
+  <h2 id="s11"><span class="num">11.</span>Quick Revision Checklist</h2>
+  <div class="checklist">
+    <ul>
+      <li>Sentence reordering rewards finding the subject first, then building outward — verb next, then objects and modifiers last.</li>
+      <li>News headlines compress grammar for space: infinitives (to flag off) signal the future, past participles (killed, hurt) signal the past passively, and present participles (having) signal an ongoing situation.</li>
+      <li>Explaining a headline means expanding its compressed grammar back into a full sentence with a proper subject, tense, and connecting words.</li>
+      <li>Cloze passages with multiple-choice options are solved by testing each option in the sentence and checking subject-verb agreement, tense consistency, and the right preposition.</li>
+      <li>In error-correction editing, each flagged line has exactly one wrong word — check spelling, tense, number agreement, and word choice (its/it's, than/then) in that order.</li>
+      <li>In omission editing, read across the line boundary — the missing word is often a small connector (a, the, to, that, was) sitting right at the seam between two lines.</li>
+      <li>Describing a process in the passive voice turns each imperative instruction into Subject + is/are/was/were/will be + past participle, keeping the same sequence as the original steps.</li>
+    </ul>
+  </div>
+
+  <footer>Class 8 · English · Grammar · Lesson 26 — Integrated Grammar Practice (Chapter-15 Sem 1 / Chapter-13 Sem 2).</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 23 — Agreement of the Verb with Subject | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:5px; break-inside:avoid; font-size:14px;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700; color:var(--c3);
+    margin:34px 0 12px; padding-top:16px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  p{margin:0 0 12px;}
+  ul, ol.plain{padding-left:22px; margin:0 0 14px;}
+  ul li, ol.plain li{margin-bottom:7px;}
+  strong{color:var(--ink);}
+  .eg{color:var(--ink-soft);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 20px;
+  }
+  .callout p{margin:0;}
+  .callout strong{color:var(--ink);}
+
+  .wrongright{
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius-md);
+    padding:16px 20px; margin:12px 0 22px;
+  }
+  .wrongright .pair{display:flex; gap:14px; align-items:baseline; margin-bottom:8px; font-size:15px;}
+  .wrongright .pair:last-child{margin-bottom:0;}
+  .wrongright .wrong{color:#f87171; text-decoration:line-through; min-width:230px;}
+  .wrongright .right{color:var(--cyan);}
+  .wrongright .arrow{color:var(--ink-faint);}
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:12px 0 22px; font-size:14.5px;}
+  table.ref-table th{
+    font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.04em;
+    text-align:left; color:var(--c3); border-bottom:2px solid var(--line-strong); padding:8px 10px;
+  }
+  table.ref-table td{border-bottom:1px solid var(--line); padding:8px 10px; color:var(--ink-soft); vertical-align:top;}
+  table.ref-table tr:last-child td{border-bottom:none;}
+  table.ref-table td strong, table.ref-table td.word{color:var(--ink); font-weight:700;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:14px 0 26px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  input.blank-input{
+    width:150px; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  .checklist{background:var(--accent2-soft); border:1px solid var(--line-strong); border-radius:var(--radius-md); padding:18px 24px;}
+  .checklist ul{margin:0;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar · Chapter-14</div>
+  <h1 class="title">Lesson 23 — Agreement of the Verb with Subject</h1>
+  <p class="subtitle">All seventeen subject-verb agreement rules from the textbook, in full, with every practice exercise turned interactive.</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#s1">1. Spot the Error</a></li>
+      <li><a href="#s2">2. Rule 1 — Singular/Plural Subject and Verb</a></li>
+      <li><a href="#s3">3. Rule 2 — Nouns Joined by 'And' (Separate)</a></li>
+      <li><a href="#s4">4. Rule 3 — Nouns Joined by 'And' (Single Idea)</a></li>
+      <li><a href="#s5">5. Rule 4 — Singular Subjects with Or/Nor</a></li>
+      <li><a href="#s6">6. Rule 5 — Singular + Plural with Or/Nor</a></li>
+      <li><a href="#s7">7. Rule 6 — Pronouns of Different Persons with Or/Nor</a></li>
+      <li><a href="#s8">8. Exercise — Fill in the Correct Form (Set 1)</a></li>
+      <li><a href="#s9">9. Rule 7 — With, As Well As, Along With...</a></li>
+      <li><a href="#s10">10. Rule 8 — Each, Every, Either, Neither...</a></li>
+      <li><a href="#s11">11. Rule 9 — Two Singulars Qualified by Each/Every</a></li>
+      <li><a href="#s12">12. Rule 10 — Error of Proximity</a></li>
+      <li><a href="#s13">13. Rule 11 — Looks Singular, Takes Plural Verb</a></li>
+      <li><a href="#s14">14. Rule 12 — Looks Plural, Takes Singular Verb</a></li>
+      <li><a href="#s15">15. Rule 13 — Collective Nouns</a></li>
+      <li><a href="#s16">16. Rule 14 — Plural Noun as a Title/Name</a></li>
+      <li><a href="#s17">17. Rule 15 — Plural Noun Denoting a Quantity</a></li>
+      <li><a href="#s18">18. Rule 16 — Two Nouns, One or Two Articles</a></li>
+      <li><a href="#s19">19. Rule 17 — A Lot Of, Some Of, Most Of...</a></li>
+      <li><a href="#s20">20. Exercise — Fill in the Correct Form (Set 2)</a></li>
+      <li><a href="#s21">21. Exercise — Tick the Correct Option</a></li>
+      <li><a href="#s22">22. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="num">1.</span>Spot the Error</h2>
+  <p>Read the following sentences carefully.</p>
+  <ol class="plain">
+    <li class="eg">Ram and Sham is friends.</li>
+    <li class="eg">I were not there.</li>
+    <li class="eg">He like mangoes.</li>
+    <li class="eg">All the boys is playing cricket.</li>
+    <li class="eg">You is my friend.</li>
+    <li class="eg">They has taken their meal.</li>
+  </ol>
+  <p><strong>THINK:</strong> Do you notice any abnormality in these sentences?</p>
+  <p>In each sentence given above, the verb does not agree with the subject in number or person. Now read the same sentences again.</p>
+  <div class="wrongright">
+    <div class="pair"><span class="wrong">Ram and Sham is friends.</span><span class="arrow">→</span><span class="right">Ram and Sham are friends.</span></div>
+    <div class="pair"><span class="wrong">I were not there.</span><span class="arrow">→</span><span class="right">I was not there.</span></div>
+    <div class="pair"><span class="wrong">He like mangoes.</span><span class="arrow">→</span><span class="right">He likes mangoes.</span></div>
+    <div class="pair"><span class="wrong">All the boys is playing cricket.</span><span class="arrow">→</span><span class="right">All the boys are playing cricket.</span></div>
+    <div class="pair"><span class="wrong">You is my friend.</span><span class="arrow">→</span><span class="right">You are my friend.</span></div>
+    <div class="pair"><span class="wrong">They has taken their meal.</span><span class="arrow">→</span><span class="right">They have taken their meal.</span></div>
+  </div>
+  <p>A finite verb agrees with its subject in number, person or tense. This is known as <strong>subject-verb agreement</strong> or <strong>agreement of the verb with its subject</strong>. Read the following rules and examples carefully to understand subject-verb agreement.</p>
+
+  <h2 id="s2"><span class="num">2.</span>Rule 1 — Singular/Plural Subject and Verb</h2>
+  <p>A singular subject takes a singular verb and a plural subject takes a plural verb.</p>
+  <ul>
+    <li class="eg">The baby is sleeping.</li>
+    <li class="eg">The babies are sleeping.</li>
+    <li class="eg">He reads a book.</li>
+    <li class="eg">They read a book.</li>
+    <li class="eg">I am waiting for you.</li>
+    <li class="eg">We are waiting for you.</li>
+  </ul>
+
+  <h2 id="s3"><span class="num">3.</span>Rule 2 — Nouns/Pronouns Joined by 'And' (Separate Persons or Things)</h2>
+  <p>When two or more nouns or pronouns are joined by 'and', and they represent two separate persons or things, the verb used should be plural.</p>
+  <ul>
+    <li class="eg">Seeta and Geeta are going to market.</li>
+    <li class="eg">Gold and Platinum are precious metals.</li>
+    <li class="eg">You and he have taken your lunch.</li>
+    <li class="eg">Time and tide wait for none.</li>
+  </ul>
+
+  <h2 id="s4"><span class="num">4.</span>Rule 3 — Nouns Joined by 'And' (Single Person, Thing or Concept)</h2>
+  <p>When two or more nouns or pronouns are joined by 'and', but they refer to or represent a single person, thing or concept, the verb should be singular.</p>
+  <ul>
+    <li class="eg">Early to bed and early to rise is a good habit.</li>
+    <li class="eg">Rice and curry is my favourite meal.</li>
+    <li class="eg">The horse and carriage is ready.</li>
+    <li class="eg">My friend, guide and philosopher is my father.</li>
+  </ul>
+
+  <h2 id="s5"><span class="num">5.</span>Rule 4 — Two Singular Subjects Connected by 'Or'/'Nor'</h2>
+  <p>When two or more singular subjects are connected by 'or' or 'nor' the verb should be singular.</p>
+  <ul>
+    <li class="eg">Either Kunal or his friend has broken the window.</li>
+    <li class="eg">Neither the milkman or his son is ploughing the field.</li>
+  </ul>
+
+  <h2 id="s6"><span class="num">6.</span>Rule 5 — Singular and Plural Subject Connected by 'Or'/'Nor'</h2>
+  <p>When a singular and a plural subject is connected by 'or' or 'nor', the plural subject is kept near the verb and the verb agrees with the plural subject.</p>
+  <ul>
+    <li class="eg">Either Kunal or his friends have broken the window.</li>
+    <li class="eg">Neither the milkman or his sons are ploughing the field.</li>
+  </ul>
+
+  <h2 id="s7"><span class="num">7.</span>Rule 6 — Pronouns of Different Persons Connected by 'Or'/'Nor'</h2>
+  <p>When the subjects joined by 'or' or 'nor' are pronouns of different persons, the verb should agree with the pronoun that is nearer the verb.</p>
+  <ul>
+    <li class="eg">Either you or I am to blame.</li>
+    <li class="eg">Neither you nor he is mistaken.</li>
+  </ul>
+
+  <h2 id="s8"><span class="num">8.</span>Exercise: Fill in the blanks with correct form of verb.</h2>
+  <div class="exercise-block">
+    <p class="instr">Choose the correct option from the brackets and type it into the box.</p>
+    <ol class="plain">
+      <li>Children ........... (is/am/are) playing in the ground at this time. <input class="blank-input" type="text"></li>
+      <li>He always ........... (help/helps) others. <input class="blank-input" type="text"></li>
+      <li>I ........... (is/am/are) a student. <input class="blank-input" type="text"></li>
+      <li>Butterflies ........... (has/have) beautiful wings. <input class="blank-input" type="text"></li>
+      <li>My teacher ........... (has/have) corrected my notebook. <input class="blank-input" type="text"></li>
+      <li>Bread and butter ........... (was/were) given to us as breakfast. <input class="blank-input" type="text"></li>
+      <li>George and John ........... (is/am/are) best friends. <input class="blank-input" type="text"></li>
+      <li>Either Kate or her friends ........... (has/have) kept these books here. <input class="blank-input" type="text"></li>
+      <li>Neither Jatin nor his father ........... (have/has) a red car. <input class="blank-input" type="text"></li>
+      <li>Either you or he ........... (have/has) received the message. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. are · 2. helps · 3. am · 4. have · 5. has · 6. was · 7. are · 8. have · 9. has · 10. has</p></div>
+  </div>
+
+  <h2 id="s9"><span class="num">9.</span>Rule 7 — With, As Well As, Along With, No Less Than, Together With, Besides, And Not</h2>
+  <p>When a Noun or a Pronoun is joined with another noun(s) or pronoun(s) using the words 'with', 'as well as', 'along with', 'no less than', 'together with', 'besides' or 'and not', the verb agrees with the one introduced first in the sentence.</p>
+  <ul>
+    <li class="eg">The coach, with all the players, is practising in the field.</li>
+    <li class="eg">The players, as well as the coach, are practising in the field.</li>
+    <li class="eg">Abhinav, no less than his colleagues, is very honest.</li>
+    <li class="eg">Geetika, and not her sisters, has baked the cake.</li>
+    <li class="eg">I, as well as they, am sick of his behaviour.</li>
+  </ul>
+
+  <h2 id="s10"><span class="num">10.</span>Rule 8 — Each, Every, Either, Neither, Many a, Everyone...</h2>
+  <p>The words such as 'each', 'every', 'either', 'neither', 'many a', 'everyone', 'everybody', 'somebody', 'one of', 'none of' etc. take a singular verb.</p>
+  <ul>
+    <li class="eg">Each child was given a candy.</li>
+    <li class="eg">Everybody wants to be appreciated.</li>
+    <li class="eg">Somebody has stolen my purse.</li>
+    <li class="eg">One of my friends has settled in the USA.</li>
+    <li class="eg">Many a student was playing in the playground.</li>
+  </ul>
+
+  <h2 id="s11"><span class="num">11.</span>Rule 9 — Two Singular Subjects Joined by 'And', Qualified by 'Each'/'Every'</h2>
+  <p>If two singular subjects joined by 'and' are qualified by 'each' or 'every', they take a singular verb.</p>
+  <ul>
+    <li class="eg">Each hour and each minute is precious.</li>
+    <li class="eg">Every man and every woman desires happiness.</li>
+  </ul>
+
+  <h2 id="s12"><span class="num">12.</span>Rule 10 — Error of Proximity</h2>
+  <p>When the subject is a phrase, the verb must agree with the subject proper instead of the word which is near the verb. The error of making the verb agree with the word near it is called the error of proximity.</p>
+  <ul>
+    <li class="eg">The attitude of the officers is friendly.</li>
+    <li class="eg">A list of the candidates was prepared.</li>
+  </ul>
+
+  <h2 id="s13"><span class="num">13.</span>Rule 11 — Nouns That Look Singular but Take a Plural Verb</h2>
+  <p>Some nouns which appear to be singular, but are treated as plural, take a plural verb.</p>
+  <ul>
+    <li class="eg">The cattle are grazing in the field.</li>
+    <li class="eg">Six dozen cost rupees five hundred.</li>
+    <li class="eg">The people were shouting.</li>
+  </ul>
+
+  <h2 id="s14"><span class="num">14.</span>Rule 12 — Nouns That Look Plural but Take a Singular Verb</h2>
+  <p>Some nouns appear to be plural, but they take a singular verb.</p>
+  <ul>
+    <li class="eg">Politics is a dirty game.</li>
+    <li class="eg">The news of his arrival has come.</li>
+    <li class="eg">The wages of sin is death.</li>
+    <li class="eg">Mathematics is my favourite subject.</li>
+  </ul>
+
+  <h2 id="s15"><span class="num">15.</span>Rule 13 — Collective Nouns</h2>
+  <p>Collective nouns like committee, government, jury, panel etc. take a singular verb when these nouns are used in the sense of a single unit or one whole; and a plural verb when the individuals making the whole are considered separately.</p>
+  <ul>
+    <li class="eg">The jury was unanimous in its stand on the issue.</li>
+    <li class="eg">The jury were divided on this controversial issue.</li>
+  </ul>
+
+  <h2 id="s16"><span class="num">16.</span>Rule 14 — Plural Noun Used as the Name of a Singular Object or Unit</h2>
+  <p>If a plural noun is used as a name of some singular object or collective unit, the verb that follows will be singular.</p>
+  <ul>
+    <li class="eg">The Arabian Nights was translated by Richard Burton.</li>
+    <li class="eg">Gulliver's Travels is an interesting book.</li>
+  </ul>
+
+  <h2 id="s17"><span class="num">17.</span>Rule 15 — Plural Noun Denoting a Specific Quantity or Amount</h2>
+  <p>When a plural noun denoting some specific quantity or amount is taken in the sense of a whole, the verb it takes should generally be singular. If it is not taken as a single whole, it takes a plural verb.</p>
+  <ul>
+    <li class="eg">Eight months is a long time.</li>
+    <li class="eg">Fifty miles is a long distance.</li>
+    <li class="eg">Five thousand rupees is a great sum.</li>
+    <li class="eg">Five thousand rupees were paid to the workers.</li>
+  </ul>
+
+  <h2 id="s18"><span class="num">18.</span>Rule 16 — Two Nouns Joined by 'And', One Article or Two Articles</h2>
+  <p>When two nouns joined by 'and' take a single article, they refer to the same person and take a singular verb; when they take two separate articles, they refer to two persons and take a plural verb.</p>
+  <ul>
+    <li class="eg">The poet and novelist was honoured. (one person, both a poet and a novelist)</li>
+    <li class="eg">The poet and the novelist were honoured. (two different people)</li>
+  </ul>
+
+  <h2 id="s19"><span class="num">19.</span>Rule 17 — A Lot Of, A Plenty Of, Some Of, Most Of, Half Of, All The...</h2>
+  <p>Certain phrases such as 'a lot of', 'a plenty of', 'some of', 'most of', 'half of', 'all the' etc. take a singular verb if followed by a singular noun; a plural verb if followed by a plural noun.</p>
+  <ul>
+    <li class="eg">A lot of money was wasted on this project.</li>
+    <li class="eg">A lot of books were scattered in the room.</li>
+  </ul>
+
+  <h2 id="s20"><span class="num">20.</span>Exercise: Fill in the blanks with the correct forms of Verbs.</h2>
+  <div class="exercise-block">
+    <p class="instr">Choose the correct option from the brackets and type it into the box.</p>
+    <ol class="plain">
+      <li>Arun and Aman ........... (is/are) friends. <input class="blank-input" type="text"></li>
+      <li>I ........... (was/were) present there. <input class="blank-input" type="text"></li>
+      <li>My friend ........... (like/likes) bananas. <input class="blank-input" type="text"></li>
+      <li>All the children ........... (is/are) in the park. <input class="blank-input" type="text"></li>
+      <li>You ........... (is/are) my friend. <input class="blank-input" type="text"></li>
+      <li>The students ........... (has/have) learnt their lessons. <input class="blank-input" type="text"></li>
+      <li>The baby ........... (is/am) sleeping. <input class="blank-input" type="text"></li>
+      <li>The babies ........... (is/are) sleeping. <input class="blank-input" type="text"></li>
+      <li>He ........... (drive/drives) a car. <input class="blank-input" type="text"></li>
+      <li>I ........... (is/am) writing a letter. <input class="blank-input" type="text"></li>
+      <li>John and Joseph ........... (is/are) going to London. <input class="blank-input" type="text"></li>
+      <li>Silver and Aluminium ........... (is/are) useful metals. <input class="blank-input" type="text"></li>
+      <li>My father and I ........... (am/are) watering the plants. <input class="blank-input" type="text"></li>
+      <li>You and he ........... (has/have) taken your lunch. <input class="blank-input" type="text"></li>
+      <li>Time and Tide ........... (wait/waits) for none. <input class="blank-input" type="text"></li>
+      <li>Rice and Curry ........... (are/is) my favourite meal. <input class="blank-input" type="text"></li>
+      <li>Either Rajesh or his brother ........... (has/have) taken your book. <input class="blank-input" type="text"></li>
+      <li>Neither the farmer nor his sons ........... (is/are) ploughing the field. <input class="blank-input" type="text"></li>
+      <li>Either you or I ........... (are/am) to blame. <input class="blank-input" type="text"></li>
+      <li>Neither you nor he ........... (are/is) mistaken. <input class="blank-input" type="text"></li>
+      <li>Each child ........... (were/was) given a candy. <input class="blank-input" type="text"></li>
+      <li>Everybody ........... (want/wants) to become rich. <input class="blank-input" type="text"></li>
+      <li>Somebody ........... (has/have) stolen my horse. <input class="blank-input" type="text"></li>
+      <li>One of my friends ........... (has/have) topped the class. <input class="blank-input" type="text"></li>
+      <li>Many a cat ........... (was/were) drinking milk. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. are · 2. was · 3. likes · 4. are · 5. are · 6. have · 7. is · 8. are · 9. drives · 10. am · 11. are · 12. are · 13. are · 14. have · 15. wait · 16. is · 17. has · 18. are · 19. am · 20. is · 21. was · 22. wants · 23. has · 24. has · 25. was</p></div>
+  </div>
+
+  <h2 id="s21"><span class="num">21.</span>Exercise: Tick the correct option in the following sentences.</h2>
+  <div class="exercise-block">
+    <p class="instr">Choose the correct option from the brackets and type it into the box.</p>
+    <ol class="plain">
+      <li>The quality of these apples ........... (is/are) very good. <input class="blank-input" type="text"></li>
+      <li>A list of the candidates ........... (was/were) prepared. <input class="blank-input" type="text"></li>
+      <li>The cattle ........... (is/are) grazing in the field. <input class="blank-input" type="text"></li>
+      <li>A black and white cow ........... (is/are) standing in the field. <input class="blank-input" type="text"></li>
+      <li>Some of the students ........... (has/have) joined the club. <input class="blank-input" type="text"></li>
+      <li>Mathematics ........... (is/are) an important subject. <input class="blank-input" type="text"></li>
+      <li>The news of his arrival ........... (have/has) come. <input class="blank-input" type="text"></li>
+      <li>The wages of sin ........... (is/are) death. <input class="blank-input" type="text"></li>
+      <li>Slow and steady ........... (win/wins) the race. <input class="blank-input" type="text"></li>
+      <li>One of the players ........... (are/is) injured. <input class="blank-input" type="text"></li>
+      <li>The jury ........... (was/were) divided on this controversial issue. <input class="blank-input" type="text"></li>
+      <li>Gulliver's Travels ........... (is/are) an interesting book. <input class="blank-input" type="text"></li>
+      <li>Fifty miles ........... (is/are) a long distance. <input class="blank-input" type="text"></li>
+      <li>A sum of five thousand rupees ........... (were/was) paid to the workers. <input class="blank-input" type="text"></li>
+      <li>The scientist and the philosopher ........... (was/were) dead. <input class="blank-input" type="text"></li>
+      <li>A number of people ........... (has/have) gathered there. <input class="blank-input" type="text"></li>
+      <li>Dozens of oranges ........... (is/are) lying scattered. <input class="blank-input" type="text"></li>
+      <li>Each of the participants ........... (was/were) given a certificate. <input class="blank-input" type="text"></li>
+      <li>The committee ........... (has/have) taken its decision. <input class="blank-input" type="text"></li>
+      <li>All the members of the committee ........... (was/were) present there. <input class="blank-input" type="text"></li>
+      <li>The coaches, with all the teams, ........... (is/are) practising in the field. <input class="blank-input" type="text"></li>
+      <li>Gymnastics ........... (is/are) a popular sport. <input class="blank-input" type="text"></li>
+      <li>Whose poultry ........... (is/are) there in this village? <input class="blank-input" type="text"></li>
+      <li>The only means of transport to reach the village ........... (is/are) boats. <input class="blank-input" type="text"></li>
+      <li>The police ........... (is/are) looking into the matter. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1. is (error of proximity — agrees with 'quality', not 'apples') · 2. was (agrees with 'list', not 'candidates') · 3. are (cattle is always treated as plural) · 4. is (one cow with two-colour markings — singular subject) · 5. have (agrees with the plural noun after 'some of') · 6. is (subject name that looks plural, takes singular) · 7. has (agrees with 'news', not 'arrival') · 8. is (subject name that looks plural, takes singular) · 9. wins (the two adjectives together name a single idea/proverb) · 10. is ('one of' takes a singular verb) · 11. were (the jury's opinions are being considered separately) · 12. is (plural-looking book title, singular verb) · 13. is (a distance taken as one whole) · 14. was (a sum taken as one whole) · 15. were (two separate articles → two people) · 16. have ('a number of' + plural noun takes a plural verb) · 17. are (agrees with the plural noun after 'dozens of') · 18. was ('each of' takes a singular verb) · 19. has (a committee acting as one unit) · 20. were (the members considered individually) · 21. are (agrees with 'coaches', the subject introduced first) · 22. is (subject name that looks plural, takes singular) · 23. are (poultry, like cattle, is treated as plural) · 24. is (agrees with 'means', a singular noun here, not 'boats') · 25. are ('police' is always treated as plural)</p>
+    </div>
+  </div>
+
+  <h2 id="s22"><span class="num">22.</span>Quick Revision Checklist</h2>
+  <div class="checklist">
+    <ul>
+      <li>A finite verb must agree with its subject in number and person — singular subject, singular verb; plural subject, plural verb.</li>
+      <li>'And' usually needs a plural verb, unless the joined nouns name one single idea, dish, or role.</li>
+      <li>With 'or'/'nor', the verb agrees with the subject nearer to it — whether that's about number (singular/plural) or person (I/you/he).</li>
+      <li>Words like 'with', 'as well as', 'along with', 'together with' don't change the number of the main subject — the verb still agrees with whatever came first.</li>
+      <li>Each, every, either, neither, everyone, everybody, somebody, one of, none of — all take a singular verb.</li>
+      <li>Watch for the error of proximity: the verb agrees with the subject proper, not with whichever noun happens to sit right before it.</li>
+      <li>Some nouns look singular but are plural (cattle, people, police); others look plural but are singular (Mathematics, Politics, news).</li>
+      <li>Collective nouns (jury, committee, government) take a singular verb as one unit, plural when the members act separately.</li>
+      <li>A quantity or amount treated as a single whole (five thousand rupees, fifty miles) takes a singular verb; the same words describing separate units take a plural verb.</li>
+      <li>Phrases like 'a lot of', 'some of', 'most of', 'half of' take their verb's number from the noun that follows them.</li>
+    </ul>
+  </div>
+
+  <footer>Class 8 · English · Grammar · Lesson 23 — Chapter-14, Agreement of the Verb with Subject.</footer>
+</div>
+</body>
+</html>

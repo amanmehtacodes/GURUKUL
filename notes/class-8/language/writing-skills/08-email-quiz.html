@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz 8 — E-mail | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 20px;
+  }
+  .callout p{margin:0 0 8px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout strong{color:var(--ink);}
+  .ref-card{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:16px 20px; margin:0 0 32px; font-size:15px; color:var(--ink-soft);
+  }
+  .ref-card .rc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .ref-card code{font-family:var(--font-mono); background:var(--accent-soft); color:var(--pink); padding:1px 6px; border-radius:4px; font-size:13.5px;}
+
+  h2.qtitle{
+    font-family:var(--font-mono); font-size:16px; font-weight:700;
+    color:var(--c3); margin:0 0 4px; letter-spacing:.02em;
+  }
+  .qtag{
+    display:inline-block; font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;
+    letter-spacing:.05em; color:var(--cyan); background:var(--cyan-soft); border:1px solid var(--cyan);
+    border-radius:20px; padding:2px 10px; margin-left:10px; vertical-align:middle;
+  }
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:20px 22px; margin:20px 0; background:var(--paper-raised);
+  }
+  .q p.prompt{margin:8px 0 12px; font-size:16px;}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q-footer{display:flex; justify-content:space-between; align-items:center; margin-top:8px;}
+  .wc{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint);}
+  .wc.warn{color:var(--pink);}
+  .wc.ok{color:var(--cyan);}
+
+  .finish-bar{
+    position:sticky; bottom:0; margin-top:36px; padding:20px 24px;
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius);
+    box-shadow:0 -8px 24px rgba(0,0,0,0.35);
+  }
+  .finish-bar p{margin:0 0 14px; color:var(--ink-soft); font-size:15px;}
+  .btn-row{display:flex; gap:10px; flex-wrap:wrap;}
+  button.primary{
+    font-family:var(--font-mono); font-size:13px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:11px 22px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.primary:hover{background:var(--c3-panel);}
+  button.secondary{
+    font-family:var(--font-mono); font-size:13px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:11px 22px; border:1px solid var(--line-strong);
+    border-radius:8px; background:transparent; color:var(--ink-soft); cursor:pointer;
+  }
+  button.secondary:hover{border-color:var(--ink-faint); color:var(--ink);}
+  button.ghost-copy{
+    font-family:var(--font-mono); font-size:12px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--cyan);
+    border-radius:7px; background:var(--cyan-soft); color:var(--cyan); cursor:pointer;
+  }
+  button.ghost-copy:hover{background:rgba(56,189,248,0.24);}
+
+  #output-wrap{display:none; margin-top:18px;}
+  #output-wrap.show{display:block;}
+  #output{
+    width:100%; box-sizing:border-box; min-height:360px; font-family:var(--font-mono);
+    font-size:13px; line-height:1.6; padding:16px 18px; border:1px solid var(--accent2);
+    border-radius:8px; background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .copy-status{font-family:var(--font-mono); font-size:12px; color:var(--cyan); margin-left:10px;}
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills · Practice Quiz</div>
+  <h1 class="title">Quiz 8 — E-mail</h1>
+  <p class="subtitle">5 fresh e-mail prompts — a follow-up to Lesson 8, not a repeat of it.</p>
+
+  <div class="callout">
+    <p><strong>How this works:</strong> there's no answer key baked into this quiz. Write your e-mail for each prompt in its box, in the same style as Lesson 8 — include the From/To/Cc/Bcc/Subject/Date headers before the message.</p>
+    <p>When you're done, press <strong>Generate submission</strong> at the bottom. It compiles all five prompts and your answers into one text block — copy that and paste it to an AI (or hand it to a teacher) with a request like <em>"Grade these Class 8 CBSE e-mails, 5 marks each."</em></p>
+  </div>
+
+  <div class="ref-card">
+    <div class="rc-label">Quick format reminder</div>
+    Every e-mail needs the header block (From, To, Cc, Bcc, Subject, Date), a salutation matching formal or informal tone, a brief and well-organised message in short sentences with no slang or contractions, a complimentary close, a suitable subscription, and your name (plus designation/address/contact for a formal e-mail). See Lesson 8 for the full points list and the worked example.
+  </div>
+
+  <div class="q" id="quiz-q1">
+    <h2 class="qtitle">Question 1<span class="qtag">Thanks · Informal</span></h2>
+    <p class="prompt">Write an e-mail to your aunt thanking her for the laptop she gifted you on your birthday.</p>
+    <textarea rows="9" placeholder="Draft your e-mail here…" data-q="1"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="1">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q2">
+    <h2 class="qtitle">Question 2<span class="qtag">Regret · Informal</span></h2>
+    <p class="prompt">Write an e-mail to your friend informing them that you will not be able to join their study group this weekend, along with the reason.</p>
+    <textarea rows="9" placeholder="Draft your e-mail here…" data-q="2"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="2">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q3">
+    <h2 class="qtitle">Question 3<span class="qtag">Leave · Formal</span></h2>
+    <p class="prompt">Write an e-mail to your Principal requesting two days' leave as you are down with high fever and need rest.</p>
+    <textarea rows="9" placeholder="Draft your e-mail here…" data-q="3"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="3">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q4">
+    <h2 class="qtitle">Question 4<span class="qtag">Get Well Soon · Informal</span></h2>
+    <p class="prompt">Write an e-mail to your grandmother who recently underwent a minor knee surgery, enquiring after her health and wishing her a speedy recovery.</p>
+    <textarea rows="9" placeholder="Draft your e-mail here…" data-q="4"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="4">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q5">
+    <h2 class="qtitle">Question 5<span class="qtag">Family Update · Informal</span></h2>
+    <p class="prompt">Write an e-mail to your father describing your first day of volunteering at an animal shelter.</p>
+    <textarea rows="9" placeholder="Draft your e-mail here…" data-q="5"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="5">0 words</span></div>
+  </div>
+
+  <div class="finish-bar">
+    <p>Answered all five? Generate a submission you can hand to an AI or teacher for grading.</p>
+    <div class="btn-row">
+      <button class="primary" id="generateBtn">Generate submission</button>
+      <button class="secondary" id="resetBtn">Clear all answers</button>
+    </div>
+    <div id="output-wrap">
+      <div class="btn-row" style="margin-top:16px;">
+        <button class="ghost-copy" id="copyBtn">Copy to clipboard</button>
+        <span class="copy-status" id="copyStatus"></span>
+      </div>
+      <textarea id="output" readonly></textarea>
+    </div>
+  </div>
+
+  <footer>Class 8 · English · Writing Skills · Quiz 8 of 30 — no answers are auto-graded here; grade the generated submission with an AI or teacher.</footer>
+</div>
+
+<script>
+  var QUESTIONS = [
+    {n:1, tag:"Thanks (Informal)", prompt: "Write an e-mail to your aunt thanking her for the laptop she gifted you on your birthday."},
+    {n:2, tag:"Regret (Informal)", prompt: "Write an e-mail to your friend informing them that you will not be able to join their study group this weekend, along with the reason."},
+    {n:3, tag:"Leave (Formal)", prompt: "Write an e-mail to your Principal requesting two days' leave as you are down with high fever and need rest."},
+    {n:4, tag:"Get Well Soon (Informal)", prompt: "Write an e-mail to your grandmother who recently underwent a minor knee surgery, enquiring after her health and wishing her a speedy recovery."},
+    {n:5, tag:"Family Update (Informal)", prompt: "Write an e-mail to your father describing your first day of volunteering at an animal shelter."}
+  ];
+
+  function countWords(str) {
+    var trimmed = (str || "").trim();
+    if (!trimmed) return 0;
+    return trimmed.split(/\s+/).length;
+  }
+
+  function updateWordCount(n) {
+    var ta = document.querySelector('textarea[data-q="' + n + '"]');
+    var wc = document.querySelector('span[data-wc-for="' + n + '"]');
+    var count = countWords(ta.value);
+    wc.textContent = count + " word" + (count === 1 ? "" : "s");
+    wc.className = "wc" + (count > 0 && (count < 90 || count > 200) ? " warn" : count >= 90 && count <= 200 ? " ok" : "");
+  }
+
+  QUESTIONS.forEach(function (q) {
+    var ta = document.querySelector('textarea[data-q="' + q.n + '"]');
+    ta.addEventListener("input", function () { updateWordCount(q.n); });
+  });
+
+  document.getElementById("generateBtn").addEventListener("click", function () {
+    var lines = [];
+    lines.push("CLASS 8 ENGLISH — WRITING SKILLS");
+    lines.push("Quiz 8 — E-mail — Student Submission");
+    lines.push("");
+    lines.push("Instructions for the grader: Each e-mail is out of 5 marks — header block");
+    lines.push("(From/To/Cc/Bcc/Subject/Date) and format (1), content covering the purpose");
+    lines.push("fully (3), and language and expression (1). Check that the salutation,");
+    lines.push("complimentary close and subscription match the formal/informal tone of the");
+    lines.push("prompt, that e-mail addresses (where invented) look plausible and lowercase,");
+    lines.push("and that the message is brief, clear and free of slang or contractions.");
+    lines.push("Please give a score out of 5 and brief feedback for each question below.");
+    lines.push("");
+    lines.push("=".repeat(70));
+
+    var answeredCount = 0;
+    QUESTIONS.forEach(function (q) {
+      var ta = document.querySelector('textarea[data-q="' + q.n + '"]');
+      var answer = ta.value.trim();
+      var words = countWords(answer);
+      if (answer) answeredCount++;
+      lines.push("");
+      lines.push("Q" + q.n + " [" + q.tag + "]");
+      lines.push(q.prompt);
+      lines.push("");
+      lines.push("Student's answer (" + words + " words):");
+      lines.push(answer || "(left blank)");
+      lines.push("");
+      lines.push("-".repeat(70));
+    });
+
+    lines.push("");
+    lines.push(answeredCount + " of " + QUESTIONS.length + " questions answered.");
+
+    document.getElementById("output").value = lines.join("\n");
+    document.getElementById("output-wrap").classList.add("show");
+    document.getElementById("copyStatus").textContent = "";
+    document.getElementById("output").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  document.getElementById("copyBtn").addEventListener("click", function () {
+    var out = document.getElementById("output");
+    var status = document.getElementById("copyStatus");
+    out.focus();
+    out.select();
+    var done = false;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(out.value).then(function () {
+        status.textContent = "Copied.";
+      }).catch(function () {
+        fallbackCopy();
+      });
+      done = true;
+    }
+    if (!done) fallbackCopy();
+    function fallbackCopy() {
+      try {
+        var ok = document.execCommand("copy");
+        status.textContent = ok ? "Copied." : "Select the text above and press Ctrl/Cmd+C.";
+      } catch (e) {
+        status.textContent = "Select the text above and press Ctrl/Cmd+C.";
+      }
+    }
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function () {
+    if (!confirm("Clear all five answers? This can't be undone.")) return;
+    QUESTIONS.forEach(function (q) {
+      document.querySelector('textarea[data-q="' + q.n + '"]').value = "";
+      updateWordCount(q.n);
+    });
+    document.getElementById("output-wrap").classList.remove("show");
+    document.getElementById("output").value = "";
+  });
+</script>
+</body>
+</html>

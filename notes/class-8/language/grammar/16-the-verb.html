@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 16 — The Verb | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:26px 0 8px; scroll-margin-top:20px;}
+  h4{font-family:var(--font-mono); font-size:13.5px; color:var(--cyan); margin:18px 0 8px; text-transform:uppercase; letter-spacing:.03em;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .ocr-note{
+    background:var(--accent2-soft); border:1px dashed var(--violet); border-radius:8px;
+    padding:10px 14px; margin:8px 0 14px; color:var(--ink-faint); font-size:13.5px; font-style:italic;
+  }
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:14.5px;}
+  table.ref-table caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:11px;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line-strong); padding:7px 10px; text-align:left; color:var(--ink-soft);}
+  table.ref-table th{background:var(--paper-raised); color:var(--ink); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table td.g{color:var(--ink); font-weight:600;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:16px 0 30px; background:var(--paper-raised);
+  }
+  .exercise-block h4{margin-top:0;}
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  table.gram-table{width:100%; border-collapse:collapse; margin:10px 0 16px; font-size:14px;}
+  table.gram-table th, table.gram-table td{border:1px solid var(--line-strong); padding:6px 8px; text-align:left;}
+  table.gram-table th{background:var(--paper); color:var(--ink-faint); font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;}
+  table.gram-table td.g{color:var(--ink); font-weight:600;}
+  input.blank-input{
+    width:92%; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  input.blank-input.sm{width:150px;}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:50px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol, .qa ul{margin:0; padding-left:20px;}
+  .qa li{margin-bottom:5px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar</div>
+  <h1 class="title">Lesson 16 — The Verb</h1>
+  <p class="subtitle">Semester 1 · Chapter-11</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#definition">1. Subject, Predicate &amp; Definition of Verb</a></li>
+      <li><a href="#existence">2. Verb Denoting Existence — Forms of 'Be'</a></li>
+      <li><a href="#possession">3. Verb Denoting Possession — Forms of 'Have'</a></li>
+      <li><a href="#action">4. Verb Denoting Action</a></li>
+      <li><a href="#object-concept">5. The Concept of Object</a></li>
+      <li><a href="#types">6. Types of Verb</a></li>
+      <li><a href="#intransitive">7. Intransitive Verbs</a></li>
+      <li><a href="#transitive">8. Transitive Verbs</a></li>
+      <li><a href="#double-objects">9. Transitive Verbs with Double Objects</a></li>
+      <li><a href="#object-complement">10. Transitive Verbs with Object Complement</a></li>
+      <li><a href="#exercise-t-it">11. Exercise — Transitive or Intransitive?</a></li>
+      <li><a href="#linking">12. Linking Verbs</a></li>
+      <li><a href="#auxiliaries">13. Main Verbs and Auxiliaries (Helping Verbs)</a></li>
+      <li><a href="#conjugation">14. Conjugation of Verbs</a></li>
+      <li><a href="#exercise-forms">15. Exercise — Correct Forms of Verbs</a></li>
+      <li><a href="#revision">16. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition"><span class="num">1.</span>Subject, Predicate &amp; Definition of Verb</h2>
+  <p>There are two major parts of a sentence: Subject and Predicate. Subject is the person or thing we talk about in a sentence. Predicate is the statement given about the subject. A predicate always starts with a verb.</p>
+  <p>Study the following table carefully.</p>
+  <table class="ref-table">
+    <tr><th>Sr. No.</th><th>Subject</th><th>Verb (Predicate)</th><th>Remaining part of the Predicate</th></tr>
+    <tr><td>1</td><td>Children</td><td>are playing</td><td>in the park.</td></tr>
+    <tr><td>2</td><td>Rakesh</td><td>is writing</td><td>a letter.</td></tr>
+    <tr><td>3</td><td>Surbhi</td><td>played</td><td>with her doll.</td></tr>
+    <tr><td>4</td><td>India</td><td>is</td><td>a great country.</td></tr>
+  </table>
+  <p>The word 'verb' has been taken from the Latin word 'verbum' which means 'to say something'.</p>
+  <p><strong>Definition:</strong> A verb is a word that says something about a subject. A verb may tell three things about a subject.</p>
+  <p>1. It tells us what a subject(s) is. It denotes the existence of a subject in any tense. The forms of 'be' are used to denote existence.</p>
+
+  <h2 id="existence"><span class="num">2.</span>Verb Denoting Existence — Forms of 'Be'</h2>
+  <table class="ref-table">
+    <tr><th>Forms of 'be'</th><td>be, is, am, are, was, were, been, being</td></tr>
+  </table>
+  <ol>
+    <li>He is my friend.</li>
+    <li>She was a doctor.</li>
+    <li>They were thieves.</li>
+    <li>You have been a fool.</li>
+    <li>You will be happy.</li>
+    <li>I am very happy today.</li>
+  </ol>
+  <p>Here the verbs 'is', 'was', 'were', 'been', 'be' and 'am' denote existence.</p>
+  <p>2. It tells us what a subject(s) has/owns/possesses. The forms of 'have' are used to denote possession. The possession may be denoted in any tense.</p>
+
+  <h2 id="possession"><span class="num">3.</span>Verb Denoting Possession — Forms of 'Have'</h2>
+  <table class="ref-table">
+    <tr><th>Forms of 'have'</th><td>has, have, had, having</td></tr>
+  </table>
+  <ol>
+    <li>I have a car.</li>
+    <li>She has a big house.</li>
+    <li>They will have a problem.</li>
+    <li>The boy had a blue shirt.</li>
+  </ol>
+  <p>Here the verbs 'have', 'has', 'will have' and 'had' denote possessions.</p>
+  <p>3. It tells us what a subject(s) does. All action words are verbs. The action may be expressed in any tense.</p>
+
+  <h2 id="action"><span class="num">4.</span>Verb Denoting Action</h2>
+  <ol>
+    <li>Harish waters the plants.</li>
+    <li>The peon rang the bell.</li>
+    <li>She is laughing.</li>
+    <li>They have been playing football since morning.</li>
+  </ol>
+  <p>Here, the verbs 'waters', 'rang', 'laughing' and 'playing' denote actions.</p>
+
+  <h2 id="object-concept"><span class="num">5.</span>The Concept of Object</h2>
+  <p>Study the following table carefully.</p>
+  <table class="ref-table">
+    <tr><th>Sr. No.</th><th>Subject</th><th>Verb (Predicate)</th><th>Object</th></tr>
+    <tr><td>1</td><td>Children</td><td>are playing</td><td>cricket.</td></tr>
+    <tr><td>2</td><td>Rakesh</td><td>is writing</td><td>a letter.</td></tr>
+    <tr><td>3</td><td>The gardener</td><td>watered</td><td>the plants.</td></tr>
+  </table>
+  <p>A Noun or a pronoun that receives the action of the verb is called the object. A verb may take more than one object.</p>
+
+  <h2 id="types"><span class="num">6.</span>Types of Verb</h2>
+  <p>There are three types of verbs.</p>
+  <ul>
+    <li>Intransitive Verbs</li>
+    <li>Transitive Verbs</li>
+    <li>Linking Verbs or Verbs of Incomplete Predication</li>
+  </ul>
+
+  <h2 id="intransitive"><span class="num">7.</span>Intransitive Verbs</h2>
+  <p>Study the table given below carefully:</p>
+  <table class="ref-table">
+    <tr><th>Subject</th><th>Verb</th></tr>
+    <tr><td>Birds</td><td>fly.</td></tr>
+    <tr><td>Stars</td><td>twinkle.</td></tr>
+    <tr><td>She</td><td>laughs.</td></tr>
+    <tr><td>They</td><td>smiled.</td></tr>
+    <tr><td>The windows</td><td>broke.</td></tr>
+    <tr><td>The boy</td><td>was sitting.</td></tr>
+  </table>
+  <p>The verbs 'fly', 'twinkle', 'laughs', 'smiled', 'broke' and 'was sitting' make a complete sense on their own. They don't require any other word to complete their meaning. Since the action denoted by each of these verbs does not pass over to any other word (object), these verbs are called intransitive verbs.</p>
+  <p><strong>Definition:</strong> An intransitive verb does not take any object after it.</p>
+
+  <h2 id="transitive"><span class="num">8.</span>Transitive Verbs</h2>
+  <div class="callout"><p><strong>Important Note:</strong> The word 'transitive' is derived from the word 'transit' which means 'to pass over' or 'transfer'.</p></div>
+  <p>Read the following sentences carefully. You can observe that these sentences seem incomplete unless we add an object to them.</p>
+  <ol>
+    <li>He killed.......................................... (What/whom)</li>
+    <li>We have informed...................................... (Whom)</li>
+    <li>They were helping.................................. (Whom)</li>
+    <li>Children like................................................. (What)</li>
+    <li>I am reading.............................................. (What)</li>
+    <li>She teaches.......................................(What/Whom)</li>
+    <li>Open......................................................... (What)</li>
+    <li>I have completed........................................... (What)</li>
+    <li>Karim beats............................................ (Whom)</li>
+    <li>She stitched.................................................. (What)</li>
+  </ol>
+  <p>In the above sentences, the verbs don't make a complete sense themselves. They require some other words to complete their meaning. The action denoted by each verb in these sentences passes over to an object. Therefore, these verbs are called transitive verbs.</p>
+  <p><strong>Definition:</strong> A transitive verb takes an object after it.</p>
+  <p>Now read the same sentences with objects.</p>
+  <ol>
+    <li>He killed a snake.</li>
+    <li>We have informed the students.</li>
+    <li>They were helping the injured.</li>
+    <li>Children like sweets.</li>
+    <li>I am reading a story.</li>
+    <li>She teaches English.</li>
+    <li>Open your book.</li>
+    <li>I have completed my homework.</li>
+    <li>Karim beats me.</li>
+    <li>She stitched a beautiful dress.</li>
+  </ol>
+
+  <div class="exercise-block">
+    <p class="instr">Exercise: Complete the following sentences by supplying an object.</p>
+    <ol>
+      <li>My mother has prepared ___ <input class="blank-input" type="text"></li>
+      <li>Mohan will learn ___ <input class="blank-input" type="text"></li>
+      <li>He did not receive ___ <input class="blank-input" type="text"></li>
+      <li>Please, help ___ <input class="blank-input" type="text"></li>
+      <li>Yesterday I watched ___ <input class="blank-input" type="text"></li>
+      <li>I want ___ <input class="blank-input" type="text"></li>
+      <li>The teacher appreciated ___ <input class="blank-input" type="text"></li>
+      <li>We must respect ___ <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answers</div>
+      <p>This exercise is open-ended — any grammatically correct object completes the sentence. Sample answers: 1. My mother has prepared dinner. 2. Mohan will learn swimming. 3. He did not receive the parcel. 4. Please, help me. 5. Yesterday I watched a movie. 6. I want a glass of water. 7. The teacher appreciated my effort. 8. We must respect our elders.</p>
+    </div>
+  </div>
+
+  <h2 id="double-objects"><span class="num">9.</span>Transitive Verbs with Double Objects</h2>
+  <p>Read the following sentences carefully. You will observe that the transitive verbs in these sentences have got an object. However, these verbs don't make a complete sense. They require another object to complete their meaning.</p>
+  <ol>
+    <li>He gave me ............................................. </li>
+    <li>The teacher asked him ...............................</li>
+  </ol>
+  <p>Now read the same sentences with two objects.</p>
+  <ol>
+    <li>He gave me a book.</li>
+    <li>The teacher asked him a question.</li>
+  </ol>
+  <p>Each of the sentences given above has two objects. The words, 'me' and 'him' are indirect objects. The words, 'a book' and 'a question' are direct objects.</p>
+
+  <div class="exercise-block">
+    <p class="instr">Exercise: Complete the following sentences with a direct object.</p>
+    <ol>
+      <li>They posted their friends ___ <input class="blank-input" type="text"></li>
+      <li>The Principal granted us ___ <input class="blank-input" type="text"></li>
+      <li>Mr. Sharma teaches us ___ <input class="blank-input" type="text"></li>
+      <li>I promised him ___ <input class="blank-input" type="text"></li>
+      <li>The shopkeeper sold him ___ <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answers</div>
+      <p>1. They posted their friends greeting cards. 2. The Principal granted us leave. 3. Mr. Sharma teaches us English. 4. I promised him my support. 5. The shopkeeper sold him a pair of shoes.</p>
+    </div>
+  </div>
+
+  <p>Read the following pairs of sentences carefully.</p>
+  <ol>
+    <li>He gave me a book. → He gave a book to me.</li>
+    <li>My father bought me a new watch. → My father bought a new watch for me.</li>
+  </ol>
+  <p>You can observe that the sentences with two objects can be written in two ways by exchanging the order of the direct and the indirect objects.</p>
+
+  <div class="exercise-block">
+    <p class="instr">Exercise: Rewrite the following sentences by keeping the direct object before the indirect object.</p>
+    <ol>
+      <li>My mother cooked us delicious dishes. <textarea class="answer-box"></textarea></li>
+      <li>They posted their friends greeting cards. <textarea class="answer-box"></textarea></li>
+      <li>The Principal granted us leave. <textarea class="answer-box"></textarea></li>
+      <li>Mr. Sharma teaches us English. <textarea class="answer-box"></textarea></li>
+      <li>I promised him my support. <textarea class="answer-box"></textarea></li>
+      <li>My friend brought me a glass of water. <textarea class="answer-box"></textarea></li>
+      <li>The shopkeeper sold him a pair of shoes. <textarea class="answer-box"></textarea></li>
+      <li>My father gifted me a watch. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>My mother cooked delicious dishes for us.</li>
+        <li>They posted greeting cards to their friends.</li>
+        <li>The Principal granted leave to us.</li>
+        <li>Mr. Sharma teaches English to us.</li>
+        <li>I promised my support to him.</li>
+        <li>My friend brought a glass of water for me.</li>
+        <li>The shopkeeper sold a pair of shoes to him.</li>
+        <li>My father gifted a watch to me.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="object-complement"><span class="num">10.</span>Transitive Verbs with Object Complement</h2>
+  <p>Some transitive verbs don't make a complete sense even when they are supplied with an object. They require an object complement to complete their meaning. An object complement refers back to the object.</p>
+  <ol>
+    <li>The teacher appointed Mohit........................... (what)</li>
+    <li>Success made him............................................. (what)</li>
+  </ol>
+  <p>Now read the same sentences as complete sentences with object as well as object complements.</p>
+  <ol>
+    <li>The teacher appointed Mohit monitor.</li>
+    <li>Success made him arrogant.</li>
+  </ol>
+
+  <div class="exercise-block">
+    <p class="instr">Exercise: Complete the following sentences by supplying an object complement.</p>
+    <ol>
+      <li>Her parents named her ___ <input class="blank-input" type="text"></li>
+      <li>She called her servant ___ <input class="blank-input" type="text"></li>
+      <li>He painted the box ___ <input class="blank-input" type="text"></li>
+      <li>We found the house ___ <input class="blank-input" type="text"></li>
+      <li>The judge found the accused ___ <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Sample Answers</div>
+      <p>1. Her parents named her Anjali. 2. She called her servant lazy. 3. He painted the box blue. 4. We found the house empty. 5. The judge found the accused guilty.</p>
+    </div>
+  </div>
+
+  <h2 id="exercise-t-it"><span class="num">11.</span>Exercise — Transitive or Intransitive?</h2>
+  <div class="exercise-block">
+    <p class="instr">Underline the verbs in the following sentences and state whether they are transitive or intransitive. Write (T) for transitive and (IT) for intransitive. Mention the object. The first two examples have been done for you.</p>
+    <ol>
+      <li>The vase broke. (IT)</li>
+      <li>The boy opened the window. (T) Object: window</li>
+      <li>We attended a party last night. <input class="blank-input" type="text"></li>
+      <li>The baby has been sleeping for an hour. <input class="blank-input" type="text"></li>
+      <li>The girls are making dolls. <input class="blank-input" type="text"></li>
+      <li>The doctor has arrived. <input class="blank-input" type="text"></li>
+      <li>A cold breeze was flowing. <input class="blank-input" type="text"></li>
+      <li>The boat floated all night. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>3. attended (T) Object: a party · 4. has been sleeping (IT) · 5. are making (T) Object: dolls · 6. has arrived (IT) · 7. was flowing (IT) · 8. floated (IT)</p></div>
+  </div>
+
+  <h2 id="linking"><span class="num">12.</span>Linking Verbs</h2>
+  <p>Read the following sentences carefully. You can observe that these sentences are incomplete.</p>
+  <ol>
+    <li>I am........................................... </li>
+    <li>They are....................................</li>
+    <li>You look.....................................</li>
+    <li>The rose smells............................................</li>
+    <li>This book is..................................................</li>
+    <li>He grew.........................................................</li>
+  </ol>
+  <p>Now read the same sentences as complete sentences as given below.</p>
+  <ol>
+    <li>I am a teacher.</li>
+    <li>They are my students.</li>
+    <li>You look tired.</li>
+    <li>The rose smells sweet.</li>
+    <li>This book is mine.</li>
+    <li>He grew old.</li>
+  </ol>
+  <p>In these sentences the underlined words complete the sentences and refer back to the subject. There is no transfer of action. Hence, these words are called subject complements. Since the verbs in these sentences establish a link between the subject and the subject complement, they are called linking verbs or verbs of incomplete predication. The forms of 'be' used as main verbs and verbs like 'look', 'appear', 'seem', 'grow', 'become', 'turn' etc. take a subject complement.</p>
+
+  <div class="exercise-block">
+    <p class="instr">Exercise: Underline the verbs and circle the subject complements in the following sentences.</p>
+    <ol>
+      <li>The milk turned sour. <input class="blank-input" type="text"></li>
+      <li>He got angry. <input class="blank-input" type="text"></li>
+      <li>She is beautiful. <input class="blank-input" type="text"></li>
+      <li>This sum appears difficult. <input class="blank-input" type="text"></li>
+      <li>He became a doctor. <input class="blank-input" type="text"></li>
+      <li>It seems terrifying. <input class="blank-input" type="text"></li>
+      <li>This house has been abandoned. <input class="blank-input" type="text"></li>
+      <li>Subir has fallen sick. <input class="blank-input" type="text"></li>
+      <li>Amar felt sorry. <input class="blank-input" type="text"></li>
+      <li>The man got angry. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>(verb → subject complement)</p>
+      <p>1. turned → sour · 2. got → angry · 3. is → beautiful · 4. appears → difficult · 5. became → a doctor · 6. seems → terrifying · 7. has been → abandoned · 8. has fallen → sick · 9. felt → sorry · 10. got → angry</p>
+      <div class="ocr-note">Item 7 ("This house has been abandoned") is included in the source alongside the clearer linking-verb examples; here 'abandoned' is treated as a state describing the subject (like "is broken") rather than as a passive action, with 'has been' as the linking verb.</div>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <p class="instr">Exercise: Underline the verbs in the following sentences. State whether the verbs are transitive, intransitive or linking. Write (T) for transitive, (IT) for intransitive and (L) for linking verbs.</p>
+    <ol>
+      <li>The boy threw stones in the pond. <input class="blank-input" type="text"></li>
+      <li>He became unconscious. <input class="blank-input" type="text"></li>
+      <li>One must respect one's elders. <input class="blank-input" type="text"></li>
+      <li>This is Ram's umbrella. <input class="blank-input" type="text"></li>
+      <li>The river flowed gracefully through the hills and valleys. <input class="blank-input" type="text"></li>
+      <li>The burning train was a horrifying sight. <input class="blank-input" type="text"></li>
+      <li>The teacher seems angry today. <input class="blank-input" type="text"></li>
+      <li>He thought continuously for hours. <input class="blank-input" type="text"></li>
+      <li>Both the brothers turned enemies. <input class="blank-input" type="text"></li>
+      <li>The birds are chirping on the trees. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. threw (T) · 2. became (L) · 3. must respect (T) · 4. is (L) · 5. flowed (IT) · 6. was (L) · 7. seems (L) · 8. thought (IT) · 9. turned (L) · 10. are chirping (IT)</p></div>
+  </div>
+
+  <h2 id="auxiliaries"><span class="num">13.</span>Main Verbs and Auxiliaries (Helping Verbs)</h2>
+  <p>Read the following sentences and observe the verbs carefully.</p>
+  <ol>
+    <li>I talked to my friend.</li>
+    <li>I was talking to my friend.</li>
+    <li>We water the plants.</li>
+    <li>We have watered the plants.</li>
+  </ol>
+  <p>In the above sentences, the verbs talked, talking, water and watered are called main verbs as they express the main action. The verbs 'was' and 'have' in the above sentences are also verbs, but these verbs are called helping verbs because they help the main verbs.</p>
+
+  <div class="exercise-block">
+    <p class="instr">Exercise: Underline the helping verbs and circle the main verbs in the following sentences.</p>
+    <ol>
+      <li>God is our heavenly father. <input class="blank-input" type="text"></li>
+      <li>The programme will begin soon. <input class="blank-input" type="text"></li>
+      <li>He does his work very carefully. <input class="blank-input" type="text"></li>
+      <li>Rohan has many friends. <input class="blank-input" type="text"></li>
+      <li>They will be watching a movie. <input class="blank-input" type="text"></li>
+      <li>Sudha and Madhu are sisters. <input class="blank-input" type="text"></li>
+      <li>The teacher will have been teaching for two hours. <input class="blank-input" type="text"></li>
+      <li>He was being beaten by the police. <input class="blank-input" type="text"></li>
+      <li>Are you kidding with me? <input class="blank-input" type="text"></li>
+      <li>Have you ever been to the Delhi? <input class="blank-input" type="text"></li>
+      <li>They should not disturb others. <input class="blank-input" type="text"></li>
+      <li>Could you tell me the way to the railway station? <input class="blank-input" type="text"></li>
+      <li>What would you like to have? <input class="blank-input" type="text"></li>
+      <li>It may rain today. <input class="blank-input" type="text"></li>
+      <li>How dare you talk to me like this? <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>(helping verb(s) → main verb)</p>
+      <p>1. none → is (main linking verb, no auxiliary) · 2. will → begin · 3. none → does (main verb here) · 4. none → has (main verb of possession) · 5. will, be → watching · 6. none → are (main linking verb) · 7. will, have, been → teaching · 8. was, being → beaten · 9. Are → kidding · 10. Have → been · 11. should → disturb · 12. Could → tell · 13. would → like · 14. may → rain · 15. dare → talk</p>
+    </div>
+  </div>
+
+  <h2 id="conjugation"><span class="num">14.</span>Conjugation of Verbs</h2>
+  <p>Writing different forms of verbs is called conjugation. Study the table given below carefully.</p>
+  <table class="ref-table">
+    <tr><th>Present Form (I Form)</th><th>Past Form (II Form)</th><th>Past Participle Form (III Form)</th><th>Present Participle Form (I Form+ing)</th></tr>
+    <tr><td>be (is, am, are)</td><td>was, were</td><td>been</td><td>being</td></tr>
+    <tr><td>begin</td><td>began</td><td>begun</td><td>beginning</td></tr>
+    <tr><td>cut</td><td>cut</td><td>cut</td><td>cutting</td></tr>
+    <tr><td>do</td><td>did</td><td>done</td><td>doing</td></tr>
+    <tr><td>dream</td><td>dreamt</td><td>dreamt</td><td>dreaming</td></tr>
+    <tr><td>eat</td><td>ate</td><td>eaten</td><td>eating</td></tr>
+    <tr><td>go</td><td>went</td><td>gone</td><td>going</td></tr>
+    <tr><td>have, has</td><td>had</td><td>had</td><td>having</td></tr>
+    <tr><td>play</td><td>played</td><td>played</td><td>playing</td></tr>
+    <tr><td>throw</td><td>threw</td><td>thrown</td><td>throwing</td></tr>
+  </table>
+
+  <h3>Regular Verbs (Weak Verbs)</h3>
+  <p>The verbs that form their past form and past participle form by adding '-ed', '-d', or '-t' are called regular verbs or weak verbs.</p>
+  <table class="ref-table">
+    <tr><th>Present Form</th><th>Past Form</th><th>Past Participle Form</th><th>Present Participle Form</th></tr>
+    <tr><td>build</td><td>built</td><td>built</td><td>building</td></tr>
+    <tr><td>play</td><td>played</td><td>played</td><td>playing</td></tr>
+    <tr><td>talk</td><td>talked</td><td>talked</td><td>talking</td></tr>
+  </table>
+  <p>Some weak verbs have the same forms as present, past and past participle form.</p>
+  <table class="ref-table">
+    <tr><th>Present Form</th><th>Past Form</th><th>Past Participle Form</th><th>Present Participle Form</th></tr>
+    <tr><td>burst</td><td>burst</td><td>burst</td><td>bursting</td></tr>
+    <tr><td>cast</td><td>cast</td><td>cast</td><td>casting</td></tr>
+    <tr><td>cost</td><td>cost</td><td>cost</td><td>costing</td></tr>
+    <tr><td>cut</td><td>cut</td><td>cut</td><td>cutting</td></tr>
+    <tr><td>hit</td><td>hit</td><td>hit</td><td>hitting</td></tr>
+    <tr><td>hurt</td><td>hurt</td><td>hurt</td><td>hurting</td></tr>
+    <tr><td>let</td><td>let</td><td>let</td><td>letting</td></tr>
+    <tr><td>put</td><td>put</td><td>put</td><td>putting</td></tr>
+    <tr><td>set</td><td>set</td><td>set</td><td>setting</td></tr>
+    <tr><td>shed</td><td>shed</td><td>shed</td><td>shedding</td></tr>
+    <tr><td>shut</td><td>shut</td><td>shut</td><td>shutting</td></tr>
+    <tr><td>spread</td><td>spread</td><td>spread</td><td>spreading</td></tr>
+    <tr><td>thrust</td><td>thrust</td><td>thrust</td><td>thrusting</td></tr>
+    <tr><td>upset</td><td>upset</td><td>upset</td><td>upsetting</td></tr>
+  </table>
+
+  <h3>Irregular Verbs (Strong Verbs)</h3>
+  <p>The verbs that form their past form and past participle form by changing the inside vowel of their present form are called irregular verbs or strong verbs.</p>
+  <table class="ref-table">
+    <tr><th>Present Form</th><th>Past Form</th><th>Past Participle Form</th><th>Present Participle Form</th></tr>
+    <tr><td>see</td><td>saw</td><td>seen</td><td>seeing</td></tr>
+    <tr><td>fly</td><td>flew</td><td>flown</td><td>flying</td></tr>
+    <tr><td>choose</td><td>chose</td><td>chosen</td><td>choosing</td></tr>
+    <tr><td>sell</td><td>sold</td><td>sold</td><td>selling</td></tr>
+  </table>
+
+  <h3>Forms of Some Frequently Used Verbs</h3>
+  <table class="ref-table">
+    <tr><th>Present Form</th><th>Past Form</th><th>Past Participle Form</th><th>Present Participle Form</th></tr>
+    <tr><td>arise</td><td>arose</td><td>arisen</td><td>arising</td></tr>
+    <tr><td>abide</td><td>abode</td><td>abode</td><td>abiding</td></tr>
+    <tr><td>awake</td><td>awoke</td><td>awaken</td><td>awaking</td></tr>
+    <tr><td>be (is, am, are)</td><td>was, were</td><td>been</td><td>being</td></tr>
+    <tr><td>bear</td><td>born</td><td>born</td><td>bearing</td></tr>
+    <tr><td>bear</td><td>born</td><td>borne</td><td>bearing</td></tr>
+    <tr><td>beat</td><td>beat</td><td>beaten</td><td>beating</td></tr>
+    <tr><td>become</td><td>became</td><td>become</td><td>becoming</td></tr>
+    <tr><td>bind</td><td>bound</td><td>bound</td><td>binding</td></tr>
+    <tr><td>bid</td><td>bade</td><td>bidden</td><td>biding</td></tr>
+    <tr><td>bite</td><td>bit</td><td>bitten</td><td>biting</td></tr>
+    <tr><td>blow</td><td>blew</td><td>blown</td><td>blowing</td></tr>
+    <tr><td>break</td><td>broke</td><td>broken</td><td>breaking</td></tr>
+    <tr><td>bring</td><td>brought</td><td>brought</td><td>bringing</td></tr>
+    <tr><td>burn</td><td>burnt</td><td>burnt</td><td>burning</td></tr>
+    <tr><td>buy</td><td>bought</td><td>bought</td><td>buying</td></tr>
+    <tr><td>catch</td><td>caught</td><td>caught</td><td>catching</td></tr>
+    <tr><td>climb</td><td>climbed</td><td>climbed</td><td>climbing</td></tr>
+    <tr><td>come</td><td>came</td><td>come</td><td>coming</td></tr>
+    <tr><td>dig</td><td>dug</td><td>dug</td><td>digging</td></tr>
+    <tr><td>do</td><td>did</td><td>done</td><td>doing</td></tr>
+    <tr><td>draw</td><td>drew</td><td>drawn</td><td>drawing</td></tr>
+    <tr><td>drink</td><td>drank</td><td>drunk</td><td>drinking</td></tr>
+    <tr><td>deal</td><td>dealt</td><td>dealt</td><td>dealing</td></tr>
+    <tr><td>dream</td><td>dreamt</td><td>dreamt</td><td>dreaming</td></tr>
+    <tr><td>feed</td><td>fed</td><td>fed</td><td>feeding</td></tr>
+    <tr><td>feel</td><td>felt</td><td>felt</td><td>feeling</td></tr>
+    <tr><td>fall</td><td>fell</td><td>fallen</td><td>falling</td></tr>
+    <tr><td>fell (to cut trees)</td><td>felled</td><td>felled</td><td>felling</td></tr>
+    <tr><td>fight</td><td>fought</td><td>fought</td><td>fighting</td></tr>
+    <tr><td>find</td><td>found</td><td>found</td><td>finding</td></tr>
+    <tr><td>flee</td><td>fled</td><td>fled</td><td>fleeing</td></tr>
+    <tr><td>fling</td><td>flung</td><td>flung</td><td>flinging</td></tr>
+    <tr><td>flow</td><td>flowed</td><td>flowed</td><td>flowing</td></tr>
+    <tr><td>fly</td><td>flew</td><td>flown</td><td>flying</td></tr>
+    <tr><td>forget</td><td>forgot</td><td>forgotten</td><td>forgetting</td></tr>
+    <tr><td>freeze</td><td>froze</td><td>frozen</td><td>freezing</td></tr>
+    <tr><td>forsake</td><td>forsook</td><td>forsaken</td><td>forsaking</td></tr>
+    <tr><td>get</td><td>got</td><td>got</td><td>getting</td></tr>
+    <tr><td>give</td><td>gave</td><td>given</td><td>giving</td></tr>
+    <tr><td>grow</td><td>grew</td><td>grown</td><td>growing</td></tr>
+    <tr><td>hide</td><td>hid</td><td>hidden</td><td>hiding</td></tr>
+    <tr><td>hang</td><td>hung</td><td>hung</td><td>hanging</td></tr>
+    <tr><td>hang</td><td>hanged</td><td>hanged</td><td>hanging</td></tr>
+    <tr><td>hold</td><td>held</td><td>held</td><td>holding</td></tr>
+    <tr><td>kneel</td><td>knelt</td><td>knelt</td><td>kneeling</td></tr>
+    <tr><td>knit</td><td>knit, knitted</td><td>knit, knitted</td><td>knitting</td></tr>
+    <tr><td>keep</td><td>kept</td><td>kept</td><td>keeping</td></tr>
+    <tr><td>know</td><td>knew</td><td>known</td><td>knowing</td></tr>
+    <tr><td>lead</td><td>led</td><td>led</td><td>leading</td></tr>
+    <tr><td>lie</td><td>lay</td><td>lain</td><td>lying</td></tr>
+    <tr><td>lie</td><td>lied</td><td>lied</td><td>lying</td></tr>
+    <tr><td>lay</td><td>laid</td><td>laid</td><td>laying</td></tr>
+    <tr><td>lend</td><td>lent</td><td>lent</td><td>lending</td></tr>
+    <tr><td>lose</td><td>lost</td><td>lost</td><td>losing</td></tr>
+    <tr><td>lead</td><td>led</td><td>led</td><td>leading</td></tr>
+    <tr><td>make</td><td>made</td><td>made</td><td>making</td></tr>
+    <tr><td>mean</td><td>meant</td><td>meant</td><td>meaning</td></tr>
+    <tr><td>mar</td><td>marred</td><td>marred</td><td>marring</td></tr>
+    <tr><td>pay</td><td>paid</td><td>paid</td><td>paying</td></tr>
+    <tr><td>pray</td><td>prayed</td><td>prayed</td><td>praying</td></tr>
+    <tr><td>ride</td><td>rode</td><td>ridden</td><td>riding</td></tr>
+    <tr><td>read</td><td>read</td><td>read</td><td>reading</td></tr>
+    <tr><td>ring</td><td>rang</td><td>rung</td><td>ringing</td></tr>
+    <tr><td>run</td><td>ran</td><td>run</td><td>running</td></tr>
+    <tr><td>send</td><td>sent</td><td>sent</td><td>sending</td></tr>
+    <tr><td>sow</td><td>sowed</td><td>sowed</td><td>sowing</td></tr>
+    <tr><td>spend</td><td>spent</td><td>spent</td><td>spending</td></tr>
+    <tr><td>sit</td><td>sat</td><td>sat</td><td>sitting</td></tr>
+    <tr><td>speak</td><td>spoke</td><td>spoken</td><td>speaking</td></tr>
+    <tr><td>spell</td><td>spelt</td><td>spelt</td><td>spelling</td></tr>
+    <tr><td>sweep</td><td>swept</td><td>swept</td><td>sweeping</td></tr>
+    <tr><td>shake</td><td>shook</td><td>shaken</td><td>shaking</td></tr>
+    <tr><td>shine</td><td>shone</td><td>shone</td><td>shining</td></tr>
+    <tr><td>sink</td><td>sank</td><td>sunk</td><td>sinking</td></tr>
+    <tr><td>swear</td><td>swore</td><td>sworn</td><td>swearing</td></tr>
+    <tr><td>swim</td><td>swam</td><td>swum</td><td>swimming</td></tr>
+    <tr><td>shoot</td><td>shot</td><td>shot</td><td>shooting</td></tr>
+    <tr><td>sling</td><td>slung</td><td>slung</td><td>slinging</td></tr>
+    <tr><td>saw</td><td>sawed</td><td>sawed</td><td>sawing</td></tr>
+    <tr><td>shear</td><td>sheared</td><td>sheared</td><td>shearing</td></tr>
+    <tr><td>spoil</td><td>spoilt</td><td>spoilt</td><td>spoiling</td></tr>
+    <tr><td>strive</td><td>strove</td><td>striven</td><td>striving</td></tr>
+    <tr><td>stand</td><td>stood</td><td>stood</td><td>standing</td></tr>
+    <tr><td>swell</td><td>swelled</td><td>swelled</td><td>swelling</td></tr>
+    <tr><td>take</td><td>took</td><td>taken</td><td>taking</td></tr>
+    <tr><td>talk</td><td>talked</td><td>talked</td><td>talking</td></tr>
+    <tr><td>teach</td><td>taught</td><td>taught</td><td>teaching</td></tr>
+    <tr><td>think</td><td>thought</td><td>thought</td><td>thinking</td></tr>
+    <tr><td>tread</td><td>trod</td><td>trodden</td><td>treading</td></tr>
+    <tr><td>undergo</td><td>underwent</td><td>undergone</td><td>undergoing</td></tr>
+    <tr><td>win</td><td>won</td><td>won</td><td>winning</td></tr>
+    <tr><td>weep</td><td>wept</td><td>wept</td><td>weeping</td></tr>
+    <tr><td>weave</td><td>wove</td><td>woven</td><td>weaving</td></tr>
+    <tr><td>wed</td><td>wedded</td><td>wedded</td><td>wedding</td></tr>
+    <tr><td>wind</td><td>wound</td><td>wound</td><td>winding</td></tr>
+    <tr><td>wound</td><td>wounded</td><td>wounded</td><td>wounding</td></tr>
+    <tr><td>weaken</td><td>weakened</td><td>weakened</td><td>weakening</td></tr>
+    <tr><td>weigh</td><td>weighed</td><td>weighed</td><td>weighing</td></tr>
+    <tr><td>write</td><td>wrote</td><td>written</td><td>writing</td></tr>
+    <tr><td>yield</td><td>yielded</td><td>yielded</td><td>yielding</td></tr>
+  </table>
+
+  <h2 id="exercise-forms"><span class="num">15.</span>Exercise — Correct Forms of Verbs</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks by using the correct forms of the given verbs.</p>
+    <ol>
+      <li>We ___ (visit) the Taj Mahal last year. <input class="blank-input sm" type="text"></li>
+      <li>I have ___ (complete) my homework. <input class="blank-input sm" type="text"></li>
+      <li>The children ___ (be) ___ (play) in the playground at that time. <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>My friend ___ (sing) very well. <input class="blank-input sm" type="text"></li>
+      <li>___ (do) you ___ (go) to market yesterday? <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>He ___ (have) never ___ (be) to a zoo. <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>They have ___ (write) a letter. <input class="blank-input sm" type="text"></li>
+      <li>My friend ___ (polish) his shoes every day. <input class="blank-input sm" type="text"></li>
+      <li>I ___ (be, help) my mother in the kitchen when my father came home. <input class="blank-input sm" type="text"></li>
+      <li>The clever fox ___ (think) of a plan. <input class="blank-input sm" type="text"></li>
+      <li>I ___ (go) to school on foot. <input class="blank-input sm" type="text"></li>
+      <li>Once upon a time, there ___ (be) a king. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. visited · 2. completed · 3. were, playing · 4. sings · 5. Did, go · 6. has, been · 7. written · 8. polishes · 9. was helping · 10. thought · 11. go · 12. was</p></div>
+  </div>
+
+  <h2 id="revision"><span class="num">16.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>A verb says something about a subject — it can denote existence (forms of 'be'), possession (forms of 'have'), or action.</li>
+    <li>The object is the noun or pronoun that receives the action of a verb.</li>
+    <li>There are three types of verbs: intransitive (no object), transitive (needs an object), and linking (needs a subject complement).</li>
+    <li>Some transitive verbs take two objects — an indirect object and a direct object — and can be rewritten using 'to' or 'for'.</li>
+    <li>Some transitive verbs need an object complement (a word that describes or renames the object) to make complete sense.</li>
+    <li>Linking verbs (forms of 'be', and verbs like look, appear, seem, grow, become, turn) connect the subject to a subject complement — there is no transfer of action.</li>
+    <li>A main verb expresses the main action; auxiliary (helping) verbs — forms of be, have, do, and modals like will, can, could, should, may, might, must — help the main verb.</li>
+    <li>Conjugation means writing the different forms of a verb: Present (I), Past (II), Past Participle (III), and Present Participle (I+ing).</li>
+    <li>Regular (weak) verbs form their past and past participle by adding -ed/-d/-t; irregular (strong) verbs change internally and must be learnt individually.</li>
+  </ul>
+
+  <footer>Class 8 · English · Grammar · Lesson 16 — Chapter-11, The Verb.</footer>
+</div>
+</body>
+</html>

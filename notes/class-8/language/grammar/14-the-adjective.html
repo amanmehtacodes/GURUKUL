@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 14 — The Adjective | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:26px 0 8px; scroll-margin-top:20px;}
+  h4{font-family:var(--font-mono); font-size:13.5px; color:var(--cyan); margin:18px 0 8px; text-transform:uppercase; letter-spacing:.03em;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .ocr-note{
+    background:var(--accent2-soft); border:1px dashed var(--violet); border-radius:8px;
+    padding:10px 14px; margin:8px 0 14px; color:var(--ink-faint); font-size:13.5px; font-style:italic;
+  }
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:14.5px;}
+  table.ref-table caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:11px;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line-strong); padding:7px 10px; text-align:left; color:var(--ink-soft);}
+  table.ref-table th{background:var(--paper-raised); color:var(--ink); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table td.g{color:var(--ink); font-weight:600;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:16px 0 30px; background:var(--paper-raised);
+  }
+  .exercise-block h4{margin-top:0;}
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  table.gram-table{width:100%; border-collapse:collapse; margin:10px 0 16px; font-size:14px;}
+  table.gram-table th, table.gram-table td{border:1px solid var(--line-strong); padding:6px 8px; text-align:left;}
+  table.gram-table th{background:var(--paper); color:var(--ink-faint); font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;}
+  table.gram-table td.g{color:var(--ink); font-weight:600;}
+  input.blank-input{
+    width:92%; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:50px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol, .qa ul{margin:0; padding-left:20px;}
+  .qa li{margin-bottom:5px;}
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar</div>
+  <h1 class="title">Lesson 14 — The Adjective</h1>
+  <p class="subtitle">Semester 1</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#warmup">1. Warm-up — What Adjectives Do</a></li>
+      <li><a href="#order">2. Order of Adjectives</a></li>
+      <li><a href="#kinds">3. Kinds of Adjectives</a></li>
+      <li><a href="#quality">4. Adjectives of Quality</a></li>
+      <li><a href="#number">5. Adjectives of Number</a></li>
+      <li><a href="#quantity">6. Adjectives of Quantity</a></li>
+      <li><a href="#possessive">7. Possessive Adjectives</a></li>
+      <li><a href="#demonstrative">8. Demonstrative Adjectives</a></li>
+      <li><a href="#interrogative">9. Interrogative Adjectives</a></li>
+      <li><a href="#distributive">10. Distributive Adjectives</a></li>
+      <li><a href="#emphasizing">11. Emphasizing &amp; Exclamatory Adjectives</a></li>
+      <li><a href="#formation">12. Formation of Adjectives</a></li>
+      <li><a href="#degrees">13. Degrees of Adjectives</a></li>
+      <li><a href="#degree-formation">14. Formation of Comparative and Superlative Degrees</a></li>
+      <li><a href="#verbal">15. Verbs Used as Adjectives</a></li>
+      <li><a href="#similes">16. Use of Adjectives in Similes</a></li>
+      <li><a href="#transformation">17. Transformation of Sentences by Using Degrees</a></li>
+      <li><a href="#revision">18. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="warmup"><span class="num">1.</span>Warm-up — What Adjectives Do</h2>
+  <p>Read the following sentences and observe what the words in bold blue tell about a noun or a pronoun.</p>
+  <ol>
+    <li>Ram is an intelligent boy. (describes the quality of boy)</li>
+    <li>She is beautiful. (describes the quality 'she')</li>
+    <li>This is my new car. (describes the state of the car)</li>
+    <li>This is a nice book. (describes opinion about the book)</li>
+    <li>I have a rectangular table. (describes shape of the table)</li>
+    <li>I saw a black horse. (describes colour of the horse)</li>
+    <li>They have bought a big house. (describes size of the house)</li>
+    <li>Robert is an American. (describes nationality)</li>
+    <li>My father is old. (describes age of father)</li>
+    <li>I have ten pens. (describes number of pens)</li>
+    <li>Give me some rice. (describes quantity of rice)</li>
+  </ol>
+  <p>You can observe that the words in bold blue font in the above sentences describe the quality, opinion, state, age, colour, shape, size, number, quantity, material or nationality of the nouns or the pronouns in the given sentences. These words that are used for people or things are called adjectives.</p>
+  <div class="callout"><p><strong>Definition:</strong> An adjective is a word that describes or explains a noun or a pronoun.</p></div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Underline the nouns/pronouns and circle the adjectives</h4>
+    <ol>
+      <li>Rohit is happy today.</li>
+      <li>Soloman was a wise king.</li>
+      <li>They have a huge mansion.</li>
+      <li>The students were quiet.</li>
+      <li>This question is easy.</li>
+      <li>Delhi is a crowded city.</li>
+      <li>Gold is a precious metal.</li>
+      <li>Her elder brother is fat.</li>
+      <li>This is a golden opportunity for me.</li>
+      <li>Mr. Keshav is a wonderful person.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key — Noun/Pronoun → Adjective</div>
+      <p>1. Rohit → happy · 2. Soloman, king → wise · 3. They (pronoun), mansion → huge · 4. students → quiet · 5. question → easy · 6. Delhi, city → crowded · 7. Gold, metal → precious · 8. brother → elder, fat · 9. opportunity, me (pronoun) → golden · 10. Mr. Keshav, person → wonderful</p>
+    </div>
+  </div>
+
+  <h2 id="order"><span class="num">2.</span>Order of Adjectives</h2>
+  <p>Sometimes, we may need to use more than one adjective to describe a person or a thing. In such a situation, the following order of adjectives should be followed.</p>
+  <table class="ref-table">
+    <tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th></tr>
+    <tr><td>Quantity/Number</td><td>Quality/opinion</td><td>size</td><td>physical quality</td><td>age</td><td>shape</td><td>colour</td><td>Proper Adj./Origin</td><td>Material</td><td>Purpose</td><td>Noun</td></tr>
+    <tr><td>a</td><td>beautiful</td><td>-</td><td>-</td><td>new</td><td>round</td><td>brown</td><td>Chinese</td><td>wooden</td><td>wall</td><td>clock</td></tr>
+    <tr><td>one</td><td>royal</td><td>small</td><td>well-maintained</td><td>antique</td><td>-</td><td>black</td><td>American</td><td>-</td><td>racing</td><td>car</td></tr>
+    <tr><td>-</td><td>-</td><td>small</td><td>strong</td><td>latest</td><td>oval</td><td>white</td><td>German</td><td>plastic</td><td>hand</td><td>blender</td></tr>
+    <tr><td>some</td><td>ethnic</td><td>-</td><td>-</td><td>new</td><td>-</td><td>red</td><td>Indian</td><td>silk</td><td>party</td><td>dresses</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <h4>Exercise — Put the adjectives in the correct order</h4>
+    <ol>
+      <li>My father bought me a black, leather, new, beautiful, jacket. <textarea class="answer-box"></textarea></li>
+      <li>She is a Chinese, middle-aged, short lady. <textarea class="answer-box"></textarea></li>
+      <li>My uncle gifted me a steel, Titan, golden, latest watch. <textarea class="answer-box"></textarea></li>
+      <li>She sang a welcome, melodious, old song. <textarea class="answer-box"></textarea></li>
+      <li>John has a office, cotton, worn-out, white, shirt. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>a beautiful, new, black, leather jacket</li>
+        <li>a short, middle-aged, Chinese lady</li>
+        <li>a latest, golden, Titan, steel watch</li>
+        <li>a melodious, old, welcome song</li>
+        <li>a worn-out, white, cotton, office shirt</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="kinds"><span class="num">3.</span>Kinds of Adjectives</h2>
+  <table class="ref-table">
+    <tr><th>Kind of Adjective</th><th>Examples</th></tr>
+    <tr><td>1. Adjectives of Quality</td><td>tall, good, new, happy, oval, Indian, big, red, torn etc.</td></tr>
+    <tr><td>2. Adjectives of Number</td><td>one, two, tenth, some, many, more, most, few, a few, the few, fewer, several, all, both, any etc.</td></tr>
+    <tr><td>3. Adjectives of Quantity</td><td>some, much, more, most, little, a little, the little, less, whole, half, no, any etc.</td></tr>
+    <tr><td>4. Possessive Adjectives</td><td>my, our, his, her, your, their, its</td></tr>
+    <tr><td>5. Demonstrative Adjectives</td><td>this, that, these, those, such etc.</td></tr>
+    <tr><td>6. Interrogative Adjectives</td><td>what, which, whose</td></tr>
+    <tr><td>7. Distributive Adjectives</td><td>each, every, either, neither</td></tr>
+    <tr><td>8. Emphasizing Adjectives</td><td>very, own</td></tr>
+    <tr><td>9. Exclamatory Adjectives</td><td>what</td></tr>
+  </table>
+
+  <h2 id="quality"><span class="num">4.</span>Adjectives of Quality</h2>
+  <p>Adjectives of quality describe the kind, quality or characteristics of a noun or a pronoun. These adjectives describe size, colour, shape, state, age, opinion, material etc. of a noun or a pronoun.</p>
+  <div class="callout"><p><strong>Examples:</strong> Red bangles, circular motion, huge ship, old memories, interesting story, common name, silver lining, etc.</p></div>
+  <p><strong>Proper Adjectives:</strong> Adjectives which are formed from proper nouns are called proper adjectives. <em>Examples:</em> Indian Flag, Chinese toys, British Airways, American author etc.</p>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with adjectives of quality</h4>
+    <p class="instr">Open-ended — any grammatically fitting adjective of quality is correct. Sample answers are given below.</p>
+    <ol>
+      <li>Riya is a <input class="blank-input" type="text" style="width:150px"> singer.</li>
+      <li>My mother wore a <input class="blank-input" type="text" style="width:150px"> saree for the party.</li>
+      <li>Charlie Chaplin was a <input class="blank-input" type="text" style="width:150px"> man.</li>
+      <li>Look! There is a <input class="blank-input" type="text" style="width:150px"> coin.</li>
+      <li>Milk keeps the bone <input class="blank-input" type="text" style="width:150px">.</li>
+      <li>I like <input class="blank-input" type="text" style="width:150px"> bananas.</li>
+      <li>He belongs to a <input class="blank-input" type="text" style="width:150px"> family.</li>
+      <li>She has a <input class="blank-input" type="text" style="width:150px"> car.</li>
+      <li>Kolkata is a <input class="blank-input" type="text" style="width:150px"> city.</li>
+      <li>The baby has <input class="blank-input" type="text" style="width:150px"> cheeks.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show sample answers</button>
+    <div class="qa"><div class="qa-label">Sample Answers</div><p>1. talented · 2. beautiful/silk · 3. famous/funny · 4. shiny/golden · 5. strong · 6. ripe/yellow · 7. respectable · 8. red/expensive · 9. crowded/historic · 10. chubby/rosy</p></div>
+  </div>
+
+  <h2 id="number"><span class="num">5.</span>Adjectives of Number</h2>
+  <p>An adjective of number, as the name suggests, describes the number of a noun or a pronoun. It answers the question, 'how many'. It is used for countable nouns or pronouns. There are two types of adjectives of number.</p>
+  <ol>
+    <li><strong>Definite Numeral Adjectives:</strong> indicate the exact number of a noun or a pronoun. <em>Example:</em> Two boys are playing in the park. There are two types of definite numeral adjectives.
+      <ul>
+        <li><strong>Cardinals:</strong> denote the exact number of a noun or a pronoun. <em>Example:</em> There are five boys in this row.</li>
+        <li><strong>Ordinals:</strong> denote the order or rank of a noun or a pronoun. <em>Examples:</em> first, second, third, tenth, last, next etc. Article 'the' or a possessive determiner is used before an ordinal. <em>Example:</em> The fifth boy in this row is my friend.</li>
+      </ul>
+    </li>
+    <li><strong>Indefinite Numeral Adjectives:</strong> don't indicate the exact number of the noun or pronoun they refer to. <em>Examples:</em> Several people are waiting in the queue. There are many birds on this tree.</li>
+  </ol>
+
+  <h2 id="quantity"><span class="num">6.</span>Adjectives of Quantity</h2>
+  <p>An adjective of quantity indicates the quantity of a noun or a pronoun. It answers the question, 'how much'. It is used for uncountable nouns or pronouns.</p>
+  <div class="callout">
+    <p><strong>Examples:</strong> some, any, no, much, little, half, all, whole, sufficient, enough, great, etc.</p>
+    <p>1. I ate some rice. 2. There is not much oil in the bottle. 3. I don't have any money. 4. This statement makes no sense. 5. There is sufficient milk in the jug. 6. I don't have enough time to waste on these matters.</p>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with adjectives of number or quantity</h4>
+    <ol>
+      <li>I have <input class="blank-input" type="text" style="width:120px"> fingers and <input class="blank-input" type="text" style="width:120px"> toes.</li>
+      <li>The heart has <input class="blank-input" type="text" style="width:120px"> chambers.</li>
+      <li>Sh. Lal Bahdur Shastri was the <input class="blank-input" type="text" style="width:120px"> Prime Minister of India.</li>
+      <li>It is my <input class="blank-input" type="text" style="width:120px"> day to my new school, so I am nervous.</li>
+      <li>He has lost <input class="blank-input" type="text" style="width:120px"> his wealth.</li>
+      <li>There are <input class="blank-input" type="text" style="width:120px"> students in our class.</li>
+      <li>We get our recess period after the <input class="blank-input" type="text" style="width:120px"> period.</li>
+      <li>Please give me <input class="blank-input" type="text" style="width:120px"> sugar.</li>
+      <li>This money is not <input class="blank-input" type="text" style="width:120px"> to buy a new car.</li>
+      <li>He lost <input class="blank-input" type="text" style="width:120px"> his wealth in gambling.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key (some blanks are open-ended — reasonable equivalents are correct)</div><p>1. ten / ten · 2. four · 3. second · 4. first · 5. all/most of · 6. forty/many · 7. third/fourth · 8. some · 9. sufficient/enough · 10. all/much of</p></div>
+  </div>
+
+  <h2 id="possessive"><span class="num">7.</span>Possessive Adjectives</h2>
+  <p>The words 'my', 'our', 'your', 'his', 'her', 'its' and 'their' are used as possessive adjectives.</p>
+  <div class="callout"><p><strong>Examples:</strong> 1. India is our country. 2. You must complete your work. 3. It is her notebook. 4. The dog wagged its tail.</p></div>
+  <h3>Possessive Pronouns and Possessive Adjectives</h3>
+  <p>Both possessive pronouns and possessive adjectives are used to show possession or belonging. However, whereas pronouns replace the nouns, adjectives describe the nouns. Possessive adjectives are placed before nouns.</p>
+  <table class="ref-table">
+    <tr><th>Possessive Pronoun</th><th>Possessive Adjective</th></tr>
+    <tr><td>This book is mine.</td><td>This is my book.</td></tr>
+    <tr><td>That house is yours.</td><td>That is your house.</td></tr>
+    <tr><td>These bags are theirs.</td><td>These are their bags.</td></tr>
+    <tr><td>This pencil is hers.</td><td>This is her pencil.</td></tr>
+  </table>
+  <div class="callout"><p><strong>Important Note:</strong> Don't use any apostrophe ('s) with possessive adjectives. The only exception is the pronoun 'one' which takes an apostrophe ('s) to make its possessive adjective. <em>Example:</em> One must do one's duty.</p></div>
+
+  <h2 id="demonstrative"><span class="num">8.</span>Demonstrative Adjectives</h2>
+  <div class="callout"><p><strong>Definition:</strong> The words 'this', 'that', 'these', 'those' and 'such' are called demonstratives as they are used to point out to persons or things they refer to.</p></div>
+  <ol>
+    <li>This pencil is mine. (Used for singular thing which is near the speaker)</li>
+    <li>That car is new. (Used for singular thing which is at a distance from the speaker)</li>
+    <li>These kites are mine. (Used for plural things which are near the speaker)</li>
+    <li>Those oranges are fresh. (Used for plural things which are at a distance from the speaker)</li>
+    <li>I don't like such people.</li>
+  </ol>
+  <h3>Demonstrative Pronouns and Demonstrative Adjectives</h3>
+  <p>Both demonstrative pronouns and demonstrative adjectives are used to point out a noun or a pronoun they refer to. However, whereas pronouns replace the nouns, adjectives describe the nouns.</p>
+  <table class="ref-table">
+    <tr><th>Demonstrative Pronoun</th><th>Demonstrative Adjective</th></tr>
+    <tr><td>This is my book.</td><td>This book is mine.</td></tr>
+    <tr><td>That is your house.</td><td>That house is yours.</td></tr>
+    <tr><td>These are their bags.</td><td>These bags are theirs.</td></tr>
+    <tr><td>This is her pencil.</td><td>This pencil is hers.</td></tr>
+  </table>
+
+  <h2 id="interrogative"><span class="num">9.</span>Interrogative Adjectives</h2>
+  <p>The words 'what', 'which' and 'whose' are interrogative pronouns used to ask questions about persons or things. These words can be used as interrogative adjectives too. When used just before a noun, these words become interrogative adjectives.</p>
+  <table class="ref-table">
+    <tr><th>Interrogative Pronoun</th><th>Interrogative Adjective</th></tr>
+    <tr><td>Which of these is your book?</td><td>Which book is yours?</td></tr>
+    <tr><td>What is the news he broke to you?</td><td>What news did he break to you?</td></tr>
+    <tr><td>Whose is this house?</td><td>Whose house is this?</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with interrogative adjectives</h4>
+    <ol>
+      <li><input class="blank-input" type="text" style="width:120px"> nonsense is this?</li>
+      <li><input class="blank-input" type="text" style="width:120px"> book is yours?</li>
+      <li><input class="blank-input" type="text" style="width:120px"> book is this?</li>
+      <li><input class="blank-input" type="text" style="width:120px"> colour do you like the most?</li>
+      <li><input class="blank-input" type="text" style="width:120px"> flavour of ice-cream would you like to eat?</li>
+      <li><input class="blank-input" type="text" style="width:120px"> child is this crying in the street?</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. What · 2. Which · 3. Whose · 4. Which · 5. Which · 6. Whose</p></div>
+  </div>
+
+  <h2 id="distributive"><span class="num">10.</span>Distributive Adjectives</h2>
+  <div class="callout"><p><strong>Definition:</strong> The adjectives that refer to a single person or thing in a group, one at a time, are called distributive adjectives. 'each', 'every', 'either', 'neither' are called distributive adjectives. Nouns preceded by distributive adjectives always take a singular verb.</p></div>
+  <h3>Each and Every</h3>
+  <p>'Each' and 'every' are similar in meaning, but there is a difference between the two. Each is used when speaking of two or more persons or things. 'Every' is used when speaking of more than two persons or things. Each directs attention to every person or thing of a group individually and separately. 'Every' is comprehensive, considering all; it directs attention to the whole group without any exception. Each is used to denote a person or thing out of a known or limited group. 'Every' is used in a wide sense to denote persons or things when the number is unlimited.</p>
+  <div class="callout"><p><strong>Examples:</strong> 1. Each child was given a sweet. (considering each individual out of a limited group) 2. Every child likes sweets. (considering all in an unlimited group)</p></div>
+  <h3>Either and Neither</h3>
+  <p>'Either' has two meanings: (i) One out of two (ii) Each of two. 'Neither' means none out of two.</p>
+  <div class="callout"><p><strong>Examples:</strong> 1. There are trees on either side of the road. (each out of two) 2. Neither side of the road has trees. (none out of two)</p></div>
+  <h3>Distributive Pronouns and Distributive Adjectives</h3>
+  <table class="ref-table">
+    <tr><th>Distributive Pronoun</th><th>Distributive Adjective</th></tr>
+    <tr><td>Each of the students was given a prize.</td><td>Each student was given a prize.</td></tr>
+    <tr><td>Either of the two boys had completed his work.</td><td>Either boy completed his work.</td></tr>
+    <tr><td>Neither of the sides of road has trees.</td><td>Neither side of the road has trees.</td></tr>
+  </table>
+
+  <h2 id="emphasizing"><span class="num">11.</span>Emphasizing &amp; Exclamatory Adjectives</h2>
+  <h3>Emphasizing Adjectives</h3>
+  <p>Emphasizing adjectives lay stress on a particular person or thing.</p>
+  <div class="callout"><p><strong>Examples:</strong> 1. His very name makes me smile. 2. He is making a pot with his own hands.</p></div>
+  <h3>Exclamatory Adjectives</h3>
+  <p>Exclamatory adjectives are used before nouns in an exclamatory sentence.</p>
+  <div class="callout"><p><strong>Examples:</strong> 1. What a beautiful house! 2. What good luck!</p></div>
+
+  <h2 id="formation"><span class="num">12.</span>Formation of Adjectives</h2>
+  <ul>
+    <li>Some words are independent adjectives. They are not formed from any other part of speech. <em>Examples:</em> rich, hot, yellow, thin etc.</li>
+    <li>Some adjectives are formed from verbs by adding the suffix '-ing'. These adjectives are called present participle. <em>Examples:</em> a moving train, a dancing doll, a burning house etc.</li>
+    <li>Sometimes the third form of the verb is used as adjective. This is called past participle. <em>Examples:</em> a locked house, a broken ship, a chained elephant etc.</li>
+    <li>Most adjectives are formed from nouns, verbs and adjectives by adding suffixes. A few examples are given below.</li>
+  </ul>
+  <table class="ref-table">
+    <tr><th>Root Word</th><th>Suffix</th><th>Adjective</th><th>Root Word</th><th>Suffix</th><th>Adjective</th></tr>
+    <tr><td>accident</td><td>-al</td><td>accidental</td><td>age</td><td>-d</td><td>aged</td></tr>
+    <tr><td>ceremony</td><td>-ial</td><td>ceremonial</td><td>gift</td><td>-ed</td><td>gifted</td></tr>
+    <tr><td>enjoy</td><td>-able</td><td>enjoyable</td><td>east</td><td>-ern</td><td>eastern</td></tr>
+    <tr><td>abound</td><td>-ant</td><td>abundant</td><td>gold</td><td>-en</td><td>golden</td></tr>
+    <tr><td>clerk</td><td>-ical</td><td>clerical</td><td>charm</td><td>-ing</td><td>charming</td></tr>
+    <tr><td>sense</td><td>-ible</td><td>sensible</td><td>affection</td><td>-ate</td><td>affectionate</td></tr>
+    <tr><td>abuse</td><td>-ive</td><td>abusive</td><td>child</td><td>-like</td><td>childlike</td></tr>
+    <tr><td>air</td><td>-y</td><td>airy</td><td>burden</td><td>-some</td><td>burdensome</td></tr>
+    <tr><td>compliment</td><td>-ary</td><td>complimentary</td><td>trust</td><td>-worthy</td><td>trustworthy</td></tr>
+    <tr><td>brother</td><td>-ly</td><td>brotherly</td><td>help</td><td>-less</td><td>helpless</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with adjectives formed from the bracketed words</h4>
+    <ol>
+      <li>The traffic here is very <input class="blank-input" type="text" style="width:150px"> for children. (danger)</li>
+      <li>This child is <input class="blank-input" type="text" style="width:150px">. (health)</li>
+      <li>This book has a great <input class="blank-input" type="text" style="width:150px"> value. (history)</li>
+      <li>Mr. George is an <input class="blank-input" type="text" style="width:150px"> politician. (America)</li>
+      <li>After the <input class="blank-input" type="text" style="width:150px"> tsunami, a new danger threatened Japan. (mass)</li>
+      <li>I was <input class="blank-input" type="text" style="width:150px"> with my friend. (anger)</li>
+      <li>This building is really <input class="blank-input" type="text" style="width:150px">. (impression)</li>
+      <li>The Taj Mahal is <input class="blank-input" type="text" style="width:150px"> with gardens. (surrounding)</li>
+      <li>Sarojini Naidu played an <input class="blank-input" type="text" style="width:150px"> role in India's freedom struggle. (importance)</li>
+      <li>Last night I read an awfully <input class="blank-input" type="text" style="width:150px"> story. (fun)</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. dangerous · 2. healthy · 3. historical/historic · 4. American · 5. massive · 6. angry · 7. impressive · 8. surrounded · 9. important · 10. funny</p></div>
+  </div>
+
+  <h2 id="degrees"><span class="num">13.</span>Degrees of Adjectives</h2>
+  <p>There are three degrees of adjectives.</p>
+  <ol>
+    <li><strong>Positive Degree:</strong> used when the adjective describes only one thing or person without making any comparison. Even if there is any comparison involved, it is between one and none. <em>Examples:</em> Ram is a tall boy. (Describing only Ram) No boy in the class is as tall as Ram. (Comparison between one and none)</li>
+    <li><strong>Comparative Degree:</strong> used when the adjective compares two persons, things or groups. Here, the mode of comparison is 'one to one'. The comparative degree is followed by the conjunction 'than'. The comparison may be made in three ways:
+      <ul>
+        <li>Individual compared with individual — Ram is taller than Shyam.</li>
+        <li>Individual compared with a group — Ram is taller than any other boy in the class.</li>
+        <li>Group compared with a group — The players of team A are taller than the players of team B.</li>
+      </ul>
+    </li>
+    <li><strong>Superlative Degree:</strong> used when one person or thing is compared with all others in the group. Here the mode of comparison is 'one to all'. <em>Example:</em> Ram is the tallest boy in the class.</li>
+  </ol>
+
+  <h2 id="degree-formation"><span class="num">14.</span>Formation of Comparative and Superlative Degrees</h2>
+
+  <div class="exercise-block">
+    <h4>Rule 1 — Most adjectives add '-er' and '-est'</h4>
+    <table class="gram-table">
+      <tr><th>Positive</th><th>Comparative</th><th>Superlative</th><th>Positive</th><th>Comparative</th><th>Superlative</th></tr>
+      <tr><td>bright</td><td class="g">brighter</td><td class="g">brightest</td><td>bold</td><td class="g">bolder</td><td class="g">boldest</td></tr>
+      <tr><td>high</td><td class="g">higher</td><td class="g">highest</td><td><input class="blank-input" type="text"></td><td>quieter</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td class="g">cleverest</td><td>near</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td class="g">cleaner</td><td><input class="blank-input" type="text"></td><td>dear</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td class="g">deepest</td><td>few</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td class="g">faster</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td class="g">greatest</td></tr>
+      <tr><td>hard</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td class="g">keener</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td class="g">lightest</td><td>weak</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td class="g">poorer</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td class="g">richest</td></tr>
+      <tr><td>sweet</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td class="g">shorter</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td class="g">strongest</td><td>tall</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td class="g">smaller</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td class="g">slowest</td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>quiet/quieter/quietest · clever/cleverer/cleverest · near/nearer/nearest · clean/cleaner/cleanest · dear/dearer/dearest · deep/deeper/deepest · few/fewer/fewest · fast/faster/fastest · great/greater/greatest · hard/harder/hardest · keen/keener/keenest · light/lighter/lightest · weak/weaker/weakest · poor/poorer/poorest · rich/richer/richest · sweet/sweeter/sweetest · short/shorter/shortest · strong/stronger/strongest · tall/taller/tallest · small/smaller/smallest · slow/slower/slowest</p></div>
+  </div>
+
+  <div class="ocr-note">A note on Rule 2: the source textbook states that adjectives ending in 'e' form their comparative and superlative by adding just '-r' and '-st', but the practice table meant to follow it was blank in the scanned page. A few standard examples are given here to illustrate the rule: large → larger → largest · wise → wiser → wisest · fine → finer → finest · brave → braver → bravest.</div>
+
+  <div class="exercise-block">
+    <h4>Rule 3 — One-syllable adjectives ending in a consonant preceded by a vowel double the consonant, then add '-er'/'-est'</h4>
+    <table class="gram-table">
+      <tr><th>Positive</th><th>Comparative</th><th>Superlative</th></tr>
+      <tr><td>red</td><td class="g">redder</td><td class="g">reddest</td></tr>
+      <tr><td>hot</td><td class="g">hotter</td><td class="g">hottest</td></tr>
+      <tr><td>fat</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>thin</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>mad</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>sad</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>big</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>fat/fatter/fattest · thin/thinner/thinnest · mad/madder/maddest · sad/sadder/saddest · big/bigger/biggest</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 5 — Adjectives ending in '-y' remove the 'y' and add '-ier'/'-iest'</h4>
+    <table class="gram-table">
+      <tr><th>Positive</th><th>Comparative</th><th>Superlative</th></tr>
+      <tr><td>happy</td><td class="g">happier</td><td class="g">happiest</td></tr>
+      <tr><td>tiny</td><td class="g">tinier</td><td class="g">tiniest</td></tr>
+      <tr><td>heavy</td><td class="g">heavier</td><td class="g">heaviest</td></tr>
+      <tr><td>busy</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>noisy</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>creepy</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>busy/busier/busiest · noisy/noisier/noisiest · creepy/creepier/creepiest</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 6 — Adjectives of more than two syllables use 'more'/'most'</h4>
+    <table class="gram-table">
+      <tr><th>Positive</th><th>Comparative</th><th>Superlative</th></tr>
+      <tr><td>beautiful</td><td class="g">more beautiful</td><td class="g">most beautiful</td></tr>
+      <tr><td>intelligent</td><td class="g">more intelligent</td><td class="g">most intelligent</td></tr>
+      <tr><td>important</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>careful</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>diligent</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>ignorant</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>capable</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>interesting</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>wonderful</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>difficult</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>more/most important · more/most careful · more/most diligent · more/most ignorant · more/most capable · more/most interesting · more/most wonderful · more/most difficult</p></div>
+  </div>
+
+  <table class="ref-table">
+    <caption>Reference — irregular degrees of adjectives</caption>
+    <tr><th>Positive</th><th>Comparative</th><th>Superlative</th></tr>
+    <tr><td>good</td><td>better</td><td>best</td></tr>
+    <tr><td>well</td><td>better</td><td>best</td></tr>
+    <tr><td>bad</td><td>worse</td><td>worst</td></tr>
+    <tr><td>late</td><td>later/latter</td><td>latest/last</td></tr>
+    <tr><td>little</td><td>less</td><td>least</td></tr>
+    <tr><td>much</td><td>more</td><td>most</td></tr>
+    <tr><td>many</td><td>more</td><td>most</td></tr>
+    <tr><td>far</td><td>farther</td><td>farthest</td></tr>
+    <tr><td>far</td><td>further</td><td>furthest</td></tr>
+  </table>
+  <div class="callout">
+    <p><strong>Note:</strong> Some adjectives don't have their comparative or superlative degree — <em>examples:</em> perfect, complete, absolute, whole, square, round, eternal, universal, unique etc.</p>
+    <p>The comparative degree is generally followed by 'than', but comparatives ending in '-er' and '-or' are followed by the preposition 'to'. <em>Examples:</em> Harish is inferior to Ramesh in designation. My brother is elder to me. She is junior to all her colleagues. The Quit India Movement happened prior to Gandhi ji's death.</p>
+    <p>Use of double comparative degree or double superlative degree is wrong. <em>Examples:</em> "He is more wiser than I am." (Incorrect) → "He is wiser than I am." (Correct). "He is the most tallest boy in the class." (Incorrect) → "He is the tallest boy in the class." (Correct)</p>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with the correct degree of the bracketed adjective</h4>
+    <ol>
+      <li>Siya is the <input class="blank-input" type="text" style="width:150px"> girl in the class. (beautiful)</li>
+      <li>This tree is <input class="blank-input" type="text" style="width:150px"> than that. (tall)</li>
+      <li>He is <input class="blank-input" type="text" style="width:150px"> now. (good)</li>
+      <li>John is as <input class="blank-input" type="text" style="width:150px"> as his brother. (intelligent)</li>
+      <li>This is the <input class="blank-input" type="text" style="width:150px"> book I have ever read. (interesting)</li>
+      <li>Dimple is <input class="blank-input" type="text" style="width:150px"> than her sister. (young)</li>
+      <li>Oil is <input class="blank-input" type="text" style="width:150px"> than milk. (light)</li>
+      <li>Everest is the <input class="blank-input" type="text" style="width:150px"> mountain peak. (high)</li>
+      <li>I am <input class="blank-input" type="text" style="width:150px"> interested in your story. (little)</li>
+      <li>His condition has become the <input class="blank-input" type="text" style="width:150px"> now. (bad)</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. most beautiful · 2. taller · 3. better · 4. intelligent · 5. most interesting · 6. younger · 7. lighter · 8. highest · 9. little/less · 10. worst</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with the correct word</h4>
+    <ol>
+      <li>My brother is elder <input class="blank-input" type="text" style="width:110px"> me. (than/to)</li>
+      <li>Amazon is the <input class="blank-input" type="text" style="width:110px"> of all rivers. (larger/largest)</li>
+      <li>Which is the <input class="blank-input" type="text" style="width:110px"> of the two? (best/better)</li>
+      <li>No <input class="blank-input" type="text" style="width:110px"> than fifty persons were killed in the accident. (fewer/less)</li>
+      <li>Both of you make <input class="blank-input" type="text" style="width:150px"> couple. (the most perfect/a perfect)</li>
+      <li>My <input class="blank-input" type="text" style="width:110px"> brother is looking for a new job. (elder/older)</li>
+      <li>The <input class="blank-input" type="text" style="width:110px"> you practise, the better your game will be. (more/most)</li>
+      <li>He is <input class="blank-input" type="text" style="width:150px"> person. (the most unique/a unique)</li>
+      <li>Mr. Sharma is senior <input class="blank-input" type="text" style="width:110px"> me. (to/than)</li>
+      <li>My <input class="blank-input" type="text" style="width:110px"> brother is a doctor. (elder/older)</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. to · 2. largest · 3. better · 4. fewer · 5. a perfect · 6. elder · 7. more · 8. a unique · 9. to · 10. elder</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Write the antonyms (also adjectives)</h4>
+    <table class="gram-table">
+      <tr><th>Adjective</th><th>Antonym</th><th>Adjective</th><th>Antonym</th></tr>
+      <tr><td>cold</td><td><input class="blank-input" type="text"></td><td>fast</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>tall</td><td><input class="blank-input" type="text"></td><td>ancient</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>long</td><td><input class="blank-input" type="text"></td><td>early</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>big</td><td><input class="blank-input" type="text"></td><td>old</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>near</td><td><input class="blank-input" type="text"></td><td>beautiful</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>fat</td><td><input class="blank-input" type="text"></td><td>wise</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>wide</td><td><input class="blank-input" type="text"></td><td>closed</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>dark</td><td><input class="blank-input" type="text"></td><td>heavy</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>cold→hot · fast→slow · tall→short · ancient→modern · long→short · early→late · big→small · old→new · near→far · beautiful→ugly · fat→thin · wise→foolish · wide→narrow · closed→open · dark→light/bright · heavy→light</p></div>
+  </div>
+
+  <h2 id="verbal"><span class="num">15.</span>Verbs Used as Adjectives</h2>
+  <p>The present participle form and the past participle form of the verb can also be used as an adjective. These are called verbal adjectives.</p>
+  <div class="callout">
+    <p><strong>Examples:</strong> 1. I have a dancing doll. 2. The movie was interesting. 3. We found the house locked. 4. The lost child was crying bitterly.</p>
+    <p>In the examples given above, the words 'dancing' and 'interesting' are the present participle forms of the verbs describing the nouns 'doll' and 'movie' respectively. Similarly, the words 'locked' and 'lost' are the past participle forms of the verbs describing the nouns 'house' and 'child' respectively.</p>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Underline the verbal adjectives: present participle or past participle?</h4>
+    <ol>
+      <li>My new job is very interesting.</li>
+      <li>I like the sound of jingling bells.</li>
+      <li>The shooting star looks beautiful.</li>
+      <li>Barking dogs seldom bite.</li>
+      <li>Broken toys were lying around everywhere.</li>
+      <li>John looked frightened by the noise.</li>
+      <li>I was amazed to see her collection of postal tickets.</li>
+      <li>My mother found my result disappointing.</li>
+      <li>It was an amazing performance.</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. interesting — present participle · 2. jingling — present participle · 3. shooting — present participle · 4. Barking — present participle · 5. Broken — past participle · 6. frightened — past participle · 7. amazed — past participle · 8. disappointing — present participle · 9. amazing — present participle</p></div>
+  </div>
+
+  <h2 id="similes"><span class="num">16.</span>Use of Adjectives in Similes</h2>
+  <p>A simile is a figure of speech often employed in poetry to make comparisons between persons, animals or objects. Adjectives are frequently used in similes.</p>
+  <div class="callout"><p><strong>Examples:</strong> as busy as bee, as soft as silk, as easy as A.B.C.</p></div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Complete the similes using the word box</h4>
+    <p class="instr">Word box: brave, gentle, hot, faithful, heavy, happy, red, cold, green, crafty, free, round, good, black, deep, brittle, loud, deaf</p>
+    <table class="gram-table">
+      <tr><td>1. as <input class="blank-input" type="text" style="width:100px"> as coal</td><td>10. as <input class="blank-input" type="text" style="width:100px"> as thunder</td></tr>
+      <tr><td>2. as <input class="blank-input" type="text" style="width:100px"> as glass</td><td>11. as <input class="blank-input" type="text" style="width:100px"> as a post</td></tr>
+      <tr><td>3. as <input class="blank-input" type="text" style="width:100px"> as ice</td><td>12. as <input class="blank-input" type="text" style="width:100px"> as a lion</td></tr>
+      <tr><td>4. as <input class="blank-input" type="text" style="width:100px"> as gold</td><td>13. as <input class="blank-input" type="text" style="width:100px"> as air</td></tr>
+      <tr><td>5. as <input class="blank-input" type="text" style="width:100px"> as grass</td><td>14. as <input class="blank-input" type="text" style="width:100px"> as a ball</td></tr>
+      <tr><td>6. as <input class="blank-input" type="text" style="width:100px"> as a king</td><td>15. as <input class="blank-input" type="text" style="width:100px"> as fire</td></tr>
+      <tr><td>7. as <input class="blank-input" type="text" style="width:100px"> as a lamb</td><td>16. as <input class="blank-input" type="text" style="width:100px"> as a well</td></tr>
+      <tr><td>8. as <input class="blank-input" type="text" style="width:100px"> as blood</td><td>17. as <input class="blank-input" type="text" style="width:100px"> as crow</td></tr>
+      <tr><td>9. as <input class="blank-input" type="text" style="width:100px"> as lead</td><td>18. as <input class="blank-input" type="text" style="width:100px"> as dog</td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. black (coal) · 2. brittle (glass) · 3. cold (ice) · 4. good (gold) · 5. green (grass) · 6. happy (king) · 7. gentle (lamb) · 8. red (blood) · 9. heavy (lead) · 10. loud (thunder) · 11. deaf (post) · 12. brave (lion) · 13. free (air) · 14. round (ball) · 15. hot (fire) · 16. deep (well) · 17. crafty (crow) · 18. faithful (dog)</p></div>
+  </div>
+
+  <h2 id="transformation"><span class="num">17.</span>Transformation of Sentences by Using Degrees</h2>
+  <p>Read the following three sentences carefully and observe the way of transformation.</p>
+  <div class="callout"><p>1. No boy in the class is as intelligent as Ram. (Positive) 2. Ram is more intelligent than any other boy in the class. (Comparative) 3. Ram is the most intelligent boy in the class. (Superlative)</p></div>
+  <p>The meaning of all three sentences is the same — Ram is the most intelligent boy, the only one who is. However, this sense is conveyed by using the Positive, Comparative and Superlative Degrees of the Adjective.</p>
+  <div class="callout"><p>1. Few boys in the class are as intelligent as Ram. 2. Ram is more intelligent than most other boys in the class. 3. Ram is one of the most intelligent boys in the class.</p></div>
+  <p>Here, Ram is one of the most intelligent boys in the class — he is not the only one.</p>
+  <div class="callout"><p>1. Ram is not the tallest of all the boys in the class. 2. Ram is not taller than some other boys in the class. 3. Some other boys in the class are at least as tall as Ram.</p></div>
+  <p><em>Ritika is not as beautiful as Rashmi.</em> This sentence compares two people. It can be rewritten without changing the sense: <em>Rashmi is more beautiful than Ritika.</em></p>
+  <p><em>Abdul is as strong as his brother.</em> This too compares two people. It can be rewritten: <em>Abdul's brother is not stronger than he is.</em></p>
+
+  <div class="exercise-block">
+    <h4>Exercise — Transform the sentences by changing the degree, keeping the meaning the same</h4>
+    <ol>
+      <li>Some boys are at least as industrious as Kunal. <textarea class="answer-box"></textarea></li>
+      <li>Soloman was the wisest king. <textarea class="answer-box"></textarea></li>
+      <li>This is the hottest place in this region. <textarea class="answer-box"></textarea></li>
+      <li>I am as strong as he is. <textarea class="answer-box"></textarea></li>
+      <li>Some girls are at least as beautiful as Mona. <textarea class="answer-box"></textarea></li>
+      <li>His father is smarter than he is. <textarea class="answer-box"></textarea></li>
+      <li>Reema is not as sweet as her sister. <textarea class="answer-box"></textarea></li>
+      <li>Bombay is one of the richest towns in India. <textarea class="answer-box"></textarea></li>
+      <li>Nisha is not one of the cleverest girls of the class. <textarea class="answer-box"></textarea></li>
+      <li>Your house is not more spacious than mine. <textarea class="answer-box"></textarea></li>
+      <li>A rabbit is more social than a hare. <textarea class="answer-box"></textarea></li>
+      <li>Alligators are not as aggressive as crocodiles. <textarea class="answer-box"></textarea></li>
+      <li>Siachen Glacier is the longest mountain glacier in India. <textarea class="answer-box"></textarea></li>
+      <li>My bag is heavier than your bag. <textarea class="answer-box"></textarea></li>
+      <li>Amitabh Bachhan is the most popular actor in India. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key (one valid transformation each — others may also be correct)</div>
+      <ol>
+        <li>Kunal is not more industrious than some other boys.</li>
+        <li>No other king was as wise as Soloman.</li>
+        <li>No other place in this region is as hot as this.</li>
+        <li>He is not stronger than I am.</li>
+        <li>Mona is not more beautiful than some other girls.</li>
+        <li>He is not as smart as his father.</li>
+        <li>Reema's sister is sweeter than her.</li>
+        <li>Very few towns in India are as rich as Bombay.</li>
+        <li>Some other girls in the class are cleverer than Nisha.</li>
+        <li>My house is at least as spacious as yours.</li>
+        <li>A hare is not as social as a rabbit.</li>
+        <li>Crocodiles are more aggressive than alligators.</li>
+        <li>No other mountain glacier in India is as long as the Siachen Glacier.</li>
+        <li>Your bag is not as heavy as mine.</li>
+        <li>No other actor in India is as popular as Amitabh Bachhan.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Editing: find and correct the error in each line</h4>
+    <p class="instr">The following passage has not been edited. There is an error in each line.</p>
+    <div class="callout">
+      Cricket grew out of much stick-and-ball games playing in England 500 years ago. The word bat is an olden English word that simply means stick or club. By the seventeen century, cricket had evolved enoughly to be recognised as a distinct game. A test match can go for fifth days and still end in a draw. Cricket grounds can be oval or circle. Cricket was the earlier modern team sport to be codified. The one written 'Laws of Cricket' were drawn up in 1744.
+    </div>
+    <textarea class="answer-box" style="min-height:100px" placeholder="Write the incorrect word and its correction for each line..."></textarea>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>much → many (games is a countable plural)</li>
+        <li>playing → played</li>
+        <li>olden → old</li>
+        <li>seventeen → seventeenth</li>
+        <li>enoughly → enough</li>
+        <li>fifth → five</li>
+        <li>circle → circular</li>
+        <li>earlier → earliest</li>
+        <li>one → first</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="revision"><span class="num">18.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>Do you know the correct order of adjectives (quantity, quality/opinion, size, physical quality, age, shape, colour, origin, material, purpose, noun)?</li>
+    <li>Can you name the nine kinds of adjectives?</li>
+    <li>Do you know the difference between "each"/"every" and "either"/"neither"?</li>
+    <li>Can you tell a possessive/demonstrative/interrogative pronoun apart from its adjective form?</li>
+    <li>Do you know the three degrees of adjectives and when to use each?</li>
+    <li>Can you form comparatives and superlatives correctly for -er/-est, -e-ending, doubled-consonant, -y-ending, and long words?</li>
+    <li>Do you know the irregular degree forms (good/better/best, bad/worse/worst, far/farther/farthest)?</li>
+    <li>Can you spot a double comparative or double superlative error?</li>
+    <li>Can you tell a present participle verbal adjective from a past participle one?</li>
+  </ul>
+
+  <footer>Class 8 · English · Grammar · Lesson 14</footer>
+</div>
+</body>
+</html>

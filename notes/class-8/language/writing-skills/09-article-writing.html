@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 9 — Article Writing | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 32px;}
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 22px; margin-bottom:36px;
+  }
+  nav.toc div.toc-h{font-family:var(--font-mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px;}
+  nav.toc li{margin-bottom:5px;}
+  nav.toc ol ol{margin:6px 0 10px; padding-left:22px;}
+  nav.toc ol ol li{margin-bottom:4px; font-size:14.5px;}
+  nav.toc a{color:var(--accent); text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline; color:var(--violet);}
+  nav.toc ol ol a{color:var(--ink-soft);}
+  nav.toc ol ol a:hover{color:var(--cyan);}
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.03em; color:var(--c3);
+    margin:44px 0 16px; scroll-margin-top:20px;
+  }
+  h3{font-size:20px; font-weight:700; margin:26px 0 10px; scroll-margin-top:20px;}
+  p{margin:0 0 14px;}
+  ul,ol{margin:0 0 16px; padding-left:24px;}
+  li{margin-bottom:7px;}
+  li ul, li ol{margin-top:8px;}
+  strong{font-weight:700;}
+  hr{border:none; border-top:1px solid var(--line); margin:36px 0;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:12px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 16px;
+  }
+  .hints{
+    background:var(--accent2-soft); border-left:3px solid var(--accent2);
+    border-radius:6px; padding:10px 16px; margin:0 0 14px; font-size:14.5px; color:var(--ink-soft);
+  }
+  .hints strong{color:var(--violet); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.04em;}
+  .sample{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:20px 24px; margin:0 0 24px;
+  }
+  .sample .sh{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;}
+  /* CODER cycle — a simple looped flow, not a literal circular graphic,
+     of the five stages named in the source's acronym diagram. */
+  .coder-cycle{
+    display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:0 0 20px;
+    font-family:var(--font-mono); font-size:13px;
+  }
+  .coder-cycle .step{
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:8px;
+    padding:12px 16px; color:var(--ink-soft); text-align:center; flex:1 1 140px;
+  }
+  .coder-cycle .step b{display:block; color:var(--c3); font-size:11px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px;}
+  .coder-cycle .arrow{color:var(--ink-faint); font-size:18px; flex:0 0 auto;}
+  .coder-cycle .loop{width:100%; text-align:center; color:var(--ink-faint); font-size:12.5px; margin-top:4px;}
+  /* Finished article: title, by-line, an optional opening quote, and the
+     body in paragraphs. Unscoped so it's reusable for both worked
+     samples and every practice-question model answer below. */
+  .article-box{
+    border:1.5px solid var(--ink); border-radius:4px; padding:22px 24px;
+    font-size:15.5px; line-height:1.75; background:var(--paper);
+  }
+  .article-box .art-title{font-family:var(--font-mono); font-size:20px; font-weight:700; text-align:center; margin:0 0 4px;}
+  .article-box .art-byline{text-align:center; color:var(--ink-soft); font-size:14px; margin:0 0 16px;}
+  .article-box .art-quote{font-style:italic; text-align:center; color:var(--ink-soft); margin:0 0 4px; padding:0 10px;}
+  .article-box .art-quote-attr{text-align:right; font-size:14px; color:var(--ink-faint); margin:0 0 18px;}
+  .article-box p{margin:0 0 12px;}
+  .article-box p:last-child{margin-bottom:0;}
+  .checklist{list-style:none; padding-left:0;}
+  .checklist li{padding-left:26px; position:relative;}
+  .checklist li:before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+  /* Interactive question blocks */
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:18px 20px; margin:18px 0; background:var(--paper-raised);
+  }
+  .q .qn{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); margin-bottom:8px; letter-spacing:.03em; text-transform:uppercase;}
+  .q p.prompt{margin:0 0 10px; font-size:16px;}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q button{
+    margin-top:12px; font-family:var(--font-mono); font-size:12.5px; font-weight:700;
+    letter-spacing:.03em; text-transform:uppercase; padding:9px 18px; border:1px solid var(--c3);
+    border-radius:7px; background:var(--c3-soft); color:var(--c3); cursor:pointer;
+  }
+  .q button:hover{background:var(--c3-panel);}
+  .qa{
+    display:none; margin-top:14px; padding:14px 16px; border-radius:8px;
+    background:var(--accent2-soft); border:1px solid var(--accent2);
+  }
+  .qa .qa-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--accent2); font-weight:700; margin-bottom:8px;}
+  .qa .article-box{border-color:var(--accent2);}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills</div>
+  <h1 class="title">Lesson 9 — Article Writing</h1>
+  <p class="subtitle">Semester 1</p>
+
+  <nav class="toc">
+    <div class="toc-h">Contents</div>
+    <ol>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#constituents">Constituents of an Article</a></li>
+      <li><a href="#process">Writing Article — The Writing Process</a></li>
+      <li><a href="#coder">Remember the Acronym CODER</a></li>
+      <li><a href="#samples">Sample Articles (Worked Examples)</a>
+        <ol type="a">
+          <li><a href="#sample1">Sample 1 · Child Labour</a></li>
+          <li><a href="#sample2">Sample 2 · Growing Tuition Culture in India</a></li>
+        </ol>
+      </li>
+      <li><a href="#practice">Practice Questions</a>
+        <ol type="1">
+          <li><a href="#q1">Q1 · Importance of Co-curricular Activities</a></li>
+          <li><a href="#q2">Q2 · Increasing Use of Social Sites by Students</a></li>
+          <li><a href="#q3">Q3 · Effective Study Habits</a></li>
+          <li><a href="#q4">Q4 · Importance of Reading</a></li>
+          <li><a href="#q5">Q5 · Use of Smart Boards and Educational Software</a></li>
+          <li><a href="#q6">Q6 · Fast Food, Slow Health</a></li>
+        </ol>
+      </li>
+      <li><a href="#revision">Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition">1. Definition</h2>
+  <p>An article is a piece of prose writing published in a newspaper, magazines, newsletters or journals, or written in a blog to express the author's personal views regarding a topic of public interest or containing the findings of the research conducted by the author on a relevant topic. It requires a lot of reading and research on part of the author to write an effective article on a topic. One can gather various ideas from books, newspaper, magazines, research reports, internet.</p>
+
+  <h2 id="constituents">2. Constituents of an Article</h2>
+  <ol>
+    <li><strong>Title/Heading:</strong> The title of the article should be relevant to the topic. It may consist of one word, phrase or even a small sentence. It should be catchy and effective enough to arouse the interest of the audience. It should also introduce the theme, purpose or the main idea of the article.</li>
+    <li><strong>By-Line: Name of the author:</strong> It contains the author's name. It is written just below the title. It may also include the date if the article has been published.</li>
+    <li><strong>Introduction/Opening:</strong> The first paragraph is the introduction of the topic, theme or the subject matter on which the article is written. It may begin with a famous, relevant quote, some verses from a poem, a question, an exciting piece of information related to the topic or results of a survey.</li>
+    <li><strong>Development of the Topic:</strong> This is the main body of the article. The topic is developed covering various aspects of the theme. It is usually written in three to four well organised and well connected paragraphs with a clear theme sentence and supporting sentence for each paragraph. The development may cover both positive and negative aspects of the topic depending on the theme.</li>
+    <li><strong>Winding up:</strong> The second last paragraph usually summarizes all the ideas discussed in the article or winds up the discussion.</li>
+    <li><strong>Conclusion:</strong> The last paragraph concludes the author's views regarding the topic and includes suggestions or required steps to be taken depending on the topic discussed in the article.</li>
+  </ol>
+
+  <h2 id="process">3. Writing Article — The Writing Process</h2>
+  <ol>
+    <li><strong>Reading:</strong> Read the question carefully to understand the topic on which the article is to be written.</li>
+    <li><strong>Collection of Ideas:</strong> Make a list of the main ideas and the supporting facts, opinions or data considering all the aspects of the topic.</li>
+    <li><strong>Organisation of Ideas:</strong> Arrange the ideas in a logical sequence keeping in mind the constituents of the article and cause-effect-remedy sequence of the topic.</li>
+    <li><strong>Rough draft:</strong> Make a rough draft including the title, opening sentences, relevant points to develop the topic, conclusion. Keep the target audience and purpose of writing the article in mind while making the rough draft.</li>
+    <li><strong>Language:</strong> Use appropriate vocabulary and correct, formal language and an impressive tone. Avoid using slangs or excessively idiomatic expressions. Use simple, communicative and effective language. Add quotations if possible.</li>
+    <li><strong>Use of Paragraphs:</strong> Don't write the sentences in a haphazard manner. Use well organised paragraphs to develop the topic with theme sentence and supporting sentences for each paragraph. Discuss only one aspect of the topic in one paragraph.</li>
+    <li><strong>Organisation:</strong> Use appropriate cohesive devices to connect the thoughts expressed in a paragraph or to connect different paragraphs in a logical sequence. Keep in mind the cause-effect-remedy sequence while developing the idea.</li>
+    <li><strong>Editing:</strong> Correct the spellings, grammatical errors or errors in punctuation.</li>
+    <li><strong>Revision and Final Draft:</strong> Revise the whole draft and make necessary changes if required. Prepare the final draft.</li>
+  </ol>
+
+  <h2 id="coder">4. Remember the Acronym CODER</h2>
+  <p class="callout"><strong>C</strong>ollection, <strong>O</strong>rganisation, <strong>D</strong>raft, <strong>E</strong>diting, <strong>R</strong>evision — the five-stage cycle of writing an article.</p>
+  <div class="coder-cycle">
+    <div class="step"><b>1</b>Collect the Ideas</div>
+    <span class="arrow">→</span>
+    <div class="step"><b>2</b>Organise the Ideas</div>
+    <span class="arrow">→</span>
+    <div class="step"><b>3</b>Make a Rough Draft</div>
+    <span class="arrow">→</span>
+    <div class="step"><b>4</b>Edit</div>
+    <span class="arrow">→</span>
+    <div class="step"><b>5</b>Revise and make the Final Draft</div>
+    <div class="loop">↺ back to Collect the Ideas, if another round of revision is needed</div>
+  </div>
+
+  <h2 id="samples">5. Sample Articles (Worked Examples)</h2>
+
+  <div class="sample" id="sample1">
+    <div class="sh">Writing Article — Sample 1</div>
+    <div class="article-box">
+      <div class="art-title">Child Labour</div>
+      <div class="art-byline">By: Kalpana Srivastava</div>
+      <div class="art-quote">"There can be no keener revelation of a society's soul than the way in which it treats its children."</div>
+      <div class="art-quote-attr">— Nelson Mandela</div>
+      <p>Children are future citizens of the Nation, and their adequate development is utmost priority of the country. Unfortunately, child labour engulfs children across the world. There are an estimated 186 million child labourers worldwide. Although the Constitution of India guarantees free and compulsory education to children between the age of 6 to 14 and prohibits employment of children younger than 14 in 18 hazardous occupations, child labour is still prevalent in Indian economy.</p>
+      <p>Children are employed in both formal and informal sectors. Among the occupations wherein children are engaged in work are construction work, domestic work and small-scale industries. Indian children are working in different industries, and incidentally maximum are in agricultural sector, leather industry, mining and match-making industries etc. Some of the industries that depend on child labourers are bangle-making, beedi-making, power looms and manufacturing processes. These industries use toxic metals and substances such as lead, mercury, manganese, chromium, cadmium, benzene, pesticides and asbestos. Child labour is very harmful and wholehearted efforts to eliminate this should be done.</p>
+      <p>Poverty is considered as one of the contributory factors in child labour. Children who are drawn to child labour are basically driven because of economic deprivation, lack of schooling and engagement of family for daily needs. The reason why children are preferred as labourers is that they are obedient with very low demands. They are not aware of labour acts and their rights. They can be easily exploited by getting maximum work for minimum wages.</p>
+      <p>The ill effects of child labour on the physical, mental and psychological health of a child are innumerable. There is a high prevalence of respiratory problems, migraines, insomnia, irritability, enuresis and asthenia, skin lesions, ear complaints, light-headedness, fatigue, impaired memory and depression amongst child labourers.</p>
+      <p>In India, the Child Labour (Prohibition and Regulation) Act 1986 and Rules state that no child shall be employed or permitted to work in any of the occupations set forth in Part A of the Schedule or in any workshop wherein any of the processes set forth in Part B of the Schedule is carried on. For this purpose, "child" means a person who has not completed his 14th year of age. The Act prohibits employment of children in certain specified hazardous occupations and processes and regulates the working conditions in others. The list of hazardous occupations and processes is progressively being expanded on the recommendation of the Child Labour Technical Advisory Committee constituted under the Act. Education is a very important part of development. Schools are the platform for early intervention against child labour, as it restricts their participation in menial jobs.</p>
+      <p>Poverty is one of the important factors for this problem. Hence, enforcement alone cannot help solve it. The Government has been laying a lot of emphasis on the rehabilitation of these children and on improving the economic conditions of their families.</p>
+      <p>Child labour can be stopped when knowledge is translated into legislation and action, moving good intention and ideas into protecting the health of the children.</p>
+    </div>
+  </div>
+
+  <div class="sample" id="sample2">
+    <div class="sh">Writing Article — Sample 2</div>
+    <div class="article-box">
+      <div class="art-title">Growing Tuition Culture in India</div>
+      <div class="art-byline">By: Ramandeep Kaur</div>
+      <p>Growing tuition culture is a great concern in the modern India. There was a time when only those students were recommended a private tuition who were not good at studies and found it difficult to keep pace with the normal classroom studies. Tuition culture in India now seems inseparable from the normal schools. Hence, education today is not the transmission of knowledge, but has become a very successful trade.</p>
+      <p>Commonly we relate growth of tuition system in India with the ever increasing competition. As the competition is increasing, students do not want to leave any stone unturned. Apart from this, seeing other students going for tuition, parents also force their kids for the same, whether they need this or not. In schools, especially the ones in remote villages, there is a shortage of teachers, thus students are left with no option but to go for tuition, if their parents can afford it.</p>
+      <p>Be it any need, the tuition system is India is a great set back to the entire education system as well as schooling. Students are greatly dependent upon tuition for studies, so much that even nursery kids go for the same, let alone students preparing for competitive exams.</p>
+      <p>One of the reasons why tuition business in India has gained so much importance is teachers' lack of concern as, they do not teach well at schools. Also such teachers ask their students to get private tuition from them after school hours. But if the teachers cannot make their students understand the subject at school, how can they make everything clear during tuition? Only because the tuition fee completely belongs to them, they put extra efforts. Though every teacher is not like this, but majority now belongs to this category. Although there are some teachers who are willing to help students at any time and are against tuition. They promote self study and also guide well in school or college classes, the number of such teachers is diminishing in India.</p>
+      <p>Modern version of tuition centre is the coaching centres and some of these are so popular that these even have branches all across India. These so called tuition centres or coaching centres take full advantage of today's competition and quickly make money. Almost all candidates who clear Civil Services exams or other competitive exams take private tuition. Students from marginalized groups are also given scholarships for the tuition.</p>
+      <p>By seeing the mushrooming of so called tuition centres, especially run by government school and college teachers, the government has also passed directions that government teachers teaching at schools or colleges cannot take private tuition and if they continue to do so it is illegal and harsh steps will be taken against the guilty. But it is very difficult to uproot this problem in India as we no longer consider tuition a problem, but part of schooling and education. Also it is widespread and well accepted. One of the major setbacks of tuition system in India is the decline in quality of education at schools as both parents and teachers rely more on tuition studies than school. Also every parent cannot afford this as tuition are no longer free and some charge very high rates. So here again the quality depends upon the money you are willing to pay. Poor people are actually seen curbing their basic needs to send their kids for tuition.</p>
+      <p>So if we really want to change the whole situation we have to change ourselves. If possible and if they are capable, parents should devote time to their kids and help them in studies. Whenever required, students can take the guidance of school teachers. Also laws should be made for tuition and should be enforced with strictness.</p>
+    </div>
+  </div>
+
+  <h2 id="practice">6. Practice Questions</h2>
+  <p class="callout">Read each topic and hints, draft your article in the box below, then press <strong>Check my article</strong> to reveal a model answer written in the same style. Compare — don't just copy — and check your own article against the constituents and writing process above.</p>
+
+  <div class="q" id="q1">
+    <div class="qn">Question 1</div>
+    <p class="prompt">Write an article on the topic "Importance of Co-curricular Activities" in the life of a student.</p>
+    <div class="hints"><strong>Hints:</strong> Define Co-curricular activities, enlist their effect on the all round development of child: physical, mental, social, psychological and ethical, add some examples of co-curricular activities, explain parents', teachers' and schools' roles.</div>
+    <textarea rows="12" placeholder="Draft your article here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my article';">Check my article</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="article-box">
+        <div class="art-title">Importance of Co-curricular Activities in a Student's Life</div>
+        <div class="art-byline">By: [Your Name]</div>
+        <p>"All work and no play makes Jack a dull boy." This old saying holds tremendous truth even today, especially when it comes to the education of a student.</p>
+        <p>Co-curricular activities refer to all those activities that take place outside the regular academic curriculum, such as sports, music, dance, drama, debate, art and various clubs. Unlike extracurricular activities, they are closely connected to and complement classroom learning, helping students apply and reinforce what they learn in theory.</p>
+        <p>These activities play a crucial role in the all-round development of a child. Physically, sports and games build strength, stamina and coordination, and instil the habit of regular exercise. Mentally, activities such as debate, chess and quizzes sharpen a student's thinking, memory and problem-solving abilities. Socially, participating in group activities like team sports and clubs teaches students cooperation, communication and teamwork, and helps them form lasting friendships. Psychologically, these activities act as a healthy outlet for stress, and help build self-confidence and self-esteem. Ethically, team sports and clubs instil discipline, a sense of fair play, leadership and responsibility among students.</p>
+        <p>Some common examples of co-curricular activities include sports such as cricket, basketball and athletics; performing arts such as music, dance and drama; literary activities such as debate, elocution and creative writing; and clubs such as the eco club, science club and robotics club.</p>
+        <p>Parents, teachers and schools all have an important role to play in encouraging co-curricular participation. Parents should motivate their children to explore different activities without putting undue academic pressure on them. Schools must provide adequate facilities, time and qualified instructors for a variety of activities. Teachers, in turn, should identify the hidden talents of their students and encourage them to pursue activities they enjoy and excel in.</p>
+        <p>In conclusion, co-curricular activities are just as important as academics in shaping a well-rounded individual. Schools and parents alike must recognise their value and give them the importance they truly deserve.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q2">
+    <div class="qn">Question 2</div>
+    <p class="prompt">Write an article on the topic "Increasing Use of Social Sites by Students", covering its advantages and disadvantages.</p>
+    <div class="hints"><strong>Hints:</strong> Quick sharing of pictures, videos, and other information, updated knowledge, healthy social relationships, entertainment, connecting people worldwide, video chat, snap chat, wastage of time, distraction, leakage of private information, objectionable content.</div>
+    <textarea rows="12" placeholder="Draft your article here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my article';">Check my article</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="article-box">
+        <div class="art-title">Increasing Use of Social Sites by Students</div>
+        <div class="art-byline">By: [Your Name]</div>
+        <div class="art-quote">"The Internet is becoming the town square for the global village of tomorrow."</div>
+        <div class="art-quote-attr">— Bill Gates</div>
+        <p>In today's digital age, social networking sites have become an inseparable part of a student's daily life. Platforms such as Instagram, Snapchat and WhatsApp are used by students not just for entertainment, but also for communication, learning and self-expression.</p>
+        <p>There are several advantages to this growing trend. Social sites allow for quick sharing of pictures, videos and other information among friends and family. They keep students updated with current knowledge and global happenings. Through healthy interactions, students build and maintain social relationships, and platforms like video chat and Snapchat help them connect with friends and family living far away, even across countries. These sites also serve as a great source of entertainment and relaxation after a long day of studies.</p>
+        <p>However, the increasing use of social sites also brings several disadvantages. Many students end up spending hours scrolling through these platforms, leading to a significant wastage of time that could otherwise be used for studies or physical activities. This constant engagement often becomes a major distraction, affecting concentration and academic performance. There is also the serious risk of leakage of private information, as students may unknowingly share personal details with strangers. Additionally, students are sometimes exposed to objectionable or inappropriate content on these platforms, which can have a negative impact on their thinking and behaviour.</p>
+        <p>Considering both sides, it becomes clear that social media is a double-edged sword. It offers numerous benefits when used responsibly and in moderation, but can cause serious harm when used excessively or carelessly.</p>
+        <p>Students must be taught to use social sites wisely, balancing their online activities with academics and real-life relationships, while parents and teachers should guide them towards responsible and safe usage of these platforms.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q3">
+    <div class="qn">Question 3</div>
+    <p class="prompt">Write an article on the topic "Effective Study Habits" covering all the important do's and don'ts.</p>
+    <div class="hints"><strong>Hints:</strong> Early to bed and early to rise, regularity, punctuality, healthy life style, making notes, visiting library, reference books, remaining updated, participation in all school activities, sharing information, removing doubts at an early stage, self study and regular revision, avoid wasting time, no cramming, no junk food, no laziness.</div>
+    <textarea rows="12" placeholder="Draft your article here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my article';">Check my article</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="article-box">
+        <div class="art-title">Effective Study Habits</div>
+        <div class="art-byline">By: [Your Name]</div>
+        <p>"Success is the sum of small efforts, repeated day in and day out." This is especially true when it comes to developing effective study habits.</p>
+        <p>Good study habits are not something students are born with; they are cultivated through discipline and regular practice. One of the most important habits is following the age-old advice of "early to bed and early to rise," as a well-rested mind absorbs and retains information far better. Regularity and punctuality in studies, rather than last-minute cramming, help students stay on top of their coursework throughout the year.</p>
+        <p>Effective students maintain a healthy lifestyle, balancing study time with adequate sleep, exercise and nutritious food, while avoiding junk food that can affect concentration and energy levels. Making concise notes while studying helps in quick revision later, and visiting the library and referring to reference books broadens one's understanding beyond the textbook. Staying updated with current affairs and participating actively in all school activities also contribute to a well-rounded learning experience.</p>
+        <p>Sharing information and discussing doubts with classmates and teachers helps clear confusion at an early stage, rather than letting small doubts pile up into bigger problems. Self-study, combined with regular and consistent revision, ensures that concepts are retained in the long term rather than forgotten right after an exam.</p>
+        <p>On the other hand, students must avoid certain habits that hinder effective learning. Wasting time on unproductive activities, cramming information the night before an exam, and giving in to laziness are some of the most common obstacles to academic success. Similarly, an unhealthy diet full of junk food can affect both physical health and the ability to concentrate.</p>
+        <p>In conclusion, effective study habits are built through discipline, regularity and the right lifestyle choices. Students who adopt these do's and avoid the don'ts are far more likely to achieve consistent academic success.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q4">
+    <div class="qn">Question 4</div>
+    <p class="prompt">Write an article on the topic "Importance of Reading" enlisting its positive effects on cognitive, psychological and social and moral development of a child.</p>
+    <div class="hints"><strong>Hints:</strong> Knowledge, exposure, pleasure, cognitive, psychological, social and moral development, great pastime, emotional well being, concentration, good for research, types of reading, types of books etc.</div>
+    <textarea rows="12" placeholder="Draft your article here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my article';">Check my article</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="article-box">
+        <div class="art-title">Importance of Reading</div>
+        <div class="art-byline">By: [Your Name]</div>
+        <div class="art-quote">"Reading is to the mind what exercise is to the body."</div>
+        <div class="art-quote-attr">— Joseph Addison</div>
+        <p>This simple yet powerful comparison captures why reading holds such immense importance in a child's development.</p>
+        <p>Reading is one of the most valuable habits a person can develop, offering a gateway to knowledge and exposure that few other activities can match. Through books, newspapers and articles, children gain access to information and perspectives far beyond their immediate surroundings, broadening their understanding of the world.</p>
+        <p>Cognitively, reading strengthens vocabulary, comprehension and critical thinking skills, and significantly improves concentration and memory. It is also extremely beneficial for research and academic work, as it teaches children how to gather, analyse and interpret information effectively. Psychologically, reading serves as a great pastime and a source of genuine pleasure, contributing to emotional well being by offering an escape from stress and everyday worries. Socially and morally, books often introduce children to different cultures, values and life experiences, helping them develop empathy, better judgment and a stronger sense of right and wrong.</p>
+        <p>There are various types of reading, such as skimming for a general idea, scanning for specific information, and intensive reading for deep understanding, each serving a different purpose. Similarly, there are many types of books to explore — fiction, non-fiction, biographies, science, history and poetry — each offering something unique to a young reader.</p>
+        <p>In today's digital age, where screens often dominate a child's attention, cultivating the habit of reading is more important than ever. Parents and teachers must encourage children to read regularly, be it storybooks, newspapers or educational material, right from an early age.</p>
+        <p>In conclusion, reading is far more than just an academic requirement — it is a lifelong habit that nurtures the cognitive, psychological, social and moral development of a child, shaping them into more knowledgeable, empathetic and thoughtful individuals.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q5">
+    <div class="qn">Question 5</div>
+    <p class="prompt">Write an article on the topic "Use of Smart Boards and Educational Software" covering its advantages and challenges.</p>
+    <div class="hints"><strong>Hints:</strong> Interactive, entertaining, multi-sensory approach, attractive, better attention, better retention, visual effects, exercises, work-sheets, question banks, time consuming, tech-savvy, dependent on electricity and internet, technical issues, requires updating, costly.</div>
+    <textarea rows="12" placeholder="Draft your article here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my article';">Check my article</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="article-box">
+        <div class="art-title">Use of Smart Boards and Educational Software</div>
+        <div class="art-byline">By: [Your Name]</div>
+        <p>Technology has transformed the way students learn, and one of its most significant contributions to modern classrooms is the use of smart boards and educational software.</p>
+        <p>Smart boards have made classroom teaching far more interactive and entertaining than traditional blackboards. Their multi-sensory approach, combining visuals, audio and touch-based interaction, makes lessons more attractive and engaging for students. Teachers can display diagrams, videos and animations that hold students' attention far better than plain text, resulting in better retention of concepts taught in class. The visual effects and interactive exercises available on smart boards allow teachers to demonstrate complex topics with much greater clarity. Educational software further supports this by offering worksheets, practice exercises and question banks that help students revise and test their understanding at their own pace.</p>
+        <p>However, the use of this technology also comes with certain challenges. Preparing interactive lessons using smart boards and software can be time consuming for teachers, especially those who are not naturally tech-savvy. These systems are entirely dependent on a stable supply of electricity and internet connectivity, and any disruption can bring a lesson to a complete halt. Technical issues such as software glitches or hardware malfunctions can also disrupt the flow of teaching. Additionally, this technology requires regular updating to stay relevant and functional, and the initial cost of installing smart boards and licensing educational software can be quite costly for many schools, especially in rural or underfunded areas.</p>
+        <p>Despite these challenges, the advantages of smart boards and educational software in making learning more interactive, attractive and effective cannot be overlooked. Schools must invest in proper teacher training and reliable infrastructure to make the most of this technology.</p>
+        <p>In conclusion, while smart boards and educational software come with their own set of challenges, they represent the future of interactive and effective classroom teaching when implemented thoughtfully.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q6">
+    <div class="qn">Question 6</div>
+    <p class="prompt">Write an article on the topic "Fast Food, Slow Health" enlisting major causes, concerns and effects and offering alternatives.</p>
+    <div class="hints"><strong>Hints:</strong> Easy and quick to make, colourful, attractive, variety, artificially flavoured, excessive use of sugar, artificial ingredients, stored or canned, limited or no nutritional value, obesity, poor mental health, addiction, ill effects on health.</div>
+    <textarea rows="12" placeholder="Draft your article here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my article';">Check my article</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="article-box">
+        <div class="art-title">Fast Food, Slow Health</div>
+        <div class="art-byline">By: [Your Name]</div>
+        <div class="art-quote">"You are what you eat."</div>
+        <div class="art-quote-attr">— old proverb</div>
+        <p>A phrase that has never been more relevant than in today's fast-food-driven world.</p>
+        <p>Fast food has become an integral part of modern lifestyles, largely because it is easy and quick to make, requiring minimal time and effort compared to home-cooked meals. Its colourful presentation, attractive packaging and wide variety of flavours make it especially appealing to children and young people. Much of this appeal, however, comes from artificial flavouring, excessive use of sugar, and artificial ingredients added to enhance taste, rather than from any real nutritional value. Most fast food is also stored or canned for long periods, further reducing whatever limited nutritional value it may have originally had.</p>
+        <p>The regular consumption of fast food has serious consequences on health. It is one of the leading causes of obesity among children and adults alike, as such food is typically high in calories, unhealthy fats and sugar, but extremely low in essential nutrients. Beyond physical health, poor eating habits have also been linked to poor mental health, including mood swings and reduced concentration. Perhaps most concerning is that fast food can become addictive, with people craving it repeatedly despite being aware of its harmful effects, leading to a vicious cycle that is difficult to break.</p>
+        <p>Fortunately, there are healthier alternatives that can be adopted without giving up on convenience entirely. Home-cooked meals, though they take a little more time, offer far greater nutritional value and control over ingredients. Fresh fruits, vegetables, nuts and simple homemade snacks can replace processed fast food for those craving a quick bite. Schools and parents should work together to promote healthy eating habits and limit children's access to junk food.</p>
+        <p>In conclusion, while fast food may satisfy short-term cravings, its long-term impact on health is anything but fast. A conscious shift towards healthier eating habits is the need of the hour.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="revision">7. Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>Catchy title placed at the top, with the by-line just below it</li>
+    <li>Introduction that hooks the reader — a quote, question, or striking fact</li>
+    <li>Development of the topic in 3-4 well organised, connected paragraphs</li>
+    <li>Both positive and negative aspects covered where the theme calls for it</li>
+    <li>A winding-up paragraph that summarises the discussion</li>
+    <li>A conclusion with the author's view and, where relevant, suggestions or steps</li>
+    <li>Formal, impressive language — no slang or excessive idiom</li>
+    <li>Ideas organised in a logical, cause-effect-remedy sequence with cohesive devices</li>
+  </ul>
+
+  <footer>Class 8 · English · Writing Skills · Lesson 9 of 30</footer>
+</div>
+</body>
+</html>

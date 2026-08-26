@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz 10 — Speech | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 20px;
+  }
+  .callout p{margin:0 0 8px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout strong{color:var(--ink);}
+  .ref-card{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:16px 20px; margin:0 0 32px; font-size:15px; color:var(--ink-soft);
+  }
+  .ref-card .rc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .ref-card code{font-family:var(--font-mono); background:var(--accent-soft); color:var(--pink); padding:1px 6px; border-radius:4px; font-size:13.5px;}
+
+  h2.qtitle{
+    font-family:var(--font-mono); font-size:16px; font-weight:700;
+    color:var(--c3); margin:0 0 4px; letter-spacing:.02em;
+  }
+  .qtag{
+    display:inline-block; font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;
+    letter-spacing:.05em; color:var(--cyan); background:var(--cyan-soft); border:1px solid var(--cyan);
+    border-radius:20px; padding:2px 10px; margin-left:10px; vertical-align:middle;
+  }
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:20px 22px; margin:20px 0; background:var(--paper-raised);
+  }
+  .q p.prompt{margin:8px 0 12px; font-size:16px;}
+  .q .hints{
+    background:var(--accent2-soft); border-left:3px solid var(--violet);
+    border-radius:6px; padding:10px 14px; color:var(--ink-soft); font-size:14.5px; margin:0 0 14px;
+  }
+  .q .hints strong{color:var(--ink);}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q-footer{display:flex; justify-content:space-between; align-items:center; margin-top:8px;}
+  .wc{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint);}
+  .wc.warn{color:var(--pink);}
+  .wc.ok{color:var(--cyan);}
+
+  .finish-bar{
+    position:sticky; bottom:0; margin-top:36px; padding:20px 24px;
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius);
+    box-shadow:0 -8px 24px rgba(0,0,0,0.35);
+  }
+  .finish-bar p{margin:0 0 14px; color:var(--ink-soft); font-size:15px;}
+  .btn-row{display:flex; gap:10px; flex-wrap:wrap;}
+  button.primary{
+    font-family:var(--font-mono); font-size:13px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:11px 22px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.primary:hover{background:var(--c3-panel);}
+  button.secondary{
+    font-family:var(--font-mono); font-size:13px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:11px 22px; border:1px solid var(--line-strong);
+    border-radius:8px; background:transparent; color:var(--ink-soft); cursor:pointer;
+  }
+  button.secondary:hover{border-color:var(--ink-faint); color:var(--ink);}
+  button.ghost-copy{
+    font-family:var(--font-mono); font-size:12px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--cyan);
+    border-radius:7px; background:var(--cyan-soft); color:var(--cyan); cursor:pointer;
+  }
+  button.ghost-copy:hover{background:rgba(56,189,248,0.24);}
+
+  #output-wrap{display:none; margin-top:18px;}
+  #output-wrap.show{display:block;}
+  #output{
+    width:100%; box-sizing:border-box; min-height:360px; font-family:var(--font-mono);
+    font-size:13px; line-height:1.6; padding:16px 18px; border:1px solid var(--accent2);
+    border-radius:8px; background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .copy-status{font-family:var(--font-mono); font-size:12px; color:var(--cyan); margin-left:10px;}
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills · Practice Quiz</div>
+  <h1 class="title">Quiz 10 — Speech</h1>
+  <p class="subtitle">6 fresh speech topics — a follow-up to Lesson 10, not a repeat of it.</p>
+
+  <div class="callout">
+    <p><strong>How this works:</strong> there's no answer key baked into this quiz. Write your speech for each topic in its box, in the same format as Lesson 10 — a formal address to the audience, self-introduction, a clear introduction/body/conclusion, and formal thanks at the end.</p>
+    <p>When you're done, press <strong>Generate submission</strong> at the bottom. It compiles all six topics and your answers into one text block — copy that and paste it to an AI (or hand it to a teacher) with a request like <em>"Grade these Class 8 CBSE speeches, 5 marks each."</em></p>
+  </div>
+
+  <div class="ref-card">
+    <div class="rc-label">Quick format reminder</div>
+    Every speech needs a formal welcome and address to the audience (in correct hierarchy), a self-introduction, an engaging opening (quote, question, anecdote or statistic), a well-organised body covering multiple aspects of the topic, a conclusion that sums up and inspires or calls the audience to action, and a formal closing thanks. See Lesson 10 for the full layout, the golden rules of oratory, and the two worked sample speeches.
+  </div>
+
+  <div class="q" id="quiz-q1">
+    <h2 class="qtitle">Question 1<span class="qtag">Civic Sense</span></h2>
+    <p class="prompt">Write a speech on the topic 'Cleanliness Is Next to Godliness' to be delivered on the occasion of Swachh Bharat Week in your school.</p>
+    <div class="hints"><strong>Hints:</strong> Meaning of cleanliness, personal hygiene vs. public cleanliness, effect on health and disease prevention, Swachh Bharat Abhiyan, role of citizens, schools and government, simple daily habits, cleanliness of surroundings and water bodies.</div>
+    <textarea rows="10" placeholder="Draft your speech here…" data-q="1"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="1">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q2">
+    <h2 class="qtitle">Question 2<span class="qtag">Technology</span></h2>
+    <p class="prompt">Write a speech on the topic 'Impact of Mobile Phones on Students' Life' covering both its benefits and drawbacks.</p>
+    <div class="hints"><strong>Hints:</strong> Quick communication, access to information, online learning apps, entertainment, distraction from studies, addiction, health issues from overuse, exposure to inappropriate content, need for balanced and responsible use.</div>
+    <textarea rows="10" placeholder="Draft your speech here…" data-q="2"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="2">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q3">
+    <h2 class="qtitle">Question 3<span class="qtag">Values</span></h2>
+    <p class="prompt">Write a speech on the topic 'Honesty Is the Best Policy' for your school's morning assembly.</p>
+    <div class="hints"><strong>Hints:</strong> Meaning of honesty, importance in personal and professional life, building trust, examples from history or literature, consequences of dishonesty, role of family and school in instilling honesty, honesty as a lifelong value.</div>
+    <textarea rows="10" placeholder="Draft your speech here…" data-q="3"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="3">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q4">
+    <h2 class="qtitle">Question 4<span class="qtag">Environment</span></h2>
+    <p class="prompt">Write a speech on the topic 'Save Trees, Save Life' to be delivered on World Environment Day.</p>
+    <div class="hints"><strong>Hints:</strong> Role of trees in producing oxygen and absorbing carbon dioxide, effect of deforestation, climate change, loss of habitat for animals, soil erosion, afforestation drives, individual responsibility, planting saplings.</div>
+    <textarea rows="10" placeholder="Draft your speech here…" data-q="4"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="4">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q5">
+    <h2 class="qtitle">Question 5<span class="qtag">Health &amp; Lifestyle</span></h2>
+    <p class="prompt">Write a speech on the topic 'Early to Bed and Early to Rise, Makes a Man Healthy, Wealthy and Wise' for your school assembly.</p>
+    <div class="hints"><strong>Hints:</strong> Benefits of a regular sleep schedule, better concentration and productivity, physical and mental health, time for exercise and self-study, modern lifestyle challenges — late nights, screen time, tips to build the habit.</div>
+    <textarea rows="10" placeholder="Draft your speech here…" data-q="5"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="5">0 words</span></div>
+  </div>
+
+  <div class="q" id="quiz-q6">
+    <h2 class="qtitle">Question 6<span class="qtag">Nation &amp; Values</span></h2>
+    <p class="prompt">Write a speech on the topic 'Unity in Diversity' to be delivered on the occasion of Independence Day in your school.</p>
+    <div class="hints"><strong>Hints:</strong> India's diversity of languages, religions, cultures and traditions, strength found in unity, examples of national integration, role of the freedom struggle, festivals celebrated together, need to respect differences, message of harmony.</div>
+    <textarea rows="10" placeholder="Draft your speech here…" data-q="6"></textarea>
+    <div class="q-footer"><span class="wc" data-wc-for="6">0 words</span></div>
+  </div>
+
+  <div class="finish-bar">
+    <p>Answered all six? Generate a submission you can hand to an AI or teacher for grading.</p>
+    <div class="btn-row">
+      <button class="primary" id="generateBtn">Generate submission</button>
+      <button class="secondary" id="resetBtn">Clear all answers</button>
+    </div>
+    <div id="output-wrap">
+      <div class="btn-row" style="margin-top:16px;">
+        <button class="ghost-copy" id="copyBtn">Copy to clipboard</button>
+        <span class="copy-status" id="copyStatus"></span>
+      </div>
+      <textarea id="output" readonly></textarea>
+    </div>
+  </div>
+
+  <footer>Class 8 · English · Writing Skills · Quiz 10 of 30 — no answers are auto-graded here; grade the generated submission with an AI or teacher.</footer>
+</div>
+
+<script>
+  var QUESTIONS = [
+    {n:1, tag:"Civic Sense", prompt: "Write a speech on the topic 'Cleanliness Is Next to Godliness' to be delivered on the occasion of Swachh Bharat Week in your school."},
+    {n:2, tag:"Technology", prompt: "Write a speech on the topic 'Impact of Mobile Phones on Students' Life' covering both its benefits and drawbacks."},
+    {n:3, tag:"Values", prompt: "Write a speech on the topic 'Honesty Is the Best Policy' for your school's morning assembly."},
+    {n:4, tag:"Environment", prompt: "Write a speech on the topic 'Save Trees, Save Life' to be delivered on World Environment Day."},
+    {n:5, tag:"Health & Lifestyle", prompt: "Write a speech on the topic 'Early to Bed and Early to Rise, Makes a Man Healthy, Wealthy and Wise' for your school assembly."},
+    {n:6, tag:"Nation & Values", prompt: "Write a speech on the topic 'Unity in Diversity' to be delivered on the occasion of Independence Day in your school."}
+  ];
+
+  function countWords(str) {
+    var trimmed = (str || "").trim();
+    if (!trimmed) return 0;
+    return trimmed.split(/\s+/).length;
+  }
+
+  function updateWordCount(n) {
+    var ta = document.querySelector('textarea[data-q="' + n + '"]');
+    var wc = document.querySelector('span[data-wc-for="' + n + '"]');
+    var count = countWords(ta.value);
+    wc.textContent = count + " word" + (count === 1 ? "" : "s");
+    wc.className = "wc" + (count > 0 && (count < 150 || count > 300) ? " warn" : count >= 150 && count <= 300 ? " ok" : "");
+  }
+
+  QUESTIONS.forEach(function (q) {
+    var ta = document.querySelector('textarea[data-q="' + q.n + '"]');
+    ta.addEventListener("input", function () { updateWordCount(q.n); });
+  });
+
+  document.getElementById("generateBtn").addEventListener("click", function () {
+    var lines = [];
+    lines.push("CLASS 8 ENGLISH — WRITING SKILLS");
+    lines.push("Quiz 10 — Speech — Student Submission");
+    lines.push("");
+    lines.push("Instructions for the grader: Each speech is out of 5 marks — format (1:");
+    lines.push("formal address/greeting, self-introduction, thanks at the end), content and");
+    lines.push("development of the topic with a clear introduction, body and conclusion (3),");
+    lines.push("and language, tone and expression (1). Check that the opening greets the");
+    lines.push("audience in correct hierarchy, the speech reads as spoken/conversational");
+    lines.push("rather than written prose, and it closes with formal thanks.");
+    lines.push("Please give a score out of 5 and brief feedback for each question below.");
+    lines.push("");
+    lines.push("=".repeat(70));
+
+    var answeredCount = 0;
+    QUESTIONS.forEach(function (q) {
+      var ta = document.querySelector('textarea[data-q="' + q.n + '"]');
+      var answer = ta.value.trim();
+      var words = countWords(answer);
+      if (answer) answeredCount++;
+      lines.push("");
+      lines.push("Q" + q.n + " [" + q.tag + "]");
+      lines.push(q.prompt);
+      lines.push("");
+      lines.push("Student's answer (" + words + " words):");
+      lines.push(answer || "(left blank)");
+      lines.push("");
+      lines.push("-".repeat(70));
+    });
+
+    lines.push("");
+    lines.push(answeredCount + " of " + QUESTIONS.length + " questions answered.");
+
+    document.getElementById("output").value = lines.join("\n");
+    document.getElementById("output-wrap").classList.add("show");
+    document.getElementById("copyStatus").textContent = "";
+    document.getElementById("output").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  document.getElementById("copyBtn").addEventListener("click", function () {
+    var out = document.getElementById("output");
+    var status = document.getElementById("copyStatus");
+    out.focus();
+    out.select();
+    var done = false;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(out.value).then(function () {
+        status.textContent = "Copied.";
+      }).catch(function () {
+        fallbackCopy();
+      });
+      done = true;
+    }
+    if (!done) fallbackCopy();
+    function fallbackCopy() {
+      try {
+        var ok = document.execCommand("copy");
+        status.textContent = ok ? "Copied." : "Select the text above and press Ctrl/Cmd+C.";
+      } catch (e) {
+        status.textContent = "Select the text above and press Ctrl/Cmd+C.";
+      }
+    }
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function () {
+    if (!confirm("Clear all six answers? This can't be undone.")) return;
+    QUESTIONS.forEach(function (q) {
+      document.querySelector('textarea[data-q="' + q.n + '"]').value = "";
+      updateWordCount(q.n);
+    });
+    document.getElementById("output-wrap").classList.remove("show");
+    document.getElementById("output").value = "";
+  });
+</script>
+</body>
+</html>

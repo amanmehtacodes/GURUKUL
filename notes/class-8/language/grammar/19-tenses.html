@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 19 — Tenses | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:26px 0 8px; scroll-margin-top:20px;}
+  h4{font-family:var(--font-mono); font-size:13.5px; color:var(--cyan); margin:18px 0 8px; text-transform:uppercase; letter-spacing:.03em;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .ocr-note{
+    background:var(--accent2-soft); border:1px dashed var(--violet); border-radius:8px;
+    padding:10px 14px; margin:8px 0 14px; color:var(--ink-faint); font-size:13.5px; font-style:italic;
+  }
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:14px;}
+  table.ref-table caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:11px;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line-strong); padding:7px 10px; text-align:left; color:var(--ink-soft); vertical-align:top;}
+  table.ref-table th{background:var(--paper-raised); color:var(--ink); font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table td.g{color:var(--ink); font-weight:600;}
+  table.ref-table .pattern-col{width:46%;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:16px 0 30px; background:var(--paper-raised);
+  }
+  .exercise-block h4{margin-top:0;}
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  input.blank-input{
+    width:92%; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  input.blank-input.sm{width:150px;}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:50px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol, .qa ul{margin:0; padding-left:20px;}
+  .qa li{margin-bottom:5px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar</div>
+  <h1 class="title">Lesson 19 — Tenses</h1>
+  <p class="subtitle">Semester 1 · Chapter-13</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#intro">1. Introduction to Tense</a></li>
+      <li><a href="#subdivisions">2. Sub-Divisions of Tenses</a></li>
+      <li><a href="#exercise-wash">3. Exercise — Conjugate 'Wash'</a></li>
+      <li><a href="#simple-present">4. Simple Present Tense</a></li>
+      <li><a href="#exercise-simple-present">5. Exercise — Simple Present</a></li>
+      <li><a href="#simple-past">6. Simple Past Tense</a></li>
+      <li><a href="#exercise-simple-past">7. Exercise — Simple Past</a></li>
+      <li><a href="#simple-future">8. Simple Future Tense</a></li>
+      <li><a href="#exercise-simple-future">9. Exercise — Simple Future</a></li>
+      <li><a href="#present-continuous">10. Present Continuous Tense</a></li>
+      <li><a href="#exercise-present-continuous">11. Exercise — Present Continuous / Simple Present</a></li>
+      <li><a href="#past-continuous">12. Past Continuous Tense</a></li>
+      <li><a href="#exercise-past-continuous">13. Exercise — Past Continuous</a></li>
+      <li><a href="#future-continuous">14. Future Continuous Tense</a></li>
+      <li><a href="#exercise-future-continuous">15. Exercise — Future Continuous</a></li>
+      <li><a href="#present-perfect">16. Present Perfect Tense</a></li>
+      <li><a href="#exercise-present-perfect">17. Exercise — Present Perfect</a></li>
+      <li><a href="#past-perfect">18. Past Perfect Tense</a></li>
+      <li><a href="#exercise-past-perfect">19. Exercise — Past Perfect</a></li>
+      <li><a href="#future-perfect">20. Future Perfect Tense</a></li>
+      <li><a href="#exercise-future-perfect">21. Exercise — Future Perfect</a></li>
+      <li><a href="#present-perfect-continuous">22. Present Perfect Continuous Tense</a></li>
+      <li><a href="#exercise-present-perfect-continuous">23. Exercise — Present Perfect Continuous</a></li>
+      <li><a href="#past-perfect-continuous">24. Past Perfect Continuous Tense</a></li>
+      <li><a href="#exercise-past-perfect-continuous">25. Exercise — Past Perfect Continuous</a></li>
+      <li><a href="#future-perfect-continuous">26. Future Perfect Continuous Tense</a></li>
+      <li><a href="#exercise-future-perfect-continuous">27. Exercise — Future Perfect Continuous</a></li>
+      <li><a href="#all-tenses">28. All Tenses — Master Reference</a></li>
+      <li><a href="#revision">29. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="intro"><span class="num">1.</span>Introduction to Tense</h2>
+  <p>Read the following sentences carefully.</p>
+  <ol>
+    <li>I was a child a few years ago.</li>
+    <li>I am a youngster now.</li>
+    <li>I shall be old in future.</li>
+  </ol>
+  <p>The above three sentences refer to a state of being or existence at three different points of time. The verb 'was' refers to existence in the past. The verb 'am' refers to existence in the present. The verb 'shall be' refers to existence at some time in future.</p>
+  <p>Let's take some more examples.</p>
+  <ol>
+    <li>He wore a pink shirt yesterday.</li>
+    <li>He is wearing a black shirt today.</li>
+    <li>He will wear a white shirt tomorrow.</li>
+  </ol>
+  <p>The verbs 'wore', 'is wearing' and 'will wear' in the above sentences refer to actions in the past, present and future time respectively.</p>
+  <p>The word 'tense' has been derived from the Latin word 'tempus' which means time. The tense is a verb form that shows the time of action or event. It also indicates the state of an action.</p>
+  <p>There are three Tenses.</p>
+  <ol>
+    <li>Present Tense</li>
+    <li>Past Tense</li>
+    <li>Future Tense</li>
+  </ol>
+
+  <h2 id="subdivisions"><span class="num">2.</span>Sub-Divisions of Tenses</h2>
+  <p>Each tense is further sub-divided in four tenses according to the time of actions they denote. These sub divisions are:</p>
+  <ol>
+    <li><strong>Indefinite or Simple:</strong> A verb in simple or indefinite tense denotes an action that does not refer to any specific time.</li>
+    <li><strong>Continuous:</strong> A verb in continuous tense denotes an action in progress.</li>
+    <li><strong>Perfect:</strong> A verb in perfect tense denotes a complete action.</li>
+    <li><strong>Perfect Continuous:</strong> A verb in perfect continuous tense denotes an action in progress for some time.</li>
+  </ol>
+  <p>Study the table given below to understand the division of each tense. The table shows all the tense forms of the verb 'write'.</p>
+  <table class="ref-table">
+    <tr><th></th><th>Present</th><th>Past</th><th>Future</th></tr>
+    <tr><td class="g">Simple</td><td>He writes a letter.</td><td>He wrote a letter.</td><td>He will write a letter.</td></tr>
+    <tr><td class="g">Continuous</td><td>He is writing a letter.</td><td>He was writing a letter.</td><td>He will be writing a letter.</td></tr>
+    <tr><td class="g">Perfect</td><td>He has written a letter.</td><td>He had written a letter.</td><td>He will have written a letter.</td></tr>
+    <tr><td class="g">Perfect Continuous</td><td>He has been writing a letter since morning.</td><td>He had been writing a letter for 10 minutes.</td><td>He will have been writing a letter since morning.</td></tr>
+  </table>
+
+  <h2 id="exercise-wash"><span class="num">3.</span>Exercise — Conjugate 'Wash'</h2>
+  <div class="exercise-block">
+    <p class="instr">Use the verb 'wash' and complete the table given below using the correct tense.</p>
+    <ol>
+      <li>Simple Present <input class="blank-input" type="text"></li>
+      <li>Simple Past <input class="blank-input" type="text"></li>
+      <li>Simple Future <input class="blank-input" type="text"></li>
+      <li>Present Continuous <input class="blank-input" type="text"></li>
+      <li>Past Continuous <input class="blank-input" type="text"></li>
+      <li>Future Continuous <input class="blank-input" type="text"></li>
+      <li>Present Perfect <input class="blank-input" type="text"></li>
+      <li>Past Perfect <input class="blank-input" type="text"></li>
+      <li>Future Perfect <input class="blank-input" type="text"></li>
+      <li>Present Perfect Continuous <input class="blank-input" type="text"></li>
+      <li>Past Perfect Continuous <input class="blank-input" type="text"></li>
+      <li>Future Perfect Continuous <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer Key (subject: He)</div><p>1. He washes the car. · 2. He washed the car. · 3. He will wash the car. · 4. He is washing the car. · 5. He was washing the car. · 6. He will be washing the car. · 7. He has washed the car. · 8. He had washed the car. · 9. He will have washed the car. · 10. He has been washing the car since morning. · 11. He had been washing the car for 10 minutes. · 12. He will have been washing the car since morning.</p></div>
+  </div>
+
+  <h2 id="simple-present"><span class="num">4.</span>Simple Present Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + I form of Verb (s/es)</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject + First form of verb + s/es<br>I/We/You/They/Plural Subject + First form of verb</td><td>He writes a letter.<br>They play cricket.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject + does not + First form of verb<br>I/We/You/They/Plural Subject + do not + First form of verb</td><td>He does not write a letter.<br>They do not play cricket.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Does + He/She/It/Singular Subject + First form of verb<br>Do + I/We/You/They/Plural Subject + First form of verb</td><td>Does he write a letter?<br>Do they play cricket?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Does + He/She/It/Singular Subject + not + First form of verb<br>Do + I/We/You/They/Plural Subject + not + First form of verb</td><td>Does he not write a letter?<br>Do they not play cricket?</td></tr>
+  </table>
+
+  <h3>Use of Simple Present Tense</h3>
+  <ol>
+    <li>To express universal truths and facts such as a scientific fact, mathematical fact, geographical fact etc: The earth revolves around the sun. · Water boils at 100 degree centigrade. · Two and two make four.</li>
+    <li>To express a habitual action, routines, customs, traditions etc: He always speaks the truth. · People celebrate Diwali to mark the return of Lord Rama from exile. · Most men in the Punjab wear turbans. · My mother goes to temple every day.</li>
+    <li>To express proverbial statements: Honesty is the best policy. · Riches have wings. · Early to bed and early to rise, makes a man healthy, wealthy and wise.</li>
+    <li>For live commentaries: Rajeev passes the ball to Nitish, Nitish passes it to Arjun who heads towards the goal and scores a goal.</li>
+    <li>To denote a planned future action: Our school reopens next week. · The match begins the next hour.</li>
+    <li>In newspaper headlines: Cricket match between Srilanka and England ends in a draw. · Peace talk between India and Pakistan fails.</li>
+    <li>To quote poets or authors whether living or dead: Shakespeare says, "Sweet are the uses of adversity."</li>
+    <li>In subordinate clauses (starting with if, in case, provided that, unless, till, until, as soon as, when, before etc.) showing time or condition when the main clause is in the future (type-1 conditional sentences): If it rains, we will not go out. · When my father comes home, we shall play chess.</li>
+  </ol>
+
+  <h2 id="exercise-simple-present"><span class="num">5.</span>Exercise — Simple Present</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with simple present tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>The sun ___ (rise) in the east and ___ (set) in the west. <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>Oil ___ (float) on water. <input class="blank-input sm" type="text"></li>
+      <li>Children ___ (like) sweets. <input class="blank-input sm" type="text"></li>
+      <li>My father ___ (go) for a walk every day. <input class="blank-input sm" type="text"></li>
+      <li>He always ___ (come) late to the class. <input class="blank-input sm" type="text"></li>
+      <li>The earth ___ (be) round. <input class="blank-input sm" type="text"></li>
+      <li>___ (do) he ___ (have) a big house? <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>We ___ (visit) a hill station once a year. <input class="blank-input sm" type="text"></li>
+      <li>I hope she ___ (come) back safely. <input class="blank-input sm" type="text"></li>
+      <li>There ___ (go) the bell! <input class="blank-input sm" type="text"></li>
+      <li>Rahul never ___ (tell) a lie. <input class="blank-input sm" type="text"></li>
+      <li>I will attend the party if he ___ (invite) me. <input class="blank-input sm" type="text"></li>
+      <li>I ___ (not like) mangoes. <input class="blank-input sm" type="text"></li>
+      <li>He ___ (not attend) the class regularly. <input class="blank-input sm" type="text"></li>
+      <li>He will not pass unless he ___ (work) hard. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. rises, sets · 2. floats · 3. like · 4. goes · 5. comes · 6. is · 7. Does, have · 8. visit · 9. comes · 10. goes · 11. tells · 12. invites · 13. do not like · 14. does not attend · 15. works</p></div>
+  </div>
+
+  <h2 id="simple-past"><span class="num">6.</span>Simple Past Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + II form of Verb</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject/I/We/You/They/Plural Subject + Second form of verb</td><td>He wrote a letter.<br>They played cricket.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject/I/We/You/They/Plural Subject + did not + First form of verb</td><td>He did not write a letter.<br>They did not play cricket.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Did + He/She/It/Singular Subject/I/We/You/They/Plural Subject + First form of verb</td><td>Did he write a letter?<br>Did they play cricket?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Did + He/She/It/Singular Subject/I/We/You/They/Plural Subject + not + First form of verb</td><td>Did he not write a letter?<br>Did they not play cricket?</td></tr>
+  </table>
+
+  <h3>Use of Simple Past Tense</h3>
+  <ol>
+    <li>To denote an action or situation that occurred or completed in the past: The actions denoting past tense have no connection with present. I went to market yesterday. · Last year we visited the Taj Mahal. · The train arrived late by twenty minutes.</li>
+    <li>To denote actions that happened for a period of time in the past and completed in the past: She stayed with us for a week. · They spent ten years in Chennai.</li>
+    <li>To denote habitual actions, routines or customs of the past (for past habits, the use of 'used to' and 'would' is discussed in the chapter dealing with modal auxiliaries): When I was a student, I played cricket. · Early man lived in forest. · They always came late.</li>
+    <li>To talk about discoveries, inventions, achievements etc: Columbus discovered America. · Thomas Edison invented electric bulb.</li>
+    <li>In type-2 conditional sentences: If I went to Jaipur, I would visit the Hawa Mahal.</li>
+  </ol>
+
+  <h2 id="exercise-simple-past"><span class="num">7.</span>Exercise — Simple Past</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with simple past tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>It ___ yesterday. (rain) <input class="blank-input sm" type="text"></li>
+      <li>We ___ here last week. (shift) <input class="blank-input sm" type="text"></li>
+      <li>When I was a student, I always ___ my homework on time. (complete) <input class="blank-input sm" type="text"></li>
+      <li>___ (do) he ___ married last month? (get) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>I ___ this car in Delhi. (buy) <input class="blank-input sm" type="text"></li>
+      <li>I wish I ___ help her. (can) <input class="blank-input sm" type="text"></li>
+      <li>He ___ the test on Saturday as he was not well. (not take) <input class="blank-input sm" type="text"></li>
+      <li>Ashoka ___ a great king. (be) <input class="blank-input sm" type="text"></li>
+      <li>India ___ freedom in 1947. (get) <input class="blank-input sm" type="text"></li>
+      <li>If I ___ the prize, I would be rich. (win) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. rained · 2. shifted · 3. completed · 4. Did, get · 5. bought · 6. could · 7. did not take · 8. was · 9. got · 10. won</p></div>
+  </div>
+
+  <h2 id="simple-future"><span class="num">8.</span>Simple Future Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + will/shall + I form of Verb</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject/You/They/Plural Subject + will + First form of verb<br>I/We + shall/will + First form of verb</td><td>He will write a letter. They will play cricket.<br>I shall/will write a letter.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject/You/They/Plural Subject + will + not + First form of verb<br>I/We + shall/will + not + First form of verb</td><td>He will not write a letter. They will not play cricket.<br>I shall/will not write a letter.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Will + He/She/It/Singular Subject/You/They/Plural Subject + First form of verb<br>Shall + I/We + First form of verb</td><td>Will he write a letter? Will they play cricket?<br>Shall I write a letter?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Will + He/She/It/Singular Subject/You/They/Plural Subject + not + First form of verb<br>Shall + I/We + not + First form of verb</td><td>Will he not write a letter? Will they not play cricket?<br>Shall I not write a letter?</td></tr>
+  </table>
+
+  <h3>Use of Simple Future Tense</h3>
+  <ol>
+    <li>To describe a future action or event: We will go for a picnic tomorrow. · The marriage will take place the next month.</li>
+    <li>To make an offer or promise: He shall get a prize tomorrow. · I will buy you a new toy.</li>
+    <li>In main clauses when the subordinate clauses show time and condition and start with if, in case, provided that, unless, till, until, as soon as, when, before etc: If you complete your work, I will let you play. (type-1 conditional sentences) · When my mother comes home, we will take dinner.</li>
+  </ol>
+
+  <h2 id="exercise-simple-future"><span class="num">9.</span>Exercise — Simple Future</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with simple future tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>The teacher ___ us a test tomorrow. (give) <input class="blank-input sm" type="text"></li>
+      <li>___ you ___ us the next month? (visit) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>I have decided that I ___ never ___ a lie again. (tell) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>If you follow my instructions carefully, you ___ the treasure. (find) <input class="blank-input sm" type="text"></li>
+      <li>I wonder what he ___ in his life. (do) <input class="blank-input sm" type="text"></li>
+      <li>I expect, India ___ the test series. (win) <input class="blank-input sm" type="text"></li>
+      <li>They ___ not ___ a cricket match in the evening. (play) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>The Principal is on leave today. The Vice-Principal ___ over the meeting. (preside) <input class="blank-input sm" type="text"></li>
+      <li>I have planned that I ___ my vacation at Manali. (spend) <input class="blank-input sm" type="text"></li>
+      <li>We ___ our annual function at the end of the session. (celebrate) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. will give · 2. Will, visit · 3. will, tell · 4. will find · 5. will do · 6. will win · 7. will not play · 8. will preside · 9. will spend · 10. will celebrate</p></div>
+  </div>
+
+  <h2 id="present-continuous"><span class="num">10.</span>Present Continuous Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + is/am/are + I form of Verb + ing</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject + is + First form of verb + ing<br>I + am + First form of verb + ing<br>We/You/They/Plural Subject + are + First form of verb + ing</td><td>He is writing a letter.<br>I am writing a letter.<br>They are playing cricket.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject + is + not + First form of verb + ing<br>I + am + not + First form of verb + ing<br>We/You/They/Plural Subject + are + not + First form of verb + ing</td><td>He is not writing a letter.<br>I am not writing a letter.<br>They are not playing cricket.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Is + He/She/It/Singular Subject + First form of verb + ing<br>Am + I + First form of verb + ing<br>Are + We/You/They/Plural Subject + First form of verb + ing</td><td>Is he writing a letter?<br>Am I writing a letter?<br>Are they playing cricket?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Is + He/She/It/Singular Subject + not + First form of verb + ing<br>Am + I + not + First form of verb + ing<br>Are + We/You/They/Plural Subject + not + First form of verb + ing</td><td>Is he not writing a letter?<br>Am I not writing a letter?<br>Are they not playing cricket?</td></tr>
+  </table>
+
+  <h3>Use of Present Continuous Tense</h3>
+  <ol>
+    <li>To denote an action in progress at the time of speaking: I am going to school. · The boys are playing cricket in the stadium. · My mother is cooking food.</li>
+    <li>To denote an action in progress and continuity around present time, not necessarily at the time of speaking: I am learning French these days. · India is progressing by leaps and bounds. · She is writing a book.</li>
+    <li>Planned future actions: We are going to play a cricket match this evening. · They are meeting tonight.</li>
+    <li>Use of 'will' and 'be going to' for future actions: Both 'will' and 'be going to' are used to denote future actions. However, there is a difference between the two. We use 'will' when we plan to do something at the time of speaking. On the other hand, 'be going to' is used to denote actions that are planned or actions that are likely to happen.<br>
+      My friend is going to get married. (planned action) · She will get married after her Ph.D. (not planned as yet) · Sumit is riding his bicycle carelessly. He is going to fall. (action likely to happen) · Look at the clouds in the sky. It's going to rain. · I don't have money to buy a car. I will take a loan from bank. · I am going to take loan from bank. (already planned) or, I am taking loan from bank.</li>
+  </ol>
+
+  <h3>Use of Simple Present and Present Continuous</h3>
+  <table class="ref-table">
+    <tr><th>Simple Present</th><th>Present Continuous</th></tr>
+    <tr><td>I go to school at 7. (routine)</td><td>I am going to school. (now)</td></tr>
+    <tr><td>I have a big house.</td><td>I am having dinner.</td></tr>
+    <tr><td>The sun rises in the east.</td><td>The sun is rising; it's looking beautiful.</td></tr>
+  </table>
+
+  <h2 id="exercise-present-continuous"><span class="num">11.</span>Exercise — Present Continuous / Simple Present</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with present continuous tense or simple present tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>Where ___ you ___ at this time? (go) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>I ___ driving these days. (learn) <input class="blank-input sm" type="text"></li>
+      <li>She usually wears a saree, but today she ___ a suit. (wear) <input class="blank-input sm" type="text"></li>
+      <li>Due to bad weather, the trains ___ late. (run) <input class="blank-input sm" type="text"></li>
+      <li>I ___ my lawyer this evening. (see) <input class="blank-input sm" type="text"></li>
+      <li>Rajan always ___ with his classmates. (fight) <input class="blank-input sm" type="text"></li>
+      <li>Prices ___ rapidly. (rise) <input class="blank-input sm" type="text"></li>
+      <li>Life ___ tough day by day. (become) <input class="blank-input sm" type="text"></li>
+      <li>Look at that speeding car, it ___ to hit someone. (be, go) <input class="blank-input sm" type="text"></li>
+      <li>She ___ very hard. (work) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. are, going · 2. am learning · 3. is wearing · 4. are running · 5. am seeing · 6. fights · 7. are rising · 8. is becoming · 9. is going · 10. is working</p></div>
+  </div>
+
+  <h2 id="past-continuous"><span class="num">12.</span>Past Continuous Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + was/were + I form of Verb + ing</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>I/He/She/It/Singular Subject + was + First form of verb + ing<br>We/You/They/Plural Subject + were + First form of verb + ing</td><td>He was writing a letter. I was writing a letter.<br>They were playing cricket.</td></tr>
+    <tr><td class="g">Negative</td><td>I/He/She/It/Singular Subject + was + not + First form of verb + ing<br>We/You/They/Plural Subject + were + not + First form of verb + ing</td><td>He was not writing a letter. I was not writing a letter.<br>They were not playing cricket.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Was + I/He/She/It/Singular Subject + First form of verb + ing<br>Were + We/You/They/Plural Subject + First form of verb + ing</td><td>Was he writing a letter? Was I writing a letter?<br>Were they playing cricket?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Was + I/He/She/It/Singular Subject + not + First form of verb + ing<br>Were + We/You/They/Plural Subject + not + First form of verb + ing</td><td>Was he not writing a letter? Was I not writing a letter?<br>Were they not playing cricket?</td></tr>
+  </table>
+
+  <h3>Use of Past Continuous Tense</h3>
+  <ol>
+    <li>To denote an action which was happening at a particular time in the past: He was playing at 5 o'clock in the evening. · Yesterday at 10.00 am, he was travelling to Ludhiana.</li>
+    <li>To denote an action which was in progress when another action happened: When the teacher entered the class, the students were making a noise. · It was snowing the whole night. · When my father entered the room, my brother was learning his lessons.</li>
+    <li>To express two simultaneous actions: When my brother was playing tennis, I was swimming.</li>
+  </ol>
+
+  <h2 id="exercise-past-continuous"><span class="num">13.</span>Exercise — Past Continuous</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with past continuous tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>He ___ at 5 o'clock last evening. (study) <input class="blank-input sm" type="text"></li>
+      <li>Yesterday at 11.00 am, she ___ her dance classes. (attend) <input class="blank-input sm" type="text"></li>
+      <li>When my mother came home, my sister ___ a cake. (bake) <input class="blank-input sm" type="text"></li>
+      <li>When my father ___ on a project, my mother ___ dinner. (work, prepare) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>The weather ___ cold as the days passed. (turn) <input class="blank-input sm" type="text"></li>
+      <li>Those days, I ___ a novel. (write) <input class="blank-input sm" type="text"></li>
+      <li>We ___ the road when the accident took place. (cross) <input class="blank-input sm" type="text"></li>
+      <li>At this time last year, they ___ their new house. (construct) <input class="blank-input sm" type="text"></li>
+      <li>He informed me that he ___ late that day. (come) <input class="blank-input sm" type="text"></li>
+      <li>At that time, the postman ___ letters. (deliver) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. was studying · 2. was attending · 3. was baking · 4. was working, was preparing · 5. was turning · 6. was writing · 7. were crossing · 8. were constructing · 9. was coming · 10. was delivering</p></div>
+  </div>
+
+  <h2 id="future-continuous"><span class="num">14.</span>Future Continuous Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + will/shall + be + I form of Verb + ing</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject/You/They/Plural Subject + will + be + First form of verb + ing<br>I/We + shall/will + be + First form of verb + ing</td><td>He will be writing a letter. They will be playing cricket.<br>I shall/will be writing a letter.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject/You/They/Plural Subject + will + not + be + First form of verb + ing<br>I/We + shall/will + not + be + First form of verb + ing</td><td>He will not be writing a letter. They will not be playing cricket.<br>I shall/will not be writing a letter.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Will + He/She/It/Singular Subject/You/They/Plural Subject + be + First form of verb + ing<br>Shall + I/We + be + First form of verb + ing</td><td>Will he be writing a letter? Will they be playing cricket?<br>Shall I be writing a letter?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Will + He/She/It/Singular Subject/You/They/Plural Subject + not + be + First form of verb + ing<br>Shall + I/We + not + be + First form of verb + ing</td><td>Will he not be writing a letter? Will they not be playing cricket?<br>Shall I not be writing a letter?</td></tr>
+  </table>
+
+  <h3>Use of Future Continuous Tense</h3>
+  <ol>
+    <li>To denote an action in progress in future: Tomorrow at this time, he will be studying maths. · The next week at this time, she will be getting married.</li>
+    <li>To denote plans or arrangements: He will be reaching here by tonight. · The aeroplane will be landing soon.</li>
+    <li>To denote an action in progress when another action happens: When he comes back home, his children will be sleeping. · If it rains, people will be running here and there.</li>
+  </ol>
+
+  <h2 id="exercise-future-continuous"><span class="num">15.</span>Exercise — Future Continuous</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with future continuous tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>Next year at this time, we ___ our books. (publish) <input class="blank-input sm" type="text"></li>
+      <li>At 8:30, I ___ to office. (drive) <input class="blank-input sm" type="text"></li>
+      <li>When you come, he ___ dinner. (have) <input class="blank-input sm" type="text"></li>
+      <li>Next month at this time, they ___ New Year at Goa. (celebrate) <input class="blank-input sm" type="text"></li>
+      <li>He ___ the school tomorrow at this time. (inspect) <input class="blank-input sm" type="text"></li>
+      <li>He is late today. His parents ___ for him. (wait) <input class="blank-input sm" type="text"></li>
+      <li>She ___ for her dance performance the next week. (rehearse) <input class="blank-input sm" type="text"></li>
+      <li>Sara ___ her lessons all evening. (revise) <input class="blank-input sm" type="text"></li>
+      <li>People ___ for Christmas next week. (prepare) <input class="blank-input sm" type="text"></li>
+      <li>The farmer ___ his fields tomorrow morning. (plough) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. will be publishing · 2. will be driving · 3. will be having · 4. will be celebrating · 5. will be inspecting · 6. will be waiting · 7. will be rehearsing · 8. will be revising · 9. will be preparing · 10. will be ploughing</p></div>
+  </div>
+
+  <h2 id="present-perfect"><span class="num">16.</span>Present Perfect Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + has/have + III form of Verb</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject + has + Third form of verb<br>I/We/You/They/Plural Subject + have + Third form of verb</td><td>He has written a letter.<br>They have played cricket. I have written a letter.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject + has + not + Third form of verb<br>I/We/You/They/Plural Subject + have + not + Third form of verb</td><td>He has not written a letter.<br>They have not played cricket. I have not written a letter.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Has + He/She/It/Singular Subject + Third form of verb<br>Have + I/We/You/They/Plural Subject + Third form of verb</td><td>Has he written a letter?<br>Have they played cricket? Have I written a letter?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Has + He/She/It/Singular Subject + not + Third form of verb<br>Have + I/We/You/They/Plural Subject + not + Third form of verb</td><td>Has he not written a letter?<br>Have they not played cricket? Have I not written a letter?</td></tr>
+  </table>
+
+  <h3>Use of Present Perfect Tense</h3>
+  <ol>
+    <li>To denote a recently completed action: He has just left for the office. · I have received your email just now. · They have recently purchased a new house.</li>
+    <li>To express past actions that have finished recently: I have taken lunch. · The students have taken their test. · My brother has returned from school.</li>
+    <li>To denote an action beginning in the past and still continuing: I have worked in this office for ten years. (I am still working here.) · We have known each other for five years.</li>
+    <li>Used with words such as 'just', 'already', 'ever', 'never', 'yet', 'as yet' etc: They have already taken their lunch. · Have you ever seen a movie like this? · He has never met any celebrity. · The baby has not got up yet.</li>
+    <li>To describe a past experience connected with the present: He has never behaved rudely. · They have never tasted wine. · I have never been to Agra. · I have never seen such a beautiful place as this. · This is one of the most interesting books I have ever read.</li>
+  </ol>
+
+  <h2 id="exercise-present-perfect"><span class="num">17.</span>Exercise — Present Perfect</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with present perfect tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>I ___ never ___ a lion. (see) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>They ___ a new house. (purchase) <input class="blank-input sm" type="text"></li>
+      <li>I ___ him for a long time. (know) <input class="blank-input sm" type="text"></li>
+      <li>We ___ just ___ our dinner. (take) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>We ___ our bags. We are ready to leave. (pack) <input class="blank-input sm" type="text"></li>
+      <li>He ___ never ___ to London. (be) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>___ you ___ this book? (read) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>She ___ here for five years. (work) <input class="blank-input sm" type="text"></li>
+      <li>The train ___ as yet. (not arrive) <input class="blank-input sm" type="text"></li>
+      <li>The Principal ___ already ___ him many times. (warn) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. have, seen · 2. have purchased · 3. have known · 4. have, taken · 5. have packed · 6. has, been · 7. Have, read · 8. has worked · 9. has not arrived · 10. has, warned</p></div>
+  </div>
+
+  <h2 id="past-perfect"><span class="num">18.</span>Past Perfect Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + had + III form of Verb</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject/I/We/You/They/Plural Subject + had + Third form of verb</td><td>He had written a letter. They had played cricket. I had written a letter.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject/I/We/You/They/Plural Subject + had + not + Third form of verb</td><td>He had not written a letter. They had not played cricket. I had not written a letter.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Had + He/She/It/Singular Subject/I/We/You/They/Plural Subject + Third form of verb</td><td>Had he written a letter? Had they played cricket? Had I written a letter?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Had + He/She/It/Singular Subject/I/We/You/They/Plural Subject + not + Third form of verb</td><td>Had he not written a letter? Had they not played cricket? Had I not written a letter?</td></tr>
+  </table>
+
+  <h3>Use of Past Perfect Tense</h3>
+  <ol>
+    <li>To denote an action which happened or completed before some other action took place in the past: The patient had died before the doctor arrived. · The peon had rung the bell when I reached school.</li>
+    <li>In type-3 conditional sentences to express an unfulfilled condition in the past: Had you invited me, I would have attended the meeting. · If you had worked hard, you would have succeeded.</li>
+  </ol>
+
+  <h2 id="exercise-past-perfect"><span class="num">19.</span>Exercise — Past Perfect</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with past perfect tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>The train ___ when I reached the station. (arrive) <input class="blank-input sm" type="text"></li>
+      <li>The boys ___ well before the final match. (practise) <input class="blank-input sm" type="text"></li>
+      <li>He ___ that he would win a lottery. (imagine) <input class="blank-input sm" type="text"></li>
+      <li>We ___ that you would cooperate with us. (hope) <input class="blank-input sm" type="text"></li>
+      <li>The chief guest ___ before the function started. (reach) <input class="blank-input sm" type="text"></li>
+      <li>Children ran out to play after they ___ their homework. (do) <input class="blank-input sm" type="text"></li>
+      <li>He fell down. I ___ already ___ him not to run. (tell) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>We ___ that she would visit us. (expect) <input class="blank-input sm" type="text"></li>
+      <li>Rajan ___ new clothes before Diwali. (buy) <input class="blank-input sm" type="text"></li>
+      <li>Reema was excited to wear the new frock. She ___ always ___ of wearing it. (have, dream) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. had arrived · 2. had practised · 3. had imagined · 4. had hoped · 5. had reached · 6. had done · 7. had, told · 8. had expected · 9. had bought · 10. had, dreamt</p></div>
+  </div>
+
+  <h2 id="future-perfect"><span class="num">20.</span>Future Perfect Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + will/shall + have + III form of Verb</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject/You/They/Plural Subject + will + have + Third form of verb<br>I/We + shall/will + have + Third form of verb</td><td>He will have written a letter. They will have played cricket.<br>I will have written a letter.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject/You/They/Plural Subject + will + not + have + Third form of verb<br>I/We + shall/will + not + have + Third form of verb</td><td>He will not have written a letter. They will not have played cricket.<br>I will not have written a letter.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Will + He/She/It/Singular Subject/You/They/Plural Subject + have + Third form of verb<br>Shall + I/We + have + Third form of verb</td><td>Will he have written a letter? Will they have played cricket?<br>Shall I have written a letter?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Will + He/She/It/Singular Subject/You/They/Plural Subject + not + have + Third form of verb<br>Shall + I/We + not + have + Third form of verb</td><td>Will he not have written a letter? Will they not have played cricket?<br>Shall I not have written a letter?</td></tr>
+  </table>
+
+  <h3>Use of Future Perfect Tense</h3>
+  <ol>
+    <li>To denote an action which will be completed at some point of time in future: By the end of this month, I will have completed this book. · I will have returned by Saturday. · We shall have submitted the report by 5 o'clock in the evening.</li>
+    <li>To denote an action that will be complete before some other action in future: She will have prepared dinner before her husband returns.</li>
+  </ol>
+
+  <h2 id="exercise-future-perfect"><span class="num">21.</span>Exercise — Future Perfect</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with future perfect tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>I ___ this picture by tomorrow evening. (paint) <input class="blank-input sm" type="text"></li>
+      <li>He ___ all his lessons before the final exams. (learn) <input class="blank-input sm" type="text"></li>
+      <li>They ___ all their debts before leaving the city. (repay) <input class="blank-input sm" type="text"></li>
+      <li>She ___ a new dress by coming Monday. (stitch) <input class="blank-input sm" type="text"></li>
+      <li>Students ___ their classes by the next hour. (decorate) <input class="blank-input sm" type="text"></li>
+      <li>The people ___ their votes by evening. (cast) <input class="blank-input sm" type="text"></li>
+      <li>The sun ___ by 6:30 pm. (set) <input class="blank-input sm" type="text"></li>
+      <li>She ___ her degree in three years from now. (take) <input class="blank-input sm" type="text"></li>
+      <li>The train ___ the station before we reach there. (leave) <input class="blank-input sm" type="text"></li>
+      <li>The team ___ two hundred runs by the thirtieth over. (score) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. will have painted · 2. will have learnt · 3. will have repaid · 4. will have stitched · 5. will have decorated · 6. will have cast · 7. will have set · 8. will have taken · 9. will have left · 10. will have scored</p></div>
+  </div>
+
+  <h2 id="present-perfect-continuous"><span class="num">22.</span>Present Perfect Continuous Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + has/have + been + V1 + ing + since/for + time</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject + has + been + First form of verb + ing<br>I/We/You/They/Plural Subject + have + been + First form of verb + ing</td><td>He has been writing a letter since morning. I have been writing a letter for an hour.<br>They have been playing cricket for two hours.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject + has + not + been + First form of verb + ing<br>I/We/You/They/Plural Subject + have + not + been + First form of verb + ing</td><td>He has not been writing a letter since morning. I have not been writing a letter for an hour.<br>They have not been playing cricket for two hours.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Has + He/She/It/Singular Subject + been + First form of verb + ing<br>Have + I/We/You/They/Plural Subject + been + First form of verb + ing</td><td>Has he been writing a letter since morning? Have I been writing a letter for an hour?<br>Have they been playing cricket for two hours?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Has + He/She/It/Singular Subject + not + been + First form of verb + ing<br>Have + I/We/You/They/Plural Subject + not + been + First form of verb + ing</td><td>Has he not been writing a letter since morning? Have I not been writing a letter for an hour?<br>Have they not been playing cricket for two hours?</td></tr>
+  </table>
+
+  <h3>Use of Present Perfect Continuous Tense</h3>
+  <ol>
+    <li>To denote an action that started in the past and continues in present: It has been raining since morning. · They have been waiting for the chief guest for one hour.</li>
+    <li>For repeated actions when the number of repetitions are not mentioned: I have been telling him not to fly kites. (frequency not mentioned) · I have told him many times not to fly kites. (Frequency mentioned using the word 'many')</li>
+    <li>Drawing conclusions: The roads are flooded. It seems that it has been raining for long. · He is tired. It looks that he has been working continuously.</li>
+    <li>To ask questions starting with 'How long' or 'Since when': How long have you been living in this city? · Since when have you been serving in this office?</li>
+  </ol>
+
+  <h2 id="exercise-present-perfect-continuous"><span class="num">23.</span>Exercise — Present Perfect Continuous</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with present perfect continuous tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>The police ___ into the matter for two months. (look) <input class="blank-input sm" type="text"></li>
+      <li>The workers are tired as they ___ since morning. (work) <input class="blank-input sm" type="text"></li>
+      <li>She ___ well since yesterday. (not feel) <input class="blank-input sm" type="text"></li>
+      <li>The doctor ___ the patient for half an hour. (examine) <input class="blank-input sm" type="text"></li>
+      <li>They ___ a meeting since 9 o'clock. (hold) <input class="blank-input sm" type="text"></li>
+      <li>The militants ___ in an old house for a week. (hide) <input class="blank-input sm" type="text"></li>
+      <li>A strong wind ___ since last night. (blow) <input class="blank-input sm" type="text"></li>
+      <li>The earth ___ around the sun for thousands of years. (revolve) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. have been looking · 2. have been working · 3. has not been feeling · 4. has been examining · 5. have been holding · 6. have been hiding · 7. has been blowing · 8. has been revolving</p></div>
+  </div>
+
+  <h2 id="past-perfect-continuous"><span class="num">24.</span>Past Perfect Continuous Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + had + been + V1 + ing + since/for + time</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject/I/We/You/They/Plural Subject + had + been + First form of verb + ing</td><td>He had been writing a letter since morning. I had been writing a letter for an hour. They had been playing cricket for two hours.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject/I/We/You/They/Plural Subject + had + not + been + First form of verb + ing</td><td>He had not been writing a letter since morning. I had not been writing a letter for an hour. They had not been playing cricket for two hours.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Had + He/She/It/Singular Subject/I/We/You/They/Plural Subject + been + First form of verb + ing</td><td>Had he been writing a letter since morning? Had I been writing a letter for an hour? Had they been playing cricket for two hours?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Had + He/She/It/Singular Subject/I/We/You/They/Plural Subject + not + been + First form of verb + ing</td><td>Had he not been writing a letter since morning? Had I not been writing a letter for an hour? Had they not been playing cricket for two hours?</td></tr>
+  </table>
+
+  <h3>Use of Past Perfect Continuous Tense</h3>
+  <ol>
+    <li>To denote an action that started in the past and continued up to a certain point in the past: When my father reached home, I had been studying for two hours. · He had been teaching in this school for 20 years when he got retired. · The students were tired as they had been attending classes since morning.</li>
+    <li>Repeated actions in the past: The coach was annoyed as the players had been coming late for a month. · The landlord was angry as the tenant had been coming late for two weeks.</li>
+    <li>For drawing conclusions: Her eyes were swollen. Apparently she had been crying all night. · He came home tired. He had been travelling the whole day. · The roads were flooded. It had been raining all night.</li>
+  </ol>
+
+  <h2 id="exercise-past-perfect-continuous"><span class="num">25.</span>Exercise — Past Perfect Continuous</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with past perfect continuous tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>The police ___ into the matter for two months when the case was closed. (look) <input class="blank-input sm" type="text"></li>
+      <li>The workers were tired as they ___ since morning. (work) <input class="blank-input sm" type="text"></li>
+      <li>She ___ well since morning, so she went to consult a doctor. (not feel) <input class="blank-input sm" type="text"></li>
+      <li>The farmers were happy when it rained. They ___ for rain for more than a month. (wait) <input class="blank-input sm" type="text"></li>
+      <li>They ___ a meeting since 9 o'clock. (hold) <input class="blank-input sm" type="text"></li>
+      <li>The boys ___ in the pool for an hour when the instructor asked them to come out. (swim) <input class="blank-input sm" type="text"></li>
+      <li>The militants ___ in an old house for a week when they were shot dead by the police. (hide) <input class="blank-input sm" type="text"></li>
+      <li>My mother ___ since Monday when the doctor came. (fast) <input class="blank-input sm" type="text"></li>
+      <li>The phone ___ for ten minutes when my father received the call. (ring) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. had been looking · 2. had been working · 3. had not been feeling · 4. had been waiting · 5. had been holding · 6. had been swimming · 7. had been hiding · 8. had been fasting · 9. had been ringing</p></div>
+  </div>
+
+  <h2 id="future-perfect-continuous"><span class="num">26.</span>Future Perfect Continuous Tense</h2>
+  <p><strong>Subject-Verb Pattern:</strong> Subject + will/shall + have + been + V1 + ing + since/for + time</p>
+  <table class="ref-table">
+    <tr><th>Type of Sentence</th><th class="pattern-col">S-V Pattern</th><th>Examples</th></tr>
+    <tr><td class="g">Affirmative</td><td>He/She/It/Singular Subject/You/They/Plural Subject + will + have + been + First form of verb + ing<br>I/We + shall/will + have + been + First form of verb + ing</td><td>He will have been writing a letter since morning. They will have been playing cricket for two hours.<br>I shall/will have been writing a letter for an hour.</td></tr>
+    <tr><td class="g">Negative</td><td>He/She/It/Singular Subject/You/They/Plural Subject + will + not + have + been + First form of verb + ing<br>I/We + shall/will + not + have + been + First form of verb + ing</td><td>He will not have been writing a letter since morning. They will not have been playing cricket for two hours.<br>I shall/will not have been writing a letter for an hour.</td></tr>
+    <tr><td class="g">Interrogative</td><td>Will + He/She/It/Singular Subject/You/They/Plural Subject + have + been + First form of verb + ing<br>Shall + I/We + have + been + First form of verb + ing</td><td>Will he have been writing a letter since morning? Will they have been playing cricket for two hours?<br>Shall I have been writing a letter for an hour?</td></tr>
+    <tr><td class="g">Interrogative Negative</td><td>Will + He/She/It/Singular Subject/You/They/Plural Subject + not + have + been + First form of verb + ing<br>Shall + I/We + not + have + been + First form of verb + ing</td><td>Will he not have been writing a letter since morning? Will they not have been playing cricket for two hours?<br>Shall I not have been writing a letter for an hour?</td></tr>
+  </table>
+
+  <h3>Use of Future Perfect Continuous Tense</h3>
+  <p>Future perfect continuous tense is used to describe an action that will be in progress over a period of time at some point in future. This tense is rarely used.</p>
+  <ul>
+    <li>By the end of this year, I will have been practising law for two years.</li>
+    <li>By December, he will have been working on this project for six months.</li>
+  </ul>
+
+  <h2 id="exercise-future-perfect-continuous"><span class="num">27.</span>Exercise — Future Perfect Continuous</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with future perfect continuous tense of the verbs given in the brackets.</p>
+    <ol>
+      <li>The workers ___ since morning when it strikes 5. (work) <input class="blank-input sm" type="text"></li>
+      <li>They ___ a meeting since 9 o'clock when they disperse. (hold) <input class="blank-input sm" type="text"></li>
+      <li>The boys ___ in the pool for an hour when the instructor asks them to come out. (swim) <input class="blank-input sm" type="text"></li>
+      <li>My mother ___ since Monday when the doctor comes. (fast) <input class="blank-input sm" type="text"></li>
+      <li>The phone ___ for ten minutes when my father receives the call. (ring) <input class="blank-input sm" type="text"></li>
+      <li>The workers ___ for a month by Tuesday. (protest) <input class="blank-input sm" type="text"></li>
+      <li>By evening, the players ___ for five hours. (practise) <input class="blank-input sm" type="text"></li>
+      <li>By next week, they ___ in this house for ten years. (live) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. will have been working · 2. will have been holding · 3. will have been swimming · 4. will have been fasting · 5. will have been ringing · 6. will have been protesting · 7. will have been practising · 8. will have been living</p></div>
+  </div>
+
+  <h2 id="all-tenses"><span class="num">28.</span>All Tenses — Master Reference</h2>
+  <table class="ref-table">
+    <tr><th></th><th>Present</th><th>Past</th><th>Future</th></tr>
+    <tr><td class="g">Simple</td><td>Sub+V1 (s/es) or Sub+V1<br>He writes a letter.<br>He does not write a letter.<br>Does he write a letter?<br>Does he not write a letter?</td><td>Sub+V2<br>He wrote a letter.<br>He did not write a letter.<br>Did he write a letter?<br>Did he not write a letter?</td><td>Sub+will/shall+V1<br>He will write a letter.<br>He will not write a letter.<br>Will he write a letter?<br>Will he not write a letter?</td></tr>
+    <tr><td class="g">Continuous</td><td>Sub+is/am/are+V1+ing<br>He is writing a letter.<br>He is not writing a letter.<br>Is he writing a letter?<br>Is he not writing a letter?</td><td>Sub+was/were+V1+ing<br>He was writing a letter.<br>He was not writing a letter.<br>Was he writing a letter?<br>Was he not writing a letter?</td><td>Sub+will/shall+be+V1+ing<br>He will be writing a letter.<br>He will not be writing a letter.<br>Will he be writing a letter?<br>Will he not be writing a letter?</td></tr>
+    <tr><td class="g">Perfect</td><td>Sub+has/have+V3<br>He has written a letter.<br>He has not written a letter.<br>Has he written a letter?<br>Has he not written a letter?</td><td>Sub+had+V3<br>He had written a letter.<br>He had not written a letter.<br>Had he written a letter?<br>Had he not written a letter?</td><td>Sub+will/shall+have+V3<br>He will have written a letter.<br>He will not have written a letter.<br>Will he have written a letter?<br>Will he not have written a letter?</td></tr>
+    <tr><td class="g">Perfect Continuous</td><td>Sub+has/have+been+V1+ing+since/for+time<br>He has been writing a letter for two hours.<br>He has not been writing a letter since 10 o'clock.<br>Has he been writing a letter for two hours?<br>Has he not been writing a letter for ten minutes?</td><td>Sub+had+been+V1+ing+since/for+time<br>He had been writing a letter for two hours.<br>He had not been writing a letter since 10 o'clock.<br>Had he been writing a letter for two hours?<br>Had he not been writing a letter since 10 o'clock?</td><td>Sub+will/shall+have+been+V1+ing+since/for+time<br>He will have been writing a letter for two hours.<br>He will not have been writing a letter since 10 o'clock.<br>Will he have been writing a letter for two hours?<br>Will he not have been writing a letter for ten minutes?</td></tr>
+  </table>
+
+  <h2 id="revision"><span class="num">29.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>Tense is a verb form that shows the time and state of an action: Present, Past, or Future.</li>
+    <li>Each tense has four sub-divisions: Simple/Indefinite (unspecified time), Continuous (in progress), Perfect (completed), and Perfect Continuous (in progress for some time).</li>
+    <li>Simple present: universal truths, habitual actions, proverbs, live commentary, planned future, headlines, quotations, and type-1 conditional subordinate clauses.</li>
+    <li>Simple past: completed past actions, past habits, discoveries, and type-2 conditional clauses.</li>
+    <li>Simple future: future actions, offers/promises, and main clauses of type-1 conditionals.</li>
+    <li>Present continuous: action in progress now or around now, and planned future actions ('will' vs 'be going to').</li>
+    <li>Past/Future continuous: an action in progress at a particular past/future time, often alongside another action.</li>
+    <li>Present/Past/Future perfect: a completed action, with present perfect often linked to the present, past perfect completed before another past action (and type-3 conditionals), and future perfect completed by a future point.</li>
+    <li>Perfect continuous tenses (present/past/future): an action in progress for a duration, up to now, up to a past point, or up to a future point — typically used with 'since' or 'for'.</li>
+  </ul>
+
+  <footer>Class 8 · English · Grammar · Lesson 19 — Chapter-13, Tenses.</footer>
+</div>
+</body>
+</html>

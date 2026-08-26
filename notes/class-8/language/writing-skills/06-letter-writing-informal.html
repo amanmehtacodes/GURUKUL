@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 6 — Letter Writing (Informal) | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 32px;}
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 22px; margin-bottom:36px;
+  }
+  nav.toc div.toc-h{font-family:var(--font-mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px;}
+  nav.toc li{margin-bottom:5px;}
+  nav.toc ol ol{margin:6px 0 10px; padding-left:22px;}
+  nav.toc ol ol li{margin-bottom:4px; font-size:14.5px;}
+  nav.toc a{color:var(--accent); text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline; color:var(--violet);}
+  nav.toc ol ol a{color:var(--ink-soft);}
+  nav.toc ol ol a:hover{color:var(--cyan);}
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.03em; color:var(--c3);
+    margin:44px 0 16px; scroll-margin-top:20px;
+  }
+  h3{font-size:20px; font-weight:700; margin:26px 0 10px; scroll-margin-top:20px;}
+  p{margin:0 0 14px;}
+  ul,ol{margin:0 0 16px; padding-left:24px;}
+  li{margin-bottom:7px;}
+  li ul, li ol{margin-top:8px;}
+  strong{font-weight:700;}
+  hr{border:none; border-top:1px solid var(--line); margin:36px 0;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:12px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 16px;
+  }
+  .format-box{
+    font-family:var(--font-mono); font-size:14px; line-height:1.9;
+    background:var(--paper-raised); border:2px solid var(--ink); border-radius:6px;
+    padding:24px 20px; margin:0 0 20px; white-space:pre-wrap;
+  }
+  .hints{
+    background:var(--accent2-soft); border-left:3px solid var(--accent2);
+    border-radius:6px; padding:10px 16px; margin:0 0 14px; font-size:14.5px; color:var(--ink-soft);
+  }
+  .hints strong{color:var(--violet); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.04em;}
+  .sample{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:20px 24px; margin:0 0 24px;
+  }
+  .sample .sh{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;}
+  /* Boxed letter format — address, date, salutation, body paragraphs,
+     complimentary closure, subscription and signature. Unscoped so it's
+     reusable for the worked sample and every practice-question model
+     answer below. */
+  .letter-box{
+    border:1.5px solid var(--ink); border-radius:4px; padding:20px 22px;
+    font-size:15.5px; line-height:1.7; background:var(--paper);
+  }
+  .letter-box .addr{white-space:pre-line; margin:0 0 14px;}
+  .letter-box .dt{margin:0 0 14px; color:var(--ink-soft);}
+  .letter-box .sal{font-weight:700; margin:0 0 12px;}
+  .letter-box p{margin:0 0 12px;}
+  .letter-box p:last-of-type{margin-bottom:0;}
+  .letter-box .close{margin-top:16px;}
+  .letter-box .sub{margin-top:2px; font-style:italic;}
+  .letter-box .sig{margin-top:2px; font-weight:700;}
+  table{width:100%; border-collapse:collapse; margin:0 0 20px; font-size:15.5px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left;}
+  th{background:var(--accent-soft); font-family:var(--font-mono); font-size:12.5px; text-transform:uppercase;}
+  .checklist{list-style:none; padding-left:0;}
+  .checklist li{padding-left:26px; position:relative;}
+  .checklist li:before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+  /* Interactive question blocks */
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:18px 20px; margin:18px 0; background:var(--paper-raised);
+  }
+  .q .qn{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); margin-bottom:8px; letter-spacing:.03em; text-transform:uppercase;}
+  .q p.prompt{margin:0 0 10px; font-size:16px;}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q button{
+    margin-top:12px; font-family:var(--font-mono); font-size:12.5px; font-weight:700;
+    letter-spacing:.03em; text-transform:uppercase; padding:9px 18px; border:1px solid var(--c3);
+    border-radius:7px; background:var(--c3-soft); color:var(--c3); cursor:pointer;
+  }
+  .q button:hover{background:var(--c3-panel);}
+  .qa{
+    display:none; margin-top:14px; padding:14px 16px; border-radius:8px;
+    background:var(--accent2-soft); border:1px solid var(--accent2);
+  }
+  .qa .qa-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--accent2); font-weight:700; margin-bottom:8px;}
+  .qa .letter-box{border-color:var(--accent2);}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills</div>
+  <h1 class="title">Lesson 6 — Letter Writing (Informal)</h1>
+  <p class="subtitle">Semester 1</p>
+
+  <nav class="toc">
+    <div class="toc-h">Contents</div>
+    <ol>
+      <li><a href="#definition">Letter Writing — Overview</a></li>
+      <li><a href="#informal">What are Informal Letters?</a></li>
+      <li><a href="#purpose">Purpose of Informal Letters</a></li>
+      <li><a href="#constituents">Constituents of an Informal Letter</a></li>
+      <li><a href="#format">Format of an Informal Letter</a></li>
+      <li><a href="#sample">Informal Letter Sample</a></li>
+      <li><a href="#practice">Practice Questions</a>
+        <ol type="1">
+          <li><a href="#q1">Q1 · Thanking grandfather for a gift</a></li>
+          <li><a href="#q2">Q2 · Congratulating a friend</a></li>
+          <li><a href="#q3">Q3 · Requesting permission for a trip</a></li>
+          <li><a href="#q4">Q4 · Telling uncle about a new school</a></li>
+          <li><a href="#q5">Q5 · Letter of condolence</a></li>
+          <li><a href="#q6">Q6 · Encouraging your sister</a></li>
+        </ol>
+      </li>
+      <li><a href="#revision">Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition">1. Letter Writing — Overview</h2>
+  <p>The world has become a global village with breathtaking advancements in communication and information technology. It takes only a fraction of second to convey a message to or share information with a person sitting in some other part of the world. People use phone calls, video-chat, text messages, e-mail and fax to share information. However, the importance of letters cannot be undermined. As a matter of fact, letters are the best means to communicate one's innermost feelings and thoughts in an elaborate and effective way. Majorly, letters may be classified in two categories:</p>
+  <ol>
+    <li><strong>Informal Letters:</strong> Letters written to members of family, friends and relatives</li>
+    <li><strong>Formal Letters:</strong> Applications, Letters to editor, Letters to businessmen, firms, publishers, government authorities, private offices etc.</li>
+  </ol>
+
+  <h2 id="informal">2. What are Informal Letters?</h2>
+  <p>Informal letters, also known as personal letters, are the letters written to members of family, friends, or relatives. Although called informal letters, they are written in formal English as far as possible with a few exceptions or expressions here and there. There is no specified word limit for an informal letter; however it should contain only the relevant information and justify the purpose of writing the letter. The content should be well organised and presented in an effective way using appropriate cohesive devices.</p>
+
+  <h2 id="purpose">3. Purpose of Informal Letters</h2>
+  <ul>
+    <li>To share joys and sorrows</li>
+    <li>To write invitations for different purposes</li>
+    <li>To reply to invitations</li>
+    <li>To express feelings</li>
+    <li>To narrate different experiences</li>
+    <li>To make proposals/suggestions/advice</li>
+    <li>To send reminders</li>
+    <li>To announce a birth, death, result, achievement etc.</li>
+    <li>To congratulate on some occasion</li>
+    <li>To express gratitude</li>
+    <li>To write letters of apology or condolence</li>
+  </ul>
+
+  <h2 id="constituents">4. Constituents of an Informal Letter</h2>
+  <ol>
+    <li><strong>Sender's Address:</strong> It is written at the top left corner of the letter. It includes:
+      <ul>
+        <li>House/flat/shop/ number</li>
+        <li>Name of building in case of flat</li>
+        <li>Name/number of street</li>
+        <li>Name of sector/colony, one can also include a landmark such as opposite SBI Branch or Near Orbit Mall etc.</li>
+        <li>Name of village/town/city</li>
+        <li>Pin code</li>
+        <li>State</li>
+        <li>Country (if the letter is written to a person staying in some other country)</li>
+      </ul>
+    </li>
+    <li><strong>Date:</strong> It is written below the sender's address. There are many formats of writing a date. The name of the month should be written complete. Study carefully the formats of date given below.
+      <ul>
+        <li>D/M/Y: 24th November, 20XX or 24 November, 20XX</li>
+        <li>M/D/Y: November 24, 20XX</li>
+      </ul>
+    </li>
+    <li><strong>Salutation:</strong> Salutation is the way we address the recipient of the letter. It is written below the date. Read the examples of salutation given below.
+      <ul>
+        <li>For members of family or relatives:
+          <ul>
+            <li>Dear(est) Papa/Pa/Father/Dad/Daddy</li>
+            <li>Dear(est) Mother/Mom/Ma</li>
+            <li>Dear(est) Uncle/Aunt/Auntie</li>
+            <li>Dear(est) Brother/Sister</li>
+          </ul>
+        </li>
+        <li>For friends:
+          <ul>
+            <li>Dear(est) Rahul/Ritika (Avoid writing Dear Friend or Dear Friend Arunima)</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Body of the letter:</strong> It is the main part of the letter which contains the message or the information meant to be conveyed through the letter. Although there is no hard and fast rule regarding the number of paragraphs it should contain, it is usually written in three or four paragraphs depending on the content to be written. The body has three parts:
+      <ul>
+        <li><strong>(a) Introduction:</strong> The first paragraph is the introduction where the writer can use expressions such as:
+          <ul>
+            <li>How are you? How are you doing? Hope you are doing well.</li>
+            <li>I hope this letter finds you in high spirits.</li>
+            <li>I received your letter last........................... or on..................................................</li>
+            <li>I am sorry for replying late to your letter as..........................................................</li>
+            <li>I am writing this letter to......................................................................................</li>
+            <li>I am extremely delighted/ happy/ excited to inform you......................................</li>
+            <li>I am extremely happy to know about...................................................................</li>
+            <li>I am deeply saddened/heartbroken/shocked to know about the sudden demise /accident of your.......................................................................................</li>
+            <li>You will be glad to know that...............................................................................</li>
+            <li>I am thankful to for..............................................................................................</li>
+          </ul>
+        </li>
+        <li><strong>(b) Main Message:</strong> The second paragraph is the main message or information to be conveyed. This part should be well organised using appropriate cohesive devices.</li>
+        <li><strong>(c) Closure:</strong> The third paragraph concludes the letter. It usually contains leave taking, conveying regards to others, inviting the reader or making a commitment. One may ask the reader to respond for something. One may add complimentary closures such as "With lots of love", "Waiting for you" or "Hope to see you soon" etc.</li>
+      </ul>
+    </li>
+    <li><strong>Subscription:</strong> It is a polite way of closing the letter or signing off. Read the examples of Subscription given below.
+      <ul>
+        <li>For members of family or relatives:
+          <ul><li>Yours affectionately/lovingly</li></ul>
+        </li>
+        <li>For friends:
+          <ul><li>Yours sincerely</li></ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Signature:</strong> The sender's signature is written just below the subscription</li>
+  </ol>
+
+  <h2 id="format">5. Format of an Informal Letter</h2>
+  <div class="format-box">Sender's Address
+
+Date of writing the letter
+
+Salutation
+
+Introduction
+
+..................................................................................................
+..................................................................................................
+..................................................................................................
+..................................................................................................
+
+
+Main message
+
+..................................................................................................
+..................................................................................................
+..................................................................................................
+..................................................................................................
+
+
+Closure
+
+..................................................................................................
+..................................................................................................
+..................................................................................................
+..................................................................................................
+
+
+Complimentary closure
+
+Subscription
+Signature
+  </div>
+
+  <h2 id="sample">6. Informal Letter Sample</h2>
+  <div class="sample">
+    <div class="sh">Write a letter to your friend inviting him/her to spend his/her winter break with you.</div>
+    <div class="letter-box">
+      <div class="addr">House No. 45, Street No. 2
+New Azad Nagar
+Ludhiana</div>
+      <div class="dt">December 2, 20XX</div>
+      <div class="sal">Dear Abhijeet</div>
+      <p>How are you? I received your letter in which you have written about your preparation for the Third Unit Examination to be commenced from December 9. I am very happy and satisfied to know that you have prepared well for your examination. I wish you all the luck for the same.</p>
+      <p>Your winter vacation will start from 25th December and last up to 5th January. It will be wonderful if you spend your winter break with me at Ludhiana. It will be a great opportunity for us to spend time together. I have already talked to my parents and friends about it. My parents will be extremely delighted to host you. My mother will prepare us delicious dishes. My friends are eagerly waiting for you.</p>
+      <p>I have chalked out the schedule for your stay. First of all we will have a get together of all my friends at my place. We will visit some of the best shopping malls of Ludhiana. We will also watch some of the latest movies. We will play video games together. I have also planned a two day trip to Chandigarh. We will visit the famous places at Chandigarh such as Rose Garden, Rock Garden, Sukhna Lake and Chhat Beer, the zoo. We will spend an evening at Sector-17 and enjoy the musical fountain show there. We will make the best use of our stay together.</p>
+      <p>I hope you won't disappoint me and plan your stay at my place as soon as possible. Convey my best regards to your parents and love to little Surabhi. I will wait eagerly for you.</p>
+      <div class="close">With lots of love</div>
+      <div class="sub">Yours sincerely</div>
+      <div class="sig">Anuraag</div>
+    </div>
+  </div>
+
+  <h2 id="practice">7. Practice Questions</h2>
+  <p class="callout">Read each prompt (and hints, where given), draft your letter in the box below, then press <strong>Check my letter</strong> to reveal a model answer written in the same style. Compare — don't just copy — and check your own letter against the format and constituents above.</p>
+
+  <div class="q" id="q1">
+    <div class="qn">Question 1</div>
+    <p class="prompt">Suppose you are Poorvi, a resident of B37, Sector 28 A, Panchkula. Write a letter to your grandfather thanking him for the birthday gift he has sent you.</p>
+    <div class="hints"><strong>Hints:</strong> Thanks giving, name of gift, brand, material, utility and importance, promise to keep it safe, thank again.</div>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="addr">B37, Sector 28 A
+Panchkula</div>
+        <div class="dt">[Date]</div>
+        <div class="sal">Dearest Dadaji</div>
+        <p>How are you? I hope you are keeping well. I received the wonderful birthday gift you sent me, and I could not wait to write and thank you for it.</p>
+        <p>You have gifted me a beautiful Titan wrist watch, and I am absolutely delighted with it. The watch has a sturdy stainless-steel strap and a simple, elegant white dial that goes well with both my school uniform and my casual clothes. It has already become extremely useful to me, as I no longer have to keep checking my phone to know the time. I promise to take great care of it and keep it safe always, just as I keep all the wonderful memories of the time we spend together.</p>
+        <p>Thank you once again, Dadaji, for remembering my birthday and for such a thoughtful gift. Please take care of your health and give my love to Dadi.</p>
+        <div class="close">With lots of love</div>
+        <div class="sub">Yours affectionately</div>
+        <div class="sig">Poorvi</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q2">
+    <div class="qn">Question 2</div>
+    <p class="prompt">Suppose you are Vikas Munjal, a resident of 67/49, Swarn Path, Mansarover, Jaipur. Write a letter to your friend congratulating him on his grand success in final examination.</p>
+    <div class="hints"><strong>Hints:</strong> Congratulate, give credits, demand a treat, best wishes for future endeavour.</div>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="addr">67/49, Swarn Path
+Mansarover
+Jaipur</div>
+        <div class="dt">[Date]</div>
+        <div class="sal">Dear Karan</div>
+        <p>How are you? I received the wonderful news of your outstanding result in the final examination, and I could not stop myself from writing to you immediately.</p>
+        <p>Heartiest congratulations on your grand success! I always knew you would do exceptionally well, given how sincerely you worked throughout the year. Your hard work, discipline and dedication to your studies have truly paid off, and you fully deserve this achievement. I am so proud to have a friend as brilliant as you.</p>
+        <p>Since this calls for a proper celebration, I hope you remember that you owe me a big treat now! I am already looking forward to it. Once again, many congratulations, and my best wishes for all your future endeavours — I am certain you will continue to achieve great things.</p>
+        <div class="sub">Yours sincerely</div>
+        <div class="sig">Vikas</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q3">
+    <div class="qn">Question 3</div>
+    <p class="prompt">Suppose you are Vinay Bansal living at 135, Floor-5, Boys Hostel, Pinegrove Convent School, Shimla. Write a letter to your father requesting him to allow you to join an educational trip to Chittorgarh telling him the details of the trip and charges per head.</p>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="addr">135, Floor-5, Boys Hostel
+Pinegrove Convent School
+Shimla</div>
+        <div class="dt">[Date]</div>
+        <div class="sal">Dear Papa</div>
+        <p>How are you? I hope this letter finds you and mummy in good health. I am writing to seek your permission for an educational trip our school has organised.</p>
+        <p>Our school is organising a three-day educational trip to Chittorgarh from the 15th to the 17th of next month, to help us understand the history and architecture of the famous Chittorgarh Fort as part of our History project. The trip will be fully supervised by our teachers, and we will be staying in a well-arranged hotel near the fort. The charges for the trip, including travel, stay and meals, are ₹4,500 per head, and the amount needs to be submitted to the school office by the end of this week.</p>
+        <p>I have always been keen to visit Chittorgarh and learn more about its rich history, and I promise to follow all the rules and stay safe throughout the trip. Kindly send the amount at the earliest so that I do not miss this wonderful opportunity.</p>
+        <div class="sub">Yours affectionately</div>
+        <div class="sig">Vinay</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q4">
+    <div class="qn">Question 4</div>
+    <p class="prompt">Suppose you are Navjot Singh living at H. No. 165, Gandhi Nagar, Hoshiarpur. Write a letter to your uncle telling him about your new school.</p>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="addr">H. No. 165, Gandhi Nagar
+Hoshiarpur</div>
+        <div class="dt">[Date]</div>
+        <div class="sal">Dear Uncle</div>
+        <p>How are you? I hope you and the family are doing well. I am writing to tell you all about my new school, since we shifted here last month.</p>
+        <p>My new school, Green Valley Public School, is a large and beautiful campus with spacious classrooms, a huge playground, a well-stocked library and a modern science laboratory. The teachers here are extremely friendly and helpful, and they explain every concept very patiently. I have already made a few good friends in my class, and we sit together during lunch break and play basketball after school. The school also offers a lot of extracurricular activities like painting, robotics and music, and I am planning to join the robotics club soon.</p>
+        <p>I was a little nervous about starting at a new school, but everyone has made me feel so welcome that I am really enjoying it now. Do visit us soon so I can show you around my new school.</p>
+        <div class="close">With lots of love</div>
+        <div class="sub">Yours affectionately</div>
+        <div class="sig">Navjot</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q5">
+    <div class="qn">Question 5</div>
+    <p class="prompt">Suppose you are Vaibhav Narula, living at Flat No. 56, Gokuldham Society, Delhi. Write a letter of condolence to your friend who has recently lost his mother.</p>
+    <div class="hints"><strong>Hints:</strong> Deeply saddened, sudden and untimely demise, deep condolence, pious soul, lady of virtue, treated everyone well, departed soul, rest in peace, God grant strength to the bereaved family to bear the loss, face bravely, take care of yourself and family.</div>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="addr">Flat No. 56, Gokuldham Society
+Delhi</div>
+        <div class="dt">[Date]</div>
+        <div class="sal">Dear Aryan</div>
+        <p>I was deeply saddened to hear about the sudden and untimely demise of your beloved mother. Please accept my deepest and most heartfelt condolences on this irreparable loss.</p>
+        <p>Your mother was truly a pious soul and a lady of great virtue, who always treated everyone around her with warmth and kindness. Whenever I visited your home, she made me feel like a part of the family, and I will always cherish the memories of her affection. May her departed soul rest in eternal peace, and may God grant your family the strength and courage to bear this immense loss.</p>
+        <p>I know no words can truly console you at this difficult time, but please know that I am with you in this hour of grief. I request you to face this loss bravely and take care of yourself and your family. Please do let me know if there is anything at all I can do for you.</p>
+        <div class="sub">Yours sincerely</div>
+        <div class="sig">Vaibhav</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q6">
+    <div class="qn">Question 6</div>
+    <p class="prompt">Your younger sister has recently lost a badminton match she played at the state level. She is utterly disappointed. Write a letter to her encouraging her not to lose heart, work hard and do well next time.</p>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="addr">[Your Address]</div>
+        <div class="dt">[Date]</div>
+        <div class="sal">Dearest Simran</div>
+        <p>How are you, my dear sister? I heard about your match at the state-level badminton championship, and I want you to know how proud I am of you, regardless of the result.</p>
+        <p>I understand how disappointed you must be feeling after losing such an important match, especially after all the hard work and practice you put in. But remember, even the best players face defeats — what truly matters is how you learn from them and bounce back stronger. Reaching the state level itself is a huge achievement that very few players your age can claim, so please don't let this one loss make you forget how talented and hardworking you are.</p>
+        <p>Don't lose heart, my dear. Use this as motivation to train even harder, and I am certain you will come back and win the next tournament. I believe in you completely, and I will always be cheering for you.</p>
+        <div class="close">With lots of love</div>
+        <div class="sig">[Your Name]</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="revision">8. Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>Sender's address at the top left corner, with all relevant details</li>
+    <li>Date written below the address, month spelled out in full</li>
+    <li>Correct salutation for the relationship — family/relatives vs. friends</li>
+    <li>Body organised into introduction, main message and closure (3-4 paragraphs)</li>
+    <li>Appropriate complimentary closure used ("With lots of love", "Hope to see you soon", etc.)</li>
+    <li>Correct subscription for the relationship — "Yours affectionately/lovingly" for family, "Yours sincerely" for friends</li>
+    <li>Signature below the subscription</li>
+    <li>Formal, well-organised English throughout, even though the letter is informal in tone</li>
+  </ul>
+
+  <footer>Class 8 · English · Writing Skills · Lesson 6 of 30</footer>
+</div>
+</body>
+</html>

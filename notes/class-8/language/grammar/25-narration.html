@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 25 — Narration | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:5px; break-inside:avoid; font-size:14px;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700; color:var(--c3);
+    margin:34px 0 12px; padding-top:16px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  h3{font-family:var(--font-mono); font-size:15px; font-weight:700; color:var(--violet); margin:18px 0 8px;}
+  p{margin:0 0 12px;}
+  ul, ol.plain{padding-left:22px; margin:0 0 14px;}
+  ul li, ol.plain li{margin-bottom:7px;}
+  strong{color:var(--ink);}
+  .eg{color:var(--ink-soft);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 20px;
+  }
+  .callout p{margin:0;}
+  .callout strong{color:var(--ink);}
+
+  .tablewrap{overflow-x:auto; margin:12px 0 22px;}
+  table.ref-table{width:100%; border-collapse:collapse; font-size:14px; min-width:560px;}
+  table.ref-table th{
+    font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.03em;
+    text-align:left; color:var(--c3); border-bottom:2px solid var(--line-strong); padding:8px 9px;
+  }
+  table.ref-table td{border-bottom:1px solid var(--line); padding:8px 9px; color:var(--ink-soft); vertical-align:top;}
+  table.ref-table tr:last-child td{border-bottom:none;}
+  table.ref-table td strong, table.ref-table td.word{color:var(--ink); font-weight:700;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:14px 0 26px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:44px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol{margin:0; padding-left:20px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  .ocr-note{
+    border:1px dashed var(--violet); border-radius:8px; background:var(--accent2-soft);
+    color:var(--ink-soft); font-size:14px; font-style:italic; padding:10px 14px; margin:10px 0 16px;
+  }
+  .ocr-note b{color:var(--violet); font-style:normal; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; margin-right:6px;}
+
+  .checklist{background:var(--accent2-soft); border:1px solid var(--line-strong); border-radius:var(--radius-md); padding:18px 24px;}
+  .checklist ul{margin:0;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar · Chapter-12</div>
+  <h1 class="title">Lesson 25 — Narration</h1>
+  <p class="subtitle">Direct and Indirect Speech in full — every general rule, tense-change table, and sentence-type rule from the textbook, with all seven practice exercises made interactive.</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#s1">1. What Is Narration?</a></li>
+      <li><a href="#s2">2. General Rules I &amp; II — Inverted Commas, Tense of Reporting Verb</a></li>
+      <li><a href="#s3">3. General Rule III — Personal Pronouns</a></li>
+      <li><a href="#s4">4. General Rules IV–VII — Agreement, Conjunctions, Say→Tell, Vocatives</a></li>
+      <li><a href="#s5">5. Change in Tense — Rules I &amp; II</a></li>
+      <li><a href="#s6">6. Change in Tense — Rules III–V (Modals, Must, Need/Dare)</a></li>
+      <li><a href="#s7">7. Change in Tense — Rule VI (Adverbs of Time and Place)</a></li>
+      <li><a href="#s8">8. When the Tense Does Not Change</a></li>
+      <li><a href="#s9">9. Types of Sentences in Reported Speech</a></li>
+      <li><a href="#s10">10. Changing Assertive Sentences</a></li>
+      <li><a href="#s11">11. Practice Exercise I</a></li>
+      <li><a href="#s12">12. Practice Exercise II</a></li>
+      <li><a href="#s13">13. Changing Interrogative Sentences</a></li>
+      <li><a href="#s14">14. Practice Exercise III</a></li>
+      <li><a href="#s15">15. Changing Imperative Sentences</a></li>
+      <li><a href="#s16">16. Practice Exercise IV</a></li>
+      <li><a href="#s17">17. Changing Exclamatory Sentences</a></li>
+      <li><a href="#s18">18. Practice Exercise V</a></li>
+      <li><a href="#s19">19. Changing Optative Sentences</a></li>
+      <li><a href="#s20">20. Practice Exercise VI</a></li>
+      <li><a href="#s21">21. Practice Exercise VII — Mixed Review</a></li>
+      <li><a href="#s22">22. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="num">1.</span>What Is Narration?</h2>
+  <p>Read the sentences given below.</p>
+  <p class="eg">My father said to me, "I have to attend a meeting tomorrow."<br>My father told me that he had to attend a meeting the next day.</p>
+  <p>The act of reporting a person's speech is called Narration. There are two ways of narrating a person's speech.</p>
+  <p><strong>Direct Speech:</strong> In Direct Speech, the actual words spoken by a person are quoted within inverted commas ("..........."). In example 1, the actual words spoken by 'my father' are quoted without any change.</p>
+  <p><strong>Indirect Speech:</strong> In Indirect Speech, the gist/meaning/matter of the speaker's words is conveyed without quoting the actual words. In example 2, the meaning of "my father's" words is conveyed without quoting his actual words.</p>
+
+  <h3>Two Parts of a Direct Speech</h3>
+  <ul>
+    <li><strong>(i) Reporting Speech:</strong> The part of the sentence outside the inverted commas is called Reporting Speech. It is generally termed as Reporting Verb. It has three parts: Subject, Reporting Verb and Object. In certain cases the object may be missing.</li>
+    <li><strong>(ii) Reported Speech:</strong> The part of the sentence enclosed within the inverted commas is called the Reported Speech. A Reported Speech also has a Subject and a Verb with other extensions (other parts of speech).</li>
+  </ul>
+  <p>Read the sentences given below carefully and study the structures of a Direct Sentence.</p>
+  <ol class="plain">
+    <li class="eg">My friend said to me, "I will give you my book."</li>
+    <li class="eg">(Reporting Speech), "Reported Speech."</li>
+    <li class="eg">(My friend) (said) (to me), "I will give you my book."</li>
+    <li class="eg">(Subject) (Reporting Verb) (Object), "Subject and Verb of Reported Speech (with other extensions)."</li>
+  </ol>
+
+  <h3>Sentence Structure of an Indirect Speech</h3>
+  <p>An Indirect Speech is a Complex Sentence made of a Principal Clause (Reporting Speech) and a Subordinate Clause (Reported Speech), generally joined by a conjunction. Look at the following example:</p>
+  <p class="eg">Direct: My friend said to me, "I will give you my book."<br>Indirect: My friend told me that he would give me his book.<br>(Principal Clause) Conjunction (Subordinate Clause)</p>
+
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Direct Speech</th><th>Indirect Speech</th></tr>
+      <tr><td>Actual words of the speaker are quoted in inverted commas.</td><td>Actual words of the speaker are not quoted. The meaning or matter of the reported speech is conveyed indirectly.</td></tr>
+      <tr><td>It has two parts: Reporting Verb and Reported Speech.</td><td>It is one complex sentence with a Principal Clause and a Subordinate Clause.</td></tr>
+      <tr><td>Reporting Verb and Reported Speech are separated by comma. Reported Speech is enclosed within inverted commas.</td><td>There is no use of comma to separate Reporting Verb and Reported Speech. Inverted commas are removed.</td></tr>
+      <tr><td>Reported Speech in inverted commas starts with a capital letter.</td><td>Reported speech becomes the subordinate clause of a Complex Sentence. Hence, it starts with a small letter.</td></tr>
+      <tr><td>There is no use of Conjunction as Reporting Verb and Reported Speech are separated by a comma and inverted commas.</td><td>In most of the cases, Reported speech is introduced by a conjunction.</td></tr>
+    </table>
+  </div>
+
+  <h2 id="s2"><span class="num">2.</span>General Rules I &amp; II — Inverted Commas, Tense of Reporting Verb</h2>
+  <p><strong>Important Note:</strong> General rules are those rules which are always followed while changing a Direct Speech into an Indirect Speech. Both general and specific Rules must be followed while changing a Direct Speech into an Indirect Speech. The specific rules are related to types of sentences. These rules are discussed further in this chapter.</p>
+  <p><strong>Rule-I</strong> Inverted commas are removed.</p>
+  <p><strong>Rule-II</strong> Look at the tense of the reporting verb.</p>
+  <ol class="plain">
+    <li>(a) If the tense of Reporting Verb in Direct Speech is Present or Future Tense, there will be no change in the tense of the Reported Speech while changing the Direct Speech into Indirect Speech.<br><span class="eg">Direct: The teacher says to the students, "I have corrected your notebooks." (Present Perfect Tense)<br>Indirect: The teacher tells the students that she has corrected their notebooks. (Present Perfect Tense)</span></li>
+    <li>(b) If the tense of Reporting Verb in Direct Speech is Past Tense, follow the rules regarding the change of tense discussed later in this chapter.</li>
+  </ol>
+
+  <h2 id="s3"><span class="num">3.</span>General Rule III — Personal Pronouns</h2>
+  <p><strong>Important Note:</strong> While changing the Personal Pronouns, the Gender and Case of the Personal Pronouns should be kept the same. Study the table given below.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Personal Pronouns</th><th>Nominative Case</th><th>Accusative Case</th><th>Possessive Case</th></tr>
+      <tr><td>First Person</td><td>I, we</td><td>me, us</td><td>my, mine, our, ours</td></tr>
+      <tr><td>Second Person</td><td>you, thou</td><td>you, thee</td><td>your, yours, thine</td></tr>
+      <tr><td>Third Person</td><td>he, she, it, they</td><td>him, her, it, them</td><td>his, her, hers, its, their, theirs</td></tr>
+    </table>
+  </div>
+  <ol class="plain">
+    <li>(i) Pronouns of the First Person in the Reported Speech change according to the Subject of the Reporting Verb. The case will remain the same.<br><span class="eg">Direct: My sister said to me, "I don't want to waste my time." — My sister (Subject, Third Person) said to me, "I (First person, Nominative Case) don't want to waste my (First Person, Possessive Case) time."<br>Indirect: My sister told me that she (Third person, Nominative Case) did not want to waste her (Third Person, Possessive Case) time.</span></li>
+    <li>(ii) Pronouns of the Second Person in the Reported Speech change according to the Object of the Reporting Verb. The case will remain the same.<br><span class="eg">Direct: I said to her, "You should do your work." — I said to her (Object, Third Person), "You (Second person, Nominative Case) should do your (Second Person, Possessive Case) work."<br>Indirect: I advised her that she (Third Person, Nominative Case) should do her (Third Person, Possessive Case) work.</span></li>
+    <li>(iii) Pronouns of the Third Person in the Reported Speech remain unchanged.<br><span class="eg">Direct: Asha said to me, "He (Third Person) is wasting his (Third Person) time."<br>Indirect: Asha told me that he (Third Person) was wasting his (Third Person) time.</span></li>
+  </ol>
+  <p>The following table will help the learners learn the rules of Pronouns:</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th></th><th>I (First Person)</th><th>II (Second Person)</th><th>III (Third Person)</th></tr>
+      <tr><td>Reported Speech changes according to</td><td>S = Subject of Reporting Verb</td><td>O = Object of Reporting Verb</td><td>N = No Change</td></tr>
+    </table>
+  </div>
+
+  <h2 id="s4"><span class="num">4.</span>General Rules IV–VII — Agreement, Conjunctions, Say→Tell, Vocatives</h2>
+  <p><strong>Rule-IV</strong> Subject-verb agreement must be followed when Pronouns or Tense in the Reported Speech is changed.</p>
+  <p class="eg">Direct: I say to my friend, "You are very intelligent." → Indirect: I tell my friend that he is very intelligent.<br>Direct: I said to my friend, "You are very intelligent." → Indirect: I told my friend that he was very intelligent.</p>
+  <p><strong>Rule-V</strong> A conjunction is used to introduce the Reported Speech. The use of conjunction depends on the type of sentence of the Reported Speech.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Type of Sentence in Reported Speech</th><th>Conjunction Used to Join Reporting Verb and Reported Speech</th></tr>
+      <tr><td>Assertive Sentences (Affirmative &amp; Negative)</td><td>that</td></tr>
+      <tr><td>Interrogative Sentences (Single)</td><td>if/whether</td></tr>
+      <tr><td>Interrogative Sentences (Double: with Wh-words)</td><td>Wh-word used in the Reported Speech</td></tr>
+      <tr><td>Imperative Sentences</td><td>Infinitive with to/that</td></tr>
+      <tr><td>Exclamatory Sentences</td><td>that</td></tr>
+      <tr><td>Optative Sentences</td><td>that</td></tr>
+    </table>
+  </div>
+  <p><strong>Rule-VI</strong> The tense of Reporting Verb remains the same. If the Reporting Verb is 'say', 'says', 'will say', or 'said' it remains the same. If Reporting Verb is followed by 'to' and an object, there will be the following changes in the Reporting Verbs if the Reported Speech is an Assertive Sentence. Examples:</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Direct</th><th>Indirect</th></tr>
+      <tr><td>say to him</td><td>tell him</td></tr>
+      <tr><td>says to me</td><td>tells me</td></tr>
+      <tr><td>will say to her</td><td>will tell her</td></tr>
+      <tr><td>said to you</td><td>told you</td></tr>
+    </table>
+  </div>
+  <p><strong>Rule-VII</strong> Vocatives and Nominative of Address are omitted altogether and their sense expressed in the sentence.</p>
+  <p class="eg">Direct: He said to his boss, "Sir, the report is ready."<br>Indirect: He told his boss respectfully that the report was ready.</p>
+
+  <h2 id="s5"><span class="num">5.</span>Rules Regarding the Change in Tense — Rules I &amp; II</h2>
+  <p><strong>Rule-I</strong> If the Reporting Verb is in Present Tense or Future Tense, there will be no change in the tense of the Reported Speech.</p>
+  <p class="eg">Direct: My mother says, "The cake is delicious." → Indirect: My mother says that the cake is delicious.<br>Direct: He says to me, "I am playing here." → Indirect: He tells me that he is playing here.<br>Direct: Tarun will say, "I was reading a book." → Indirect: Tarun will say that he was reading a book.</p>
+  <p><strong>Rule-II</strong> If the Reporting Verb is in Past Tense the tense of the Reported Speech will change to its corresponding tense in the Past Tense. The following table explains the change in tense.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Direct Speech</th><th>Indirect Speech</th></tr>
+      <tr><td>Simple Present (V1)</td><td>Simple Past (V2)</td></tr>
+      <tr><td>Present Continuous (is/am/are+V1+ing)</td><td>Past Continuous (was/were+V1+ing)</td></tr>
+      <tr><td>Present Perfect (has/have+V3)</td><td>Past Perfect (had+V3)</td></tr>
+      <tr><td>Present Perfect Continuous (has/have+been+V1+ing)</td><td>Past Perfect Continuous (had+been+V1+ing)</td></tr>
+      <tr><td>Simple Past (V2)</td><td>Past Perfect (had+V3)</td></tr>
+      <tr><td>Past Continuous (was/were+V1+ing)</td><td>Past Perfect Continuous (had+been+V1+ing)</td></tr>
+      <tr><td>Past Perfect (had+V3)</td><td>Past Perfect (had+V3) — no change</td></tr>
+      <tr><td>Past Perfect Continuous (had+been+V1+ing)</td><td>Past Perfect Continuous (had+been+V1+ing) — no change</td></tr>
+      <tr><td>Simple Future (will/shall+V1)</td><td>Past form of Simple Future (would+V1)</td></tr>
+      <tr><td>Future Continuous (will/shall+be+V1+ing)</td><td>Past form of Future Continuous (would+be+V1+ing)</td></tr>
+      <tr><td>Future Perfect (will/shall+have+V3)</td><td>Past form of Future Perfect (would+have+V3)</td></tr>
+      <tr><td>Future Perfect Continuous (will/shall+have+been+V1+ing)</td><td>Past form of Future Perfect Continuous (would+have+been+V1+ing)</td></tr>
+    </table>
+  </div>
+  <p class="eg">Direct: My mother said, "The food is tasty." → Indirect: My mother said that the food was tasty.<br>Direct: He said to me, "I am playing here." → Indirect: He told me that he was playing there.<br>Direct: John said, "The baby was sleeping." → Indirect: John said that the baby had been sleeping.<br>Direct: My sister said to me, "I don't like apples." → Indirect: My sister told me that she did not like apples.</p>
+
+  <h2 id="s6"><span class="num">6.</span>Change in Tense — Rules III–V (Modals, Must, Need/Dare)</h2>
+  <p><strong>Rule-III</strong> Modal Auxiliaries are changed according to the table given below.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Direct Speech</th><th>Indirect Speech</th></tr>
+      <tr><td>can</td><td>could</td></tr>
+      <tr><td>shall</td><td>should/would</td></tr>
+      <tr><td>will</td><td>would</td></tr>
+      <tr><td>may</td><td>might</td></tr>
+      <tr><td>could/should/would/might</td><td>no change</td></tr>
+    </table>
+  </div>
+  <p><strong>Rule-IV — Change of 'Must':</strong></p>
+  <ol class="plain">
+    <li>(i) If 'must' indicates future necessity or compulsion, it changes into would+have+to+V1 (Conditional).<br><span class="eg">Direct: He said, "I must finish this work by tomorrow."<br>Indirect: He said that he would have to finish that work by the next day.</span></li>
+    <li>(ii) For immediate necessity, 'must' is changed into 'had to'.<br><span class="eg">Direct: He said, "I must go home now."<br>Indirect: He said that he had to go home then.</span></li>
+    <li>(iii) When 'must' indicates permanent rule, advice, prohibition etc, it does not change.<br><span class="eg">Direct: The teacher said, "The students must not miss my class."<br>Indirect: The teacher said that the students must not miss her class.</span></li>
+  </ol>
+  <p><strong>Rule-V — Change of Modal Auxiliaries 'Need' and 'Dare':</strong></p>
+  <p class="eg">Direct: He said to me, "You need not wait for me."<br>Indirect: He told me that I need not wait for him. Or, He told me that I did not need to wait for him.</p>
+  <p class="eg">Direct: He said to me, "I dare not talk to the boss."<br>Indirect: He told me that he dare not talk to the boss. Or, He told me that he did not dare to talk to the boss.</p>
+
+  <h2 id="s7"><span class="num">7.</span>Change in Tense — Rule VI (Adverbs of Time and Place)</h2>
+  <p>Adverbs of Time and Place and some other words are changed according to the table given below. If the tense of the Reported Speech is not changed, the adverbials of time and place are also not changed.</p>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Direct Speech</th><th>Indirect Speech</th></tr>
+      <tr><td>this</td><td>that</td></tr>
+      <tr><td>these</td><td>those</td></tr>
+      <tr><td>here, hither</td><td>there, thither</td></tr>
+      <tr><td>hence, hereby</td><td>thence, thereby</td></tr>
+      <tr><td>come</td><td>go</td></tr>
+      <tr><td>now</td><td>then</td></tr>
+      <tr><td>today</td><td>that day</td></tr>
+      <tr><td>tonight</td><td>that night</td></tr>
+      <tr><td>yesterday</td><td>the previous day</td></tr>
+      <tr><td>last week/month/year</td><td>the previous week/month/year</td></tr>
+      <tr><td>last night</td><td>the night before</td></tr>
+      <tr><td>tomorrow</td><td>the next day/the following day</td></tr>
+      <tr><td>ago</td><td>before</td></tr>
+      <tr><td>thus</td><td>so</td></tr>
+      <tr><td>the last fortnight</td><td>the previous fortnight</td></tr>
+      <tr><td>the day before yesterday</td><td>the day before the previous day</td></tr>
+      <tr><td>the next week/month/year</td><td>the following week/month/year</td></tr>
+    </table>
+  </div>
+  <div class="ocr-note"><b>Source note</b>The source table prints the 'tomorrow' row's Indirect Speech column as "the next day/the following year" — a mismatch of units (day vs year) that reads as a scanning slip. It is shown here as "the next day/the following day" to match the actual meaning used throughout this chapter's own worked examples (e.g. "tomorrow" → "the next day" in Practice Exercise I, item 1).</div>
+
+  <h2 id="s8"><span class="num">8.</span>Situations When the Tense of Reported Speech Remains the Same</h2>
+  <p>There are a few exceptional situations when the tense of the Reported Speech is not changed even if the Reporting Verb is in the Past Tense.</p>
+  <ol class="plain">
+    <li><strong>(a) Universal Truth, Mathematical/Geographical/Historical/Chemical fact, or other fact.</strong><br><span class="eg">Direct: The teacher said, "The sun rises in the east." → Indirect: The teacher said that the sun rises in the east.<br>Direct: He said to me, "Two and two make four." → Indirect: He told me that two and two make four.<br>Direct: He said to me, "Water freezes at 0° Celsius." → Indirect: He told me that water freezes at 0° Celsius.<br>Direct: He said to me, "The Red Fort is in Delhi." → Indirect: He told me that the Red Fort is in Delhi.</span></li>
+    <li><strong>(b) Proverb or an act of morality.</strong><br><span class="eg">Direct: Riya said to her brother, "A burnt child dreads the fire." → Indirect: Riya told her brother that a burnt child dreads the fire.</span></li>
+    <li><strong>(c) Habitual Act of Present.</strong><br><span class="eg">Direct: The teacher said, "Mohan always comes late." → Indirect: The teacher said that Mohan always comes late. (He still comes late.)<br>Direct: He said to me, "My mother goes to temple every day." → Indirect: He told me that his mother goes to temple every day. (Present habit)</span></li>
+    <li><strong>(d) Reported Speech refers to past time/date/year.</strong><br><span class="eg">Direct: My mother said to me, "India got freedom on 15th August 1947." → Indirect: My mother told me that India got freedom on 15th August 1947.</span></li>
+    <li><strong>(e) Two simultaneous actions.</strong><br><span class="eg">Direct: He said to me, "I studied when my brother played." → Indirect: He told me that he studied when his brother played.<br>Direct: He said to me, "I was completing my homework when my father was watching TV." → Indirect: He told me that he was completing his homework when his father was watching TV.</span></li>
+    <li><strong>(f) Action expressed continues at the time of Reporting.</strong><br><span class="eg">Direct: He said to me, "Prices are going up." → Indirect: He told me that prices are going up.<br>Direct: He said to me, "India is progressing by leaps and bounds." → Indirect: He told me that India is progressing by leaps and bounds.</span></li>
+    <li><strong>(g) Imaginary or unreal condition.</strong><br><span class="eg">Direct: He said, "If my son were here, I would be very happy." → Indirect: He said that if his son were there, he would be very happy.<br>Direct: He said to me, "If you had invited me, I would have attended the party." → Indirect: He told me that if I had invited him, he would have attended the party.<br>Direct: He said, "It is high time we started our journey." → Indirect: He said that it was high time they started their journey.</span></li>
+  </ol>
+
+  <h2 id="s9"><span class="num">9.</span>Types of Sentences in Reported Speech</h2>
+  <p>There are different rules for different types of sentences for changing a Direct Speech into an Indirect Speech. Therefore, it is very important to find out what type of sentence a Reported Speech is. A Reported Speech in a Direct Speech may be:</p>
+  <ol class="plain">
+    <li>Assertive Sentence</li>
+    <li>Interrogative Sentence</li>
+    <li>Imperative Sentence</li>
+    <li>Exclamatory Sentence</li>
+    <li>Optative Sentence</li>
+  </ol>
+
+  <h2 id="s10"><span class="num">10.</span>Rules/Instructions for Changing Assertive Sentences</h2>
+  <p>Assertive Sentences are simple statements. There are two types: Affirmative Sentences and Negative Sentences.</p>
+  <ol class="plain">
+    <li>Remove inverted commas and use the conjunction 'that' to join the Reporting Speech and the Reported Speech. Change Reporting Verb as explained under Rule-VI of general rules.</li>
+    <li>Change Personal Pronouns according to General rules.</li>
+    <li>Follow Tense related rules to change or not to change the Tense.</li>
+    <li>Adverbs of time and place and other words are changed as explained under Rule-VI of changing tense.</li>
+  </ol>
+  <p class="eg">Direct: He said, "I am reading a book." → Indirect: He said that he was reading a book.<br>Direct: My friend said to me, "I have solved the sum." → Indirect: My friend told me that he had solved the sum.<br>Direct: He said to me, "I cannot explain the situation now." → Indirect: He told me that he could not explain the situation then.<br>Direct: She said to me, "I was waiting for you." → Indirect: She told me that she had been waiting for me.<br>Direct: My brother said to me, "I will work hard to win the gold medal in the race." → Indirect: My brother told me that he would work hard to win the gold medal in the race.</p>
+
+  <h2 id="s11"><span class="num">11.</span>Practice Exercise I</h2>
+  <div class="exercise-block">
+    <p class="instr">Change the following sentences into indirect speech.</p>
+    <ol class="plain">
+      <li>The captain said to players, "In case of rain we will cancel the match." <textarea class="answer-box"></textarea></li>
+      <li>My friend said to me, "You can take my book if you want to study." <textarea class="answer-box"></textarea></li>
+      <li>My neighbour said to me, "Someone has stolen my camera." <textarea class="answer-box"></textarea></li>
+      <li>His brother said to him, "I am going to watch a movie now." <textarea class="answer-box"></textarea></li>
+      <li>Riya said to me, "I shall go to Mumbai the next week." <textarea class="answer-box"></textarea></li>
+      <li>She said to me, "I will be playing cricket in the evening." <textarea class="answer-box"></textarea></li>
+      <li>The teacher said, "The earth revolves around the sun." <textarea class="answer-box"></textarea></li>
+      <li>Rajat said to her, "I returned your book last week." <textarea class="answer-box"></textarea></li>
+      <li>My sister said to me, "The police will have caught the thief." <textarea class="answer-box"></textarea></li>
+      <li>The teacher said to the students, "You must attend your classes regularly." <textarea class="answer-box"></textarea></li>
+      <li>The professor said, "Pollution is increasing day by day." <textarea class="answer-box"></textarea></li>
+      <li>My father said to me, "If you had worked hard, you would have succeeded." <textarea class="answer-box"></textarea></li>
+      <li>My friend said to me, "We finish our work soon." <textarea class="answer-box"></textarea></li>
+      <li>My brother said to me, "The weather is pleasant today." <textarea class="answer-box"></textarea></li>
+      <li>The stranger said to me, "I have lived in Tamil Nadu for ten years." <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>The captain told the players that in case of rain they would cancel the match.</li>
+        <li>My friend told me that I could take his book if I wanted to study.</li>
+        <li>My neighbour told me that someone had stolen his camera.</li>
+        <li>His brother told him that he was going to watch a movie then.</li>
+        <li>Riya told me that she would go to Mumbai the following week.</li>
+        <li>She told me that she would be playing cricket in the evening.</li>
+        <li>The teacher said that the earth revolves around the sun. (universal truth — tense unchanged)</li>
+        <li>Rajat told her that he had returned her book the previous week.</li>
+        <li>My sister told me that the police would have caught the thief.</li>
+        <li>The teacher told the students that they must attend their classes regularly. ('must' = permanent rule — no change)</li>
+        <li>The professor said that pollution was increasing day by day.</li>
+        <li>My father told me that if I had worked hard, I would have succeeded. (unreal condition — tense unchanged)</li>
+        <li>My friend told me that they finished their work soon.</li>
+        <li>My brother told me that the weather was pleasant that day.</li>
+        <li>The stranger told me that he had lived in Tamil Nadu for ten years.</li>
+      </ol>
+      <div class="ocr-note"><b>Note on item 13</b>"We finish our work soon" is printed in the simple present tense, which reads like a probable typo for "We will finish our work soon." It has been converted literally as printed (simple present → simple past), which is why the result sounds slightly unusual.</div>
+    </div>
+  </div>
+
+  <h2 id="s12"><span class="num">12.</span>Practice Exercise II</h2>
+  <div class="exercise-block">
+    <p class="instr">Change the following sentences into indirect speech.</p>
+    <ol class="plain">
+      <li>My father said, "A little knowledge is a dangerous thing." <textarea class="answer-box"></textarea></li>
+      <li>My friend said to me, "You always keep your things scattered here and there." <textarea class="answer-box"></textarea></li>
+      <li>My friend said to me, "Mahatma Gandhi was born on 2nd October 1869." <textarea class="answer-box"></textarea></li>
+      <li>The teacher said to the students, "You need not bring your books tomorrow." <textarea class="answer-box"></textarea></li>
+      <li>His brother said to him, "I watered the plants when you studied." <textarea class="answer-box"></textarea></li>
+      <li>Riya said to me, "All is well that ends well." <textarea class="answer-box"></textarea></li>
+      <li>The soldier said, "We ought to serve our country." <textarea class="answer-box"></textarea></li>
+      <li>She says to me, "I will be playing football in the evening." <textarea class="answer-box"></textarea></li>
+      <li>He said to his mother, "You do not need to worry about me." <textarea class="answer-box"></textarea></li>
+      <li>Rohan will say to him, "I returned your book last week." <textarea class="answer-box"></textarea></li>
+      <li>My sister has said to me, "I have to clean the house by evening." <textarea class="answer-box"></textarea></li>
+      <li>I said to my classmate, "I have never told a lie." <textarea class="answer-box"></textarea></li>
+      <li>The teacher said to the students, "The First battle of Panipat was fought in 1526." <textarea class="answer-box"></textarea></li>
+      <li>The inspector said to me, "You must wear a helmet while riding a motorcycle." <textarea class="answer-box"></textarea></li>
+      <li>My friend said to me, "If I were you, I would buy this car." <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>My father said that a little knowledge is a dangerous thing. (proverb — tense unchanged)</li>
+        <li>My friend told me that I always keep my things scattered here and there. (habitual act — tense unchanged)</li>
+        <li>My friend told me that Mahatma Gandhi was born on 2nd October 1869. (historical date — tense unchanged)</li>
+        <li>The teacher told the students that they need not bring their books the next day.</li>
+        <li>His brother told him that he watered the plants when he studied. (simultaneous actions — tense unchanged)</li>
+        <li>Riya told me that all is well that ends well. (proverb — tense unchanged)</li>
+        <li>The soldier said that they ought to serve their country. ('ought to' — no change)</li>
+        <li>She tells me that she will be playing football in the evening. (reporting verb is present tense — no change)</li>
+        <li>He told his mother that she did not need to worry about him.</li>
+        <li>Rohan will tell him that he returned his book the previous week. (reporting verb is future tense — no change)</li>
+        <li>My sister has told me that she has to clean the house by evening. (reporting verb is present perfect — no change)</li>
+        <li>I told my classmate that I had never told a lie.</li>
+        <li>The teacher told the students that the First battle of Panipat was fought in 1526. (historical fact — tense unchanged)</li>
+        <li>The inspector told me that I must wear a helmet while riding a motorcycle. ('must' = rule/advice — no change)</li>
+        <li>My friend told me that if he were me, he would buy that car. (unreal condition — tense unchanged)</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s13"><span class="num">13.</span>Rules/Instructions for Changing Interrogative Sentences</h2>
+  <p>Interrogative Sentences are questions. There are two types of Interrogative Sentences.</p>
+  <p>(a) <strong>Single Interrogative Sentence:</strong> It starts with a Primary Auxiliary or a Modal Auxiliary. Such sentences are answered in 'Yes' or 'No'.<br><span class="eg">Examples: (i) Are you a teacher? Yes/No (ii) Will you marry me? Yes/No</span></p>
+  <p>(b) <strong>Double Interrogative Sentence:</strong> It starts with a 'Wh-word' (Interrogative Pronoun or Interrogative Adverb).<br><span class="eg">Examples: (i) What is your name? (ii) Who are you? (iii) Where are you going?</span></p>
+  <ol class="plain">
+    <li>Change the reporting verb into ask/asked, enquire/enquired, or wonder/wondered etc.</li>
+    <li>Remove inverted commas. If the Reported Speech is a Single Interrogative Sentence, use the conjunction 'if' or 'whether' to join the Reporting Speech and the Reported Speech.</li>
+    <li>If the Reported Speech is a Double Interrogative Sentence, use the Wh-word given in the Reported Speech as a conjunction.</li>
+    <li>Follow the rules of Pronouns and Tenses.</li>
+    <li>In Indirect Speech, the Interrogative Sentence given in the Reported Speech changes into an Assertive Sentence. Therefore, the places of Subject and Verb are exchanged. This is known as Inversion. Sign of Interrogation (?) is removed.<br><span class="eg">Example: Is he your friend? (Interrogative Sentence) → He is your friend. (Assertive Sentence)</span></li>
+    <li>Helping verbs: 'do', 'does', or 'did' are removed.</li>
+  </ol>
+  <p class="eg">Direct: He said to me, "Do you live in Chandigarh?" → Indirect: He asked me if I lived in Chandigarh.<br>Direct: He said to me, "When are you going to Delhi?" → Indirect: He asked me when I was going to Delhi.<br>Direct: The teacher said to the students, "Who has broken the window?" → Indirect: The teacher asked the students who had broken the windows.<br>Direct: She said to me, "Shall I open the door?" → Indirect: She asked me if she should open the door.<br>Direct: My father said to me, "Have you taken my pen?" → Indirect: My father asked me if I had taken his pen.<br>Direct: My sister said to me, "Why are you troubling me?" → Indirect: My sister asked me why I was troubling her.</p>
+
+  <h3>Questions Starting with Shall I/We</h3>
+  <ol class="plain">
+    <li>If 'shall' indicates Future Tense or some information/speculation, it changes into 'would'.<br><span class="eg">Direct: He said to me, "Shall we ever meet again?" → Indirect: He wondered if we would ever meet again.</span></li>
+    <li>If 'shall' indicates seeking advice or a request, it changes into 'should'.<br><span class="eg">Direct: Ritu said, "Shall I open the door?" → Indirect: Ritu asked if she should open the door.</span></li>
+    <li>If 'shall' indicates an offer, it is replaced with the verb 'offer'.<br><span class="eg">Direct: She said to me, "Shall I bring you something to eat?" → Indirect: She offered to bring me something to eat.</span></li>
+    <li>If 'shall' indicates a suggestion, it is replaced with the verb 'suggest'.<br><span class="eg">Direct: He said, "Shall we meet again tomorrow?" → Indirect: He suggested meeting again the next day.</span></li>
+  </ol>
+
+  <h3>Questions Starting with Will you/Would you/Could you</h3>
+  <ol class="plain">
+    <li>If the questions starting with 'will you', 'would you' or 'could you' are ordinary questions, the rules of single interrogative sentences will be applied.</li>
+    <li>If the questions starting with 'will you', 'would you' or 'could you' indicate an order, request or offer, the changes will be made accordingly as explained in the following examples.</li>
+  </ol>
+  <p class="eg">Direct: He shouted, "Will you keep silence?" (order) → Indirect: He ordered me to keep silence.<br>Direct: She said to me, "Could you give me some sugar?" (request) → Indirect: She requested me to give her some sugar.<br>Direct: She said to me, "Would you like to have a drink?" (offer) → Indirect: She invited me for a drink. Or, She offered me a drink.</p>
+
+  <h2 id="s14"><span class="num">14.</span>Practice Exercise III</h2>
+  <div class="exercise-block">
+    <p class="instr">Change the following sentences into indirect speech.</p>
+    <ol class="plain">
+      <li>My mother said to my sister, "Why have you not completed your homework." <textarea class="answer-box"></textarea></li>
+      <li>He said to his guests, "Shall I make you a cup of tea?" <textarea class="answer-box"></textarea></li>
+      <li>The secretary said to the visitor, "Whom do you want to see?" <textarea class="answer-box"></textarea></li>
+      <li>He said to me, "Are you watering the plants?" <textarea class="answer-box"></textarea></li>
+      <li>The student said to the teacher, "May I come in?" <textarea class="answer-box"></textarea></li>
+      <li>My uncle said to me, "When does the postman come every day?" <textarea class="answer-box"></textarea></li>
+      <li>The shopkeeper said to the boy, "What do you want to buy?" <textarea class="answer-box"></textarea></li>
+      <li>The student said to the teacher, "Can you explain the sum again?" <textarea class="answer-box"></textarea></li>
+      <li>The father said to his son, "Where have you kept my spectacles?" <textarea class="answer-box"></textarea></li>
+      <li>The teacher said to the student, "Why have you come late today?" <textarea class="answer-box"></textarea></li>
+      <li>I said to him, "When are you going to your office?" <textarea class="answer-box"></textarea></li>
+      <li>She said to him, "Do you know who I am?" <textarea class="answer-box"></textarea></li>
+      <li>The stranger said to me, "Could you tell me the way to railway station?" <textarea class="answer-box"></textarea></li>
+      <li>Rajat said to his brother, "Why don't you listen to me?" <textarea class="answer-box"></textarea></li>
+      <li>She said to her, "Did he not care for you?" <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>My mother asked my sister why she had not completed her homework.</li>
+        <li>He offered to make his guests a cup of tea.</li>
+        <li>The secretary asked the visitor whom he wanted to see.</li>
+        <li>He asked me if I was watering the plants.</li>
+        <li>The student asked the teacher if he might come in.</li>
+        <li>My uncle asked me when the postman came every day.</li>
+        <li>The shopkeeper asked the boy what he wanted to buy.</li>
+        <li>The student asked the teacher if she could explain the sum again.</li>
+        <li>The father asked his son where he had kept his spectacles.</li>
+        <li>The teacher asked the student why he had come late that day.</li>
+        <li>I asked him when he was going to his office.</li>
+        <li>She asked him if he knew who she was.</li>
+        <li>The stranger requested me to tell him the way to the railway station.</li>
+        <li>Rajat asked his brother why he did not listen to him.</li>
+        <li>She asked her if he had not cared for her.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s15"><span class="num">15.</span>Rules/Instructions for Changing Imperative Sentences</h2>
+  <p>Imperative Sentences express an order, command, request, prohibition or advice. These sentences start directly with the first form of Verb or 'Don't', followed by the first form of Verb.</p>
+  <ol class="plain">
+    <li>Change the Reporting Verb into order/ordered, request/requested, command/commanded, forbid/forbade, advise/advised, or beg/begged according to the meaning implied in the Reported Speech.</li>
+    <li>The Imperative Mood is changed into Infinitive Mood.</li>
+    <li>Change the first form of verb into Positive Infinitive (to+V1) and 'Don't+V1' into Negative Infinitive (not+to+V1). For Negative Infinitive, the verb 'Forbid' can also be used.</li>
+  </ol>
+  <p class="eg">Direct: The boss said to his employee, "Show me the report." → Indirect: The boss ordered his employee to show him the report.<br>Direct: My father said to me, "Take care of your health." → Indirect: My father advised me to take care of my health.<br>Direct: My sister said to me, "Please, don't disturb me." → Indirect: My sister requested me not to disturb her.<br>Direct: The Commander said to the soldiers, "Don't be afraid of the enemy. Move forward." → Indirect: The Commander commanded the soldiers not to be afraid of the enemy and to move forward.<br>Direct: The gardener said to the boys, "Don't pluck the flowers." → Indirect: The gardener forbade the boys to pluck the flowers.<br>Direct: He said to me, "Beware of false friends." → Indirect: He warned me against false friends.</p>
+
+  <h2 id="s16"><span class="num">16.</span>Practice Exercise IV</h2>
+  <div class="exercise-block">
+    <p class="instr">Change the following sentences into indirect speech.</p>
+    <ol class="plain">
+      <li>He said to his son, "Never tell a lie." <textarea class="answer-box"></textarea></li>
+      <li>The Principal said to the peon, "Bring that parcel to me." <textarea class="answer-box"></textarea></li>
+      <li>The captain said to the soldiers, "Fire at the enemy." <textarea class="answer-box"></textarea></li>
+      <li>The teacher said to the students, "Don't make a noise." <textarea class="answer-box"></textarea></li>
+      <li>The Principal said to the boys, "Work hard if you want to succeed." <textarea class="answer-box"></textarea></li>
+      <li>My mother said to me, "Clean your room and arrange your books." <textarea class="answer-box"></textarea></li>
+      <li>The beggar said to the shopkeeper, "Please give me a rupee." <textarea class="answer-box"></textarea></li>
+      <li>My brother said to me, "Don't touch my things." <textarea class="answer-box"></textarea></li>
+      <li>He said to me, "Wait here till I come back." <textarea class="answer-box"></textarea></li>
+      <li>The student said to the teacher, "Please correct my notebook." <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>He advised his son never to tell a lie.</li>
+        <li>The Principal ordered the peon to bring that parcel to him.</li>
+        <li>The captain commanded the soldiers to fire at the enemy.</li>
+        <li>The teacher forbade the students to make a noise.</li>
+        <li>The Principal advised the boys to work hard if they wanted to succeed.</li>
+        <li>My mother told me to clean my room and arrange my books.</li>
+        <li>The beggar begged the shopkeeper to give him a rupee.</li>
+        <li>My brother forbade me to touch his things.</li>
+        <li>He told me to wait there till he came back.</li>
+        <li>The student requested the teacher to correct his/her notebook.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s17"><span class="num">17.</span>Rules/Instructions for Changing Exclamatory Sentences</h2>
+  <p>Exclamatory Sentences express a sudden or a strong feeling. These sentences start with an Interjection such as 'Hurrah', 'Alas', 'Oh' etc or 'What'/'How'.</p>
+  <ol class="plain">
+    <li>The Exclamatory Sentence is changed into Assertive Sentence.</li>
+    <li>The Reporting Verb is changed into exclaimed or exclaimed with (Joy, sorrow, wonder etc according to the Interjection given in the Direct Speech).</li>
+    <li>Conjunction 'that' is used to join the Reporting Verb and the Reported Speech.</li>
+    <li>Interjection or any other exclamatory word is removed.</li>
+    <li>All the rules of Pronouns and Tenses are followed.</li>
+    <li>Mark of exclamation is removed.</li>
+  </ol>
+  <h3>Points to Remember</h3>
+  <div class="tablewrap">
+    <table class="ref-table">
+      <tr><th>Interjection</th><th>Expresses</th></tr>
+      <tr><td>Ho! Hurrah! Hoo!</td><td>joy or delight</td></tr>
+      <tr><td>What! Oh! Good Heavens!</td><td>wonder/surprise</td></tr>
+      <tr><td>Alas! Ah! Oh! Sorry!</td><td>grief, pain or regret</td></tr>
+      <tr><td>Hark! Hush! Lo! Behold!</td><td>attention</td></tr>
+      <tr><td>Pooh! Pshaw!</td><td>contempt</td></tr>
+      <tr><td>Damn!</td><td>swear</td></tr>
+      <tr><td>Bravo!</td><td>applause/encouragement</td></tr>
+      <tr><td>Nonsense!</td><td>anger/disappointment</td></tr>
+      <tr><td>Fie! Shame!</td><td>shame or reproof</td></tr>
+    </table>
+  </div>
+  <p class="eg">Direct: She said, "Alas! I have injured my hand." → Indirect: She exclaimed with sorrow that she had injured her hand.<br>Direct: The players said, "Hurrah! We have won the match." → Indirect: The players exclaimed with joy that they had won the match.<br>Direct: The captain said to the players, "Bravo! You played very well today." → Indirect: The captain applauded the players saying that they had played very well that day.<br>Direct: She said, "How beautiful the scenery is!" → Indirect: She exclaimed that the scenery was very beautiful.<br>Direct: She said, "How foolish I have been!" → Indirect: She confessed that she had been very foolish.</p>
+
+  <h2 id="s18"><span class="num">18.</span>Practice Exercise V</h2>
+  <div class="exercise-block">
+    <p class="instr">Change the following sentences into indirect speech.</p>
+    <ol class="plain">
+      <li>The students said, "How difficult the question paper is!" <textarea class="answer-box"></textarea></li>
+      <li>She said to her son, "Hush! The baby is sleeping." <textarea class="answer-box"></textarea></li>
+      <li>He said, "What beautiful scenery!" <textarea class="answer-box"></textarea></li>
+      <li>My friend said to me, "How nice of you to have come!" <textarea class="answer-box"></textarea></li>
+      <li>She said, "Hurrah! My brother has won a lottery prize." <textarea class="answer-box"></textarea></li>
+      <li>The boy said, "Oh! I have forgotten my book at home." <textarea class="answer-box"></textarea></li>
+      <li>I said, "What a difficult tongue twister!" <textarea class="answer-box"></textarea></li>
+      <li>My brother said, "Hurrah! I have got the first rank in my class." <textarea class="answer-box"></textarea></li>
+      <li>He said, "Alas! I have lost my son." <textarea class="answer-box"></textarea></li>
+      <li>He said to the boy, "Pooh! Pooh! What a dirty fellow you are!" <textarea class="answer-box"></textarea></li>
+      <li>She said to the beggar, "How shabbily dressed up you are!" <textarea class="answer-box"></textarea></li>
+      <li>The child said to the old man, "How old you are!" <textarea class="answer-box"></textarea></li>
+      <li>The commander said to the soldier, "Bravo! Good shot." <textarea class="answer-box"></textarea></li>
+      <li>He said, "What a terrible storm!" <textarea class="answer-box"></textarea></li>
+      <li>We said, "What a nice place this is!" <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>The students exclaimed that the question paper was very difficult.</li>
+        <li>She drew her son's attention to the fact that the baby was sleeping.</li>
+        <li>He exclaimed that the scenery was very beautiful.</li>
+        <li>My friend exclaimed that it was very nice of me to have come.</li>
+        <li>She exclaimed with joy that her brother had won a lottery prize.</li>
+        <li>The boy exclaimed with regret that he had forgotten his book at home.</li>
+        <li>I exclaimed that it was a very difficult tongue twister.</li>
+        <li>My brother exclaimed with joy that he had got the first rank in his class.</li>
+        <li>He exclaimed with sorrow that he had lost his son.</li>
+        <li>He expressed contempt and exclaimed that the boy was a very dirty fellow.</li>
+        <li>She exclaimed that the beggar was very shabbily dressed up.</li>
+        <li>The child exclaimed that the old man was very old.</li>
+        <li>The commander applauded the soldier saying that it was a good shot.</li>
+        <li>He exclaimed that it was a terrible storm.</li>
+        <li>We exclaimed that it was a very nice place.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s19"><span class="num">19.</span>Rules/Instructions for Changing Optative Sentences</h2>
+  <p>Optative Sentences express a wish, desire, blessing, prayer or curse. The use of Modal Auxiliaries 'May' and 'Would' is common in these sentences. Conditional sentences using 'were' are also used to express a wish.</p>
+  <ol class="plain">
+    <li>Reporting verb is changed into wished/prayed/desired/cursed etc.</li>
+    <li>The word 'wish' used in the Direct Speech is removed.</li>
+    <li>If the Reporting Verb is in Past Tense, 'May' is changed into 'Might'.</li>
+    <li>'Were' used in Conditional Sentences is changed into 'had been' if the Reporting Verb is in Past Tense.</li>
+    <li>We wish good morning, good afternoon, good evening or good night.</li>
+    <li>We bid welcome, farewell or good-bye.</li>
+  </ol>
+  <p class="eg">Direct: He said to me, "May you get success in life." → Indirect: He wished that I might get success in life.<br>Direct: He said, "Good morning, teacher." → Indirect: He wished good morning to his teacher.<br>Direct: She said, "Good bye, friends." → Indirect: She bade farewell to her friends.<br>Direct: He said, "O for a glass of water!" → Indirect: He desired strongly for a glass of water.<br>Direct: He said, "May God save the king." → Indirect: He prayed that God might save the king.</p>
+
+  <h2 id="s20"><span class="num">20.</span>Practice Exercise VI</h2>
+  <div class="exercise-block">
+    <p class="instr">Change the following sentences into indirect speech.</p>
+    <ol class="plain">
+      <li>He said to the patient, "May you recover soon!" <textarea class="answer-box"></textarea></li>
+      <li>He said, "O for a cup of tea!" <textarea class="answer-box"></textarea></li>
+      <li>I said to her, "Happy Christmas!" <textarea class="answer-box"></textarea></li>
+      <li>They said to the chief guest, "Welcome!" <textarea class="answer-box"></textarea></li>
+      <li>He said, "May God grant peace to the departed soul." <textarea class="answer-box"></textarea></li>
+      <li>I said to my parents, "Good Morning!" <textarea class="answer-box"></textarea></li>
+      <li>The teacher said to the students, "May you all fare well in your examination." <textarea class="answer-box"></textarea></li>
+      <li>I said to my friend, "May you get success in life." <textarea class="answer-box"></textarea></li>
+      <li>My friend said to me, "Good luck to you!" <textarea class="answer-box"></textarea></li>
+      <li>John said, "O for a house to live in." <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>He wished the patient a speedy recovery.</li>
+        <li>He desired strongly for a cup of tea.</li>
+        <li>I wished her a happy Christmas.</li>
+        <li>They welcomed the chief guest.</li>
+        <li>He prayed that God might grant peace to the departed soul.</li>
+        <li>I wished my parents good morning.</li>
+        <li>The teacher wished that the students might all fare well in their examination.</li>
+        <li>I wished that my friend might get success in life.</li>
+        <li>My friend wished me good luck.</li>
+        <li>John desired strongly for a house to live in.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s21"><span class="num">21.</span>Practice Exercise VII — Mixed Review</h2>
+  <div class="exercise-block">
+    <p class="instr">Change the following sentences into indirect speech.</p>
+    <ol class="plain">
+      <li>My mother said to me, "Might is right." <textarea class="answer-box"></textarea></li>
+      <li>He said to me, "Have you received the parcel?" <textarea class="answer-box"></textarea></li>
+      <li>The young man said, "I have purchased a new house." <textarea class="answer-box"></textarea></li>
+      <li>The teacher said, "The British ruled over India for two hundred years." <textarea class="answer-box"></textarea></li>
+      <li>My friend said to me, "I read an interesting novel last week." <textarea class="answer-box"></textarea></li>
+      <li>My teacher said, "Corruption is in the air these days." <textarea class="answer-box"></textarea></li>
+      <li>The Principal said to the teacher, "Were you present at the meeting?" <textarea class="answer-box"></textarea></li>
+      <li>I said to him, "Where will you park my car?" <textarea class="answer-box"></textarea></li>
+      <li>The teacher said to the students, "Why are you making a noise?" <textarea class="answer-box"></textarea></li>
+      <li>My father said to me, "Clean your room right now." <textarea class="answer-box"></textarea></li>
+      <li>His brother said to him, "Don't waste your time." <textarea class="answer-box"></textarea></li>
+      <li>My sister said, "What a beautiful dress!" <textarea class="answer-box"></textarea></li>
+      <li>The daughter said to her mother, "What have you prepared in lunch." <textarea class="answer-box"></textarea></li>
+      <li>The boy said to the old man, "How old you are!" <textarea class="answer-box"></textarea></li>
+      <li>The old man said to the boy, "How old are you?" <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>My mother told me that might is right. (proverb — tense unchanged)</li>
+        <li>He asked me if I had received the parcel.</li>
+        <li>The young man said that he had purchased a new house.</li>
+        <li>The teacher said that the British ruled over India for two hundred years. (historical fact — tense unchanged)</li>
+        <li>My friend told me that he/she had read an interesting novel the previous week.</li>
+        <li>My teacher said that corruption was in the air those days.</li>
+        <li>The Principal asked the teacher if she/he had been present at the meeting.</li>
+        <li>I asked him where he would park my car.</li>
+        <li>The teacher asked the students why they were making a noise.</li>
+        <li>My father told me to clean my room right then.</li>
+        <li>His brother advised him not to waste his time.</li>
+        <li>My sister exclaimed that it was a very beautiful dress.</li>
+        <li>The daughter asked her mother what she had prepared in lunch.</li>
+        <li>The boy exclaimed that the old man was very old.</li>
+        <li>The old man asked the boy how old he was.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s22"><span class="num">22.</span>Quick Revision Checklist</h2>
+  <div class="checklist">
+    <ul>
+      <li>Direct Speech quotes the exact words in inverted commas; Indirect Speech reports the meaning as one complex sentence.</li>
+      <li>If the reporting verb is Present or Future tense, the reported speech's tense does not change at all.</li>
+      <li>If the reporting verb is Past tense, shift the reported speech one step further into the past (Present→Past, Past→Past Perfect, and so on) — unless an exception applies.</li>
+      <li>First-person pronouns follow the subject of the reporting verb; second-person pronouns follow its object; third-person pronouns never change.</li>
+      <li>The conjunction depends on sentence type: 'that' for assertive/exclamatory/optative, 'if/whether' for yes-no questions, the wh-word itself for wh-questions, and 'to' for imperatives.</li>
+      <li>Tense stays the same for universal truths, proverbs, habitual acts, historical dates, simultaneous actions, ongoing situations, and unreal conditions.</li>
+      <li>Adverbs of time and place shift too — but only when the tense itself shifts: this→that, here→there, now→then, today→that day, tomorrow→the next day.</li>
+      <li>Imperatives need a reporting verb that matches the intent — order, request, advise, forbid, beg — plus an infinitive (to/not to) instead of the base verb.</li>
+      <li>Exclamatory and optative sentences both become assertive statements joined by 'that', with the reporting verb carrying the original emotion (exclaimed with joy, wished, prayed).</li>
+    </ul>
+  </div>
+
+  <footer>Class 8 · English · Grammar · Lesson 25 — Chapter-12, Narration.</footer>
+</div>
+</body>
+</html>

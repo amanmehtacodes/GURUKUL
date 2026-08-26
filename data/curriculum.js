@@ -90,6 +90,483 @@ const CLASSES = [
                     ],
                     tests: [],
                   },
+                  {
+                    id: "class-8-lang-writing-skills-biosketch",
+                    title: "Lesson 3 — Bio-Sketch",
+                    notes: [
+                      {
+                        id: "class-8-lang-writing-skills-biosketch-notes",
+                        title: "Lesson 3 — Bio-Sketch",
+                        file: "notes/class-8/language/writing-skills/03-biosketch.html",
+                      },
+                      {
+                        id: "class-8-lang-writing-skills-biosketch-quiz",
+                        title: "Quiz 3 — Bio-Sketch",
+                        file: "notes/class-8/language/writing-skills/03-biosketch-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-writing-skills-diary",
+                    title: "Lesson 4 — Diary Entry",
+                    notes: [
+                      {
+                        id: "class-8-lang-writing-skills-diary-notes",
+                        title: "Lesson 4 — Diary Entry",
+                        file: "notes/class-8/language/writing-skills/04-diary-entry.html",
+                      },
+                      {
+                        id: "class-8-lang-writing-skills-diary-quiz",
+                        title: "Quiz 4 — Diary Entry",
+                        file: "notes/class-8/language/writing-skills/04-diary-entry-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-writing-skills-factual-description",
+                    title: "Lesson 5 — Factual Description",
+                    notes: [
+                      {
+                        id: "class-8-lang-writing-skills-factual-description-notes",
+                        title: "Lesson 5 — Factual Description",
+                        file: "notes/class-8/language/writing-skills/05-factual-description.html",
+                      },
+                      {
+                        id: "class-8-lang-writing-skills-factual-description-quiz",
+                        title: "Quiz 5 — Factual Description",
+                        file: "notes/class-8/language/writing-skills/05-factual-description-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-writing-skills-letter-informal",
+                    title: "Lesson 6 — Letter Writing (Informal)",
+                    notes: [
+                      {
+                        id: "class-8-lang-writing-skills-letter-informal-notes",
+                        title: "Lesson 6 — Letter Writing (Informal)",
+                        file: "notes/class-8/language/writing-skills/06-letter-writing-informal.html",
+                      },
+                      {
+                        id: "class-8-lang-writing-skills-letter-informal-quiz",
+                        title: "Quiz 6 — Letter Writing (Informal)",
+                        file: "notes/class-8/language/writing-skills/06-letter-writing-informal-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-writing-skills-letter-formal",
+                    title: "Lesson 7 — Formal Letters",
+                    notes: [
+                      {
+                        id: "class-8-lang-writing-skills-letter-formal-notes",
+                        title: "Lesson 7 — Formal Letters",
+                        file: "notes/class-8/language/writing-skills/07-letter-writing-formal.html",
+                      },
+                      {
+                        id: "class-8-lang-writing-skills-letter-formal-quiz",
+                        title: "Quiz 7 — Formal Letters",
+                        file: "notes/class-8/language/writing-skills/07-letter-writing-formal-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-writing-skills-email",
+                    title: "Lesson 8 — E-mail",
+                    notes: [
+                      {
+                        id: "class-8-lang-writing-skills-email-notes",
+                        title: "Lesson 8 — E-mail",
+                        file: "notes/class-8/language/writing-skills/08-email.html",
+                      },
+                      {
+                        id: "class-8-lang-writing-skills-email-quiz",
+                        title: "Quiz 8 — E-mail",
+                        file: "notes/class-8/language/writing-skills/08-email-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-writing-skills-article-writing",
+                    title: "Lesson 9 — Article Writing",
+                    notes: [
+                      {
+                        id: "class-8-lang-writing-skills-article-writing-notes",
+                        title: "Lesson 9 — Article Writing",
+                        file: "notes/class-8/language/writing-skills/09-article-writing.html",
+                      },
+                      {
+                        id: "class-8-lang-writing-skills-article-writing-quiz",
+                        title: "Quiz 9 — Article Writing",
+                        file: "notes/class-8/language/writing-skills/09-article-writing-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-writing-skills-speech",
+                    title: "Lesson 10 — Speech",
+                    notes: [
+                      {
+                        id: "class-8-lang-writing-skills-speech-notes",
+                        title: "Lesson 10 — Speech",
+                        file: "notes/class-8/language/writing-skills/10-speech.html",
+                      },
+                      {
+                        id: "class-8-lang-writing-skills-speech-quiz",
+                        title: "Quiz 10 — Speech",
+                        file: "notes/class-8/language/writing-skills/10-speech-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-writing-skills-short-stories",
+                    title: "Lesson 11 — Short Stories",
+                    notes: [
+                      {
+                        id: "class-8-lang-writing-skills-short-stories-notes",
+                        title: "Lesson 11 — Short Stories",
+                        file: "notes/class-8/language/writing-skills/11-short-stories.html",
+                      },
+                      {
+                        id: "class-8-lang-writing-skills-short-stories-quiz",
+                        title: "Quiz 11 — Short Stories",
+                        file: "notes/class-8/language/writing-skills/11-short-stories-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                ],
+              },
+              {
+                id: "class-8-lang-grammar",
+                title: "02 · Grammar",
+                subsections: [
+                  {
+                    id: "class-8-lang-grammar-noun",
+                    title: "Lesson 12 — The Noun",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-noun-notes",
+                        title: "Lesson 12 — The Noun",
+                        file: "notes/class-8/language/grammar/12-the-noun.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-noun-quiz",
+                        title: "Quiz 12 — The Noun",
+                        file: "notes/class-8/language/grammar/12-the-noun-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-pronoun",
+                    title: "Lesson 13 — The Pronoun",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-pronoun-notes",
+                        title: "Lesson 13 — The Pronoun",
+                        file: "notes/class-8/language/grammar/13-the-pronoun.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-pronoun-quiz",
+                        title: "Quiz 13 — The Pronoun",
+                        file: "notes/class-8/language/grammar/13-the-pronoun-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-adjective",
+                    title: "Lesson 14 — The Adjective",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-adjective-notes",
+                        title: "Lesson 14 — The Adjective",
+                        file: "notes/class-8/language/grammar/14-the-adjective.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-adjective-quiz",
+                        title: "Quiz 14 — The Adjective",
+                        file: "notes/class-8/language/grammar/14-the-adjective-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-determiners",
+                    title: "Lesson 15 — Determiners",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-determiners-notes",
+                        title: "Lesson 15 — Determiners",
+                        file: "notes/class-8/language/grammar/15-determiners.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-determiners-quiz",
+                        title: "Quiz 15 — Determiners",
+                        file: "notes/class-8/language/grammar/15-determiners-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-verb",
+                    title: "Lesson 16 — The Verb",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-verb-notes",
+                        title: "Lesson 16 — The Verb",
+                        file: "notes/class-8/language/grammar/16-the-verb.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-verb-quiz",
+                        title: "Quiz 16 — The Verb",
+                        file: "notes/class-8/language/grammar/16-the-verb-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-finite-nonfinite",
+                    title: "Lesson 17 — Finite and Non-Finite Forms of Verbs",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-finite-nonfinite-notes",
+                        title: "Lesson 17 — Finite and Non-Finite Forms of Verbs",
+                        file: "notes/class-8/language/grammar/17-finite-and-non-finite-verbs.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-finite-nonfinite-quiz",
+                        title: "Quiz 17 — Finite and Non-Finite Forms of Verbs",
+                        file: "notes/class-8/language/grammar/17-finite-and-non-finite-verbs-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-modal-auxiliaries",
+                    title: "Lesson 18 — Modal Auxiliaries",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-modal-auxiliaries-notes",
+                        title: "Lesson 18 — Modal Auxiliaries",
+                        file: "notes/class-8/language/grammar/18-modal-auxiliaries.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-modal-auxiliaries-quiz",
+                        title: "Quiz 18 — Modal Auxiliaries",
+                        file: "notes/class-8/language/grammar/18-modal-auxiliaries-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-tenses",
+                    title: "Lesson 19 — Tenses",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-tenses-notes",
+                        title: "Lesson 19 — Tenses",
+                        file: "notes/class-8/language/grammar/19-tenses.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-tenses-quiz",
+                        title: "Quiz 19 — Tenses",
+                        file: "notes/class-8/language/grammar/19-tenses-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-adverb",
+                    title: "Lesson 20 — The Adverb",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-adverb-notes",
+                        title: "Lesson 20 — The Adverb",
+                        file: "notes/class-8/language/grammar/20-the-adverb.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-adverb-quiz",
+                        title: "Quiz 20 — The Adverb",
+                        file: "notes/class-8/language/grammar/20-the-adverb-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-preposition",
+                    title: "Lesson 21 — The Preposition",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-preposition-notes",
+                        title: "Lesson 21 — The Preposition",
+                        file: "notes/class-8/language/grammar/21-the-preposition.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-preposition-quiz",
+                        title: "Quiz 21 — The Preposition",
+                        file: "notes/class-8/language/grammar/21-the-preposition-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-conjunction",
+                    title: "Lesson 22 — The Conjunction",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-conjunction-notes",
+                        title: "Lesson 22 — The Conjunction",
+                        file: "notes/class-8/language/grammar/22-the-conjunction.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-conjunction-quiz",
+                        title: "Quiz 22 — The Conjunction",
+                        file: "notes/class-8/language/grammar/22-the-conjunction-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-agreement",
+                    title: "Lesson 23 — Agreement of the Verb with Subject",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-agreement-notes",
+                        title: "Lesson 23 — Agreement of the Verb with Subject",
+                        file: "notes/class-8/language/grammar/23-agreement-of-the-verb-with-subject.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-agreement-quiz",
+                        title: "Quiz 23 — Agreement of the Verb with Subject",
+                        file: "notes/class-8/language/grammar/23-agreement-of-the-verb-with-subject-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-voice",
+                    title: "Lesson 24 — Active and Passive Voice",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-voice-notes",
+                        title: "Lesson 24 — Active and Passive Voice",
+                        file: "notes/class-8/language/grammar/24-active-and-passive-voice.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-voice-quiz",
+                        title: "Quiz 24 — Active and Passive Voice",
+                        file: "notes/class-8/language/grammar/24-active-and-passive-voice-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-narration",
+                    title: "Lesson 25 — Narration",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-narration-notes",
+                        title: "Lesson 25 — Narration",
+                        file: "notes/class-8/language/grammar/25-narration.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-narration-quiz",
+                        title: "Quiz 25 — Narration",
+                        file: "notes/class-8/language/grammar/25-narration-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-grammar-integrated-practice",
+                    title: "Lesson 26 — Integrated Grammar Practice",
+                    notes: [
+                      {
+                        id: "class-8-lang-grammar-integrated-practice-notes",
+                        title: "Lesson 26 — Integrated Grammar Practice",
+                        file: "notes/class-8/language/grammar/26-integrated-grammar-practice.html",
+                      },
+                      {
+                        id: "class-8-lang-grammar-integrated-practice-quiz",
+                        title: "Quiz 26 — Integrated Grammar Practice",
+                        file: "notes/class-8/language/grammar/26-integrated-grammar-practice-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                ],
+              },
+              {
+                id: "class-8-lang-vocabulary",
+                title: "03 · Vocabulary",
+                subsections: [
+                  {
+                    id: "class-8-lang-vocabulary-vocabulary",
+                    title: "Lesson 28 — Vocabulary",
+                    notes: [
+                      {
+                        id: "class-8-lang-vocabulary-vocabulary-notes",
+                        title: "Lesson 28 — Vocabulary",
+                        file: "notes/class-8/language/vocabulary/28-vocabulary.html",
+                      },
+                      {
+                        id: "class-8-lang-vocabulary-vocabulary-quiz",
+                        title: "Quiz 28 — Vocabulary",
+                        file: "notes/class-8/language/vocabulary/28-vocabulary-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                  {
+                    id: "class-8-lang-vocabulary-owsip",
+                    title: "Lesson 29 — One Word Substitution, Idioms and Proverbs",
+                    notes: [
+                      {
+                        id: "class-8-lang-vocabulary-owsip-notes",
+                        title: "Lesson 29 — One Word Substitution, Idioms and Proverbs",
+                        file: "notes/class-8/language/vocabulary/29-one-word-substitution-idioms-and-proverbs.html",
+                      },
+                      {
+                        id: "class-8-lang-vocabulary-owsip-quiz",
+                        title: "Quiz 29 — One Word Substitution, Idioms and Proverbs",
+                        file: "notes/class-8/language/vocabulary/29-one-word-substitution-idioms-and-proverbs-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
+                ],
+              },
+              {
+                id: "class-8-lang-assessment-papers",
+                title: "04 · Assessment Papers",
+                subsections: [
+                  {
+                    id: "class-8-lang-assessment-papers-sample",
+                    title: "Lesson 30 — Sample Assessment Papers",
+                    notes: [
+                      {
+                        id: "class-8-lang-assessment-papers-sample-notes",
+                        title: "Lesson 30 — Sample Assessment Papers",
+                        file: "notes/class-8/language/assessment-papers/30-sample-assessment-papers.html",
+                      },
+                      {
+                        id: "class-8-lang-assessment-papers-sample-quiz",
+                        title: "Quiz 30 — Sample Assessment Paper (Practice)",
+                        file: "notes/class-8/language/assessment-papers/30-sample-assessment-papers-quiz.html",
+                      },
+                    ],
+                    tests: [],
+                  },
                 ],
               },
             ],

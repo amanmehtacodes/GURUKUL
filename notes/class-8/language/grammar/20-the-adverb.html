@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 20 — The Adverb | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:26px 0 8px; scroll-margin-top:20px;}
+  h4{font-family:var(--font-mono); font-size:13.5px; color:var(--cyan); margin:18px 0 8px; text-transform:uppercase; letter-spacing:.03em;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .ocr-note{
+    background:var(--accent2-soft); border:1px dashed var(--violet); border-radius:8px;
+    padding:10px 14px; margin:8px 0 14px; color:var(--ink-faint); font-size:13.5px; font-style:italic;
+  }
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:14.5px;}
+  table.ref-table caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:11px;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line-strong); padding:7px 10px; text-align:left; color:var(--ink-soft);}
+  table.ref-table th{background:var(--paper-raised); color:var(--ink); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table td.g{color:var(--ink); font-weight:600;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:16px 0 30px; background:var(--paper-raised);
+  }
+  .exercise-block h4{margin-top:0;}
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  table.gram-table{width:100%; border-collapse:collapse; margin:10px 0 16px; font-size:14px;}
+  table.gram-table th, table.gram-table td{border:1px solid var(--line-strong); padding:6px 8px; text-align:left;}
+  table.gram-table th{background:var(--paper); color:var(--ink-faint); font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;}
+  table.gram-table td.g{color:var(--ink); font-weight:600;}
+  input.blank-input{
+    width:92%; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  input.blank-input.sm{width:150px;}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:50px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol, .qa ul{margin:0; padding-left:20px;}
+  .qa li{margin-bottom:5px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar</div>
+  <h1 class="title">Lesson 20 — The Adverb</h1>
+  <p class="subtitle">Semester 2 · Chapter-8</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#intro">1. What is an Adverb?</a></li>
+      <li><a href="#time">2. Adverb of Time</a></li>
+      <li><a href="#place">3. Adverb of Place</a></li>
+      <li><a href="#manner">4. Adverb of Manner</a></li>
+      <li><a href="#degree">5. Adverb of Degree or Extent</a></li>
+      <li><a href="#frequency">6. Adverb of Frequency or Number</a></li>
+      <li><a href="#affirmation-negation">7. Adverb of Affirmation or Negation</a></li>
+      <li><a href="#exercise-classify">8. Exercise — Underline &amp; Classify Adverbs</a></li>
+      <li><a href="#exercise-fill-types">9. Exercise — Fill in the Type of Adverb</a></li>
+      <li><a href="#interrogative">10. Interrogative Adverbs</a></li>
+      <li><a href="#relative">11. Relative Adverbs</a></li>
+      <li><a href="#exercise-relative">12. Exercise — Join Using Relative Adverbs</a></li>
+      <li><a href="#forms">13. Forms of Adverbs</a></li>
+      <li><a href="#formation">14. Formation of Adverbs</a></li>
+      <li><a href="#exercise-adj-to-adv">15. Exercise — Adjective to Adverb</a></li>
+      <li><a href="#exercise-adverb-form">16. Exercise — Fill in the Adverb Form</a></li>
+      <li><a href="#comparison">17. Comparison of Adverbs</a></li>
+      <li><a href="#exercise-degrees">18. Exercise — Degrees of Adverbs</a></li>
+      <li><a href="#too-transformation">19. Transformation of Sentences by Removing 'Too'</a></li>
+      <li><a href="#exercise-remove-too">20. Exercise — Remove 'Too'</a></li>
+      <li><a href="#exercise-use-too">21. Exercise — Use 'Too'</a></li>
+      <li><a href="#revision">22. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="intro"><span class="num">1.</span>What is an Adverb?</h2>
+  <p>Read the following sentences carefully with special focus on the function of the italicised words.</p>
+  <ol>
+    <li>The old woman walked slowly. (modifies the verb 'walked')</li>
+    <li>My mother is very beautiful. (modifies the adjective 'beautiful')</li>
+    <li>He could see the ship quite clearly. (modifies the adverb 'clearly')</li>
+  </ol>
+  <p><strong>Adverb:</strong> The word that modifies or adds to the meaning of a verb, an adjective or another adverb is called an adverb.</p>
+
+  <h2 id="time"><span class="num">2.</span>Adverb of Time</h2>
+  <p>An adverb of time denotes the time of the action or verb in a sentence. It answers the question 'when'.</p>
+  <p>Examples: soon, early, late, yesterday, today, still, tomorrow, ago, already, just, before etc.</p>
+  <ul>
+    <li>They haven't seen a zoo before.</li>
+    <li>You can go home now.</li>
+    <li>She is leaving for Delhi tomorrow.</li>
+  </ul>
+
+  <h2 id="place"><span class="num">3.</span>Adverb of Place</h2>
+  <p>An adverb of place denotes the place of the action or verb in a sentence. It answers the question 'where'.</p>
+  <p>Examples: above, up, below, down, far, near, within, without, away, out, outside, inside, in etc.</p>
+  <ul>
+    <li>Don't sit here.</li>
+    <li>I will not go there.</li>
+    <li>He could not find his book anywhere.</li>
+  </ul>
+
+  <h2 id="manner"><span class="num">4.</span>Adverb of Manner</h2>
+  <p>An adverb of manner denotes the way or manner of the action or verb in a sentence. It answers the question 'how'.</p>
+  <p>Examples: fast, hurriedly, beautifully, speedily, correctly, rightly, boldly, madly etc.</p>
+  <ul>
+    <li>Laxmibai fought bravely in the battle against the British.</li>
+    <li>A tortoise walks slowly.</li>
+    <li>He performed well at the function.</li>
+  </ul>
+
+  <h2 id="degree"><span class="num">5.</span>Adverb of Degree or Extent</h2>
+  <p>An adverb of degree or extent denotes the extent or limit of the verb, adjective or some other adverb in a sentence. It answers the question 'how much' or 'to what extent'.</p>
+  <p>Examples: too, very, extremely, almost, pretty, far, fairly, nearly, quite, enough, much, fully, partly, rather, so, little, much, too etc.</p>
+  <ul>
+    <li>The apples are very sweet.</li>
+    <li>He is quite well now.</li>
+    <li>The work of construction of my house is almost complete now.</li>
+  </ul>
+
+  <h2 id="frequency"><span class="num">6.</span>Adverb of Frequency or Number</h2>
+  <p>An adverb of frequency or number denotes the number of times of the action or verb in a sentence. It answers the question 'how many times' or 'how often'.</p>
+  <p>Examples: once, twice, thrice, always, often, usually, seldom, firstly, secondly, frequently, again, sometimes, etc.</p>
+  <ul>
+    <li>He called you up twice.</li>
+    <li>He has always supported me.</li>
+    <li>She is often in a bad mood.</li>
+  </ul>
+
+  <h2 id="affirmation-negation"><span class="num">7.</span>Adverb of Affirmation or Negation</h2>
+  <p>An adverb of affirmation denotes the positivity or certainty of the action or verb in a sentence.</p>
+  <p>Examples: yes, surely, definitely, certainly, of course, etc.</p>
+  <ul>
+    <li>He will definitely help you.</li>
+    <li>She will surely submit the report tomorrow.</li>
+  </ul>
+  <p>An Adverb of Negation denotes the negativity of the action/verb in a sentence.</p>
+  <p>Examples: not, never, hardly, rarely, scarcely, seldom</p>
+  <ul>
+    <li>He will not help you.</li>
+    <li>She never comes late.</li>
+  </ul>
+
+  <h2 id="exercise-classify"><span class="num">8.</span>Exercise — Underline &amp; Classify Adverbs</h2>
+  <div class="exercise-block">
+    <p class="instr">Underline the adverbs in the following sentences and specify their type.</p>
+    <ol>
+      <li>I bought a new dress yesterday. <input class="blank-input" type="text"></li>
+      <li>He understands me well. <input class="blank-input" type="text"></li>
+      <li>The boys are playing outside. <input class="blank-input" type="text"></li>
+      <li>I go to library twice a week. <input class="blank-input" type="text"></li>
+      <li>They were extremely happy. <input class="blank-input" type="text"></li>
+      <li>She is much better now. <input class="blank-input" type="text"></li>
+      <li>He is quite intelligent. <input class="blank-input" type="text"></li>
+      <li>He will not come to school tomorrow. <input class="blank-input" type="text"></li>
+      <li>My horse runs very fast. <input class="blank-input" type="text"></li>
+      <li>She decorated her house beautifully. <input class="blank-input" type="text"></li>
+      <li>We must work hard. <input class="blank-input" type="text"></li>
+      <li>You should drive carefully. <input class="blank-input" type="text"></li>
+      <li>Can you solve this sum? No, I can't. <input class="blank-input" type="text"></li>
+      <li>Always speak the truth. <input class="blank-input" type="text"></li>
+      <li>They behaved badly with us. <input class="blank-input" type="text"></li>
+      <li>She often comes late. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. yesterday — Time · 2. well — Manner · 3. outside — Place · 4. twice — Frequency/Number · 5. extremely — Degree · 6. much — Degree, now — Time · 7. quite — Degree · 8. not — Negation, tomorrow — Time · 9. very — Degree, fast — Manner · 10. beautifully — Manner · 11. hard — Manner · 12. carefully — Manner · 13. No — Negation · 14. Always — Frequency · 15. badly — Manner · 16. often — Frequency, late — Time</p></div>
+  </div>
+
+  <h2 id="exercise-fill-types"><span class="num">9.</span>Exercise — Fill in the Type of Adverb</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with types of adverbs specified in the brackets.</p>
+    <ol>
+      <li>Rohit went to the Raman's house ___ (adverb of time) <input class="blank-input sm" type="text"></li>
+      <li>The girls are ___ (adverb of place) <input class="blank-input sm" type="text"></li>
+      <li>A tortoise walks ___ (adverb of manner) <input class="blank-input sm" type="text"></li>
+      <li>He is clever ___ to see through your trick. (adverb of extent or degree) <input class="blank-input sm" type="text"></li>
+      <li>She ___ gets angry. (adverb of negation) <input class="blank-input sm" type="text"></li>
+      <li>Will you help me? ___ , I will. (adverb of affirmation) <input class="blank-input sm" type="text"></li>
+      <li>My mother goes to temple ___ (adverb of frequency) <input class="blank-input sm" type="text"></li>
+      <li>I looked for my lost book ___ (adverb of place) <input class="blank-input sm" type="text"></li>
+      <li>Einstein was ___ intelligent. (adverb of extent or degree) <input class="blank-input sm" type="text"></li>
+      <li>We visited the Taj Mahal ___ (adverb of time) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Sample Answer Key</div><p>1. yesterday · 2. outside · 3. slowly · 4. enough · 5. never · 6. Certainly · 7. daily · 8. everywhere · 9. extremely · 10. recently</p></div>
+  </div>
+
+  <h2 id="interrogative"><span class="num">10.</span>Interrogative Adverbs</h2>
+  <p>The words 'when', 'where', 'how', 'why' are called interrogative adverbs as they are used to ask questions.</p>
+  <ol>
+    <li>When are you going to Delhi?</li>
+    <li>Where have you kept my shoes?</li>
+    <li>How did you solve the sum?</li>
+    <li>Why have you not taken your lunch?</li>
+  </ol>
+
+  <h2 id="relative"><span class="num">11.</span>Relative Adverbs</h2>
+  <p>When an interrogative adverb is used to join two clauses and refers to some antecedent in the principal clause, it is called relative adverb. Observe carefully how the following pair of sentences is joined using a relative adverb.</p>
+  <p>I know a company. He works there.<br>I know the company where he works.</p>
+  <ol>
+    <li>I don't know the time when he will return.</li>
+    <li>There must be some reason why he has left the job.</li>
+    <li>Can you show how this machine is operated?</li>
+    <li>My brother told me how the sum could be solved.</li>
+  </ol>
+
+  <h2 id="exercise-relative"><span class="num">12.</span>Exercise — Join Using Relative Adverbs</h2>
+  <div class="exercise-block">
+    <p class="instr">Join the following pairs of sentences using the relative adverbs given in the brackets.</p>
+    <ol>
+      <li>This is the house. I live here. (where) <textarea class="answer-box"></textarea></li>
+      <li>They shifted to their new house. She did not know the time. (when) <textarea class="answer-box"></textarea></li>
+      <li>You solved the sum. Tell me the way. (how) <textarea class="answer-box"></textarea></li>
+      <li>He was punished. No one knows the reason. (why) <textarea class="answer-box"></textarea></li>
+      <li>This is the office. She works here. (where) <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>This is the house where I live.</li>
+        <li>She did not know the time when they shifted to their new house.</li>
+        <li>Tell me how you solved the sum.</li>
+        <li>No one knows the reason why he was punished.</li>
+        <li>This is the office where she works.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="forms"><span class="num">13.</span>Forms of Adverbs</h2>
+  <ul>
+    <li>Some adverbs and adjectives have the same form but are used differently.</li>
+  </ul>
+  <table class="ref-table">
+    <tr><th>Adjective</th><th>Adverb</th></tr>
+    <tr><td>She speaks in a loud voice.</td><td>Don't speak so loud.</td></tr>
+    <tr><td>He is a fast runner.</td><td>He runs fast.</td></tr>
+    <tr><td>They have much work to do.</td><td>She is not much interested in this job.</td></tr>
+    <tr><td>They work hard.</td><td>She is a hard worker.</td></tr>
+  </table>
+  <ul>
+    <li>Some words may function as different types of adverbs.<br>
+      He was sitting far from me. (Adverb of place)<br>
+      My painting is far more beautiful than yours. (Adverb of degree)</li>
+    <li>Some adverbs have two forms having different meanings.<br>
+      She works very hard. (diligently) — She hardly works. (scarcely)<br>
+      They found a hotel quite near. (not far away) — She was nearly unconscious. (almost)</li>
+  </ul>
+
+  <h2 id="formation"><span class="num">14.</span>Formation of Adverbs</h2>
+  <p>Adverbs are formed in the following ways.</p>
+  <ol>
+    <li>By adding '-ly' to various parts of speech: forcefully, cleverly, monthly, amazingly, hurriedly</li>
+  </ol>
+  <div class="callout"><p><strong>Important Note:</strong> All the words that end in '-ly' are not essentially adverbs. For example: homely, elderly, worldly etc. are adjectives.</p></div>
+  <ol start="2">
+    <li>By adding prefixes or suffixes: hereby, therewith, hitherto, thereafter, meanwhile, ahead, asleep, homeward, headlong, otherwise etc.</li>
+  </ol>
+
+  <h2 id="exercise-adj-to-adv"><span class="num">15.</span>Exercise — Adjective to Adverb</h2>
+  <div class="exercise-block">
+    <p class="instr">Change the following adjectives into adverbs by making the required changes in the word given.</p>
+    <table class="gram-table">
+      <tr><th>Adjective</th><th>Adverb</th><th>Adjective</th><th>Adverb</th><th>Adjective</th><th>Adverb</th></tr>
+      <tr><td>cold</td><td><input class="blank-input" type="text"></td><td>casual</td><td><input class="blank-input" type="text"></td><td>true</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>happy</td><td><input class="blank-input" type="text"></td><td>interesting</td><td><input class="blank-input" type="text"></td><td>affectionate</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>sad</td><td><input class="blank-input" type="text"></td><td>careful</td><td><input class="blank-input" type="text"></td><td>peaceful</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>frequent</td><td><input class="blank-input" type="text"></td><td>beautiful</td><td><input class="blank-input" type="text"></td><td>scientific</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>usual</td><td><input class="blank-input" type="text"></td><td>deep</td><td><input class="blank-input" type="text"></td><td>annual</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>common</td><td><input class="blank-input" type="text"></td><td>final</td><td><input class="blank-input" type="text"></td><td>scientific</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>cold → coldly · casual → casually · true → truly · happy → happily · interesting → interestingly · affectionate → affectionately · sad → sadly · careful → carefully · peaceful → peacefully · frequent → frequently · beautiful → beautifully · scientific → scientifically · usual → usually · deep → deeply · annual → annually · common → commonly · final → finally · scientific → scientifically</p>
+      <div class="ocr-note">'scientific' appears twice in the source table (once in each of the last two rows) — preserved here exactly as printed rather than silently corrected.</div>
+    </div>
+  </div>
+
+  <h2 id="exercise-adverb-form"><span class="num">16.</span>Exercise — Fill in the Adverb Form</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with the adverb form of the words given in the brackets.</p>
+    <ol>
+      <li>As I turned, I ___ hit her in the face. (accidental) <input class="blank-input sm" type="text"></li>
+      <li>Pt. Jawaharlal Nehru was ___ called Chacha Nehru. (affectionate) <input class="blank-input sm" type="text"></li>
+      <li>And they all lived ___ ever after. (happy) <input class="blank-input sm" type="text"></li>
+      <li>He spoke to me ___ (angry) <input class="blank-input sm" type="text"></li>
+      <li>The exhibition is held ___ (annual) <input class="blank-input sm" type="text"></li>
+      <li>The building is ___ air conditioned. (central) <input class="blank-input sm" type="text"></li>
+      <li>It will ___ rain today. (sure) <input class="blank-input sm" type="text"></li>
+      <li>They eat ___ fruit and nut. (main) <input class="blank-input sm" type="text"></li>
+      <li>She has been behaving very ___ lately. (rude) <input class="blank-input sm" type="text"></li>
+      <li>Thinking ___ is a good way of dealing with stress. (positive) <input class="blank-input sm" type="text"></li>
+      <li>He answered the questions ___ (quick) <input class="blank-input sm" type="text"></li>
+      <li>He is ___ built. (powerful) <input class="blank-input sm" type="text"></li>
+      <li>She does her work ___ (neat) <input class="blank-input sm" type="text"></li>
+      <li>___ , one gets upset when things go wrong. (Natural) <input class="blank-input sm" type="text"></li>
+      <li>Can we find a ___ convenient time? (mutual) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. accidentally · 2. affectionately · 3. happily · 4. angrily · 5. annually · 6. centrally · 7. surely · 8. mainly · 9. rudely · 10. positively · 11. quickly · 12. powerfully · 13. neatly · 14. Naturally · 15. mutually</p></div>
+  </div>
+
+  <h2 id="comparison"><span class="num">17.</span>Comparison of Adverbs</h2>
+  <p>Adverbs can be used to compare verbs, adjectives or adverbs. Like adjectives, adverbs too have three degrees of comparison: Positive, Comparative and Superlative. The three degrees of adverbs are formed in the following manners.</p>
+  <p><strong>1. By adding '-er' and '-est' to the Positive Degree:</strong></p>
+  <table class="ref-table">
+    <tr><th>Positive Degree</th><th>Comparative Degree</th><th>Superlative Degree</th></tr>
+    <tr><td>near</td><td>nearer</td><td>nearest</td></tr>
+    <tr><td>late</td><td>later</td><td>latest</td></tr>
+  </table>
+  <p><strong>2. By adding 'more' and 'most' before the positive degree:</strong></p>
+  <table class="ref-table">
+    <tr><th>Positive Degree</th><th>Comparative Degree</th><th>Superlative Degree</th></tr>
+    <tr><td>beautifully</td><td>more beautifully</td><td>most beautifully</td></tr>
+    <tr><td>intelligently</td><td>more intelligently</td><td>most intelligently</td></tr>
+  </table>
+  <p><strong>3. In an irregular way:</strong></p>
+  <table class="ref-table">
+    <tr><th>Positive Degree</th><th>Comparative Degree</th><th>Superlative Degree</th></tr>
+    <tr><td>far</td><td>farther</td><td>farthest</td></tr>
+    <tr><td>forth</td><td>further</td><td>furthest</td></tr>
+    <tr><td>ill</td><td>worse</td><td>worst</td></tr>
+    <tr><td>badly</td><td>worse</td><td>worst</td></tr>
+    <tr><td>late</td><td>later</td><td>latest, last</td></tr>
+    <tr><td>much</td><td>more</td><td>most</td></tr>
+    <tr><td>near, nigh</td><td>nearer</td><td>nearest, next</td></tr>
+    <tr><td>well</td><td>better</td><td>best</td></tr>
+  </table>
+
+  <h2 id="exercise-degrees"><span class="num">18.</span>Exercise — Degrees of Adverbs</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with correct degree of adverbs given in the bracket.</p>
+    <ol>
+      <li>She decorated the room ___ beautifully than you. (much) <input class="blank-input sm" type="text"></li>
+      <li>___ the temple, ___ from God. (near, far) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>Our team performed ___ than your team. (well) <input class="blank-input sm" type="text"></li>
+      <li>No ___ did the teacher enter the class than the students became silent. (soon) <input class="blank-input sm" type="text"></li>
+      <li>Kerala is ___ from Kashmir than Delhi. (far) <input class="blank-input sm" type="text"></li>
+      <li>Picasso painted ___ of all. (Well) <input class="blank-input sm" type="text"></li>
+      <li>My sister came ___ than I came. (late) <input class="blank-input sm" type="text"></li>
+      <li>She is much ___ now. (well) <input class="blank-input sm" type="text"></li>
+      <li>The hare ran ___ than the tortoise. (fast) <input class="blank-input sm" type="text"></li>
+      <li>I work much ___ than you do. (hard) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. much more · 2. Nearer, farther · 3. better · 4. sooner · 5. farther · 6. best · 7. later · 8. better · 9. faster · 10. harder</p></div>
+  </div>
+
+  <h2 id="too-transformation"><span class="num">19.</span>Transformation of Sentences by Removing 'Too'</h2>
+  <p><strong>(i)</strong> If the adverb 'too' is followed by an adjective and then by a verb in the infinitive mood, the sentence is converted into a complex sentence with two clauses — the first clause containing 'so' and the second beginning with 'that'.</p>
+  <p>Example: This trunk is too heavy for me to lift. → This trunk is so heavy that I cannot lift it.<br>He is too weak to walk. → He is so weak that he cannot walk.</p>
+  <p><strong>(ii)</strong> If the original sentence contains no negative word, the subordinate clause becomes negative. If the sentence contains a negative word, the subordinate clause becomes positive.</p>
+  <p>Example:</p>
+  <ol>
+    <li>He is too clever to be easily deceived. (positive) → He is so clever that he cannot be easily deceived. (Negative)</li>
+    <li>He is too confident not to face the interview. (Negative) → He is so confident that he will face the interview. (Positive)</li>
+  </ol>
+  <p><strong>(iii)</strong> If there is no infinitive after too, it can be replaced by the words more than enough, beyond the proper limit, over, excessively, very, extremely etc.</p>
+  <p>Examples: He is too eager for praise. → He is over eager for praise.<br>He is too intelligent. → He is very intelligent.<br>This city is too crowded. → This city is crowded beyond the limit.</p>
+
+  <h2 id="exercise-remove-too"><span class="num">20.</span>Exercise — Remove 'Too'</h2>
+  <div class="exercise-block">
+    <p class="instr">Transform the following sentences removing the adverb 'too'.</p>
+    <ol>
+      <li>Riya is too fat to run fast. <textarea class="answer-box"></textarea></li>
+      <li>The boy was too young to be sent out. <textarea class="answer-box"></textarea></li>
+      <li>The class is too noisy. <textarea class="answer-box"></textarea></li>
+      <li>The tiger was too old to jump. <textarea class="answer-box"></textarea></li>
+      <li>It is too hot for us to go out. <textarea class="answer-box"></textarea></li>
+      <li>The water in this river is too pure. <textarea class="answer-box"></textarea></li>
+      <li>This news is too good to be true. <textarea class="answer-box"></textarea></li>
+      <li>The rain is too heavy for me to go outside. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>Riya is so fat that she cannot run fast.</li>
+        <li>The boy was so young that he could not be sent out.</li>
+        <li>The class is very noisy. (no infinitive after 'too' — replaced with 'very')</li>
+        <li>The tiger was so old that he could not jump.</li>
+        <li>It is so hot that we cannot go out.</li>
+        <li>The water in this river is very pure. (no infinitive after 'too' — replaced with 'very')</li>
+        <li>This news is so good that it cannot be true.</li>
+        <li>The rain is so heavy that I cannot go outside.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="exercise-use-too"><span class="num">21.</span>Exercise — Use 'Too'</h2>
+  <div class="exercise-block">
+    <p class="instr">Transform the following sentences using 'too'.</p>
+    <ol>
+      <li>The water in this river is pure beyond the proper limit. <textarea class="answer-box"></textarea></li>
+      <li>It is so cold that we cannot go out. <textarea class="answer-box"></textarea></li>
+      <li>Rama speaks so fast that she cannot be understood. <textarea class="answer-box"></textarea></li>
+      <li>The lion was so weak that he could not attack the deer. <textarea class="answer-box"></textarea></li>
+      <li>Mohan is so weak that he cannot walk. <textarea class="answer-box"></textarea></li>
+      <li>This news is so good that it cannot be true. <textarea class="answer-box"></textarea></li>
+      <li>He is so slow that he cannot win the race. <textarea class="answer-box"></textarea></li>
+      <li>The question is so difficult that I cannot try it. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>The water in this river is too pure.</li>
+        <li>It is too cold for us to go out.</li>
+        <li>Rama speaks too fast to be understood.</li>
+        <li>The lion was too weak to attack the deer.</li>
+        <li>Mohan is too weak to walk.</li>
+        <li>This news is too good to be true.</li>
+        <li>He is too slow to win the race.</li>
+        <li>The question is too difficult for me to try.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="revision"><span class="num">22.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>An adverb modifies a verb, an adjective, or another adverb.</li>
+    <li>The main kinds are: time (when), place (where), manner (how), degree/extent (how much), frequency/number (how often), and affirmation/negation (yes/no certainty).</li>
+    <li>Interrogative adverbs (when, where, how, why) ask questions; relative adverbs join two clauses, referring back to an antecedent in the main clause.</li>
+    <li>Some words share the same form as adjective and adverb (fast, hard); some adverbs have two distinct forms with different meanings (hard/hardly, near/nearly).</li>
+    <li>Adverbs are mainly formed by adding '-ly', though not every '-ly' word is an adverb (homely, elderly are adjectives); some are formed with other prefixes/suffixes.</li>
+    <li>Adverbs have three degrees — Positive, Comparative, Superlative — formed with -er/-est, with more/most, or irregularly (well/better/best, far/farther/farthest).</li>
+    <li>'Too + adjective + infinitive' can be rewritten as 'so + adjective + that' (flipping positive/negative in the subordinate clause); without an infinitive, 'too' can be replaced by very/extremely/beyond the limit.</li>
+  </ul>
+
+  <footer>Class 8 · English · Grammar · Lesson 20 — Chapter-8, The Adverb.</footer>
+</div>
+</body>
+</html>

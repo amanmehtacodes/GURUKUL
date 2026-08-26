@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz 18 — Modal Auxiliaries | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 24px;
+  }
+  .callout p{margin:0 0 8px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout strong{color:var(--ink);}
+
+  h2{
+    font-family:var(--font-mono); font-size:18px; font-weight:700; color:var(--c3);
+    margin:32px 0 10px; padding-top:14px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  p{margin:0 0 12px;}
+  ol{padding-left:22px; margin:0 0 12px;}
+  li{margin-bottom:8px;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:12px 0 24px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  input.blank-input{
+    width:130px; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:44px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol{margin:0; padding-left:20px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar · Practice Quiz</div>
+  <h1 class="title">Quiz 18 — Modal Auxiliaries</h1>
+  <p class="subtitle">A fresh set of modal auxiliary exercises — a follow-up to Lesson 18, not a repeat of it.</p>
+
+  <div class="callout">
+    <p><strong>How this works:</strong> modal auxiliary exercises have definite correct answers. Fill in your attempt in each box, then press the reveal button under each exercise to check your answer against the key.</p>
+  </div>
+
+  <h2><span class="num">1.</span>Can / Could</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blank with 'can' or 'could'.</p>
+    <ol>
+      <li>My grandfather ___ speak four languages fluently. <input class="blank-input" type="text"></li>
+      <li>___ you please pass the salt? (informal request) <input class="blank-input" type="text"></li>
+      <li>When she was young, she ___ run very fast. <input class="blank-input" type="text"></li>
+      <li>___ I use your phone for a minute, sir? (very polite, formal) <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. can (present ability) · 2. Can (informal request) · 3. could (past ability) · 4. Could (formal, polite request)</p></div>
+  </div>
+
+  <h2><span class="num">2.</span>May / Might</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blank with 'may' or 'might'.</p>
+    <ol>
+      <li>___ I borrow your pen for a moment? <input class="blank-input" type="text"></li>
+      <li>He asked if he ___ leave the room early. <input class="blank-input" type="text"></li>
+      <li>___ you have a long and happy life! <input class="blank-input" type="text"></li>
+      <li>It is very cloudy; it ___ rain heavily. (weak possibility) <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. May (permission) · 2. might (reported speech) · 3. May (wish) · 4. might (weak possibility)</p></div>
+  </div>
+
+  <h2><span class="num">3.</span>Should / Ought to / Must</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blank with 'should', 'ought to' or 'must'.</p>
+    <ol>
+      <li>Drivers ___ carry a valid licence — it is the law. <input class="blank-input" type="text"></li>
+      <li>You ___ apologise; it would be the right thing to do. <input class="blank-input" type="text"></li>
+      <li>Members ___ renew their subscription before the notice period ends. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. must (legal obligation, no choice) · 2. should (moral advice) · 3. ought to (formal, situational necessity)</p></div>
+  </div>
+
+  <h2><span class="num">4.</span>Will / Shall / Would</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blank with 'will', 'shall' or 'would'.</p>
+    <ol>
+      <li>___ we begin the meeting now? (suggestion) <input class="blank-input" type="text"></li>
+      <li>When he was a boy, he ___ walk five miles to school every day. (past habit) <input class="blank-input" type="text"></li>
+      <li>I ___ definitely finish this by tonight. (strong determination) <input class="blank-input" type="text"></li>
+      <li>The company ___ pay full compensation. (I will see to it — insistence) <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. Shall (suggestion with 'we') · 2. would (past habit) · 3. will (determination) · 4. shall (insistence/promise)</p></div>
+  </div>
+
+  <h2><span class="num">5.</span>Used to / Need / Dare</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blank with 'used to', 'need' or 'dare'.</p>
+    <ol>
+      <li>There ___ be a big banyan tree at the corner of this street. <input class="blank-input" type="text"></li>
+      <li>You ___ not bring your own lunch; it will be provided. <input class="blank-input" type="text"></li>
+      <li>He ___ not question the coach's decision. <input class="blank-input" type="text"></li>
+      <li>My father ___ collect stamps when he was a boy. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. used to (something that existed in the past) · 2. need (absence of necessity) · 3. dare (courage) · 4. used to (past habit)</p></div>
+  </div>
+
+  <h2><span class="num">6.</span>Identify the Expression</h2>
+  <div class="exercise-block">
+    <p class="instr">Name the expression (ability, permission, possibility, advice, obligation, wish, habit, determination, promise, etc.) shown by the modal auxiliary in each sentence.</p>
+    <ol>
+      <li>May you succeed in all your endeavours! <textarea class="answer-box"></textarea></li>
+      <li>You must submit the form before Friday. <textarea class="answer-box"></textarea></li>
+      <li>She can swim across the river easily. <textarea class="answer-box"></textarea></li>
+      <li>He shall receive his prize at the ceremony. (promise) <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>May — a wish.</li>
+        <li>must — obligation/compulsion (a deadline with no choice).</li>
+        <li>can — ability.</li>
+        <li>shall — a promise.</li>
+      </ol>
+    </div>
+  </div>
+
+  <footer>Class 8 · English · Grammar · Quiz 18 — check each exercise against its own answer key above.</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 7 — Formal Letters | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 32px;}
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 22px; margin-bottom:36px;
+  }
+  nav.toc div.toc-h{font-family:var(--font-mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px;}
+  nav.toc li{margin-bottom:5px;}
+  nav.toc ol ol{margin:6px 0 10px; padding-left:22px;}
+  nav.toc ol ol li{margin-bottom:4px; font-size:14.5px;}
+  nav.toc a{color:var(--accent); text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline; color:var(--violet);}
+  nav.toc ol ol a{color:var(--ink-soft);}
+  nav.toc ol ol a:hover{color:var(--cyan);}
+  h2{
+    font-family:var(--font-mono); font-size:19px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.03em; color:var(--c3);
+    margin:44px 0 16px; scroll-margin-top:20px;
+  }
+  h3{font-size:20px; font-weight:700; margin:26px 0 10px; scroll-margin-top:20px;}
+  p{margin:0 0 14px;}
+  ul,ol{margin:0 0 16px; padding-left:24px;}
+  li{margin-bottom:7px;}
+  li ul, li ol{margin-top:8px;}
+  strong{font-weight:700;}
+  hr{border:none; border-top:1px solid var(--line); margin:36px 0;}
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:12px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 16px;
+  }
+  .note{
+    background:var(--accent2-soft); border-left:3px solid var(--accent2);
+    border-radius:6px; padding:12px 18px; color:var(--ink-soft); font-size:15px; margin:0 0 16px;
+  }
+  .note strong{color:var(--violet);}
+  .format-box{
+    font-family:var(--font-mono); font-size:14px; line-height:1.9;
+    background:var(--paper-raised); border:2px solid var(--ink); border-radius:6px;
+    padding:24px 20px; margin:0 0 20px; white-space:pre-wrap;
+  }
+  .hints{
+    background:var(--accent2-soft); border-left:3px solid var(--accent2);
+    border-radius:6px; padding:10px 16px; margin:0 0 14px; font-size:14.5px; color:var(--ink-soft);
+  }
+  .hints strong{color:var(--violet); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.04em;}
+  .sample{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:20px 24px; margin:0 0 24px;
+  }
+  .sample .sh{font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;}
+  /* Boxed formal-letter format — optional sender's address, date,
+     receiver's address, subject line, salutation, body paragraphs,
+     complimentary closure, subscription, signature (plus roll
+     no/class for applications). Unscoped so it's reusable for both
+     worked samples and every practice-question model answer below. */
+  .letter-box{
+    border:1.5px solid var(--ink); border-radius:4px; padding:20px 22px;
+    font-size:15.5px; line-height:1.7; background:var(--paper);
+  }
+  .letter-box .addr, .letter-box .recv{white-space:pre-line; margin:0 0 12px;}
+  .letter-box .dt{margin:0 0 12px; color:var(--ink-soft);}
+  .letter-box .subj{font-weight:700; text-decoration:underline; margin:0 0 12px;}
+  .letter-box .sal{font-weight:700; margin:0 0 12px;}
+  .letter-box p{margin:0 0 12px;}
+  .letter-box p:last-of-type{margin-bottom:0;}
+  .letter-box .close{margin-top:16px;}
+  .letter-box .sub{margin-top:2px; font-style:italic;}
+  .letter-box .sig{margin-top:2px; font-weight:700;}
+  .letter-box .sig-meta{margin-top:2px; color:var(--ink-soft); font-size:14.5px;}
+  table{width:100%; border-collapse:collapse; margin:0 0 20px; font-size:15px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--accent-soft); font-family:var(--font-mono); font-size:12.5px; text-transform:uppercase;}
+  td.addr-cell{white-space:pre-line; font-family:var(--font-mono); font-size:14px;}
+  .checklist{list-style:none; padding-left:0;}
+  .checklist li{padding-left:26px; position:relative;}
+  .checklist li:before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+
+  /* Interactive question blocks */
+  .q{
+    border:1px solid var(--line); border-left:4px solid var(--c3);
+    border-radius:10px; padding:18px 20px; margin:18px 0; background:var(--paper-raised);
+  }
+  .q .qn{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); margin-bottom:8px; letter-spacing:.03em; text-transform:uppercase;}
+  .q p.prompt{margin:0 0 10px; font-size:16px;}
+  .q textarea{
+    width:100%; box-sizing:border-box; font:15px/1.5 var(--font-serif);
+    padding:12px 14px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical;
+  }
+  .q textarea:focus{outline:none; border-color:var(--c3);}
+  .q button{
+    margin-top:12px; font-family:var(--font-mono); font-size:12.5px; font-weight:700;
+    letter-spacing:.03em; text-transform:uppercase; padding:9px 18px; border:1px solid var(--c3);
+    border-radius:7px; background:var(--c3-soft); color:var(--c3); cursor:pointer;
+  }
+  .q button:hover{background:var(--c3-panel);}
+  .qa{
+    display:none; margin-top:14px; padding:14px 16px; border-radius:8px;
+    background:var(--accent2-soft); border:1px solid var(--accent2);
+  }
+  .qa .qa-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--accent2); font-weight:700; margin-bottom:8px;}
+  .qa .letter-box{border-color:var(--accent2);}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Writing Skills</div>
+  <h1 class="title">Lesson 7 — Formal Letters</h1>
+  <p class="subtitle">Semester 2</p>
+
+  <nav class="toc">
+    <div class="toc-h">Contents</div>
+    <ol>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#types">Types of Formal Letters</a></li>
+      <li><a href="#constituents">Constituents of a Formal Letter</a></li>
+      <li><a href="#principal">Application to the Principal</a>
+        <ol type="a">
+          <li><a href="#principal-sample">Sample · Akriti Singla</a></li>
+        </ol>
+        <ol type="1">
+          <li><a href="#q1">Q1 · Noise from the music room</a></li>
+          <li><a href="#q2">Q2 · Broken microscope fine</a></li>
+          <li><a href="#q3">Q3 · New hockey sticks</a></li>
+        </ol>
+      </li>
+      <li><a href="#general">Format of a Formal Letter</a>
+        <ol type="a">
+          <li><a href="#general-sample">Sample · Dheeraj Yadav</a></li>
+        </ol>
+        <ol type="1">
+          <li><a href="#q4">Q4 · Thefts and snatching</a></li>
+          <li><a href="#q5">Q5 · Frequent power cuts</a></li>
+          <li><a href="#q6">Q6 · Change of address</a></li>
+        </ol>
+      </li>
+      <li><a href="#revision">Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition">1. Definition</h2>
+  <p>Formal letters, also known as official letters, are the letters written to the head of an institution for a particular purpose. The language, style and tone of formal letters are formal and polite with no personal references, opinions or expression. Although there is no specified word limit for a formal letter, it should stick to the point and justify the purpose of writing the letter. The content should be well organized in a logical sequence using appropriate cohesive devices.</p>
+
+  <h2 id="types">2. Types of Formal Letters</h2>
+  <ul>
+    <li>Application to Principal/Class in charge/Librarian/Head of the Department/ etc.</li>
+    <li>Job Applications</li>
+    <li>Letters to the Head of a particular department/ organisation</li>
+    <li>Letters to CEO/Bank Manager/Director</li>
+    <li>Letters to Publishers</li>
+    <li>Complaints</li>
+    <li>Letters to the editor</li>
+    <li>Business Letters (Order/cancel/replace a product)</li>
+  </ul>
+
+  <h2 id="constituents">3. Constituents of a Formal Letter</h2>
+  <ol>
+    <li><strong>Sender's Address:</strong> It is written at the top left corner of the letter. It includes:
+      <ul>
+        <li>House/flat/shop/ number</li>
+        <li>Name of building in case of flat</li>
+        <li>Name/number of street</li>
+        <li>Name of sector/colony, one can also include a landmark such as opposite SBI Branch or Near Orbit Mall etc.</li>
+        <li>Name of village/town/city</li>
+        <li>Pin code</li>
+        <li>State</li>
+        <li>Country (if the letter is written to a person staying in some other country)</li>
+      </ul>
+      <div class="note"><strong>Important Note:</strong> Sender's Address is not required when a student writes an application to the Principal, Class in charge, Head of the Department or Librarian of his/her school.</div>
+    </li>
+    <li><strong>Date:</strong> It is written below the sender's address. In Applications to the Principal, it is written below the receiver's address. There are many formats of writing a date. The name of the month should be written complete. Study carefully the formats of date given below.
+      <ul>
+        <li>D/M/Y: 24th November, 20XX or 24 November, 20XX</li>
+        <li>M/D/Y: November 24, 20XX</li>
+      </ul>
+    </li>
+    <li><strong>Receiver's Address:</strong> Receiver's Address is written in a particular sequence. It includes:
+      <ul>
+        <li>The Formal Designation</li>
+        <li>The name of the School/Department/Organisation/Publishing House etc.</li>
+        <li>Complete Address of the School/Department/Organisation/Publishing House etc.</li>
+      </ul>
+      <p>Study carefully the samples of receiver's address given in the table below.</p>
+      <table>
+        <tr><th>Situation</th><th>Receiver's Address</th></tr>
+        <tr><td>Letter/Application to Principal</td><td class="addr-cell">The Principal
+St. Andrew Convent School
+Sector 32 Chandigarh</td></tr>
+        <tr><td>Letter to the Head of an Organisation</td><td class="addr-cell">The Health Officer
+Municipal Corporation
+Jalandhar
+
+The Post Master
+General Post Office
+Model Town
+Ludhiana
+
+The Senior Superintendent of Police
+SSP Office
+Amritsar</td></tr>
+      </table>
+    </li>
+    <li><strong>Subject or Heading:</strong> It briefly states the purpose of writing the letter. It is generally highlighted or underlined. Examples:
+      <ul>
+        <li>Subject: Application for School Leaving Certificate</li>
+        <li>Subject: Complaint against the Postman</li>
+        <li>Subject: Frequent power failures</li>
+        <li>Subject: Bad quality and insufficient supply of water</li>
+      </ul>
+    </li>
+    <li><strong>Salutation:</strong> Salutation is the formal and polite way we address the recipient of the letter. It is written below the subject. Example: Dear Sir/Madam, Dear Sirs, or only Sir/Madam</li>
+    <li><strong>Body of the letter:</strong> It is the main part of the letter which contains the message or the information meant to be conveyed through the letter. Although there is no hard and fast rule regarding the number of paragraphs it should contain, it is usually written in three or four paragraphs depending on the content to be written. The body has three parts:
+      <ul>
+        <li><strong>(a) Introduction:</strong> It includes the introduction of the sender and purpose of writing the letter.</li>
+        <li><strong>(b) Main Message:</strong> The second paragraph is the main message or information to be conveyed. It gives a detailed description of the purpose of writing the letter. This part should be well organized using appropriate cohesive devices. If the content of the letter is long, there may be two paragraphs for the main message.</li>
+        <li><strong>(c) Closure:</strong> The third paragraph concludes the letter. It usually states what is expected of the receiver. It may also include some suggestions related to the purpose of the letter. It also includes a complimentary closure such as "Thank you" or "Thanking you in anticipation".</li>
+      </ul>
+    </li>
+    <li><strong>Subscription:</strong> It is a polite way of closing the letter. Read the examples of subscription given below.
+      <ul>
+        <li>For Principal:
+          <ul><li>Yours obediently</li></ul>
+        </li>
+        <li>For others:
+          <ul><li>Yours faithfully/truly</li></ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Signature:</strong> The sender's signature is written just below the subscription</li>
+  </ol>
+
+  <h2 id="principal">4. Application to the Principal</h2>
+  <h3>Purpose</h3>
+  <ul>
+    <li>To apply for a Leave</li>
+    <li>To seek Permission</li>
+    <li>To Seek Admission</li>
+    <li>To apply for School-Leaving Certificate</li>
+    <li>To request for exemption from fee/exam/test</li>
+    <li>To request for fee Concession</li>
+    <li>To get issued a certificate</li>
+    <li>To get re-issued an I-Card/School Fee Booklet/ Library Card etc</li>
+    <li>To request for change of class/section</li>
+    <li>To report an issue and seek solution to the problem</li>
+    <li>To apologize</li>
+  </ul>
+
+  <h3>Format of Application to Principal</h3>
+  <div class="format-box">Receiver's Address
+Date of writing the letter
+Subject:
+Salutation
+Introduction: Name, Class, Section, Roll Number, Purpose of writing the letter
+..................................................................................................
+..................................................................................................
+Main message: Details of the issue the application is about, details in terms of cause, effect, result etc.
+..................................................................................................
+..................................................................................................
+Closure: Request for required action/permission/enquiry/ issuance/change etc.
+..................................................................................................
+..................................................................................................
+Complimentary Closure: Thanking you in anticipation
+Subscription
+Signature
+Roll No
+Class, Section/Designation
+  </div>
+
+  <div class="sample" id="principal-sample">
+    <div class="sh">Application to Principal — Sample</div>
+    <p><strong>You are Akriti Singla of Grade VI A of Strawberry Fields Public School, Pune. Write a letter to your Principal requesting him/her to exempt you from taking Office Tests as you have to go to Mumbai to perform in the Theatre Round of Indian Idol, a reality show telecast on Sony TV.</strong></p>
+    <div class="letter-box">
+      <div class="recv">The Principal
+Strawberry Fields Public School
+Pune</div>
+      <div class="dt">July 27, 20XX</div>
+      <div class="subj">Subject: Request for exemption from Office Tests</div>
+      <p>My name is Akriti Singla, and I am a student of grade VI A in your school. My roll number is 7.</p>
+      <p>I feel greatly excited and proud to inform you that I have cleared the Audition Round of the popular singing reality show 'Indian Idol' telecast on Sony TV, and got selected for the Theatre Round. The shooting of the Theatre Round of the same will be held from August 5 to August 10, 20XX in Mumbai. The dates of Office Tests scheduled for grade VI coincide with the dates of the Theatre Round.</p>
+      <p>You are humbly requested to exempt me from appearing in the above mentioned Office Tests. I will be highly obliged to you.</p>
+      <div class="close">Thank you.</div>
+      <div class="sub">Yours obediently</div>
+      <div class="sig">Akriti Singla</div>
+      <div class="sig-meta">Roll No. 7<br>Grade VI A</div>
+    </div>
+  </div>
+
+  <p class="callout">Read each prompt and hints, draft your application in the box below, then press <strong>Check my letter</strong> to reveal a model answer written in the same style. Compare — don't just copy.</p>
+
+  <div class="q" id="q1">
+    <div class="qn">Question 1</div>
+    <p class="prompt">Your class is adjacent to the music room. The loud sounds of students and those of musical instruments create disturbance in your studies. As monitor of your class, write a letter to your Principal on behalf of your class requesting him/her to shift your class somewhere else in the school premises.</p>
+    <div class="hints"><strong>Hints:</strong> Introduce yourself, write the purpose of writing the letters, describe how sound affects your routine studies, make suggestions for the change.</div>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="recv">The Principal
+[School Name]
+[City]</div>
+        <div class="dt">[Date]</div>
+        <div class="subj">Subject: Request for Shifting of Classroom due to Noise Disturbance</div>
+        <p>My name is [Name], and I am a student of Class VIII [Section] and the monitor of my class. I am writing this letter on behalf of my entire class to bring to your kind notice a problem that has been affecting our studies for the past few weeks.</p>
+        <p>Our classroom is located right next to the music room, and the loud sounds of musical instruments and singing during music periods create a great deal of disturbance in our classes. It becomes extremely difficult for us to concentrate on our lessons or hear our teachers clearly, especially during tests and important discussions. This disturbance has been affecting our routine studies and overall performance in class.</p>
+        <p>You are humbly requested to consider shifting our classroom to another location in the school premises, away from the music room, so that we can study in a quiet and conducive environment. We would be highly grateful for your kind consideration in this matter.</p>
+        <div class="close">Thanking you in anticipation</div>
+        <div class="sub">Yours obediently</div>
+        <div class="sig">[Name]</div>
+        <div class="sig-meta">Roll No. [Roll Number]<br>Class VIII [Section] (Monitor)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q2">
+    <div class="qn">Question 2</div>
+    <p class="prompt">While conducting a lab experiment in science laboratory, you accidently broke an expensive Microscope. You have been fined Rs. 5000. Write a letter to the Principal of your school apologizing for the loss and requesting him/her to exempt you from paying the fine as you are unable to pay fine.</p>
+    <div class="hints"><strong>Hints:</strong> Introduce yourself, explain how the accidental loss happened, explain why you are unable to pay the fine, request for exemption, promise to be careful in handling lab objects or other school apparatus in future.</div>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="recv">The Principal
+[School Name]
+[City]</div>
+        <div class="dt">[Date]</div>
+        <div class="subj">Subject: Request for Exemption from Fine for Accidental Damage</div>
+        <p>My name is [Name], and I am a student of Class VIII [Section]. I am writing this letter to apologise for an unfortunate incident that occurred during our science laboratory session last week.</p>
+        <p>While conducting an experiment in the science laboratory, I accidentally knocked over and broke an expensive microscope. I understand that this was a genuine accident and not done deliberately, but I deeply regret the loss caused to the school. I have been fined Rs. 5000 for the damage, however, my family is currently going through financial difficulties, and I am unable to pay this amount.</p>
+        <p>I humbly request you to kindly consider exempting me from paying the fine, or reducing it if possible. I promise to be extremely careful while handling laboratory equipment and other school apparatus in the future, and I assure you that such an incident will not be repeated.</p>
+        <div class="close">Thanking you in anticipation</div>
+        <div class="sub">Yours obediently</div>
+        <div class="sig">[Name]</div>
+        <div class="sig-meta">Roll No. [Roll Number]<br>Class VIII [Section]</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q3">
+    <div class="qn">Question 3</div>
+    <p class="prompt">You are the captain of the hockey team of your school. Write an application to your Principal requesting him/her to order for some new hockey sticks as the old ones are in bad state and insufficient in number.</p>
+    <div class="hints"><strong>Hints:</strong> Introduce yourself, describe the state of hockey sticks, request for ordering new ones, explain how the new ones will be beneficial, mention some upcoming hockey event.</div>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="recv">The Principal
+[School Name]
+[City]</div>
+        <div class="dt">[Date]</div>
+        <div class="subj">Subject: Request for Purchase of New Hockey Sticks</div>
+        <p>My name is [Name], and I am the captain of the school hockey team, studying in Class VIII [Section]. I am writing this letter to bring to your notice an issue that is affecting our team's practice sessions.</p>
+        <p>Most of the hockey sticks currently available with our team are old, worn out and in a poor condition, with several of them having cracks and loose grips. Additionally, the number of sticks available is insufficient for all the players to practise properly at the same time. This has been affecting the quality of our training sessions.</p>
+        <p>You are requested to kindly order some new hockey sticks for the team at the earliest. New equipment will greatly improve our practice sessions and boost the team's performance, which is especially important as the Inter-School Hockey Tournament is scheduled to begin next month. We would be extremely grateful for your support.</p>
+        <div class="close">Thanking you in anticipation</div>
+        <div class="sub">Yours obediently</div>
+        <div class="sig">[Name]</div>
+        <div class="sig-meta">Roll No. [Roll Number]<br>Class VIII [Section] (Captain, Hockey Team)</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="general">5. Format of a Formal Letter</h2>
+  <div class="format-box">Sender's Address
+Date of writing the letter
+Receiver's Address
+Subject:
+Salutation
+Introduction: Introduction, Purpose of writing
+..................................................................................................
+..................................................................................................
+..................................................................................................
+Main message: Details of the issue, supporting sentences, cause, effect, suggestions etc.
+..................................................................................................
+..................................................................................................
+..................................................................................................
+Closure: Conclusion, request, proposal or offer
+..................................................................................................
+..................................................................................................
+..................................................................................................
+
+Complimentary Closure
+Subscription
+Signature
+  </div>
+
+  <div class="sample" id="general-sample">
+    <div class="sh">Formal Letter — Sample</div>
+    <div class="letter-box">
+      <div class="addr">House No. 315, Street No. 5
+New Azaad Colony
+Moga</div>
+      <div class="dt">October 25, 20XX</div>
+      <div class="recv">The President
+Municipal Committee
+Moga</div>
+      <div class="subj">Subject: Regarding insanitary conditions of the locality</div>
+      <div class="sal">Sir</div>
+      <p>I am a resident of New Azaad Colony. Through this letter of mine, I wish to draw your kind attention towards the insanitary conditions prevailing in our locality.</p>
+      <p>Our colony, though located in the heart of the city, is the most neglected and worst maintained colony in the town. There are no sweepers to clean the streets. There are no provisions for throwing the garbage. Consequently, the heaps of garbage are scattered here and there spreading foul odours in all directions. These heaps are the breeding places for flies and mosquitoes. The sewage system of the colony is in a bad state. There are cracked drainage pipes and overflowing manholes making the streets dirty and stinking. The dirty water leaking all the time is a great threat for the health of the residents of the colony.</p>
+      <p>This state of affairs needs your urgent attention and the needful action before epidemics like malaria and cholera break out. You are humbly requested to look into the matter and do the needful.</p>
+      <div class="close">Thanking you in anticipation</div>
+      <div class="sub">Yours truly</div>
+      <div class="sig">Dheeraj Yadav</div>
+    </div>
+  </div>
+
+  <div class="q" id="q4">
+    <div class="qn">Question 4</div>
+    <p class="prompt">Write a letter to the Senior Superintendent of Police of your town showing your concern about the increasing incidents of thefts and snatching in your town and requesting him to do the needful.</p>
+    <div class="hints"><strong>Hints:</strong> Introduce yourself, draw attention towards the issue, report a few incidents, request to do the needful, make suggestions.</div>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="addr">[Your Address]</div>
+        <div class="dt">[Date]</div>
+        <div class="recv">The Senior Superintendent of Police
+SSP Office
+[City]</div>
+        <div class="subj">Subject: Concern Regarding Increasing Incidents of Theft and Snatching</div>
+        <div class="sal">Sir</div>
+        <p>I am [Name], a resident of [Locality], [City]. Through this letter, I wish to draw your kind attention towards the alarming rise in incidents of theft and chain-snatching in our area over the past few weeks.</p>
+        <p>Just last week, a woman was robbed of her handbag by two men on a motorcycle near the main market, and a few days before that, a house in our neighbourhood was burgled while the family was away. Several residents have reported similar incidents, and there is a growing sense of fear and insecurity among people, especially women and the elderly, who are now hesitant to step out after dark.</p>
+        <p>I request you to kindly look into the matter and increase police patrolling in our locality, especially during the evening and night hours. Installing CCTV cameras at key points and organising regular police checks would also help in curbing such incidents. We would be extremely grateful for prompt action in this regard.</p>
+        <div class="close">Thanking you in anticipation</div>
+        <div class="sub">Yours faithfully</div>
+        <div class="sig">[Name]</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q5">
+    <div class="qn">Question 5</div>
+    <p class="prompt">Write a letter to the SDO of Punjab State Electricity Board complaining against the unplanned and frequent power cuts in your locality.</p>
+    <div class="hints"><strong>Hints:</strong> Introduce yourself, draw attention towards the issue, mention frequent electric faults, explain effects on people, request to do the needful.</div>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="addr">[Your Address]</div>
+        <div class="dt">[Date]</div>
+        <div class="recv">The SDO
+Punjab State Electricity Board
+[City]</div>
+        <div class="subj">Subject: Complaint Regarding Frequent and Unplanned Power Cuts</div>
+        <div class="sal">Sir</div>
+        <p>I am [Name], a resident of [Locality], [City]. I am writing this letter to bring to your notice the problem of frequent and unplanned power cuts that our locality has been facing for the past several weeks.</p>
+        <p>Almost every day, the electricity supply is disrupted several times without any prior notice or announced schedule, often for hours at a stretch. This has been extremely inconvenient for the residents, especially students preparing for examinations, elderly people dependent on medical equipment, and those working from home. The frequent voltage fluctuations have also damaged several household appliances in the area.</p>
+        <p>I request you to kindly look into the matter and take the necessary steps to ensure a stable and uninterrupted power supply in our locality. If maintenance work is required, we would appreciate advance notice so that residents can plan accordingly. We would be grateful for your prompt attention to this issue.</p>
+        <div class="close">Thanking you in anticipation</div>
+        <div class="sub">Yours faithfully</div>
+        <div class="sig">[Name]</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q" id="q6">
+    <div class="qn">Question 6</div>
+    <p class="prompt">You have sold your old house and shifted to a new one in some other colony. Write a letter to the Post Master informing him about the change and requesting him to deliver all your letters and parcels at your new address henceforth.</p>
+    <div class="hints"><strong>Hints:</strong> Introduce yourself, tell the purpose of writing the letter, mention the old address, mention the new address, request to deliver your letters and parcels at the new address.</div>
+    <textarea rows="9" placeholder="Draft your letter here…"></textarea>
+    <button onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide model answer':'Check my letter';">Check my letter</button>
+    <div class="qa">
+      <div class="qa-label">Model Answer</div>
+      <div class="letter-box">
+        <div class="addr">[Your New Address]</div>
+        <div class="dt">[Date]</div>
+        <div class="recv">The Post Master
+General Post Office
+[City]</div>
+        <div class="subj">Subject: Request for Change of Delivery Address</div>
+        <div class="sal">Sir</div>
+        <p>I am [Name]. I am writing this letter to inform you that I have recently sold my old house and shifted to a new residence in a different colony in the city.</p>
+        <p>My old address was [Old Address], and my new address, where I now reside, is [New Address]. Since I still receive some important letters and parcels at my old address, I request you to kindly update your records and ensure that all my future mail is delivered to my new address mentioned above.</p>
+        <p>I would be grateful if you could make the necessary changes at the earliest to avoid any inconvenience or loss of important correspondence.</p>
+        <div class="close">Thank you for your cooperation.</div>
+        <div class="sub">Yours faithfully</div>
+        <div class="sig">[Name]</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="revision">6. Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>Sender's address included — except for applications to the Principal/Class in charge/HOD/Librarian</li>
+    <li>Date placed correctly (below sender's address, or below receiver's address for Principal applications)</li>
+    <li>Receiver's address in the correct sequence — designation, institution/department, address</li>
+    <li>Subject line included, briefly stating the purpose, and underlined or highlighted</li>
+    <li>Formal salutation used — Sir/Madam, Dear Sir/Madam, or Dear Sirs</li>
+    <li>Body organised into introduction, main message and closure</li>
+    <li>Correct subscription — "Yours obediently" for the Principal, "Yours faithfully/truly" for others</li>
+    <li>Signature below the subscription, with Roll No. and Class/Section added for a Principal application</li>
+    <li>No personal references, opinions or informal expressions anywhere in the letter</li>
+  </ul>
+
+  <footer>Class 8 · English · Writing Skills · Lesson 7 of 30</footer>
+</div>
+</body>
+</html>

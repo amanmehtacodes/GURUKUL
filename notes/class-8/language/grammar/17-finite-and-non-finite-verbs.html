@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 17 — Finite and Non-Finite Forms of Verbs | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:26px 0 8px; scroll-margin-top:20px;}
+  h4{font-family:var(--font-mono); font-size:13.5px; color:var(--cyan); margin:18px 0 8px; text-transform:uppercase; letter-spacing:.03em;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .ocr-note{
+    background:var(--accent2-soft); border:1px dashed var(--violet); border-radius:8px;
+    padding:10px 14px; margin:8px 0 14px; color:var(--ink-faint); font-size:13.5px; font-style:italic;
+  }
+
+  .diagram{
+    display:flex; flex-direction:column; align-items:center; gap:10px; margin:18px 0 24px;
+    padding:20px; background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius);
+  }
+  .diagram .top{font-family:var(--font-mono); font-size:14px; font-weight:700; color:var(--ink); padding:8px 18px; border:1px solid var(--c3); border-radius:8px; background:var(--c3-soft);}
+  .diagram .row{display:flex; gap:16px; flex-wrap:wrap; justify-content:center;}
+  .diagram .leaf{font-family:var(--font-mono); font-size:13.5px; color:var(--ink-soft); padding:8px 16px; border:1px solid var(--line-strong); border-radius:8px; background:var(--paper);}
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:14.5px;}
+  table.ref-table caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:11px;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line-strong); padding:7px 10px; text-align:left; color:var(--ink-soft);}
+  table.ref-table th{background:var(--paper-raised); color:var(--ink); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table td.g{color:var(--ink); font-weight:600;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:16px 0 30px; background:var(--paper-raised);
+  }
+  .exercise-block h4{margin-top:0;}
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  input.blank-input{
+    width:92%; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  input.blank-input.sm{width:150px;}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:50px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol, .qa ul{margin:0; padding-left:20px;}
+  .qa li{margin-bottom:5px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar</div>
+  <h1 class="title">Lesson 17 — Finite and Non-Finite Forms of Verbs</h1>
+  <p class="subtitle">Semester 2 · Chapter-7</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#intro">1. Finite vs Non-Finite Verbs</a></li>
+      <li><a href="#types">2. Types of Non-Finite Verbs</a></li>
+      <li><a href="#infinitives">3. Infinitives — Definition &amp; Types</a></li>
+      <li><a href="#infinitive-to-uses">4. Infinitive with 'to' — Uses</a></li>
+      <li><a href="#exercise-inf-1">5. Exercise — Infinitives with 'to' (Set 1)</a></li>
+      <li><a href="#exercise-inf-2">6. Exercise — Infinitives with 'to' (Set 2)</a></li>
+      <li><a href="#bare-infinitive">7. Infinitive without 'to' (Bare Infinitive)</a></li>
+      <li><a href="#exercise-bare">8. Exercise — 'to' Infinitive or Bare Infinitive</a></li>
+      <li><a href="#participles">9. Participles — Definition &amp; Types</a></li>
+      <li><a href="#present-participle">10. Use of Present Participles</a></li>
+      <li><a href="#past-participle">11. Use of Past Participle</a></li>
+      <li><a href="#exercise-participle">12. Exercise — Present / Past Participle Forms</a></li>
+      <li><a href="#perfect-participle">13. Use of Perfect Participle</a></li>
+      <li><a href="#exercise-perfect">14. Exercise — Perfect Participle Forms</a></li>
+      <li><a href="#gerund">15. Gerund — Definition &amp; Use</a></li>
+      <li><a href="#exercise-gerund-1">16. Exercise — Gerund Forms (Set 1)</a></li>
+      <li><a href="#gerund-prep">17. Gerund after Preposition or Determiner</a></li>
+      <li><a href="#exercise-gerund-2">18. Exercise — Gerund Forms (Set 2)</a></li>
+      <li><a href="#correct-sentences">19. Exercise — Correct the Sentences</a></li>
+      <li><a href="#revision">20. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="intro"><span class="num">1.</span>Finite vs Non-Finite Verbs</h2>
+  <p>Read the following forms of the verbs carefully:</p>
+  <ul>
+    <li>Go, goes, went, gone, going, to go, having gone</li>
+    <li>Look, looks, looked, looked, looking, to look, having looked</li>
+    <li>Help, helps, helped, helped, helping, to help, having helped</li>
+    <li>Be, is, am, are, was, were, to be, been, being, having been</li>
+    <li>Do, does, did, done, doing, to do, having done</li>
+    <li>Has, have, had, to have, having, having had</li>
+  </ul>
+  <p><strong>Think:</strong> Why do we use different forms of verbs in sentences?</p>
+  <p>Look at the changes in the forms of verbs in the following sentences:</p>
+  <ol>
+    <li>He goes to school to study.<br>They go to school to study. (Change in number of the subject)</li>
+    <li>I will help you. (Determination)<br>I may help you. (Possibility) (Change in expression/mood)</li>
+    <li>They like swimming.<br>They liked swimming. (Change in tense)</li>
+    <li>He finds the door locked.<br>I find the door locked. (Change in person of the subject)</li>
+  </ol>
+  <p>The verbs that change according to change in tense, number, mood or person — 'goes'/'go', 'will'/'may', 'like'/'liked', 'finds'/'find' — are called <strong>finite verbs</strong> or finite forms of verbs. The other verbs in these sentences — 'to study', 'to help', 'swimming', 'locked' — don't change their forms according to change in tense, number, mood or person. These verbs are called <strong>non-finite forms of verbs</strong>.</p>
+
+  <h2 id="types"><span class="num">2.</span>Types of Non-Finite Verbs</h2>
+  <div class="diagram">
+    <div class="top">Non-Finite Verbs</div>
+    <div class="row">
+      <div class="leaf">Infinitives</div>
+      <div class="leaf">Participles</div>
+      <div class="leaf">Gerund</div>
+    </div>
+  </div>
+
+  <h2 id="infinitives"><span class="num">3.</span>Infinitives — Definition &amp; Types</h2>
+  <p>An infinitive is a type of non-finite form of verb that does not follow subject-verb agreement in the sentence. It is the first form of verb used with 'to' or without 'to'.</p>
+  <p>There are two types of Infinitives.</p>
+  <p><strong>1. Infinitive with 'to':</strong> 'to + first form of verb'</p>
+  <ol>
+    <li>He goes to school to study.</li>
+    <li>I wanted to play.</li>
+    <li>They wish to join a new school.</li>
+  </ol>
+  <p>In the above sentences, the verbs 'to study', 'to play' and 'to join' are infinitives with 'to'.</p>
+  <p><strong>2. Infinitive without 'to' (Bare Infinitive):</strong> First form of verb</p>
+  <ol>
+    <li>Please let me go.</li>
+    <li>I will help you.</li>
+    <li>She does nothing but complain.</li>
+  </ol>
+  <p>In the above sentences, the verbs 'go', 'help' and 'complain' are infinitives without 'to' or bare infinitives.</p>
+
+  <h2 id="infinitive-to-uses"><span class="num">4.</span>Infinitive with 'to' — Uses</h2>
+  <p>Read the following examples carefully to understand the use of infinitive with 'to'.</p>
+  <ol>
+    <li>To err is human. (used as a subject)</li>
+    <li>I want to go there. (used as an object)</li>
+    <li>My ambition is to become a doctor. (used as a subject complement)</li>
+    <li>It is easier to preach than to practise. (used after an adjective)</li>
+    <li>He went to meet the President. (used to modify a verb)</li>
+    <li>You are difficult to please. (used to modify an adjective)</li>
+    <li>It is time to leave. (used to modify a noun)</li>
+    <li>To cut the long story short, he cheated everybody. (used as a comment)</li>
+    <li>He is about to resign. (used after a preposition)</li>
+    <li>He was the first to arrive. (used as an adjunct)</li>
+    <li>The patient is too weak to walk. (used with adverb 'too')</li>
+    <li>I don't have money enough to buy a car. (used with adjective 'enough')</li>
+  </ol>
+
+  <h2 id="exercise-inf-1"><span class="num">5.</span>Exercise — Infinitives with 'to' (Set 1)</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with infinitives with 'to' using the verbs given in the brackets.</p>
+    <ol>
+      <li>___ others is easy. (criticize) <input class="blank-input sm" type="text"></li>
+      <li>Give me something ___ (eat) <input class="blank-input sm" type="text"></li>
+      <li>She was the only one ___ this sum. (solve) <input class="blank-input sm" type="text"></li>
+      <li>The movie is too boring ___ (watch) <input class="blank-input sm" type="text"></li>
+      <li>He is about ___ for Mumbai. (leave) <input class="blank-input sm" type="text"></li>
+      <li>___ you the truth, I don't like your dress. (tell) <input class="blank-input sm" type="text"></li>
+      <li>It is time ___ the lessons. (revise) <input class="blank-input sm" type="text"></li>
+      <li>I wish ___ driving. (learn) <input class="blank-input sm" type="text"></li>
+      <li>My dream is ___ a singer. (become) <input class="blank-input sm" type="text"></li>
+      <li>It is easier ___ than to do. (say) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. To criticize · 2. to eat · 3. to solve · 4. to watch · 5. to leave · 6. To tell · 7. to revise · 8. to learn · 9. to become · 10. to say</p></div>
+  </div>
+
+  <h2 id="exercise-inf-2"><span class="num">6.</span>Exercise — Infinitives with 'to' (Set 2)</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with infinitives with 'to' using the verbs given in the brackets. The first example has been done for you.</p>
+    <ol>
+      <li>I hope to stand first in the class this year. (stand)</li>
+      <li>You deserve ___ (get) this award. <input class="blank-input sm" type="text"></li>
+      <li>I was late, so I decided ___ (take) a taxi. <input class="blank-input sm" type="text"></li>
+      <li>He cannot afford ___ (buy) an expensive mobile phone. <input class="blank-input sm" type="text"></li>
+      <li>I have managed ___ (collect) some money for my new house. <input class="blank-input sm" type="text"></li>
+      <li>My friend has promised ___ (help) me. <input class="blank-input sm" type="text"></li>
+      <li>My neighbour agreed ___ (give) me a lift in his car. <input class="blank-input sm" type="text"></li>
+      <li>Last year we planned ___ (visit) Agra. <input class="blank-input sm" type="text"></li>
+      <li>He worked hard, but failed ___ (get) good marks. <input class="blank-input sm" type="text"></li>
+      <li>Rajat refused ___ (lend) me money. <input class="blank-input sm" type="text"></li>
+      <li>The child seems ___ (have) no interest in this game. <input class="blank-input sm" type="text"></li>
+      <li>You appear ___ (be) tired. <input class="blank-input sm" type="text"></li>
+      <li>The boy pretended ___ (be) sleeping. <input class="blank-input sm" type="text"></li>
+      <li>This girl tends ___ (talk) a lot. <input class="blank-input sm" type="text"></li>
+      <li>Our country rightly claims ___ (have) a rich heritage. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>2. to get · 3. to take · 4. to buy · 5. to collect · 6. to help · 7. to give · 8. to visit · 9. to get · 10. to lend · 11. to have · 12. to be · 13. to be · 14. to talk · 15. to have</p></div>
+  </div>
+
+  <h2 id="bare-infinitive"><span class="num">7.</span>Infinitive without 'to' (Bare Infinitive)</h2>
+  <p>Bare Infinitive is used in the following cases:</p>
+  <ol>
+    <li>After the auxiliary 'do', 'does' or 'did': (i) He does not like mangoes. (ii) They did not stay here. (iii) Do you have a spare pen?</li>
+    <li>After modal auxiliaries: (i) I will help you. (ii) He may come tomorrow. (iii) You need not go there.</li>
+    <li>After certain verbs such as: see, watch, hear, feel, let, make, help, bid, have: (i) I saw her make a doll. (ii) They watched us play football. (iii) She hears him sing a song.</li>
+    <li>After certain phrases such as: had better, had rather, would better, would rather: (i) I would better stay where I am. (ii) He would rather die than beg.</li>
+    <li>After 'but', 'except' and 'than' such as: (i) She does nothing but complain. (ii) I would better talk than remain silent.</li>
+    <li>In suggestions starting with why or why not: (i) Why talk to him? (ii) Why not go there and talk to him?</li>
+  </ol>
+
+  <h2 id="exercise-bare"><span class="num">8.</span>Exercise — 'to' Infinitive or Bare Infinitive</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'infinitives with to' or 'bare infinitives' using the verbs given in the brackets.</p>
+    <ol>
+      <li>___ is human. (err) <input class="blank-input sm" type="text"></li>
+      <li>You cannot ___ my class. (attend) <input class="blank-input sm" type="text"></li>
+      <li>Let me ___ a question. (ask) <input class="blank-input sm" type="text"></li>
+      <li>My teacher made me ___ in the class. (stand) <input class="blank-input sm" type="text"></li>
+      <li>Please help me ___ this box. (lift) <input class="blank-input sm" type="text"></li>
+      <li>You should ___ some rest. (take) <input class="blank-input sm" type="text"></li>
+      <li>You need not ___ her. (invite) <input class="blank-input sm" type="text"></li>
+      <li>You had better ___ silent than ___ (remain, argue) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>We must ___ the patient to the hospital. (take) <input class="blank-input sm" type="text"></li>
+      <li>I watched her ___ the road. (cross) <input class="blank-input sm" type="text"></li>
+      <li>I want ___ a teacher. (become) <input class="blank-input sm" type="text"></li>
+      <li>We don't know how ___ her. (help) <input class="blank-input sm" type="text"></li>
+      <li>He wants ___ the truth. (hear) <input class="blank-input sm" type="text"></li>
+      <li>I have nothing new ___ (tell) <input class="blank-input sm" type="text"></li>
+      <li>Why ___ time in this discussion? (waste) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. To err (subject use) · 2. attend (bare, after modal 'cannot') · 3. ask (bare, after 'let') · 4. stand (bare, after 'made') · 5. lift (bare, after 'help') · 6. take (bare, after modal 'should') · 7. invite (bare, after modal 'need not') · 8. remain, argue (bare, after 'had better'/'than') · 9. take (bare, after modal 'must') · 10. cross (bare, after 'watched') · 11. to become (to-infinitive, after 'want') · 12. to help (to-infinitive) · 13. to hear (to-infinitive, after 'wants') · 14. to tell (to-infinitive) · 15. waste (bare, after 'why')</p></div>
+  </div>
+  <div class="callout"><p><strong>Note:</strong> Verbs that take infinitive as object: attempt, ask, agree, claim, choose, consent, decide, determine, expect, hope, learn, long, manage, mean, offer, pretend, prepare, seem etc.</p></div>
+
+  <h2 id="participles"><span class="num">9.</span>Participles — Definition &amp; Types</h2>
+  <p>A participle is a type of non-finite form of verb that does not follow subject-verb agreement in the sentence. Participles are the verbs that function as adjectives. They are also called verbal adjectives. There are three types of participles.</p>
+  <ol>
+    <li>Present Participle (first form of verb + 'ing' functioning as an adjective)</li>
+    <li>Past Participle (third form of verb functioning as an adjective)</li>
+    <li>Perfect Participle (having + third form of verb functioning as an adjective)</li>
+  </ol>
+
+  <h2 id="present-participle"><span class="num">10.</span>Use of Present Participles</h2>
+  <p>We use a present participle (first form of verb + 'ing') to describe or modify a noun or a pronoun. A present participle can be placed before or after the noun or pronoun it modifies. Read the sentences given below to understand the use of present participles.</p>
+  <ul>
+    <li>I will buy a jumping doll. (used as an adjective)</li>
+    <li>This building has no running water. (used as an adjective)</li>
+    <li>The lecture was interesting. (used as a subject complement)</li>
+    <li>We saw the moon rising. (used as an object complement)</li>
+    <li>She went away crying. (used as an adverb)</li>
+    <li>The person living on the first floor is my friend. (used as an adjective phrase)</li>
+    <li>Placing his hand on the Bible, he took the oath. (used to denote earlier action of the same subject)</li>
+    <li>It being a fine day, we arranged for a picnic. (used as an absolute phrase)</li>
+  </ul>
+
+  <h2 id="past-participle"><span class="num">11.</span>Use of Past Participle</h2>
+  <p>We use a past participle (third form of verb) to describe or modify a noun or a pronoun. A past participle can be placed before or after the noun or pronoun it modifies. Read the sentences given below to understand the use of past participles.</p>
+  <ul>
+    <li>A burnt child dreads the fire. (used as an adjective)</li>
+    <li>He appears bored. (used as a subject complement)</li>
+    <li>I found him tired. (used as an object complement)</li>
+    <li>The shop has been inaugurated now. (used in passive voice)</li>
+    <li>The man seems worried. (used as a subject complement)</li>
+    <li>They have finished their meal. (used in perfect tense)</li>
+    <li>The books read in childhood are forgotten. (used in an adjective phrase)</li>
+    <li>Deceived by his friends, he killed himself. (used in an adjective phrase)</li>
+    <li>The man left the hospital completely cured. (used as an adverb)</li>
+  </ul>
+
+  <h2 id="exercise-participle"><span class="num">12.</span>Exercise — Present / Past Participle Forms</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'present participle' or 'past participle' forms of the verbs given in the bracket.</p>
+    <ol>
+      <li>The ___ sun looks beautiful. (rise) <input class="blank-input sm" type="text"></li>
+      <li>He jumped out of the ___ train. (move) <input class="blank-input sm" type="text"></li>
+      <li>The long journey was ___ (tire) <input class="blank-input sm" type="text"></li>
+      <li>___ by the enemy, the soldiers fled. (defeat) <input class="blank-input sm" type="text"></li>
+      <li>They want their house ___ (paint) <input class="blank-input sm" type="text"></li>
+      <li>The girl sat there ___ to herself. (sing) <input class="blank-input sm" type="text"></li>
+      <li>We found the terms ___ (tempt) <input class="blank-input sm" type="text"></li>
+      <li>Time once ___ is ___ forever. (lose) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>God ___ , we will meet again. (will) <input class="blank-input sm" type="text"></li>
+      <li>___ up his bag, he walked away. (pick) <input class="blank-input sm" type="text"></li>
+      <li>They are ___ (tire) <input class="blank-input sm" type="text"></li>
+      <li>___ a gun, he shot at the bird. (take) <input class="blank-input sm" type="text"></li>
+      <li>The boy sat ___ (whistle) <input class="blank-input sm" type="text"></li>
+      <li>I found the child ___ outside. (sit) <input class="blank-input sm" type="text"></li>
+      <li>He stood up there ___ for the train. (wait) <input class="blank-input sm" type="text"></li>
+      <li>He looked ___ in the task. (involve) <input class="blank-input sm" type="text"></li>
+      <li>The children watched the show ___ (amaze) <input class="blank-input sm" type="text"></li>
+      <li>The child ___ the red coat is my son. (wear) <input class="blank-input sm" type="text"></li>
+      <li>___ men will never talk much. (Learn) <input class="blank-input sm" type="text"></li>
+      <li>The ___ man was taken to the hospital. (wound) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. rising · 2. moving · 3. tiring · 4. Defeated · 5. painted · 6. singing · 7. tempting · 8. lost, lost · 9. willing · 10. Picking · 11. tired · 12. Taking · 13. whistling · 14. sitting · 15. waiting · 16. involved · 17. amazed · 18. wearing · 19. Learned · 20. wounded</p></div>
+  </div>
+
+  <h2 id="perfect-participle"><span class="num">13.</span>Use of Perfect Participle</h2>
+  <p>We use a perfect participle (having + third form of verb) to denote an action which is complete and followed by another action.</p>
+  <ul>
+    <li>Having completed my homework, I went to play.</li>
+    <li>Having found the correct answer, the boy was happy.</li>
+    <li>Having helped the poor, I felt overjoyed.</li>
+    <li>Having travelled for a long day, they felt tired.</li>
+  </ul>
+
+  <h2 id="exercise-perfect"><span class="num">14.</span>Exercise — Perfect Participle Forms</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'perfect participle' forms of the verbs given in the bracket.</p>
+    <ol>
+      <li>___ his work, the boy sat down to relax. (finish) <input class="blank-input sm" type="text"></li>
+      <li>___ the tortoise far behind, the hare stopped to rest. (leave) <input class="blank-input sm" type="text"></li>
+      <li>___ some short stories, he started writing a novel. (write) <input class="blank-input sm" type="text"></li>
+      <li>___ money from a lot of people, he ran away from the city. (borrow) <input class="blank-input sm" type="text"></li>
+      <li>___ all his money in gambling, he committed suicide. (lose) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. Having finished · 2. Having left · 3. Having written · 4. Having borrowed · 5. Having lost</p></div>
+  </div>
+
+  <h2 id="gerund"><span class="num">15.</span>Gerund — Definition &amp; Use</h2>
+  <p>A gerund is the form of the verb which ends in 'ing' and does the function of a noun. That is why the gerund is called a verbal noun.</p>
+  <ol>
+    <li>Swimming is a good exercise. (used as a subject)</li>
+    <li>He likes reading books. (used as an object)</li>
+    <li>My passion is teaching. (used as subject complement)</li>
+    <li>I am fond of singing. (used after a preposition)</li>
+  </ol>
+  <p>We use a gerund after the verbs given in the box below.</p>
+  <div class="callout"><p>enjoy, consider, admit, allow, regret, keep, involve, imagine, fancy, risk, practise, postpone, stop, finish, resent, resume, delay, prefer, deny, detest, keep, worth, keep up, practise, quit, resist, miss, avoid, like, dread, suggest, forgive, look forward to, give up, put off, mind, can't help, couldn't help, need, no use, be used to, love etc.</p></div>
+
+  <h2 id="exercise-gerund-1"><span class="num">16.</span>Exercise — Gerund Forms (Set 1)</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with gerund forms of the verbs given in the brackets. The first example has been solved for you.</p>
+    <ol>
+      <li>He has stopped disturbing me. (disturb)</li>
+      <li>My brother enjoys ___ horror movies. (watch) <input class="blank-input sm" type="text"></li>
+      <li>She loves ___ to music. (listen) <input class="blank-input sm" type="text"></li>
+      <li>I don't mind your ___ my pen. (take) <input class="blank-input sm" type="text"></li>
+      <li>The baby dreads ___ near the dog. (go) <input class="blank-input sm" type="text"></li>
+      <li>He finished ___ the letter. (type) <input class="blank-input sm" type="text"></li>
+      <li>Please forgive my ___ rudely to you. (talk) <input class="blank-input sm" type="text"></li>
+      <li>It's no use ___ for them anymore. (wait) <input class="blank-input sm" type="text"></li>
+      <li>I am looking forward to ___ you. (meet) <input class="blank-input sm" type="text"></li>
+      <li>She admitted ___ stolen the money. (have) <input class="blank-input sm" type="text"></li>
+      <li>Kim suggested ___ to cinema. (go) <input class="blank-input sm" type="text"></li>
+      <li>I regret ___ all that to you. (say) <input class="blank-input sm" type="text"></li>
+      <li>Keep ___ hard to get success. (work) <input class="blank-input sm" type="text"></li>
+      <li>Have you ever considered ___ stories for movies? (write) <input class="blank-input sm" type="text"></li>
+      <li>He has given up ___ (smoke) <input class="blank-input sm" type="text"></li>
+      <li>I am used to ___ with such people. (deal) <input class="blank-input sm" type="text"></li>
+      <li>I prefer ___ to ___ (read, write) <input class="blank-input sm" type="text" style="width:110px"> <input class="blank-input sm" type="text" style="width:110px"></li>
+      <li>That place is worth ___ (visit) <input class="blank-input sm" type="text"></li>
+      <li>He is fed up with ___ (travel) <input class="blank-input sm" type="text"></li>
+      <li>This carpet needs ___ (dust) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>2. watching · 3. listening · 4. taking · 5. going · 6. typing · 7. talking · 8. waiting · 9. meeting · 10. having stolen · 11. going · 12. saying · 13. working · 14. writing · 15. smoking · 16. dealing · 17. reading, writing · 18. visiting · 19. travelling · 20. dusting</p></div>
+  </div>
+
+  <h2 id="gerund-prep"><span class="num">17.</span>Gerund after Preposition or Determiner</h2>
+  <p>We also use a gerund after a preposition or a determiner.</p>
+  <ol>
+    <li>He is fond of playing cricket.</li>
+    <li>Are you interested in going with us?</li>
+    <li>You must switch off the lights and fans before leaving the room.</li>
+    <li>Please don't mind my interrupting you.</li>
+    <li>The printing of the books will be complete by the next month.</li>
+  </ol>
+
+  <h2 id="exercise-gerund-2"><span class="num">18.</span>Exercise — Gerund Forms (Set 2)</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with gerund forms of the verbs given in the brackets.</p>
+    <ol>
+      <li>He is very good at ___ (paint) <input class="blank-input sm" type="text"></li>
+      <li>What are the advantages of ___ a computer. (use) <input class="blank-input sm" type="text"></li>
+      <li>Kajal went to school in spite of ___ unwell. (be) <input class="blank-input sm" type="text"></li>
+      <li>Your ___ the workshop is important. (attend) <input class="blank-input sm" type="text"></li>
+      <li>She worked for ten hours without ___ (stop) <input class="blank-input sm" type="text"></li>
+      <li>James has every chance of ___ the competition. (win) <input class="blank-input sm" type="text"></li>
+      <li>I have no intention of ___ you any money. (lend) <input class="blank-input sm" type="text"></li>
+      <li>My father prefers driving to ___ by train. (travel) <input class="blank-input sm" type="text"></li>
+      <li>Rajeev is fed up with ___ meetings. (attend) <input class="blank-input sm" type="text"></li>
+      <li>Her ___ the lottery is uncertain. (win) <input class="blank-input sm" type="text"></li>
+      <li>My brother was tired after studying for ten hours. (study) <input class="blank-input sm" type="text"></li>
+      <li>I bought a new book instead of ___ a new dress. (buy) <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. painting · 2. using · 3. being · 4. attending · 5. stopping · 6. winning · 7. lending · 8. travelling · 9. attending · 10. winning · 11. studying · 12. buying</p></div>
+  </div>
+  <div class="callout"><p><strong>Note:</strong> Verbs that take either infinitive or gerund as object depending on the meaning of the sentence: advise, begin, can't bear, continue, fear, forget, hate, like, love, mean, neglect, remember, regret, start, try, recommend etc.</p></div>
+
+  <h2 id="correct-sentences"><span class="num">19.</span>Exercise — Correct the Sentences</h2>
+  <div class="exercise-block">
+    <p class="instr">Correct the following sentences.</p>
+    <ol>
+      <li>Swim is good for health. <textarea class="answer-box"></textarea></li>
+      <li>I am fond of collect old stamps. <textarea class="answer-box"></textarea></li>
+      <li>I could not help laugh. <textarea class="answer-box"></textarea></li>
+      <li>See is believe. <textarea class="answer-box"></textarea></li>
+      <li>She had better stayed at home. <textarea class="answer-box"></textarea></li>
+      <li>My brother offered help me. <textarea class="answer-box"></textarea></li>
+      <li>Please explain me how to solving this sum. <textarea class="answer-box"></textarea></li>
+      <li>He could not resist tasted the delicious cake. <textarea class="answer-box"></textarea></li>
+      <li>Ritesh bade me to take his umbrella. <textarea class="answer-box"></textarea></li>
+      <li>It's no use cry over spilt milk. <textarea class="answer-box"></textarea></li>
+      <li>Have said that, he left the room. <textarea class="answer-box"></textarea></li>
+      <li>He risked ventured out in the storm. <textarea class="answer-box"></textarea></li>
+      <li>The Principal appears troubling today. <textarea class="answer-box"></textarea></li>
+      <li>I apologise for my behave rudely. <textarea class="answer-box"></textarea></li>
+      <li>Played on this field is enjoyable. <textarea class="answer-box"></textarea></li>
+      <li>She loves to listen to music. <textarea class="answer-box"></textarea></li>
+      <li>She admitted have stolen the money. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>Swimming is good for health. (gerund as subject)</li>
+        <li>I am fond of collecting old stamps. (gerund after preposition 'of')</li>
+        <li>I could not help laughing. ('can't help' takes a gerund)</li>
+        <li>Seeing is believing. (gerund, both halves of the proverb)</li>
+        <li>She had better stay at home. ('had better' takes a bare infinitive)</li>
+        <li>My brother offered to help me. ('offer' takes an infinitive with 'to')</li>
+        <li>Please explain to me how to solve this sum. ('explain' needs 'to me'; 'how to solve' takes the infinitive)</li>
+        <li>He could not resist tasting the delicious cake. ('resist' takes a gerund)</li>
+        <li>Ritesh bade me take his umbrella. ('bid/bade' takes a bare infinitive)</li>
+        <li>It's no use crying over spilt milk. ('no use' takes a gerund)</li>
+        <li>Having said that, he left the room. (perfect participle, not the finite 'have')</li>
+        <li>He risked venturing out in the storm. ('risk' takes a gerund)</li>
+        <li>The Principal appears troubled today. (past participle as subject complement, meaning 'seems worried/bothered')</li>
+        <li>I apologise for my behaving rudely. (gerund after preposition 'for')</li>
+        <li>Playing on this field is enjoyable. (gerund as subject)</li>
+        <li>Correct as written — 'love' may take either the infinitive ('to listen') or the gerund ('listening') as object.</li>
+        <li>She admitted having stolen the money. (perfect gerund after 'admit')</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="revision"><span class="num">20.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>Finite verbs change according to tense, number, mood or person; non-finite verbs do not.</li>
+    <li>There are three types of non-finite verbs: infinitives, participles, and gerunds.</li>
+    <li>An infinitive is the first form of the verb, used with 'to' (to-infinitive) or without 'to' (bare infinitive).</li>
+    <li>The bare infinitive follows do/does/did, modal auxiliaries, verbs like see/watch/hear/feel/let/make/help/bid/have, phrases like 'had better'/'had rather', 'but'/'except'/'than', and 'why'/'why not'.</li>
+    <li>A participle functions as an adjective (a verbal adjective). Present participle = verb + 'ing'; past participle = the third form of the verb; perfect participle = 'having' + third form, showing a completed action followed by another.</li>
+    <li>A gerund ends in 'ing' and functions as a noun (a verbal noun) — as subject, object, subject complement, or after a preposition/determiner.</li>
+    <li>Certain verbs take only an infinitive object, others take only a gerund object, and some (like begin, like, love, continue) can take either.</li>
+  </ul>
+
+  <footer>Class 8 · English · Grammar · Lesson 17 — Chapter-7, Finite and Non-Finite Forms of Verbs.</footer>
+</div>
+</body>
+</html>

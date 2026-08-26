@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 15 — Determiners | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:26px 0 8px; scroll-margin-top:20px;}
+  h4{font-family:var(--font-mono); font-size:13.5px; color:var(--cyan); margin:18px 0 8px; text-transform:uppercase; letter-spacing:.03em;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .ocr-note{
+    background:var(--accent2-soft); border:1px dashed var(--violet); border-radius:8px;
+    padding:10px 14px; margin:8px 0 14px; color:var(--ink-faint); font-size:13.5px; font-style:italic;
+  }
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:14.5px;}
+  table.ref-table caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:11px;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line-strong); padding:7px 10px; text-align:left; color:var(--ink-soft);}
+  table.ref-table th{background:var(--paper-raised); color:var(--ink); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table td.g{color:var(--ink); font-weight:600;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:16px 0 30px; background:var(--paper-raised);
+  }
+  .exercise-block h4{margin-top:0;}
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  table.gram-table{width:100%; border-collapse:collapse; margin:10px 0 16px; font-size:14px;}
+  table.gram-table th, table.gram-table td{border:1px solid var(--line-strong); padding:6px 8px; text-align:left;}
+  table.gram-table th{background:var(--paper); color:var(--ink-faint); font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;}
+  table.gram-table td.g{color:var(--ink); font-weight:600;}
+  input.blank-input{
+    width:92%; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  input.blank-input.sm{width:120px;}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:50px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol, .qa ul{margin:0; padding-left:20px;}
+  .qa li{margin-bottom:5px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar</div>
+  <h1 class="title">Lesson 15 — Determiners</h1>
+  <p class="subtitle">Semester 1 · Chapter-10</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#definition">1. Definition &amp; Kinds of Determiners</a></li>
+      <li><a href="#articles-intro">2. Articles — Indefinite &amp; Definite</a></li>
+      <li><a href="#use-a-an">3. Use of 'A' and 'An'</a></li>
+      <li><a href="#vowel-consonant">4. Vowel and Consonant Sounds</a></li>
+      <li><a href="#uses-list">5. Uses of 'A' / 'An' — Full List</a></li>
+      <li><a href="#omission-a-an">6. Omission of 'A' / 'An'</a></li>
+      <li><a href="#exercise-a-an">7. Exercise — Fill in 'A' or 'An'</a></li>
+      <li><a href="#the">8. Use of Definite Article 'The'</a></li>
+      <li><a href="#omission-the">9. Omission of Definite Article 'The'</a></li>
+      <li><a href="#repetition">10. Repetition of the Article</a></li>
+      <li><a href="#exercise-the">11. Exercise — Fill in 'A' / 'An' / 'The' / (X)</a></li>
+      <li><a href="#correct-articles">12. Exercise — Correct the Sentences (Articles)</a></li>
+      <li><a href="#number-det">13. Adjectives of Number as Determiners</a></li>
+      <li><a href="#quantity-det">14. Adjectives of Quantity as Determiners</a></li>
+      <li><a href="#possessive-det">15. Possessive Adjectives as Determiners</a></li>
+      <li><a href="#demonstrative-det">16. Demonstrative Adjectives as Determiners</a></li>
+      <li><a href="#interrogative-det">17. Interrogative Adjectives as Determiners</a></li>
+      <li><a href="#distributive-det">18. Distributive Adjectives as Determiners</a></li>
+      <li><a href="#correct-use">19. Correct Use of Some Determiners</a></li>
+      <li><a href="#correct-determiners">20. Exercise — Correct the Sentences (Determiners)</a></li>
+      <li><a href="#revision">21. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="definition"><span class="num">1.</span>Definition &amp; Kinds of Determiners</h2>
+  <p><strong>Definition:</strong> A determiner is a word which announces the coming of a noun in a sentence. It is used before a noun to qualify or modify it. Most of adjectives function as determiners because they are used before nouns to describe them. An adjective used after a noun is not considered to be a determiner.</p>
+  <table class="ref-table">
+    <caption>Kinds of Determiners</caption>
+    <tr><th>Kinds of Determiners</th><th>Examples</th></tr>
+    <tr><td class="g">1. Articles</td><td>a, an, the</td></tr>
+    <tr><td class="g">2. Adjectives of Number (Indefinite, Cardinals, Ordinals)</td><td>one, two, tenth, some, many, more, most, few, a few, the few, fewer, several, all, both, any etc.</td></tr>
+    <tr><td class="g">3. Adjectives of Quantity</td><td>some, much, more, most, little, a little, the little, less, whole, half, no, any etc.</td></tr>
+    <tr><td class="g">4. Possessive Adjectives</td><td>my, our, his, her, your, their, its</td></tr>
+    <tr><td class="g">5. Demonstrative Adjectives</td><td>this, that, these, those, such</td></tr>
+    <tr><td class="g">6. Interrogative Adjectives</td><td>what, which, whose</td></tr>
+    <tr><td class="g">7. Distributive Adjectives</td><td>each, every, either, neither</td></tr>
+  </table>
+
+  <h2 id="articles-intro"><span class="num">2.</span>Articles — Indefinite &amp; Definite</h2>
+  <p>Read the following sentences carefully.</p>
+  <ol>
+    <li>I have an imported pen.</li>
+    <li>The pen has a golden cap.</li>
+    <li>The cap has a pin.</li>
+    <li>The pin has an automatic button.</li>
+  </ol>
+  <p>In the above sentences, the words 'a', 'an' and 'the' are called articles. There are two types of articles:</p>
+  <ol>
+    <li><strong>Indefinite Articles:</strong> 'A' and 'an' are called indefinite articles.</li>
+    <li><strong>Definite Article:</strong> 'The' is called definite article.</li>
+  </ol>
+
+  <h2 id="use-a-an"><span class="num">3.</span>Use of 'A' and 'An'</h2>
+  <p>Both 'a' and 'an' are used to denote a countable singular noun. 'A' is used before a noun which starts with a consonant sound whereas 'an' is used before a noun which starts with a vowel sound.</p>
+
+  <h2 id="vowel-consonant"><span class="num">4.</span>Vowel and Consonant Sounds</h2>
+  <p>There are 26 letters in English alphabet. Generally, out of 26 letters 'a', 'e', 'i', 'o' and 'u' are considered to be vowels and the remaining 21 letters are considered to be consonants. In fact, these 26 letters used individually or in combinations, produce 44 sounds. Thus, there are 44 sounds in English language. Out of these 44 sounds, there are 20 vowel sounds and 24 consonant sounds. 'A', 'e', 'i', 'o' and 'u' are letters frequently used to start a word with a vowel sound, hence, often labelled as vowels. While selecting the article 'a' or 'an' for a singular noun, it is important to note whether the noun starts with a vowel sound or a consonant sound. It is not the first letter which decides the sound; it is the pronunciation of the word that decides the sound.</p>
+  <p>Read the table given below to understand the concept of vowel and consonant sounds.</p>
+  <table class="ref-table">
+    <tr><th>Nouns that start with letters 'a', 'e', 'i', 'o', 'u' and start with a vowel sound</th><th>Nouns that start with letters 'a', 'e', 'i', 'o', 'u', but start with a consonant sound</th><th>Nouns that don't start with letters 'a', 'e', 'i', 'o', 'u' but start with a vowel sound</th></tr>
+    <tr><td>apple, axe, ant, aunt</td><td>union</td><td>SDO, SSP, SLA</td></tr>
+    <tr><td>egg, elephant, engine</td><td>European, ewe</td><td>MLA, MP, MA</td></tr>
+    <tr><td>inkpot, igloo, ice</td><td>useful thing</td><td>FO, NGO</td></tr>
+    <tr><td>ox, orange, onion</td><td>university</td><td>honest, hour, heir</td></tr>
+    <tr><td>umbrella, uncle</td><td>utopia, one-eyed man</td><td></td></tr>
+  </table>
+  <div class="callout">
+    <p><strong>Important Note:</strong> Sometimes a noun is preceded by an adjective or an adverb and an adjective. In such a case the article 'a' or 'an' will be selected according to the first sound of the word that follows the article.</p>
+    <p>Examples: an egg, a boiled egg, a well boiled egg, a boy, an intelligent boy etc.</p>
+  </div>
+
+  <h2 id="uses-list"><span class="num">5.</span>Uses of 'A' / 'An' — Full List</h2>
+  <ul>
+    <li>To suggest numerical one: <em>1. Give me a mango. 2. He wants an apple.</em></li>
+    <li>Before a singular countable noun when it is mentioned for the first time and represents no particular person or thing: <em>1. I met a man on the way. 2. He has an umbrella.</em></li>
+    <li>In sense of every: <em>An apple a day keeps the doctor away.</em></li>
+    <li>To represent a class: <em>A dog is a useful animal. A pronoun replaces a noun.</em></li>
+    <li>Before the names of professions and noun complements: <em>1. My father is a teacher. 2. He wants to be a successful person.</em></li>
+    <li>Before a proper noun used in the sense of a common noun: <em>1. A Daniel (a very wise judge) comes to judgement. 2. He is a Milton. (an inspired poet)</em></li>
+    <li>Before certain numerical expressions: <em>a couple, a dozen, a score, a cross, a million, a hundred, a lot of, a great many, a great deal of</em></li>
+    <li>In expression of frequency: <em>once a week, thrice a day</em></li>
+    <li>In expressions of price, speed, ratio, weight etc.: <em>five rupees a kilogram, seventy miles an hour, hundred rupees a metre.</em></li>
+    <li>Before few and little: 'A few' means a small number and 'a little' means a small amount. <em>1. A little knowledge is a dangerous thing. 2. There were only a few students in the class.</em></li>
+    <li>Before 'half': <em>One and a half kilos, or a kilo and a half, a half holiday, a half-share</em></li>
+    <li>In exclamations, before singular countable nouns: <em>1. What an unfortunate thing! 2. What a charming sight!</em></li>
+    <li>Before the word 'lie' as a singular noun: <em>He is telling a lie.</em></li>
+    <li>To denote certain meanings: <em>1. He has a chance of winning the match. (some) 2. Birds of a feather flock together. (the same) 3. Only a Newton can answer this question. (one like)</em></li>
+    <li>'A' can be used before Mr./Mrs./Ms. to refer to an indefinite person, not known personally: <em>1. A Mr. Khosala was in the chair. 2. A Mrs. Jain gave away the prices.</em></li>
+  </ul>
+
+  <h2 id="omission-a-an"><span class="num">6.</span>Omission of 'A' / 'An'</h2>
+  <ul>
+    <li>Before plural nouns: <em>boys, apples, children etc.</em></li>
+    <li>Before uncountable nouns: <em>information, luggage, scenery, furniture etc.</em></li>
+    <li>Before material nouns such as iron, gold, silver, glass, cloth, wood etc. However, if any of these nouns refer to a particular thing, it takes an article. <em>a gold (incorrect), a bangle of gold (correct), a news (incorrect), a piece of news (correct)</em>
+      <br>Examples: 1. These chairs are made of wood. 2. The wood used in making these chairs is of good quality.</li>
+    <li>Before abstract nouns such as joy, fear, honesty, happiness, grief, sorrow, hope, death etc. However, when used in a particular sense, it may take an article. <em>1. Fear is the greatest enemy of man. 2. Beauty needs no ornaments. 3. A fear of snakes overpowered him. 4. Isn't she a beauty?</em></li>
+    <li>Before a noun used as a complement after the verbs like nominated, appointed, elected, made, declared etc.: <em>1. He was elected MLA. (not an MLA) 2. The teacher made him monitor. (not a/the monitor)</em></li>
+    <li>Before names of meal, except when following an adjective: <em>1. I will meet you after lunch. 2. It was a memorable lunch.</em> However, the indefinite article is used when a meal is for a special person: <em>I hosted a dinner in the Director's honour.</em></li>
+  </ul>
+
+  <h2 id="exercise-a-an"><span class="num">7.</span>Exercise — Fill in 'A' or 'An'</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with the article 'a' or 'an'.</p>
+    <ol>
+      <li>___ apple ___ day keeps the doctor away. <input class="blank-input sm" type="text"></li>
+      <li>I take ___ boiled egg every morning. <input class="blank-input sm" type="text"></li>
+      <li>He put ___ ice cube in the glass. <input class="blank-input sm" type="text"></li>
+      <li>The king saw ___ ant trying to climb up the wall. <input class="blank-input sm" type="text"></li>
+      <li>We saw ___ elephant in the forest. <input class="blank-input sm" type="text"></li>
+      <li>Some workers of the factory have formed ___ union. <input class="blank-input sm" type="text"></li>
+      <li>Take ___ umbrella with you; it may rain today. <input class="blank-input sm" type="text"></li>
+      <li>Somesh is ___ intelligent boy. <input class="blank-input sm" type="text"></li>
+      <li>This is ___ useful book. <input class="blank-input sm" type="text"></li>
+      <li>My sister is ___ MA, B.Ed. <input class="blank-input sm" type="text"></li>
+      <li>I will return from the market in ___ hour. <input class="blank-input sm" type="text"></li>
+      <li>The woodcutter had ___ iron axe. <input class="blank-input sm" type="text"></li>
+      <li>My father is ___ MLA. <input class="blank-input sm" type="text"></li>
+      <li>Mahatma Gandhi wanted to create ___ utopia in India. <input class="blank-input sm" type="text"></li>
+      <li>Joseph is ___ European. <input class="blank-input sm" type="text"></li>
+      <li>My sister is ___ university student. <input class="blank-input sm" type="text"></li>
+      <li>He is ___ one-eyed man. <input class="blank-input sm" type="text"></li>
+      <li>My mother runs ___ NGO. <input class="blank-input sm" type="text"></li>
+      <li>I bought ___ new inkpot from the market. <input class="blank-input sm" type="text"></li>
+      <li>I have ___ ram and ___ ewe. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>My ambition in life is to become ___ doctor. <input class="blank-input sm" type="text"></li>
+      <li>There is ___ empty bottle on the table. <input class="blank-input sm" type="text"></li>
+      <li>Sixty minutes make ___ hour. <input class="blank-input sm" type="text"></li>
+      <li>___ orange is ___ citric fruit. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ Eskimo lives in ___ igloo. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. An · 2. a · 3. an · 4. an · 5. an · 6. a (union — consonant /j/ sound) · 7. an · 8. an · 9. a (useful — consonant /j/ sound) · 10. an (MA — pronounced "em-ay") · 11. an · 12. an · 13. an (MLA — pronounced "em") · 14. a (utopia — consonant /j/ sound) · 15. a (European — consonant /j/ sound) · 16. a (university — consonant /j/ sound) · 17. a (one — consonant /w/ sound) · 18. an (NGO — pronounced "en") · 19. a (new — consonant /n/ sound) · 20. a ram / a ewe (ewe — consonant /j/ sound) · 21. a · 22. an · 23. an · 24. An orange / a citric fruit · 25. An Eskimo / an igloo</p></div>
+  </div>
+
+  <h2 id="the"><span class="num">8.</span>Use of Definite Article 'The'</h2>
+  <p>Article 'the' is called definite article because it denotes a particular person, place or thing.</p>
+  <ol>
+    <li>I met a boy. (any boy/ not a particular boy)</li>
+    <li>The boy was wearing a blue shirt. (the boy here means a particular boy referred to in the first sentence.)</li>
+    <li>The shirt was very beautiful. (a particular shirt which is referred to in the second sentence)</li>
+    <li>The girls of this class are more intelligent than the boys. (particular girls and boys)</li>
+  </ol>
+  <ul>
+    <li>To denote the whole class: <em>1. The dog is a faithful animal. 2. The cow is a useful animal.</em></li>
+    <li>Before a noun which by reason of locality can represent only one particular thing: <em>1. Mother is in the kitchen. (the kitchen of this house) 2. Has the postman come? (the postman of our area)</em></li>
+    <li>Before adjectives in the superlative degree: <em>He is the tallest boy in the class.</em></li>
+    <li>Before comparatives: <em>1. The higher you go, the cooler it is. 2. He is the taller of the two brothers.</em></li>
+    <li>Before words indicating number, weight, measure etc.: <em>1. Cloth is sold by the metre. 2. Oranges are sold by the dozen.</em></li>
+    <li>Before words denoting well-known historical events: <em>The French Revolution, the partition of India, the Quit India Movement</em></li>
+    <li>Before the names of rivers, canals and seas, oceans, group of islands, gulfs, bays, winds, seasons, deserts, plains: <em>The Ganges, The Yamuna, the Satluj, the Godavari, the Dead Sea, the Pacific Ocean, the Indira Gandhi Canal, the Andaman and Nikobar Islands, the Bay of Bengal, the Persian Gulf, the West Wind, the summer, the Sahara, the Northern Plains etc.</em></li>
+    <li>Before mountain ranges: <em>The Himalayas, the Aravalies, the Shivalik etc.</em></li>
+    <li>Before certain geographical names: <em>the Deccan, the highland, the plains etc.</em></li>
+    <li>Before the names of certain books and scriptures: <em>the Geeta, the Mahabharata, the Vedas, the Koran (Quran), the Bible etc.</em></li>
+    <li>Before a proper noun used as a common noun: <em>1. Kalidas is called the Shakespeare of India. 2. Priya is the Lata Mangeshkar of our class.</em></li>
+    <li>Before a common noun to convey the meaning of an abstract noun: <em>1. The pen is mightier than the sword. 2. The hands that rock the cradle rule the world.</em></li>
+    <li>To use an adjective as a noun: <em>1. The rich should help the poor. 2. The injured were taken to the hospital.</em></li>
+    <li>To give superlative force to noun: <em>1. He is the professor. (the best) 2. It was the event of the year. (the most exciting event)</em></li>
+    <li>Before high titles of honour and rank: <em>The great Caesar, Akbar the great, the honourable Minister, the immortal Shakespeare</em></li>
+    <li>Before the names of communities and commissions: <em>The Sikhs, the English, the Hindus, the Jews</em></li>
+    <li>Before the names of the states, nations or organisations which consist of a group: <em>the UK, the USA, the UAE, the Punjab, the United Nations Organisation</em></li>
+    <li>Before ordinals: <em>The first prize, the second son, the third girl, the tenth of June, the last of us etc.</em></li>
+    <li>Before unique objects: <em>The moon, the sky, the earth, the storm, the tempest</em></li>
+    <li>Before designations/titles: <em>the Principal, the Prime Minister, the Governor etc.</em></li>
+    <li>Before famous buildings or monuments: <em>The Taj Mahal, the Jama Masjid, the Statue of Liberty, the Leaning Tower of Pisa etc.</em></li>
+    <li>Before directions: <em>The east, the west, the north, the south, the left, the right</em></li>
+    <li>In place of possessive adjectives before the names of parts of the body: <em>He struck the boy on the head. (not his head)</em></li>
+    <li>Before names of musical instruments: <em>the flute, the piano</em></li>
+    <li>Before the names of ships: <em>the Vikrant, the Titanic</em></li>
+    <li>Before the names of families: <em>the Sharmas, the Tomars, the Guptas</em></li>
+    <li>Before the names of newspapers, magazines and trains: <em>The Tribune, the Punjab Kesari, the Times of India, The Eve's Weekly, The India Today, the Shatabdi Express, the Rajdhani Express etc.</em></li>
+    <li>Before awards and prizes: <em>1. Tagore won the Nobel Prize for his contribution to literature. 2. Abdul Hamid was awarded with the Param Veer Chakra.</em></li>
+    <li>Before the names of inventions: <em>1. Do you know who invented the wheel? 2. The telephone is a very useful invention.</em></li>
+    <li>Used before a proper noun to mention who expired recently or who has lately left the office (post) etc: <em>1. The late Mr. Khanna was a great man. 2. Mr. Sharma, the late Chairman, made a speech.</em></li>
+    <li>Before the words 'same' and 'whole': <em>1. This is the same book I was looking for. 2. The whole class is making a noise.</em></li>
+    <li>After the word 'all', 'both' and 'half': <em>1. All the students have completed their work. 2. Half the apples are rotten. 3. Both the girls are from Patna.</em></li>
+    <li>Before a noun when special emphasis is required: <em>Now is the time to decide.</em></li>
+    <li>Before the word 'truth': <em>He always speaks the truth.</em></li>
+    <li>In certain phrases: <em>in the long run, on the other hand, on the way, in the way, all the same, on the contrary, all the more, to the utmost, on the march, in the morning, in the afternoon, in the evening etc.</em></li>
+  </ul>
+
+  <h2 id="omission-the"><span class="num">9.</span>Omission of Definite Article 'The'</h2>
+  <ul>
+    <li>Before a singular noun used in its widest sense: <em>1. Man is mortal. 2. Science tries to discover the laws of nature.</em></li>
+    <li>Before plural common nouns used in a general sense (not specified or particular): <em>1. Children are fond of sweets. 2. Boys are taller than girls.</em></li>
+    <li>Before proper nouns: <em>Delhi is the capital of India.</em></li>
+    <li>Before abstract nouns: <em>1. Honesty is the best policy. 2. Love is God.</em> However, if the abstract noun used in a sentence refers to a particular thing, article 'the' is used: <em>1. The love of riches corrupted him. 2. The death of his only son maddened him.</em></li>
+    <li>Before material nouns: <em>1. Gold is a precious metal. 2. This table is made of iron.</em> However, if the material noun used in a sentence refers to a particular material, article 'the' is used: <em>1. The gold used in this bangle is pure. 2. The wood used in making this chair is of superior quality.</em></li>
+    <li>Before the names of languages: <em>1. Sanskrit is an ancient language. 2. We are learning English.</em></li>
+  </ul>
+  <div class="callout"><p><strong>Important Note:</strong> English means English language whereas the English means the people of England.</p></div>
+  <ul>
+    <li>Before places of assembly such as school, hospital, court etc when visited for their primary purpose: <em>1. People go to court to seek justice. 2. We go to hospital to get treatment.</em> However, if the same places are visited for any other purpose, 'the' is used: <em>1. I visited the court to meet my lawyer. 2. He went to the college to meet his cousin.</em></li>
+    <li>In certain phrases consisting of a preposition and its object: <em>on foot, to school, at home, in hand, at best, from top to bottom, by train, at noon, at night, at daybreak, at worst, in jail, at sight</em></li>
+    <li>In certain phrases consisting of a transitive verb followed by its object: <em>give ears, catch fire, send word, leave school, lose heart, take offence, set sail etc.</em></li>
+    <li>Before names of single mountains or single islands: <em>Everest, Srilanka, Australia</em></li>
+    <li>Before the names of countries, continents, capes, cities, towns, days, month, arts, languages, sciences, diseases etc: <em>India, Asia, Mumbai, Ferozepur, Sunday, February, Chinese, Malaria etc.</em></li>
+    <li>After the phrases, 'kind of', 'sort of', 'type of': <em>1. What kind of man is he? 2. What sort of books do you want?</em></li>
+    <li>Before common nouns used in pairs: <em>1. Husband and wife lived happily. 2. Girl after girl left the class.</em></li>
+    <li>Before the names of festivals: <em>Deepawali, Christmas, Easter etc.</em></li>
+    <li>Before the word home: <em>1. My father is at home. 2. He came back home in the evening.</em></li>
+    <li>Before meal-time, unless it is specified: <em>1. I met her at dinner. 2. The dinner that Mrs. Verma hosted was amazing.</em></li>
+  </ul>
+
+  <h2 id="repetition"><span class="num">10.</span>Repetition of the Article</h2>
+  <p>Read the following sentences carefully.</p>
+  <ol>
+    <li>I have a black and white cow. (one cow)</li>
+    <li>I have a black and a white cow. (two cows)</li>
+    <li>The poet and novelist is no more. (one person)</li>
+    <li>The poet and the novelist are no more. (two persons)</li>
+    <li>He is a better human being than businessman. (incorrect)</li>
+    <li>He is a better human being than a businessman. (correct)</li>
+  </ol>
+
+  <h2 id="exercise-the"><span class="num">11.</span>Exercise — Fill in 'A' / 'An' / 'The' / (X)</h2>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with the article 'a', 'an' or 'the'. Write (X) where the article is not required.</p>
+    <ol>
+      <li>___ cow is ___ useful animal. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ loyalty is ___ rare virtue these days. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>I met ___ old man on the road. ___ man had ___ dog with him. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ cricket is ___ most popular game. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ bananas are sold by ___ dozen. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>All ___ were amazed to see ___ bravery ___ boy exhibited. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ Ganga is ___ holy river. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ Chandigarh is ___ beautiful city situated at the foot of ___ Shivalik Hills. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ Mahabharata is ___ great epic. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ iron is ___ useful metal. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>Sneha is called ___ Aishwarya Rai of our class. <input class="blank-input sm" type="text"></li>
+      <li>___ humble always get respect. <input class="blank-input sm" type="text"></li>
+      <li>Dhoni was declared ___ man of ___ match. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ iron used in this gate is rusted. <input class="blank-input sm" type="text"></li>
+      <li>___ Hindi is our national language. <input class="blank-input sm" type="text"></li>
+      <li>___ Geeta is ___ holy book of ___ Hindus. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>I am going to ___ school. <input class="blank-input sm" type="text"></li>
+      <li>___ Punjab is ___ state known for its saints and gurus. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>My brother has got ___ second prize in ___ painting competition. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ world has turned into ___ global village. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ temple is ___ place where people worship God. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>We visited ___ Red Fort last year. <input class="blank-input sm" type="text"></li>
+      <li>___ sun rises in ___ east. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>He caught me by ___ arm. <input class="blank-input sm" type="text"></li>
+      <li>My brother is playing on ___ harmonium. <input class="blank-input sm" type="text"></li>
+      <li>I went to ___ library to return ___ books. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>This is ___ same watch my uncle gifted me. <input class="blank-input sm" type="text"></li>
+      <li>All ___ boys are playing in ___ playground. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>We should always speak ___ truth. <input class="blank-input sm" type="text"></li>
+      <li>___ women are fond of shopping. <input class="blank-input sm" type="text"></li>
+      <li>My father came home at ___ night. <input class="blank-input sm" type="text"></li>
+      <li>I have ___ headache. <input class="blank-input sm" type="text"></li>
+      <li>___ late Mrs. Verma was ___ religious lady. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ politics is ___ dirty game. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>Once ___ liar, always ___ liar. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ more we get, ___ greedier we become. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>He is ___ Sachin Tendulkar. <input class="blank-input sm" type="text"></li>
+      <li>___ teacher and ___ co-ordinator is on leave today. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ French Revolution started ___ new era. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>___ postman goes from ___ door to ___ door to deliver letters. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>I bought ___ blue and ___ red shirt. (one shirt) <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>I bought ___ blue and ___ red shirt. (two shirts) <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+      <li>I am in ___ hurry. <input class="blank-input sm" type="text"></li>
+      <li>This is ___ news to me. <input class="blank-input sm" type="text"></li>
+      <li>My mother is not at ___ home. <input class="blank-input sm" type="text"></li>
+      <li>___ whole country mourned over Kalam's death. <input class="blank-input sm" type="text"></li>
+      <li>Keep to ___ left. <input class="blank-input sm" type="text"></li>
+      <li>I take ___ breakfast early. <input class="blank-input sm" type="text"></li>
+      <li>The teacher made him ___ monitor. <input class="blank-input sm" type="text"></li>
+      <li>___ Principal declared ___ holiday on ___ Monday. <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"> <input class="blank-input sm" type="text" style="width:70px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1. The cow is a useful animal. · 2. (X) Loyalty is a rare virtue these days. · 3. I met an old man on the road. The man had a dog with him. · 4. (X) Cricket is the most popular game. · 5. (X) Bananas are sold by the dozen. · 6. All (X) were amazed to see the bravery the boy exhibited. · 7. The Ganga is a holy river. · 8. (X) Chandigarh is a beautiful city situated at the foot of the Shivalik Hills. · 9. The Mahabharata is a great epic. · 10. (X) Iron is a useful metal. · 11. Sneha is called the Aishwarya Rai of our class. · 12. The humble always get respect. · 13. Dhoni was declared (X) man of the match. · 14. The iron used in this gate is rusted. · 15. (X) Hindi is our national language. · 16. The Geeta is the holy book of the Hindus. · 17. I am going to (X) school. · 18. The Punjab is a state known for its saints and gurus. · 19. My brother has got the second prize in a painting competition. · 20. The world has turned into a global village. · 21. A temple is a place where people worship God. · 22. We visited the Red Fort last year. · 23. The sun rises in the east. · 24. He caught me by the arm. · 25. My brother is playing on the harmonium. · 26. I went to the library to return the books. · 27. This is the same watch my uncle gifted me. · 28. All the boys are playing in the playground. · 29. We should always speak the truth. · 30. (X) Women are fond of shopping. · 31. My father came home at (X) night. · 32. I have a headache. · 33. The late Mrs. Verma was a religious lady. · 34. (X) Politics is a dirty game. · 35. Once a liar, always a liar. · 36. The more we get, the greedier we become. · 37. He is the Sachin Tendulkar (of his school/team). · 38. The teacher and (X) co-ordinator is on leave today. (one person holds both roles, so the article is not repeated) · 39. The French Revolution started a new era. · 40. The postman goes from (X) door to (X) door to deliver letters. · 41. I bought a blue and (X) red shirt. (one shirt — article not repeated) · 42. I bought a blue and a red shirt. (two shirts — article repeated) · 43. I am in a hurry. · 44. This is (X) news to me. · 45. My mother is not at (X) home. · 46. The whole country mourned over Kalam's death. · 47. Keep to the left. · 48. I take (X) breakfast early. · 49. The teacher made him (X) monitor. · 50. The Principal declared a holiday on (X) Monday.</p>
+      <div class="ocr-note">Item 6 in the source exercise reads "All ___ were amazed to see ___ bravery ___ boy exhibited" — the first blank has no noun following it in the printed sentence (a likely scan/layout gap), so it is treated here as needing no article, with "All" functioning on its own before the verb.</div>
+    </div>
+  </div>
+
+  <h2 id="correct-articles"><span class="num">12.</span>Exercise — Correct the Sentences (Articles)</h2>
+  <div class="exercise-block">
+    <p class="instr">Correct the following sentences.</p>
+    <ol>
+      <li>An European dish is very famous. <textarea class="answer-box"></textarea></li>
+      <li>We saw a elephant in the zoo. <textarea class="answer-box"></textarea></li>
+      <li>The capital of UK is London. <textarea class="answer-box"></textarea></li>
+      <li>Shreya gifted me the watch. <textarea class="answer-box"></textarea></li>
+      <li>He went back a hour ago. <textarea class="answer-box"></textarea></li>
+      <li>Riya went back the home early today. <textarea class="answer-box"></textarea></li>
+      <li>Of the two solutions, the second was better. <textarea class="answer-box"></textarea></li>
+      <li>Camel is called ship of desert. <textarea class="answer-box"></textarea></li>
+      <li>He returned home after the sunset. <textarea class="answer-box"></textarea></li>
+      <li>Shatabdi express runs very fast. <textarea class="answer-box"></textarea></li>
+      <li>Mohan is a NDA officer. <textarea class="answer-box"></textarea></li>
+      <li>I go to office by a car. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>A European dish is very famous. (European begins with a consonant /j/ sound)</li>
+        <li>We saw an elephant in the zoo.</li>
+        <li>The capital of the UK is London. (UK is a group of nations)</li>
+        <li>Shreya gifted me a watch. (first mention, no particular watch)</li>
+        <li>He went back an hour ago.</li>
+        <li>Riya went back home early today. (no article before 'home')</li>
+        <li>Correct as written — the ordinal "the second" needs "the".</li>
+        <li>The camel is called the ship of the desert. (whole class + fixed idiom, both need 'the')</li>
+        <li>He returned home after sunset. (no article in this fixed time phrase)</li>
+        <li>The Shatabdi Express runs very fast. (train names take 'the')</li>
+        <li>Mohan is an NDA officer. (NDA is pronounced "en-dee-ay" — vowel sound)</li>
+        <li>I go to office by car. (no article after 'by' + mode of transport)</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="number-det"><span class="num">13.</span>Adjectives of Number as Determiners</h2>
+  <p>An adjective of number, when used as a determiner, describes the number of a noun. It answers the question, 'how many'. It is used for countable nouns.</p>
+  <p>There are two types of adjectives of number.</p>
+  <p><strong>(i) Definite Numeral Adjectives:</strong> Definite numeral adjectives indicate the exact number of a noun. <em>Example: Five girls are playing in the park.</em></p>
+  <p>There are two types of definite numeral adjectives.</p>
+  <p><strong>(a) Cardinals:</strong> Cardinals denote the exact number of a noun. <em>Example: There are ten students in this row.</em></p>
+  <p><strong>(b) Ordinals:</strong> Ordinals denote the order or rank of a noun. Examples: first, second, third, tenth, last, next etc. Article 'the' or a possessive determiner is used before an ordinal. <em>Examples: 1. The third boy in this row is my friend. 2. Pt. J.L. Nehru was the first Prime Minister of India.</em></p>
+  <p><strong>(ii) Indefinite Numeral Adjectives:</strong> An indefinite numeral adjective doesn't indicate the exact number of the noun it refers to. <em>Examples: 1. Several pages of this book are torn. 2. There are many monkeys on this tree.</em></p>
+
+  <h2 id="quantity-det"><span class="num">14.</span>Adjectives of Quantity as Determiners</h2>
+  <p>An adjective of quantity indicates the quantity of a noun. It answers the question, 'how much'. It is used before uncountable nouns.</p>
+  <p>Examples: some, any, no, much, little, half, all, whole, sufficient, enough, great, etc.</p>
+  <ol>
+    <li>I ate some rice.</li>
+    <li>There is not much oil in the bottle.</li>
+    <li>I don't have any money.</li>
+    <li>This statement makes no sense.</li>
+    <li>They have sufficient money to buy a house.</li>
+    <li>I don't have enough time to waste on these matters.</li>
+    <li>There was little water in the jug.</li>
+    <li>The crow drank the little water which was in the jug.</li>
+  </ol>
+
+  <h2 id="possessive-det"><span class="num">15.</span>Possessive Adjectives as Determiners</h2>
+  <p>The words 'my', 'our', 'your', 'his', 'her', 'its' and 'their' are used as possessive adjectives or possessive determiners. They show belonging or possession.</p>
+  <ol>
+    <li>This is our house.</li>
+    <li>They must complete their work.</li>
+    <li>It is his book.</li>
+    <li>The lion licked its paw.</li>
+  </ol>
+
+  <h2 id="demonstrative-det"><span class="num">16.</span>Demonstrative Adjectives as Determiners</h2>
+  <p>The words 'this', 'that', 'these', 'those' and 'such' are called demonstratives as they are used to point out to persons or things they refer to. When these words are used before nouns, they are called demonstrative adjectives or demonstrative determiners.</p>
+  <p>Look at the use of demonstrative determiners in the following sentences.</p>
+  <ol>
+    <li>This book is mine. (used for singular thing which is near the speaker)</li>
+    <li>That dress is beautiful. (used for singular thing which is at a distance from the speaker)</li>
+    <li>These shoes are yours. (used for plural things which are near the speaker)</li>
+    <li>Those apples are fresh. (used for plural things which are at a distance from the speaker)</li>
+    <li>I don't appreciate such attitude.</li>
+  </ol>
+
+  <h2 id="interrogative-det"><span class="num">17.</span>Interrogative Adjectives as Determiners</h2>
+  <p>The words 'what', 'which' and 'whose', when used before a noun, are called interrogative adjectives or interrogative determiners.</p>
+  <ol>
+    <li>Which pen is yours?</li>
+    <li>What message did he convey to you?</li>
+    <li>Whose car is this?</li>
+  </ol>
+
+  <h2 id="distributive-det"><span class="num">18.</span>Distributive Adjectives as Determiners</h2>
+  <p>The adjectives that refer to a single person or thing in a group, one at a time, are called distributive adjectives. 'each', 'every', 'either', 'neither' are called distributive adjectives. Distributive adjectives are used as determiners before nouns.</p>
+  <h3>Each and Every</h3>
+  <p>'Each' and 'every' are similar in meaning, but there is a difference between the two. Each is used when speaking of two or more persons or things. 'Every' is used when speaking of more than two persons or things. Each directs attention to every person or thing of a group individually and separately. 'Every' is comprehensive, considering all; it directs attention to the whole group without any exception. 'Each' is used to denote a person or thing out of a known or limited group. 'Every' is used in a wide sense to denote persons or things when the number is unlimited.</p>
+  <ol>
+    <li>Each participant was given a certificate. (considering each individual out of a limited group)</li>
+    <li>Every man wants to be rich. (considering all in an unlimited group)</li>
+  </ol>
+  <h3>Either and Neither</h3>
+  <p>'Either' has two meanings: (i) One out of two (ii) Each of two. 'Neither' means none out of two.</p>
+  <ol>
+    <li>There are trees on either side of the road. (each out of two)</li>
+    <li>Neither side of the road has trees. (None out of two)</li>
+  </ol>
+
+  <h2 id="correct-use"><span class="num">19.</span>Correct Use of Some Determiners</h2>
+
+  <h3>Some and Any</h3>
+  <p>'Some' and 'any' are determiners which can be used for both countable and uncountable nouns.</p>
+  <p>'Some' is used — in affirmative sentences (<em>He bought some honey. I need some pens.</em>); in questions where 'yes' is the expected answer (<em>Will you give me some money?</em>); in offers and requests (<em>Would you like some rice?</em>).</p>
+  <p>'Any' is used — in negative and interrogative sentences (<em>I don't need any help. Do you need any help?</em>); 'Any' also means 'practically everyone' or 'no particular one' (<em>Any one can do this. Give me a pen, any pen will do.</em>).</p>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'some' or 'any'.</p>
+    <ol>
+      <li>Is there ___ letter for me? <input class="blank-input sm" type="text"></li>
+      <li>Yes, there are ___ letters for you. <input class="blank-input sm" type="text"></li>
+      <li>There is not ___ milk in the bottle. <input class="blank-input sm" type="text"></li>
+      <li>Don't worry I will give you ___ milk. <input class="blank-input sm" type="text"></li>
+      <li>I went to market to buy ___ honey. <input class="blank-input sm" type="text"></li>
+      <li>Would you lend me ___ money? <input class="blank-input sm" type="text"></li>
+      <li>Give me a pen. ___ pen will do. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. any · 2. some · 3. any · 4. some · 5. some · 6. some (request) · 7. Any</p></div>
+  </div>
+
+  <h3>Use of Much and Many</h3>
+  <p>Both 'much' and 'many' mean 'a lot of'. Whereas 'much' is used with uncountable nouns, 'many' is used with countable plural nouns and takes a plural verb. The phrase, 'many a' takes a singular noun and a singular verb. Usually, 'much' is used in negative and interrogative sentences. 'Many' is used in all types of sentences.</p>
+  <ol>
+    <li>I have not taken much water today, so I am dehydrated.</li>
+    <li>He was not hungry, so he did not eat much rice.</li>
+  </ol>
+  <p>In affirmative clauses we sometimes use 'much' in more formal styles: <em>There is much concern about drug addiction in the US.</em></p>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'much' or 'many'.</p>
+    <ol>
+      <li>Is there ___ unemployment in that area? <input class="blank-input sm" type="text"></li>
+      <li>It was pouring with rain but there wasn't ___ wind. <input class="blank-input sm" type="text"></li>
+      <li>There are ___ children in the playground. <input class="blank-input sm" type="text"></li>
+      <li>___ a boy is reading his lessons. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. much · 2. much · 3. many · 4. Many</p></div>
+  </div>
+
+  <h3>Each and Every (revisited)</h3>
+  <p><strong>Each:</strong> Each is used to denote everyone out of a known/small/limited group. Each is used when the focus is on each unit or individual in a group separately. <em>Example: Each participant was given a prize.</em></p>
+  <p><strong>Every:</strong> 'Every' is used to denote one out of a large or indefinite group. It conveys a wide or general sense. 'Every' is used when the focus is not on each unit or individual in the group, but the group as a whole. <em>Example: Every child likes sweet.</em></p>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'each' or 'every'.</p>
+    <ol>
+      <li>___ seat in the hall was booked. <input class="blank-input sm" type="text"></li>
+      <li>___ man wants to be rich. <input class="blank-input sm" type="text"></li>
+      <li>___ speaker will be given five minutes. <input class="blank-input sm" type="text"></li>
+      <li>___ citizen should pay the taxes. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. Every (every seat, comprehensive) · 2. Every · 3. Each (individually, out of a limited group of speakers) · 4. Every</p></div>
+  </div>
+
+  <h3>Little, a little, the little / Few, a few, the few</h3>
+  <p>Little, a little, the little are used for uncountable nouns as they are quantitative determiners. There is a difference in the use of these three.</p>
+  <p><strong>Little:</strong> 'Little' is used to express a quantity which is very small, or almost negligible. 'Little' means almost nothing or hardly any. It is used to convey a negative sense.<br>
+  <strong>A little:</strong> 'A little' means small in quantity but at least some. It conveys a positive sense.<br>
+  <strong>The little:</strong> 'The little' means small in quantity, but the whole of it. It is used to consider the whole however little may be the quantity.</p>
+  <p>Few, a few, the few are used for countable nouns as they are numeral determiners, but there is a difference in the use of these three.</p>
+  <p><strong>Few:</strong> 'Few' is used to express a number which is very small, or almost negligible. 'Few' means almost none or hardly any. It is used to convey a negative sense.<br>
+  <strong>A few:</strong> 'A few' means small in number but at least some. It conveys a positive sense.<br>
+  <strong>The few:</strong> 'The few' means small in number, but all of them. It is used to consider all however few may be the number.</p>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blank with 'little', 'a little', 'the little', 'few', 'a few' or 'the few'.</p>
+    <ol>
+      <li>I am a complete stranger in this city. I have ___ friends. <input class="blank-input" type="text"></li>
+      <li>I am new in this city, but I have ___ friends. <input class="blank-input" type="text"></li>
+      <li>I don't have many friends, but ___ friends I have are very loyal. <input class="blank-input" type="text"></li>
+      <li>I am sorry, I have ___ money to help you. <input class="blank-input" type="text"></li>
+      <li>I have ___ money, but I have to keep it safe for my son's school fee. <input class="blank-input" type="text"></li>
+      <li>I will give you ___ money I have. <input class="blank-input" type="text"></li>
+      <li>There were ___ students in the class, so the teacher did not take the class. <input class="blank-input" type="text"></li>
+      <li>There were only ___ students in the class today. <input class="blank-input" type="text"></li>
+      <li>___ students who were present in the class were not in a mood to study. <input class="blank-input" type="text"></li>
+      <li>He is a man of ___ words. (hardly speaks) <input class="blank-input" type="text"></li>
+      <li>___ days' rest will help you. <input class="blank-input" type="text"></li>
+      <li>He gave the beggar ___ coins he had. <input class="blank-input" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. few · 2. a few · 3. the few · 4. little · 5. a little · 6. the little · 7. few · 8. a few · 9. The few · 10. few · 11. A few · 12. the little</p></div>
+  </div>
+
+  <h3>Use of More</h3>
+  <p>'More' is used with both countable and uncountable nouns. It is the comparative degree of both much and many. It is used with singular uncountable nouns and plural countable nouns.</p>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'more'.</p>
+    <ol>
+      <li>I want some ___ rice. <input class="blank-input sm" type="text"></li>
+      <li>I want ___ bananas. <input class="blank-input sm" type="text"></li>
+      <li>The child is still hungry. It wants ___ milk. <input class="blank-input sm" type="text"></li>
+      <li>We have some guests at home, so we need ___ apples. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. more · 2. more · 3. more · 4. more</p></div>
+  </div>
+
+  <h3>Use of Fewer / Less</h3>
+  <p>'Fewer' is the comparative degree of few. It is used to compare the number of two countable nouns. 'Less' is the comparative degree of little. It is used to compare the quantity of two uncountable nouns.</p>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'fewer' or 'less'.</p>
+    <ol>
+      <li>We spent ___ time in Shimla than Kufri. <input class="blank-input sm" type="text"></li>
+      <li>If you are careful, you will have ___ trouble. <input class="blank-input sm" type="text"></li>
+      <li>Some students have left the hostel, so today we need ___ loaves of bread and ___ butter. <input class="blank-input sm" type="text" style="width:80px"> <input class="blank-input sm" type="text" style="width:80px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. less (time — uncountable) · 2. less (trouble — uncountable) · 3. fewer loaves (countable), less butter (uncountable)</p></div>
+  </div>
+
+  <h3>Use of Elder, Older, Eldest, Oldest</h3>
+  <p>'Elder' and 'eldest' are used only for persons. Elder is never followed by 'than'. It is followed by 'to'. <em>Example: She is elder to me.</em> 'Elder' and 'eldest' are used only while comparing members of the same family. 'Older' and 'oldest' are used for both living beings and things.</p>
+  <div class="exercise-block">
+    <p class="instr">Fill in the blanks with 'elder', 'eldest', 'older' or 'oldest'.</p>
+    <ol>
+      <li>My ___ brother is a doctor. <input class="blank-input sm" type="text"></li>
+      <li>My friend Seema is ___ than I am. <input class="blank-input sm" type="text"></li>
+      <li>The museum is the ___ building in the city. <input class="blank-input sm" type="text"></li>
+      <li>My grandfather is the ___ member of the family. <input class="blank-input sm" type="text"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>1. elder (family) · 2. older (not a family comparison, and followed by "than") · 3. oldest (a building, not a person) · 4. eldest (family)</p></div>
+  </div>
+
+  <h3>Use of Later, Latter, Latest, Last</h3>
+  <p>'Later' and 'latest' refer to time; 'latter' and 'last' refer to position.</p>
+  <ol>
+    <li>A later enquiry into the matter revealed that the owner was murdered.</li>
+    <li>What is the latest news?</li>
+    <li>The latter chapters are a little boring.</li>
+    <li>The last chapter is very interesting.</li>
+  </ol>
+
+  <h3>Use of Farther and Further</h3>
+  <p>'Farther' means more distant or advanced; 'further' means additional.</p>
+  <ol>
+    <li>Shimla is farther from equator than Rajasthan.</li>
+    <li>After this, he made no further remarks.</li>
+    <li>You must present the report without further delay.</li>
+  </ol>
+
+  <h3>Use of Nearest and Next</h3>
+  <p>'Nearest' denotes distance; 'next' denotes position.</p>
+  <ol>
+    <li>Kasauli is the nearest hill station to Chandigarh.</li>
+    <li>My friend's house is next to the SBI bank.</li>
+    <li>My aunt lives in the next house.</li>
+  </ol>
+
+  <h2 id="correct-determiners"><span class="num">20.</span>Exercise — Correct the Sentences (Determiners)</h2>
+  <div class="exercise-block">
+    <p class="instr">Correct the following sentences.</p>
+    <ol>
+      <li>He ate few oranges he had. <textarea class="answer-box"></textarea></li>
+      <li>Please give me any honey. <textarea class="answer-box"></textarea></li>
+      <li>He made no farther statement. <textarea class="answer-box"></textarea></li>
+      <li>There is not many water in the bottle. <textarea class="answer-box"></textarea></li>
+      <li>Each man wants to be famous. <textarea class="answer-box"></textarea></li>
+      <li>My wound is healing. It doesn't hurt much more. <textarea class="answer-box"></textarea></li>
+      <li>There is hardly some girl in the ground. <textarea class="answer-box"></textarea></li>
+      <li>I want to have the little milk. <textarea class="answer-box"></textarea></li>
+      <li>By these time, she had finished her work. <textarea class="answer-box"></textarea></li>
+      <li>I have many problem. <textarea class="answer-box"></textarea></li>
+      <li>We saw a old lady. <textarea class="answer-box"></textarea></li>
+      <li>He is at home in each part of India. <textarea class="answer-box"></textarea></li>
+      <li>The nature is benevolent. <textarea class="answer-box"></textarea></li>
+      <li>Trust the God and you will not fail. <textarea class="answer-box"></textarea></li>
+      <li>We are on wrong track. <textarea class="answer-box"></textarea></li>
+      <li>My uncle lives in the nearest house. <textarea class="answer-box"></textarea></li>
+      <li>Tamilnadu is further from the equator than Madhya Pradesh. <textarea class="answer-box"></textarea></li>
+      <li>Meet my older brother. <textarea class="answer-box"></textarea></li>
+      <li>What is the last information? <textarea class="answer-box"></textarea></li>
+      <li>There are little coins in his pocket. <textarea class="answer-box"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>He ate the few oranges he had. (all the oranges he had — the whole of a small number)</li>
+        <li>Please give me some honey. (offer/request, not negative or interrogative)</li>
+        <li>He made no further statement. (further = additional, not distance)</li>
+        <li>There is not much water in the bottle. (water is uncountable)</li>
+        <li>Every man wants to be famous. (an unlimited, general group)</li>
+        <li>My wound is healing. It doesn't hurt any more. ("much more" is wrong after a negative — "any more" is correct)</li>
+        <li>There is hardly any girl in the ground. ('hardly' behaves like a negative, so 'any' is needed)</li>
+        <li>I want to have a little milk. (a small positive amount, not "the whole of it")</li>
+        <li>By this time, she had finished her work. ('this', not 'these', with the singular 'time')</li>
+        <li>I have many problems. (many + plural countable noun)</li>
+        <li>We saw an old lady. ('old' begins with a vowel sound)</li>
+        <li>He is at home in every part of India. (an unlimited, general sense)</li>
+        <li>Nature is benevolent. (no article before this abstract/general use of 'nature')</li>
+        <li>Trust God and you will not fail. (no article before the proper noun 'God')</li>
+        <li>We are on the wrong track. ('the' is needed with this noun phrase)</li>
+        <li>My uncle lives in the next house. ('next' denotes position; 'nearest' denotes distance)</li>
+        <li>Tamilnadu is farther from the equator than Madhya Pradesh. ('farther' for physical distance)</li>
+        <li>Meet my elder brother. ('elder' for a family comparison)</li>
+        <li>What is the latest information? ('latest' refers to time; 'last' refers to position)</li>
+        <li>There are a few coins in his pocket. ('coins' is countable, so 'few'/'a few' is used, not 'little')</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="revision"><span class="num">21.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>A determiner announces the coming of a noun and is used before it to qualify or modify it.</li>
+    <li>The seven kinds of determiners: articles, adjectives of number, adjectives of quantity, possessive adjectives, demonstrative adjectives, interrogative adjectives, distributive adjectives.</li>
+    <li>'A' and 'an' are indefinite articles; 'the' is the definite article. 'A'/'an' depend on the sound (not the letter) that follows.</li>
+    <li>'The' is used for particular things, whole classes, superlatives, comparatives, rivers/mountains/oceans, historical events, famous buildings, unique objects, directions, and many fixed expressions — and is omitted before proper nouns, plural/abstract/material nouns used generally, and many fixed phrases like 'at home', 'by train', 'to school'.</li>
+    <li>Repeat the article when referring to two separate persons or things; do not repeat it when referring to one.</li>
+    <li>Adjectives of number answer 'how many' (cardinals, ordinals, indefinite numbers); adjectives of quantity answer 'how much' and are used with uncountable nouns.</li>
+    <li>'Each' focuses on individuals in a known/limited group; 'every' is comprehensive and used for an unlimited group.</li>
+    <li>'Some' is used in affirmatives, offers and requests; 'any' is used in negatives and questions.</li>
+    <li>'Much'/'little'/'less'/'fewer' go with uncountable or singular ideas where relevant; 'many'/'few'/'fewer' go with countable plural nouns.</li>
+    <li>'Little'/'few' (negative), 'a little'/'a few' (positive, some), 'the little'/'the few' (the whole of a small amount/number).</li>
+    <li>'Elder'/'eldest' — persons within a family, followed by 'to' not 'than'; 'older'/'oldest' — any person or thing.</li>
+    <li>'Later'/'latest' — time; 'latter'/'last' — position. 'Farther' — physical distance; 'further' — additional. 'Nearest' — distance; 'next' — position.</li>
+  </ul>
+
+  <footer>Class 8 · English · Grammar · Lesson 15 — Chapter-10, Determiners.</footer>
+</div>
+</body>
+</html>

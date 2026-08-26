@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 28 — Vocabulary | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:16px 22px; margin:0 0 30px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:0 0 24px;
+  }
+  .callout p{margin:0 0 8px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout strong{color:var(--ink);}
+
+  .ocr-note{
+    border:1px dashed var(--violet); border-radius:8px; padding:10px 14px;
+    color:var(--ink-soft); font-size:14px; font-style:italic; margin:10px 0 18px; background:var(--accent2-soft);
+  }
+  .ocr-note b{font-style:normal; color:var(--violet); font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; display:block; margin-bottom:4px;}
+
+  h2{
+    font-family:var(--font-mono); font-size:20px; font-weight:700; color:var(--c3);
+    margin:36px 0 12px; padding-top:16px; border-top:1px solid var(--line);
+  }
+  h2 .num{color:var(--pink); margin-right:8px;}
+  h3{font-family:var(--font-mono); font-size:15.5px; font-weight:700; color:var(--ink); margin:22px 0 8px;}
+  p{margin:0 0 12px;}
+  ol{padding-left:22px; margin:0 0 12px;}
+  ul{padding-left:22px; margin:0 0 12px;}
+  li{margin-bottom:6px;}
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:10px 0 20px; font-size:14.5px;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line); padding:7px 10px; text-align:left;}
+  table.ref-table th{background:var(--paper-raised); color:var(--c3); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table tr:nth-child(even) td{background:rgba(255,255,255,0.02);}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:12px 0 26px; background:var(--paper-raised);
+  }
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  input.blank-input{
+    font:14.5px var(--font-serif); padding:5px 9px; width:170px;
+    border:1px solid var(--line-strong); border-radius:6px;
+    background:var(--paper); color:var(--ink); margin:0 3px;
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:44px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:6px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ol{margin:0; padding-left:20px;}
+  .qa p{margin:0 0 8px;}
+  .qa p:last-child{margin-bottom:0;}
+  .qa table{width:100%; border-collapse:collapse; margin-top:4px;}
+  .qa td, .qa th{border:1px solid var(--line-strong); padding:6px 8px; font-size:13.5px; text-align:left;}
+
+  .checklist{padding-left:0; list-style:none; margin:0 0 12px;}
+  .checklist li{padding-left:28px; position:relative; margin-bottom:10px;}
+  .checklist li::before{content:"✓"; position:absolute; left:0; color:var(--cyan); font-weight:700;}
+
+  footer{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Vocabulary · Chapter-16 (Sem 1)</div>
+  <h1 class="title">Lesson 28 — Vocabulary</h1>
+  <p class="subtitle">Synonyms, Antonyms, Prefixes and Suffixes, Homophones and Homographs — all in one place.</p>
+
+  <nav class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#s1">1. Synonyms</a></li>
+      <li><a href="#s2">2. Antonyms</a></li>
+      <li><a href="#s3">3. Prefixes and Suffixes</a></li>
+      <li><a href="#s4">4. Homophones</a></li>
+      <li><a href="#s5">5. Homographs</a></li>
+      <li><a href="#s6">6. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="num">1.</span>Synonyms</h2>
+  <p>A synonym is a word similar in meaning to another word.</p>
+  <table class="ref-table">
+    <tr><th>Word</th><th>Synonym</th><th>Word</th><th>Synonym</th></tr>
+    <tr><td>abandon</td><td>leave</td><td>gain</td><td>profit</td></tr>
+    <tr><td>abrupt</td><td>sudden</td><td>glance</td><td>look</td></tr>
+    <tr><td>acknowledge</td><td>admit</td><td>grave</td><td>serious</td></tr>
+    <tr><td>admire</td><td>praise</td><td>haste</td><td>hurry</td></tr>
+    <tr><td>affection</td><td>love</td><td>heed</td><td>attention</td></tr>
+    <tr><td>altitude</td><td>height</td><td>hollow</td><td>empty</td></tr>
+    <tr><td>ample</td><td>plentiful</td><td>humble</td><td>modest</td></tr>
+    <tr><td>anticipate</td><td>expect</td><td>illegal</td><td>unlawful</td></tr>
+    <tr><td>anxious</td><td>worried</td><td>indolent</td><td>lazy</td></tr>
+    <tr><td>arrogant</td><td>proud</td><td>intention</td><td>purpose</td></tr>
+    <tr><td>assistance</td><td>help</td><td>intoxicated</td><td>drunk</td></tr>
+    <tr><td>astonishment</td><td>surprise</td><td>jovial</td><td>joyous</td></tr>
+    <tr><td>awful</td><td>terrible</td><td>liberty</td><td>freedom</td></tr>
+    <tr><td>benefit</td><td>advantage</td><td>lofty</td><td>high</td></tr>
+    <tr><td>brief</td><td>short</td><td>mute</td><td>silent</td></tr>
+    <tr><td>calm</td><td>peaceful</td><td>obstinate</td><td>stubborn</td></tr>
+    <tr><td>capture</td><td>seize</td><td>odour</td><td>smell</td></tr>
+    <tr><td>cause</td><td>reason</td><td>persuade</td><td>coax</td></tr>
+    <tr><td>cautious</td><td>careful</td><td>prompt</td><td>quick</td></tr>
+    <tr><td>cease</td><td>stop</td><td>queer</td><td>strange</td></tr>
+    <tr><td>certain</td><td>sure</td><td>rapid</td><td>fast</td></tr>
+    <tr><td>clumsy</td><td>awkward</td><td>rare</td><td>uncommon</td></tr>
+    <tr><td>coarse</td><td>rough</td><td>recollect</td><td>remember</td></tr>
+    <tr><td>commence</td><td>start</td><td>reduce</td><td>decrease</td></tr>
+    <tr><td>compel</td><td>force</td><td>regret</td><td>sorrow</td></tr>
+    <tr><td>conceal</td><td>hide</td><td>remedy</td><td>cure</td></tr>
+    <tr><td>confess</td><td>admit</td><td>reluctantly</td><td>unwillingly</td></tr>
+    <tr><td>consequence</td><td>result</td><td>reside</td><td>stay</td></tr>
+    <tr><td>conversation</td><td>talk</td><td>significance</td><td>importance</td></tr>
+    <tr><td>deceive</td><td>cheat</td><td>slender</td><td>slim</td></tr>
+    <tr><td>defect</td><td>fault</td><td>solitude</td><td>loneliness</td></tr>
+    <tr><td>deficiency</td><td>shortage</td><td>summit</td><td>top</td></tr>
+    <tr><td>depart</td><td>leave</td><td>tidy</td><td>clean</td></tr>
+    <tr><td>desire</td><td>wish</td><td>tremble</td><td>shake</td></tr>
+    <tr><td>disperse</td><td>scatter</td><td>triumph</td><td>victory</td></tr>
+    <tr><td>distinct</td><td>clear</td><td>vacant</td><td>empty</td></tr>
+    <tr><td>drowsy</td><td>sleepy</td><td>vain</td><td>useless</td></tr>
+    <tr><td>edible</td><td>eatable</td><td>value</td><td>worth</td></tr>
+    <tr><td>eminent</td><td>famous</td><td>vanish</td><td>disappear</td></tr>
+    <tr><td>envy</td><td>jealousy</td><td>vast</td><td>huge</td></tr>
+    <tr><td>enormous</td><td>huge</td><td>verdict</td><td>judgement</td></tr>
+    <tr><td>enquire</td><td>ask</td><td>want</td><td>need</td></tr>
+    <tr><td>evidence</td><td>proof</td><td>wasteful</td><td>extravagant</td></tr>
+    <tr><td>exhibit</td><td>show</td><td>weary</td><td>tired</td></tr>
+    <tr><td>fertile</td><td>productive</td><td>wreck</td><td>destroy</td></tr>
+    <tr><td>forgive</td><td>pardon</td><td>yield</td><td>produce</td></tr>
+    <tr><td>frequently</td><td>often</td><td>yearn</td><td>desire</td></tr>
+    <tr><td>frightened</td><td>scared</td><td>zeal</td><td>passion</td></tr>
+    <tr><td>generously</td><td>liberally</td><td>zenith</td><td>peak</td></tr>
+  </table>
+
+  <h2 id="s2"><span class="num">2.</span>Antonyms</h2>
+  <p>An antonym is a word opposite in meaning to another word.</p>
+  <table class="ref-table">
+    <tr><th>Word</th><th>Antonym</th><th>Word</th><th>Antonym</th></tr>
+    <tr><td>above</td><td>below</td><td>early</td><td>late</td></tr>
+    <tr><td>accept</td><td>reject</td><td>earn</td><td>spend</td></tr>
+    <tr><td>acknowledge</td><td>deny</td><td>empty</td><td>full</td></tr>
+    <tr><td>acquit</td><td>convict</td><td>excess</td><td>shortage</td></tr>
+    <tr><td>admit</td><td>deny</td><td>fair</td><td>foul</td></tr>
+    <tr><td>adversity</td><td>prosperity</td><td>familiar</td><td>strange</td></tr>
+    <tr><td>affirm</td><td>deny</td><td>gather</td><td>disperse</td></tr>
+    <tr><td>allow</td><td>forbid</td><td>genuine</td><td>false</td></tr>
+    <tr><td>alone</td><td>together</td><td>gloomy</td><td>happy</td></tr>
+    <tr><td>always</td><td>never</td><td>guilty</td><td>innocent</td></tr>
+    <tr><td>ancient</td><td>modern</td><td>hide</td><td>show</td></tr>
+    <tr><td>angry</td><td>pleased</td><td>hinder</td><td>help</td></tr>
+    <tr><td>arrival</td><td>departure</td><td>honour</td><td>shame</td></tr>
+    <tr><td>artificial</td><td>natural</td><td>humble</td><td>proud</td></tr>
+    <tr><td>assemble</td><td>disperse</td><td>ignorance</td><td>knowledge</td></tr>
+    <tr><td>attack</td><td>defend</td><td>inferior</td><td>superior</td></tr>
+    <tr><td>attract</td><td>repel</td><td>join</td><td>separate</td></tr>
+    <tr><td>beautiful</td><td>ugly</td><td>lenient</td><td>strict</td></tr>
+    <tr><td>begin</td><td>end</td><td>living</td><td>dead</td></tr>
+    <tr><td>beneficial</td><td>harmful</td><td>loose</td><td>tight</td></tr>
+    <tr><td>better</td><td>worse</td><td>lose</td><td>find</td></tr>
+    <tr><td>birth</td><td>death</td><td>loud</td><td>low</td></tr>
+    <tr><td>bitter</td><td>sweet</td><td>major</td><td>minor</td></tr>
+    <tr><td>blame</td><td>praise</td><td>make</td><td>mar</td></tr>
+    <tr><td>blessing</td><td>curse</td><td>miser</td><td>spendthrift</td></tr>
+    <tr><td>blunt</td><td>sharp</td><td>neat</td><td>untidy</td></tr>
+    <tr><td>bold</td><td>timid</td><td>noise</td><td>silence</td></tr>
+    <tr><td>brave</td><td>cowardly</td><td>odd</td><td>even</td></tr>
+    <tr><td>bright</td><td>dull</td><td>offer</td><td>refuse</td></tr>
+    <tr><td>broad</td><td>narrow</td><td>often</td><td>seldom</td></tr>
+    <tr><td>build</td><td>destroy</td><td>open</td><td>shut</td></tr>
+    <tr><td>capture</td><td>release</td><td>pain</td><td>pleasure</td></tr>
+    <tr><td>cheap</td><td>expensive</td><td>peace</td><td>war</td></tr>
+    <tr><td>cheerful</td><td>gloomy</td><td>permanent</td><td>temporary</td></tr>
+    <tr><td>common</td><td>rare</td><td>profit</td><td>loss</td></tr>
+    <tr><td>coarse</td><td>fine</td><td>public</td><td>private</td></tr>
+    <tr><td>condemn</td><td>approve</td><td>quiet</td><td>noisy</td></tr>
+    <tr><td>confess</td><td>deny</td><td>shorten</td><td>lengthen</td></tr>
+    <tr><td>contract</td><td>expand</td><td>smile</td><td>frown</td></tr>
+    <tr><td>create</td><td>destroy</td><td>tame</td><td>wild</td></tr>
+    <tr><td>credit</td><td>debit</td><td>timid</td><td>fearless</td></tr>
+    <tr><td>crude</td><td>refined</td><td>urban</td><td>rural</td></tr>
+    <tr><td>cruel</td><td>kind</td><td>vacant</td><td>full</td></tr>
+    <tr><td>dangerous</td><td>safe</td><td>vague</td><td>clear</td></tr>
+    <tr><td>deceitful</td><td>honest</td><td>victory</td><td>defeat</td></tr>
+    <tr><td>deep</td><td>shallow</td><td>virtue</td><td>vice</td></tr>
+    <tr><td>deposit</td><td>withdraw</td><td>warm</td><td>cool</td></tr>
+    <tr><td>despair</td><td>hope</td><td>wicked</td><td>virtuous</td></tr>
+    <tr><td>divide</td><td>unite</td><td>wise</td><td>foolish</td></tr>
+  </table>
+
+  <h2 id="s3"><span class="num">3.</span>Prefixes and Suffixes</h2>
+
+  <h3>Prefixes</h3>
+  <p>A prefix is an addition in the beginning of a word, which changes its form and meaning. The meaning of a prefix helps a lot in understanding the meaning of a new word.</p>
+  <table class="ref-table">
+    <tr><th>Prefix</th><th>Meaning</th><th>Examples</th></tr>
+    <tr><td>ab-</td><td>negation</td><td>abnormal</td></tr>
+    <tr><td>ambi-</td><td>both</td><td>ambidextrous, ambiguous</td></tr>
+    <tr><td>ante-</td><td>before, preceding</td><td>antecedent, antenatal</td></tr>
+    <tr><td>anti-</td><td>against</td><td>anti-social, anti-terrorism</td></tr>
+    <tr><td>bene-</td><td>good, well</td><td>beneficial, benevolent</td></tr>
+    <tr><td>bi-</td><td>two</td><td>bimonthly, bilingual, bicycle</td></tr>
+    <tr><td>bio-</td><td>life</td><td>biology, biography</td></tr>
+    <tr><td>co-</td><td>with, jointly, completely</td><td>co-author, co-operate, co-educate</td></tr>
+    <tr><td>dis-</td><td>negation, removal, expel</td><td>dishonest, disagree, disapprove</td></tr>
+    <tr><td>en-/em-</td><td>put into or on</td><td>encircle, empower</td></tr>
+    <tr><td>ex-</td><td>out</td><td>exterior, exchange</td></tr>
+    <tr><td>il-/ir-</td><td>not, without</td><td>illegal, irresponsible</td></tr>
+    <tr><td>im-/in-</td><td>not, without</td><td>impossible, inevitable</td></tr>
+    <tr><td>inter-</td><td>between, among</td><td>international, interdisciplinary</td></tr>
+    <tr><td>mis-</td><td>bad, wrongly</td><td>misunderstand, misbehave</td></tr>
+    <tr><td>mono-</td><td>single</td><td>monologue, monosyllabic</td></tr>
+    <tr><td>multi-</td><td>many</td><td>multicoloured, multinational</td></tr>
+    <tr><td>non-</td><td>not</td><td>non-violence, non-academic</td></tr>
+    <tr><td>over-</td><td>more than, excessive</td><td>overenthusiastic, overestimated</td></tr>
+    <tr><td>post-</td><td>after, later</td><td>post-colonial, post-independence</td></tr>
+    <tr><td>pre-</td><td>before</td><td>pre-historic, pre-primary</td></tr>
+    <tr><td>re-</td><td>again</td><td>research, reinvestigate</td></tr>
+    <tr><td>sub-</td><td>at a lower position</td><td>sub-inspector, subordinate</td></tr>
+    <tr><td>trans-</td><td>beyond</td><td>translucent, transmission</td></tr>
+    <tr><td>un-</td><td>not, reverse</td><td>unable, unconscious, unexpected</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <p class="instr"><strong>Exercise:</strong> Add prefixes to the following words to form their antonyms.</p>
+    <ol>
+      <li>please <input class="blank-input"></li>
+      <li>aware <input class="blank-input"></li>
+      <li>legal <input class="blank-input"></li>
+      <li>respect <input class="blank-input"></li>
+      <li>agree <input class="blank-input"></li>
+      <li>effective <input class="blank-input"></li>
+      <li>capable <input class="blank-input"></li>
+      <li>moral <input class="blank-input"></li>
+      <li>formal <input class="blank-input"></li>
+      <li>regular <input class="blank-input"></li>
+      <li>correct <input class="blank-input"></li>
+      <li>fortune <input class="blank-input"></li>
+      <li>known <input class="blank-input"></li>
+      <li>loyal <input class="blank-input"></li>
+      <li>ordinary <input class="blank-input"></li>
+      <li>patient <input class="blank-input"></li>
+      <li>pure <input class="blank-input"></li>
+      <li>real <input class="blank-input"></li>
+      <li>relevant <input class="blank-input"></li>
+      <li>valid <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>please → displease</li>
+        <li>aware → unaware</li>
+        <li>legal → illegal</li>
+        <li>respect → disrespect</li>
+        <li>agree → disagree</li>
+        <li>effective → ineffective</li>
+        <li>capable → incapable</li>
+        <li>moral → immoral</li>
+        <li>formal → informal</li>
+        <li>regular → irregular</li>
+        <li>correct → incorrect</li>
+        <li>fortune → misfortune</li>
+        <li>known → unknown</li>
+        <li>loyal → disloyal</li>
+        <li>ordinary → extraordinary</li>
+        <li>patient → impatient</li>
+        <li>pure → impure</li>
+        <li>real → unreal</li>
+        <li>relevant → irrelevant</li>
+        <li>valid → invalid</li>
+      </ol>
+    </div>
+    <div class="ocr-note"><b>Note</b>"ordinary" is the one word in this list that does not take a prefix from the table above to form a true opposite — "extraordinary" is given as the closest common word, though strictly it means "exceptional" rather than "not ordinary."</div>
+  </div>
+
+  <h3>Suffixes</h3>
+  <p>A suffix is an addition at the end of a word, which changes its form and meaning. Suffixes often change the part of speech of a word.</p>
+  <table class="ref-table">
+    <tr><th>Suffix</th><th>Examples</th></tr>
+    <tr><td>-al</td><td>approval, denial, burial, habitual, mythical</td></tr>
+    <tr><td>-ance</td><td>abundance, acceptance, defiance, performance</td></tr>
+    <tr><td>-dom</td><td>freedom, kingdom, martyrdom, wisdom</td></tr>
+    <tr><td>-ee</td><td>employee, payee, nominee, flee</td></tr>
+    <tr><td>-en</td><td>strengthen, fasten, hasten, broaden</td></tr>
+    <tr><td>-ence</td><td>correspondence, excellence, existence</td></tr>
+    <tr><td>-er</td><td>writer, preacher, reader, heater, cooker</td></tr>
+    <tr><td>-ful</td><td>beautiful, careful, harmful, joyful</td></tr>
+    <tr><td>-fy</td><td>beautify, clarify, fructify, classify</td></tr>
+    <tr><td>-hood</td><td>boyhood, childhood, falsehood, priesthood</td></tr>
+    <tr><td>-ism</td><td>criticism, mysticism, mechanism</td></tr>
+    <tr><td>-ist</td><td>economist, terrorist, optimist, pessimist</td></tr>
+    <tr><td>-ity</td><td>ability, agility, vicinity, validity</td></tr>
+    <tr><td>-ize</td><td>apologize, apologize, criticize, memorize</td></tr>
+    <tr><td>-less</td><td>careless, hopeless, shameless, speechless</td></tr>
+    <tr><td>-ly</td><td>quickly, carefully, intelligently, worldly</td></tr>
+    <tr><td>-ment</td><td>achievement, astonishment, management</td></tr>
+    <tr><td>-ness</td><td>quickness, keenness, nervousness, newness</td></tr>
+    <tr><td>-or</td><td>mentor, professor, transgressor, tractor</td></tr>
+    <tr><td>-ous</td><td>dangerous, auspicious, ridiculous, humorous</td></tr>
+    <tr><td>-ship</td><td>friendship, citizenship, kingship</td></tr>
+    <tr><td>-th</td><td>health, wealth, breadth, width, strength</td></tr>
+    <tr><td>-y</td><td>smoky, gloomy, healthy, sleepy</td></tr>
+  </table>
+  <div class="ocr-note"><b>Source note</b>The "-ize" row lists "apologize" twice in the original ("apologize, apologize, criticize, memorize") — reproduced here exactly as printed rather than silently corrected.</div>
+
+  <div class="exercise-block">
+    <p class="instr"><strong>Exercise:</strong> Add suffixes to the following words to form new words.</p>
+    <ol>
+      <li>move <input class="blank-input"></li>
+      <li>guide <input class="blank-input"></li>
+      <li>confer <input class="blank-input"></li>
+      <li>try <input class="blank-input"></li>
+      <li>agitate <input class="blank-input"></li>
+      <li>revise <input class="blank-input"></li>
+      <li>propose <input class="blank-input"></li>
+      <li>add <input class="blank-input"></li>
+      <li>flatter <input class="blank-input"></li>
+      <li>depart <input class="blank-input"></li>
+      <li>please <input class="blank-input"></li>
+      <li>notify <input class="blank-input"></li>
+      <li>replace <input class="blank-input"></li>
+      <li>rely <input class="blank-input"></li>
+      <li>refer <input class="blank-input"></li>
+      <li>create <input class="blank-input"></li>
+      <li>promote <input class="blank-input"></li>
+      <li>vacate <input class="blank-input"></li>
+      <li>arrange <input class="blank-input"></li>
+      <li>execute <input class="blank-input"></li>
+      <li>describe <input class="blank-input"></li>
+      <li>fail <input class="blank-input"></li>
+      <li>grow <input class="blank-input"></li>
+      <li>heal <input class="blank-input"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>move → movement</li>
+        <li>guide → guidance</li>
+        <li>confer → conference</li>
+        <li>try → trial</li>
+        <li>agitate → agitation</li>
+        <li>revise → revision</li>
+        <li>propose → proposal</li>
+        <li>add → addition</li>
+        <li>flatter → flattery</li>
+        <li>depart → departure</li>
+        <li>please → pleasure</li>
+        <li>notify → notification</li>
+        <li>replace → replacement</li>
+        <li>rely → reliance</li>
+        <li>refer → reference</li>
+        <li>create → creation</li>
+        <li>promote → promotion</li>
+        <li>vacate → vacation</li>
+        <li>arrange → arrangement</li>
+        <li>execute → execution</li>
+        <li>describe → description</li>
+        <li>fail → failure</li>
+        <li>grow → growth</li>
+        <li>heal → health</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s4"><span class="num">4.</span>Homophones</h2>
+  <p>Homophones are the words that have the same pronunciation, but different spelling and meaning.</p>
+  <ol>
+    <li><b>Ad:</b> A short form of the word advertisement<br><b>Add:</b> A short form of the word addition</li>
+    <li><b>Ail:</b> To be ill or sick<br><b>Ale:</b> A beer</li>
+    <li><b>Allowed:</b> That which is permitted<br><b>Aloud:</b> Spoken in a loud manner</li>
+    <li><b>Alter:</b> A raised platform used as a place of worship<br><b>Alter:</b> To change</li>
+    <li><b>Ate:</b> Past Tense of the word eat<br><b>Eight:</b> The number that comes after seven and before nine</li>
+    <li><b>Bail:</b> Temporary release of an accused from the jail<br><b>Bale:</b> a bundle of hay or cotton</li>
+    <li><b>Bare:</b> Naked or without any covering<br><b>Bear:</b> A large heavy animal with thick fur</li>
+    <li><b>Berth:</b> a seat in a train<br><b>Birth:</b> the beginning of life</li>
+    <li><b>Bite:</b> Use teeth to cut something into pieces<br><b>Byte:</b> A group of binary digits or bits</li>
+    <li><b>Break:</b> To divide something into pieces<br><b>Brake:</b> A device used to stop a moving vehicle</li>
+    <li><b>Carat:</b> A unit of weight for precious stones and pearls<br><b>Carrot:</b> A tapering orange-coloured root eaten as a vegetable</li>
+    <li><b>Cell:</b> Smallest unit of life<br><b>Sell:</b> Give or hand over in exchange of money</li>
+    <li><b>Coarse:</b> Rough or harsh in texture<br><b>Course:</b> The route or direction followed by a ship, aircraft, road or river</li>
+    <li><b>Compliment:</b> A polite expression of praise or admiration<br><b>Complement:</b> A thing that contributes extra features to something else</li>
+    <li><b>Fair:</b> Treating people equally, just or appropriate in the circumstances<br><b>Fare:</b> The money a passenger on public transport has to pay</li>
+    <li><b>Hail:</b> Pellets of frozen rain falling in showers<br><b>Hale:</b> strong and healthy</li>
+    <li><b>Heal:</b> To cure a disease<br><b>Heel:</b> The hind part of the foot</li>
+    <li><b>Idle:</b> Avoiding work, lazy<br><b>Idol:</b> An image or representation of a god used as an object of worship</li>
+    <li><b>Knead:</b> To work dough or clay with hands<br><b>Need:</b> Something one must have</li>
+    <li><b>Lessen:</b> To reduce or bring down in number<br><b>Lesson:</b> A thing that is learnt</li>
+    <li><b>Our:</b> belonging to speaker and one or more persons<br><b>Hour:</b> a unit of time equal to sixty minutes</li>
+    <li><b>Pail:</b> A bucket<br><b>Pale:</b> Containing little colour or pigmentation</li>
+    <li><b>Pair:</b> A set of two<br><b>Pear:</b> A yellowish or brownish-green edible fruit</li>
+    <li><b>Pain:</b> A hurting body sensation<br><b>Pane:</b> A single sheet of glass in a window or door</li>
+    <li><b>Principal:</b> the head of a school<br><b>Principle:</b> A fundamental truth or proposition, a theory or rule</li>
+    <li><b>Root:</b> A part of a plant which grows underground in the soil<br><b>Route:</b> A way or course taken in getting from a starting point to a destination</li>
+    <li><b>Story:</b> An account of imaginary or real people and events told for entertainment<br><b>Storey:</b> A floor of a building</li>
+    <li><b>Sunday:</b> The day of the week before Monday and after Saturday<br><b>Sundae:</b> A dish or ice cream with added fruit, nuts and syrup or chocolate</li>
+    <li><b>Vale:</b> A valley<br><b>Veil:</b> A fine material worn to protect or conceal</li>
+    <li><b>Waist:</b> The part of human body<br><b>Waste:</b> To use carelessly, extravagantly or without specific purpose</li>
+  </ol>
+  <div class="ocr-note"><b>Source note</b>Entry 4 gives "Alter" for both meanings ("a raised platform used as a place of worship" and "to change") — in standard usage the first meaning belongs to the homophone "Altar." Reproduced here exactly as printed in the source, spelling included.</div>
+
+  <div class="exercise-block">
+    <p class="instr"><strong>Exercise:</strong> Fill in the blanks with the correct word chosen from the options given.</p>
+    <ol>
+      <li>We need <input class="blank-input"> as fuel. (wood/would)</li>
+      <li>Please, come <input class="blank-input">. (here/hear)</li>
+      <li>Hitesh took two loaves of <input class="blank-input">. (bread/bred)</li>
+      <li>This is the <input class="blank-input"> time to talk to the teacher. (right/write)</li>
+      <li>This movie has been <input class="blank-input">. (band/banned)</li>
+      <li>Why are <input class="blank-input"> disturbing him? (yew/you)</li>
+      <li>Can you <input class="blank-input"> the moon? (sea/see)</li>
+      <li>I saw two <input class="blank-input"> in the forest. (dear/deer)</li>
+      <li>He applied <input class="blank-input"> to stop the car. (break/brake)</li>
+      <li>The <input class="blank-input"> was proud of its swiftness and speed. (hair/hare)</li>
+      <li>She gave <input class="blank-input"> to a son. (birth/berth)</li>
+      <li>Who has broken the window <input class="blank-input">? (pain/pane)</li>
+      <li>Mrs. Bhatnagar is the <input class="blank-input"> of our school. (principal/principle)</li>
+      <li>You should not sit <input class="blank-input">. (idle/idol)</li>
+      <li>An octopus has <input class="blank-input"> arms. (ate/eight)</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ol>
+        <li>wood</li>
+        <li>here</li>
+        <li>bread</li>
+        <li>right</li>
+        <li>banned</li>
+        <li>you</li>
+        <li>see</li>
+        <li>deer</li>
+        <li>brake</li>
+        <li>hare</li>
+        <li>birth</li>
+        <li>pane</li>
+        <li>principal</li>
+        <li>idle</li>
+        <li>eight</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2 id="s5"><span class="num">5.</span>Homographs</h2>
+  <p>A homograph is a word with the same spelling and pronunciation used in a different meaning.</p>
+  <ol>
+    <li><b>Arms:</b> His arms are very thin.<br><b>Arms:</b> The soldiers laid down their arms.</li>
+    <li><b>Bat:</b> He has bought a new cricket bat.<br><b>Bat:</b> There is a bat on this tree.</li>
+    <li><b>Box:</b> What is there in this box?<br><b>Box:</b> The fighters will box tomorrow.</li>
+    <li><b>Bank:</b> My father works in a bank.<br><b>Bank:</b> There was a mango tree on the bank of the river.</li>
+    <li><b>Bulb:</b> The light bulb was invented by Edison.<br><b>Bulb:</b> We planted a rose bulb.</li>
+    <li><b>Bed:</b> My bed is made of wood.<br><b>Bed:</b> Life is not a bed of roses.</li>
+    <li><b>Coat:</b> He is wearing a coat.<br><b>Coat:</b> She applied two coats of nail paint.</li>
+    <li><b>Fast:</b> A horse runs very fast.<br><b>Fast:</b> My mother is on fast today.</li>
+    <li><b>File:</b> You should file all these papers.<br><b>File:</b> You should file your nails.</li>
+    <li><b>Fly:</b> A fly landed on his hand.<br><b>Fly:</b> Birds fly in the sky.</li>
+    <li><b>Jam:</b> I like bread with apple jam.<br><b>Jam:</b> He was held up in a traffic jam.</li>
+    <li><b>Kind:</b> We should be kind to animals.<br><b>Kind:</b> This is not a good kind of cloth.</li>
+    <li><b>Last:</b> This is the last chapter in the book.<br><b>Last:</b> The meeting will last for two hours.</li>
+    <li><b>Match:</b> I need a match box.<br><b>Match:</b> They played a cricket match.</li>
+    <li><b>Lie:</b> We should never tell a lie.<br><b>Lie:</b> You can lie down here.</li>
+    <li><b>Park:</b> There is a park in front of my house.<br><b>Park:</b> You cannot park your car here.</li>
+    <li><b>Pool:</b> We have a pool table in our school.<br><b>Pool:</b> There is a swimming pool in his mansion.</li>
+    <li><b>Rose:</b> The rose is a pretty flower.<br><b>Rose:</b> The crowd rose to greet the queen.</li>
+    <li><b>Train:</b> We travelled by a train.<br><b>Train:</b> The coach will train the players.</li>
+    <li><b>Well:</b> He jumped into the well.<br><b>Well:</b> This article is very well-written.</li>
+  </ol>
+
+  <h2 id="s6"><span class="num">6.</span>Quick Revision Checklist</h2>
+  <ul class="checklist">
+    <li>A synonym means the same as another word; an antonym means the opposite — don't mix the two up when a question asks for one or the other.</li>
+    <li>A prefix goes at the front of a word and often reverses or negates its meaning (un-, dis-, im-, il-, ir-, in-, non-); learn a few prefixes well rather than all of them shallowly.</li>
+    <li>A suffix goes at the end of a word and usually changes its part of speech — verb to noun (move → movement), adjective to noun (able → ability), noun to adjective (danger → dangerous).</li>
+    <li>Homophones sound the same but are spelled differently and mean different things — always check the sentence's meaning before choosing the spelling.</li>
+    <li>Homographs are spelled the same but mean different things depending on context — read the whole sentence, not just the word, to know which meaning applies.</li>
+    <li>When in doubt in a fill-in-the-blank exercise, try each option in the sentence out loud — the one that makes sense is usually the answer.</li>
+  </ul>
+
+  <footer>Class 8 · English · Vocabulary · Lesson 28 — Vocabulary (Chapter-16, Sem 1).</footer>
+</div>
+</body>
+</html>

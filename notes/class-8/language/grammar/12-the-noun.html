@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 12 — The Noun | Class 8 English</title>
+<style>
+  :root{
+    --paper:#0c0c10; --paper-raised:#17151d; --ink:#f4f2f6; --ink-soft:#c3bdc9;
+    --ink-faint:#847f8c; --line:#2b2733; --line-strong:#3e3947;
+    --magenta:#ff27df; --pink:#f472b6; --violet:#c084fc; --cyan:#38bdf8;
+    --accent:var(--pink); --accent-soft:rgba(244,114,182,0.14);
+    --accent2:var(--violet); --accent2-soft:rgba(192,132,252,0.14);
+    --c3:var(--pink); --c3-soft:rgba(244,114,182,0.12); --c3-panel:rgba(244,114,182,0.24);
+    --cyan-soft:rgba(56,189,248,0.12);
+    --radius:12px; --radius-md:14px;
+    --font-mono:"Space Grotesk","IBM Plex Mono","SF Mono",Consolas,monospace;
+    --font-serif:-apple-system,BlinkMacSystemFont,"SF Pro Display",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:var(--font-serif); font-size:17px; line-height:1.7;
+    background:
+      radial-gradient(at 82% 8%, rgba(255,39,223,0.10) 0px, transparent 46%),
+      radial-gradient(at 6% 18%, rgba(192,132,252,0.09) 0px, transparent 44%),
+      radial-gradient(at 88% 82%, rgba(56,189,248,0.08) 0px, transparent 46%),
+      var(--paper);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:40px 32px 100px;}
+  .kicker{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--c3); font-weight:700; margin-bottom:8px;
+  }
+  h1.title{
+    font-family:var(--font-mono); font-size:32px; font-weight:700;
+    letter-spacing:-0.01em; margin:0 0 6px; border-bottom:2px solid var(--ink);
+    padding-bottom:16px;
+  }
+  .subtitle{color:var(--ink-soft); font-size:15px; margin:0 0 28px;}
+
+  nav.toc{
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:18px 22px; margin:0 0 32px;
+  }
+  nav.toc .toc-label{font-family:var(--font-mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700;}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:28px;}
+  nav.toc li{margin-bottom:6px; break-inside:avoid;}
+  nav.toc li ul{margin:4px 0 4px 6px; padding-left:16px;}
+  nav.toc a{color:var(--ink-soft); text-decoration:none; font-size:14.5px;}
+  nav.toc a:hover{color:var(--c3); text-decoration:underline;}
+
+  h2{
+    font-family:var(--font-mono); font-size:22px; font-weight:700; color:var(--ink);
+    margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line);
+    scroll-margin-top:20px;
+  }
+  h2 .num{color:var(--c3); margin-right:10px;}
+  h3{font-family:var(--font-mono); font-size:16px; color:var(--accent2); margin:26px 0 8px; scroll-margin-top:20px;}
+  h4{font-family:var(--font-mono); font-size:13.5px; color:var(--cyan); margin:18px 0 8px; text-transform:uppercase; letter-spacing:.03em;}
+  p{margin:0 0 14px;}
+  ol, ul{padding-left:24px; margin:0 0 14px;}
+  li{margin-bottom:6px;}
+  strong{color:var(--ink);}
+
+  .callout{
+    background:var(--cyan-soft); border-left:3px solid var(--cyan);
+    border-radius:6px; padding:14px 18px; color:var(--ink-soft); font-size:15.5px; margin:16px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+
+  .word-bank{
+    background:var(--paper-raised); border:1px solid var(--line-strong); border-radius:var(--radius);
+    padding:16px 20px; margin:14px 0 20px; font-size:14.5px; color:var(--ink-soft);
+    columns:4; column-gap:20px;
+  }
+  .word-bank div{margin-bottom:8px; break-inside:avoid;}
+
+  table.ref-table{width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:14.5px;}
+  table.ref-table caption{caption-side:top; text-align:left; font-family:var(--font-mono); font-size:11px;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  table.ref-table th, table.ref-table td{border:1px solid var(--line-strong); padding:7px 10px; text-align:left; color:var(--ink-soft);}
+  table.ref-table th{background:var(--paper-raised); color:var(--ink); font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
+  table.ref-table td.g{color:var(--ink); font-weight:600;}
+
+  .exercise-block{
+    border:1px solid var(--line); border-left:4px solid var(--c3); border-radius:10px;
+    padding:18px 22px; margin:16px 0 30px; background:var(--paper-raised);
+  }
+  .exercise-block h4{margin-top:0;}
+  .exercise-block .instr{color:var(--ink-soft); font-size:15px; margin-bottom:12px;}
+  table.gram-table{width:100%; border-collapse:collapse; margin:10px 0 16px; font-size:14px;}
+  table.gram-table th, table.gram-table td{border:1px solid var(--line-strong); padding:6px 8px; text-align:left;}
+  table.gram-table th{background:var(--paper); color:var(--ink-faint); font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase;}
+  table.gram-table td.g{color:var(--ink); font-weight:600;}
+  input.blank-input{
+    width:92%; background:var(--paper); border:1px solid var(--line-strong); border-radius:4px;
+    color:var(--ink); padding:5px 7px; font-size:13.5px; font-family:var(--font-serif);
+  }
+  input.blank-input:focus{outline:none; border-color:var(--c3);}
+  textarea.answer-box{
+    width:100%; box-sizing:border-box; min-height:70px; font:14.5px/1.5 var(--font-serif);
+    padding:10px 12px; border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--paper); color:var(--ink); resize:vertical; margin:8px 0 10px;
+  }
+  textarea.answer-box:focus{outline:none; border-color:var(--c3);}
+  button.reveal{
+    font-family:var(--font-mono); font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    text-transform:uppercase; padding:8px 16px; border:1px solid var(--magenta);
+    border-radius:8px; background:var(--c3-soft); color:var(--pink); cursor:pointer;
+  }
+  button.reveal:hover{background:var(--c3-panel);}
+  .qa{display:none; margin-top:14px; padding-top:14px; border-top:1px dashed var(--line-strong); font-size:14.5px; color:var(--ink-soft);}
+  .qa-label{font-family:var(--font-mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:8px; font-weight:700;}
+  .qa ul{margin:0; padding-left:20px;}
+  .qa li{margin-bottom:4px;}
+  .ocr-note{
+    background:var(--accent2-soft); border:1px dashed var(--violet); border-radius:8px;
+    padding:10px 14px; margin:8px 0 14px; color:var(--ink-faint); font-size:13.5px; font-style:italic;
+  }
+
+  footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:13px; font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Class 8 · English · Grammar</div>
+  <h1 class="title">Lesson 12 — The Noun</h1>
+  <p class="subtitle">Semester 1</p>
+
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#warmup">1. Warm-up — Classifying Nouns</a></li>
+      <li><a href="#definition">2. Definition of a Noun</a></li>
+      <li><a href="#common">3. Common Nouns</a></li>
+      <li><a href="#proper">4. Proper Nouns</a></li>
+      <li><a href="#collective">5. Collective Nouns</a></li>
+      <li><a href="#concrete-abstract">6. Concrete and Abstract Nouns</a></li>
+      <li><a href="#abstract-formation">7. Formation of Abstract Nouns</a></li>
+      <li><a href="#material">8. Material Noun</a></li>
+      <li><a href="#compound">9. Compound Nouns</a></li>
+      <li><a href="#gender">10. Noun: Gender</a></li>
+      <li><a href="#gender-change">11. Ways of Changing Gender</a></li>
+      <li><a href="#number">12. Noun: Number</a></li>
+      <li><a href="#plural-rules">13. Rules of Changing Singular Nouns to Plural Nouns</a></li>
+      <li><a href="#number-rules">14. Important Rules of Nouns: Numbers and Verbs</a></li>
+      <li><a href="#case">15. Noun: Case</a></li>
+      <li><a href="#possessive">16. Noun: Possessive Case</a></li>
+      <li><a href="#apostrophe">17. Correct Use of Apostrophe</a></li>
+      <li><a href="#revision">18. Quick Revision Checklist</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="warmup"><span class="num">1.</span>Warm-up — Classifying Nouns</h2>
+  <p>Read the following sentences carefully and complete the table given below taking information from the sentences.</p>
+  <ol>
+    <li>Riya is an intelligent girl.</li>
+    <li>Mohit lives in Delhi.</li>
+    <li>Honesty is the best policy.</li>
+    <li>Oil floats on water.</li>
+    <li>Please give me some sugar for my horse.</li>
+    <li>The Taj Mahal is a historical monument.</li>
+    <li>My mother has gone for a walk.</li>
+    <li>Cow gives us milk.</li>
+    <li>Laughter is the best medicine.</li>
+    <li>Youth is better than old age.</li>
+  </ol>
+  <div class="exercise-block">
+    <h4>Exercise</h4>
+    <p class="instr">Complete the table below, sorting the nouns from the sentences above into their categories.</p>
+    <table class="gram-table">
+      <tr><th>Category</th><th>Your answer</th></tr>
+      <tr><td>Names of persons</td><td><input class="blank-input" type="text" placeholder="e.g. Riya, Mohit..."></td></tr>
+      <tr><td>Names of animals</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of things</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of places</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of action/activities</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of ideas/concepts/qualities</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of states of existence</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ul>
+        <li><strong>Names of persons:</strong> Riya, girl, Mohit, mother</li>
+        <li><strong>Names of animals:</strong> horse, Cow</li>
+        <li><strong>Names of things:</strong> Oil, water, sugar, Taj Mahal, monument, milk, medicine</li>
+        <li><strong>Names of places:</strong> Delhi</li>
+        <li><strong>Names of action/activities:</strong> walk, Laughter</li>
+        <li><strong>Names of ideas/concepts/qualities:</strong> Honesty, policy</li>
+        <li><strong>Names of states of existence:</strong> Youth, old age</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="definition"><span class="num">2.</span>Definition of a Noun</h2>
+  <div class="callout"><p><strong>Definition:</strong> A noun is a word used as the name of a person, place, animal, thing, concept, idea, state of existence, activity etc.</p></div>
+
+  <h3>Kinds of Noun</h3>
+  <p>Common Nouns, Proper Nouns, Collective Nouns, Concrete Nouns, Abstract Nouns, Material Nouns and Compound Nouns.</p>
+
+  <h2 id="common"><span class="num">3.</span>Common Nouns</h2>
+  <div class="callout"><p><strong>Definition:</strong> A common noun is the name given to a class of people, animals, birds, things or concepts which are similar in nature or have common characteristics.</p></div>
+  <div class="exercise-block">
+    <h4>Exercise</h4>
+    <p class="instr">Complete the table given below with common nouns. An example for each category is provided for you.</p>
+    <table class="gram-table">
+      <tr><th>Category</th><th>Example-1</th><th>Example-2</th><th>Example-3</th></tr>
+      <tr><td>Names of people</td><td class="g">boy</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of relationships</td><td class="g">friend</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of fruits</td><td class="g">mango</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of vegetables</td><td class="g">potato</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of animals</td><td class="g">tiger</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of birds</td><td class="g">parrot</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of things</td><td class="g">pen</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of instruments/tools</td><td class="g">knife</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of flowers</td><td class="g">rose</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of places</td><td class="g">home</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key (sample answers — other correct words also work)</div>
+      <ul>
+        <li><strong>People:</strong> boy, girl, teacher</li>
+        <li><strong>Relationships:</strong> friend, brother, neighbour</li>
+        <li><strong>Fruits:</strong> mango, apple, banana</li>
+        <li><strong>Vegetables:</strong> potato, carrot, onion</li>
+        <li><strong>Animals:</strong> tiger, elephant, dog</li>
+        <li><strong>Birds:</strong> parrot, sparrow, eagle</li>
+        <li><strong>Things:</strong> pen, table, bag</li>
+        <li><strong>Instruments/tools:</strong> knife, hammer, scissors</li>
+        <li><strong>Flowers:</strong> rose, lily, sunflower</li>
+        <li><strong>Places:</strong> home, school, market</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="proper"><span class="num">4.</span>Proper Nouns</h2>
+  <div class="callout"><p><strong>Definition:</strong> A proper noun is the name of a particular person, place or thing.</p></div>
+  <div class="exercise-block">
+    <h4>Exercise</h4>
+    <p class="instr">Complete the table given below with proper nouns. An example for each category is provided for you. Always begin a proper noun with a capital letter.</p>
+    <table class="gram-table">
+      <tr><th>Category</th><th>Example-1</th><th>Example-2</th><th>Example-3</th></tr>
+      <tr><td>Names of your classmates</td><td class="g">Saurabh</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of rivers</td><td class="g">The Satluj</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of festivals</td><td class="g">Durga Pooja</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of mountain ranges</td><td class="g">The Himalayas</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of months</td><td class="g">August</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of days of the week</td><td class="g">Monday</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of famous buildings</td><td class="g">The Red Fort</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of oceans</td><td class="g">The Indian Ocean</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of countries</td><td class="g">Canada</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of states</td><td class="g">Gujrat</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of natives</td><td class="g">Indians</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Names of books</td><td class="g">Gulliver's Travels</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key (sample answers — other correct proper nouns also work)</div>
+      <ul>
+        <li><strong>Classmates:</strong> Saurabh, Ananya, Rohan</li>
+        <li><strong>Rivers:</strong> The Satluj, The Ganga, The Yamuna</li>
+        <li><strong>Festivals:</strong> Durga Pooja, Diwali, Eid</li>
+        <li><strong>Mountain ranges:</strong> The Himalayas, The Aravallis, The Alps</li>
+        <li><strong>Months:</strong> August, January, December</li>
+        <li><strong>Days of the week:</strong> Monday, Friday, Sunday</li>
+        <li><strong>Famous buildings:</strong> The Red Fort, The Taj Mahal, The Eiffel Tower</li>
+        <li><strong>Oceans:</strong> The Indian Ocean, The Pacific Ocean, The Atlantic Ocean</li>
+        <li><strong>Countries:</strong> Canada, India, Japan</li>
+        <li><strong>States:</strong> Gujrat, Punjab, Kerala</li>
+        <li><strong>Natives:</strong> Indians, Americans, Japanese</li>
+        <li><strong>Books:</strong> Gulliver's Travels, Panchatantra, Malgudi Days</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="collective"><span class="num">5.</span>Collective Nouns</h2>
+  <div class="callout"><p><strong>Definition:</strong> A collective noun is the name given to a group or a collection of persons, animals or things of the same kind described as one whole.</p></div>
+  <p>Underline the collective nouns in the following examples and learn them.</p>
+  <div class="word-bank">
+    <div>an army of soldiers</div><div>a band of musicians</div><div>a staff of teachers</div><div>a flight of stairs</div>
+    <div>a bunch of keys</div><div>a bouquet of flowers</div><div>a crew of sailors</div><div>a mob of rioters</div>
+    <div>a dynasty of kings</div><div>a pride of lions</div><div>a fleet of cars</div><div>a school of whales</div>
+    <div>a litter of puppies</div><div>a choir of singers</div><div>an orchestra of musicians</div><div>a party of friends</div>
+    <div>a pack of hounds</div><div>a colony of ants</div><div>a swarm of bees</div><div>a flock of sheep</div>
+    <div>a gang of thieves</div><div>a host of angels</div><div>a group of dancers</div><div>a herd of elephants</div>
+    <div>a caravan of gypsies</div><div>a choir of singers</div><div>a class of pupils</div><div>a class of students</div>
+    <div>a gang of robbers</div><div>a board of directors</div><div>a body of men</div><div>a bunch of crooks</div>
+    <div>a string of pearls</div><div>a shoal of fish</div><div>a school of whales</div><div>a galaxy of stars</div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with collective nouns</h4>
+    <table class="gram-table">
+      <tr><td>1. a <input class="blank-input" type="text"> of bananas</td><td>8. a <input class="blank-input" type="text"> of singers</td></tr>
+      <tr><td>2. a <input class="blank-input" type="text"> of sheep</td><td>9. a <input class="blank-input" type="text"> of ships</td></tr>
+      <tr><td>3. a <input class="blank-input" type="text"> of whales</td><td>10. a <input class="blank-input" type="text"> of hounds</td></tr>
+      <tr><td>4. a <input class="blank-input" type="text"> of bees</td><td>11. a <input class="blank-input" type="text"> of students</td></tr>
+      <tr><td>5. a <input class="blank-input" type="text"> of ants</td><td>12. a <input class="blank-input" type="text"> of thieves</td></tr>
+      <tr><td>6. a <input class="blank-input" type="text"> of lions</td><td>13. a <input class="blank-input" type="text"> of flowers</td></tr>
+      <tr><td>7. a <input class="blank-input" type="text"> of pearls</td><td>14. a <input class="blank-input" type="text"> of stars</td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1. bunch · 2. flock · 3. school · 4. swarm · 5. colony · 6. pride · 7. string · 8. choir · 9. fleet · 10. pack · 11. class · 12. gang · 13. bouquet · 14. galaxy</p>
+    </div>
+  </div>
+
+  <h2 id="concrete-abstract"><span class="num">6.</span>Concrete and Abstract Nouns</h2>
+  <div class="callout">
+    <p><strong>Definition:</strong> Concrete nouns are the names of persons, places or things that we can see or touch, and that have a shape, body or/and colour. Examples: pen, table, boy, school etc.</p>
+    <p><strong>Definition:</strong> Abstract nouns are the names of qualities, feelings, activities, and state of existence, ideas or concepts that cannot be seen or touched. We can only feel them or talk about them. Examples: hope, hatred, wisdom, flattery, invitation etc.</p>
+  </div>
+
+  <h2 id="abstract-formation"><span class="num">7.</span>Formation of Abstract Nouns</h2>
+  <p>Abstract nouns can be formed by adding certain suffixes to some words.</p>
+  <div class="callout"><p><strong>Example:</strong> friend + ship = friendship. We can see a friend, but we can not see friendship; we can only experience friendship.</p></div>
+
+  <table class="ref-table">
+    <caption>Reference — abstract nouns by suffix</caption>
+    <tr><th>Suffix</th><th>Example-1</th><th>Example-2</th><th>Suffix</th><th>Example-1</th><th>Example-2</th></tr>
+    <tr><td class="g">-ship</td><td>friendship</td><td>membership / leadership</td><td class="g">-tion</td><td>education</td><td>inception / substitution</td></tr>
+    <tr><td class="g">-ness</td><td>kindness</td><td>happiness / sadness</td><td class="g">-sion</td><td>confusion</td><td>depression</td></tr>
+    <tr><td class="g">-hood</td><td>boyhood</td><td>neighbourhood</td><td class="g">-ity</td><td>nationality</td><td>gratuity</td></tr>
+    <tr><td class="g">-ment</td><td>entertainment</td><td>enjoyment</td><td class="g">-ance</td><td>fragrance</td><td>substance</td></tr>
+  </table>
+
+  <p>Abstract nouns can be formed by removing or changing certain suffixes.</p>
+  <div class="callout"><p><strong>Example:</strong> beautiful − ful = beauty.</p></div>
+
+  <div class="exercise-block">
+    <h4>Exercise</h4>
+    <p class="instr">Complete the table given below with abstract nouns by removing or changing the suffixes. An example has been provided.</p>
+    <table class="gram-table">
+      <tr><th>Word</th><th>Abstract Noun</th><th>Word</th><th>Abstract Noun</th><th>Word</th><th>Abstract Noun</th></tr>
+      <tr><td>beautiful</td><td class="g">beauty</td><td>glorious</td><td><input class="blank-input" type="text"></td><td>sympathetic</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>surprising</td><td><input class="blank-input" type="text"></td><td>deceitful</td><td><input class="blank-input" type="text"></td><td>opinionated</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>painful</td><td><input class="blank-input" type="text"></td><td>courageous</td><td><input class="blank-input" type="text"></td><td>dangerous</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>chaotic</td><td><input class="blank-input" type="text"></td><td>compassionate</td><td><input class="blank-input" type="text"></td><td>successful</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>lucky</td><td><input class="blank-input" type="text"></td><td>romantic</td><td><input class="blank-input" type="text"></td><td>hungry</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>glorious → glory · sympathetic → sympathy · surprising → surprise · deceitful → deceit · opinionated → opinion · painful → pain · courageous → courage · dangerous → danger · chaotic → chaos · compassionate → compassion · successful → success · lucky → luck · romantic → romance · hungry → hunger</p>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with abstract nouns</h4>
+    <p class="instr">Fill in the blanks with abstract nouns formed from the words given in brackets. An example has been provided for you.</p>
+    <ol>
+      <li>Hope sustains life. (hopeful) <em>— done for you</em></li>
+      <li>I like the <input class="blank-input" type="text" style="width:180px"> of this dessert. (tasty)</li>
+      <li><input class="blank-input" type="text" style="width:180px"> is our greatest enemy. (fearful)</li>
+      <li>We must show <input class="blank-input" type="text" style="width:180px"> towards our elders. (respected)</li>
+      <li><input class="blank-input" type="text" style="width:180px"> is the best medicine. (laugh)</li>
+      <li>Always speak the <input class="blank-input" type="text" style="width:180px">. (true)</li>
+      <li>We must have <input class="blank-input" type="text" style="width:180px"> of character. (strong)</li>
+      <li>He has a great <input class="blank-input" type="text" style="width:180px"> to learn new things. (curious)</li>
+      <li>India got <input class="blank-input" type="text" style="width:180px"> in 1947. (free)</li>
+      <li>He cannot walk due to <input class="blank-input" type="text" style="width:180px">. (weak)</li>
+      <li>I like his sense of <input class="blank-input" type="text" style="width:180px">. (humorous)</li>
+      <li>He has the <input class="blank-input" type="text" style="width:180px"> to do this job well. (able)</li>
+      <li>It is the right of each child to get <input class="blank-input" type="text" style="width:180px">. (educate)</li>
+      <li>He could not study due to <input class="blank-input" type="text" style="width:180px">. (poor)</li>
+      <li>Books provide us <input class="blank-input" type="text" style="width:180px">. (know)</li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>2. taste · 3. Fear · 4. respect · 5. Laughter · 6. truth · 7. strength · 8. curiosity · 9. freedom · 10. weakness · 11. humour · 12. ability · 13. education · 14. poverty · 15. knowledge</p>
+    </div>
+  </div>
+
+  <h2 id="material"><span class="num">8.</span>Material Noun</h2>
+  <div class="callout"><p><strong>Definition:</strong> A material noun is the name of a material of which things are made.</p></div>
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with material nouns</h4>
+    <p class="instr">There may be more than one possible answer. The first one is done for you.</p>
+    <div class="ocr-note">A note on this exercise: in the scanned source, the printed answer for each blank appeared directly above the following item's blank line — a page-layout artifact from scanning. The answer key below restores each answer to its correct blank.</div>
+    <ol>
+      <li>Furniture is made of wood/iron/plastic etc. <em>— done for you</em></li>
+      <li>Sweets are made of <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Bread is made of <input class="blank-input" type="text" style="width:220px"></li>
+      <li>A building is made of <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Ornaments are made of <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Clothes are made of <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Books are made of <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Windows are made of <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Vehicles are made of <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Tyres are made of <input class="blank-input" type="text" style="width:220px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>2. Sugar/milk/cheese · 3. wheat · 4. brick/cement/iron · 5. gold/silver/iron/ivory etc · 6. cotton/wool/leather · 7. paper · 8. steel/iron/wood/glass · 9. iron/plastic/rubber/metal · 10. rubber</p>
+    </div>
+  </div>
+
+  <h2 id="compound"><span class="num">9.</span>Compound Nouns</h2>
+  <p>Some nouns are formed by joining two or more words. These nouns are called compound nouns.</p>
+  <div class="callout"><p><strong>Examples:</strong> news + paper = newspaper, police + man = policeman. Some more examples are: classmate, blackboard, passport, gentleman, landlord etc.</p></div>
+  <div class="exercise-block">
+    <h4>Exercise — Complete the compound nouns</h4>
+    <table class="gram-table">
+      <tr><th>Compound Element</th><th>Words</th><th>Compound Noun</th><th>Compound Element</th><th>Words</th><th>Compound Noun</th></tr>
+      <tr><td>noun+noun</td><td>air+craft</td><td><input class="blank-input" type="text"></td><td>Adjective+noun</td><td>sweet+heart</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td></td><td>moon+light</td><td><input class="blank-input" type="text"></td><td></td><td>strong+hold</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>noun+verb</td><td>day+break</td><td><input class="blank-input" type="text"></td><td>Verb+adverb</td><td>look+out</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td></td><td>head+ache</td><td><input class="blank-input" type="text"></td><td></td><td>take+off</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>noun+adverb</td><td>hanger+on</td><td><input class="blank-input" type="text"></td><td>Adjective+verb</td><td>dry+cleaning</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td></td><td>passer+by</td><td><input class="blank-input" type="text"></td><td></td><td>public+speaking</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Gerund+noun</td><td>washing+machine</td><td><input class="blank-input" type="text"></td><td>Adverb+Noun</td><td>on+looker</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td></td><td>looking+glass</td><td><input class="blank-input" type="text"></td><td></td><td>by+stander</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>Noun+gerund</td><td>letter+writing</td><td><input class="blank-input" type="text"></td><td>Adverb+verb</td><td>out+come</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td></td><td>sight+seeing</td><td><input class="blank-input" type="text"></td><td></td><td>over+look</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>aircraft · moonlight · daybreak · headache · hanger-on · passer-by · washing machine · looking-glass · letter-writing · sight-seeing · sweetheart · stronghold · lookout · takeoff · dry-cleaning · public-speaking · onlooker · bystander · outcome · overlook</p>
+    </div>
+  </div>
+
+  <h2 id="gender"><span class="num">10.</span>Noun: Gender</h2>
+  <p>On the basis of gender, there are four categories of nouns:</p>
+  <ol>
+    <li><strong>Masculine Gender:</strong> Masculine gender refers to a male. Examples: boy, man, father, tiger, horse etc.</li>
+    <li><strong>Feminine Gender:</strong> Feminine gender refers to a female. Examples: girl, woman, mother, tigress.</li>
+    <li><strong>Common Gender:</strong> A noun in common gender denotes both a male and a female.</li>
+  </ol>
+  <div class="word-bank">
+    <div>doctor</div><div>engineer</div><div>child</div><div>leader</div><div>infant</div>
+    <div>singer</div><div>enemy</div><div>bird</div><div>member</div><div>thief</div>
+    <div>servant</div><div>parent</div><div>applicant</div><div>patient</div><div>convict</div>
+    <div>orphan</div><div>teacher</div><div>artist</div><div>painter</div><div>lawyer</div>
+    <div>fish</div><div>student</div><div>friend</div><div>person</div><div>counsellor</div>
+    <div>eagle</div><div>baby</div><div>driver</div><div>hunter</div><div>boss</div>
+  </div>
+  <ol start="4">
+    <li><strong>Neuter Gender:</strong> Neuter gender denotes neither a male nor a female. It is used for non-living things. The pronoun used for a neuter gender is 'it'. Generally, material nouns, singular collective nouns and abstract nouns are considered to be in neuter gender. Examples: table, pencil, box, book, car etc.</li>
+  </ol>
+
+  <h2 id="gender-change"><span class="num">11.</span>Ways of Changing Gender</h2>
+
+  <h3>1. By Changing the Word</h3>
+  <table class="ref-table">
+    <caption>Human Beings</caption>
+    <tr><th>Masculine</th><th>Feminine</th></tr>
+    <tr><td>father</td><td>mother</td></tr><tr><td>son</td><td>daughter</td></tr>
+    <tr><td>uncle</td><td>aunt</td></tr><tr><td>brother</td><td>sister</td></tr>
+    <tr><td>nephew</td><td>niece</td></tr><tr><td>husband</td><td>wife</td></tr>
+    <tr><td>man</td><td>woman</td></tr><tr><td>grandfather</td><td>grandmother</td></tr>
+    <tr><td>man</td><td>woman</td></tr><tr><td>male</td><td>female</td></tr>
+    <tr><td>dad</td><td>mom</td></tr><tr><td>gentleman/lord</td><td>lady</td></tr>
+    <tr><td>widower</td><td>widow</td></tr><tr><td>sir</td><td>madam</td></tr>
+    <tr><td>king</td><td>queen</td></tr><tr><td>monk/friar</td><td>nun</td></tr>
+    <tr><td>bachelor</td><td>maiden/spinster</td></tr><tr><td>bridegroom</td><td>bride</td></tr>
+    <tr><td>lad</td><td>lass</td></tr><tr><td>hero</td><td>heroine</td></tr>
+    <tr><td>earl</td><td>countess</td></tr>
+  </table>
+  <table class="ref-table">
+    <caption>Animals</caption>
+    <tr><th>Masculine</th><th>Feminine</th></tr>
+    <tr><td>wizard</td><td>witch</td></tr><tr><td>bull (ox)/bullock</td><td>cow/heifer</td></tr>
+    <tr><td>cock/rooster</td><td>hen</td></tr><tr><td>stallion/horse</td><td>mare</td></tr>
+    <tr><td>drake</td><td>duck</td></tr><tr><td>drone (bee)</td><td>queen</td></tr>
+    <tr><td>colt</td><td>filly</td></tr><tr><td>fox</td><td>vixen</td></tr>
+    <tr><td>buck (deer)</td><td>doe</td></tr><tr><td>dog</td><td>bitch</td></tr>
+    <tr><td>gander</td><td>goose</td></tr><tr><td>ram (sheep)</td><td>ewe</td></tr>
+    <tr><td>boar (pig)</td><td>sow</td></tr><tr><td>stag/hart (deer)</td><td>doe</td></tr>
+    <tr><td>jack (rabbit)</td><td>jill</td></tr><tr><td>tom (cat)</td><td>queen/pussy</td></tr>
+    <tr><td>stag (red deer)</td><td>hind</td></tr><tr><td>peacock</td><td>peahen</td></tr>
+    <tr><td>billy (goat)</td><td>nanny</td></tr><tr><td>jack (donkey)</td><td>jenny</td></tr>
+    <tr><td>john (mule)</td><td>molly</td></tr>
+  </table>
+
+  <h3>2. By Adding the Suffix '-ess' Without Changing the Masculine Form</h3>
+  <table class="ref-table">
+    <tr><th>Masculine</th><th>Feminine</th><th>Masculine</th><th>Feminine</th></tr>
+    <tr><td>host</td><td>hostess</td><td>lion</td><td>lioness</td></tr>
+    <tr><td>poet</td><td>poetess</td><td>prince</td><td>princess</td></tr>
+    <tr><td>author</td><td>authoress</td><td>steward</td><td>stewardess</td></tr>
+    <tr><td>heir</td><td>heiress</td><td>shepherd (swain)</td><td>shepherdess (nymph)</td></tr>
+    <tr><td>count</td><td>countess</td><td>prophet</td><td>prophetess</td></tr>
+    <tr><td>tailor</td><td>tailoress</td><td>priest</td><td>priestess</td></tr>
+    <tr><td>viscount</td><td>viscountess</td><td>baron</td><td>baroness</td></tr>
+    <tr><td>giant</td><td>giantess</td><td>peer</td><td>peeress</td></tr>
+  </table>
+
+  <h3>3. By Altering the Spelling Slightly Before Adding '-ess'</h3>
+  <table class="ref-table">
+    <tr><th>Masculine</th><th>Feminine</th><th>Masculine</th><th>Feminine</th></tr>
+    <tr><td>actor</td><td>actress</td><td>duke</td><td>duchess</td></tr>
+    <tr><td>tiger</td><td>tigress</td><td>god</td><td>goddess</td></tr>
+    <tr><td>negro</td><td>negress</td><td>emperor</td><td>empress</td></tr>
+    <tr><td>master</td><td>mistress</td><td>waiter</td><td>waitress</td></tr>
+    <tr><td>governor</td><td>governess</td><td>murderer</td><td>murderess</td></tr>
+    <tr><td>hunter</td><td>huntress</td><td>tempter</td><td>temptress</td></tr>
+    <tr><td>abbot</td><td>abbess</td><td>enchanter</td><td>enchantress</td></tr>
+    <tr><td>seamster</td><td>seamstress</td><td>ambassador</td><td>ambassadress</td></tr>
+  </table>
+
+  <h3>4. Feminine of a Compound Noun — Change the Part Showing Gender</h3>
+  <table class="ref-table">
+    <tr><th>Masculine</th><th>Feminine</th><th>Masculine</th><th>Feminine</th></tr>
+    <tr><td>grand-father</td><td>grand-mother</td><td>man-servant</td><td>maid-servant</td></tr>
+    <tr><td>milk-man</td><td>milk-maid</td><td>land-lord</td><td>land-lady</td></tr>
+    <tr><td>tom-cat</td><td>tabby-cat</td><td>peacock</td><td>peahen</td></tr>
+    <tr><td>he-goat</td><td>she-goat</td><td>maternal uncle</td><td>maternal aunt</td></tr>
+    <tr><td>police-man</td><td>police-woman</td><td>father-in-law</td><td>mother-in-law</td></tr>
+    <tr><td>Mr.</td><td>Mrs.</td><td>step-son</td><td>step-daughter</td></tr>
+    <tr><td>post-master</td><td>post-mistress</td><td>son-in-law</td><td>daughter-in-law</td></tr>
+    <tr><td>head-master</td><td>head-mistress</td><td>grand-son</td><td>grand-daughter</td></tr>
+  </table>
+
+  <h3>5. Feminine of Some Foreign Words</h3>
+  <table class="ref-table">
+    <tr><th>Masculine</th><th>Feminine</th><th>Masculine</th><th>Feminine</th></tr>
+    <tr><td>administrator</td><td>administratrix</td><td>sultan</td><td>sultana</td></tr>
+    <tr><td>czar</td><td>czarina</td><td>signor</td><td>signora</td></tr>
+    <tr><td>executor</td><td>executrix</td><td>viceroy</td><td>vicereine</td></tr>
+    <tr><td>testator</td><td>testratrix</td><td>marquis</td><td>marchioness</td></tr>
+    <tr><td>monsieur</td><td>madam</td><td>beau</td><td>belle</td></tr>
+    <tr><td>executor</td><td>executrix</td><td>sire</td><td>dame</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <h4>Exercise — Fill in the blanks with the masculine/feminine gender of the nouns</h4>
+    <table class="gram-table">
+      <tr><th>Masculine</th><th>Feminine</th><th>Masculine</th><th>Feminine</th></tr>
+      <tr><td>father</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>wizard <em>(fem.)</em></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>daughter</td><td><input class="blank-input" type="text"></td><td>cow</td></tr>
+      <tr><td>uncle</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>czar <em>(fem.)</em></td></tr>
+      <tr><td>executor</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>stallion/horse <em>(fem.)</em></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>niece</td><td><input class="blank-input" type="text"></td><td>duck</td></tr>
+      <tr><td>husband</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>abbot <em>(fem.)</em></td></tr>
+      <tr><td>Mr.</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>filly</td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>bee <em>(drone)</em></td><td>god</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>author</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>buck (deer)</td></tr>
+      <tr><td>steward</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>temptress <em>(masc.)</em></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>signora</td><td><input class="blank-input" type="text"></td><td>goose</td></tr>
+      <tr><td>waiter</td><td><input class="blank-input" type="text"></td><td>ram</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>widow</td><td><input class="blank-input" type="text"></td><td>maiden</td></tr>
+      <tr><td>tiger</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>stag/hart (deer)</td></tr>
+      <tr><td>boar</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>jack (rabbit)</td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>nun</td><td><input class="blank-input" type="text"></td><td>queen/pussy</td></tr>
+      <tr><td>marquis</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>stag (red deer)</td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>belle</td><td>head-master</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>lad</td><td>lass</td><td><input class="blank-input" type="text"></td><td>nanny (goat)</td></tr>
+      <tr><td>seamster</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>mother-in-law</td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>father/mother · witch/wizard · son/daughter · bull(ox)/cow · uncle/aunt · czar/czarina · executor/executrix · stallion/mare · nephew/niece · drake/duck · husband/wife · abbot/abbess · Mr./Mrs. · colt/filly · drone/bee · god/goddess · author/authoress · buck/doe · steward/stewardess · murderer/temptress <em>(masc. of temptress = tempter)</em> · signor/signora · gander/goose · waiter/waitress · ram/ewe · widower/widow · bachelor/maiden · tiger/tigress · stag/doe · boar/sow · jack/jill · monk/nun · tom(cat)/queen · marquis/marchioness · stag/hind · beau/belle · head-master/head-mistress · billy(goat)/lass... nanny (goat) · seamster/seamstress · father-in-law/mother-in-law</p>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Rewrite the sentences by changing the gender of nouns and pronouns</h4>
+    <p class="instr">The first one has been done for you: <em>The king chose his heir. → The queen chose her heiress.</em></p>
+    <ol start="2">
+      <li>The tom-cat drank his milk. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>My father is a businessman. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>Her sister is a teacher. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>The Sultan sat on his throne. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>The tiger attacked the he-goat. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>My husband is a seamster. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>The waiter took the order. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>The bride greeted her mother-in-law. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>The peacock danced beautifully. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>2. The tabby-cat drank her milk. · 3. My mother is a businesswoman. · 4. Her brother is a teacher. · 5. The Sultana sat on her throne. · 6. The tigress attacked the she-goat. · 7. My wife is a seamstress. · 8. The waitress took the order. · 9. The bridegroom greeted his father-in-law. · 10. The peahen danced beautifully.</p>
+    </div>
+  </div>
+
+  <h2 id="number"><span class="num">12.</span>Noun: Number</h2>
+  <h3>Countable and Uncountable Nouns</h3>
+  <p>A countable noun is the name of persons, animals, or things that one can count. A countable noun has both singular and plural forms. An uncountable noun is the name of a thing/concept/idea that one cannot count. Such nouns are not counted but measured in quantity. An uncountable noun has only singular form and takes a singular verb.</p>
+  <table class="ref-table">
+    <tr><th>Uncountable Noun</th><th>Countable Noun</th></tr>
+    <tr><td>bread</td><td>loaves/slices/pieces of bread</td></tr>
+    <tr><td>chalk</td><td>pieces of chalk</td></tr>
+    <tr><td>chocolate</td><td>pieces/bars of chocolate</td></tr>
+    <tr><td>cake</td><td>piece/pieces of cake</td></tr>
+    <tr><td>soap</td><td>cake/cakes of soap</td></tr>
+    <tr><td>oil</td><td>bottle/bottles of oil</td></tr>
+    <tr><td>tea</td><td>cup/cups of tea</td></tr>
+    <tr><td>information</td><td>piece/pieces of information</td></tr>
+    <tr><td>advice</td><td>piece of advice</td></tr>
+    <tr><td>sand</td><td>granule of sand</td></tr>
+    <tr><td>salt</td><td>pinch of salt</td></tr>
+    <tr><td>money</td><td>a lot of money</td></tr>
+    <tr><td>time</td><td>seconds, minutes, hours, days, months, years</td></tr>
+    <tr><td>water</td><td>bottle/bottles of water</td></tr>
+    <tr><td>rice</td><td>sacks/bags of rice</td></tr>
+    <tr><td>hair (the whole of it)</td><td>a few/some hairs</td></tr>
+    <tr><td>honey/jam/sugar</td><td>jar/jars of honey/jam/sugar</td></tr>
+  </table>
+
+  <h2 id="plural-rules"><span class="num">13.</span>Rules of Changing Singular Nouns to Plural Nouns</h2>
+
+  <div class="exercise-block">
+    <h4>Rule 1 — Most nouns form their plural by adding '–s'</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>girl</td><td class="g">girls</td><td><input class="blank-input" type="text"></td><td>boys</td></tr>
+      <tr><td>pen</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>tables</td></tr>
+      <tr><td>school</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>bags</td></tr>
+      <tr><td>parent</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>lamps</td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>boy/boys · pen/pens · table/tables · school/schools · bag/bags · parent/parents · lamp/lamps</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 2 — Nouns ending in '–s', '-ss', '-sh', '-ch', '-x', '-z' add '–es'</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>bus</td><td class="g">buses</td><td>fox</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>bush</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>passes</td></tr>
+      <tr><td>church</td><td><input class="blank-input" type="text"></td><td>branch</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>benches</td><td>quiz</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <div class="callout"><p><strong>Exceptions:</strong> If the '-ch' has 'k' sound, the plural is formed by adding only '-s' — monarch–monarchs, stomach–stomachs. Other exceptions: ox–oxen, radius–radii, locus–loci.</p></div>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>fox/foxes · bush/bushes · pass/passes · church/churches · branch/branches · bench/benches · quiz/quizzes</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 3 — Nouns ending in '–o' add '–es'</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>potato</td><td><input class="blank-input" type="text"></td><td>negro</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>tomatoes</td><td><input class="blank-input" type="text"></td><td>cargoes</td></tr>
+      <tr><td>hero</td><td><input class="blank-input" type="text"></td><td>mango</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>buffalo</td><td><input class="blank-input" type="text"></td><td>hero</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>echoes</td><td><input class="blank-input" type="text"></td><td>mosquitoes</td></tr>
+      <tr><td>volcano</td><td><input class="blank-input" type="text"></td><td>cargo</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>mottoes</td><td><input class="blank-input" type="text"></td><td>vetoes</td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>potato/potatoes · negro/negroes · tomato/tomatoes · cargo/cargoes · hero/heroes · mango/mangoes · buffalo/buffaloes · hero/heroes · echo/echoes · mosquito/mosquitoes · volcano/volcanoes · cargo/cargoes · motto/mottoes · veto/vetoes</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 4 — Some nouns ending in '–o' or '-oo' add only '–s'</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>radio</td><td class="g">radios</td><td>cuckoo</td><td class="g">cuckoos</td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>photos</td><td><input class="blank-input" type="text"></td><td>ratios</td></tr>
+      <tr><td>bamboo</td><td><input class="blank-input" type="text"></td><td>portfolio</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>cantos</td><td><input class="blank-input" type="text"></td><td>halos</td></tr>
+      <tr><td>shampoo</td><td><input class="blank-input" type="text"></td><td>studio</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>mementos</td><td><input class="blank-input" type="text"></td><td>dynamos</td></tr>
+      <tr><td>quarto</td><td><input class="blank-input" type="text"></td><td>canto</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>photo/photos · ratio/ratios · bamboo/bamboos · portfolio/portfolios · canto/cantos · halo/halos · shampoo/shampoos · studio/studios · memento/mementos · dynamo/dynamos · quarto/quartos · canto/cantos</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 5 — Nouns ending in '–f' or '–fe' change to 'v' and add '–es'</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>calf</td><td class="g">calves</td><td><input class="blank-input" type="text"></td><td>leaves</td></tr>
+      <tr><td>loaf</td><td><input class="blank-input" type="text"></td><td>wife</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>halves</td><td><input class="blank-input" type="text"></td><td>lives</td></tr>
+      <tr><td>wolf</td><td><input class="blank-input" type="text"></td><td>knife</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>shelves</td><td><input class="blank-input" type="text"></td><td>selves</td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>leaf/leaves · loaf/loaves · wife/wives · half/halves · life/lives · wolf/wolves · knife/knives · shelf/shelves · self/selves</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 6 — Some nouns ending in '–f' add only '–s'</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>chief</td><td class="g">chiefs</td><td>proof</td><td class="g">proofs</td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>dwarfs</td><td><input class="blank-input" type="text"></td><td>griefs</td></tr>
+      <tr><td>roof</td><td><input class="blank-input" type="text"></td><td>hoof</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>scarf</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>beliefs</td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>gulfs</td><td>safe</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>puff</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>strifes</td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>cliffs</td><td>serf</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>dwarf/dwarfs · grief/griefs · roof/roofs · hoof/hoofs (or hooves) · scarf/scarfs (or scarves) · belief/beliefs · gulf/gulfs · safe/safes · puff/puffs · strife/strifes · cliff/cliffs · serf/serfs</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 7 — Nouns ending in '–y' with a vowel before it add only '–s'</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>day</td><td class="g">days</td><td>boy</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>keys</td><td><input class="blank-input" type="text"></td><td>rays</td></tr>
+      <tr><td>toy</td><td><input class="blank-input" type="text"></td><td>storey</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>monkeys</td><td><input class="blank-input" type="text"></td><td>essays</td></tr>
+      <tr><td>joy</td><td><input class="blank-input" type="text"></td><td>journey</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>boy/boys · key/keys · ray/rays · toy/toys · storey/storeys · monkey/monkeys · essay/essays · joy/joys · journey/journeys</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 8 — Nouns ending in '–y' with a consonant before it change '–y' to '–i' and add '–es'</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>city</td><td class="g">cities</td><td>story</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>ladies</td><td><input class="blank-input" type="text"></td><td>ponies</td></tr>
+      <tr><td>family</td><td><input class="blank-input" type="text"></td><td>copy</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>duties</td><td><input class="blank-input" type="text"></td><td>bodies</td></tr>
+      <tr><td>cry</td><td><input class="blank-input" type="text"></td><td>penny</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>victories</td><td><input class="blank-input" type="text"></td><td>luxuries</td></tr>
+      <tr><td>army</td><td><input class="blank-input" type="text"></td><td>city</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>story/stories · lady/ladies · pony/ponies · family/families · copy/copies · duty/duties · body/bodies · cry/cries · penny/pennies · victory/victories · luxury/luxuries · army/armies · city/cities</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 9 — Nouns ending in a double vowel add only '-s'</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>bee</td><td class="g">bees</td><td>radio</td><td class="g">radios</td></tr>
+      <tr><td>zoo</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>folios</td></tr>
+      <tr><td>woe</td><td><input class="blank-input" type="text"></td><td>tree</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>zoo/zoos · folio/folios · woe/woes · tree/trees</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 10 — Some nouns change their internal vowels to form the plural</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>mouse</td><td class="g">mice</td><td>foot</td><td class="g">feet</td></tr>
+      <tr><td>louse</td><td><input class="blank-input" type="text"></td><td>goose</td><td class="g">geese</td></tr>
+      <tr><td>man</td><td class="g">men</td><td><input class="blank-input" type="text"></td><td>teeth</td></tr>
+      <tr><td>woman</td><td><input class="blank-input" type="text"></td><td>postman</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>louse/lice · tooth/teeth · woman/women · postman/postmen</p></div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Rule 11 — Plurals of compound nouns: '–s'/'–es' added to the key word (first or last)</h4>
+    <table class="gram-table">
+      <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>step-son</td><td class="g">step-sons</td><td>looker-on</td><td class="g">lookers-on</td></tr>
+      <tr><td>father-in-law</td><td class="g">fathers-in-law</td><td><input class="blank-input" type="text"></td><td>hangers-on</td></tr>
+      <tr><td>commander-in-chief</td><td class="g">commanders-in-chief</td><td>passer-by</td><td class="g">passers-by</td></tr>
+      <tr><td>lady-in-waiting</td><td class="g">ladies-in-waiting</td><td>forget-me-not</td><td class="g">forget-me-nots</td></tr>
+      <tr><td>poet-laureate</td><td class="g">poet-laureates</td><td>lieutenant-governor</td><td class="g">lieutenant-governors</td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>coats-of-mail</td><td><input class="blank-input" type="text"></td><td>men-of-war</td></tr>
+      <tr><td>bystander</td><td class="g">bystanders</td><td><input class="blank-input" type="text"></td><td>go-betweens</td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>cupfuls</td><td>take-off</td><td class="g">take-offs</td></tr>
+      <tr><td>spoonful</td><td class="g">spoonfuls</td><td>assistant director</td><td class="g">assistant directors</td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa"><div class="qa-label">Answer Key</div><p>hanger-on (→ hangers-on) · coat-of-mail (→ coats-of-mail) · man-of-war (→ men-of-war) · go-between (→ go-betweens) · cupful (→ cupfuls)</p></div>
+  </div>
+
+  <table class="ref-table">
+    <caption>Reference — plurals formed by changing both words</caption>
+    <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+    <tr><td>lord-justice</td><td>lords-justices</td><td>woman-servant</td><td>women-servants</td></tr>
+    <tr><td>lady-doctor</td><td>ladies-doctors</td><td>man-servant</td><td>men-servants</td></tr>
+  </table>
+
+  <div class="exercise-block">
+    <h4>Rule 13 — Some foreign words change their plural by changing their spellings</h4>
+    <table class="gram-table">
+      <tr><th>Singular (-um)</th><th>Plural (-a)</th><th>Singular (-um)</th><th>Plural (-a)</th></tr>
+      <tr><td>datum</td><td class="g">data</td><td>dictum</td><td class="g">dicta</td></tr>
+      <tr><td>ovum</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>addenda</td></tr>
+      <tr><td>erratum</td><td><input class="blank-input" type="text"></td><td>stratum</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>agenda</td><td>memorandum</td><td class="g">memoranda</td></tr>
+    </table>
+    <table class="gram-table">
+      <tr><th>Singular (-us)</th><th>Plural (-i)</th><th>Singular (-us)</th><th>Plural (-i)</th></tr>
+      <tr><td>radius</td><td class="g">radii</td><td>syllabus</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>locus</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>Genii</td></tr>
+    </table>
+    <table class="gram-table">
+      <tr><th>Singular (-is)</th><th>Plural (-es)</th><th>Singular (-is)</th><th>Plural (-es)</th></tr>
+      <tr><td>axis</td><td class="g">axes</td><td>basis</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>analysis</td><td><input class="blank-input" type="text"></td><td><input class="blank-input" type="text"></td><td>crises</td></tr>
+      <tr><td><input class="blank-input" type="text"></td><td>theses</td><td>parenthesis</td><td><input class="blank-input" type="text"></td></tr>
+      <tr><td>hypothesis</td><td><input class="blank-input" type="text"></td><td></td><td></td></tr>
+    </table>
+    <table class="gram-table">
+      <tr><th>Singular (-on)</th><th>Plural (-a)</th><th>Singular (-on)</th><th>Plural (-a)</th></tr>
+      <tr><td>phenomenon</td><td class="g">phenomena</td><td>criterion</td><td><input class="blank-input" type="text"></td></tr>
+    </table>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>ovum/ova · addendum/addenda · erratum/errata · stratum/strata · agendum/agenda · syllabus/syllabi · locus/loci · genius/Genii · basis/bases · analysis/analyses · thesis/theses · parenthesis/parentheses · hypothesis/hypotheses · criterion/criteria</p>
+    </div>
+  </div>
+
+  <table class="ref-table">
+    <caption>Reference — plurals of letters, figures, signs and abbreviations (add '-s')</caption>
+    <tr><th>Singular</th><th>Plural</th><th>Singular</th><th>Plural</th></tr>
+    <tr><td>M.A.</td><td>M.A.'s/MAs</td><td>M.L.A.</td><td>MLA'S/MLAs</td></tr>
+    <tr><td>N.G.O.</td><td>N.G.O.'s/NGOs</td><td>MP</td><td>MP'S/MPs</td></tr>
+    <tr><td>ATM</td><td>ATM'S/ATMs</td><td>SDO</td><td>SDO's/SDOs</td></tr>
+    <tr><td>5</td><td>5s</td><td>but</td><td>buts</td></tr>
+    <tr><td>I</td><td>I's</td><td>10</td><td>10s</td></tr>
+    <tr><td>T</td><td>T's</td><td>If</td><td>ifs</td></tr>
+  </table>
+  <div class="callout">
+    <p>Some nouns form their plurals by adding '-en' or 'ren': ox–oxen, child–children, brother–brethren.</p>
+    <p>Some more nouns: Mr.–Messrs, Mrs.–Mesdames.</p>
+  </div>
+
+  <h2 id="number-rules"><span class="num">14.</span>Important Rules of Nouns: Numbers and Verbs</h2>
+  <ol>
+    <li>Some nouns are always used as plural nouns. They are used with plural verbs. <strong>Examples:</strong> alms, amends, annals, earnings, scissors, trousers, pants, clippers, socks, fetters, eyeglasses, riches, entrails, remains, spectacles, tidings, thanks, tongs, vegetables, bowels etc.</li>
+    <li>Some nouns appear to be plural, but are used as singular nouns. They are used with singular verbs. <strong>Examples:</strong> mathematics, statistics, physics, economics, politics, innings, news, classics, gymnastics, summons, mumps, billiards, shambles etc.</li>
+    <li>Some nouns appear to be singular, but are used as plural. They are used with plural verbs. <strong>Examples:</strong> cattle, clergy, cavalry, infantry, peasantry, gentry, police, folk, people, public, vermin, poultry etc.</li>
+    <li>Some nouns are used only as singular uncountable nouns. They are used with singular verbs. <strong>Examples:</strong> scenery, poetry, furniture, advice, information, business, mischief, jewellery, breakage, knowledge, wastage, money, bread, crockery, luggage, rice, fuel, offspring, etc.</li>
+    <li>Some nouns have the same forms in singular and plural. <strong>Examples:</strong> deer, fish, crew, jury, aircraft, counsel, apparatus, cod, yolk, species, means, series etc.</li>
+    <li>Some nouns express length, measure, money, weight, number or counting. When preceded by a numeral, these nouns can be used in plural but if they are preceded by a numeral and followed by a noun, they remain singular in form. <strong>Examples:</strong> foot, hundred, metre, million, year, score etc.
+      <ul>
+        <li>We are flying at 35000 feet.</li>
+        <li>I saw a 6 foot long snake.</li>
+        <li>Give me two five rupee notes.</li>
+        <li>Give me five hundred rupees.</li>
+      </ul>
+    </li>
+    <li>The words 'pair' and 'dozen' can be used both as singular and plural depending on the number of pairs or dozens. <strong>Example:</strong> I have a pair of socks. / I have two pairs of socks. / He bought two dozen of oranges. / He bought dozens of oranges.</li>
+    <li>Some nouns are both countable and uncountable depending on their meaning in a sentence. <strong>Example:</strong> I don't have much time. (Uncountable) / I have told you many times not to disturb me. (Countable)</li>
+  </ol>
+
+  <div class="exercise-block">
+    <h4>Exercise — Tick the correct option</h4>
+    <p class="instr">Work in pairs/groups. Tick the correct option. Discuss your answers.</p>
+    <ol>
+      <li>Riches (has/have) wings. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>Please, give me (a pair scissors/ a scissor). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>Mathematics (is/are) a difficult subject. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>These news are true. / This news is true. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>The police (has/have) arrested the thief. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>The cattle (is/are) grazing in the field. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>(People/Peoples) should do their duty. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>I like (poetries/poetry) of Robert Browning. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>Please bring me some (chalks/ pieces of chalk). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>I bought three (soaps/cakes of soap). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>I ate four (breads/loaves of bread). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>I want two (chocolates/ bars of chocolate). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>Give me your (luggage/luggages). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>They sold the old (furniture/furnitures). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>My (hairs/hair) (is/are) brown. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>I have some grey (hair/hairs). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>He is fond of (vegetable/vegetables). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>There are many (fish/fishes) in this pond. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>There are many (species of fish/fishes) in this pond. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>The (sceneries/scenery) of Kashmir (is/are) beautiful. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>My friend bought a (six-feet/six-foot) saree. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>Give me a hundred (rupees/rupee) note. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>My spectacles (has/have) broken. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>She is my (cousin/cousin sister). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>I have taken my (meals/meal). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>He does not like (fruit/fruits). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>There is a variety of (fruit/fruits) at this shop. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>This house is made of (brick/bricks) and mortar. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>There (is/are) no gentry in this city. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>He went from (doors to doors/door to door) to sell his goods. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>Alms (was/were) given to the beggars. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>They went to Mumbai during summer (vacation/vacations). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>Please teach me English (alphabets/alphabet). <input class="blank-input" type="text" style="width:120px"></li>
+      <li>The first (inning/innings) is going to be over now. <input class="blank-input" type="text" style="width:120px"></li>
+      <li>The (chair's arm/arm of the chair) is broken. <input class="blank-input" type="text" style="width:120px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1. have · 2. a pair of scissors <em>(the printed option appears to be missing "of")</em> · 3. is · 4. This news is true. · 5. have · 6. are · 7. People · 8. poetry · 9. pieces of chalk · 10. cakes of soap · 11. loaves of bread · 12. bars of chocolate · 13. luggage · 14. furniture · 15. hair is · 16. hairs · 17. vegetables · 18. fish · 19. species of fish · 20. scenery is · 21. six-foot · 22. rupee · 23. have · 24. cousin · 25. meal · 26. fruit · 27. fruits · 28. brick (idiom: "brick and mortar") · 29. are <em>(gentry takes a plural verb)</em> · 30. door to door · 31. were · 32. vacation · 33. alphabet · 34. innings · 35. arm of the chair</p>
+    </div>
+  </div>
+
+  <h2 id="case"><span class="num">15.</span>Noun: Case</h2>
+  <p>Nouns function in various ways in sentences.</p>
+  <ol>
+    <li><strong>Nouns are subjects.</strong> Every sentence has a subject, which is a noun that tells us what that sentence is all about. <em>Examples:</em> John swung the baseball bat. Harry wrote a letter.</li>
+    <li><strong>Nouns are direct objects.</strong> These nouns receive action from verbs. <em>Examples:</em> John swung the baseball bat. Harry wrote a letter.</li>
+    <li><strong>Nouns are indirect objects.</strong> These nouns receive the direct object. <em>Examples:</em> Brad threw John the ball. My father bought my sister a bicycle.</li>
+    <li><strong>Nouns are objects of prepositions.</strong> These nouns follow the prepositions in prepositional phrases. <em>Examples:</em> John swung the baseball bat at Greg. Rehan kept his books on the shelf.</li>
+    <li><strong>Nouns are subject complements.</strong> These nouns follow linking verbs and rename the subject. <em>Examples:</em> John is a baseball player. Radhika is a singer.</li>
+    <li><strong>Nouns are object complements.</strong> These nouns complete the direct object. <em>Examples:</em> They named their dog Max. The coach appointed Rohan captain.</li>
+    <li><strong>Nouns are nominative of address.</strong> These nouns are used to address a person, animal or thing. <em>Examples:</em> Friends, follow me. Mohan, come here. Sit down, boys.</li>
+    <li><strong>Nouns are used in apposition.</strong> These nouns follow another noun to denote the same person or thing. <em>Examples:</em> Rohan, my brother, is a cricketer. Mr. Sharma, our neighbour, is a gentleman.</li>
+  </ol>
+
+  <div class="exercise-block">
+    <h4>Exercise — Underline all the nouns and state their function</h4>
+    <ol>
+      <li>The hunter killed the bird. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>The children are playing cricket. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>My friend has become a doctor. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>Rama, please pass the salt. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>The teachers asked the students many questions. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>It was my friend who helped me. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>My friend has returned from London. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>My teacher, Mrs. James, is a wonderful lady. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>My uncle gifted me a watch on my birthday. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+      <li>The parents named their child Vishnu. <textarea class="answer-box" style="min-height:36px"></textarea></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <ul>
+        <li>1. <u>hunter</u> — subject; <u>bird</u> — direct object</li>
+        <li>2. <u>children</u> — subject; <u>cricket</u> — direct object</li>
+        <li>3. <u>friend</u> — subject; <u>doctor</u> — subject complement</li>
+        <li>4. <u>Rama</u> — nominative of address; <u>salt</u> — direct object</li>
+        <li>5. <u>teachers</u> — subject; <u>students</u> — indirect object; <u>questions</u> — direct object</li>
+        <li>6. <u>friend</u> — subject complement</li>
+        <li>7. <u>friend</u> — subject; <u>London</u> — object of preposition</li>
+        <li>8. <u>teacher</u> — subject; <u>Mrs. James</u> — noun in apposition; <u>lady</u> — subject complement</li>
+        <li>9. <u>uncle</u> — subject; <u>watch</u> — direct object; <u>birthday</u> — object of preposition</li>
+        <li>10. <u>parents</u> — subject; <u>child</u> — direct object; <u>Vishnu</u> — object complement</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="possessive"><span class="num">16.</span>Noun: Possessive Case</h2>
+  <p>The possessive case of a noun is formed using the sign of apostrophe ('). Apostrophe is used to form the possessive case of noun to show a sense of belonging or ownership or some relationship between a noun and another noun.</p>
+  <div class="callout">
+    <p><strong>Examples:</strong> Mohan's book (The book belongs to Mohan.) · Horse's tail (The tail belongs to horse.) · Student's application (The application belongs to student.)</p>
+  </div>
+
+  <h2 id="apostrophe"><span class="num">17.</span>Correct Use of Apostrophe (')</h2>
+  <ol>
+    <li>When the noun is singular, the possessive case is formed by adding -'s to the noun. <em>Examples:</em> Punit's book, the boy's pen.</li>
+    <li>When the noun is plural and ends with 's', the possessive case is formed by adding only an apostrophe. <em>Examples:</em> girls' hostel, boys' school.</li>
+    <li>When the noun is plural, but does not end with 's', the possessive case is formed by adding -'s. <em>Examples:</em> children's day, men's store.</li>
+    <li>If there are too many hissing sounds in a word, the letter 's' is omitted after the apostrophe. <em>Examples:</em> for conscience' sake, for goodness' sake, Moses' law.</li>
+    <li>When a noun or a title consists of many words, the possessive case is formed by adding -'s to the last word. <em>Example:</em> the queen of England's palace.</li>
+    <li>When two nouns are in apposition, -'s is added only to the latter. <em>Example:</em> This is Raju, the painter's house.</li>
+    <li>When two nouns are closely linked, the possessive case is formed by adding -'s to the latter. This is known as joint possession. <em>Examples:</em> Sohan and Mohan's book, Wren and Martin's Grammar.</li>
+    <li>If two nouns are connected, and they show separate possession, the -'s will be used with both of them. <em>Example:</em> Milton's and Browning's poems.</li>
+    <li>Classical names ending with 's' usually take only apostrophe. <em>Examples:</em> Pythagoras' theorem, Archimedes' law.</li>
+    <li>The possessive is not used with inanimate/non-living objects. <em>Example:</em> the table's leg (incorrect), leg of table (correct); the house's roof (incorrect), the roof of the house (correct).</li>
+    <li>If an inanimate object is personified, the possessive case is formed by adding -'s. <em>Examples:</em> India's heroes, nature's law, fortune's wheel.</li>
+    <li>Possessive case is used with nouns indicating time, space, weight in idiomatic expressions. <em>Examples:</em> a day's rest, a week's holiday, in a year's time, at a stone's throw, on wit's end, a hair's breadth etc.</li>
+    <li>In a compound noun, the possessive case is formed by adding -'s to the last part. <em>Examples:</em> my mother-in-law's books, the editor-in-chief's car.</li>
+    <li>When a proper noun or name takes -'s to denote an institution or organization, the nouns referring to these institutions and organizations are omitted. <em>Example:</em> I am going to St. Joseph's (St. Joseph's school).</li>
+    <li>Use of double possessive should be avoided. <em>Example:</em> My father's friend's house (incorrect); The house of my father's friend (correct).</li>
+  </ol>
+
+  <div class="exercise-block">
+    <h4>Exercise — Use an apostrophe to show possession</h4>
+    <p class="instr">The first one has been done for you: <em>The watch of my brother → My brother's watch.</em></p>
+    <ol>
+      <li>The gift for Shreya <input class="blank-input" type="text" style="width:220px"></li>
+      <li>The clothes for baby <input class="blank-input" type="text" style="width:220px"></li>
+      <li>The name of my sister <input class="blank-input" type="text" style="width:220px"></li>
+      <li>The gun of the soldier <input class="blank-input" type="text" style="width:220px"></li>
+      <li>The hoof of the horse <input class="blank-input" type="text" style="width:220px"></li>
+      <li>The crown of the king <input class="blank-input" type="text" style="width:220px"></li>
+      <li>The dinner for the guest <input class="blank-input" type="text" style="width:220px"></li>
+      <li>The dress of the girl <input class="blank-input" type="text" style="width:220px"></li>
+      <li>The shop of Mohan <input class="blank-input" type="text" style="width:220px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1. Shreya's gift · 2. Baby's clothes · 3. My sister's name · 4. The soldier's gun · 5. The horse's hoof · 6. The king's crown · 7. The guest's dinner · 8. The girl's dress · 9. Mohan's shop</p>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Exercise — Correct the following possessive cases of noun</h4>
+    <p class="instr">The first one has been done for you: <em>The childrens' pens → The children's pens.</em></p>
+    <ol>
+      <li>Rohans father <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Anisha's, the singer's song <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Mens' houses <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Keats's poetry <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Jesus's sake <input class="blank-input" type="text" style="width:220px"></li>
+      <li>The refrigerator's door <input class="blank-input" type="text" style="width:220px"></li>
+      <li>The books' pages <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Wren's and Martin's grammar <input class="blank-input" type="text" style="width:220px"></li>
+      <li>My father's-in-law spectacles <input class="blank-input" type="text" style="width:220px"></li>
+      <li>Her sister's friend's house <input class="blank-input" type="text" style="width:220px"></li>
+    </ol>
+    <button class="reveal" onclick="var a=this.nextElementSibling,o=a.style.display!=='block';a.style.display=o?'block':'none';this.textContent=o?'Hide answer key':'Show answer key';">Show answer key</button>
+    <div class="qa">
+      <div class="qa-label">Answer Key</div>
+      <p>1. Rohan's father · 2. Anisha, the singer's song <em>(apposition — rule 6)</em> · 3. Men's houses · 4. Keats' poetry <em>(hissing sound — rule 4)</em> · 5. Jesus' sake <em>(hissing sound — rule 4)</em> · 6. The door of the refrigerator <em>(inanimate — rule 10)</em> · 7. The pages of the books <em>(inanimate — rule 10)</em> · 8. Wren and Martin's grammar <em>(joint possession — rule 7)</em> · 9. My father-in-law's spectacles <em>(compound noun — rule 13)</em> · 10. The house of her sister's friend <em>(avoid double possessive — rule 15)</em></p>
+    </div>
+  </div>
+
+  <h2 id="revision"><span class="num">18.</span>Quick Revision Checklist</h2>
+  <ul>
+    <li>Can you identify common, proper, collective, concrete, abstract, material and compound nouns?</li>
+    <li>Do you know the suffixes used to form abstract nouns (-ship, -ness, -hood, -ment, -tion, -sion, -ity, -ance)?</li>
+    <li>Can you form the feminine of a masculine noun using each of the five methods covered?</li>
+    <li>Do you know the difference between countable and uncountable nouns?</li>
+    <li>Can you apply the plural rules for nouns ending in -s/-sh/-ch/-x/-z, -o, -f/-fe, -y, and irregular plurals?</li>
+    <li>Do you know which nouns are always singular, always plural, or the same in both forms?</li>
+    <li>Can you identify the eight functions (cases) a noun can play in a sentence?</li>
+    <li>Do you know the fifteen rules for correctly using the possessive apostrophe?</li>
+  </ul>
+
+  <footer>Class 8 · English · Grammar · Lesson 12</footer>
+</div>
+</body>
+</html>
